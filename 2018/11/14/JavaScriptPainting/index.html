@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="daily,javascript,">
+  <meta name="keywords" content="javascript,">
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="JavaScriptTest      var mg1 = prompt(&quot;Enter Your Name:&quot;);     var mg2 = confirm(&quot;Are You &quot; + mg1.toString());     if(mg2) {         alert(&quot;Hello &quot; + mg1.toString());     } else {         alert(&quot;You ar">
-<meta name="keywords" content="daily,javascript">
+<meta name="description" content="Now,let’s start painting!Ususally,the numbers are starting from 0, what will happen if you press 0? Take a try.        var cvs = document.getElementById(&quot;cvs1&quot;);     var ctx = cvs.getContext(&quot;2d&quot;);">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20181114">
-<meta property="og:url" content="beiyuouo.github.io/2018/11/14/20181114/index.html">
+<meta property="og:title" content="JavaScriptPainting">
+<meta property="og:url" content="beiyuouo.github.io/2018/11/14/JavaScriptPainting/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
-<meta property="og:description" content="JavaScriptTest      var mg1 = prompt(&quot;Enter Your Name:&quot;);     var mg2 = confirm(&quot;Are You &quot; + mg1.toString());     if(mg2) {         alert(&quot;Hello &quot; + mg1.toString());     } else {         alert(&quot;You ar">
+<meta property="og:description" content="Now,let’s start painting!Ususally,the numbers are starting from 0, what will happen if you press 0? Take a try.        var cvs = document.getElementById(&quot;cvs1&quot;);     var ctx = cvs.getContext(&quot;2d&quot;);">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-14T14:03:02.691Z">
+<meta property="og:updated_time" content="2018-11-14T15:11:48.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20181114">
-<meta name="twitter:description" content="JavaScriptTest      var mg1 = prompt(&quot;Enter Your Name:&quot;);     var mg2 = confirm(&quot;Are You &quot; + mg1.toString());     if(mg2) {         alert(&quot;Hello &quot; + mg1.toString());     } else {         alert(&quot;You ar">
+<meta name="twitter:title" content="JavaScriptPainting">
+<meta name="twitter:description" content="Now,let’s start painting!Ususally,the numbers are starting from 0, what will happen if you press 0? Take a try.        var cvs = document.getElementById(&quot;cvs1&quot;);     var ctx = cvs.getContext(&quot;2d&quot;);">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/2018/11/14/20181114/">
+  <link rel="canonical" href="beiyuouo.github.io/2018/11/14/JavaScriptPainting/">
 
 
 
 
 
-  <title>20181114 | BeiYuOuO</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>JavaScriptPainting | BeiYuOuO</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/11/14/20181114/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/11/14/JavaScriptPainting/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BeiYu">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">20181114</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScriptPainting</h1>
         
 
         <div class="post-meta">
@@ -312,7 +312,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-14T12:34:45+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-14T21:48:02+08:00">
                 2018-11-14
               </time>
             
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/daily/" itemprop="url" rel="index">
-                    <span itemprop="name">daily</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -408,14 +408,111 @@
       
 
       
-        <p>JavaScriptTest</p>
+        <p>Now,let’s start painting!<br>Ususally,the numbers are starting from 0, what will happen if you press 0? Take a try.</p>
+<canvas id="cvs1" width="400" height="400"></canvas>
+
 <script type="text/javascript">
-    var mg1 = prompt("Enter Your Name:");
-    var mg2 = confirm("Are You " + mg1.toString());
-    if(mg2) {
-        alert("Hello " + mg1.toString());
-    } else {
-        alert("You are just fucking kiding me!");
+    var cvs = document.getElementById("cvs1");
+    var ctx = cvs.getContext("2d");
+    var mg3 = prompt("What do you want to draw? Enter 1 to draw a rectangle;2 to draw a strokerectangle;3 to draw a triangle;4 to draw a cross;5 to draw two circles;6 to draw a Gomokuboard;7 to draw a Chessboard;...to be continue...");
+    if(mg3 === "0") {
+        ctx.fillStyle = "#000000";
+        ctx.strokeStyle = "#000000";
+        ctx.lineWidth = 4;
+
+        //draw a circle
+        ctx.beginPath();
+        ctx.arc(200,200,190,0,2*Math.PI,false); 
+        ctx.stroke();
+
+        //draw the smile
+        ctx.beginPath();
+        ctx.arc(200,200,160,(0.1)*Math.PI,(0.9)*Math.PI,false);
+        ctx.stroke();
+
+        //left eye
+        ctx.beginPath();
+        ctx.arc(100,400,250,(1.42)*Math.PI,(1.58)*Math.PI,false);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(100,420,250,(1.42)*Math.PI,(1.58)*Math.PI,false);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(100-250*Math.sin(0.08*Math.PI),400+10-250*Math.cos(0.08*Math.PI),10,0,2*Math.PI,false);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(100+250*Math.sin(0.08*Math.PI),400+10-250*Math.cos(0.08*Math.PI),10,-0.5*Math.PI,0.5*Math.PI,false);
+        ctx.stroke();
+
+        //right eye
+        ctx.beginPath();
+        ctx.arc(300,400,250,(1.42)*Math.PI,(1.58)*Math.PI,false);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(300,420,250,(1.42)*Math.PI,(1.58)*Math.PI,false);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(300-250*Math.sin(0.08*Math.PI),400+10-250*Math.cos(0.08*Math.PI),10,0,2*Math.PI,false);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(300+250*Math.sin(0.08*Math.PI),400+10-250*Math.cos(0.08*Math.PI),10,-0.5*Math.PI,0.5*Math.PI,false);
+        ctx.stroke();
+    } else if(mg3 === "1") {
+        ctx.fillStyle = "#FF0000"
+        ctx.fillRect(100,100,100,100);
+    } else if(mg3 === "2") {
+        ctx.strokeStyle = "#FF0000"
+        ctx.strokeRect(100,100,100,100);
+    } else if(mg3 === "3") {
+        ctx.fillStyle = "Blue";
+        ctx.beginPath();
+        ctx.moveTo(50,50);
+        ctx.lineTo(350,50);
+        ctx.lineTo(200,300);
+        ctx.fill();
+    } else if(mg3 === "4") {
+        ctx.strokeStyle = "#FF0000";
+        ctx.beginPath();
+        ctx.moveTo(50,50);
+        ctx.lineTo(150,150);
+        ctx.moveTo(50,150);
+        ctx.lineTo(150,50);
+        ctx.stroke();
+    } else if(mg3 === "5") {
+        ctx.skrokeStyle = "#FF0000";
+        ctx.fillStyle = "#FF0000";
+        ctx.beginPath();
+        ctx.arc(50,50,30,0,Math.PI*2,false);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(150,50,30,0,Math.PI*2,false);
+        ctx.fill();
+    } else if(mg3 === "6") {
+        ctx.fillStyle = "#000000";
+        ctx.strokeStyle = "#000000";
+        ctx.lineWidth = 1;
+        for(var i=0;i<20;i++) {
+            for(var j=0;j<20;j++) {
+                ctx.strokeRect(j*20,i*20,20,20);
+            }
+        }
+    } else if(mg3 === "7") {
+        ctx.fillStyle = "#000000";
+        ctx.strokeStyle = "#000000";
+        for(var i=0;i<8;i++) {
+            for(var j=0;j<8;j++) {
+                if((i+j)%2 == 0) {
+                    ctx.fillRect(j*50,i*50,50,50);
+                } else {
+                    ctx.strokeRect(j*50,i*50,50,50);
+                }
+            }
+        }
     }
 </script>
       
@@ -434,8 +531,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/daily/" rel="tag"><i class="fa fa-tag"></i> daily</a>
-          
             <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
           
         </div>
@@ -449,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/13/20181113/" rel="next" title="20181113">
-                <i class="fa fa-chevron-left"></i> 20181113
+              <a href="/2018/11/14/20181114/" rel="next" title="20181114">
+                <i class="fa fa-chevron-left"></i> 20181114
               </a>
             
           </div>
@@ -458,10 +553,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/14/JavaScriptPainting/" rel="prev" title="JavaScriptPainting">
-                JavaScriptPainting <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
