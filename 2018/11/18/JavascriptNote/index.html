@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="note,javascript,">
+  <meta name="keywords" content="javascript,note,">
 
 
 
@@ -95,14 +95,14 @@
 
 
 <meta name="description" content="JavaScript快速上手变量定义1var name; 变量名开头可以是任意Unicode字符、美元符、下划线后面的字符除上述以外还有Unicode数字 不能是关键字关键字：1234567891011arguments   break       case        catchclass       const       continue    debuggerdefault     de">
-<meta name="keywords" content="note,javascript">
+<meta name="keywords" content="javascript,note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavascriptNote">
 <meta property="og:url" content="beiyuouo.github.io/2018/11/18/JavascriptNote/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="JavaScript快速上手变量定义1var name; 变量名开头可以是任意Unicode字符、美元符、下划线后面的字符除上述以外还有Unicode数字 不能是关键字关键字：1234567891011arguments   break       case        catchclass       const       continue    debuggerdefault     de">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-19T03:41:50.989Z">
+<meta property="og:updated_time" content="2018-11-20T08:50:28.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavascriptNote">
 <meta name="twitter:description" content="JavaScript快速上手变量定义1var name; 变量名开头可以是任意Unicode字符、美元符、下划线后面的字符除上述以外还有Unicode数字 不能是关键字关键字：1234567891011arguments   break       case        catchclass       const       continue    debuggerdefault     de">
@@ -424,6 +424,7 @@
 <p>3个标识符不是保留字但也要视为保留字</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Infinity    NaN     undefined</span><br></pre></td></tr></table></figure>
 <h4 id="原始值"><a href="#原始值" class="headerlink" title="原始值"></a>原始值</h4><p>有布尔值、数字、字符串、空值(<code>undefine null</code>)<br>特点<br>可进行内容比较<br>其属性不能被改变、添加或移除</p>
+<p>ToPrimitive()将值转换为原始值</p>
 <h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>非原始值都是对象<br>简单对象、数组、正则表达式</p>
 <p>比较身份标识，每个值都有各自的身份标识<br>对象属性可以很自由地改变、添加或移除</p>
 <h3 id="undefined-和-null"><a href="#undefined-和-null" class="headerlink" title="undefined 和 null"></a>undefined 和 null</h3><p>丢失参数、访问不存在的属性会得到undefined<br>null是没有对象<br>可以直接比较相等</p>
@@ -483,10 +484,84 @@
 </ul>
 <p>严格的相等或不等<br><code>=== !==</code><br>宽松的相等或不等<br><code>== !=</code></p>
 <h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><p>特殊的数字<br>NaN = Not a number<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Number(&apos;xyz&apos;)</span><br><span class="line">NaN</span><br></pre></td></tr></table></figure></p>
+<p>检查是否为NaN用isNaN()，但对非数字不起作用，可以用其值是否等于自身来判断</p>
 <p>Infinity<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 3/0</span><br><span class="line">Infinity</span><br><span class="line">&gt; Math.pow(2,1024)//too large</span><br><span class="line">Infinity</span><br></pre></td></tr></table></figure></p>
+<p>isFinite()可以用来检查是否为实际值，即不为以上两个值</p>
+<p>parseFloat()将字符串中字符转换成数字，对于一些特殊的例如true null ‘’ 无法处理</p>
+<p>JavaScript有两个0，+0，-0</p>
+<p>数字内部表示为双精度</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">部分</th>
+<th style="text-align:center">位数</th>
+<th style="text-align:center">位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">符号</td>
+<td style="text-align:center">1位</td>
+<td style="text-align:center">第63位</td>
+</tr>
+<tr>
+<td style="text-align:center">指数</td>
+<td style="text-align:center">[-1023,1024] 11位</td>
+<td style="text-align:center">62~52</td>
+</tr>
+<tr>
+<td style="text-align:center">分数</td>
+<td style="text-align:center">52位</td>
+<td style="text-align:center">52~0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>表示公式</p>
+<p>$ (-1)^{sign} \times %1.fraction \times 2^{exponent} $</p>
+<p>安全整型范围<br><code>Number.MAX_SAFE_INTEGER=2^53</code><br><code>Number.MIN_SAFE_INTEGER=-2^53</code></p>
+<p>浮点数转化为整数的方法<br><code>Math.floor(),Math.ceil(),Math.round()</code></p>
+<p>位运算或Toint32()得到32位整数</p>
+<p>parseInt()可得到整数，可选基数，在第二个参数</p>
+<p>Number原型方法</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Number.prototype.toFixed(fractionDigits)</td>
+<td style="text-align:center">舍入到小数点后指定位数</td>
+</tr>
+<tr>
+<td style="text-align:center">Number.prototype.toPrecision(precision)</td>
+<td style="text-align:center">精确到指定位</td>
+</tr>
+<tr>
+<td style="text-align:center">Number.prototype.toString(radix)</td>
+<td style="text-align:center">转化为可选字符串可选进制</td>
+</tr>
+<tr>
+<td style="text-align:center">Number.prototype.toExponential(fractionDigits)</td>
+<td style="text-align:center">强制指数表示</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>基本都一样</p>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>原始值 不可改变</p>
-<p>后文会有运算符详细的方法</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>原始值 不可改变<br>单引号双引号均可以使用</p>
+<p>一个反斜杠对行结束符转义，使字符串跨行拼写</p>
+<p>可以用&gt;&lt;直接比较 也可以<code>String.prototype.localeCompare(other)</code></p>
+<p>构造器方法<br><code>String.fromCharCode()</code><br><code>String.fromCharCode().apply()</code></p>
+<p>原型方法<br><code>String.prototype.charAt(pos)</code><br><code>String.prototype.charCodeAt(pos) //String.fromCharCode()逆函数</code><br><code>String.prototype.slice(start [,end])</code><br><code>String.prototype.substring(start [,end])</code><br><code>String.prototype.split([separator] [,limit]) //separator可以为正则表达式 limit 是最多包含元素</code></p>
+<p>字符串变换<br><code>String.prototype.trim() //去除开头结尾空格换行符等</code><br><code>String.prototype.concat(str1,str2,...)</code><br><code>String.prototype.toLowerCase()</code><br><code>String.prototype.toLocaleLowerCase()</code><br><code>String.prototype.toUpperCase()</code><br><code>String.prototype.toLocaleUpperCase()</code></p>
+<p>字符串检索和比较<br><code>String.prototype.indexOf(searchString,position)</code><br><code>String.prototype.lastIndexOf(searchString,position)</code><br><code>String.prototype.localeCompare(other)</code></p>
+<p>支持正则表达式的方式<br><code>String.prototype.search(regexp) //返回第一个起始位置，未匹配返回-1</code><br><code>String.prototype.match(regexp) //返回所有匹配的子字符串</code><br><code>String.prototype.replace(search, replacement)</code></p>
 <h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><p>if/switch/for/while/do-while与C/C++完全相同</p>
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数声明方式定义函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>给变量赋值为函数表达式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var add = function(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -529,9 +604,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
-          
             <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
           
         </div>
       
@@ -553,6 +628,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/20/20181120/" rel="prev" title="20181120">
+                20181120 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -627,7 +706,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -649,7 +728,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
