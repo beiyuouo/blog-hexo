@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="description" content="修改vi/vim配置永久修改vi/vim配置 1vi ~/.vimrc 编辑器设置    Option Description     :set number 显示行号   :set nonumber 不显示行号   :set tabstop 设置制表符长度   :set ruler 显示标尺   :set wrap 自动折行   :set nowrap 不自动折行   :set autoinde">
 <meta name="keywords" content="note,vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VimNote">
 <meta property="og:url" content="beiyuouo.github.io/2018/11/16/VimNote/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
-<meta property="og:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta property="og:description" content="修改vi/vim配置永久修改vi/vim配置 1vi ~/.vimrc 编辑器设置    Option Description     :set number 显示行号   :set nonumber 不显示行号   :set tabstop 设置制表符长度   :set ruler 显示标尺   :set wrap 自动折行   :set nowrap 不自动折行   :set autoinde">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-15T16:08:43.551Z">
+<meta property="og:updated_time" content="2018-12-05T07:41:24.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VimNote">
-<meta name="twitter:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="twitter:description" content="修改vi/vim配置永久修改vi/vim配置 1vi ~/.vimrc 编辑器设置    Option Description     :set number 显示行号   :set nonumber 不显示行号   :set tabstop 设置制表符长度   :set ruler 显示标尺   :set wrap 自动折行   :set nowrap 不自动折行   :set autoinde">
 
 
 
@@ -418,7 +418,77 @@
       
 
       
-        
+        <h3 id="修改vi-vim配置"><a href="#修改vi-vim配置" class="headerlink" title="修改vi/vim配置"></a>修改vi/vim配置</h3><p>永久修改vi/vim配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.vimrc</span><br></pre></td></tr></table></figure>
+<h3 id="编辑器设置"><a href="#编辑器设置" class="headerlink" title="编辑器设置"></a>编辑器设置</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:set number</td>
+<td style="text-align:center">显示行号</td>
+</tr>
+<tr>
+<td style="text-align:center">:set nonumber</td>
+<td style="text-align:center">不显示行号</td>
+</tr>
+<tr>
+<td style="text-align:center">:set tabstop</td>
+<td style="text-align:center">设置制表符长度</td>
+</tr>
+<tr>
+<td style="text-align:center">:set ruler</td>
+<td style="text-align:center">显示标尺</td>
+</tr>
+<tr>
+<td style="text-align:center">:set wrap</td>
+<td style="text-align:center">自动折行</td>
+</tr>
+<tr>
+<td style="text-align:center">:set nowrap</td>
+<td style="text-align:center">不自动折行</td>
+</tr>
+<tr>
+<td style="text-align:center">:set autoindent</td>
+<td style="text-align:center">首行缩进</td>
+</tr>
+<tr>
+<td style="text-align:center">:set ignorecase</td>
+<td style="text-align:center">关闭大小写敏感</td>
+</tr>
+<tr>
+<td style="text-align:center">:set nomagic</td>
+<td style="text-align:center">关闭特殊字符’*’’?’等</td>
+</tr>
+<tr>
+<td style="text-align:center">:set showmode</td>
+<td style="text-align:center">显示模式</td>
+</tr>
+<tr>
+<td style="text-align:center">:set showmatch</td>
+<td style="text-align:center">显示匹配的括号</td>
+</tr>
+<tr>
+<td style="text-align:center">:set wrapscan</td>
+<td style="text-align:center">文本循环</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="find-string"><a href="#find-string" class="headerlink" title="find string"></a>find string</h3><p><code>/string</code></p>
+<p>从上往下搜索</p>
+<p><code>?string</code></p>
+<p>从下往上搜索</p>
+<p>可用正则表达式</p>
+<h3 id="ab-Command"><a href="#ab-Command" class="headerlink" title="ab Command"></a>ab Command</h3><p>设置缩写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:ab &lt;string1&gt; &lt;string2&gt;</span><br></pre></td></tr></table></figure>
+<p>string1代表string2</p>
+<h3 id="map-Command"><a href="#map-Command" class="headerlink" title="map Command"></a>map Command</h3>
       
     </div>
     
@@ -514,8 +584,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="BeiYu">
           <p class="site-author-name" itemprop="name">BeiYu</p>
@@ -528,7 +607,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -550,7 +629,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -621,6 +700,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改vi-vim配置"><span class="nav-number">1.</span> <span class="nav-text">修改vi/vim配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑器设置"><span class="nav-number">2.</span> <span class="nav-text">编辑器设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find-string"><span class="nav-number">3.</span> <span class="nav-text">find string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ab-Command"><span class="nav-number">4.</span> <span class="nav-text">ab Command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map-Command"><span class="nav-number">5.</span> <span class="nav-text">map Command</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

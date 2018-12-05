@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="cnv1 = document.getElementById(&apos;cnv1&apos;);     ctx1 = cnv1.getContext(&apos;2d&apos;);      cnv2 = document.getElementById(&apos;cnv2&apos;);     ctx2 = cnv2.getContext(&apos;2d&apos;);      var img = new Image();     img.src">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-02T11:17:03.514Z">
+<meta property="og:updated_time" content="2018-12-05T07:47:06.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="imagemagnifier">
 <meta name="twitter:description" content="cnv1 = document.getElementById(&apos;cnv1&apos;);     ctx1 = cnv1.getContext(&apos;2d&apos;);      cnv2 = document.getElementById(&apos;cnv2&apos;);     ctx2 = cnv2.getContext(&apos;2d&apos;);      var img = new Image();     img.src">
@@ -430,9 +430,9 @@
 
     var img = new Image();
     img.src = '/img/201812021851.png';
-    ctx1.drawImage(img, 0, 0);
 
     var zm = function(e) {
+        ctx1.drawImage(img, 0, 0);
         var x = event.layerX;
         var y = event.layerY;
         ctx2.drawImage(cnv1, Math.abs(x-5), Math.abs(y-5), 10, 10, 0, 0, 100, 100);
@@ -481,6 +481,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/05/zzbds/" rel="prev" title="正则表达式">
+                正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -546,7 +550,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -568,7 +572,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

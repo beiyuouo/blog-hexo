@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="javascript,game,canvas,breakout,">
+  <meta name="keywords" content="note,regex,">
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="var cnv = document.getElementById(&quot;cnv1&quot;);     var ctx = cnv.getContext(&apos;2d&apos;);      var start = false;     var raf;     var vv = 5;     var over = false;       var ball = {         x: 150,">
-<meta name="keywords" content="javascript,game,canvas,breakout">
+<meta name="description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="keywords" content="note,regex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Breakoutv0.0.1">
-<meta property="og:url" content="beiyuouo.github.io/2018/12/02/Breakoutv0.0.1/index.html">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="beiyuouo.github.io/2018/12/05/zzbds/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
-<meta property="og:description" content="var cnv = document.getElementById(&quot;cnv1&quot;);     var ctx = cnv.getContext(&apos;2d&apos;);      var start = false;     var raf;     var vv = 5;     var over = false;       var ball = {         x: 150,">
+<meta property="og:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-02T10:49:14.109Z">
+<meta property="og:updated_time" content="2018-12-05T07:34:27.154Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Breakoutv0.0.1">
-<meta name="twitter:description" content="var cnv = document.getElementById(&quot;cnv1&quot;);     var ctx = cnv.getContext(&apos;2d&apos;);      var start = false;     var raf;     var vv = 5;     var over = false;       var ball = {         x: 150,">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/2018/12/02/Breakoutv0.0.1/">
+  <link rel="canonical" href="beiyuouo.github.io/2018/12/05/zzbds/">
 
 
 
 
 
-  <title>Breakoutv0.0.1 | BeiYuOuO</title>
+  <title>正则表达式 | BeiYuOuO</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/12/02/Breakoutv0.0.1/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/12/05/zzbds/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BeiYu">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Breakoutv0.0.1</h1>
+          <h1 class="post-title" itemprop="name headline">正则表达式</h1>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-02T08:47:22+08:00">
-                2018-12-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T15:33:50+08:00">
+                2018-12-05
               </time>
             
 
@@ -345,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -418,172 +418,7 @@
       
 
       
-        <p><canvas id="cnv1" width="300" height="600"></canvas></p>
-<script type="text/javascript">
-    var cnv = document.getElementById("cnv1");
-    var ctx = cnv.getContext('2d');
-
-    var start = false;
-    var raf;
-    var vv = 5;
-    var over = false;
-
-
-    var ball = {
-        x: 150,
-        y: 600-5-8, //change
-        vx: 0,
-        vy: vv,
-        r: 8,
-        col: "black",
-        draw: function() {
-            ctx.save();
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.r, 0, 2*Math.PI, false);
-            ctx.closePath();
-            ctx.fillStyle = this.col;
-            ctx.fill();
-            ctx.restore();
-        },
-        rset: function() {
-            this.x = 150,
-            this.y = 600-5-8; //change
-        }
-    }
-
-    var block = {
-        x: 150,
-        y: 600,
-        h: 5,
-        w: 60,
-        col: "black",
-        draw: function() {
-            ctx.save();
-            ctx.fillStyle = this.col;
-            ctx.fillRect(this.x-this.w/2, this.y-this.h, this.w, this.h);
-            ctx.restore();
-        },
-        rset: function() {
-            this.x = 150,
-            this.y = 600;
-        }
-    }
-
-    var line = {
-        x1: 150,
-        y1: ball.y,
-        x2: 0,
-        y2: 0,
-        length: 80,
-        width: 3,
-        ang: 0,
-        col: "red",
-        rot: function(x, y) {
-            dx = x-this.x1;
-            dy = Math.max(0, this.y1-y);
-            this.ang = Math.atan(dy/dx);
-            if(this.ang < 0) this.ang += Math.PI;
-            this.x2 = 150+this.length*Math.cos(this.ang);
-            this.y2 = this.y1-this.length*Math.sin(this.ang);
-        },
-        draw: function() {
-            ctx.save();
-            ctx.lineWidth = this.width;
-            ctx.strokeStyle = this.col;
-            ctx.beginPath();
-            ctx.moveTo(this.x1, this.y1);
-            ctx.lineTo(this.x2, this.y2);
-            ctx.stroke();
-            ctx.restore();
-        }
-    }
-
-    ball.move = function() {
-        if(!start) return;
-        this.x += this.vx;
-        this.y += this.vy;
-        if(this.x-this.r < 0) {
-            this.x = this.r-this.x;
-            this.vx = -this.vx;
-        }
-        if(this.x+this.r > 300) {
-            this.x = 600-(this.x+this.r);
-            this.vx = -this.vx;
-        }
-        if(this.y-this.r < 0) {
-            this.y = this.r-this.y;
-            this.vy = -this.vy;
-        }
-        if(this.y+this.r > 600-block.h) {
-            if(ball.x-5 > block.x+block.w/2 || ball.x+5 < block.x-block.w/2) {
-                over = true;
-                return;
-            }
-            this.y = 2*(600-block.h)-(this.y+this.r);
-            this.vy = -this.vy;
-        }
-    }
-
-
-
-    function clear() {
-        ctx.clearRect(0, 0, 300, 600);
-    }
-    function rset() {
-        clear();
-        start = false;
-        over = false;
-        ball.rset();
-        block.rset();
-
-    }
-
-    function move() {
-        clear();
-        ball.move();
-        ball.draw();
-        block.draw();
-        if(over) {
-            rset();
-            window.cancelAnimationFrame(raf);
-            return;
-        }
-        raf = window.requestAnimationFrame(move);
-    }
-
-    cnv.addEventListener("mousemove", function(e) {
-        if(!start) {
-            clear();
-            ball.draw();
-            block.draw();
-            line.rot(e.clientX, e.clientY);
-            line.draw();
-        } else {
-            block.x = e.clientX;
-        }
-    });
-
-/*
-    cnv.addEventListener("mouseover", function(e) {
-
-    });
-
-
-    cnv.addEventListener("mouseout", function(e) {
-
-    });
-*/
-    cnv.addEventListener("click", function(e) {
-        if(!start) {
-            start = true;
-            over = false;
-            ball.vx = vv*Math.cos(line.ang);
-            ball.vy = vv*Math.sin(line.ang);
-            raf = window.requestAnimationFrame(move);
-        }
-    });
-
-</script>
+        
       
     </div>
     
@@ -600,13 +435,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
           
-            <a href="/tags/game/" rel="tag"><i class="fa fa-tag"></i> game</a>
-          
-            <a href="/tags/canvas/" rel="tag"><i class="fa fa-tag"></i> canvas</a>
-          
-            <a href="/tags/breakout/" rel="tag"><i class="fa fa-tag"></i> breakout</a>
+            <a href="/tags/regex/" rel="tag"><i class="fa fa-tag"></i> regex</a>
           
         </div>
       
@@ -619,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/02/AddBall2/" rel="next" title="AddBall2">
-                <i class="fa fa-chevron-left"></i> AddBall2
+              <a href="/2018/12/02/imagemagnifier/" rel="next" title="imagemagnifier">
+                <i class="fa fa-chevron-left"></i> imagemagnifier
               </a>
             
           </div>
@@ -628,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/02/imagemagnifier/" rel="prev" title="imagemagnifier">
-                imagemagnifier <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

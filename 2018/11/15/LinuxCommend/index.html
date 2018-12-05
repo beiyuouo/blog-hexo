@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="I think if you want to know the options, you just need to type man/info+options or option—help is enough. dateShow the date date date &amp;quot;+opt&amp;quot; date &amp;quot;+text opt&amp;quot;     Option Description">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-15T16:09:40.493Z">
+<meta property="og:updated_time" content="2018-12-05T07:41:22.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LinuxCommend">
 <meta name="twitter:description" content="I think if you want to know the options, you just need to type man/info+options or option—help is enough. dateShow the date date date &amp;quot;+opt&amp;quot; date &amp;quot;+text opt&amp;quot;     Option Description">
@@ -562,7 +562,36 @@
 </tbody>
 </table>
 </div>
-<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><h3 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h3><h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><p><code>- --- --- ---</code><br><code>dir|document owner group otheruser</code></p>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><h3 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h3><h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><h3 id="0-lt-1-gt-1-gt-gt-2-gt"><a href="#0-lt-1-gt-1-gt-gt-2-gt" class="headerlink" title="0&lt;,1&gt;,1&gt;&gt;,2&gt;"></a><code>0&lt;,1&gt;,1&gt;&gt;,2&gt;</code></h3><p>文件重定向</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>0&lt;,&lt;</code></td>
+<td style="text-align:center">读入</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;,1&gt;</code></td>
+<td style="text-align:center">输出到文件，重新写</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;&gt;,1&gt;&gt;</code></td>
+<td style="text-align:center">续写文件</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>2&gt;</code></td>
+<td style="text-align:center">输出错误提示信息到文件</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><p><code>- --- --- ---</code><br><code>dir|document owner group otheruser</code></p>
 <div class="table-container">
 <table>
 <thead>
@@ -625,6 +654,178 @@
 </table>
 </div>
 <p><code>chmod u|g|o|a +|- r|w|x file_name</code><br><code>chmod 777 file_name</code></p>
+<h2 id="filters"><a href="#filters" class="headerlink" title="filters"></a>filters</h2><p>使用多个过滤器时用<code>|</code>分隔开，在最前面写文件名</p>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [option(s)] pattern [filename]</span><br></pre></td></tr></table></figure>
+<p>以行为单位筛选包含指定字符的行</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">显示行号</td>
+</tr>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">输出匹配到行的个数</td>
+</tr>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">反向查找，查找不匹配的行</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc [option(s)] [filename]</span><br></pre></td></tr></table></figure>
+<p>计数工具</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">显示行数量</td>
+</tr>
+<tr>
+<td style="text-align:center">-w</td>
+<td style="text-align:center">显示单词数</td>
+</tr>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">显示字符数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut [option(s)] [filename]</span><br></pre></td></tr></table></figure>
+<p>显示一列、一列字符</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-f<column_number(s)></column_number(s)></td>
+<td style="text-align:center">显示的列数，用逗号分隔，可用-连接</td>
+</tr>
+<tr>
+<td style="text-align:center">-c<character_number(s)></character_number(s)></td>
+<td style="text-align:center">显示每列字符的位数</td>
+</tr>
+<tr>
+<td style="text-align:center">-d&lt;column_delimiter</td>
+<td style="text-align:center">列分隔符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="tr"><a href="#tr" class="headerlink" title="tr"></a>tr</h3><p>tr字符可以对来自标准输入的字符进行替换、压缩和删除，可以将一组字符编程另外一组字符。</p>
+<p>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tr &quot;[a-z]&quot; &quot;[A-Z]&quot;</span><br></pre></td></tr></table></figure></p>
+<p>转换小写为大写<br>需要文件重定向来写入</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>-c, -C, --complement</code></td>
+<td style="text-align:center">取代所有不属于第一字符集的字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-d, --delete</code></td>
+<td style="text-align:center">删除所有属于第一字符集的字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-s, --squeeze-repeats</code></td>
+<td style="text-align:center">把连续重复的字符以单独一个字符表示</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-t, --truncate-set1</code></td>
+<td style="text-align:center">先删除第一字符集较第二字符集多出的字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p>排序</p>
+<p>ascending(asc)正序<br>descending(desc)倒序</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-b</td>
+<td style="text-align:center">忽略每行前面开始出的空格字符</td>
+</tr>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">检查文件是否已经按照顺序排序</td>
+</tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">排序时，处理英文字母、数字及空格字符外，忽略其他的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">排序时，将小写字母视为大写字母</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:center">排序时，除了040至176之间的ASCII字符外，忽略其他的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">-m</td>
+<td style="text-align:center">将几个排序好的文件进行合并</td>
+</tr>
+<tr>
+<td style="text-align:center">-M</td>
+<td style="text-align:center">将前面3个字母依照月份的缩写进行排序</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">依照数值的大小排序</td>
+</tr>
+<tr>
+<td style="text-align:center">-o<output_filename></output_filename></td>
+<td style="text-align:center">将排序后的结果存入指定的文件</td>
+</tr>
+<tr>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">以相反的顺序来排序</td>
+</tr>
+<tr>
+<td style="text-align:center">-t&lt;分隔字符&gt;</td>
+<td style="text-align:center">指定排序时所用的栏位分隔字符</td>
+</tr>
+<tr>
+<td style="text-align:center">+&lt;起始栏位&gt;-&lt;结束栏位&gt;</td>
+<td style="text-align:center">以指定的栏位来排序，范围左闭右开</td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
     </div>
@@ -746,7 +947,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -768,7 +969,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -849,7 +1050,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-number">1.</span> <span class="nav-text">date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clear"><span class="nav-number">2.</span> <span class="nav-text">clear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tput-Pending"><span class="nav-number">3.</span> <span class="nav-text">tput | Pending</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#who"><span class="nav-number">4.</span> <span class="nav-text">who</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uptime"><span class="nav-number">5.</span> <span class="nav-text">uptime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man-amp-info"><span class="nav-number">6.</span> <span class="nav-text">man &amp; info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd"><span class="nav-number">7.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-number">8.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-number">9.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd"><span class="nav-number">10.</span> <span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir"><span class="nav-number">11.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp"><span class="nav-number">12.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm"><span class="nav-number">13.</span> <span class="nav-text">rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmdir"><span class="nav-number">14.</span> <span class="nav-text">rmdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv"><span class="nav-number">15.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod"><span class="nav-number">16.</span> <span class="nav-text">chmod</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-number">1.</span> <span class="nav-text">date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clear"><span class="nav-number">2.</span> <span class="nav-text">clear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tput-Pending"><span class="nav-number">3.</span> <span class="nav-text">tput | Pending</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#who"><span class="nav-number">4.</span> <span class="nav-text">who</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uptime"><span class="nav-number">5.</span> <span class="nav-text">uptime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man-amp-info"><span class="nav-number">6.</span> <span class="nav-text">man &amp; info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd"><span class="nav-number">7.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-number">8.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-number">9.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd"><span class="nav-number">10.</span> <span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir"><span class="nav-number">11.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp"><span class="nav-number">12.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm"><span class="nav-number">13.</span> <span class="nav-text">rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmdir"><span class="nav-number">14.</span> <span class="nav-text">rmdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv"><span class="nav-number">15.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-lt-1-gt-1-gt-gt-2-gt"><span class="nav-number">16.</span> <span class="nav-text">0&lt;,1&gt;,1&gt;&gt;,2&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod"><span class="nav-number">17.</span> <span class="nav-text">chmod</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#filters"><span class="nav-number"></span> <span class="nav-text">filters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-number">1.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wc"><span class="nav-number">2.</span> <span class="nav-text">wc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut"><span class="nav-number">3.</span> <span class="nav-text">cut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tr"><span class="nav-number">4.</span> <span class="nav-text">tr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">5.</span> <span class="nav-text">sort</span></a></li></ol></li></div>
             
 
           </div>
