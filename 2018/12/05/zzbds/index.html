@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="转义字符     字符 描述     \cx 匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符   \f 匹配一个换页符。等价于 \x0c 和 \cL   \n 匹配一个换行符。等价于 \x0a 和 \cJ   \r 匹配一个回车符。等价于 \x0d 和 \cM   \s 匹配任何空">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-05T08:06:34.720Z">
+<meta property="og:updated_time" content="2018-12-11T06:52:24.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="转义字符     字符 描述     \cx 匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符   \f 匹配一个换页符。等价于 \x0c 和 \cL   \n 匹配一个换行符。等价于 \x0a 和 \cJ   \r 匹配一个回车符。等价于 \x0d 和 \cM   \s 匹配任何空">
@@ -474,8 +474,8 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$$`</td>
-<td style="text-align:center">匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 <code>$$ 也匹配</code>‘\n’<code>或</code>‘\r’<code>。要匹配 $$</code> 字符本身，请使用 `$$</td>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 <code>&#39;\n&#39;</code> 或 <code>&#39;\r&#39;</code>。要匹配 <code>$</code> 字符本身，请使用 <code>\</code>$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>( )</code></td>
@@ -514,17 +514,49 @@
 <td style="text-align:center">标记限定符表达式的开始。要匹配 <code>{</code>，请使用 <code>\{</code></td>
 </tr>
 <tr>
-<td style="text-align:center">`</td>
-<td style="text-align:center">`</td>
-<td>指明两项之间的一个选择。要匹配 `</td>
-<td><code>，请使用</code>\</td>
-<td>`</td>
+<td style="text-align:center">&#124;</td>
+<td style="text-align:center">指明两项之间的一个选择。要匹配 &#124;，请使用 <code>\</code>&#124;</td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>限制符</p>
-<p>| <code>*</code> | 匹配前面的子表达式零次或多次。例如，<code>zo*</code> 能匹配 <code>&quot;z&quot;</code> 以及 <code>&quot;zoo&quot;</code>。<code>*</code> 等价于<code>{0,}</code> |<br>| <code>+</code> | 匹配前面的子表达式一次或多次。例如，<code>&#39;zo+&#39;</code> 能匹配 <code>&quot;zo&quot;</code> 以及 <code>&quot;zoo&quot;</code>，但不能匹配 <code>&quot;z&quot;</code>。+ 等价于 <code>{1,}</code>。<br>| <code>?</code> | 匹配前面的子表达式零次或一次。例如，<code>&quot;do(es)?&quot;</code> 可以匹配 <code>&quot;do&quot;</code> 、 <code>&quot;does&quot;</code> 中的 <code>&quot;does&quot;</code> 、 <code>&quot;doxy&quot;</code> 中的 <code>&quot;do&quot;</code> 。<code>?</code> 等价于 <code>{0,1}</code> |<br><code>{n}</code> | <code>n</code> 是一个非负整数。匹配确定的 n 次。例如，<code>&#39;o{2}&#39;</code> 不能匹配 <code>&quot;Bob&quot;</code> 中的 <code>&#39;o&#39;</code>，但是能匹配 <code>&quot;food&quot;</code> 中的两个 o |<br>| {n,} | <code>n</code> 是一个非负整数。至少匹配 n 次。例如，<code>&#39;o{2,}&#39;</code> 不能匹配 <code>&quot;Bob&quot;</code> 中的 <code>&#39;o&#39;</code>，但能匹配 <code>&quot;foooood&quot;</code> 中的所有 o。<code>&#39;o{1,}&#39;</code> 等价于 <code>&#39;o+&#39;</code>。<code>&#39;o{0,}&#39;</code> 则等价于 <code>&#39;o*&#39;</code> |<br>| <code>{n,m}</code> | m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，<code>&quot;o{1,3}&quot;</code> 将匹配 <code>&quot;fooooood&quot;</code> 中的前三个 o。<code>&#39;o{0,1}&#39;</code> 等价于 <code>&#39;o?&#39;</code>。请注意在逗号和两个数之间不能有空格 |</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:center">匹配前面的子表达式零次或多次。例如，<code>zo*</code> 能匹配 <code>&quot;z&quot;</code> 以及 <code>&quot;zoo&quot;</code>。<code>*</code> 等价于<code>{0,}</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:center">匹配前面的子表达式一次或多次。例如，<code>&#39;zo+&#39;</code> 能匹配 <code>&quot;zo&quot;</code> 以及 <code>&quot;zoo&quot;</code>，但不能匹配 <code>&quot;z&quot;</code>。+ 等价于 <code>{1,}</code>。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>?</code></td>
+<td style="text-align:center">匹配前面的子表达式零次或一次。例如，<code>&quot;do(es)?&quot;</code> 可以匹配 <code>&quot;do&quot;</code> 、 <code>&quot;does&quot;</code> 中的 <code>&quot;does&quot;</code> 、 <code>&quot;doxy&quot;</code> 中的 <code>&quot;do&quot;</code> 。<code>?</code> 等价于 <code>{0,1}</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>{n}</code></td>
+<td style="text-align:center"><code>n</code> 是一个非负整数。匹配确定的 n 次。例如，<code>&#39;o{2}&#39;</code> 不能匹配 <code>&quot;Bob&quot;</code> 中的 <code>&#39;o&#39;</code>，但是能匹配 <code>&quot;food&quot;</code> 中的两个 o</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>{n,}</code></td>
+<td style="text-align:center"><code>n</code> 是一个非负整数。至少匹配 n 次。例如，<code>&#39;o{2,}&#39;</code> 不能匹配 <code>&quot;Bob&quot;</code> 中的 <code>&#39;o&#39;</code>，但能匹配 <code>&quot;foooood&quot;</code> 中的所有 o。<code>&#39;o{1,}&#39;</code> 等价于 <code>&#39;o+&#39;</code>。<code>&#39;o{0,}&#39;</code> 则等价于 <code>&#39;o*&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>{n,m}</code></td>
+<td style="text-align:center">m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，<code>&quot;o{1,3}&quot;</code> 将匹配 <code>&quot;fooooood&quot;</code> 中的前三个 o。<code>&#39;o{0,1}&#39;</code> 等价于 <code>&#39;o?&#39;</code>。请注意在逗号和两个数之间不能有空格</td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
     </div>

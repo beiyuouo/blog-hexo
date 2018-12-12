@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="description" content="Unix Shells Bourne shell(sh) C shell(csh) Korn shell(ksh) Restricted shell TC shell(tcsh)  Linux Shells Bourne again shell(bash) A shell(ash)  运行脚本在第一行加入123#!/bin/bash或#!/bin/sh 1. + 空格 + 文件名 (不需要权限)">
 <meta name="keywords" content="note,shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ShellNote">
 <meta property="og:url" content="beiyuouo.github.io/2018/11/16/ShellNote/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
-<meta property="og:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta property="og:description" content="Unix Shells Bourne shell(sh) C shell(csh) Korn shell(ksh) Restricted shell TC shell(tcsh)  Linux Shells Bourne again shell(bash) A shell(ash)  运行脚本在第一行加入123#!/bin/bash或#!/bin/sh 1. + 空格 + 文件名 (不需要权限)">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-15T16:07:58.195Z">
+<meta property="og:updated_time" content="2018-12-12T08:10:03.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShellNote">
-<meta name="twitter:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="twitter:description" content="Unix Shells Bourne shell(sh) C shell(csh) Korn shell(ksh) Restricted shell TC shell(tcsh)  Linux Shells Bourne again shell(bash) A shell(ash)  运行脚本在第一行加入123#!/bin/bash或#!/bin/sh 1. + 空格 + 文件名 (不需要权限)">
 
 
 
@@ -418,7 +418,159 @@
       
 
       
-        
+        <h2 id="Unix-Shells"><a href="#Unix-Shells" class="headerlink" title="Unix Shells"></a>Unix Shells</h2><ul>
+<li>Bourne shell(sh)</li>
+<li>C shell(csh)</li>
+<li>Korn shell(ksh)</li>
+<li>Restricted shell</li>
+<li>TC shell(tcsh)</li>
+</ul>
+<h2 id="Linux-Shells"><a href="#Linux-Shells" class="headerlink" title="Linux Shells"></a>Linux Shells</h2><ul>
+<li>Bourne again shell(bash)</li>
+<li>A shell(ash)</li>
+</ul>
+<h2 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h2><p>在第一行加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">或</span><br><span class="line">#!/bin/sh</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. + 空格 + 文件名</span><br></pre></td></tr></table></figure>
+<p>(不需要权限)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. + 路径</span><br></pre></td></tr></table></figure>
+<p>(需要权限)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash + 文件名</span><br></pre></td></tr></table></figure>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=3</span><br><span class="line">b=&quot;haha&quot;</span><br></pre></td></tr></table></figure>
+<p>注意</p>
+<ul>
+<li>变量名和等号之间不能有空格！</li>
+<li>不能用关键词，首字符不能为数字，可以使用下划线</li>
+</ul>
+<h3 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h3><p>在定义过的变量前加上$<br>可以用{}将变量名括起来，这个是可选的，但是有时候输出必须要区分开</p>
+<h3 id="只读变量"><a href="#只读变量" class="headerlink" title="只读变量"></a>只读变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">readonly var=3</span><br><span class="line">或</span><br><span class="line">var=3</span><br><span class="line">readonly var</span><br></pre></td></tr></table></figure>
+<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>局部变量<br>局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量。</p>
+<p>环境变量<br>所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量。</p>
+<p>shell变量<br>shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行</p>
+<p>特殊变量</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$0</td>
+<td style="text-align:center">当前脚本文件名</td>
+</tr>
+<tr>
+<td style="text-align:center">$n</td>
+<td style="text-align:center">传递给脚本或函数的参数，n是一个数字，表示第几个参数，第一个参数$1</td>
+</tr>
+<tr>
+<td style="text-align:center">$#</td>
+<td style="text-align:center">传递给脚本或函数的参数个数</td>
+</tr>
+<tr>
+<td style="text-align:center">$*</td>
+<td style="text-align:center">传递给脚本或函数的所有参数</td>
+</tr>
+<tr>
+<td style="text-align:center">$@</td>
+<td style="text-align:center">传递给脚本或函数的所有参数，被双引号包含时，与$*稍有不同</td>
+</tr>
+<tr>
+<td style="text-align:center">$?</td>
+<td style="text-align:center">上个命令的退出状态或函数的返回值</td>
+</tr>
+<tr>
+<td style="text-align:center">$$</td>
+<td style="text-align:center">当前Shell进程ID</td>
+</tr>
+<tr>
+<td style="text-align:center">$!</td>
+<td style="text-align:center">后台运行的最后一个进程的ID号</td>
+</tr>
+<tr>
+<td style="text-align:center">$-</td>
+<td style="text-align:center">显示Shell使用的当前选项，与set命令功能相同。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code>$*</code> 和 <code>$@</code>的区别<br><code>$*</code> 和 <code>$@</code> 都表示传递给函数或脚本的所有参数，不被双引号(“ “)包含时，都以<code>&quot;$1&quot; &quot;$2&quot; … &quot;$n&quot;</code> 的形式输出所有参数。但是当它们被双引号(“ “)包含时，<code>&quot;$*&quot;</code> 会将所有的参数作为一个整体，以<br><code>&quot;$1 $2 … $n&quot;</code>的形式输出所有参数；<code>&quot;$@&quot;</code> 会将各个参数分开，以<code>&quot;$1&quot; &quot;$2&quot; … &quot;$n&quot;</code>的形式输出所有参数。</p>
+<p><code>$?</code><br>可以获取上一个命令的退出状态。所谓退出状态，就是上一个命令执行后的返回结果。退出状态是一个数字，一般情况下，大部分命令执行成功会返回 0，失败返回 1。</p>
+<h3 id="删除变量"><a href="#删除变量" class="headerlink" title="删除变量"></a>删除变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unset a</span><br></pre></td></tr></table></figure>
+<h2 id="Shell字符串"><a href="#Shell字符串" class="headerlink" title="Shell字符串"></a>Shell字符串</h2><p>单引号<br>原样输出，不进行转义</p>
+<p>双引号<br>可以有变量和转义字符</p>
+<h3 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str=&quot;abcd&quot;</span><br><span class="line">echo $&#123;#str&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="提取子字符串"><a href="#提取子字符串" class="headerlink" title="提取子字符串"></a>提取子字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str=&quot;abcd&quot;</span><br><span class="line">echo $&#123;#str:2:3&#125; #bc</span><br></pre></td></tr></table></figure>
+<h3 id="查找子字符串"><a href="#查找子字符串" class="headerlink" title="查找子字符串"></a>查找子字符串</h3><p>查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string=&quot;runoob is a great site&quot;</span><br><span class="line">echo `expr index &quot;$string&quot; io`  # 输出 4</span><br></pre></td></tr></table></figure>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">数组名=(值1 值2 ... 值n)</span><br><span class="line">array_name=(value0 value1 value2 value3)</span><br><span class="line">或</span><br><span class="line">array_name=(</span><br><span class="line">value0</span><br><span class="line">value1</span><br><span class="line">value2</span><br><span class="line">value3</span><br><span class="line">)</span><br><span class="line">或</span><br><span class="line">array_name[0]=value0</span><br><span class="line">array_name[1]=value1</span><br><span class="line">array_name[n]=valuen</span><br></pre></td></tr></table></figure>
+<p>可以不使用连续的下标，而且下标的范围没有限制。</p>
+<h3 id="读取数组"><a href="#读取数组" class="headerlink" title="读取数组"></a>读取数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;数组名[下标]&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="获取数组长度"><a href="#获取数组长度" class="headerlink" title="获取数组长度"></a>获取数组长度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 取得数组元素的个数</span><br><span class="line">length=$&#123;#array_name[@]&#125;</span><br><span class="line"># 或者</span><br><span class="line">length=$&#123;#array_name[*]&#125;</span><br><span class="line"># 取得数组单个元素的长度</span><br><span class="line">lengthn=$&#123;#array_name[n]&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>用#开头<br>若大量代码需要注释，那么可以有定义成函数并不调用</p>
+<p>多行注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:&lt;&lt;EOF</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>EOF 也可以使用其他符号:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">:&lt;&lt;&apos;</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">&apos;</span><br><span class="line"></span><br><span class="line">:&lt;&lt;!</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">!</span><br></pre></td></tr></table></figure>
+<h2 id="Shell基本运算符"><a href="#Shell基本运算符" class="headerlink" title="Shell基本运算符"></a>Shell基本运算符</h2><p>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。<br>expr 是一款表达式计算工具，使用它能完成表达式的求值操作。</p>
+<p>算术运算符<br>下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加法</td>
+<td style="text-align:center"><code>expr $a + $b</code> 结果为 30。</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">减法</td>
+<td style="text-align:center"><code>expr $a - $b</code> 结果为 -10。</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘法</td>
+<td style="text-align:center"><code>expr $a \* $b</code> 结果为 200。</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">除法</td>
+<td style="text-align:center"><code>expr $b / $a</code> 结果为 2。</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">取余</td>
+<td style="text-align:center"><code>expr $b % $a</code> 结果为 0。</td>
+</tr>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">赋值</td>
+<td style="text-align:center">a=$b 将把变量 b 的值赋给 a。</td>
+</tr>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">相等</td>
+<td style="text-align:center">用于比较两个数字，相同则返回 true。[ $a == $b ] 返回 false。</td>
+</tr>
+<tr>
+<td style="text-align:center">!=</td>
+<td style="text-align:center">不相等</td>
+<td style="text-align:center">用于比较两个数字，不相同则返回 true。[ $a != $b ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意：条件表达式要放在方括号之间，并且要有空格，例如: [$a==$b] 是错误的，必须写成 [ $a == $b ]。 </p>
+<p>乘号(*)前边必须加反斜杠(<code>\</code>)才能实现乘法运算；</p>
+
       
     </div>
     
@@ -514,8 +666,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="BeiYu">
           <p class="site-author-name" itemprop="name">BeiYu</p>
@@ -621,6 +782,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix-Shells"><span class="nav-number">1.</span> <span class="nav-text">Unix Shells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-Shells"><span class="nav-number">2.</span> <span class="nav-text">Linux Shells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行脚本"><span class="nav-number">3.</span> <span class="nav-text">运行脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义变量"><span class="nav-number">4.1.</span> <span class="nav-text">定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用变量"><span class="nav-number">4.2.</span> <span class="nav-text">使用变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只读变量"><span class="nav-number">4.3.</span> <span class="nav-text">只读变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量类型"><span class="nav-number">4.4.</span> <span class="nav-text">变量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除变量"><span class="nav-number">4.5.</span> <span class="nav-text">删除变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell字符串"><span class="nav-number">5.</span> <span class="nav-text">Shell字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取字符串长度"><span class="nav-number">5.1.</span> <span class="nav-text">获取字符串长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取子字符串"><span class="nav-number">5.2.</span> <span class="nav-text">提取子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找子字符串"><span class="nav-number">5.3.</span> <span class="nav-text">查找子字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">6.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义数组"><span class="nav-number">6.1.</span> <span class="nav-text">定义数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取数组"><span class="nav-number">6.2.</span> <span class="nav-text">读取数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取数组长度"><span class="nav-number">6.3.</span> <span class="nav-text">获取数组长度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">7.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell基本运算符"><span class="nav-number">8.</span> <span class="nav-text">Shell基本运算符</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
