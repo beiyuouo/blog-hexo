@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="Unix Shells Bourne shell(sh) C shell(csh) Korn shell(ksh) Restricted shell TC shell(tcsh)  Linux Shells Bourne again shell(bash) A shell(ash)  运行脚本在第一行加入123#!/bin/bash或#!/bin/sh 1. + 空格 + 文件名 (不需要权限)">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-19T05:09:04.474Z">
+<meta property="og:updated_time" content="2018-12-19T08:07:00.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShellNote">
 <meta name="twitter:description" content="Unix Shells Bourne shell(sh) C shell(csh) Korn shell(ksh) Restricted shell TC shell(tcsh)  Linux Shells Bourne again shell(bash) A shell(ash)  运行脚本在第一行加入123#!/bin/bash或#!/bin/sh 1. + 空格 + 文件名 (不需要权限)">
@@ -782,7 +782,93 @@
 <p>跳出循环</p>
 <p><code>break</code></p>
 <p><code>continue</code></p>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[ function ] funname [()]</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    action;</span><br><span class="line"></span><br><span class="line">    [return int;]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以带function fun() 定义，也可以直接fun() 定义,不带任何参数。<br>参数返回，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。 return后跟数值n(0-255)<br>函数返回值在调用该函数后通过 <code>$?</code> 来获得。<br>必须使用前定义<br>在Shell中，调用函数时可以向其传递参数。在函数体内部，通过 <code>$n</code> 的形式来获取参数的值，例如，<code>$1</code>表示第一个参数，<code>$2</code>表示第二个参数…<br>参数总数 <code>$#</code><br>作为一个字符串输出所有参数 <code>$*</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数处理</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$#</code></td>
+<td style="text-align:center">传递到脚本的参数个数</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$*</code></td>
+<td style="text-align:center">以一个单字符串显示所有向脚本传递的参数</td>
+</tr>
+<tr>
+<td style="text-align:center">$$$$</td>
+<td style="text-align:center">脚本运行的当前进程ID号</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$!</code></td>
+<td style="text-align:center">后台运行的最后一个进程的ID号</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$@</code></td>
+<td style="text-align:center">与<code>$*</code>相同，但是使用时加引号，并在引号中返回每个参数。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$-</code></td>
+<td style="text-align:center">显示Shell使用的当前选项，与set命令功能相同。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$?</code></td>
+<td style="text-align:center">显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">command &gt; file</td>
+<td style="text-align:center">将输出重定向到 file。</td>
+</tr>
+<tr>
+<td style="text-align:center">command &lt; file</td>
+<td style="text-align:center">将输入重定向到 file。</td>
+</tr>
+<tr>
+<td style="text-align:center">command &gt;&gt; file</td>
+<td style="text-align:center">将输出以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td style="text-align:center">n &gt; file</td>
+<td style="text-align:center">将文件描述符为 n 的文件重定向到 file。</td>
+</tr>
+<tr>
+<td style="text-align:center">n &gt;&gt; file</td>
+<td style="text-align:center">将文件描述符为 n 的文件以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td style="text-align:center">n &gt;&amp; m</td>
+<td style="text-align:center">将输出文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td style="text-align:center">n &lt;&amp; m</td>
+<td style="text-align:center">将输入文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&lt; tag</td>
+<td style="text-align:center">将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
       
     </div>
     
@@ -1004,7 +1090,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix-Shells"><span class="nav-number">1.</span> <span class="nav-text">Unix Shells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-Shells"><span class="nav-number">2.</span> <span class="nav-text">Linux Shells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行脚本"><span class="nav-number">3.</span> <span class="nav-text">运行脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义变量"><span class="nav-number">4.1.</span> <span class="nav-text">定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用变量"><span class="nav-number">4.2.</span> <span class="nav-text">使用变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只读变量"><span class="nav-number">4.3.</span> <span class="nav-text">只读变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量类型"><span class="nav-number">4.4.</span> <span class="nav-text">变量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除变量"><span class="nav-number">4.5.</span> <span class="nav-text">删除变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell字符串"><span class="nav-number">5.</span> <span class="nav-text">Shell字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取字符串长度"><span class="nav-number">5.1.</span> <span class="nav-text">获取字符串长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取子字符串"><span class="nav-number">5.2.</span> <span class="nav-text">提取子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找子字符串"><span class="nav-number">5.3.</span> <span class="nav-text">查找子字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">6.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义数组"><span class="nav-number">6.1.</span> <span class="nav-text">定义数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取数组"><span class="nav-number">6.2.</span> <span class="nav-text">读取数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取数组长度"><span class="nav-number">6.3.</span> <span class="nav-text">获取数组长度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">7.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell基本运算符"><span class="nav-number">8.</span> <span class="nav-text">Shell基本运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算术运算符"><span class="nav-number">8.1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系运算符"><span class="nav-number">8.2.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔运算符"><span class="nav-number">8.3.</span> <span class="nav-text">布尔运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">8.4.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串运算符"><span class="nav-number">8.5.</span> <span class="nav-text">字符串运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件测试运算符"><span class="nav-number">8.6.</span> <span class="nav-text">文件测试运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">9.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test命令"><span class="nav-number">10.</span> <span class="nav-text">test命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">11.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#条件控制"><span class="nav-number">11.1.</span> <span class="nav-text">条件控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">11.2.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">11.3.</span> <span class="nav-text">分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">12.</span> <span class="nav-text">函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix-Shells"><span class="nav-number">1.</span> <span class="nav-text">Unix Shells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-Shells"><span class="nav-number">2.</span> <span class="nav-text">Linux Shells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行脚本"><span class="nav-number">3.</span> <span class="nav-text">运行脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义变量"><span class="nav-number">4.1.</span> <span class="nav-text">定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用变量"><span class="nav-number">4.2.</span> <span class="nav-text">使用变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只读变量"><span class="nav-number">4.3.</span> <span class="nav-text">只读变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量类型"><span class="nav-number">4.4.</span> <span class="nav-text">变量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除变量"><span class="nav-number">4.5.</span> <span class="nav-text">删除变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell字符串"><span class="nav-number">5.</span> <span class="nav-text">Shell字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取字符串长度"><span class="nav-number">5.1.</span> <span class="nav-text">获取字符串长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取子字符串"><span class="nav-number">5.2.</span> <span class="nav-text">提取子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找子字符串"><span class="nav-number">5.3.</span> <span class="nav-text">查找子字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">6.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义数组"><span class="nav-number">6.1.</span> <span class="nav-text">定义数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取数组"><span class="nav-number">6.2.</span> <span class="nav-text">读取数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取数组长度"><span class="nav-number">6.3.</span> <span class="nav-text">获取数组长度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">7.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell基本运算符"><span class="nav-number">8.</span> <span class="nav-text">Shell基本运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算术运算符"><span class="nav-number">8.1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系运算符"><span class="nav-number">8.2.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔运算符"><span class="nav-number">8.3.</span> <span class="nav-text">布尔运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">8.4.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串运算符"><span class="nav-number">8.5.</span> <span class="nav-text">字符串运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件测试运算符"><span class="nav-number">8.6.</span> <span class="nav-text">文件测试运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">9.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test命令"><span class="nav-number">10.</span> <span class="nav-text">test命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">11.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#条件控制"><span class="nav-number">11.1.</span> <span class="nav-text">条件控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">11.2.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">11.3.</span> <span class="nav-text">分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">12.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出重定向"><span class="nav-number">13.</span> <span class="nav-text">输入输出重定向</span></a></li></ol></div>
             
 
           </div>
