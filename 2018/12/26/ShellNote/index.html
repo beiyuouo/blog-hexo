@@ -97,14 +97,14 @@
 <meta name="description" content="Unix Shells Bourne shell(sh) C shell(csh) Korn shell(ksh) Restricted shell TC shell(tcsh)  Linux Shells Bourne again shell(bash) A shell(ash)  运行脚本在第一行加入123#!/bin/bash或#!/bin/sh 1. + 空格 + 文件名 (不需要权限)">
 <meta name="keywords" content="note,shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ShellNote">
-<meta property="og:url" content="beiyuouo.github.io/2018/11/16/ShellNote/index.html">
+<meta property="og:title" content="Shell笔记">
+<meta property="og:url" content="beiyuouo.github.io/2018/12/26/ShellNote/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="Unix Shells Bourne shell(sh) C shell(csh) Korn shell(ksh) Restricted shell TC shell(tcsh)  Linux Shells Bourne again shell(bash) A shell(ash)  运行脚本在第一行加入123#!/bin/bash或#!/bin/sh 1. + 空格 + 文件名 (不需要权限)">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-19T08:07:00.550Z">
+<meta property="og:updated_time" content="2018-12-26T07:21:39.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ShellNote">
+<meta name="twitter:title" content="Shell笔记">
 <meta name="twitter:description" content="Unix Shells Bourne shell(sh) C shell(csh) Korn shell(ksh) Restricted shell TC shell(tcsh)  Linux Shells Bourne again shell(bash) A shell(ash)  运行脚本在第一行加入123#!/bin/bash或#!/bin/sh 1. + 空格 + 文件名 (不需要权限)">
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/2018/11/16/ShellNote/">
+  <link rel="canonical" href="beiyuouo.github.io/2018/12/26/ShellNote/">
 
 
 
 
 
-  <title>ShellNote | BeiYuOuO</title>
+  <title>Shell笔记 | BeiYuOuO</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/11/16/ShellNote/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/12/26/ShellNote/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BeiYu">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ShellNote</h1>
+          <h1 class="post-title" itemprop="name headline">Shell笔记</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-16T00:06:23+08:00">
-                2018-11-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-26T15:21:23+08:00">
+                2018-12-26
               </time>
             
 
@@ -582,7 +582,7 @@
 <p>乘号(*)前边必须加反斜杠(<code>\</code>)才能实现乘法运算；</p>
 <p>运算</p>
 <p><code>expr</code>函数</p>
-<p>用<code>$$(())</code>可以转化为表达式</p>
+<p>用<code>$(())</code>可以转化为表达式</p>
 <p>小数运算</p>
 <p>awk 比较复杂…</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo `awk &apos;BRGIN&#123;a=5.5/3.3;print a&#125;&apos;`</span><br><span class="line">echo `awk -v x=2.45 -v y=3.123 &apos;BEGIN&#123;printf &quot;%.2f\n&quot;,x*y&#125;&apos;`</span><br></pre></td></tr></table></figure>
@@ -668,7 +668,8 @@
 </tbody>
 </table>
 </div>
-<h3 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h3><div class="table-container">
+<h3 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h3><p>比较的时候等号两边要加空格…</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -900,8 +901,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/16/VimNote/" rel="next" title="VimNote">
-                <i class="fa fa-chevron-left"></i> VimNote
+              <a href="/2018/12/05/zzbds/" rel="next" title="正则表达式笔记">
+                <i class="fa fa-chevron-left"></i> 正则表达式笔记
               </a>
             
           </div>
@@ -910,8 +911,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/17/HTMLNote/" rel="prev" title="HTMLNote">
-                HTMLNote <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/26/20181226/" rel="prev" title="20181226">
+                20181226 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -987,7 +988,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
