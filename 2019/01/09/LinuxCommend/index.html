@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="note,linux,linuxcommend,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.jpg?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="I think if you want to know the options, you just need to type man/info+options or option—help is enough. LinuxFeatures of the Linux Operating System Multiuser Multiprogramming Time-sharing Multitaski">
+<meta name="keywords" content="note,linux,linuxcommend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记">
+<meta property="og:url" content="beiyuouo.github.io/2019/01/09/LinuxCommend/index.html">
+<meta property="og:site_name" content="BeiYuOuO">
+<meta property="og:description" content="I think if you want to know the options, you just need to type man/info+options or option—help is enough. LinuxFeatures of the Linux Operating System Multiuser Multiprogramming Time-sharing Multitaski">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2019-01-09T07:50:17.011Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux笔记">
+<meta name="twitter:description" content="I think if you want to know the options, you just need to type man/info+options or option—help is enough. LinuxFeatures of the Linux Operating System Multiuser Multiprogramming Time-sharing Multitaski">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/2019/01/09/LinuxCommend/">
+
+
+
+
+
+  <title>Linux笔记 | BeiYuOuO</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BeiYuOuO</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/game/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            menu.game
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/01/09/LinuxCommend/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BeiYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BeiYuOuO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-09T13:22:23+08:00">
+                2019-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>I think if you want to know the options, you just need to type man/info+options or option—help is enough.</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="Features-of-the-Linux-Operating-System"><a href="#Features-of-the-Linux-Operating-System" class="headerlink" title="Features of the Linux Operating System"></a>Features of the Linux Operating System</h3><ul>
+<li>Multiuser</li>
+<li>Multiprogramming</li>
+<li>Time-sharing</li>
+<li>Multitasking</li>
+<li>Virtual memory</li>
+<li>Shared libraries</li>
+<li>POSIX-compliance</li>
+<li>Samba</li>
+<li>Network Information Service</li>
+<li>Cron scheduler</li>
+<li>Office suites</li>
+<li>Data archiving utilities</li>
+<li>Licensing</li>
+<li>Web Server</li>
+<li>Other features: have many free software.</li>
+</ul>
+<h3 id="Advantages-of-Linux"><a href="#Advantages-of-Linux" class="headerlink" title="Advantages of Linux"></a>Advantages of Linux</h3><ul>
+<li>Open-source</li>
+<li>Reliability</li>
+<li>Backward compatibility</li>
+<li>Simple upgrade and installation process</li>
+<li>Low total cost of ownership</li>
+<li>Support for legacy devices </li>
+<li>GUI interface</li>
+<li>Multiple distributors</li>
+<li>Excellent security features</li>
+<li>Support for high user load</li>
+<li>Support for development libraries</li>
+</ul>
+<h3 id="Distributors-of-Linux"><a href="#Distributors-of-Linux" class="headerlink" title="Distributors of Linux"></a>Distributors of Linux</h3><ul>
+<li>Red Hat</li>
+<li>Mandriva</li>
+<li>Debian</li>
+<li>SUSE</li>
+<li>Slackware</li>
+<li>Fedora</li>
+</ul>
+<h3 id="Consist"><a href="#Consist" class="headerlink" title="Consist"></a>Consist</h3><p>three main components</p>
+<ul>
+<li>Kernel</li>
+<li>Shell</li>
+<li>Linux Utilities and Application Programs</li>
+</ul>
+<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p><code>.gnome-desktop</code>桌面</p>
+<h2 id="Commend"><a href="#Commend" class="headerlink" title="Commend"></a>Commend</h2><h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+<p>change the user password.<br>修改用户密码</p>
+<p>root可以修改其他用户密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd username</span><br></pre></td></tr></table></figure></p>
+<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><p>Show the date.<br>显示日期和时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">date &quot;+opt&quot;</span><br><span class="line">Eg</span><br><span class="line">date &quot;+%T&quot;</span><br><span class="line">13:13:13</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">date &quot;+text opt&quot;</span><br><span class="line">Eg</span><br><span class="line">date &quot;+DATE : %D&quot;</span><br><span class="line">DATE : 1/9/2019</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">%m</td>
+<td style="text-align:center">Displays month of the year</td>
+</tr>
+<tr>
+<td style="text-align:center">%d</td>
+<td style="text-align:center">Displays day of the month</td>
+</tr>
+<tr>
+<td style="text-align:center">%y</td>
+<td style="text-align:center">Displays year</td>
+</tr>
+<tr>
+<td style="text-align:center">%D</td>
+<td style="text-align:center">Displays date as mm/dd/yy</td>
+</tr>
+<tr>
+<td style="text-align:center">%H</td>
+<td style="text-align:center">Displays hour</td>
+</tr>
+<tr>
+<td style="text-align:center">%M</td>
+<td style="text-align:center">Displays minutes</td>
+</tr>
+<tr>
+<td style="text-align:center">%S</td>
+<td style="text-align:center">Displays seconds</td>
+</tr>
+<tr>
+<td style="text-align:center">%T</td>
+<td style="text-align:center">Displays time as HH:MM:SS</td>
+</tr>
+<tr>
+<td style="text-align:center">%a</td>
+<td style="text-align:center">Displays abbreviated weekday</td>
+</tr>
+<tr>
+<td style="text-align:center">%h</td>
+<td style="text-align:center">Displays abbreviated month</td>
+</tr>
+<tr>
+<td style="text-align:center">%r</td>
+<td style="text-align:center">Displays time in the AM/PM notation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h3><p>Clear Screen.<br>清屏</p>
+<h3 id="tput-Pending"><a href="#tput-Pending" class="headerlink" title="tput - Pending"></a>tput - Pending</h3><p>tput 完成交互，专业性强的屏幕输出</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tput clear</td>
+<td style="text-align:center">clear screen</td>
+</tr>
+<tr>
+<td style="text-align:center">tput sc</td>
+<td style="text-align:center">save the position of cursor</td>
+</tr>
+<tr>
+<td style="text-align:center">tput cup</td>
+<td style="text-align:center">change the position of cursor</td>
+</tr>
+<tr>
+<td style="text-align:center">tput civis</td>
+<td style="text-align:center">Hide the cursor</td>
+</tr>
+<tr>
+<td style="text-align:center">tput cnorm</td>
+<td style="text-align:center">Show the cursor</td>
+</tr>
+<tr>
+<td style="text-align:center">tput rc</td>
+<td style="text-align:center">show the output</td>
+</tr>
+<tr>
+<td style="text-align:center">tput smso</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">tput rmso</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">tput blink</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">tput reset</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="who"><a href="#who" class="headerlink" title="who"></a>who</h3><p>显示当前登录的用户<br>第一列：登录名<br>第二列：终端类型和终端号<br>第三列：登录时间<br>第四列：The remote host name of the terminal from where the user has logged in. Note that this is shown only for users who have not logged in from the server.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-m</td>
+<td style="text-align:center">当前登录用户名，等价于<code>who am i</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-q</td>
+<td style="text-align:center">只显示登录名和登录数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who am i</span><br></pre></td></tr></table></figure>
+<h3 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h3><p>显示系统持续时间</p>
+<p>分别是：当前时间，系统运行时间，登录用户数，平均CPU使用率</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uptime</span><br></pre></td></tr></table></figure>
+<h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man +程序名</span><br></pre></td></tr></table></figure>
+<h3 id="info"><a href="#info" class="headerlink" title="info"></a>info</h3><p>info比man要详细一些<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info [options] [menu item]</span><br></pre></td></tr></table></figure></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">—apropos=string</td>
+<td style="text-align:center">Search string</td>
+</tr>
+<tr>
+<td style="text-align:center">-o,—output=FILENAME</td>
+<td style="text-align:center">output the information</td>
+</tr>
+<tr>
+<td style="text-align:center">-h,-help</td>
+<td style="text-align:center">help</td>
+</tr>
+<tr>
+<td style="text-align:center">—version</td>
+<td style="text-align:center">version</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>change the current directory<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ../ 切换到上一层目录</span><br><span class="line"></span><br><span class="line">cd / 切换到系统根目录</span><br><span class="line"></span><br><span class="line">cd ~ 切换到用户主目录</span><br><span class="line"></span><br><span class="line">cd - 切换到上一个所在目录（返回）</span><br></pre></td></tr></table></figure></p>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示目录下的文件和子文件夹<br><code>ls -l</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Column</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">文件类型和权限</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Number of link</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">文件所有者</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">组所有者</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">文件大小</td>
+</tr>
+<tr>
+<td style="text-align:center">6,7,8</td>
+<td style="text-align:center">最后修改时间</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">文件名</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>文件类型</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Symbol</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">普通文件</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">文件夹</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>| Option | Description |<br>| -a | 显示所有文件 |<br>| -F | |<br>| -R | |<br>| -r | |<br>| -S | |<br>| -A | |</p>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><h3 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h3><p>删除文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmdir +文件夹名</span><br></pre></td></tr></table></figure></p>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><h3 id="0-lt-1-gt-1-gt-gt-2-gt"><a href="#0-lt-1-gt-1-gt-gt-2-gt" class="headerlink" title="0&lt;,1&gt;,1&gt;&gt;,2&gt;"></a><code>0&lt;,1&gt;,1&gt;&gt;,2&gt;</code></h3><p>文件重定向</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>0&lt;,&lt;</code></td>
+<td style="text-align:center">读入</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;,1&gt;</code></td>
+<td style="text-align:center">输出到文件，重新写</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;&gt;,1&gt;&gt;</code></td>
+<td style="text-align:center">续写文件</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>2&gt;</code></td>
+<td style="text-align:center">输出错误提示信息到文件</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><p><code>- --- --- ---</code><br><code>dir|document owner group otheruser</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Symbol</th>
+<th style="text-align:center">Meaning</th>
+<th style="text-align:center">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">read</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">write</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">execute</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">no</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Symbol</th>
+<th style="text-align:center">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:center">owner</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:center">group</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">otheruser</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">alluser</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code>chmod u|g|o|a +|- r|w|x file_name</code><br><code>chmod 777 file_name</code></p>
+<h2 id="filters"><a href="#filters" class="headerlink" title="filters"></a>filters</h2><p>使用多个过滤器时用<code>|</code>分隔开，在最前面写文件名</p>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [option(s)] pattern [filename]</span><br></pre></td></tr></table></figure>
+<p>以行为单位筛选包含指定字符的行</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">显示行号</td>
+</tr>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">输出匹配到行的个数</td>
+</tr>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">反向查找，查找不匹配的行</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc [option(s)] [filename]</span><br></pre></td></tr></table></figure>
+<p>计数工具</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">显示行数量</td>
+</tr>
+<tr>
+<td style="text-align:center">-w</td>
+<td style="text-align:center">显示单词数</td>
+</tr>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">显示字符数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut [option(s)] [filename]</span><br></pre></td></tr></table></figure>
+<p>显示一列、一列字符</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-f<column_number(s)></column_number(s)></td>
+<td style="text-align:center">显示的列数，用逗号分隔，可用-连接</td>
+</tr>
+<tr>
+<td style="text-align:center">-c<character_number(s)></character_number(s)></td>
+<td style="text-align:center">显示每列字符的位数</td>
+</tr>
+<tr>
+<td style="text-align:center">-d&lt;column_delimiter</td>
+<td style="text-align:center">列分隔符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="tr"><a href="#tr" class="headerlink" title="tr"></a>tr</h3><p>tr字符可以对来自标准输入的字符进行替换、压缩和删除，可以将一组字符编程另外一组字符。</p>
+<p>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tr &quot;[a-z]&quot; &quot;[A-Z]&quot;</span><br></pre></td></tr></table></figure></p>
+<p>转换小写为大写<br>需要文件重定向来写入</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>-c, -C, --complement</code></td>
+<td style="text-align:center">取代所有不属于第一字符集的字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-d, --delete</code></td>
+<td style="text-align:center">删除所有属于第一字符集的字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-s, --squeeze-repeats</code></td>
+<td style="text-align:center">把连续重复的字符以单独一个字符表示</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-t, --truncate-set1</code></td>
+<td style="text-align:center">先删除第一字符集较第二字符集多出的字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p>排序</p>
+<p>ascending(asc)正序<br>descending(desc)倒序</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-b</td>
+<td style="text-align:center">忽略每行前面开始出的空格字符</td>
+</tr>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">检查文件是否已经按照顺序排序</td>
+</tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">排序时，处理英文字母、数字及空格字符外，忽略其他的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">排序时，将小写字母视为大写字母</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:center">排序时，除了040至176之间的ASCII字符外，忽略其他的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">-m</td>
+<td style="text-align:center">将几个排序好的文件进行合并</td>
+</tr>
+<tr>
+<td style="text-align:center">-M</td>
+<td style="text-align:center">将前面3个字母依照月份的缩写进行排序</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">依照数值的大小排序</td>
+</tr>
+<tr>
+<td style="text-align:center">-o<output_filename></output_filename></td>
+<td style="text-align:center">将排序后的结果存入指定的文件</td>
+</tr>
+<tr>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">以相反的顺序来排序</td>
+</tr>
+<tr>
+<td style="text-align:center">-t&lt;分隔字符&gt;</td>
+<td style="text-align:center">指定排序时所用的栏位分隔字符</td>
+</tr>
+<tr>
+<td style="text-align:center">+&lt;起始栏位&gt;-&lt;结束栏位&gt;</td>
+<td style="text-align:center">以指定的栏位来排序，范围左闭右开</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+          
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          
+            <a href="/tags/linuxcommend/" rel="tag"><i class="fa fa-tag"></i> linuxcommend</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/08/PLT/" rel="next" title="PLT笔记">
+                <i class="fa fa-chevron-left"></i> PLT笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/17/NK207F/" rel="prev" title="牛客练习赛32 F Friendly Polynomial">
+                牛客练习赛32 F Friendly Polynomial <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+        <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
+        <div id="container" style="display:none"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        const myTheme = {
+          render(state, instance) {
+            const container = document.createElement('div');
+            container.lang = "en-US";
+            container.className = 'gitment-container gitment-root-container';
+            container.appendChild(instance.renderHeader(state, instance));
+            container.appendChild(instance.renderEditor(state, instance));
+            container.appendChild(instance.renderComments(state, instance));
+            container.appendChild(instance.renderFooter(state, instance));
+            return container;
+          }
+        }
+        function showGitment() {
+          $("#gitment_title").attr("style", "display:none");
+          $("#container").attr("style", "").addClass("gitment_container");
+          var gitment = new Gitment({
+            id: window.location.pathname,
+            theme: myTheme,
+            owner: 'beiyuouo',
+            repo: 'beiyuouo.github.io',
+            oauth: {
+              client_id: 'c48d3bc9cd0c5182abfe',
+              client_secret: '29f3e4fe3026e18a2780f34bc7a443af9df2386d'
+            }
+          });
+          gitment.render('container');
+        }
+        </script>
+    
+  </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="BeiYu">
+          <p class="site-author-name" itemprop="name">BeiYu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">1.</span> <span class="nav-text">Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Features-of-the-Linux-Operating-System"><span class="nav-number">1.1.</span> <span class="nav-text">Features of the Linux Operating System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advantages-of-Linux"><span class="nav-number">1.2.</span> <span class="nav-text">Advantages of Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distributors-of-Linux"><span class="nav-number">1.3.</span> <span class="nav-text">Distributors of Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Consist"><span class="nav-number">1.4.</span> <span class="nav-text">Consist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统"><span class="nav-number">1.5.</span> <span class="nav-text">文件系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Commend"><span class="nav-number">2.</span> <span class="nav-text">Commend</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#passwd"><span class="nav-number">2.1.</span> <span class="nav-text">passwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-number">2.2.</span> <span class="nav-text">date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clear"><span class="nav-number">2.3.</span> <span class="nav-text">clear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tput-Pending"><span class="nav-number">2.4.</span> <span class="nav-text">tput - Pending</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#who"><span class="nav-number">2.5.</span> <span class="nav-text">who</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uptime"><span class="nav-number">2.6.</span> <span class="nav-text">uptime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man"><span class="nav-number">2.7.</span> <span class="nav-text">man</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#info"><span class="nav-number">2.8.</span> <span class="nav-text">info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd"><span class="nav-number">2.9.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-number">2.10.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-number">2.11.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd"><span class="nav-number">2.12.</span> <span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir"><span class="nav-number">2.13.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp"><span class="nav-number">2.14.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm"><span class="nav-number">2.15.</span> <span class="nav-text">rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmdir"><span class="nav-number">2.16.</span> <span class="nav-text">rmdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv"><span class="nav-number">2.17.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-lt-1-gt-1-gt-gt-2-gt"><span class="nav-number">2.18.</span> <span class="nav-text">0&lt;,1&gt;,1&gt;&gt;,2&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod"><span class="nav-number">2.19.</span> <span class="nav-text">chmod</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filters"><span class="nav-number">3.</span> <span class="nav-text">filters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-number">3.1.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wc"><span class="nav-number">3.2.</span> <span class="nav-text">wc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut"><span class="nav-number">3.3.</span> <span class="nav-text">cut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tr"><span class="nav-number">3.4.</span> <span class="nav-text">tr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">3.5.</span> <span class="nav-text">sort</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BeiYu</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
