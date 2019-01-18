@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-13T03:34:49.702Z">
+<meta property="og:updated_time" content="2019-01-18T10:25:35.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="All categories">
 <meta name="twitter:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
@@ -333,44 +333,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-        <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-        <div id="container" style="display:none"></div>
-        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-        <script>
-        const myTheme = {
-          render(state, instance) {
-            const container = document.createElement('div');
-            container.lang = "en-US";
-            container.className = 'gitment-container gitment-root-container';
-            container.appendChild(instance.renderHeader(state, instance));
-            container.appendChild(instance.renderEditor(state, instance));
-            container.appendChild(instance.renderComments(state, instance));
-            container.appendChild(instance.renderFooter(state, instance));
-            return container;
-          }
-        }
-        function showGitment() {
-          $("#gitment_title").attr("style", "display:none");
-          $("#container").attr("style", "").addClass("gitment_container");
-          var gitment = new Gitment({
-            id: window.location.pathname,
-            theme: myTheme,
-            owner: 'beiyuouo',
-            repo: 'beiyuouo.github.io',
-            oauth: {
-              client_id: 'c48d3bc9cd0c5182abfe',
-              client_secret: '29f3e4fe3026e18a2780f34bc7a443af9df2386d'
-            }
-          });
-          gitment.render('container');
-        }
-        </script>
-    
-  </div>
-
         </div>
         
           

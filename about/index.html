@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="Hello,欢迎你点开这个界面，感谢来访。我是北屿。一个平凡的大学生。我会在这里更新写笔记和自己的学习 or 开发记录啥的，欢迎收藏。 我挺喜欢厂子的一句话的：随便记住我，然后把我忘了吧。 曾经有一个跟这博客几乎一样博客，写给她看的，可惜她也没看过。">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-17T12:23:20.465Z">
+<meta property="og:updated_time" content="2019-01-18T10:24:18.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="about">
 <meta name="twitter:description" content="Hello,欢迎你点开这个界面，感谢来访。我是北屿。一个平凡的大学生。我会在这里更新写笔记和自己的学习 or 开发记录啥的，欢迎收藏。 我挺喜欢厂子的一句话的：随便记住我，然后把我忘了吧。 曾经有一个跟这博客几乎一样博客，写给她看的，可惜她也没看过。">
@@ -329,44 +329,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-        <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-        <div id="container" style="display:none"></div>
-        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-        <script>
-        const myTheme = {
-          render(state, instance) {
-            const container = document.createElement('div');
-            container.lang = "en-US";
-            container.className = 'gitment-container gitment-root-container';
-            container.appendChild(instance.renderHeader(state, instance));
-            container.appendChild(instance.renderEditor(state, instance));
-            container.appendChild(instance.renderComments(state, instance));
-            container.appendChild(instance.renderFooter(state, instance));
-            return container;
-          }
-        }
-        function showGitment() {
-          $("#gitment_title").attr("style", "display:none");
-          $("#container").attr("style", "").addClass("gitment_container");
-          var gitment = new Gitment({
-            id: window.location.pathname,
-            theme: myTheme,
-            owner: 'beiyuouo',
-            repo: 'beiyuouo.github.io',
-            oauth: {
-              client_id: 'c48d3bc9cd0c5182abfe',
-              client_secret: '29f3e4fe3026e18a2780f34bc7a443af9df2386d'
-            }
-          });
-          gitment.render('container');
-        }
-        </script>
-    
-  </div>
-
         </div>
         
           
