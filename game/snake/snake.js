@@ -12,6 +12,7 @@ var width = 600;
 var height = 600;
 var size = 20;
 
+var score = 0;
 var nxtDir = "U"; 
 var speedTime = 800;
 var minSpeedTime = 100;
@@ -92,11 +93,14 @@ var Snake = {
 			var tmp=this.body.pop();
 			map[tmp.x][tmp.y]=0;
 		} else {
+			score+=10;
 			apple.creatAnApple();
 		}
 
 		if(map[newx][newy]==1) {
 			fail();
+			this.body.unshift(new snakeBody(newx, newy, dir));
+			map[newx][newy]=1;
 			return 1;
 		}
 		this.body.unshift(new snakeBody(newx, newy, dir));
@@ -124,10 +128,15 @@ function draw() {
 	drawBorder();
 	Snake.draw();
 	apple.draw();
+	ctx.font = "25px sans-serif"
+	ctx.fillText("Score: "+score, width-150, 30, 150);
 }
 
 function init() {
-	map=[];
+	nxtDir = "U"; 
+	speedTime = 800;
+	score = 0;
+	map = [];
 	for(var i=0; i<=height/size; i++) {
 		map[i]=[];
 		for(var j=0; j<=width/size; j++) {
@@ -144,15 +153,14 @@ function init() {
 init();
 
 function fail() {
-	alert("ao");
+	draw();
+	alert("ao! you ate your tail!");
+
 	Snake.body=[
 		new snakeBody(width/size/2,height/size/2-1,"U"),
 		new snakeBody(width/size/2,height/size/2,"U"),
 		new snakeBody(width/size/2,height/size/2+1,"U")
 	];
-	nxtDir = "U"; 
-	speedTime = 800;
-	map = [];
 	init();
 }
 
