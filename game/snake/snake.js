@@ -87,19 +87,20 @@ var Snake = {
 		// console.log(newx, newy, apple.lt.indexOf({x:newx,y:newy}));
 		// if(apple.lt.indexOf({x:newx,y:newy})!=-1) hasate=1,console.log("qwq");
 
-		//fail
-		if(map[newx][newy]==1) {
-			fail();
-			return 1;
-		}
-		this.body.unshift(new snakeBody(newx, newy, dir));
-		map[newx][newy]=1;
+
 		if(!hasate) {
 			var tmp=this.body.pop();
 			map[tmp.x][tmp.y]=0;
 		} else {
 			apple.creatAnApple();
 		}
+
+		if(map[newx][newy]==1) {
+			fail();
+			return 1;
+		}
+		this.body.unshift(new snakeBody(newx, newy, dir));
+		map[newx][newy]=1;
 
 		return 0;
 	},
