@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="javascript,">
+  <meta name="keywords" content="java,math,">
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Now,let’s start painting!Ususally,the numbers are starting from 0, what will happen if you press 0? Have a try.        var cvs = document.getElementById(&quot;cvs1&quot;);     var ctx = cvs.getContext(&quot;2d&quot;);">
-<meta name="keywords" content="javascript">
+<meta name="description" content="上课闲着没事…用Java写了个求行列式的还是高斯消元那样求 我的命名还是一如既往的风骚233 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859// QAQ.javaimport java.util.Scanner;class QA">
+<meta name="keywords" content="java,math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScriptPainting">
-<meta property="og:url" content="beiyuouo.github.io/2018/11/14/JavaScriptPainting/index.html">
+<meta property="og:title" content="HangLieShi">
+<meta property="og:url" content="beiyuouo.github.io/2019/03/08/HangLieShi/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
-<meta property="og:description" content="Now,let’s start painting!Ususally,the numbers are starting from 0, what will happen if you press 0? Have a try.        var cvs = document.getElementById(&quot;cvs1&quot;);     var ctx = cvs.getContext(&quot;2d&quot;);">
+<meta property="og:description" content="上课闲着没事…用Java写了个求行列式的还是高斯消元那样求 我的命名还是一如既往的风骚233 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859// QAQ.javaimport java.util.Scanner;class QA">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-14T15:15:16.131Z">
+<meta property="og:updated_time" content="2019-03-08T03:40:12.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScriptPainting">
-<meta name="twitter:description" content="Now,let’s start painting!Ususally,the numbers are starting from 0, what will happen if you press 0? Have a try.        var cvs = document.getElementById(&quot;cvs1&quot;);     var ctx = cvs.getContext(&quot;2d&quot;);">
+<meta name="twitter:title" content="HangLieShi">
+<meta name="twitter:description" content="上课闲着没事…用Java写了个求行列式的还是高斯消元那样求 我的命名还是一如既往的风骚233 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859// QAQ.javaimport java.util.Scanner;class QA">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/2018/11/14/JavaScriptPainting/">
+  <link rel="canonical" href="beiyuouo.github.io/2019/03/08/HangLieShi/">
 
 
 
 
 
-  <title>JavaScriptPainting | BeiYuOuO</title>
+  <title>HangLieShi | BeiYuOuO</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/11/14/JavaScriptPainting/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/03/08/HangLieShi/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BeiYu">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScriptPainting</h1>
+          <h1 class="post-title" itemprop="name headline">HangLieShi</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-14T21:48:02+08:00">
-                2018-11-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-08T11:38:01+08:00">
+                2019-03-08
               </time>
             
 
@@ -355,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -428,113 +428,9 @@
       
 
       
-        <p>Now,let’s start painting!<br>Ususally,the numbers are starting from 0, what will happen if you press 0? Have a try.</p>
-<canvas id="cvs1" width="400" height="400"></canvas>
-
-<script type="text/javascript">
-    var cvs = document.getElementById("cvs1");
-    var ctx = cvs.getContext("2d");
-    var mg3 = prompt("What do you want to draw? Enter 1 to draw a rectangle;2 to draw a strokerectangle;3 to draw a triangle;4 to draw a cross;5 to draw two circles;6 to draw a Gomokuboard;7 to draw a Chessboard;...to be continue...");
-    if(mg3 === "0") {
-        ctx.fillStyle = "#000000";
-        ctx.strokeStyle = "#000000";
-        ctx.lineWidth = 4;
-
-        //draw a circle
-        ctx.beginPath();
-        ctx.arc(200,200,190,0,2*Math.PI,false); 
-        ctx.stroke();
-
-        //draw the smile
-        ctx.beginPath();
-        ctx.arc(200,200,160,(0.1)*Math.PI,(0.9)*Math.PI,false);
-        ctx.stroke();
-
-        //left eye
-        ctx.beginPath();
-        ctx.arc(100,400,250,(1.42)*Math.PI,(1.58)*Math.PI,false);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(100,420,250,(1.42)*Math.PI,(1.58)*Math.PI,false);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.arc(100-250*Math.sin(0.08*Math.PI),400+10-250*Math.cos(0.08*Math.PI),10,0,2*Math.PI,false);
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(100+250*Math.sin(0.08*Math.PI),400+10-250*Math.cos(0.08*Math.PI),10,-0.5*Math.PI,0.5*Math.PI,false);
-        ctx.stroke();
-
-        //right eye
-        ctx.beginPath();
-        ctx.arc(300,400,250,(1.42)*Math.PI,(1.58)*Math.PI,false);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(300,420,250,(1.42)*Math.PI,(1.58)*Math.PI,false);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.arc(300-250*Math.sin(0.08*Math.PI),400+10-250*Math.cos(0.08*Math.PI),10,0,2*Math.PI,false);
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(300+250*Math.sin(0.08*Math.PI),400+10-250*Math.cos(0.08*Math.PI),10,-0.5*Math.PI,0.5*Math.PI,false);
-        ctx.stroke();
-    } else if(mg3 === "1") {
-        ctx.fillStyle = "#FF0000"
-        ctx.fillRect(100,100,100,100);
-    } else if(mg3 === "2") {
-        ctx.strokeStyle = "#FF0000"
-        ctx.strokeRect(100,100,100,100);
-    } else if(mg3 === "3") {
-        ctx.fillStyle = "Blue";
-        ctx.beginPath();
-        ctx.moveTo(50,50);
-        ctx.lineTo(350,50);
-        ctx.lineTo(200,300);
-        ctx.fill();
-    } else if(mg3 === "4") {
-        ctx.strokeStyle = "#FF0000";
-        ctx.beginPath();
-        ctx.moveTo(50,50);
-        ctx.lineTo(150,150);
-        ctx.moveTo(50,150);
-        ctx.lineTo(150,50);
-        ctx.stroke();
-    } else if(mg3 === "5") {
-        ctx.skrokeStyle = "#FF0000";
-        ctx.fillStyle = "#FF0000";
-        ctx.beginPath();
-        ctx.arc(50,50,30,0,Math.PI*2,false);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.arc(150,50,30,0,Math.PI*2,false);
-        ctx.fill();
-    } else if(mg3 === "6") {
-        ctx.fillStyle = "#000000";
-        ctx.strokeStyle = "#000000";
-        ctx.lineWidth = 1;
-        for(var i=0;i<20;i++) {
-            for(var j=0;j<20;j++) {
-                ctx.strokeRect(j*20,i*20,20,20);
-            }
-        }
-    } else if(mg3 === "7") {
-        ctx.fillStyle = "#000000";
-        ctx.strokeStyle = "#000000";
-        for(var i=0;i<8;i++) {
-            for(var j=0;j<8;j++) {
-                if((i+j)%2 == 0) {
-                    ctx.fillRect(j*50,i*50,50,50);
-                } else {
-                    ctx.strokeRect(j*50,i*50,50,50);
-                }
-            }
-        }
-    }
-</script>
+        <p>上课闲着没事…用Java写了个求行列式的<br>还是高斯消元那样求</p>
+<p>我的命名还是一如既往的风骚233</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// QAQ.java</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QAQ</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span>[][] a = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">55</span>][<span class="number">55</span>];</span><br><span class="line">	</span><br><span class="line"><span class="comment">//	private double abs(double a) &#123; return a&gt;0?a:-a; &#125;</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">cmp</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Math.abs(a-b)&lt;eps;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Scanner sn = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = sn.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++) &#123;</span><br><span class="line">				a[i][j] = sn.nextDouble();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">Solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> ans = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(cmp(a[i][i],<span class="number">0</span>)) &#123;</span><br><span class="line">				<span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;=n; j++) <span class="keyword">if</span>(!cmp(a[j][i],<span class="number">0</span>)) flag = j;</span><br><span class="line">				<span class="keyword">if</span>(flag==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=i; j&lt;=n; j++) &#123;</span><br><span class="line">					<span class="keyword">double</span> t=a[i][j];</span><br><span class="line">					a[i][j]=a[flag][j];</span><br><span class="line">					a[flag][j]=t;</span><br><span class="line">					<span class="comment">// swap(a[i][j], a[flag][j]);</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;=n; j++) &#123;</span><br><span class="line">				<span class="comment">// if(cmp(a[j][i],0)) continue;</span></span><br><span class="line">				<span class="keyword">double</span> t=a[j][i]/a[i][i];</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=i; k&lt;=n; k++)</span><br><span class="line">					a[j][k]-=t*a[i][k];</span><br><span class="line">			&#125;				</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) ans*=a[i][i];</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++) &#123;</span><br><span class="line">				System.out.print(a[i][j] + <span class="string">" "</span>);</span><br><span class="line">			&#125;System.out.println(<span class="string">""</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		QAQ qwq = <span class="keyword">new</span> QAQ();</span><br><span class="line">		qwq.init();</span><br><span class="line">		System.out.println(<span class="string">"ans = "</span> + qwq.Solve());</span><br><span class="line">		qwq.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -551,7 +447,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
           
         </div>
       
@@ -564,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/14/20181114/" rel="next" title="20181114">
-                <i class="fa fa-chevron-left"></i> 20181114
+              <a href="/2019/01/18/gitmenttest/" rel="next" title="gitmenttest">
+                <i class="fa fa-chevron-left"></i> gitmenttest
               </a>
             
           </div>
@@ -574,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/15/AddBall/" rel="prev" title="AddBall">
-                AddBall <i class="fa fa-chevron-right"></i>
+              <a href="/2022/09/01/TODOLIST/" rel="prev" title="TODOLIST">
+                TODOLIST <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
