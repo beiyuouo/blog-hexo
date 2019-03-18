@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="javascript,jquery,game,canvas,">
+  <meta name="keywords" content="note,java,">
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="//canvas     var cnv = document.getElementById(&quot;cnv1&quot;);     var ctx = cnv.getContext(&quot;2d&quot;);        //define ball     var ball = {         x : [],         y : [],         xSpeed : [],         yS">
-<meta name="keywords" content="javascript,jquery,game,canvas">
+<meta name="description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="keywords" content="note,java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AddBall">
-<meta property="og:url" content="beiyuouo.github.io/2018/11/15/AddBall/index.html">
+<meta property="og:title" content="Java笔记">
+<meta property="og:url" content="beiyuouo.github.io/2019/03/14/JavaNote/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
-<meta property="og:description" content="//canvas     var cnv = document.getElementById(&quot;cnv1&quot;);     var ctx = cnv.getContext(&quot;2d&quot;);        //define ball     var ball = {         x : [],         y : [],         xSpeed : [],         yS">
+<meta property="og:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-01T16:22:07.331Z">
+<meta property="og:updated_time" content="2019-03-14T14:28:49.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AddBall">
-<meta name="twitter:description" content="//canvas     var cnv = document.getElementById(&quot;cnv1&quot;);     var ctx = cnv.getContext(&quot;2d&quot;);        //define ball     var ball = {         x : [],         y : [],         xSpeed : [],         yS">
+<meta name="twitter:title" content="Java笔记">
+<meta name="twitter:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/2018/11/15/AddBall/">
+  <link rel="canonical" href="beiyuouo.github.io/2019/03/14/JavaNote/">
 
 
 
 
 
-  <title>AddBall | BeiYuOuO</title>
+  <title>Java笔记 | BeiYuOuO</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/11/15/AddBall/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/03/14/JavaNote/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BeiYu">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AddBall</h1>
+          <h1 class="post-title" itemprop="name headline">Java笔记</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T19:45:22+08:00">
-                2018-11-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-14T22:28:34+08:00">
+                2019-03-14
               </time>
             
 
@@ -355,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -428,75 +428,7 @@
       
 
       
-        <p><canvas id="cnv1" width="400" height="400"></canvas></p>
-<script src="https://code.jquery.com/jquery-2.0.1.js"></script>
-<script type="text/javascript">
-    //canvas
-    var cnv = document.getElementById("cnv1");
-    var ctx = cnv.getContext("2d");
-</script>
-
-<script type="text/javascript">
-    //define ball
-    var ball = {
-        x : [],
-        y : [],
-        xSpeed : [],
-        ySpeed : []
-    };
-    ball.add = function(a=Math.random()*400,b=Math.random()*400) {
-        this.x.push(a);
-        this.y.push(b);
-        this.xSpeed.push(Math.random()*3);
-        this.ySpeed.push(Math.random()*3);
-    };
-    ball.draw = function() {
-        for(var i=0;i<this.x.length;i++) {
-            ctx.beginPath();
-            ctx.arc(this.x[i],this.y[i],5,0,2*Math.PI,false);
-            ctx.fill();
-        }
-    };
-    ball.move = function() {
-        for(var i=0;i<this.x.length;i++) {
-            this.x[i] += this.xSpeed[i];
-            this.y[i] += this.ySpeed[i];
-
-            if(this.x[i]<0) {
-                this.x[i] = -this.x[i];
-                this.xSpeed[i] = -this.xSpeed[i];
-            }
-            if(this.x[i]>400) {
-                this.x[i] = 400-this.x[i]%400;
-                this.xSpeed[i] = -this.xSpeed[i];
-            }
-            if(this.y[i]<0) {
-                this.y[i] = -this.y[i];
-                this.ySpeed[i] = -this.ySpeed[i];
-            }
-            if(this.y[i]>400) {
-                this.y[i] = 400-this.y[i]%400;
-                this.ySpeed[i] = -this.ySpeed[i];
-            }
-        }
-    };
-</script>
-
-<script type="text/javascript">
-    //deal interact
-    $("#cnv1").click(function(event) {
-        ball.add(event.offsetX,event.offsetY);
-        ball.draw();
-    });
-
-    setInterval(function() {
-        ctx.clearRect(0,0,400,400);
-        ctx.strokeRect(0,0,400,400);
-        ball.move();
-        ball.draw();
-    },1)
-</script>
-
+        
       
     </div>
     
@@ -513,13 +445,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
           
-            <a href="/tags/jquery/" rel="tag"><i class="fa fa-tag"></i> jquery</a>
-          
-            <a href="/tags/game/" rel="tag"><i class="fa fa-tag"></i> game</a>
-          
-            <a href="/tags/canvas/" rel="tag"><i class="fa fa-tag"></i> canvas</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
         </div>
       
@@ -532,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/14/JavaScriptPainting/" rel="next" title="JavaScriptPainting">
-                <i class="fa fa-chevron-left"></i> JavaScriptPainting
+              <a href="/2019/03/10/ctxl1/" rel="next" title="出土训练1">
+                <i class="fa fa-chevron-left"></i> 出土训练1
               </a>
             
           </div>
@@ -542,8 +470,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/16/VimNote/" rel="prev" title="Vim笔记">
-                Vim笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/14/MysqlNote/" rel="prev" title="MySQL笔记">
+                MySQL笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
