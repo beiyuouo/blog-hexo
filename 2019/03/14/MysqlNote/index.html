@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123create database [if not exists] &amp;lt;database_name&amp;gt;[[DEFAULT] char">
 <meta name="keywords" content="note,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL笔记">
 <meta property="og:url" content="beiyuouo.github.io/2019/03/14/MysqlNote/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
-<meta property="og:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta property="og:description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123create database [if not exists] &amp;lt;database_name&amp;gt;[[DEFAULT] char">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-03-14T14:29:26.519Z">
+<meta property="og:updated_time" content="2019-03-21T07:25:55.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL笔记">
-<meta name="twitter:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="twitter:description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123create database [if not exists] &amp;lt;database_name&amp;gt;[[DEFAULT] char">
 
 
 
@@ -428,7 +428,59 @@
       
 
       
-        
+        <h3 id="MySql登录"><a href="#MySql登录" class="headerlink" title="MySql登录"></a>MySql登录</h3><p>mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h localhost -u root -p sakila(DatabaseName)</span><br></pre></td></tr></table></figure>
+<p>mysql -u root -p</p>
+<h3 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] &lt;database_name&gt;</span><br><span class="line">[[DEFAULT] character set &lt;character_set_name&gt;]</span><br><span class="line">[[DEFAULT] collate &lt;collation_name&gt;]</span><br></pre></td></tr></table></figure>
+<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use &lt;database_name&gt;</span><br><span class="line">show databases</span><br></pre></td></tr></table></figure>
+<h3 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter database &lt;database_name&gt;</span><br><span class="line">[[DEFAULT] character set &lt;character_set_name&gt;]</span><br><span class="line">[[DEFAULT] collate &lt;collate_name&gt;]</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database database_name</span><br></pre></td></tr></table></figure>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>Numeric<br>String<br>Date</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data type</th>
+<th>Range for signed integers</th>
+<th>Range for unsigned integers</th>
+<th>Storage(Bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TINYINT</td>
+<td>-128 to 127</td>
+<td>0 to 255</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center">SMALLINT</td>
+<td>-32,768 to 32,767</td>
+<td>0 to 65535</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="text-align:center">MEDIUMINT</td>
+<td>-83,88,608 to 83,88,607</td>
+<td>0 to 16777215</td>
+<td>3</td>
+</tr>
+<tr>
+<td style="text-align:center">INT / INTEGER</td>
+<td>-2,147,483,648 to 2,147,483,647</td>
+<td>0 to 4294967295</td>
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align:center">BIGINT</td>
+<td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+<td>0 to 18446744073709551615</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+
       
     </div>
     
@@ -557,8 +609,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="BeiYu">
           <p class="site-author-name" itemprop="name">BeiYu</p>
@@ -664,6 +725,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySql登录"><span class="nav-number">1.</span> <span class="nav-text">MySql登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立数据库"><span class="nav-number">2.</span> <span class="nav-text">建立数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据库"><span class="nav-number">3.</span> <span class="nav-text">使用数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据库"><span class="nav-number">4.</span> <span class="nav-text">修改数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据库"><span class="nav-number">5.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">6.</span> <span class="nav-text">数据类型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
