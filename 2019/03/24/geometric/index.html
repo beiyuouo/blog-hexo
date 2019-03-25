@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="note,math,geometric,">
+  <meta name="keywords" content="math,note,geometric,">
 
 
 
@@ -95,14 +95,14 @@
 
 
 <meta name="description" content="方向角向量$r$与三条坐标轴的夹角$\alpha \beta \gamma$称为向量$r$的方向角$cos\alpha=\frac{x}{|r|},cos\beta=\frac{y}{|r|},cos\gamma=\frac{z}{|r|}$由方向向量可知$cos^2\alpha+cos^2\beta+cos^2\gamma=1$ 向量在轴上的投影$Prj_ua=|a|cos\varphi$$Pr">
-<meta name="keywords" content="note,math,geometric">
+<meta name="keywords" content="math,note,geometric">
 <meta property="og:type" content="article">
 <meta property="og:title" content="空间解析几何笔记">
 <meta property="og:url" content="beiyuouo.github.io/2019/03/24/geometric/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
 <meta property="og:description" content="方向角向量$r$与三条坐标轴的夹角$\alpha \beta \gamma$称为向量$r$的方向角$cos\alpha=\frac{x}{|r|},cos\beta=\frac{y}{|r|},cos\gamma=\frac{z}{|r|}$由方向向量可知$cos^2\alpha+cos^2\beta+cos^2\gamma=1$ 向量在轴上的投影$Prj_ua=|a|cos\varphi$$Pr">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-03-24T11:41:21.528Z">
+<meta property="og:updated_time" content="2019-03-25T04:28:04.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="空间解析几何笔记">
 <meta name="twitter:description" content="方向角向量$r$与三条坐标轴的夹角$\alpha \beta \gamma$称为向量$r$的方向角$cos\alpha=\frac{x}{|r|},cos\beta=\frac{y}{|r|},cos\gamma=\frac{z}{|r|}$由方向向量可知$cos^2\alpha+cos^2\beta+cos^2\gamma=1$ 向量在轴上的投影$Prj_ua=|a|cos\varphi$$Pr">
@@ -430,11 +430,19 @@
       
         <h3 id="方向角"><a href="#方向角" class="headerlink" title="方向角"></a>方向角</h3><p>向量$r$与三条坐标轴的夹角$\alpha \beta \gamma$称为向量$r$的方向角<br>$cos\alpha=\frac{x}{|r|},cos\beta=\frac{y}{|r|},cos\gamma=\frac{z}{|r|}$<br>由方向向量可知<br>$cos^2\alpha+cos^2\beta+cos^2\gamma=1$</p>
 <h3 id="向量在轴上的投影"><a href="#向量在轴上的投影" class="headerlink" title="向量在轴上的投影"></a>向量在轴上的投影</h3><p>$Prj_ua=|a|cos\varphi$<br>$Prj_u(a+b)=Prj_ua+Prj_ub$</p>
-<h3 id="数量积"><a href="#数量积" class="headerlink" title="数量积"></a>数量积</h3><p>$a\cdot b=|a||b|cos\theta=|a|Prj_ab=|b|Prj_ba$<br>$a\cdot a=|a|^2$<br>非零向量$a,b$,$a\cdot b=0 \Leftrightarrow a\perp b$</p>
+<h3 id="数量积"><a href="#数量积" class="headerlink" title="数量积"></a>数量积</h3><p>$a\cdot b=|a||b|cos\theta=|a|Prj_ab=|b|Prj_ba=a_xb_x+a_yb_y+a_zb_z$<br>$a\cdot a=|a|^2$<br>非零向量$a,b$,$a\cdot b=0 \Leftrightarrow a\perp b$</p>
 <h3 id="向量积"><a href="#向量积" class="headerlink" title="向量积"></a>向量积</h3><p>$c=a\times b,|c|=|a||b|sin\theta,c$垂直于$a$与$b$所决定的平面。<br>$a\times a=0$<br>非零向量$ab$，$a\times b=0 \Leftrightarrow a//b$<br>$b\times a=-a\times b$<br>$a\times b= \left|\begin{matrix} i&amp; j &amp; k\\  a_x&amp;  a_y&amp; a_z\\  b_x&amp; b_y &amp; b_z\end{matrix}\right|$</p>
-<h3 id="混合积"><a href="#混合积" class="headerlink" title="混合积"></a>混合积</h3><p>$[abc]=(a\times b)\cdot c=\left|\begin{matrix}a_x&amp;  a_y&amp; a_z\\  b_x&amp; b_y &amp; b_z \\ c_x&amp; c_y &amp; c_z \end{matrix}\right|$</p>
-<p>混合积的绝对值表示以向量$a,b,c$为棱的平行六面体体积，$a,b,c$若为右手系则正，左手系为负。</p>
+<h3 id="混合积"><a href="#混合积" class="headerlink" title="混合积"></a>混合积</h3><script type="math/tex; mode=display">[abc]=(a\times b)\cdot c=\left|\begin{matrix}a_x&  a_y& a_z\\  b_x& b_y & b_z \\ c_x& c_y & c_z \end{matrix}\right|</script><p>混合积的绝对值表示以向量$a,b,c$为棱的平行六面体体积，$a,b,c$若为右手系则正，左手系为负。</p>
 <h3 id="平面表示方法"><a href="#平面表示方法" class="headerlink" title="平面表示方法"></a>平面表示方法</h3><p>点法式：平面上一点和平面的法线向量。</p>
+<script type="math/tex; mode=display">A(x-x_0)+B(y-y_0)+C(z-z_0)=0,\overrightarrow{n}=(A,B,C),M=(x_0,y_0,z_0)</script><p>一般方程：</p>
+<script type="math/tex; mode=display">Ax+By+Cz+D=0</script><p>截距式方程：</p>
+<script type="math/tex; mode=display">\frac{x}{a}+\frac{y}{b}+\frac{z}{c}=0</script><h3 id="直线表示方法"><a href="#直线表示方法" class="headerlink" title="直线表示方法"></a>直线表示方法</h3><p>一般方程</p>
+<h3 id="夹角"><a href="#夹角" class="headerlink" title="夹角"></a>夹角</h3><ol>
+<li>两平面夹角<script type="math/tex; mode=display">cos\theta=\frac{|A_1A_2+B_1B_2+C_1C_2|}{\sqrt{A_1^2+B_1^2+C_1^2}\sqrt{A_2^2+B_2^2+C_2^2}}</script></li>
+</ol>
+<h3 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h3><ol>
+<li>点到平面距离<br>$P_0$到平面$Ax+By+Cz+D=0$距离，任取一点$P_1$<script type="math/tex; mode=display">d=|\overrightarrow{P_0P_1}||cos\theta|=\frac{|\overrightarrow{P_0P_1}\cdot n|}{|n|}=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}</script></li>
+</ol>
 
       
     </div>
@@ -452,9 +460,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
-          
             <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+          
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
           
             <a href="/tags/geometric/" rel="tag"><i class="fa fa-tag"></i> geometric</a>
           
@@ -692,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方向角"><span class="nav-number">1.</span> <span class="nav-text">方向角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量在轴上的投影"><span class="nav-number">2.</span> <span class="nav-text">向量在轴上的投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数量积"><span class="nav-number">3.</span> <span class="nav-text">数量积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量积"><span class="nav-number">4.</span> <span class="nav-text">向量积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合积"><span class="nav-number">5.</span> <span class="nav-text">混合积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平面表示方法"><span class="nav-number">6.</span> <span class="nav-text">平面表示方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方向角"><span class="nav-number">1.</span> <span class="nav-text">方向角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量在轴上的投影"><span class="nav-number">2.</span> <span class="nav-text">向量在轴上的投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数量积"><span class="nav-number">3.</span> <span class="nav-text">数量积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量积"><span class="nav-number">4.</span> <span class="nav-text">向量积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合积"><span class="nav-number">5.</span> <span class="nav-text">混合积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平面表示方法"><span class="nav-number">6.</span> <span class="nav-text">平面表示方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直线表示方法"><span class="nav-number">7.</span> <span class="nav-text">直线表示方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#夹角"><span class="nav-number">8.</span> <span class="nav-text">夹角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离"><span class="nav-number">9.</span> <span class="nav-text">距离</span></a></li></ol></div>
             
 
           </div>
