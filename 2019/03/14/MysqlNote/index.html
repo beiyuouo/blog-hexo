@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123create database [if not exists] &amp;lt;database_name&amp;gt;[[DEFAULT] char">
+<meta name="description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123CREATE DATABASE [IF NOT EXISTS] &amp;lt;database_name&amp;gt;[[DEFAULT] CHAR">
 <meta name="keywords" content="note,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL笔记">
 <meta property="og:url" content="beiyuouo.github.io/2019/03/14/MysqlNote/index.html">
 <meta property="og:site_name" content="BeiYuOuO">
-<meta property="og:description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123create database [if not exists] &amp;lt;database_name&amp;gt;[[DEFAULT] char">
+<meta property="og:description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123CREATE DATABASE [IF NOT EXISTS] &amp;lt;database_name&amp;gt;[[DEFAULT] CHAR">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-03-21T07:25:55.394Z">
+<meta property="og:updated_time" content="2019-04-04T08:04:56.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL笔记">
-<meta name="twitter:description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123create database [if not exists] &amp;lt;database_name&amp;gt;[[DEFAULT] char">
+<meta name="twitter:description" content="MySql登录mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p 1mysql -h localhost -u root -p sakila(DatabaseName) mysql -u root -p 建立数据库123CREATE DATABASE [IF NOT EXISTS] &amp;lt;database_name&amp;gt;[[DEFAULT] CHAR">
 
 
 
@@ -431,11 +431,12 @@
         <h3 id="MySql登录"><a href="#MySql登录" class="headerlink" title="MySql登录"></a>MySql登录</h3><p>mysql  -P 端口号  -h  mysql主机名\ip -u root （用户）  -p</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h localhost -u root -p sakila(DatabaseName)</span><br></pre></td></tr></table></figure>
 <p>mysql -u root -p</p>
-<h3 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] &lt;database_name&gt;</span><br><span class="line">[[DEFAULT] character set &lt;character_set_name&gt;]</span><br><span class="line">[[DEFAULT] collate &lt;collation_name&gt;]</span><br></pre></td></tr></table></figure>
-<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use &lt;database_name&gt;</span><br><span class="line">show databases</span><br></pre></td></tr></table></figure>
-<h3 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter database &lt;database_name&gt;</span><br><span class="line">[[DEFAULT] character set &lt;character_set_name&gt;]</span><br><span class="line">[[DEFAULT] collate &lt;collate_name&gt;]</span><br></pre></td></tr></table></figure>
-<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database database_name</span><br></pre></td></tr></table></figure>
+<h3 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE [IF NOT EXISTS] &lt;database_name&gt;</span><br><span class="line">[[DEFAULT] CHARACTER SET &lt;character_set_name&gt;]</span><br><span class="line">[[DEFAULT] COLLATE &lt;collation_name&gt;]</span><br></pre></td></tr></table></figure>
+<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">USE &lt;database_name&gt;</span><br><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
+<h3 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE &lt;database_name&gt;</span><br><span class="line">[[DEFAULT] CHARACTER SET &lt;character_set_name&gt;]</span><br><span class="line">[[DEFAULT] COLLATE &lt;collation_name&gt;]</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE database_name;</span><br></pre></td></tr></table></figure>
 <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>Numeric<br>String<br>Date</p>
+<p>Integer Data Types</p>
 <div class="table-container">
 <table>
 <thead>
@@ -476,6 +477,121 @@
 <td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
 <td>0 to 18446744073709551615</td>
 <td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fractional Data Types</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data type</th>
+<th>Range</th>
+<th>Used to store</th>
+<th>Storage(Bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FLOAT</td>
+<td>-3.402823466E+38 to -1.175494351E-38, 0 and 1.175494351E-38 to 3.402823466E+38</td>
+<td>Fractional value with floating single-precision</td>
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align:center">DOUBLE(p,s) \</td>
+<td>PRECISION(p,s) \</td>
+<td>REAL(p,s)</td>
+<td>-1.7976931348623157E+308 to -2.2250738585072014E-308, 0 and 2.2250738585072014E-308 to 1.7976931348623157E+308</td>
+<td>Fractional value with floating double- precision and scale</td>
+<td>8</td>
+</tr>
+<tr>
+<td style="text-align:center">DECIMAL(p,s) \</td>
+<td>DEC(p,s) \</td>
+<td>NUMERIC(p,s) \</td>
+<td>FIXED(p,s)</td>
+<td>Depends on values specified in the column definition</td>
+<td>Fractional value with fixed precision and scale</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Bit Data Type</p>
+<p>BIT(M)</p>
+<p>表示方法b’1001’</p>
+<p>String</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Range</th>
+<th>Used to store</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR(n)</td>
+<td></td>
+<td>Fixed length</td>
+</tr>
+<tr>
+<td>VARCHAR(n)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BINARY(n)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>VARBINARY(N)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TINYBLOB</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MEDIUMBLOB]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
