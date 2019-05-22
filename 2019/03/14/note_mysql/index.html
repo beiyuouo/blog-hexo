@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="note,mysql,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content=": colon; semicolon MySQL储存引擎(Storage engines) InnoDB(default) MyISAM(supports full-text search indexs.) Memory(Nontransaction-safe storage engine, supports temporary tables types and stores tables in">
+<meta name="keywords" content="note,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL笔记">
+<meta property="og:url" content="beiyuouo.github.io/2019/03/14/note_mysql/index.html">
+<meta property="og:site_name" content="BeiYu">
+<meta property="og:description" content=": colon; semicolon MySQL储存引擎(Storage engines) InnoDB(default) MyISAM(supports full-text search indexs.) Memory(Nontransaction-safe storage engine, supports temporary tables types and stores tables in">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2019-04-26T08:12:04.857Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL笔记">
+<meta name="twitter:description" content=": colon; semicolon MySQL储存引擎(Storage engines) InnoDB(default) MyISAM(supports full-text search indexs.) Memory(Nontransaction-safe storage engine, supports temporary tables types and stores tables in">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/2019/03/14/note_mysql/">
+
+
+
+
+
+  <title>MySQL笔记 | BeiYu</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BeiYu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/game/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            menu.game
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/03/14/note_mysql/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BeiYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BeiYu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-14T22:29:03+08:00">
+                2019-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>: colon<br>; semicolon</p>
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="储存引擎-Storage-engines"><a href="#储存引擎-Storage-engines" class="headerlink" title="储存引擎(Storage engines)"></a>储存引擎(Storage engines)</h3><ul>
+<li>InnoDB(default)</li>
+<li>MyISAM(supports full-text search indexs.)</li>
+<li>Memory(Nontransaction-safe storage engine, supports temporary tables types and stores tables in memory rather than in secondary storage devices.)</li>
+</ul>
+<h3 id="MySql登录"><a href="#MySql登录" class="headerlink" title="MySql登录"></a>MySql登录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql -P 端口号 -h mysql主机名\ip -u root(用户名) -p password dbname</span><br><span class="line">mysql -P 3306 -h localhost -u root -p sakila(DatabaseName)</span><br><span class="line"></span><br><span class="line">or </span><br><span class="line"></span><br><span class="line">mysql --port=port_num --host=hostname --user username --password=password dbname</span><br></pre></td></tr></table></figure>
+<p>最简单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="建立数据库"><a href="#建立数据库" class="headerlink" title="建立数据库"></a>建立数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE [IF NOT EXISTS] &lt;database_name&gt;</span><br><span class="line">[[DEFAULT] CHARACTER SET &lt;character_set_name&gt;]</span><br><span class="line">[[DEFAULT] COLLATE &lt;collation_name&gt;]</span><br></pre></td></tr></table></figure>
+<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">USE &lt;database_name&gt;</span><br><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
+<h3 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE &lt;database_name&gt;</span><br><span class="line">[[DEFAULT] CHARACTER SET &lt;character_set_name&gt;]</span><br><span class="line">[[DEFAULT] COLLATE &lt;collation_name&gt;]</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE database_name;</span><br></pre></td></tr></table></figure>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>Numeric<br>String<br>Date</p>
+<h4 id="Integer-Data-Types"><a href="#Integer-Data-Types" class="headerlink" title="Integer Data Types"></a><strong>Integer Data Types</strong></h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data type</th>
+<th>Range for signed integers</th>
+<th>Range for unsigned integers</th>
+<th>Storage(Bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TINYINT</td>
+<td>-128 to 127</td>
+<td>0 to 255</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center">SMALLINT</td>
+<td>-32,768 to 32,767</td>
+<td>0 to 65535</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="text-align:center">MEDIUMINT</td>
+<td>-83,88,608 to 83,88,607</td>
+<td>0 to 16777215</td>
+<td>3</td>
+</tr>
+<tr>
+<td style="text-align:center">INT / INTEGER</td>
+<td>-2,147,483,648 to 2,147,483,647</td>
+<td>0 to 4294967295</td>
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align:center">BIGINT</td>
+<td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+<td>0 to 18446744073709551615</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fractional Data Types</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data type</th>
+<th>Range</th>
+<th>Used to store</th>
+<th>Storage(Bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FLOAT</td>
+<td>-3.402823466E+38 to -1.175494351E-38, 0 and 1.175494351E-38 to 3.402823466E+38</td>
+<td>Fractional value with floating single-precision</td>
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align:center">DOUBLE(p,s) PRECISION(p,s) REAL(p,s)</td>
+<td>-1.7976931348623157E+308 to -2.2250738585072014E-308, 0 and 2.2250738585072014E-308 to 1.7976931348623157E+308</td>
+<td>Fractional value with floating double- precision and scale</td>
+<td>8</td>
+</tr>
+<tr>
+<td style="text-align:center">DECIMAL(p,s) DEC(p,s) NUMERIC(p,s) FIXED(p,s)</td>
+<td>Depends on values specified in the column definition</td>
+<td>Fractional value with fixed precision and scale</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Bit-Data-Type"><a href="#Bit-Data-Type" class="headerlink" title="Bit Data Type"></a><strong>Bit Data Type</strong></h4><p>BIT(M)</p>
+<p>表示方法b’1001’</p>
+<h4 id="String"><a href="#String" class="headerlink" title="String"></a><strong>String</strong></h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th style="text-align:center">Range</th>
+<th>Used to store</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR(n)</td>
+<td style="text-align:center">n characters, 1 &lt;= n &lt;= 255</td>
+<td>Fixed length</td>
+</tr>
+<tr>
+<td>VARCHAR(n)</td>
+<td style="text-align:center">n characters, 1 &lt;=n &lt;= 255</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td style="text-align:center">1 to 255 characters</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td style="text-align:center">1 to 65,535 characters</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td style="text-align:center">1 to 16,777,215 characters</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td style="text-align:center">1 to 4,294,967,295 characters</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>BINARY(n)</td>
+<td style="text-align:center">n bytes, 1&lt;= n &lt;= 255</td>
+<td>Fixed length</td>
+</tr>
+<tr>
+<td>VARBINARY(N)</td>
+<td style="text-align:center">n bytes, 1&lt;=n &lt;= 255</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>TINYBLOB</td>
+<td style="text-align:center">255 characters(355 bytes)</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td style="text-align:center">1 to 65,535 characters(64KB)</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB</td>
+<td style="text-align:center">1 to 16,777,215 characters(16MB)</td>
+<td>Variable length</td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td style="text-align:center">1 to 4,294,967,295 characters(4GB)</td>
+<td>Variable length</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>BLOB 类型可以储存图片</p>
+<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a><strong>Date</strong></h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Range</th>
+<th style="text-align:center">Used to store</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATE</td>
+<td>1000-01-01 through 9999-12-31</td>
+<td style="text-align:center">Date data</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>1000-01-01 00:00:00 through 9999-12-31 23:59:59</td>
+<td style="text-align:center">Date and time data</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>1970-01-01 00:00:00 2037-12-31</td>
+<td style="text-align:center">Date and time value that is updated with the current date and time value of system, whenever a record is updated or inserted into the table</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>1901 to 2155</td>
+<td style="text-align:center">Year data</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>-838:59:59 to 838:59:59</td>
+<td style="text-align:center">Time data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="ENUM"><a href="#ENUM" class="headerlink" title="ENUM"></a><strong>ENUM</strong></h4><p>用一个数字index表示数据</p>
+<p>eg.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists tb(</span><br><span class="line">id int primary key not null,</span><br><span class="line">status enum(&apos;Married&apos;, &apos;Unmarried&apos;, &apos;Divorced&apos;, &apos;Widow&apos;, &apos;Widower&apos;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into tb values(1, 1), (2, 2), (3,4);</span><br></pre></td></tr></table></figure>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a><strong>Set</strong></h4><p>跟ENUM差不多，但是是个集合，取值为子集而不是用index</p>
+<p>Eg.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists tb (</span><br><span class="line">id int not null,</span><br><span class="line">S set(&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into tb value(1, (&apos;A,B,C&apos;));</span><br><span class="line"></span><br><span class="line">select * from tb;</span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><h3 id="创建表格"><a href="#创建表格" class="headerlink" title="创建表格"></a>创建表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create [temporary] table [if not exists] &lt;table_name&gt;(&lt;column_definition&gt; [&#123;, &lt;column_definition&gt;&#125;...])</span><br><span class="line">[ENGINE = &#123; MEMORY | INNODB | MERGE | MRG_MYISAM | MYISAM&#125;]</span><br><span class="line"></span><br><span class="line">&lt;column_definition&gt;=</span><br><span class="line">&lt;column_name&gt; &lt;data_type&gt; [NOT NULL | NULL] [DEFAULT &lt;value&gt;]</span><br><span class="line">[AUTO_INCREMENT]</span><br></pre></td></tr></table></figure>
+<h2 id="实现复合语句和储存过程"><a href="#实现复合语句和储存过程" class="headerlink" title="实现复合语句和储存过程"></a>实现复合语句和储存过程</h2><h3 id="复合语句"><a href="#复合语句" class="headerlink" title="复合语句"></a>复合语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[begin_label:] begin</span><br><span class="line">	[statement_list]</span><br><span class="line">end [end_label]</span><br></pre></td></tr></table></figure>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="declare"><a href="#declare" class="headerlink" title="declare"></a>declare</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">declare var_name [, var_name] type [default values]</span><br></pre></td></tr></table></figure>
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set variable_assignment [, variable_assignment]</span><br></pre></td></tr></table></figure>
+<h4 id="声明与初始化"><a href="#声明与初始化" class="headerlink" title="声明与初始化"></a>声明与初始化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Local Variable 局部变量声明必须在begin end之间</span><br><span class="line">declare var int;</span><br><span class="line">set var=15;</span><br><span class="line"></span><br><span class="line"># Gloabal Variable 全局变量可以直接声明</span><br><span class="line">declare @var int;</span><br><span class="line">set @var=15, @age=19;</span><br></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">delimiter //</span><br><span class="line">create function f(t int) returns int</span><br><span class="line">begin</span><br><span class="line">	declare age int;</span><br><span class="line">	set age=t;</span><br><span class="line">	return t;</span><br><span class="line">end</span><br><span class="line">//</span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
+<p>好像函数必须要有返回值…</p>
+<h3 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h3><h4 id="if-then-else"><a href="#if-then-else" class="headerlink" title="if-then-else"></a>if-then-else</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if condition then</span><br><span class="line">statements;</span><br><span class="line">[else if condition then</span><br><span class="line">statement]</span><br><span class="line">[else</span><br><span class="line">statements]</span><br><span class="line">end if;</span><br><span class="line">	</span><br><span class="line">	if a&gt;b then set s=concat(a, &apos;&gt;&apos;, b);</span><br><span class="line">	elseif a=b then set s=concat(a, &apos;=&apos;, b);</span><br><span class="line">	else set s=concat(a, &apos;&lt;&apos;, b);</span><br><span class="line">	end if;</span><br></pre></td></tr></table></figure>
+<p>如果是elseif只需要一个end if; 如果是else if则需要两个</p>
+<h4 id="case"><a href="#case" class="headerlink" title="case"></a>case</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">case expression</span><br><span class="line">when value1 then</span><br><span class="line">statements;</span><br><span class="line">[when value2 then</span><br><span class="line">statements;]</span><br><span class="line">[else</span><br><span class="line">statements;]</span><br><span class="line">end case;</span><br></pre></td></tr></table></figure>
+<h4 id="while"><a href="#while" class="headerlink" title="while"></a>while</h4><h4 id="loop"><a href="#loop" class="headerlink" title="loop"></a>loop</h4><h4 id="iterate-statement"><a href="#iterate-statement" class="headerlink" title="iterate statement"></a>iterate statement</h4><h4 id="repeat-statement"><a href="#repeat-statement" class="headerlink" title="repeat statement"></a>repeat statement</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+          
+            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/14/note_java/" rel="next" title="Java笔记">
+                <i class="fa fa-chevron-left"></i> Java笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/24/note_geometric/" rel="prev" title="空间解析几何笔记">
+                空间解析几何笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+        <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
+        <div id="container" style="display:none"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        const myTheme = {
+          render(state, instance) {
+            const container = document.createElement('div');
+            container.lang = "en-US";
+            container.className = 'gitment-container gitment-root-container';
+            container.appendChild(instance.renderHeader(state, instance));
+            container.appendChild(instance.renderEditor(state, instance));
+            container.appendChild(instance.renderComments(state, instance));
+            container.appendChild(instance.renderFooter(state, instance));
+            return container;
+          }
+        }
+        function showGitment() {
+          $("#gitment_title").attr("style", "display:none");
+          $("#container").attr("style", "").addClass("gitment_container");
+          var gitment = new Gitment({
+            id: window.location.pathname,
+            theme: myTheme,
+            owner: 'beiyuouo',
+            repo: 'beiyuouo.github.io',
+            oauth: {
+              client_id: 'c48d3bc9cd0c5182abfe',
+              client_secret: '29f3e4fe3026e18a2780f34bc7a443af9df2386d'
+            }
+          });
+          gitment.render('container');
+        }
+        </script>
+    
+  </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="BeiYu">
+          <p class="site-author-name" itemprop="name">BeiYu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">1.</span> <span class="nav-text">MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#储存引擎-Storage-engines"><span class="nav-number">1.1.</span> <span class="nav-text">储存引擎(Storage engines)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySql登录"><span class="nav-number">1.2.</span> <span class="nav-text">MySql登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">2.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立数据库"><span class="nav-number">2.1.</span> <span class="nav-text">建立数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据库"><span class="nav-number">2.2.</span> <span class="nav-text">使用数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据库"><span class="nav-number">2.3.</span> <span class="nav-text">修改数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据库"><span class="nav-number">2.4.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">2.5.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Integer-Data-Types"><span class="nav-number">2.5.1.</span> <span class="nav-text">Integer Data Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bit-Data-Type"><span class="nav-number">2.5.2.</span> <span class="nav-text">Bit Data Type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String"><span class="nav-number">2.5.3.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date"><span class="nav-number">2.5.4.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ENUM"><span class="nav-number">2.5.5.</span> <span class="nav-text">ENUM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">2.5.6.</span> <span class="nav-text">Set</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">3.</span> <span class="nav-text">表格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表格"><span class="nav-number">3.1.</span> <span class="nav-text">创建表格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现复合语句和储存过程"><span class="nav-number">4.</span> <span class="nav-text">实现复合语句和储存过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#复合语句"><span class="nav-number">4.1.</span> <span class="nav-text">复合语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">4.2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#declare"><span class="nav-number">4.2.1.</span> <span class="nav-text">declare</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">4.2.2.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明与初始化"><span class="nav-number">4.2.3.</span> <span class="nav-text">声明与初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">4.3.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程控制语句"><span class="nav-number">4.4.</span> <span class="nav-text">流程控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if-then-else"><span class="nav-number">4.4.1.</span> <span class="nav-text">if-then-else</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#case"><span class="nav-number">4.4.2.</span> <span class="nav-text">case</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while"><span class="nav-number">4.4.3.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loop"><span class="nav-number">4.4.4.</span> <span class="nav-text">loop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iterate-statement"><span class="nav-number">4.4.5.</span> <span class="nav-text">iterate statement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#repeat-statement"><span class="nav-number">4.4.6.</span> <span class="nav-text">repeat statement</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BeiYu</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

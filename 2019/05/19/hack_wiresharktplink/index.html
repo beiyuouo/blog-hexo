@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="wireshark,hark,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="听说tplink的管理员登录有蛮大漏洞的…记一次用wireshark捕获password 首先打开wireshark，选择捕获wlan0，无线网卡 点击开始，然后打开tplogin.cn登录账户  然后结束捕获，在捕获的结果中寻找http相关的流，然后追踪  发现一条登录相关的流，追踪以后可以发现password tplogin中password加密相关的函数在class.js中，搜索encode">
+<meta name="keywords" content="wireshark,hark">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用wireshark hark一次tplink的管理员登录">
+<meta property="og:url" content="beiyuouo.github.io/2019/05/19/hack_wiresharktplink/index.html">
+<meta property="og:site_name" content="BeiYu">
+<meta property="og:description" content="听说tplink的管理员登录有蛮大漏洞的…记一次用wireshark捕获password 首先打开wireshark，选择捕获wlan0，无线网卡 点击开始，然后打开tplogin.cn登录账户  然后结束捕获，在捕获的结果中寻找http相关的流，然后追踪  发现一条登录相关的流，追踪以后可以发现password tplogin中password加密相关的函数在class.js中，搜索encode">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="/img/20190519125819.png">
+<meta property="og:image" content="/img/20190519125825.png">
+<meta property="og:image" content="/img/20190519125834.png">
+<meta property="og:image" content="/img/20190519130333.png">
+<meta property="og:image" content="/img/20190519130341.png">
+<meta property="og:image" content="/img/20190519130425.png">
+<meta property="og:image" content="/img/20190519130449.png">
+<meta property="og:image" content="/img/20190519130455.png">
+<meta property="og:image" content="/img/20190519130509.png">
+<meta property="og:image" content="/img/20190519130522.png">
+<meta property="og:image" content="/img/20190519130525.png">
+<meta property="og:updated_time" content="2019-05-19T05:29:52.028Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用wireshark hark一次tplink的管理员登录">
+<meta name="twitter:description" content="听说tplink的管理员登录有蛮大漏洞的…记一次用wireshark捕获password 首先打开wireshark，选择捕获wlan0，无线网卡 点击开始，然后打开tplogin.cn登录账户  然后结束捕获，在捕获的结果中寻找http相关的流，然后追踪  发现一条登录相关的流，追踪以后可以发现password tplogin中password加密相关的函数在class.js中，搜索encode">
+<meta name="twitter:image" content="/img/20190519125819.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/2019/05/19/hack_wiresharktplink/">
+
+
+
+
+
+  <title>用wireshark hark一次tplink的管理员登录 | BeiYu</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BeiYu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/game/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            menu.game
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/05/19/hack_wiresharktplink/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BeiYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BeiYu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">用wireshark hark一次tplink的管理员登录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-19T13:13:29+08:00">
+                2019-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/hack/" itemprop="url" rel="index">
+                    <span itemprop="name">hack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>听说tplink的管理员登录有蛮大漏洞的…记一次用wireshark捕获password</p>
+<p>首先打开wireshark，选择捕获wlan0，无线网卡<br><img src="/img/20190519125819.png" alt="20190519125819.png"></p>
+<p>点击开始，然后打开tplogin.cn登录账户</p>
+<p><img src="/img/20190519125825.png" alt="20190519125825.png"></p>
+<p>然后结束捕获，在捕获的结果中寻找http相关的流，然后追踪</p>
+<p><img src="/img/20190519125834.png" alt="20190519125834.png"></p>
+<p>发现一条登录相关的流，追踪以后可以发现password<br><img src="/img/20190519130333.png" alt="20190519130333.png"><br><img src="/img/20190519130341.png" alt="20190519130341.png"></p>
+<p>tplogin中password加密相关的函数在class.js中，搜索encode就可以发现<br><img src="/img/20190519130425.png" alt="20190519130425.png"></p>
+<p>把这段函数拿出来<br><img src="/img/20190519130449.png" alt="20190519130449.png"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">orgAuthPwd=<span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> securityEncode(a,<span class="string">"RDpbLfCPsJZ7fiv"</span>,<span class="string">"yLwVl0zKqws7LgKPRQ84Mdt708T1qQ3Ha7xv3H7NyU84p21BriUWBU43odz3iP4rBL3cD02KZciXTysVXiV8ngg6vL48rPJyAUw0HurW20xqxv9aYb4M9wK1Ae0wlro510qXeU07kV57fQMc8L6aLgMLwygtc0F10a0Dg70TOoouyFhdysuRMO51yY5ZlOZZLEal1h0t9YQW0Ko7oBwmCAHoic4HYbUyVeU3sfQ1xtXcPcf1aT303wAQhv66qzW"</span>)</span><br><span class="line">&#125;;</span><br><span class="line">securityEncode=<span class="function"><span class="keyword">function</span>(<span class="params">a,c,b</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> d=<span class="string">""</span>,e,f,g,h,k=<span class="number">187</span>,l=<span class="number">187</span>;</span><br><span class="line">	f=a.length;g=c.length;h=b.length;e=f&gt;g?f:g;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> m=<span class="number">0</span>;m&lt;e;m++)</span><br><span class="line">		l=k=<span class="number">187</span>,m&gt;=f?l=c.charCodeAt(m):m&gt;=g?k=a.charCodeAt(m):(k=a.charCodeAt(m),l=c.charCodeAt(m)),d+=b.charAt((k^l)%h);</span><br><span class="line">	<span class="keyword">return</span> d</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>可以发现他其实是一位一位加密的，每位独立的话，那挨个枚举就好了，首先枚举位数，在枚举每一位的字符，查看和加密后的是否相同。<br>我写了一个html代码来运行JavaScript<br><img src="/img/20190519130455.png" alt="20190519130455.png"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"cnv1"</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">orgAuthPwd=<span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">return</span> securityEncode(a,<span class="string">"RDpbLfCPsJZ7fiv"</span>,<span class="string">"yLwVl0zKqws7LgKPRQ84Mdt708T1qQ3Ha7xv3H7NyU84p21BriUWBU43odz3iP4rBL3cD02KZciXTysVXiV8ngg6vL48rPJyAUw0HurW20xqxv9aYb4M9wK1Ae0wlro510qXeU07kV57fQMc8L6aLgMLwygtc0F10a0Dg70TOoouyFhdysuRMO51yY5ZlOZZLEal1h0t9YQW0Ko7oBwmCAHoic4HYbUyVeU3sfQ1xtXcPcf1aT303wAQhv66qzW"</span>)&#125;;</span></span><br><span class="line"><span class="javascript">securityEncode=<span class="function"><span class="keyword">function</span>(<span class="params">a,c,b</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> d=<span class="string">""</span>,e,f,g,h,k=<span class="number">187</span>,l=<span class="number">187</span>;</span></span><br><span class="line"><span class="undefined">	f=a.length;g=c.length;h=b.length;e=f&gt;g?f:g;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">for</span>(<span class="keyword">var</span> m=<span class="number">0</span>;m&lt;e;m++)</span></span><br><span class="line"><span class="undefined">		l=k=187,m&gt;=f?l=c.charCodeAt(m):m&gt;=g?k=a.charCodeAt(m):(k=a.charCodeAt(m),l=c.charCodeAt(m)),d+=b.charAt((k^l)%h);</span></span><br><span class="line"><span class="javascript">	<span class="keyword">return</span> d</span></span><br><span class="line"><span class="undefined">&#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">decode=<span class="function"><span class="keyword">function</span>(<span class="params">c, b</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> a=<span class="string">""</span>;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> d=<span class="string">"xbZ60JKy9TefbwK"</span>;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> k=<span class="number">187</span>, l=<span class="number">187</span>;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> e=c.length;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> h=b.length;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> g=c.length;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> res=<span class="string">""</span>;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">for</span>(<span class="keyword">var</span> f=<span class="number">0</span>; f&lt;e;f++) &#123;</span></span><br><span class="line"><span class="javascript">	res=<span class="string">""</span></span></span><br><span class="line"><span class="javascript">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;e; i++) &#123;</span></span><br><span class="line"><span class="undefined">		l=k=187;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;<span class="number">128</span>; j++) &#123;</span></span><br><span class="line"><span class="undefined">			i&gt;=f?l=c.charCodeAt(i):i&gt;=g?k=j:k=j,l=c.charCodeAt(i);</span></span><br><span class="line"><span class="javascript">			<span class="keyword">if</span>(b.charAt((k^l)%h)==d.charAt(i)) &#123;</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(j)</span></span><br><span class="line"><span class="javascript">				res+=<span class="built_in">String</span>.fromCharCode(j);</span></span><br><span class="line"><span class="javascript">				<span class="keyword">break</span>;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="javascript">	<span class="built_in">console</span>.log(res);</span></span><br><span class="line"><span class="javascript">	<span class="built_in">console</span>.log(<span class="string">"\n----\n"</span>);&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="javascript">cc=<span class="string">"RDpbLfCPsJZ7fiv"</span>;</span></span><br><span class="line"><span class="javascript">dd=<span class="string">"yLwVl0zKqws7LgKPRQ84Mdt708T1qQ3Ha7xv3H7NyU84p21BriUWBU43odz3iP4rBL3cD02KZciXTysVXiV8ngg6vL48rPJyAUw0HurW20xqxv9aYb4M9wK1Ae0wlro510qXeU07kV57fQMc8L6aLgMLwygtc0F10a0Dg70TOoouyFhdysuRMO51yY5ZlOZZLEal1h0t9YQW0Ko7oBwmCAHoic4HYbUyVeU3sfQ1xtXcPcf1aT303wAQhv66qzW"</span>;</span></span><br><span class="line"><span class="undefined">decode(cc,dd);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>运行结果如图，因为不知道长度，所以长度太长和太短都不合适，无法登录，中间长度和输入密码长度差不多的都可以登录，大概有3-4个的样子是可以成功登录的</p>
+<p><img src="/img/20190519130509.png" alt="20190519130509.png"><br><img src="/img/20190519130522.png" alt="20190519130522.png"></p>
+<p>登录成功<br><img src="/img/20190519130525.png" alt="20190519130525.png"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/wireshark/" rel="tag"><i class="fa fa-tag"></i> wireshark</a>
+          
+            <a href="/tags/hark/" rel="tag"><i class="fa fa-tag"></i> hark</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/16/note_dataanalysisandmining/" rel="next" title="数据分析与挖掘笔记">
+                <i class="fa fa-chevron-left"></i> 数据分析与挖掘笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/09/01/TODOLIST/" rel="prev" title="TODOLIST">
+                TODOLIST <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+        <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
+        <div id="container" style="display:none"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        const myTheme = {
+          render(state, instance) {
+            const container = document.createElement('div');
+            container.lang = "en-US";
+            container.className = 'gitment-container gitment-root-container';
+            container.appendChild(instance.renderHeader(state, instance));
+            container.appendChild(instance.renderEditor(state, instance));
+            container.appendChild(instance.renderComments(state, instance));
+            container.appendChild(instance.renderFooter(state, instance));
+            return container;
+          }
+        }
+        function showGitment() {
+          $("#gitment_title").attr("style", "display:none");
+          $("#container").attr("style", "").addClass("gitment_container");
+          var gitment = new Gitment({
+            id: window.location.pathname,
+            theme: myTheme,
+            owner: 'beiyuouo',
+            repo: 'beiyuouo.github.io',
+            oauth: {
+              client_id: 'c48d3bc9cd0c5182abfe',
+              client_secret: '29f3e4fe3026e18a2780f34bc7a443af9df2386d'
+            }
+          });
+          gitment.render('container');
+        }
+        </script>
+    
+  </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="BeiYu">
+          <p class="site-author-name" itemprop="name">BeiYu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BeiYu</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
