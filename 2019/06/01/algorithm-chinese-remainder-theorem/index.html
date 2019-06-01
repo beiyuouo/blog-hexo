@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="BeiYu, beiyu">
+  <meta name="keywords" content="algorithm,gcd,chinese-remainder-theorem,">
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="北屿 BeiYu">
+<meta name="description" content="中国剩余定理$\left\{\begin{matrix}x\equiv a_1\bmod m_1\\ x\equiv a_2\bmod m_2\\ … \\x\equiv a_n\bmod m_n\end{matrix}\right.$其中$m_i$两两互质$M=\prod_{i=0}^{n}m_i, M_i=\frac{M}{m_i}$$x=\sum_{i=0}^{n}a_i M_i M_i^{">
+<meta name="keywords" content="algorithm,gcd,chinese-remainder-theorem">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="beiyuouo.github.io/2019/05/23/test-hello-world/index.html">
+<meta property="og:title" content="中国剩余定理笔记">
+<meta property="og:url" content="beiyuouo.github.io/2019/06/01/algorithm-chinese-remainder-theorem/index.html">
 <meta property="og:site_name" content="BeiYu">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="中国剩余定理$\left\{\begin{matrix}x\equiv a_1\bmod m_1\\ x\equiv a_2\bmod m_2\\ … \\x\equiv a_n\bmod m_n\end{matrix}\right.$其中$m_i$两两互质$M=\prod_{i=0}^{n}m_i, M_i=\frac{M}{m_i}$$x=\sum_{i=0}^{n}a_i M_i M_i^{">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-13T02:07:04.411Z">
+<meta property="og:updated_time" content="2019-06-01T07:27:02.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="中国剩余定理笔记">
+<meta name="twitter:description" content="中国剩余定理$\left\{\begin{matrix}x\equiv a_1\bmod m_1\\ x\equiv a_2\bmod m_2\\ … \\x\equiv a_n\bmod m_n\end{matrix}\right.$其中$m_i$两两互质$M=\prod_{i=0}^{n}m_i, M_i=\frac{M}{m_i}$$x=\sum_{i=0}^{n}a_i M_i M_i^{">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/2019/05/23/test-hello-world/">
+  <link rel="canonical" href="beiyuouo.github.io/2019/06/01/algorithm-chinese-remainder-theorem/">
 
 
 
 
 
-  <title>Hello World | BeiYu</title>
+  <title>中国剩余定理笔记 | BeiYu</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/05/23/test-hello-world/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/06/01/algorithm-chinese-remainder-theorem/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BeiYu">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">中国剩余定理笔记</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-23T17:17:04+08:00">
-                2019-05-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-01T14:36:45+08:00">
+                2019-06-01
               </time>
             
 
@@ -342,6 +342,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -406,15 +428,8 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><p>$\left\{\begin{matrix}x\equiv a_1\bmod m_1\\ x\equiv a_2\bmod m_2\\ … \\x\equiv a_n\bmod m_n\end{matrix}\right.$<br>其中$m_i$两两互质<br>$M=\prod_{i=0}^{n}m_i, M_i=\frac{M}{m_i}$<br>$x=\sum_{i=0}^{n}a_i M_i M_i^{-1}\pmod {m_i}$</p>
+<h2 id="扩展中国剩余定理"><a href="#扩展中国剩余定理" class="headerlink" title="扩展中国剩余定理"></a>扩展中国剩余定理</h2><p>模数不互质的时候<br>$x\equiv a_1\bmod m_1$<br>$x\equiv a_2\bmod m_2$<br>也就是<br>$x=k_1m_1+a_1=k_2m_2+a_2$<br>$\therefore k_1m_1=(a_2-a_1)+k_2m_2$<br>即$k_1m_2\equiv (a_2-a_1)\bmod m_2$<br>让$d=(m_1,m_2)$<br>即$k_1\frac{m_1}{d}\equiv \frac{(a_2-a_1)}{d}\bmod {\frac{m_2}{d}}$<br>这样就可以得到$k_1=k’\frac{m_2}{d}+\frac{a_2-a_1}{d}(\frac{m_1}{d})^{-1}\pmod {\frac{m_2}{d}}$<br>令$t=\frac{a_2-a_1}{d}(\frac{m_1}{d})^{-1}\pmod {\frac{m_2}{d}}$<br>带回原式得$x=(k’\frac{m_2}{d}+t)m_1+a_1$<br>即可并成$x=k’\frac{m_1m_2}{d}+tm_1+a_1$<br>即$x\equiv a\bmod m$，其中$a=tm_1+a_1, m=\frac{m_1m_2}{d}$</p>
 
       
     </div>
@@ -430,6 +445,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
+          
+            <a href="/tags/gcd/" rel="tag"><i class="fa fa-tag"></i> gcd</a>
+          
+            <a href="/tags/chinese-remainder-theorem/" rel="tag"><i class="fa fa-tag"></i> chinese-remainder-theorem</a>
+          
+        </div>
+      
 
       
       
@@ -439,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/23/esp-wifikiller/" rel="next" title="esp8266做WiFi杀手">
-                <i class="fa fa-chevron-left"></i> esp8266做WiFi杀手
+              <a href="/2019/05/30/ctf-buuctf/" rel="next" title="BUUCTF WriteUP">
+                <i class="fa fa-chevron-left"></i> BUUCTF WriteUP
               </a>
             
           </div>
@@ -449,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/26/note-matlab/" rel="prev" title="MATLAB笔记">
-                MATLAB笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/09/01/TODOLIST/" rel="prev" title="TODOLIST">
+                TODOLIST <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -560,7 +585,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -582,7 +607,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -663,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#中国剩余定理"><span class="nav-number">1.</span> <span class="nav-text">中国剩余定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展中国剩余定理"><span class="nav-number">2.</span> <span class="nav-text">扩展中国剩余定理</span></a></li></ol></div>
             
 
           </div>
@@ -866,6 +891,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
