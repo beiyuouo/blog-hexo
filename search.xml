@@ -56,8 +56,8 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>gcd</tag>
         <tag>chinese-remainder-theorem</tag>
+        <tag>gcd</tag>
       </tags>
   </entry>
   <entry>
@@ -93,8 +93,8 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>exgcd</tag>
         <tag>gcd</tag>
+        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
