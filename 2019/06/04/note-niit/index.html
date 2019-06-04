@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  
+                  62
                 </span>
               
 
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  
+                  1
                 </span>
               
             </div>
@@ -537,39 +537,7 @@
           
   <div class="comments" id="comments">
     
-        <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-        <div id="container" style="display:none"></div>
-        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-        <script>
-        const myTheme = {
-          render(state, instance) {
-            const container = document.createElement('div');
-            container.lang = "en-US";
-            container.className = 'gitment-container gitment-root-container';
-            container.appendChild(instance.renderHeader(state, instance));
-            container.appendChild(instance.renderEditor(state, instance));
-            container.appendChild(instance.renderComments(state, instance));
-            container.appendChild(instance.renderFooter(state, instance));
-            return container;
-          }
-        }
-        function showGitment() {
-          $("#gitment_title").attr("style", "display:none");
-          $("#container").attr("style", "").addClass("gitment_container");
-          var gitment = new Gitment({
-            id: window.location.pathname,
-            theme: myTheme,
-            owner: 'beiyuouo',
-            repo: 'beiyuouo.github.io',
-            oauth: {
-              client_id: 'c48d3bc9cd0c5182abfe',
-              client_secret: '29f3e4fe3026e18a2780f34bc7a443af9df2386d'
-            }
-          });
-          gitment.render('container');
-        }
-        </script>
+      <div id="gitalk-container"></div>
     
   </div>
 
@@ -908,6 +876,22 @@
 
 
 
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '7ecdc6031c1cd428a72b',
+          clientSecret: '4d78f400e7300c065e28ba0e207efb3141a4672e',
+          repo: 'beiyuouo.github.io',
+          owner: 'beiyuouo',
+          admin: ['beiyuouo'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
   
 
