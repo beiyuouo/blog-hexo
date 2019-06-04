@@ -128,9 +128,9 @@
             
             <tag> algorithm </tag>
             
-            <tag> chinese-remainder-theorem </tag>
-            
             <tag> gcd </tag>
+            
+            <tag> chinese-remainder-theorem </tag>
             
         </tags>
       
@@ -211,9 +211,9 @@
             
             <tag> algorithm </tag>
             
-            <tag> gcd </tag>
-            
             <tag> exgcd </tag>
+            
+            <tag> gcd </tag>
             
         </tags>
       
