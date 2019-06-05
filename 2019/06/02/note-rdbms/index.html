@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="关系型数据库管理系统（Relational Database Management System，RDBMS） 亲，双语对照 名词解释 候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键 主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。 外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。 主属性 ：一个属性只要在">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-06-04T10:58:37.754Z">
+<meta property="og:updated_time" content="2019-06-05T04:46:01.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关系数据库管理系统(RDBMS)笔记">
 <meta name="twitter:description" content="关系型数据库管理系统（Relational Database Management System，RDBMS） 亲，双语对照 名词解释 候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键 主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。 外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。 主属性 ：一个属性只要在">
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  934
+                  2.1k
                 </span>
               
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  10
                 </span>
               
             </div>
@@ -475,20 +475,98 @@
 </ul>
 <h4 id="子类型和超类型"><a href="#子类型和超类型" class="headerlink" title="子类型和超类型"></a>子类型和超类型</h4><p>子类型是另一个实体的子集<br>A subtype is a subset of another entity.<br>超类型就是那个完整的集合咯<br>A subentity or subtype is always dependent on the supertype for its existence.The attributes of a supertype apply to all of its subtypes. The converse is not true.<br>The supertype is connected to the relationship with a line containing a crossbar, as indicated in the preceding diagram. The attributes, which describe supertype will also belong to all subtypes. The subtype is described by the attributes that are unique to it.</p>
 <h3 id="基于记录的逻辑模型-Record-Based-Logical-Model"><a href="#基于记录的逻辑模型-Record-Based-Logical-Model" class="headerlink" title="基于记录的逻辑模型(Record-Based Logical Model)"></a>基于记录的逻辑模型(Record-Based Logical Model)</h3><p>- Hierarchical Model (层次模型)<br>In this model, data is represented in the form of a tree, and relationships between the data are represented by links.<br>- Network Model (网状模型)<br>In this model, the data and relationships among them are represented in the form of records and links. It is similar to a hierarchical model. However, records in a databse are represented by graphically.<br>- Relational Model (关系模型)<br>In this model, the table in a database has a fixed length record with fixed number of attributes or fields. Of these three models, the relational model is the most popular.</p>
-<h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>The row(or record) in the table is called a tuple, and the column(or field) is called an attribute. Every column in a table must have a unique name. The number of tuples is called the cardinality of the table, and the number of attributes is called the degree of the table.<br>One important property of a relation is that its rows are unordered. Every table must have some column or conbination of columns that uniquely identifies each row in the table.<br>No two rows of table contain the same values in that column or column conbination. This column is called the primary key.<br>A table where every row is different from all other rows is called relation.<br>Each</p>
-<h2 id="规范化定义-范式"><a href="#规范化定义-范式" class="headerlink" title="规范化定义(范式)"></a>规范化定义(范式)</h2><h3 id="第一范式-1NF"><a href="#第一范式-1NF" class="headerlink" title="第一范式(1NF)"></a>第一范式(1NF)</h3><ul>
-<li>定义：符合1NF的关系中的每个属性都不可再分解, 并且在一条记录里一个属性只能对应一个值</li>
+<h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>关系数据结构</p>
+<p>The row(or record) in the table is called a tuple, and the column(or field) is called an attribute. Every column in a table must have a unique name. The number of tuples is called the cardinality of the table, and the number of attributes is called the degree of the table.<br>One important property of a relation is that its rows are unordered. Every table must have some column or conbination of columns that uniquely identifies each row in the table.<br>No two rows of table contain the same values in that column or column conbination. This column is called the primary key.<br>A table where every row is different from all other rows is called relation.<br>Each attribute of a table has an associated domain(域). A domain is a collection of values from which one or more attribute(columns) draw their actual values. The domain lists the possible values for an attribute. (域就是所有取值可能)</p>
+<h3 id="ER图-ER-Diagram"><a href="#ER图-ER-Diagram" class="headerlink" title="ER图(ER Diagram)"></a>ER图(ER Diagram)</h3><p>矩形框：表示实体，在框中记入实体名。<br>菱形框：表示联系，在框中记入联系名。<br>椭圆形框：表示实体或联系的属性，将属性名记入框中。对于主属性名，则在其名称下划一下划线。<br>连线：实体与属性之间；实体与联系之间；联系与属性之间用直线相连，并在直线上标注联系的类型。（对于一对一联系，要在两个实体连线方向各写1； 对于一对多联系，要在一的一方写1，多的一方写N；对于多对多关系，则要在两个实体连线方向各写N,M。)</p>
+<h3 id="关系运算-Relational-Operators"><a href="#关系运算-Relational-Operators" class="headerlink" title="关系运算(Relational Operators)"></a>关系运算(Relational Operators)</h3><h4 id="Restrict-约束限制"><a href="#Restrict-约束限制" class="headerlink" title="Restrict 约束限制"></a>Restrict 约束限制</h4><p>The restrict operator extracts specified tuple or rowss from a given relation besed on a condition.<br>约束：根据条件提取几个元组</p>
+<h4 id="Project-投影"><a href="#Project-投影" class="headerlink" title="Project 投影"></a>Project 投影</h4><p>The project operator extracts specified attributes or columns from a given relation.<br>提取几列成为新的表</p>
+<h4 id="Produce-乘"><a href="#Produce-乘" class="headerlink" title="Produce 乘"></a>Produce 乘</h4><p>The porduce operator joins two relations such that every tuple of the first relation is matched with every tuple of second relation. To be product compation, the two tables must have common attributes.</p>
+<h4 id="Union-并"><a href="#Union-并" class="headerlink" title="Union 并"></a>Union 并</h4><p>The union operator builds a relation from tuples appearing in erither or both of the specified relations where as intersect operator builds a relation consisting of tuples that appear in both the relations.</p>
+<h4 id="Intersect-交"><a href="#Intersect-交" class="headerlink" title="Intersect 交"></a>Intersect 交</h4><p>The intersect operator builds a relation consisting of tuples that appear in both the relaiton.</p>
+<h4 id="Difference-差"><a href="#Difference-差" class="headerlink" title="Difference 差"></a>Difference 差</h4><p>The difference operator builds a relation of tuples appearing in the first but not in the second of the two specified relation.</p>
+<h4 id="Join-连接"><a href="#Join-连接" class="headerlink" title="Join 连接"></a>Join 连接</h4><p>The join operator builds a relation from two specified relations. This relation consists of all the possible combinations of tuples, one from each relation that satisfies the specified condition. The join operation requires a common attribute.</p>
+<h4 id="Divide-除"><a href="#Divide-除" class="headerlink" title="Divide 除"></a>Divide 除</h4><p>The divide operator takes two relations and builds another relation consisting of values of an attribute of one relation that match all the values in the other relation. The divide operation is the opposite of the product operation.</p>
+<h2 id="数据库设计-Database-design-unfinished"><a href="#数据库设计-Database-design-unfinished" class="headerlink" title="数据库设计(Database design) unfinished!"></a>数据库设计(Database design) unfinished!</h2><h3 id="将图标映射到表格"><a href="#将图标映射到表格" class="headerlink" title="将图标映射到表格"></a>将图标映射到表格</h3><p>ER图中几个重要的组成</p>
+<ul>
+<li>Regular entities</li>
+<li>Attributes</li>
+<li>Relationships</li>
+<li>Weak entities</li>
+<li>Subtypes and supertypes</li>
 </ul>
-<h3 id="第二范式-2NF"><a href="#第二范式-2NF" class="headerlink" title="第二范式(2NF)"></a>第二范式(2NF)</h3><ul>
-<li>定义： 符合1NF的前提下, 当表存在组合主键的时候, 每一个非键属性都必须完全依赖于组合主键中的所有主<br>键, 而不能只依赖部分主键</li>
+<h4 id="Weak-entities"><a href="#Weak-entities" class="headerlink" title="Weak entities"></a>Weak entities</h4><p>A weak entities is an entity whose existence depends on some other entity. The weak entities have the composite key, part of which consists of the primary key of the entity they depend on.</p>
+<h3 id="基于逻辑的数据库设计"><a href="#基于逻辑的数据库设计" class="headerlink" title="基于逻辑的数据库设计"></a>基于逻辑的数据库设计</h3><h4 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h4><ul>
+<li>It identifies its owner entity.</li>
+<li>It refers to another entity.</li>
+<li>It simplifies the description of an entity.</li>
 </ul>
-<h3 id="第三范式-3NF"><a href="#第三范式-3NF" class="headerlink" title="第三范式(3NF)"></a>第三范式(3NF)</h3><ul>
-<li>定义：符合2NF的前提下, 每一个非主键属性和主键之间不能有依赖传递(间接依赖)</li>
+<h4 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h4><ul>
+<li>Primary</li>
+<li>Foreign</li>
+<li>Candidate</li>
+<li>Alternate</li>
+<li>Composite</li>
 </ul>
-<h3 id="BCNF-鲍依斯-科得范式"><a href="#BCNF-鲍依斯-科得范式" class="headerlink" title="BCNF(鲍依斯-科得范式)"></a>BCNF(鲍依斯-科得范式)</h3><ul>
-<li>定义：符合3NF的前提下, 同时主属性内部没有部分依赖或者依赖传递关系</li>
+<p>Any attribute(or set of attributes) that uniquely identifies a row in  table is a candidate for the primary key(主键). Such an attribute is called a candidate key(候选键). One of the candidate keys is chosen to be the primary key, based on the familiarity and greater usage. Any attribute that is a candidate for the primary key but is not the primary key is called the alternate key(替代键). When the key that uniquely identifies the row of the table is made up of more than one attribute, it is called a composite key(复合键).</p>
+<h4 id="Entities"><a href="#Entities" class="headerlink" title="Entities"></a>Entities</h4><p>Some attributes may acquire further attributes to qualify themselves during databses design and become entities.</p>
+<h4 id="Subentities"><a href="#Subentities" class="headerlink" title="Subentities"></a>Subentities</h4><p>Specialization(特化) is the result of taking a subset of a higher-level entity set to form a lower-level  entity set.<br>Generalization(概化) is the result of taking the union of two or more lower-level entity set to produce a higher-level entity set. It is the opposite of specialization.</p>
+<h2 id="规范化定义-范式"><a href="#规范化定义-范式" class="headerlink" title="规范化定义(范式)"></a>规范化定义(范式)</h2><p>Normalization is a method of breaking down complex table structures into simple table structures by using certaion rules. Using this mathod, you can reduce redundancy in a table, and eliminate the problems of inconsistency and disk space usage. You can also ensure that there is no loss of information.</p>
+<p>Normalization has the following benefits</p>
+<ul>
+<li>It helps in maintaining data integrity(完整).</li>
+<li>It helps in simplifying the structure of tables, therefore, making a database more compact(简洁).</li>
+<li>It helps in reducing the null values, which reduces the complexity of data operation.</li>
 </ul>
-<h3 id="逆范式"><a href="#逆范式" class="headerlink" title="逆范式"></a>逆范式</h3><p>逆范式化指的是根据项目情况故意通过增加冗余或重复的数据来提高数据库的查询性能(从而避免频繁使用性能较差<br>的连接语句或子查询语句)</p>
+<p>Achieve a good database design</p>
+<ul>
+<li>Each table should have an identifier</li>
+<li>Each table should store data for a single type of entity.</li>
+<li>Columns that accept NULLs should be avoided.</li>
+<li>The reprtition of values or columns should be avoided.</li>
+</ul>
+<h3 id="第一范式-1NF"><a href="#第一范式-1NF" class="headerlink" title="第一范式(1NF)"></a>第一范式(1NF)</h3><p>A table is said to be 1NF when each cell of the table contains precisely one value.<br>定义：符合1NF的关系中的每个属性都不可再分解, 并且在一条记录里一个属性只能对应一个值</p>
+<p>Guidelines</p>
+<ul>
+<li>Place the related data values in a table. Further, define similar data values with the column name.</li>
+<li>There should be no repeating group in the table.</li>
+<li>Every table must have a unique primary key.</li>
+</ul>
+<p>Functional dependency(函数依赖)<br>如果属性A依赖B，那么B就叫决定因素determinant</p>
+<h3 id="第二范式-2NF"><a href="#第二范式-2NF" class="headerlink" title="第二范式(2NF)"></a>第二范式(2NF)</h3><p>A table is said to be in 2NF when:</p>
+<ul>
+<li>It is in 1NF, and</li>
+<li>No partial dependency exists between non-key attributes and key attributes.</li>
+<li>定义： 符合1NF的前提下, 当表存在组合主键的时候, 每一个非键属性都必须完全依赖于组合主键中的所有主键, 而不能只依赖部分主键</li>
+</ul>
+<p>Guidelines</p>
+<ul>
+<li>Find and remove attributes that are functionally dependent on only a part of the key and not on the whole key. Place them in a different table.</li>
+<li>Group the remaining attributes.</li>
+</ul>
+<h3 id="第三范式-3NF"><a href="#第三范式-3NF" class="headerlink" title="第三范式(3NF)"></a>第三范式(3NF)</h3><p>A relation is said to be in 3NF if and only if:</p>
+<ul>
+<li>It is in 2NF, and</li>
+<li>No transitive(indirect) dependency exists between non-key attributes and key attributes.</li>
+</ul>
+<p>定义：符合2NF的前提下, 每一个非主键属性和主键之间不能有依赖传递(间接依赖)</p>
+<p>Guidelines</p>
+<ul>
+<li>Find and remove non-key attributes that are functionally dependent on attributes that are not the primary key. Place them in a different table.</li>
+<li>Group the remaining attributes.</li>
+</ul>
+<h3 id="BCNF-鲍依斯-科得范式"><a href="#BCNF-鲍依斯-科得范式" class="headerlink" title="BCNF(鲍依斯-科得范式)"></a>BCNF(鲍依斯-科得范式)</h3><p>The original definition of 3NF was not sufficient in some situations.<br>不满足的情况</p>
+<ul>
+<li>That had multiple candidate keys.</li>
+<li>Where the multiple candidate keys were composite.</li>
+<li>Where the multiple candidate keys overlapped(had at least one attribute in common).<br>A relation is in BCNF if and only if every determinant is candidate key.</li>
+</ul>
+<p>定义：符合3NF的前提下, 同时主属性内部没有部分依赖或者依赖传递关系</p>
+<p>Guidelines </p>
+<ul>
+<li>Find and remove the overlapping candidate keys. Place the part of the candidate key an th attribute it is functionally dependent on, in a different table.</li>
+<li>Group the remaining items into a table.</li>
+</ul>
+<h3 id="逆范式"><a href="#逆范式" class="headerlink" title="逆范式"></a>逆范式</h3><p>The intentional introduction of redundancy in a table in order to improve performance is called denormalization.<br>逆范式化指的是根据项目情况故意通过增加冗余或重复的数据来提高数据库的查询性能(从而避免频繁使用性能较差的连接语句或子查询语句)</p>
 
       
     </div>
@@ -716,7 +794,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名词解释"><span class="nav-number">1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型"><span class="nav-number">2.</span> <span class="nav-text">数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ER模型-ER-Model"><span class="nav-number">2.1.</span> <span class="nav-text">ER模型(ER Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实体"><span class="nav-number">2.1.1.</span> <span class="nav-text">实体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">2.1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">2.1.3.</span> <span class="nav-text">关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子类型和超类型"><span class="nav-number">2.1.4.</span> <span class="nav-text">子类型和超类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于记录的逻辑模型-Record-Based-Logical-Model"><span class="nav-number">2.2.</span> <span class="nav-text">基于记录的逻辑模型(Record-Based Logical Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关系模型"><span class="nav-number">2.2.1.</span> <span class="nav-text">关系模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规范化定义-范式"><span class="nav-number">3.</span> <span class="nav-text">规范化定义(范式)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一范式-1NF"><span class="nav-number">3.1.</span> <span class="nav-text">第一范式(1NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二范式-2NF"><span class="nav-number">3.2.</span> <span class="nav-text">第二范式(2NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三范式-3NF"><span class="nav-number">3.3.</span> <span class="nav-text">第三范式(3NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BCNF-鲍依斯-科得范式"><span class="nav-number">3.4.</span> <span class="nav-text">BCNF(鲍依斯-科得范式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逆范式"><span class="nav-number">3.5.</span> <span class="nav-text">逆范式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名词解释"><span class="nav-number">1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型"><span class="nav-number">2.</span> <span class="nav-text">数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ER模型-ER-Model"><span class="nav-number">2.1.</span> <span class="nav-text">ER模型(ER Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实体"><span class="nav-number">2.1.1.</span> <span class="nav-text">实体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">2.1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">2.1.3.</span> <span class="nav-text">关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子类型和超类型"><span class="nav-number">2.1.4.</span> <span class="nav-text">子类型和超类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于记录的逻辑模型-Record-Based-Logical-Model"><span class="nav-number">2.2.</span> <span class="nav-text">基于记录的逻辑模型(Record-Based Logical Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关系模型"><span class="nav-number">2.2.1.</span> <span class="nav-text">关系模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ER图-ER-Diagram"><span class="nav-number">2.3.</span> <span class="nav-text">ER图(ER Diagram)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系运算-Relational-Operators"><span class="nav-number">2.4.</span> <span class="nav-text">关系运算(Relational Operators)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Restrict-约束限制"><span class="nav-number">2.4.1.</span> <span class="nav-text">Restrict 约束限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project-投影"><span class="nav-number">2.4.2.</span> <span class="nav-text">Project 投影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Produce-乘"><span class="nav-number">2.4.3.</span> <span class="nav-text">Produce 乘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Union-并"><span class="nav-number">2.4.4.</span> <span class="nav-text">Union 并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Intersect-交"><span class="nav-number">2.4.5.</span> <span class="nav-text">Intersect 交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Difference-差"><span class="nav-number">2.4.6.</span> <span class="nav-text">Difference 差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Join-连接"><span class="nav-number">2.4.7.</span> <span class="nav-text">Join 连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Divide-除"><span class="nav-number">2.4.8.</span> <span class="nav-text">Divide 除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库设计-Database-design-unfinished"><span class="nav-number">3.</span> <span class="nav-text">数据库设计(Database design) unfinished!</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将图标映射到表格"><span class="nav-number">3.1.</span> <span class="nav-text">将图标映射到表格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Weak-entities"><span class="nav-number">3.1.1.</span> <span class="nav-text">Weak entities</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于逻辑的数据库设计"><span class="nav-number">3.2.</span> <span class="nav-text">基于逻辑的数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Attributes"><span class="nav-number">3.2.1.</span> <span class="nav-text">Attributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Keys"><span class="nav-number">3.2.2.</span> <span class="nav-text">Keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Entities"><span class="nav-number">3.2.3.</span> <span class="nav-text">Entities</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subentities"><span class="nav-number">3.2.4.</span> <span class="nav-text">Subentities</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规范化定义-范式"><span class="nav-number">4.</span> <span class="nav-text">规范化定义(范式)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一范式-1NF"><span class="nav-number">4.1.</span> <span class="nav-text">第一范式(1NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二范式-2NF"><span class="nav-number">4.2.</span> <span class="nav-text">第二范式(2NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三范式-3NF"><span class="nav-number">4.3.</span> <span class="nav-text">第三范式(3NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BCNF-鲍依斯-科得范式"><span class="nav-number">4.4.</span> <span class="nav-text">BCNF(鲍依斯-科得范式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逆范式"><span class="nav-number">4.5.</span> <span class="nav-text">逆范式</span></a></li></ol></li></ol></div>
             
 
           </div>
