@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="关系型数据库管理系统（Relational Database Management System，RDBMS） 亲，双语对照 名词解释 候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键 主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。 外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。 主属性 ：一个属性只要在">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-06-06T09:18:32.277Z">
+<meta property="og:updated_time" content="2019-06-09T13:56:16.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关系数据库管理系统(RDBMS)笔记">
 <meta name="twitter:description" content="关系型数据库管理系统（Relational Database Management System，RDBMS） 亲，双语对照 名词解释 候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键 主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。 外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。 主属性 ：一个属性只要在">
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.3k
+                  2.4k
                 </span>
               
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  11
+                  12
                 </span>
               
             </div>
@@ -464,7 +464,12 @@
 <li>主属性 ：一个属性只要在任何一个候选键中出现过，这个属性就是主属性。</li>
 <li>非主属性 ：与上面相反，没有在任何候选键中出现过，这个属性就是非主属性。</li>
 </ul>
-<h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><h3 id="ER模型-ER-Model"><a href="#ER模型-ER-Model" class="headerlink" title="ER模型(ER Model)"></a>ER模型(ER Model)</h3><p>ER模型是基于对象的逻辑模型(Object-Based Logical Model)<br>“实体”-“关系”模型，是描述数据及其联系的数据模型<br>The ER model views the real world as a collection of objects or entities and the relationship among them.</p>
+<h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><p>A data model is a description of the data in a database. In addition, the data model describes the relationship among data, and any constraints that have to be defined on the data. Data models can broadly be classified into the following categories.</p>
+<ul>
+<li>Object-based logical model: Focuses on desctibing the data, the relationship among the data, and any constraints defined.</li>
+<li>Record-based logical model: Focuses on specifying the logical structuring of the database.</li>
+</ul>
+<h3 id="ER模型-ER-Model"><a href="#ER模型-ER-Model" class="headerlink" title="ER模型(ER Model)"></a>ER模型(ER Model)</h3><p>ER模型是基于对象的逻辑模型(Object-Based Logical Model)<br>“实体”-“关系”模型，是描述数据及其联系的数据模型<br>The ER model views the real world as a collection of objects or entities and the relationship among them.</p>
 <h4 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h4><p>实体：客观存在并可以相互区分的事物<br>Entities:a thing, whick can be easily identitfied.</p>
 <h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>属性：实体所具有的若干特征<br>Attributes: an attribute is a property of given entity.</p>
 <h4 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h4><p>关系：实体之间的联系<br>Relationships: an association among entities.<br>A relationship type is an association of entity types. A relationship instance is an association of entity instances.<br>A relationship can associate an entity with itself.<br>关系类型： </p>
@@ -479,11 +484,13 @@
 <h4 id="Network-Model-网状模型"><a href="#Network-Model-网状模型" class="headerlink" title=" Network Model(网状模型)"></a> Network Model(网状模型)</h4><p>In this model, the data and relationships among them are represented in the form of records and links. It is similar to a hierarchical model. However, records in a databse are represented by graphically.</p>
 <h4 id="Relational-Model-关系模型"><a href="#Relational-Model-关系模型" class="headerlink" title=" Relational Model(关系模型)"></a> Relational Model(关系模型)</h4><p>In this model, the table in a database has a fixed length record with fixed number of attributes or fields. Of these three models, the relational model is the most popular.</p>
 <h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>关系数据结构</p>
+<p>An RDBMS can be defined as a database management system where all the data visible to the user is organized strictly as tables of data values, and all the database operations work on these tables.</p>
+<p>The basic principle in a relational database is a tabular arrangement of data values. Each table in a databse has a unique table name that identifies its contents.</p>
 <p>The row(or record) in the table is called a tuple, and the column(or field) is called an attribute. Every column in a table must have a unique name. The number of tuples is called the cardinality of the table, and the number of attributes is called the degree of the table.<br>One important property of a relation is that its rows are unordered. Every table must have some column or conbination of columns that uniquely identifies each row in the table.<br>No two rows of table contain the same values in that column or column conbination. This column is called the primary key.<br>A table where every row is different from all other rows is called relation.<br>Each attribute of a table has an associated domain(域). A domain is a collection of values from which one or more attribute(columns) draw their actual values. The domain lists the possible values for an attribute. (域就是所有取值可能)</p>
 <h3 id="ER图-ER-Diagram"><a href="#ER图-ER-Diagram" class="headerlink" title="ER图(ER Diagram)"></a>ER图(ER Diagram)</h3><p>矩形框：表示实体，在框中记入实体名。<br>菱形框：表示联系，在框中记入联系名。<br>椭圆形框：表示实体或联系的属性，将属性名记入框中。对于主属性名，则在其名称下划一下划线。<br>连线：实体与属性之间；实体与联系之间；联系与属性之间用直线相连，并在直线上标注联系的类型。（对于一对一联系，要在两个实体连线方向各写1； 对于一对多联系，要在一的一方写1，多的一方写N；对于多对多关系，则要在两个实体连线方向各写N,M。)</p>
 <h3 id="关系运算-Relational-Operators"><a href="#关系运算-Relational-Operators" class="headerlink" title="关系运算(Relational Operators)"></a>关系运算(Relational Operators)</h3><h4 id="Restrict-约束限制"><a href="#Restrict-约束限制" class="headerlink" title="Restrict 约束限制"></a>Restrict 约束限制</h4><p>The restrict operator extracts specified tuple or rowss from a given relation besed on a condition.<br>约束：根据条件提取几个元组</p>
 <h4 id="Project-投影"><a href="#Project-投影" class="headerlink" title="Project 投影"></a>Project 投影</h4><p>The project operator extracts specified attributes or columns from a given relation.<br>提取几列成为新的表</p>
-<h4 id="Produce-乘"><a href="#Produce-乘" class="headerlink" title="Produce 乘"></a>Produce 乘</h4><p>The porduce operator joins two relations such that every tuple of the first relation is matched with every tuple of second relation. To be product compation, the two tables must have common attributes.</p>
+<h4 id="Produce-乘"><a href="#Produce-乘" class="headerlink" title="Produce 乘"></a>Produce 乘</h4><p>The product operator joins two relations such that every tuple of the first relation is matched with every tuple of second relation. To be product compatible, the two tables must have common attributes.</p>
 <h4 id="Union-并"><a href="#Union-并" class="headerlink" title="Union 并"></a>Union 并</h4><p>The union operator builds a relation from tuples appearing in erither or both of the specified relations where as intersect operator builds a relation consisting of tuples that appear in both the relations.</p>
 <h4 id="Intersect-交"><a href="#Intersect-交" class="headerlink" title="Intersect 交"></a>Intersect 交</h4><p>The intersect operator builds a relation consisting of tuples that appear in both the relaiton.</p>
 <h4 id="Difference-差"><a href="#Difference-差" class="headerlink" title="Difference 差"></a>Difference 差</h4><p>The difference operator builds a relation of tuples appearing in the first but not in the second of the two specified relation.</p>
