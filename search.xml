@@ -67,8 +67,8 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
+        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -104,8 +104,8 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>gcd</tag>
         <tag>exgcd</tag>
+        <tag>gcd</tag>
       </tags>
   </entry>
   <entry>
@@ -214,8 +214,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>note</tag>
         <tag>arduino</tag>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -331,7 +331,7 @@
   <entry>
     <title><![CDATA[Java笔记]]></title>
     <url>%2F2019%2F03%2F14%2Fnote-java%2F</url>
-    <content type="text"><![CDATA[Javajava companySun Microsystem, Inc. java文件每个java文件只能有一个public类，文件名与public类名相同。 编译与运行12javac helloworld.javajava hellojava 打包编译1javac -d 目标路径 文件路径 设置环境变量/set path=/path= 数据类型 Java数据类型 Group DataType Size Range DefaultValue Integer byte 1 byte $-2^7~2^7-1$ 0 short 2 bytes $-2^15~2^15-1$ 0 int 4 bytes $-2^31~2^31-1$ 0 long 8 bytes $-2^63~2^63-1$ 0 floating point float 4 bytes 3.4^{e-038}~3.4^{e+038} 0.0 double 8 bytes 1.7^{e-308}~1.7^{e+308} 0.0 字符型char字符串String是一个类 布尔型boolean 运算符基本跟c一样特殊的无符号右移&gt;&gt;&gt;判断类型是否相等instanceof 访问控制修饰符Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。default (即缺省，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。private : 在同一类内可见。使用对象：变量、方法。 注意：不能修饰类（外部类）public : 对所有类可见。使用对象：类、接口、变量、方法protected : 对同一包内的类和所有子类可见。使用对象：变量、方法。 注意：不能修饰类（外部类）。final 修饰符final 变量：final 表示”最后的、最终的”含义，变量一旦赋值后，不能被重新赋值。被 final 修饰的实例变量必须显式指定初始值。final 修饰符通常和 static 修饰符一起使用来创建类常量。 输入输出Scanner1234567import java.util.Scanner;Scanner sn = new Scanner(System.in);int a = sn.nextInt();String b = sn.next();String c = sn.nextLine();char d = sn.next().charAt(0);double f = sn.nextDouble(); System.out123System.out.println(); // 输出并换行System.out.print(); // 输出不换行System.out.printf(); // 格式化输出 数组1234arraytype arrayname[] = new arraytype[size];arraytype[] arrayname = new arraytype[size];arraytype arrayname[][] = new arraytype[sizex][sizey]; String/StringBuffer/StringBuilder12String a = "Hello" String a = new String("Hello"); 123456789101112131415161718charAt(0); // 返回第一个字符length(); // 长度getChar(int srcBegin, int srcEnd, char[] dst, int dstBegin); // 将src开始到结束左闭右开区间的字符串copy到dstBegin开始的字符串中equals(); // 判断是否相等，最好用字符常量与变量判断，防止空字符串。compareTo(); // 字符串比较startsWith(); // 是否以指定字符串为开头endsWith(); // 是否以指定字符串为结尾indexOf(); // 返回第一次字符出现的位置，若不存在返回-1lastIndexOf(); // 返回最后一次字符出现的位置，若不存在返回-1subString(int beginindex); // 返回从index开始的，到字符串末尾的子串。concat(String str); // 连接字符串replace(char oldChar, char newChar); // 字符替换，将oldChar替换成newChartoUpperCase(); // 大写toLowerCase(); // 小写trim(); // 去掉两段的空格toCharArray(); // 转换成char数组返回valueOf(); // 转换成字符串equalsIgnoreCase(); // 大小写不敏感比较字符串 StringBuffer 和 StringBuilder不建立新的字符串对象，但可以使用append(), delete(), insert(), reverse() 函数 类继承 JDBC]]></content>
+    <content type="text"><![CDATA[阿伟整理不完了…要考试了 Javajava companySun Microsystem, Inc. java文件每个java文件只能有一个public类，文件名与public类名相同。 编译与运行12javac helloworld.javajava hellojava 打包编译1javac -d 目标路径 文件路径 设置环境变量/set path=/path= 数据类型 Java数据类型 Group DataType Size Range DefaultValue Integer byte 1 byte $-2^7~2^7-1$ 0 short 2 bytes $-2^15~2^15-1$ 0 int 4 bytes $-2^31~2^31-1$ 0 long 8 bytes $-2^63~2^63-1$ 0 floating point float 4 bytes 3.4^{e-038}~3.4^{e+038} 0.0 double 8 bytes 1.7^{e-308}~1.7^{e+308} 0.0 字符型char字符串String是一个类 布尔型boolean 运算符基本跟c一样特殊的无符号右移&gt;&gt;&gt;判断类型是否相等instanceof 访问控制修饰符Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。default (即缺省，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。private : 在同一类内可见。使用对象：变量、方法。 注意：不能修饰类（外部类）public : 对所有类可见。使用对象：类、接口、变量、方法protected : 对同一包内的类和所有子类可见。使用对象：变量、方法。 注意：不能修饰类（外部类）。final 修饰符final 变量：final 表示”最后的、最终的”含义，变量一旦赋值后，不能被重新赋值。被 final 修饰的实例变量必须显式指定初始值。final 修饰符通常和 static 修饰符一起使用来创建类常量。 输入输出Scanner1234567import java.util.Scanner;Scanner sn = new Scanner(System.in);int a = sn.nextInt();String b = sn.next();String c = sn.nextLine();char d = sn.next().charAt(0);double f = sn.nextDouble(); System.out123System.out.println(); // 输出并换行System.out.print(); // 输出不换行System.out.printf(); // 格式化输出 数组1234arraytype arrayname[] = new arraytype[size];arraytype[] arrayname = new arraytype[size];arraytype arrayname[][] = new arraytype[sizex][sizey]; String/StringBuffer/StringBuilder12String a = "Hello" String a = new String("Hello"); 123456789101112131415161718charAt(0); // 返回第一个字符length(); // 长度getChar(int srcBegin, int srcEnd, char[] dst, int dstBegin); // 将src开始到结束左闭右开区间的字符串copy到dstBegin开始的字符串中equals(); // 判断是否相等，最好用字符常量与变量判断，防止空字符串。compareTo(); // 字符串比较startsWith(); // 是否以指定字符串为开头endsWith(); // 是否以指定字符串为结尾indexOf(); // 返回第一次字符出现的位置，若不存在返回-1lastIndexOf(); // 返回最后一次字符出现的位置，若不存在返回-1subString(int beginindex); // 返回从index开始的，到字符串末尾的子串。concat(String str); // 连接字符串replace(char oldChar, char newChar); // 字符替换，将oldChar替换成newChartoUpperCase(); // 大写toLowerCase(); // 小写trim(); // 去掉两段的空格toCharArray(); // 转换成char数组返回valueOf(); // 转换成字符串equalsIgnoreCase(); // 大小写不敏感比较字符串 StringBuffer 和 StringBuilder不建立新的字符串对象，但可以使用append(), delete(), insert(), reverse() 函数 类继承 图形界面JDBC多线程Work with ThreadsFurther, you can implement multithreading in an application to achieve an efficient performance and utilize the CPU processing capabilities. Advantages of multithreading Improved performance Minimized system resource usage Program structure simplification Disadvantages Race condition Deadlock condition Lock starvation]]></content>
       <categories>
         <category>note</category>
       </categories>
