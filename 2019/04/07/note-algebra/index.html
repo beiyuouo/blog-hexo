@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="description" content="第五章 矩阵的对角化第一节 特征值与特征向量设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个特征值，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的特征向量。  特征值问题只对方阵而言 特征向量必须是非">
 <meta name="keywords" content="note,math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性代数笔记">
 <meta property="og:url" content="beiyuouo.github.io/2019/04/07/note-algebra/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta property="og:description" content="第五章 矩阵的对角化第一节 特征值与特征向量设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个特征值，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的特征向量。  特征值问题只对方阵而言 特征向量必须是非">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-04-07T07:47:27.537Z">
+<meta property="og:updated_time" content="2019-06-18T08:45:34.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性代数笔记">
-<meta name="twitter:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="twitter:description" content="第五章 矩阵的对角化第一节 特征值与特征向量设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个特征值，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的特征向量。  特征值问题只对方阵而言 特征向量必须是非">
 
 
 
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  547
                 </span>
               
 
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -460,7 +460,23 @@
       
 
       
-        
+        <h2 id="第五章-矩阵的对角化"><a href="#第五章-矩阵的对角化" class="headerlink" title="第五章 矩阵的对角化"></a>第五章 矩阵的对角化</h2><h3 id="第一节-特征值与特征向量"><a href="#第一节-特征值与特征向量" class="headerlink" title="第一节 特征值与特征向量"></a>第一节 特征值与特征向量</h3><p>设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个<strong>特征值</strong>，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的<strong>特征向量</strong>。</p>
+<ul>
+<li>特征值问题只对方阵而言</li>
+<li>特征向量必须是非零向量</li>
+<li>方阵$A$的每个特征值均对应于无穷多个特征向量，属于同一特征值的特征向量的任意非零线性组合也是属于该特征值的特征向量，$A(kx)=k(Ax)=k(\lambda x)=\lambda (kx),k\neq 0$，$A(x_1+x_2)=Ax_1+Ax_2=\lambda x_1+\lambda x_2=\lambda (x_1+x_2), x_1+x_2\neq 0$</li>
+</ul>
+<p>求法</p>
+<script type="math/tex; mode=display">(A-\lambda E)x=0 , (\lambda E-A)x=0</script><p>有解的充要条件是：系数行列式$|A-\lambda E|=0$，此方程称为方阵$A$的<strong>特征方程</strong>，左端$|A-\lambda E|$是$\lambda $的$n$次多项式，称为方阵$A$的<strong>特征多项式</strong>，记为$f(\lambda )$</p>
+<p>特征值与特征向量的性质</p>
+<ul>
+<li>一个特征向量只能属于一个特征值（相同的看成一个）</li>
+<li>若$\lambda $是方阵$A$的特征值，$x$是其属于$\lambda $的特征向量，则<br>(1) $\mu\lambda$是$\mu A$的特征值，$x$是其属于$\mu \lambda$的特征向量<br>(2) $\lambda ^m$是$A^m$的特征值，$x$是其属于$\lambda ^m$的特征向量<br>(3) 当$|A|\neq 0$时，$\lambda ^{-1}$是$A^{-1}$的特征值，$\lambda ^{-1}|A|$为$A^{*}$的特征值，且$x$为其对应的特征向量。</li>
+<li>$A$与$A^{T}有相同的特征值</li>
+<li>设$n$阶矩阵$A=(a_{ij})$的$n$个特征值为$\lambda_1,\lambda_2,…, \lambda_n$，则<br>(1) $\sum_{i=1}^n \lambda_i=\sum_{i=1}^na_{ii}=trA$<br>(2) $\lambda 1\lambda 2…\lambda n=|A|$<br>其中$tr A$称为$A$的<strong>迹</strong>，为$A$的主对角线元素之和<br>$A$可逆当且仅当$A$的特征值不为零</li>
+<li>设$\lambda_1,\lambda_2,…\lambda_m$是方阵$A$的$m$个特征值，$p_1,p_2,…,p_m$是依次与之对应的特征向量，如果$\lambda_1,\lambda_2,…\lambda_m$互不相等，则$p_1,p_2,…,p_m$线性无关。</li>
+</ul>
+<h3 id="第二节-相似矩阵"><a href="#第二节-相似矩阵" class="headerlink" title="第二节 相似矩阵"></a>第二节 相似矩阵</h3>
       
     </div>
     
@@ -560,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
           <p class="site-author-name" itemprop="name">北屿</p>
@@ -680,6 +705,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-矩阵的对角化"><span class="nav-number">1.</span> <span class="nav-text">第五章 矩阵的对角化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-特征值与特征向量"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 特征值与特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-相似矩阵"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 相似矩阵</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
