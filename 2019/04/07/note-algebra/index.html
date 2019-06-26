@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="第五章 矩阵的对角化第一节 特征值与特征向量设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个特征值，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的特征向量。  特征值问题只对方阵而言 特征向量必须是非">
+<meta name="description" content="第一章 行列式第一节 二阶与三阶行列式第二节 $n$阶行列式的定义逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列。 在排列中，将任意两个元素对调，其余元素保持不动，这种作出新排列的方法叫做对换，将相邻两个元素对换，叫做相邻对换  定理1.1 一个排列中任意两个元素对换，排列改变奇偶性  \left | \begin{matrix}a_{11} &amp; \cdots &amp; a_{1n}\\\v">
 <meta name="keywords" content="math,note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性代数笔记">
 <meta property="og:url" content="beiyuouo.github.io/2019/04/07/note-algebra/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="第五章 矩阵的对角化第一节 特征值与特征向量设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个特征值，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的特征向量。  特征值问题只对方阵而言 特征向量必须是非">
+<meta property="og:description" content="第一章 行列式第一节 二阶与三阶行列式第二节 $n$阶行列式的定义逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列。 在排列中，将任意两个元素对调，其余元素保持不动，这种作出新排列的方法叫做对换，将相邻两个元素对换，叫做相邻对换  定理1.1 一个排列中任意两个元素对换，排列改变奇偶性  \left | \begin{matrix}a_{11} &amp; \cdots &amp; a_{1n}\\\v">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-06-25T02:31:35.352Z">
+<meta property="og:updated_time" content="2019-06-26T07:40:46.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性代数笔记">
-<meta name="twitter:description" content="第五章 矩阵的对角化第一节 特征值与特征向量设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个特征值，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的特征向量。  特征值问题只对方阵而言 特征向量必须是非">
+<meta name="twitter:description" content="第一章 行列式第一节 二阶与三阶行列式第二节 $n$阶行列式的定义逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列。 在排列中，将任意两个元素对调，其余元素保持不动，这种作出新排列的方法叫做对换，将相邻两个元素对换，叫做相邻对换  定理1.1 一个排列中任意两个元素对换，排列改变奇偶性  \left | \begin{matrix}a_{11} &amp; \cdots &amp; a_{1n}\\\v">
 
 
 
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-06-25T10:31:35+08:00">
-                2019-06-25
+              <time title="Post modified" itemprop="dateModified" datetime="2019-06-26T15:40:46+08:00">
+                2019-06-26
               </time>
             
           </span>
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  547
+                  1.4k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  5
                 </span>
               
             </div>
@@ -472,7 +472,47 @@
       
 
       
-        <h2 id="第五章-矩阵的对角化"><a href="#第五章-矩阵的对角化" class="headerlink" title="第五章 矩阵的对角化"></a>第五章 矩阵的对角化</h2><h3 id="第一节-特征值与特征向量"><a href="#第一节-特征值与特征向量" class="headerlink" title="第一节 特征值与特征向量"></a>第一节 特征值与特征向量</h3><p>设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个<strong>特征值</strong>，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的<strong>特征向量</strong>。</p>
+        <h2 id="第一章-行列式"><a href="#第一章-行列式" class="headerlink" title="第一章 行列式"></a>第一章 行列式</h2><h3 id="第一节-二阶与三阶行列式"><a href="#第一节-二阶与三阶行列式" class="headerlink" title="第一节 二阶与三阶行列式"></a>第一节 二阶与三阶行列式</h3><h3 id="第二节-n-阶行列式的定义"><a href="#第二节-n-阶行列式的定义" class="headerlink" title="第二节 $n$阶行列式的定义"></a>第二节 $n$阶行列式的定义</h3><p>逆序数为奇数的排列叫做<strong>奇排列</strong>，逆序数为偶数的排列叫做<strong>偶排列</strong>。</p>
+<p>在排列中，将任意两个元素对调，其余元素保持不动，这种作出新排列的方法叫做<strong>对换</strong>，将相邻两个元素对换，叫做<strong>相邻对换</strong></p>
+<ul>
+<li>定理1.1 一个排列中任意两个元素对换，排列改变奇偶性</li>
+</ul>
+<script type="math/tex; mode=display">\left | \begin{matrix}a_{11} & \cdots & a_{1n}\\\vdots & \ddots & \vdots\\a_{n1} & \cdots & a_{nn}\end{matrix}\right | = \sum (-1)^{\tau p_1p_2...p_n}a_{1p_1}a_{2p_2}...a_{np_n}</script><p>其中$\tau$为排列中逆序数</p>
+<p>上三角行列式和下三角行列式叫做<strong>对角行列式</strong></p>
+<script type="math/tex; mode=display">\left | \begin{matrix}a_{11} & & & \\ & a_{22} & &\\& & \ddots & \\ & & & a_{nn}\end{matrix}\right | = a_{11}a_{22}...a_{nn}</script><h3 id="第三节-行列式的性质"><a href="#第三节-行列式的性质" class="headerlink" title="第三节 行列式的性质"></a>第三节 行列式的性质</h3><p>$D$的转置行列式记作$D^{T}$或$D’$</p>
+<ul>
+<li>性质1 $D=D^{T}$</li>
+<li>性质2 交换行列式的两行或两列，行列式改变符号</li>
+<li>推论1 如果行列式有两行或两列完全相同，则此行列式等于零</li>
+<li>性质3 行列式中某一行或列的各元素有公因子，则可将公因子提到行列式符号的外面</li>
+<li>推论2 行列式的某一行或列所有元素都乘以同一个数$k$，等于用数$k$乘此行列式</li>
+<li>推论3 行列式的某一行或列的元素全为零食，行列式的值等于零</li>
+<li>性质4 若行列式中有两行或列的元素对应成比例，则此行列式的值等于零</li>
+<li>性质5 若行列式的某一行或列的元素都是两数之和，那么可以将他们分成两个行列式<script type="math/tex; mode=display">D=\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1i}+a_{1i}' & \cdots & a_{1n}\\ 
+a_{21} & a_{22} & \cdots & a_{2i}+a_{2i}' & \cdots & a_{2n}\\ 
+\vdots & \vdots &  & \vdots &  & \vdots \\ 
+a_{n1} & a_{n2} & \cdots & a_{ni}+a_{ni}' & \cdots & a_{nn}
+\end{vmatrix}=\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1i} & \cdots & a_{1n}\\ 
+a_{21} & a_{22} & \cdots & a_{2i} & \cdots & a_{2n}\\ 
+\vdots & \vdots &  & \vdots &  & \vdots \\ 
+a_{n1} & a_{n2} & \cdots & a_{ni} & \cdots & a_{nn}
+\end{vmatrix}+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1i}' & \cdots & a_{1n}\\ 
+a_{21} & a_{22} & \cdots & a_{2i}' & \cdots & a_{2n}\\ 
+\vdots & \vdots &  & \vdots &  & \vdots \\ 
+a_{n1} & a_{n2} & \cdots & a_{ni}' & \cdots & a_{nn}
+\end{vmatrix}</script></li>
+<li>性质6 把行列式的某一行或列各元素乘以同一数$k$后加到另一行或列对应的元素上去，行列式的值不变</li>
+</ul>
+<h3 id="第四节-行列式按一行或列展开"><a href="#第四节-行列式按一行或列展开" class="headerlink" title="第四节 行列式按一行或列展开"></a>第四节 行列式按一行或列展开</h3><p>在$n$阶行列式中，划去元素$a_{ij}$所在的行和列，余下的$n-1$阶行列式，称为元素$a_{ij}$的<strong>余子式</strong>，记为$M_{ij}$，余子式前面冠以符号$(-1)^{i+j}$，称为元素$a_{ij}$的<strong>代数余子式</strong>，记为$A_{ij}=(-1)^{i+j}M_{ij}$</p>
+<ul>
+<li>引理1 一个$n$阶行列式$D$，如果第$i$行所有元素除$a_{ij}$外全为零，则行列式$D=a_{ij}A_{ij}$</li>
+<li>定理1.4 行列式等于它的任一行或列的各元素与其对应的代数余子式的乘积之和，即<script type="math/tex; mode=display">D=a_{1j}A_{1j}+a_{2j}A_{2j}+...+a_{nj}A_{nj}</script>或<script type="math/tex; mode=display">D=a_{i1}A_{i1}+a_{i2}A_{i2}+...+a_{in}A_{in}</script></li>
+</ul>
+<p>这个定理称为<strong>行列式按行（列）展开法则</strong></p>
+<h2 id="第五章-矩阵的对角化"><a href="#第五章-矩阵的对角化" class="headerlink" title="第五章 矩阵的对角化"></a>第五章 矩阵的对角化</h2><h3 id="第一节-特征值与特征向量"><a href="#第一节-特征值与特征向量" class="headerlink" title="第一节 特征值与特征向量"></a>第一节 特征值与特征向量</h3><p>设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个<strong>特征值</strong>，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的<strong>特征向量</strong>。</p>
 <ul>
 <li>特征值问题只对方阵而言</li>
 <li>特征向量必须是非零向量</li>
@@ -727,7 +767,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-矩阵的对角化"><span class="nav-number">1.</span> <span class="nav-text">第五章 矩阵的对角化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-特征值与特征向量"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 特征值与特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-相似矩阵"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 相似矩阵</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-行列式"><span class="nav-number">1.</span> <span class="nav-text">第一章 行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-二阶与三阶行列式"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 二阶与三阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-n-阶行列式的定义"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 $n$阶行列式的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-行列式的性质"><span class="nav-number">1.3.</span> <span class="nav-text">第三节 行列式的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四节-行列式按一行或列展开"><span class="nav-number">1.4.</span> <span class="nav-text">第四节 行列式按一行或列展开</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-矩阵的对角化"><span class="nav-number">2.</span> <span class="nav-text">第五章 矩阵的对角化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-特征值与特征向量"><span class="nav-number">2.1.</span> <span class="nav-text">第一节 特征值与特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-相似矩阵"><span class="nav-number">2.2.</span> <span class="nav-text">第二节 相似矩阵</span></a></li></ol></li></ol></div>
             
 
           </div>
