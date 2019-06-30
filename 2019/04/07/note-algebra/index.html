@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="第一章 行列式第一节 二阶与三阶行列式第二节 $n$阶行列式的定义逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列。 在排列中，将任意两个元素对调，其余元素保持不动，这种作出新排列的方法叫做对换，将相邻两个元素对换，叫做相邻对换  定理1.1 一个排列中任意两个元素对换，排列改变奇偶性  \left | \begin{matrix}a_{11} &amp; \cdots &amp; a_{1n}\\\v">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-06-26T07:40:46.027Z">
+<meta property="og:updated_time" content="2019-06-30T02:35:34.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性代数笔记">
 <meta name="twitter:description" content="第一章 行列式第一节 二阶与三阶行列式第二节 $n$阶行列式的定义逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列。 在排列中，将任意两个元素对调，其余元素保持不动，这种作出新排列的方法叫做对换，将相邻两个元素对换，叫做相邻对换  定理1.1 一个排列中任意两个元素对换，排列改变奇偶性  \left | \begin{matrix}a_{11} &amp; \cdots &amp; a_{1n}\\\v">
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-06-26T15:40:46+08:00">
-                2019-06-26
+              <time title="Post modified" itemprop="dateModified" datetime="2019-06-30T10:35:34+08:00">
+                2019-06-30
               </time>
             
           </span>
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  4.6k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5
+                  19
                 </span>
               
             </div>
@@ -512,6 +512,45 @@ a_{n1} & a_{n2} & \cdots & a_{ni}' & \cdots & a_{nn}
 <li>定理1.4 行列式等于它的任一行或列的各元素与其对应的代数余子式的乘积之和，即<script type="math/tex; mode=display">D=a_{1j}A_{1j}+a_{2j}A_{2j}+...+a_{nj}A_{nj}</script>或<script type="math/tex; mode=display">D=a_{i1}A_{i1}+a_{i2}A_{i2}+...+a_{in}A_{in}</script></li>
 </ul>
 <p>这个定理称为<strong>行列式按行（列）展开法则</strong></p>
+<p>范德蒙德（Vandermonde）行列式</p>
+<script type="math/tex; mode=display">D_n=\begin{vmatrix}
+1&1&1&\ldots&1\\
+x_1&x_2&x_3&\ldots&x_{n}\\
+x_1^2&x_2^2&x_3^2&\ldots&x_{n}^2\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+x_1^{n-1}&x_2^{n-1}&x_3^{n-1}&\ldots&x_{n}^{n-1}\\
+\end{vmatrix}=\Pi_{n\geqslant i > j \geqslant 1}(x_i-x_j)</script><ul>
+<li><p>推论1 行列式任一行或列的元素与另一行或列的对应元素代数余子式乘积之和等于零，即</p>
+<script type="math/tex; mode=display">a_{i1}A_{j1}+a_{i2}A_{j2}+...+a_{in}A{jn}=0(i\neq j)</script><p>或</p>
+<script type="math/tex; mode=display">a_{1i}A_{1j}+a_{2i}A_{2j}+...+a_{ni}A{nj}=0(i\neq j)</script></li>
+<li><p>定义1.3 在一个$n$阶行列式$D$中，任意取定$k$行$k$列$(k\leqslant n)$，位于这些行与列的交点处的$k^2$个元素，按原来的顺序构成的$k$阶行列式$M$，称为行列式$D$的一个$k$阶子式；而在$D$中划去这$k$行$k$列后余下的元素，按原来的顺序构成的$n-k$阶行列式$N$，称为$k$阶子式$M$的余子式，$(-1)^{(i_1+i_2+…+i_n)+(j_1+j_2+…+j_n)}$称为$k$阶子式$M$的代数余子式</p>
+</li>
+<li><p>定理1.5 设在行列式$D$中任意选定$k(1\leqslant k\leqslant n-1)$行或列，则行列式$D$等于由这$k$行或列元素组成的一切$k$阶子式与它们对应的代数余子式的乘积之和。</p>
+</li>
+</ul>
+<h3 id="第五节-克莱默法则"><a href="#第五节-克莱默法则" class="headerlink" title="第五节 克莱默法则"></a>第五节 克莱默法则</h3><ul>
+<li>定理1.6（克莱默法则） 若方程组<script type="math/tex; mode=display">\left\{\begin{matrix}
+a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=b_1\\ 
+a_{21}x_1+a_{22}x_2+...+a_{2n}x_n=b_2\\ 
+\cdots \cdots\\ 
+a_{n1}x_1+a_{n2}x_2+...+a_{nn}x_n=b_n
+\end{matrix}\right.</script>的系数行列式<script type="math/tex; mode=display">D=\left | \begin{matrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2m}\\
+\vdots & \vdots & & \vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{matrix} \right |\neq 0</script>则方程组有唯一解，且可表示为<script type="math/tex; mode=display">x_1=\frac{D_1}{D},x_2=\frac{D_2}{D},...,x_n=\frac{D_n}{D}</script>其中$D_j$是将$D$中的第$j$列换成常数项所得的行列式，即<script type="math/tex; mode=display">D_j=\left | \begin{matrix}
+a_{11} & \cdots & a_{1,j-1} & b_1 & a_{1,j+1} & \cdots & a_{1n} \\
+a_{21} & \cdots & a_{2,j-1} & b_1 & a_{2,j+1} & \cdots & a_{2n} \\
+\vdots & & \vdots & \vdots & \vdots & & \vdots \\
+a_{n1} & \cdots & a_{n,j-1} & b_n & a_{n,j+1} & \cdots & a_{nn} \\
+\end{matrix} \right |</script></li>
+</ul>
+<p>使用克莱默法则必须注意<br>（1）未知量的个数与方程的个数要相等<br>（2）系数行列式不为零<br>常数项全为零的线性方程组叫做<strong>齐次线性方程组</strong>；不全为零，就是<strong>非齐次线性方程组</strong>。<br>$x_1=x_2=…=x_n=0$，称为零解，除零解外还有不全为零的解，称为非零解。</p>
+<ul>
+<li>定理1.7 如果齐次线性方程组的系数行列式$D\neq 0$，则齐次线性方程组只有零解。</li>
+<li>定理1.7’ 如果齐次线性方程组有非零解，则它的系数行列式必为零。</li>
+</ul>
 <h2 id="第五章-矩阵的对角化"><a href="#第五章-矩阵的对角化" class="headerlink" title="第五章 矩阵的对角化"></a>第五章 矩阵的对角化</h2><h3 id="第一节-特征值与特征向量"><a href="#第一节-特征值与特征向量" class="headerlink" title="第一节 特征值与特征向量"></a>第一节 特征值与特征向量</h3><p>设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个<strong>特征值</strong>，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的<strong>特征向量</strong>。</p>
 <ul>
 <li>特征值问题只对方阵而言</li>
@@ -528,7 +567,99 @@ a_{n1} & a_{n2} & \cdots & a_{ni}' & \cdots & a_{nn}
 <li>设$n$阶矩阵$A=(a_{ij})$的$n$个特征值为$\lambda_1,\lambda_2,…, \lambda_n$，则<br>(1) $\sum_{i=1}^n \lambda_i=\sum_{i=1}^na_{ii}=trA$<br>(2) $\lambda 1\lambda 2…\lambda n=|A|$<br>其中$tr A$称为$A$的<strong>迹</strong>，为$A$的主对角线元素之和<br>$A$可逆当且仅当$A$的特征值不为零</li>
 <li>设$\lambda_1,\lambda_2,…\lambda_m$是方阵$A$的$m$个特征值，$p_1,p_2,…,p_m$是依次与之对应的特征向量，如果$\lambda_1,\lambda_2,…\lambda_m$互不相等，则$p_1,p_2,…,p_m$线性无关。</li>
 </ul>
-<h3 id="第二节-相似矩阵"><a href="#第二节-相似矩阵" class="headerlink" title="第二节 相似矩阵"></a>第二节 相似矩阵</h3>
+<h3 id="第二节-相似矩阵"><a href="#第二节-相似矩阵" class="headerlink" title="第二节 相似矩阵"></a>第二节 相似矩阵</h3><h2 id="第六章-二次型"><a href="#第六章-二次型" class="headerlink" title="第六章 二次型"></a>第六章 二次型</h2><h3 id="第一节-二次型及其矩阵表示"><a href="#第一节-二次型及其矩阵表示" class="headerlink" title="第一节 二次型及其矩阵表示"></a>第一节 二次型及其矩阵表示</h3><h4 id="二次型基本概念"><a href="#二次型基本概念" class="headerlink" title="二次型基本概念"></a>二次型基本概念</h4><blockquote>
+<p>定义6.1 含有$n$个变量$x_1,x_2,…,x_n$的二次齐次函数$f(x_1,x_2,…,x_n)=a_{11}x_1^2+a_{22}x_2^2+…+a_{nn}x_n^2+2a_{12}x_1x_2+2a_{13}x_1x_3+…+2a_{n-1,n}x_{n-1}x_n$ 称为<strong>二次型</strong></p>
+</blockquote>
+<p>当$a_{ij}$为复数时，$f$称为<strong>复二次型</strong>，为实数时称为<strong>实二次型</strong>。<br>将系数$a_{ij}$提出来形成一个矩阵$A$，对称阵$A$称为<strong>二次型$f$的矩阵</strong>，也称二次型$f$为<strong>对称阵$A$的二次型</strong>，矩阵$A$的秩叫作<strong>二次型$f$的秩</strong>。</p>
+<h4 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h4><blockquote>
+<p>定义6.2 矩阵表示$x=Cy$，$C$为线性变换的矩阵，当$|C|\neq 0$时，称线性变换为<strong>可逆的线性变换</strong>或<strong>非退化的线性变换</strong>；当$C$为正交矩阵时，称线性变换为<strong>正交线性变换</strong>，简称<strong>正交变换</strong>。</p>
+</blockquote>
+<h4 id="矩阵的合同"><a href="#矩阵的合同" class="headerlink" title="矩阵的合同"></a>矩阵的合同</h4><p>设$A,B$为$n$阶方阵，如果存在$n$阶可逆方阵$C$，使得$C^{T}AC=B$，则称$A$与$B$<strong>合同</strong>。<br>满足自反性、对称性、传递性、经过线性变换后对应矩阵依然合同。</p>
+<h3 id="第二节-二次型的标准形"><a href="#第二节-二次型的标准形" class="headerlink" title="第二节 二次型的标准形"></a>第二节 二次型的标准形</h3><blockquote>
+<p>定义6.4 若二次型经可逆线性变换后变成只含平方项的二次型，则称变换后的二次型为原二次型的<strong>标准形</strong>。</p>
+</blockquote>
+<h4 id="正交变换法"><a href="#正交变换法" class="headerlink" title="正交变换法"></a>正交变换法</h4><blockquote>
+<p>定理6.1（主轴定理） 对任意一个$n$元实二次型$f=x^{T}Ax$，一定存在正交变换$x=Py$，使$f$化为标准形</p>
+<script type="math/tex; mode=display">\lambda_1y_1^2+\lambda_2y_2^2+...+\lambda_ny_n^2</script><p>其中$\lambda_1,\lambda_2,…,\lambda_n$是$f$的矩阵$A$的$n$个特征值，正交矩阵$P$的$n$个列向量为$A$的对应于特征值的单位正交特征向量。</p>
+</blockquote>
+<h4 id="配方法"><a href="#配方法" class="headerlink" title="配方法"></a>配方法</h4><blockquote>
+<p>定理6.2 任何一个二次型都可通过非退化的线性变换化为标准形。<br>若存在$a_{ii}\neq 0$，那么将其依次配方，例如$f=a_{11}[x_1+\frac{1}{a_{11}}(a_{12}x_2+…+a_{1n}x_n)]^2-\frac{1}{a_{11}}(a_{12}x_2+…+a_{1n}x_n)^2+a_{22}x_2^2+2a_{23}x_2x_3+…+a_{nn}x_n^2$，即可将前面的平方项对应$y_1$的线性变换，后面是对应的$n-1$元二次型。<br>若不存在$a_{ii}=0$，那么就令$x_1=y_1-y_2,x_2=y_1+y_2,x_3=y_3…,x_n=y_n$，即可得一个包含平方项的二次型。</p>
+</blockquote>
+<h4 id="初等变换法"><a href="#初等变换法" class="headerlink" title="初等变换法"></a>初等变换法</h4><p>由于$C^{T}AC=\Lambda$，转换成一系列初等矩阵$C=P_1P_2…P_s$，$C^{T}AC=P_s^{T}…P_2^{T}P_1^{T}AP_1P_2…P_s=\Lambda$，注意到$EP_1P_2…P_s=C$。<br>对$2n\times n$的矩阵$\begin{bmatrix}A\\E\end{bmatrix}$通过右乘$P_1P_2..P_s$的初等列变换，左乘$P_1^{T}P_2^{T}…P_n^{T}$的初等行变换。<br>变换后，$A$变成了$\Lambda$，$E$变成了$C$。</p>
+<p>不花里胡哨的说（说人话），把第一行除第一个元素外，用列变换消成$0$；再把第一列除第一个元素外，用行变换消成$0$；依次做第二行、第二列…，最后消成一个对角矩阵。</p>
+<h3 id="第三节-正定二次型"><a href="#第三节-正定二次型" class="headerlink" title="第三节 正定二次型"></a>第三节 正定二次型</h3><h4 id="惯性定理与规范形"><a href="#惯性定理与规范形" class="headerlink" title="惯性定理与规范形"></a>惯性定理与规范形</h4><blockquote>
+<p>定理6.3（惯性定理） 在实二次型$f=x^{T}Ax$的标准形中，正系数的个数及负系数的个数是唯一确定的，与可逆线性变换无关。</p>
+</blockquote>
+<p>定义6.5 在实二次型$f$的标准形中，正系数个数$p$称为二次型$f$的<strong>正惯性系数</strong>，负系数个数$q$称为二次型$f$的<strong>负惯性系数</strong>。</p>
+<p>将二次型变成如下形式$f=z_1^2+…+z_p^2-z_{p+1}^2-…z_r^2$，称为二次型的<strong>规范形</strong>。（大概是系数为$\pm 1$？）<br>由惯性定理知，任一实二次型的规范形唯一。</p>
+<h4 id="二次型的有定型"><a href="#二次型的有定型" class="headerlink" title="二次型的有定型"></a>二次型的有定型</h4><p>定义6.6 设有实二次型$f=x^{T}Ax$，如果对任取的$x$<br>（1）$f\geqslant 0$，当且仅当$x=0$时，$f=0$，则称二次型$f$是<strong>正定二次型</strong>，而称对称矩阵$A$为<strong>正定矩阵</strong>；<br>（2）$f\leqslant 0$，当且仅当$x=0$时，$f=0$，则称二次型$f$是<strong>负定二次型</strong>，而称对阵矩阵$A$为<strong>负定矩阵</strong>；<br>（3）$f\geqslant 0$（或$f\leqslant 0$），则称二次型$f$是<strong>半正定</strong>（或<strong>半负定</strong>）<strong>二次型</strong>，同时称矩阵$A$是<strong>半正定矩阵</strong>（或<strong>半负定矩阵</strong>）。<br>（4）$f$的值有正有负，则称二次型$f$是<strong>不定的</strong></p>
+<blockquote>
+<p>定理6.4 $n$元二次型$f=x^{T}Ax$正（负）定的充分必要条件是：它的正（负）惯性指数为$n$。</p>
+</blockquote>
+<ul>
+<li>推论1 对称矩阵$A$为正（负）定矩阵的充分必要条件是：$A$的特征值全为正（负）。</li>
+<li>推论2 实二次型$f=x^{T}Ax$半正（负）定的充分必要条件是：它的正（负）惯性指数等于二次型的秩。</li>
+<li>推论3 二次型经非退化线性变换后不改变它的有定性。</li>
+<li>推论4 实对称矩阵$A$为正定矩阵的充分必要条件是：$A$与单位矩阵合同。</li>
+</ul>
+<blockquote>
+<p>定理6.5 实对称矩阵$A$正定的充分必要条件是：存在可逆矩阵$C$，使得$A=C^{T}C$<br>定理6.6 设$A$为正定矩阵，则<br>（1）$A$的主对角线元$a_{ii}&gt;0$<br>（2）$|A|&gt;0$</p>
+</blockquote>
+<ul>
+<li>推论5 设$A$为负定矩阵，则<br>（1）$A$的主对角元$a_{ii}<0$ （2）$|-a|="(-1)^n|A|">0$</0$></li>
+</ul>
+<p>定义6.7 设$A=(a_{ij})_ {n\times n}$，称</p>
+<script type="math/tex; mode=display">|A_k|\left | \begin{matrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & & \vdots\\
+a_{k1} & a_{k2} & \cdots & a_{kk}
+\end{matrix} \right |</script><p>为$A$的$k$阶<strong>顺序主子式</strong>。</p>
+<blockquote>
+<p>定理6.7 $n$阶实对称矩阵$A$正定的充分必要条件是：$A$的所有顺序主子式（$n$个）全大于零，称为<strong>赫尔维茨定理</strong>。</p>
+</blockquote>
+<ul>
+<li>推论6 实对称矩阵$A$负定的充分必要条件是：奇数阶顺序主子式为负，偶数阶顺序主子式为正。</li>
+</ul>
+<h2 id="第七章-线性空间与线性变换简介"><a href="#第七章-线性空间与线性变换简介" class="headerlink" title="第七章 线性空间与线性变换简介"></a>第七章 线性空间与线性变换简介</h2><h3 id="第一节-线性空间的基本概念"><a href="#第一节-线性空间的基本概念" class="headerlink" title="第一节 线性空间的基本概念"></a>第一节 线性空间的基本概念</h3><h4 id="线性空间的定义与性质"><a href="#线性空间的定义与性质" class="headerlink" title="线性空间的定义与性质"></a>线性空间的定义与性质</h4><p>定义7.1 设$V$是一非空集合，$P$是一数域，如果在$V$中定义了以下两种运算：</p>
+<ol>
+<li>$\alpha +\beta=\beta + \alpha$</li>
+<li>$(\alpha +\beta )+\gamma = \alpha + (\beta + \gamma)$</li>
+<li>$\alpha + 0 = \alpha$</li>
+<li>存在负元素$\beta=-\alpha$，$\alpha + \beta = 0$</li>
+<li>$1\alpha = \alpha$</li>
+<li>$\lambda(\mu \alpha)=(\lambda \mu)\alpha$</li>
+<li>$(\lambda + \mu)\alpha=\lambda \alpha + \mu \lambda$</li>
+<li>$\lambda(\alpha + \beta)=\lambda \alpha + \lambda \beta$<br>那么称$V$是数域$P$上的<strong>线性空间</strong>（或<strong>向量空间</strong>），简称<strong>线性空间</strong>，$V$中元素也称为<strong>向量</strong>。</li>
+</ol>
+<p>线性空间的加法和数量乘法称为<strong>线性运算</strong>。</p>
+<ul>
+<li>性质1 零元素是唯一的</li>
+<li>性质2 每个元素的负元素是唯一的</li>
+<li>性质3 $0\cdot \alpha=0,\lambda\cdot 0 = 0,(-1)\alpha=-\alpha$</li>
+<li>性质4 若$\lambda \alpha =0$，则$\lambda=0$或$\alpha =0$</li>
+</ul>
+<p>定义7.2 设$L$是线性空间$V$的一个非空子集，若$L$对于$V$中所定义的加法和数乘运算也构成一个线性空间，则称$L$为$V$的一个<strong>线性子空间</strong>（简称<strong>子空间</strong>）。</p>
+<blockquote>
+<p>定理7.1 线性空间$V$的非空子集$L$构成子空间的充分必要条件是：$L$对$V$的加法与数乘运算封闭。</p>
+</blockquote>
+<p>定义7.3 线性空间$V$中，如果存在$n$个元素$\alpha_1,\alpha_2,…,\alpha_n$，满足这$n$个元素线性无关，并且$V$中的任意元素总能由这$n$个元素线性表示，就称这$n$个元素为线性空间$V$的一个<strong>基</strong>，$n$称为线性空间$V$的<strong>维数</strong>，记作$\text{dim}V=n$。维数为$n$的线性空间也称为<strong>$n$维线性空间</strong>。</p>
+<p>定义7.4 设$\alpha_1,\alpha_2,…,\alpha_n$是线性空间$V$的一个基，对任一元素$\alpha \in V$，有唯一表达式$\alpha=x_1\alpha_1+x_2\alpha_2+…+x_n\alpha_n$，称有序数组$(x_1,x_2,…,x_n)$为元素$\alpha$在基$\alpha_1,\alpha_2,…,\alpha_n$下的<strong>坐标</strong>，并记作$\alpha=(x_1,x_2,…,x_n)$</p>
+<h4 id="基坐标与坐标变换"><a href="#基坐标与坐标变换" class="headerlink" title="基坐标与坐标变换"></a>基坐标与坐标变换</h4><blockquote>
+<p>定理7.2 设$n$维线性空间有两个不同的基$e_1,e_2,…,e_n$和$e_1’,e_2’,…,e_n’$且有$(e_1’,e_2’,…,e_n’)=(e_1,e_2,…,e_n)A$，其中$A$的第$j$列为$e_j’$在$e_1,e_2,…,e_n$下的坐标，这个公式叫做<strong>基变换公式</strong>，矩阵$A$称为<strong>过渡矩阵</strong>。<br>$\begin{pmatrix}x_1\\ x_2\\ \vdots\\ x_n\end{pmatrix}=A\begin{pmatrix}x_1’\\ x_2’\\ \vdots\\ x_n’\end{pmatrix}$或$\begin{pmatrix}x_1’\\ x_2’\\ \vdots\\ x_n’\end{pmatrix}=A^{-1}\begin{pmatrix}x_1\\ x_2\\ \vdots\\ x_n\end{pmatrix}$这个称为坐标变换公式。</p>
+</blockquote>
+<h3 id="第二节-线性变换"><a href="#第二节-线性变换" class="headerlink" title="第二节 线性变换"></a>第二节 线性变换</h3><p>设$V$为线性空间，把$V$到$V$的映射称为$V$的<strong>变换</strong>。</p>
+<h4 id="线性变换的定义与性质"><a href="#线性变换的定义与性质" class="headerlink" title="线性变换的定义与性质"></a>线性变换的定义与性质</h4><p>定义7.5 数域$P$上的线性空间$V$的一个变换$T$称为<strong>线性变换</strong>，如果对于任意$x,y\in V,\lambda \in P$，都有$T(x+y)=T(x)+T(y),T(\lambda x)=\lambda T(x)$</p>
+<h4 id="线性变换的矩阵表示"><a href="#线性变换的矩阵表示" class="headerlink" title="线性变换的矩阵表示"></a>线性变换的矩阵表示</h4><p>就是把每个元素都变换一下，竖着排列，系数形成一个矩阵。</p>
+<blockquote>
+<p>定理7.3 设$V$为$n$维线性空间，线性变换$T$在基$e_1,e_2,…,e_n$下的矩阵为$A$，则向量$x$与$T(x)$在基$e_1,e_2,…,e_n$下的坐标有关系式$T(x)=Ax,x=(x_1,x_2,…,x_n)^{T}$<br>定理7.4 两个基，基（I)到基（II）的过渡矩阵为$C$，$T$是$V$的线性变换，他在基(I),(II)下的矩阵分别为$A$和$B$，则$B=C^{-1}AC$</p>
+</blockquote>
+<h4 id="线性变换的运算"><a href="#线性变换的运算" class="headerlink" title="线性变换的运算"></a>线性变换的运算</h4><p>3种运算<br>和：$T(x)=T_1(x)+T_2(x)$，记作$T=T_1+T_2$<br>数量乘积：$T(x)=\lambda(T_1(x))$，记作$T=\lambda T_1$<br>乘积：$T(x)=T_1(T_2(x))$，记作$T=T_1T_2$</p>
+<p>定义7.6 设$I$是线性空间$V$的单位线性变换，$T$为$V$的线性变换，如果存在$V$的一个变换$S$，使得$TS=ST=I$，则称线性变换$T$是可逆的，而$S$称为$T$的逆变换，记作$T^{-1}$</p>
+<blockquote>
+<p>定理7.5 设线性空间$V$的线性变换$T_1,T_2$在$V$的某个基下的矩阵分别为$A$和$B$，则在这个基下，有<br>(1)$T_1+T_2$的矩阵为$A+B$<br>(2)$\lambda T_1$的矩阵为$\lambda A$<br>(3)$T_1T_2$的矩阵为$AB$<br>(4)若$T_1$可逆，则$A$可逆，且逆变换$T^{-1}$的矩阵为$A^{-1}$</p>
+</blockquote>
+
       
     </div>
     
@@ -767,7 +898,7 @@ a_{n1} & a_{n2} & \cdots & a_{ni}' & \cdots & a_{nn}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-行列式"><span class="nav-number">1.</span> <span class="nav-text">第一章 行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-二阶与三阶行列式"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 二阶与三阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-n-阶行列式的定义"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 $n$阶行列式的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-行列式的性质"><span class="nav-number">1.3.</span> <span class="nav-text">第三节 行列式的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四节-行列式按一行或列展开"><span class="nav-number">1.4.</span> <span class="nav-text">第四节 行列式按一行或列展开</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-矩阵的对角化"><span class="nav-number">2.</span> <span class="nav-text">第五章 矩阵的对角化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-特征值与特征向量"><span class="nav-number">2.1.</span> <span class="nav-text">第一节 特征值与特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-相似矩阵"><span class="nav-number">2.2.</span> <span class="nav-text">第二节 相似矩阵</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-行列式"><span class="nav-number">1.</span> <span class="nav-text">第一章 行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-二阶与三阶行列式"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 二阶与三阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-n-阶行列式的定义"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 $n$阶行列式的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-行列式的性质"><span class="nav-number">1.3.</span> <span class="nav-text">第三节 行列式的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四节-行列式按一行或列展开"><span class="nav-number">1.4.</span> <span class="nav-text">第四节 行列式按一行或列展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五节-克莱默法则"><span class="nav-number">1.5.</span> <span class="nav-text">第五节 克莱默法则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-矩阵的对角化"><span class="nav-number">2.</span> <span class="nav-text">第五章 矩阵的对角化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-特征值与特征向量"><span class="nav-number">2.1.</span> <span class="nav-text">第一节 特征值与特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-相似矩阵"><span class="nav-number">2.2.</span> <span class="nav-text">第二节 相似矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-二次型"><span class="nav-number">3.</span> <span class="nav-text">第六章 二次型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-二次型及其矩阵表示"><span class="nav-number">3.1.</span> <span class="nav-text">第一节 二次型及其矩阵表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二次型基本概念"><span class="nav-number">3.1.1.</span> <span class="nav-text">二次型基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换"><span class="nav-number">3.1.2.</span> <span class="nav-text">线性变换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矩阵的合同"><span class="nav-number">3.1.3.</span> <span class="nav-text">矩阵的合同</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-二次型的标准形"><span class="nav-number">3.2.</span> <span class="nav-text">第二节 二次型的标准形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正交变换法"><span class="nav-number">3.2.1.</span> <span class="nav-text">正交变换法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配方法"><span class="nav-number">3.2.2.</span> <span class="nav-text">配方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初等变换法"><span class="nav-number">3.2.3.</span> <span class="nav-text">初等变换法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-正定二次型"><span class="nav-number">3.3.</span> <span class="nav-text">第三节 正定二次型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#惯性定理与规范形"><span class="nav-number">3.3.1.</span> <span class="nav-text">惯性定理与规范形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二次型的有定型"><span class="nav-number">3.3.2.</span> <span class="nav-text">二次型的有定型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七章-线性空间与线性变换简介"><span class="nav-number">4.</span> <span class="nav-text">第七章 线性空间与线性变换简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-线性空间的基本概念"><span class="nav-number">4.1.</span> <span class="nav-text">第一节 线性空间的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性空间的定义与性质"><span class="nav-number">4.1.1.</span> <span class="nav-text">线性空间的定义与性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基坐标与坐标变换"><span class="nav-number">4.1.2.</span> <span class="nav-text">基坐标与坐标变换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-线性变换"><span class="nav-number">4.2.</span> <span class="nav-text">第二节 线性变换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换的定义与性质"><span class="nav-number">4.2.1.</span> <span class="nav-text">线性变换的定义与性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换的矩阵表示"><span class="nav-number">4.2.2.</span> <span class="nav-text">线性变换的矩阵表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换的运算"><span class="nav-number">4.2.3.</span> <span class="nav-text">线性变换的运算</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
