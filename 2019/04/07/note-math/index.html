@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="Update 2019.6.22ps.为了加快复习速度可能不会太详细了…，有时后做了笔记并不会立刻同步上来下学期好好做人…学的时候就记笔记…  Update 2019.6.251\def\ooint&amp;#123;&amp;#123;\bigcirc&amp;#125;\kern-11.5pt&amp;#123;\int&amp;#125;\kern-6.5pt&amp;#123;\int&amp;#125;&amp;#125; 自定义闭合曲线二重积分但是">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-07-06T11:04:19.170Z">
+<meta property="og:updated_time" content="2019-07-06T11:25:32.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高等数学笔记">
 <meta name="twitter:description" content="Update 2019.6.22ps.为了加快复习速度可能不会太详细了…，有时后做了笔记并不会立刻同步上来下学期好好做人…学的时候就记笔记…  Update 2019.6.251\def\ooint&amp;#123;&amp;#123;\bigcirc&amp;#125;\kern-11.5pt&amp;#123;\int&amp;#125;\kern-6.5pt&amp;#123;\int&amp;#125;&amp;#125; 自定义闭合曲线二重积分但是">
@@ -380,7 +380,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-06T19:04:19+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-06T19:25:32+08:00">
                 2019-07-06
               </time>
             
@@ -745,8 +745,8 @@
 <script type="math/tex; mode=display">\iint_{\Sigma}R(x,y,z)\text{d}x\text{d}y=\pm \iint_{D_{xy}}R[x,y,z(x,y)]\text{d}x\text{d}y</script><script type="math/tex; mode=display">\iint_{\Sigma}P(x,y,z)\text{d}y\text{d}z=\pm \iint_{D_{yz}}P[x(y,z),y,z]\text{d}y\text{d}z</script><script type="math/tex; mode=display">\iint_{\Sigma}Q(x,y,z)\text{d}x\text{d}z=\pm \iint_{D_{xy}}Q[x,y(x,z),z]\text{d}x\text{d}z</script><h4 id="两类曲面积分之间的联系"><a href="#两类曲面积分之间的联系" class="headerlink" title="两类曲面积分之间的联系"></a>两类曲面积分之间的联系</h4><script type="math/tex; mode=display">\iint_{\Sigma}P\text{d}y\text{d}z+Q\text{d}x\text{d}z+R\text{d}x\text{d}y=\iint_{\Sigma}(P\cos \alpha+Q\cos \beta+R\cos\gamma)\text{d}S</script><p>向量形式</p>
 <script type="math/tex; mode=display">\iint_{\Sigma}A\cdot \text{d}S=\iint_{\Sigma}A\cdot n\text{d}S,A=(P,Q,R),n=(\cos \alpha,\cos \beta, \cos \gamma)</script><p>$\text{d}\mathbf{S}=\mathbf{n}\text{d}S=(\text{d}y\text{d}z,\text{d}x\text{d}z,\text{d}x\text{d}y)$称为<strong>有向曲面元</strong>。</p>
 <h3 id="高斯公式"><a href="#高斯公式" class="headerlink" title="高斯公式"></a>高斯公式</h3><p>定理1 设空间闭区域$\Omega$是由分片光滑的闭曲面$\Sigma$所围成，若函数$P(x,y,z),Q(x,y,z),R(x,y,z)$在$\Omega$上具有一阶连续偏导数，则有</p>
-<script type="math/tex; mode=display">\iint_{\Omega}\left ( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \frac{\partial R}{\partial z} \right )\text{d} v=\iint_{\Sigma}P\text{d}y\text{d}z+Q\text{d}z\text{d}x+R\text{d}x\text{d}y</script><p>或</p>
-<script type="math/tex; mode=display">\iint_{\Omega}\left ( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \frac{\partial R}{\partial z} \right )\text{d} v=\iint_{\Sigma}(P\cos \alpha + Q\cos \beta + R\cos \gamma)\text{d}S</script><p>这里$\Sigma$是$\Omega$的整个边界曲面的外侧，$\cos alpha,\cos \beta, \cos \gamma$是在$\Sigma$在点$(x,y,z)$处的法向量的方向余弦，这个公式叫做<strong>高斯公式</strong>。</p>
+<script type="math/tex; mode=display">\iint_{\Omega}\left ( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}+ \frac{\partial R}{\partial z} \right )\text{d} v=\iint_{\Sigma}P\text{d}y\text{d}z+Q\text{d}z\text{d}x+R\text{d}x\text{d}y</script><p>或</p>
+<script type="math/tex; mode=display">\iint_{\Omega}\left ( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}+ \frac{\partial R}{\partial z} \right )\text{d} v=\iint_{\Sigma}(P\cos \alpha + Q\cos \beta + R\cos \gamma)\text{d}S</script><p>这里$\Sigma$是$\Omega$的整个边界曲面的外侧，$\cos \alpha,\cos \beta, \cos \gamma$是在$\Sigma$在点$(x,y,z)$处的法向量的方向余弦，这个公式叫做<strong>高斯公式</strong>。</p>
 <p>（将三重积分与曲面积分联系）</p>
 <script type="math/tex; mode=display">\iint_{\Omega}u\Delta v\text{d}x\text{d}y\text{d}z=\iint_{\Sigma}\frac{\partial v}{\partial n}\text{d}S-\iiint_{\Omega}\left ( \frac{\partial u}{\partial x}\frac{\partial v}{\partial x}+\frac{\partial u}{\partial y}\frac{\partial v}{\partial y}+\frac{\partial u}{\partial z}\frac{\partial v}{\partial z}\right )\text{d}x\text{d}y\text{d}z</script><p>其中$\Sigma$是闭区域$\Omega$的整个边界曲面，$\frac{\partial v}{\partial n}$为函数$v(x,y,z)$沿$\Sigma$的外法线方向的方向导数，符号$\Delta=\frac{\partial ^2}{\partial x^2}+\frac{\partial ^2}{\partial y^2}+\frac{\partial ^2}{\partial z^2}$称为<strong>拉普拉斯（Laplace）算子</strong>，这个公式叫做<strong>格林第一公式</strong>。</p>
 <script type="math/tex; mode=display">\iiint_{\Omega}(u\Delta v-v\Delta u)\text{d}x\text{d}y\text{d}z=\iint_{\Sigma}\left (u\frac{\partial v}{\partial n}-v\frac{\partial u}{\partial n}\right )</script><p>其中$\Sigma$是空间闭区域$\Omega$的整个边界曲面，这个公式叫做<strong>格林第二公式</strong>。</p>
