@@ -20,6 +20,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[机器学习笔记]]></title>
+    <url>%2F2019%2F07%2F10%2Fnote-machinelearning%2F</url>
+    <content type="text"><![CDATA[暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译 Overview &amp; Learning Mapsupervised learning regression classification linear model non-linear model deep learning SVM, decision tree, K-NN… structured learning semi-supervised learning transfer learning unsupervised learning reinforcement learning 这些根据scenario的不同选择的 Regression 回归 Step1: Model 模型首先要有一个Model，也就是一个Function Set，存各种各样的函数。像$y=b+\sum w_ix_i$这种模型，就是一个Linear Model 线性模型$x_i$表示attribute of input x，也就是$x$的各种属性feature 特征$w_i$表示weight权重$b$表示bias偏差 Step2: Goodness of Function接下来就是训练模型，选出一个较好的Function首先要有Training Data，用hat表示正确的数据也就是$\hat{y}$然后有另一个Function，也就是Loss Function，$L$来评价来估价，例如用平方差估价$L(f)=L(w,b)=\sum_{n}(\hat{y}^n-(b+w\cdot x^n_{cp}))^2$，得到Estimation Error 估测误差，以下便用这个函数估价 Step3: Best FunctionPick the “Best” Function, $f^{\ast}=arg \min L(f) $ 或 $w^{\ast},b^{\ast}=arg \min L(w,b) $在这个问题求解的地方用到了Gradient Descent 梯度下降的方法 Gradient Descent首先必须是一个可微分的方程，先假设只有一个参数$L(w)$，那我们要求的就是$w^{\ast}=arg\min_{w}L(w)$，步骤如下：随机选取或稍微优化选取一个初始解$w^{0}$，然后计算$\left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{0}}$，显然$\left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{0}}$为负，那么右边高损失大，左边低损失小，那么就让$w^{n}=w^{n-1}-\eta \left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{n-1}}$这里$\eta$表示Learning rate，$\eta$越大学习效率越高，然后多次迭代，最后显然是会得到一个Local optimal 局部最优解，也就是导数为零的时候，但不一定是Global optimal 全局最优解。如果有两个参数$w^{\ast},b^{\ast}=arg \min L(w,b) $，步骤也差不多，求偏微分就是了$w^{n}=w^{n-1}-\eta \left . \frac{\partial L}{\partial w}\right |_ {w=w^{n-1},b=b^{n-1}},b^{n}=b^{n-1}-\eta \left . \frac{\partial L}{\partial b}\right |_ {w=w^{n-1},b=b^{n-1}}$那么Gradient就是$\triangledown L=\begin{bmatrix}\frac{\partial L}{\partial w}\\ \frac{\partial L}{\partial b}\end{bmatrix}_ {gradient}$刚学过偏微分的我还是知道$(-\eta \frac{\partial L}{\partial w},-\eta \frac{\partial L}{\partial b})$的方向，对$L$的微分最大，也是空间的法线方向在这里没有局部最优解，因为我们定义的函数是convex 凸的，只有全局最优解 Generalization我们这样可以得到$w,b$，而我们关心的不是训练集里的损失值，而是Testing Data 测试集中的数据。 Model Selection我们想要得到更准确的数据呢，就需要复杂的Model，比如增加三次方，四次方，五次方之类的A more complex model does not always lead to better performance on testing data. This is Overfitting.但是复杂的Model在Training Data上的结果很好，但是在Testing Data上的结果较差，这就是Overfitting 过拟合。 Redesign the Model这时候还会有一个情况，那就是其他隐藏的参数，那就需要重新设计Model如果是Pokemon的物种，那么就需要if来判断，用$\delta(x_s=x_0)$这个函数来将原函数改写成线性模型，函数值就是里面的等式成立是1不成立就是0 Regularization就是修改Loss Function$L=\sum_{n}(\hat{y}^n-(b+\sum w_ix_i))^2+\lambda (w_i)^2$，这里也就是我们希望参数越小越好，这里也是不需要$b$也就是bias的。如果输入加上一点点变化，我们希望输出不那么参数小也就是输出对输入不那么敏感 sensitive，也就是比较smooth 平滑的。If some noises corrupt input $x_i$ when testing. A smoother function has less influence.Training error: larger $\lambda$, considering the training error less.We prefer smooth function, but don’t be too smooth. Demo最后有一个Demo，就是实际操作的时候可能不太好选取Learning Rate也就是$\eta$，用了一个AdaGrad，并对$w,b$分别设置了Learning rate。 Where does the error come from ?Reference http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html，李宏毅，机器学习2017 fall，台湾大学]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>machinelearning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ESP8266WiFi模块]]></title>
     <url>%2F2019%2F06%2F08%2Fesp-wifi%2F</url>
     <content type="text"><![CDATA[一开始设置WiFi一直连不上，最后发现是模式有问题，默认是STA模式，所以begin是连不上的…然后改成了用softAP模式启动就可以了…等着以后来补补吧…周一专业课考试嗷，考完有时间搞一下，最近也没玩CTF.. 1234567891011121314151617181920212223#include &lt;ESP8266WiFi.h&gt;void setup() &#123; Serial.begin(115200); Serial.println(); Serial.print("Setting soft-AP ... "); boolean result = WiFi.softAP("www", "password"); if(result == true) &#123; Serial.println("Ready"); &#125; else &#123; Serial.println("Failed!"); &#125;&#125;void loop() &#123; Serial.printf("Stations connected = %d\n", WiFi.softAPgetStationNum()); if(WiFi.softAPgetStationNum()) &#123; WiFi.printDiag(Serial); Serial.println(WiFi.localIP()); &#125; delay(3000);&#125; 参考 完美图解物联网IoT实操. ESP8266 Arduino，Cordova物联网移动App， JavaScript微控制器编程 / 赵英杰著.—北京：电子工业出版社，2018.9]]></content>
@@ -224,8 +236,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>arduino</tag>
         <tag>note</tag>
+        <tag>arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -489,8 +501,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>canvas</tag>
         <tag>game</tag>
+        <tag>canvas</tag>
         <tag>breakout</tag>
       </tags>
   </entry>
@@ -503,8 +515,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>canvas</tag>
         <tag>game</tag>
+        <tag>canvas</tag>
       </tags>
   </entry>
   <entry>
@@ -595,9 +607,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
+        <tag>game</tag>
         <tag>canvas</tag>
         <tag>jquery</tag>
-        <tag>game</tag>
       </tags>
   </entry>
   <entry>
@@ -637,8 +649,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2F2018%2F11%2F13%2Ftest-HelloWorld%2F</url>
-    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
+    <url>%2F2018%2F11%2F13%2Ftest-hello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>daily</category>
       </categories>
@@ -648,8 +660,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2F2018%2F11%2F13%2Ftest-hello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2F2018%2F11%2F13%2Ftest-HelloWorld%2F</url>
+    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
       <categories>
         <category>daily</category>
       </categories>
