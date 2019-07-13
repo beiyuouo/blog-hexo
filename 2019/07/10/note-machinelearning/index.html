@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译 Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structured">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-07-12T16:56:26.477Z">
+<meta property="og:updated_time" content="2019-07-13T02:09:43.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习笔记">
 <meta name="twitter:description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译 Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structured">
@@ -380,7 +380,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T00:56:26+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T10:09:43+08:00">
                 2019-07-13
               </time>
             
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k
+                  1.7k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  7
                 </span>
               
             </div>
@@ -487,33 +487,55 @@
 </li>
 <li>structured learning</li>
 </ul>
-<p>semi-supervised learning</p>
-<p>transfer learning</p>
-<p>unsupervised learning</p>
-<p>reinforcement learning</p>
-<p>这些根据scenario的不同选择的</p>
-<h2 id="Regression-回归"><a href="#Regression-回归" class="headerlink" title="Regression 回归"></a>Regression 回归</h2><ul>
-<li><p>Step1: Model 模型<br>首先要有一个Model，也就是一个Function Set，存各种各样的函数。<br>像$y=b+\sum w_ix_i$这种模型，就是一个Linear Model 线性模型<br>$x_i$表示attribute of input x，也就是$x$的各种属性feature 特征<br>$w_i$表示weight权重<br>$b$表示bias偏差</p>
+<p>semi-supervised learning<br>transfer learning<br>unsupervised learning<br>reinforcement learning<br>这些根据scenario的不同选择的</p>
+<h2 id="Regression-回归"><a href="#Regression-回归" class="headerlink" title="Regression 回归"></a>Regression 回归</h2><h3 id="Step1-Model-模型"><a href="#Step1-Model-模型" class="headerlink" title="Step1: Model 模型"></a>Step1: Model 模型</h3><p>首先要有一个Model，也就是一个Function Set，存各种各样的函数。<br>像$y=b+\sum w_ix_i$这种模型，就是一个Linear Model 线性模型<br>$x_i$表示attribute of input x，也就是$x$的各种属性feature 特征<br>$w_i$表示weight权重<br>$b$表示bias偏差</p>
+<h3 id="Step2-Goodness-of-Function"><a href="#Step2-Goodness-of-Function" class="headerlink" title="Step2: Goodness of Function"></a>Step2: Goodness of Function</h3><p>接下来就是训练模型，选出一个较好的Function<br>首先要有Training Data，用hat表示正确的数据也就是$\hat{y}$<br>然后有另一个Function，也就是Loss Function，$L$来评价来估价，例如用平方差估价<br>$L(f)=L(w,b)=\sum_{n}(\hat{y}^n-(b+w\cdot x^n_{cp}))^2$，得到Estimation Error 估测误差，以下便用这个函数估价</p>
+<h3 id="Step3-Best-Function"><a href="#Step3-Best-Function" class="headerlink" title="Step3: Best Function"></a>Step3: Best Function</h3><p>Pick the “Best” Function, $f^{\ast}=arg \min L(f) $ 或 $w^{\ast},b^{\ast}=arg \min L(w,b) $<br>在这个问题求解的地方<br>用到了Gradient Descent 梯度下降的方法</p>
+<h3 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h3><p>首先必须是一个可微分的方程，先假设只有一个参数$L(w)$，那我们要求的就是$w^{\ast}=arg\min_{w}L(w)$，步骤如下：<br>随机选取或稍微优化选取一个初始解$w^{0}$<br>然后计算$\left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{0}}$<br>显然$\left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{0}}$为负，那么右边高损失大，左边低损失小<br>那么就让$w^{n}=w^{n-1}-\eta \left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{n-1}}$<br>这里$\eta$表示Learning rate，$\eta$越大学习效率越高<br>然后多次迭代，最后显然是会得到一个Local optimal 局部最优解，也就是导数为零的时候，但不一定是Global optimal 全局最优解。</p>
+<p>如果有两个参数$w^{\ast},b^{\ast}=arg \min L(w,b) $，步骤也差不多，求偏微分就是了<br>$w^{n}=w^{n-1}-\eta \left . \frac{\partial L}{\partial w}\right |_ {w=w^{n-1},b=b^{n-1}},b^{n}=b^{n-1}-\eta \left . \frac{\partial L}{\partial b}\right |_ {w=w^{n-1},b=b^{n-1}}$<br>那么Gradient就是$\triangledown L=\begin{bmatrix}\frac{\partial L}{\partial w}\\ \frac{\partial L}{\partial b}\end{bmatrix}_ {gradient}$<br>刚学过偏微分的我还是知道$(-\eta \frac{\partial L}{\partial w},-\eta \frac{\partial L}{\partial b})$的方向，对$L$的微分最大，也是空间的法线方向</p>
+<p>在这里没有局部最优解，因为我们定义的函数是convex 凸的，只有全局最优解</p>
+<h3 id="Generalization"><a href="#Generalization" class="headerlink" title="Generalization"></a>Generalization</h3><p>我们这样可以得到$w,b$，而我们关心的不是训练数据里的损失值，而是Testing Data 测试数据中的数据。</p>
+<h3 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h3><p>我们想要得到更准确的数据呢，就需要复杂的Model，比如增加三次方，四次方，五次方之类的<br>A more complex model does not always lead to better performance on testing data. This is Overfitting.<br>但是复杂的Model在Training Data上的结果很好，但是在Testing Data上的结果较差，这就是Overfitting 过拟合。</p>
+<h3 id="Redesign-the-Model"><a href="#Redesign-the-Model" class="headerlink" title="Redesign the Model"></a>Redesign the Model</h3><p>这时候还会有一个情况，那就是其他隐藏的参数，那就需要重新设计Model<br>如果是Pokemon的物种，那么就需要if来判断，用$\delta(x_s=x_0)$这个函数来将原函数改写成线性模型，函数值就是里面的等式成立是1不成立就是0</p>
+<h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><p>就是修改Loss Function<br>$L=\sum_{n}(\hat{y}^n-(b+\sum w_ix_i))^2+\lambda (w_i)^2$，这里也就是我们希望参数越小越好，这里也是不需要$b$也就是bias的。<br>如果输入加上一点点变化，我们希望输出不那么参数小也就是输出对输入不那么敏感 sensitive，也就是比较smooth 平滑的。<br>If some noises corrupt input $x_i$ when testing. A smoother function has less influence.<br>Training error: larger $\lambda$, considering the training error less.<br>We prefer smooth function, but don’t be too smooth. </p>
+<h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p>最后有一个Demo，就是实际操作的时候可能不太好选取Learning Rate也就是$\eta$，用了一个AdaGrad，并对$w,b$分别设置了Learning rate。</p>
+<h2 id="Bias-and-Variance"><a href="#Bias-and-Variance" class="headerlink" title="Bias and Variance"></a>Bias and Variance</h2><h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><p>Error due to “bias” and “variance”.</p>
+<h3 id="Estimator"><a href="#Estimator" class="headerlink" title="Estimator"></a>Estimator</h3><p>举个栗子，如果要估测$x$的mean 平均值<br>assume the mean of $x$ is $\mu$<br>assume the variance of $x$ is $\sigma^2$</p>
+<p>那么我们估测平均值$\mu$就随机取$N$个点来计算<br>$m=\frac{1}{N}\sum_{n}x^n\neq \mu$<br>$E[m]=E[\frac{1}{N}\sum_{n}x^n]=\frac{1}{N}\sum_{n}E[x^n}=\mu$，$m$的期望就是$\mu$，这个是unbiased的<br>$Var[m]=\frac{\sigma^2}{N}$，这个Variance depends on the number of samples，如果数量较多那么就会比较集中，如果较少那么就会比较分散了</p>
+<p>如果估测variance $\sigma^2$<br>$m=\frac{1}{N}\sum_{n}x^n\neq \mu,s^2=\frac{1}{N}\sum_{n}(x^n-m)^2$<br>这里这个$s^2$是biased的，$E[s^2]=\frac{N-1}{N}\sigma^2$</p>
+<h3 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h3><p>如果$E[f^{\ast}]=\bar{f}$，那么这个$\bar{f}$和中心店偏移的距离就是bias，而其他$f$和$\bar{f}$分散的距离就是variance<br>Model 比较简单那么可能获得一个Small Variance的情况，而比较复杂的Model 可能得到一个Large Variance<br>因为比较简单的Model受数据的影响较小</p>
+<h3 id="Bias"><a href="#Bias" class="headerlink" title="Bias"></a>Bias</h3><p>$E[f^{\ast}]=\bar{f}$<br>Bias: If we average all the $f^{\ast}$, is it close to $\hat{f}$<br>然而一个简单的Model会有比较大的Bias，而比较复杂的Model便有一个小的Bias。</p>
+<p>当你的function set的space比较小Model简单，那么它可能不包含target；Model复杂时，function set 的space也变大，就有可能包含target。</p>
+<p>我们所得到的Error就是这两个造成的Error的和<br>如果Error在Bias较小Variance较大的地方就是Overfitting，如果Error在Bias较大Variance较小的地方就是Underfitting 欠拟合</p>
+<h3 id="Large-Bias"><a href="#Large-Bias" class="headerlink" title="Large Bias"></a>Large Bias</h3><p>Diagnosis：</p>
+<ul>
+<li>If your model cannot even fit the training examples, then you have large bias.</li>
+<li>If you can fit the training data, but large error on testing data, then you probably have large variance</li>
+</ul>
+<p>For bias, redesign your model:</p>
+<ul>
+<li>Add more features as input.</li>
+<li>A more complex model.</li>
+</ul>
+<h3 id="Large-variance"><a href="#Large-variance" class="headerlink" title="Large variance"></a>Large variance</h3><ul>
+<li><p>More data<br>这个可以自己生成许多训练数据</p>
 </li>
-<li><p>Step2: Goodness of Function<br>接下来就是训练模型，选出一个较好的Function<br>首先要有Training Data，用hat表示正确的数据也就是$\hat{y}$<br>然后有另一个Function，也就是Loss Function，$L$来评价来估价，例如用平方差估价<br>$L(f)=L(w,b)=\sum_{n}(\hat{y}^n-(b+w\cdot x^n_{cp}))^2$，得到Estimation Error 估测误差，以下便用这个函数估价</p>
-</li>
-<li><p>Step3: Best Function<br>Pick the “Best” Function, $f^{\ast}=arg \min L(f) $ 或 $w^{\ast},b^{\ast}=arg \min L(w,b) $<br>在这个问题求解的地方<br>用到了Gradient Descent 梯度下降的方法</p>
-</li>
-<li><p>Gradient Descent<br>首先必须是一个可微分的方程，先假设只有一个参数$L(w)$，那我们要求的就是$w^{\ast}=arg\min_{w}L(w)$，步骤如下：<br>随机选取或稍微优化选取一个初始解$w^{0}$，然后计算$\left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{0}}$，显然$\left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{0}}$为负，那么右边高损失大，左边低损失小，那么就让$w^{n}=w^{n-1}-\eta \left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{n-1}}$<br>这里$\eta$表示Learning rate，$\eta$越大学习效率越高，然后多次迭代，最后显然是会得到一个Local optimal 局部最优解，也就是导数为零的时候，但不一定是Global optimal 全局最优解。<br>如果有两个参数$w^{\ast},b^{\ast}=arg \min L(w,b) $，步骤也差不多，求偏微分就是了<br>$w^{n}=w^{n-1}-\eta \left . \frac{\partial L}{\partial w}\right |_ {w=w^{n-1},b=b^{n-1}},b^{n}=b^{n-1}-\eta \left . \frac{\partial L}{\partial b}\right |_ {w=w^{n-1},b=b^{n-1}}$<br>那么Gradient就是$\triangledown L=\begin{bmatrix}\frac{\partial L}{\partial w}\\ \frac{\partial L}{\partial b}\end{bmatrix}_ {gradient}$<br>刚学过偏微分的我还是知道$(-\eta \frac{\partial L}{\partial w},-\eta \frac{\partial L}{\partial b})$的方向，对$L$的微分最大，也是空间的法线方向<br>在这里没有局部最优解，因为我们定义的函数是convex 凸的，只有全局最优解</p>
-</li>
-<li><p>Generalization<br>我们这样可以得到$w,b$，而我们关心的不是训练集里的损失值，而是Testing Data 测试集中的数据。</p>
-</li>
-<li><p>Model Selection<br>我们想要得到更准确的数据呢，就需要复杂的Model，比如增加三次方，四次方，五次方之类的<br>A more complex model does not always lead to better performance on testing data. This is Overfitting.<br>但是复杂的Model在Training Data上的结果很好，但是在Testing Data上的结果较差，这就是Overfitting 过拟合。</p>
-</li>
-<li><p>Redesign the Model<br>这时候还会有一个情况，那就是其他隐藏的参数，那就需要重新设计Model<br>如果是Pokemon的物种，那么就需要if来判断，用$\delta(x_s=x_0)$这个函数来将原函数改写成线性模型，函数值就是里面的等式成立是1不成立就是0</p>
-</li>
-<li><p>Regularization<br>就是修改Loss Function<br>$L=\sum_{n}(\hat{y}^n-(b+\sum w_ix_i))^2+\lambda (w_i)^2$，这里也就是我们希望参数越小越好，这里也是不需要$b$也就是bias的。<br>如果输入加上一点点变化，我们希望输出不那么参数小也就是输出对输入不那么敏感 sensitive，也就是比较smooth 平滑的。<br>If some noises corrupt input $x_i$ when testing. A smoother function has less influence.<br>Training error: larger $\lambda$, considering the training error less.<br>We prefer smooth function, but don’t be too smooth. </p>
-</li>
-<li><p>Demo<br>最后有一个Demo，就是实际操作的时候可能不太好选取Learning Rate也就是$\eta$，用了一个AdaGrad，并对$w,b$分别设置了Learning rate。</p>
+<li><p>Regularization<br>这时调整了function space，可能会影响到bias，需要调整weight来取得平衡</p>
 </li>
 </ul>
-<h2 id="Where-does-the-error-come-from"><a href="#Where-does-the-error-come-from" class="headerlink" title="Where does the error come from ?"></a>Where does the error come from ?</h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html" target="_blank" rel="noopener">http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html</a>，李宏毅，机器学习2017 fall，台湾大学</li>
+<h3 id="Model-Selection-1"><a href="#Model-Selection-1" class="headerlink" title="Model Selection"></a>Model Selection</h3><ul>
+<li>There is usually a trade-off between bias and variance.</li>
+<li><p>Select a model that balances two kinds of error to minimize total</p>
+</li>
+<li><p>Cross Validation<br>将Training Set分成Training Set和Validation Set，然后用Validation Set来选择Model</p>
+</li>
+</ul>
+<p>如果你把Public Testing Set考虑进去来修改那么就考虑进去了Public Testing Set的bias…</p>
+<ul>
+<li>N-fold Cross Validation<br>分成多份，将其中一份当成Validation Set</li>
+</ul>
+<h2 id="Gradient-Descent-1"><a href="#Gradient-Descent-1" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>李宏毅，机器学习2017 fall，<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html" target="_blank" rel="noopener">http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html</a>，台湾大学</li>
 </ul>
 
       
@@ -754,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-amp-Learning-Map"><span class="nav-number">1.</span> <span class="nav-text">Overview &amp; Learning Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression-回归"><span class="nav-number">2.</span> <span class="nav-text">Regression 回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where-does-the-error-come-from"><span class="nav-number">3.</span> <span class="nav-text">Where does the error come from ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-amp-Learning-Map"><span class="nav-number">1.</span> <span class="nav-text">Overview &amp; Learning Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression-回归"><span class="nav-number">2.</span> <span class="nav-text">Regression 回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-Model-模型"><span class="nav-number">2.1.</span> <span class="nav-text">Step1: Model 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Goodness-of-Function"><span class="nav-number">2.2.</span> <span class="nav-text">Step2: Goodness of Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Best-Function"><span class="nav-number">2.3.</span> <span class="nav-text">Step3: Best Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient-Descent"><span class="nav-number">2.4.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generalization"><span class="nav-number">2.5.</span> <span class="nav-text">Generalization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Selection"><span class="nav-number">2.6.</span> <span class="nav-text">Model Selection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redesign-the-Model"><span class="nav-number">2.7.</span> <span class="nav-text">Redesign the Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regularization"><span class="nav-number">2.8.</span> <span class="nav-text">Regularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo"><span class="nav-number">2.9.</span> <span class="nav-text">Demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bias-and-Variance"><span class="nav-number">3.</span> <span class="nav-text">Bias and Variance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review"><span class="nav-number">3.1.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Estimator"><span class="nav-number">3.2.</span> <span class="nav-text">Estimator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variance"><span class="nav-number">3.3.</span> <span class="nav-text">Variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bias"><span class="nav-number">3.4.</span> <span class="nav-text">Bias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-Bias"><span class="nav-number">3.5.</span> <span class="nav-text">Large Bias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-variance"><span class="nav-number">3.6.</span> <span class="nav-text">Large variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Selection-1"><span class="nav-number">3.7.</span> <span class="nav-text">Model Selection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent-1"><span class="nav-number">4.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

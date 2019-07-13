@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="本文主要使用Python3.7https://github.com/jackfrued/Python-100-Days/讲的太详细了我就不写笔记了？ range生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12d">
+<meta name="description" content="本文主要使用Python3.7 Prevrange生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12def f(x):	return x+2 编写模块 12def f(x):	return x+2 module1">
 <meta name="keywords" content="note,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python笔记">
 <meta property="og:url" content="beiyuouo.github.io/2019/05/16/note-python/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="本文主要使用Python3.7https://github.com/jackfrued/Python-100-Days/讲的太详细了我就不写笔记了？ range生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12d">
+<meta property="og:description" content="本文主要使用Python3.7 Prevrange生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12def f(x):	return x+2 编写模块 12def f(x):	return x+2 module1">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-05-16T07:52:18.035Z">
+<meta property="og:updated_time" content="2019-07-13T03:12:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python笔记">
-<meta name="twitter:description" content="本文主要使用Python3.7https://github.com/jackfrued/Python-100-Days/讲的太详细了我就不写笔记了？ range生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12d">
+<meta name="twitter:description" content="本文主要使用Python3.7 Prevrange生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12def f(x):	return x+2 编写模块 12def f(x):	return x+2 module1">
 
 
 
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-05-16T15:52:18+08:00">
-                2019-05-16
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T11:12:19+08:00">
+                2019-07-13
               </time>
             
           </span>
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  173
+                  264
                 </span>
               
 
@@ -472,8 +472,8 @@
       
 
       
-        <p>本文主要使用Python3.7<br><a href="https://github.com/jackfrued/Python-100-Days/" target="_blank" rel="noopener">https://github.com/jackfrued/Python-100-Days/</a><br>讲的太详细了我就不写笔记了？</p>
-<p>range生成序列</p>
+        <p>本文主要使用Python3.7</p>
+<h2 id="Prev"><a href="#Prev" class="headerlink" title="Prev"></a>Prev</h2><p>range生成序列</p>
 <ul>
 <li>range(101)可以产生一个0到100的整数序列。</li>
 <li>range(1, 100)可以产生一个1到99的整数序列。</li>
@@ -485,6 +485,13 @@
 <p>module1.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> module1 <span class="keyword">as</span> m1;</span><br><span class="line"><span class="comment"># __name__是Python中一个隐含的变量它代表了模块的名字</span></span><br><span class="line"><span class="comment"># 只有被Python解释器直接执行的模块的名字才是__main__</span></span><br><span class="line"><span class="keyword">if</span>(__name__ == <span class="string">'__main__'</span>):</span><br><span class="line">	m1.foo();</span><br></pre></td></tr></table></figure>
 <p>引用全局变量<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">global</span> a</span><br><span class="line">	a = <span class="number">300</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Python语言概述和开发环境"><a href="#Python语言概述和开发环境" class="headerlink" title="Python语言概述和开发环境"></a>Python语言概述和开发环境</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>面向对象、解释型、弱类型的脚本语言<br>特色：清晰的语法和可扩展性<br>弱点：运行速度慢，源代码加密困难</p>
+<h3 id="Sublime3-Python3配置"><a href="#Sublime3-Python3配置" class="headerlink" title="Sublime3 Python3配置"></a>Sublime3 Python3配置</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"cmd"</span>: [<span class="string">"python3"</span>, <span class="string">"-u"</span>, <span class="string">"$file"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="变量和简单类型"><a href="#变量和简单类型" class="headerlink" title="变量和简单类型"></a>变量和简单类型</h2><p>单行注释 &amp; 多行注释<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 233</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">233</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">233</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《疯狂Python讲义》，李刚.—北京：电子工业出版社，2019.1</li>
+<li><a href="https://github.com/jackfrued/Python-100-Days/" target="_blank" rel="noopener">https://github.com/jackfrued/Python-100-Days/</a></li>
+</ul>
 
       
     </div>
@@ -585,8 +592,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
           <p class="site-author-name" itemprop="name">北屿</p>
@@ -705,6 +721,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prev"><span class="nav-number">1.</span> <span class="nav-text">Prev</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python语言概述和开发环境"><span class="nav-number">2.</span> <span class="nav-text">Python语言概述和开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime3-Python3配置"><span class="nav-number">2.2.</span> <span class="nav-text">Sublime3 Python3配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和简单类型"><span class="nav-number">3.</span> <span class="nav-text">变量和简单类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
