@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译 Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structured">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-07-13T02:09:43.045Z">
+<meta property="og:updated_time" content="2019-07-13T15:57:12.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习笔记">
 <meta name="twitter:description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译 Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structured">
@@ -380,7 +380,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T10:09:43+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T23:57:12+08:00">
                 2019-07-13
               </time>
             
@@ -501,7 +501,7 @@
 <h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p>最后有一个Demo，就是实际操作的时候可能不太好选取Learning Rate也就是$\eta$，用了一个AdaGrad，并对$w,b$分别设置了Learning rate。</p>
 <h2 id="Bias-and-Variance"><a href="#Bias-and-Variance" class="headerlink" title="Bias and Variance"></a>Bias and Variance</h2><h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><p>Error due to “bias” and “variance”.</p>
 <h3 id="Estimator"><a href="#Estimator" class="headerlink" title="Estimator"></a>Estimator</h3><p>举个栗子，如果要估测$x$的mean 平均值<br>assume the mean of $x$ is $\mu$<br>assume the variance of $x$ is $\sigma^2$</p>
-<p>那么我们估测平均值$\mu$就随机取$N$个点来计算<br>$m=\frac{1}{N}\sum_{n}x^n\neq \mu$<br>$E[m]=E[\frac{1}{N}\sum_{n}x^n]=\frac{1}{N}\sum_{n}E[x^n}=\mu$，$m$的期望就是$\mu$，这个是unbiased的<br>$Var[m]=\frac{\sigma^2}{N}$，这个Variance depends on the number of samples，如果数量较多那么就会比较集中，如果较少那么就会比较分散了</p>
+<p>那么我们估测平均值$\mu$就随机取$N$个点来计算<br>$m=\frac{1}{N}\sum_{n}x^n\neq \mu$<br>$E[m]=E[\frac{1}{N}\sum_{n}x^n]=\frac{1}{N}\sum_{n}E[x^n]=\mu$，$m$的期望就是$\mu$，这个是unbiased的<br>$Var[m]=\frac{\sigma^2}{N}$，这个Variance depends on the number of samples，如果数量较多那么就会比较集中，如果较少那么就会比较分散了</p>
 <p>如果估测variance $\sigma^2$<br>$m=\frac{1}{N}\sum_{n}x^n\neq \mu,s^2=\frac{1}{N}\sum_{n}(x^n-m)^2$<br>这里这个$s^2$是biased的，$E[s^2]=\frac{N-1}{N}\sigma^2$</p>
 <h3 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h3><p>如果$E[f^{\ast}]=\bar{f}$，那么这个$\bar{f}$和中心店偏移的距离就是bias，而其他$f$和$\bar{f}$分散的距离就是variance<br>Model 比较简单那么可能获得一个Small Variance的情况，而比较复杂的Model 可能得到一个Large Variance<br>因为比较简单的Model受数据的影响较小</p>
 <h3 id="Bias"><a href="#Bias" class="headerlink" title="Bias"></a>Bias</h3><p>$E[f^{\ast}]=\bar{f}$<br>Bias: If we average all the $f^{\ast}$, is it close to $\hat{f}$<br>然而一个简单的Model会有比较大的Bias，而比较复杂的Model便有一个小的Bias。</p>
@@ -579,8 +579,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/09/01/misc-daxueguidang/" rel="prev" title="【置顶】大学学习归档">
-                【置顶】大学学习归档 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/13/note-pwn/" rel="prev" title="pwn学习笔记">
+                pwn学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -660,7 +660,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">56</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -682,7 +682,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">56</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
