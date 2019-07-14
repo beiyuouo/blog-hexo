@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译 Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structured">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-07-13T15:57:12.237Z">
+<meta property="og:updated_time" content="2019-07-14T08:32:34.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习笔记">
 <meta name="twitter:description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译 Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structured">
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T23:57:12+08:00">
-                2019-07-13
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-14T16:32:34+08:00">
+                2019-07-14
               </time>
             
           </span>
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.7k
+                  2.6k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  7
+                  12
                 </span>
               
             </div>
@@ -534,10 +534,39 @@
 <ul>
 <li>N-fold Cross Validation<br>分成多份，将其中一份当成Validation Set</li>
 </ul>
-<h2 id="Gradient-Descent-1"><a href="#Gradient-Descent-1" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<h2 id="Gradient-Descent-1"><a href="#Gradient-Descent-1" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>可以把参数写成向量的形式<br>那么${\theta}^{\ast}=arg\min_{\theta}L(\theta)$<br>Gradient:$\triangledown L=\begin{bmatrix}\frac{\partial L(\theta_1)}{\partial \theta_1}\\ \frac{\partial L(\theta_2)}{\partial \theta_2}\end{bmatrix}$<br>$\theta^{n}=\theta^{n-1}-\eta \triangledown L(\theta^{n-1})$</p>
+<h3 id="Tip-1-Tuning-your-learning-rate"><a href="#Tip-1-Tuning-your-learning-rate" class="headerlink" title="Tip 1: Tuning your learning rate"></a>Tip 1: Tuning your learning rate</h3><p>Adaptive Learning Rates</p>
+<ul>
+<li>Popular &amp; Simple Idea: Reduce the learning rate by some factor every few epochs.<br>就是说经过几次计算后越来越接近最优解，就要调小Learning Rate，比如$\eta^t=\eta/\sqrt{t+1}$这个压子</li>
+<li>Learning rate cannot be one-size-fits-all<br>Give different parameters different learning rates.</li>
+</ul>
+<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><ul>
+<li>Divide the learning rate of each parameter by the root mean square the its previous derivatives.<br>Adagrad: $w^{t+1}=w^{t}-\frac{\eta^{t}}{\sigma^{t}}g^{t},\sigma^{t}=\sqrt{\frac{1}{t+1}\sum_{i=0}^{t}(g^{i})^2},\eta^t=\eta/\sqrt{t+1}$<br>$\sigma^{t}$：root mean square of the previous derivatives of parameter w，就是前面所有的微分的平方的平均值再开根号<br>约分一下得到$w^{t+1}=w^{t}-\frac{\eta}{\sqrt{\sum_{i=0}^{t}(g^{i})^2}}g^{t}$</li>
+</ul>
+<p>Adagrad呢，上面$g^{t}$越大，变化越大，而下面的$\sqrt{\sum_{i=0}^{t}(g^{i})^2}$，会导致$g^{t}$越大，变化越小<br>Adagrad就是强调一个反差，how suprise it is，下面的考虑的是估计一下二次微分</p>
+<p>考虑多个参数时，$g^t$越大，Gradient Descent不一定越大</p>
+<h3 id="Tip-2-Stochastic-Gradient-Descent"><a href="#Tip-2-Stochastic-Gradient-Descent" class="headerlink" title="Tip 2: Stochastic Gradient Descent"></a>Tip 2: Stochastic Gradient Descent</h3><p>Loss函数$L=\sum_{n}\left (\hat{y}^n-(b+\sum w_ix_i^n) \right )^2$<br>这里要做的就是随机一个$x^n$，$L=\left (\hat{y}^n-(b+\sum w_ix_i^n) \right )^2,\theta^i=\theta^{i-1}-\eta \triangledown L^n(\theta^{i-1})$<br>有一个Sample就更新一下参数这个样子</p>
+<h3 id="Tip-3-Feature-Scaling"><a href="#Tip-3-Feature-Scaling" class="headerlink" title="Tip 3: Feature Scaling"></a>Tip 3: Feature Scaling</h3><p>Make different features have the same scaling.<br>常见做法：<br>$R$个向量组$x^i$，For each dimension $i$，都算mean: $m_i$,standard deviation: $\sigma_i$<br>对第$r$个向量组$x^r$，$x_i^r=\frac{x_i^r-m_i}{\sigma_i}$，这样做完之后呢，所有的mean 会变成0，standard deviation 会变成1</p>
+<h3 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h3><p>Taylor Series<br>理论主要是泰勒展开这个样子，大于等于二次项全部略去，然后相当于在一个圆圈中找一个向量与一次导数组成的向量内积最小，也就是一次导数组成的向量的反方向，再乘上一个常数指到圆圈边界，就得到了Gradient Descent的形式<br>这也就可以解释Learning Rate设置不对的时候偏差较大的问题</p>
+<p>More Limitation of Gradient Descent<br>会Stuck at Local minimum or saddle point<br>Very slow at the plateau</p>
+<h2 id="Classification-Probabilistic-Generative-Model"><a href="#Classification-Probabilistic-Generative-Model" class="headerlink" title="Classification: Probabilistic Generative Model"></a>Classification: Probabilistic Generative Model</h2><h3 id="Ideal-Alternatives"><a href="#Ideal-Alternatives" class="headerlink" title="Ideal Alternatives"></a>Ideal Alternatives</h3><p>Function(Model): x-&gt;f(x):g(x)&gt;0?class=1:class2<br>Loss function: $L(f)=\sum_{n}\delta (f(x^n)\neq \hat{y}^n)$, The number of times f get incorrect results on training data<br>Find the best function: Perceptron, SVN</p>
+<h3 id="Generative-model"><a href="#Generative-model" class="headerlink" title="Generative model"></a>Generative model</h3><p>$P(C_1|x)=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1)+P(x|C_2)P(C_2)}$<br>$P(x)=P(x|C_1)P(C_1)+P(x|C_2)P(C_2)$</p>
+<h3 id="Prior"><a href="#Prior" class="headerlink" title="Prior"></a>Prior</h3><p>Assume the points are sampled from a Gaussian distribution.<br>Find the Gaussion distribution behind them</p>
+<ul>
+<li>Gaussian Distribution:<br>$f_{\mu,\Sigma}(x)=\frac{1}{(2\Pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\exp\{-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\}$<br>Input: vector x, output: probability of sampling x<br>The shape of the function determines by mean $\mu$ and convariance matrix $\Sigma$<br>这部分有空可以再详细看下</li>
+</ul>
+<p>How to find $\mu$ and $\Sigma$ ?</p>
+<ul>
+<li>Maximum Likelihood<br>我们假设这些向量由一个高斯分布generate，要找一个Gussian$(\mu^{\ast},\Sigma^{\ast})$ with maximum likelihood.<br>$L(\mu,\Sigma)=f_{\mu,\Sigma}(x^1)f_{\mu,\Sigma}(x^2)…f_{\mu,\Sigma}(x^n)$.<br>$\mu^{\ast},\Sigma^{\ast}=arg\max_{\mu,\Sigma}L(\mu,\Sigma)$.<br>$\mu^{\ast}=\frac{1}{n}\sum {x^i}(average x),\Sigma^{\ast}=\frac{1}{n}\sum (x^i-\mu^{\ast})(x^i-\mu^{\ast})^{T}$</li>
+</ul>
+<h3 id="Modifying-Model"><a href="#Modifying-Model" class="headerlink" title="Modifying Model"></a>Modifying Model</h3><p>公用同一个$\Sigma$，$\Sigma=P(C_1)\Sigma^1+P(C_2)\Sigma^2$，加权平均</p>
+<p>Bernoulli distributions</p>
+<p>Naive Bayes Classifier</p>
+<h3 id="Posterior-Probability"><a href="#Posterior-Probability" class="headerlink" title="Posterior Probability"></a>Posterior Probability</h3><p>$P(C_1|x)=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1)+P(x|C_2)P(C_2)}=\frac{1}{1+\frac{P(x|C_2)P(C_2)}{P(x|C_1)P(C_1)}}$<br>Let $z=\ln frac{P(x|C_1)P(C_1)}{P(x|C_2)P(C_2)}$<br>$=\frac{1}{1+\exp(-z)=\sigma(z)}$ Sigmoid function</p>
+<h2 id="Classification-Logistic-Regression"><a href="#Classification-Logistic-Regression" class="headerlink" title="Classification: Logistic Regression"></a>Classification: Logistic Regression</h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li>李宏毅，机器学习2017 fall，<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html" target="_blank" rel="noopener">http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html</a>，台湾大学</li>
 </ul>
-
+<h2 id="Practice"><a href="#Practice" class="headerlink" title="Practice"></a>Practice</h2>
       
     </div>
     
@@ -579,8 +608,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/13/note-pwn/" rel="prev" title="pwn学习笔记">
-                pwn学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/13/note-python/" rel="prev" title="Python笔记">
+                Python笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -776,7 +805,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-amp-Learning-Map"><span class="nav-number">1.</span> <span class="nav-text">Overview &amp; Learning Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression-回归"><span class="nav-number">2.</span> <span class="nav-text">Regression 回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-Model-模型"><span class="nav-number">2.1.</span> <span class="nav-text">Step1: Model 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Goodness-of-Function"><span class="nav-number">2.2.</span> <span class="nav-text">Step2: Goodness of Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Best-Function"><span class="nav-number">2.3.</span> <span class="nav-text">Step3: Best Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient-Descent"><span class="nav-number">2.4.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generalization"><span class="nav-number">2.5.</span> <span class="nav-text">Generalization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Selection"><span class="nav-number">2.6.</span> <span class="nav-text">Model Selection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redesign-the-Model"><span class="nav-number">2.7.</span> <span class="nav-text">Redesign the Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regularization"><span class="nav-number">2.8.</span> <span class="nav-text">Regularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo"><span class="nav-number">2.9.</span> <span class="nav-text">Demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bias-and-Variance"><span class="nav-number">3.</span> <span class="nav-text">Bias and Variance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review"><span class="nav-number">3.1.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Estimator"><span class="nav-number">3.2.</span> <span class="nav-text">Estimator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variance"><span class="nav-number">3.3.</span> <span class="nav-text">Variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bias"><span class="nav-number">3.4.</span> <span class="nav-text">Bias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-Bias"><span class="nav-number">3.5.</span> <span class="nav-text">Large Bias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-variance"><span class="nav-number">3.6.</span> <span class="nav-text">Large variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Selection-1"><span class="nav-number">3.7.</span> <span class="nav-text">Model Selection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent-1"><span class="nav-number">4.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-amp-Learning-Map"><span class="nav-number">1.</span> <span class="nav-text">Overview &amp; Learning Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression-回归"><span class="nav-number">2.</span> <span class="nav-text">Regression 回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-Model-模型"><span class="nav-number">2.1.</span> <span class="nav-text">Step1: Model 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Goodness-of-Function"><span class="nav-number">2.2.</span> <span class="nav-text">Step2: Goodness of Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Best-Function"><span class="nav-number">2.3.</span> <span class="nav-text">Step3: Best Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient-Descent"><span class="nav-number">2.4.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generalization"><span class="nav-number">2.5.</span> <span class="nav-text">Generalization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Selection"><span class="nav-number">2.6.</span> <span class="nav-text">Model Selection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redesign-the-Model"><span class="nav-number">2.7.</span> <span class="nav-text">Redesign the Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regularization"><span class="nav-number">2.8.</span> <span class="nav-text">Regularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo"><span class="nav-number">2.9.</span> <span class="nav-text">Demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bias-and-Variance"><span class="nav-number">3.</span> <span class="nav-text">Bias and Variance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review"><span class="nav-number">3.1.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Estimator"><span class="nav-number">3.2.</span> <span class="nav-text">Estimator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variance"><span class="nav-number">3.3.</span> <span class="nav-text">Variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bias"><span class="nav-number">3.4.</span> <span class="nav-text">Bias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-Bias"><span class="nav-number">3.5.</span> <span class="nav-text">Large Bias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-variance"><span class="nav-number">3.6.</span> <span class="nav-text">Large variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Selection-1"><span class="nav-number">3.7.</span> <span class="nav-text">Model Selection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent-1"><span class="nav-number">4.</span> <span class="nav-text">Gradient Descent</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip-1-Tuning-your-learning-rate"><span class="nav-number">4.1.</span> <span class="nav-text">Tip 1: Tuning your learning rate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adagrad"><span class="nav-number">4.2.</span> <span class="nav-text">Adagrad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip-2-Stochastic-Gradient-Descent"><span class="nav-number">4.3.</span> <span class="nav-text">Tip 2: Stochastic Gradient Descent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip-3-Feature-Scaling"><span class="nav-number">4.4.</span> <span class="nav-text">Tip 3: Feature Scaling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Theory"><span class="nav-number">4.5.</span> <span class="nav-text">Theory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification-Probabilistic-Generative-Model"><span class="nav-number">5.</span> <span class="nav-text">Classification: Probabilistic Generative Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ideal-Alternatives"><span class="nav-number">5.1.</span> <span class="nav-text">Ideal Alternatives</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generative-model"><span class="nav-number">5.2.</span> <span class="nav-text">Generative model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prior"><span class="nav-number">5.3.</span> <span class="nav-text">Prior</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modifying-Model"><span class="nav-number">5.4.</span> <span class="nav-text">Modifying Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Posterior-Probability"><span class="nav-number">5.5.</span> <span class="nav-text">Posterior Probability</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification-Logistic-Regression"><span class="nav-number">6.</span> <span class="nav-text">Classification: Logistic Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Practice"><span class="nav-number">8.</span> <span class="nav-text">Practice</span></a></li></ol></div>
             
 
           </div>

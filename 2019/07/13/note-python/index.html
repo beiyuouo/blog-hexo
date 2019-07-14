@@ -98,11 +98,11 @@
 <meta name="keywords" content="note,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python笔记">
-<meta property="og:url" content="beiyuouo.github.io/2019/05/16/note-python/index.html">
+<meta property="og:url" content="beiyuouo.github.io/2019/07/13/note-python/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="本文主要使用Python3.7 dir()列出指定类或模块中全部内容help()查看某个函数或方法的帮助文档 Prevrange生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12def f(x):	return">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-07-13T15:51:01.743Z">
+<meta property="og:updated_time" content="2019-07-14T14:31:32.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python笔记">
 <meta name="twitter:description" content="本文主要使用Python3.7 dir()列出指定类或模块中全部内容help()查看某个函数或方法的帮助文档 Prevrange生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12def f(x):	return">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/2019/05/16/note-python/">
+  <link rel="canonical" href="beiyuouo.github.io/2019/07/13/note-python/">
 
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/05/16/note-python/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/07/13/note-python/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="北屿">
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-16T10:12:22+08:00">
-                2019-05-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-13T10:12:22+08:00">
+                2019-07-13
               </time>
             
 
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T23:51:01+08:00">
-                2019-07-13
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-14T22:31:32+08:00">
+                2019-07-14
               </time>
             
           </span>
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  2.3k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5
+                  8
                 </span>
               
             </div>
@@ -516,7 +516,25 @@
 <p>三目运算符<br><code>True_statements if expression else False_statements</code><br>先求<code>expression</code>，如果是<code>True</code>执行并返回<code>True_statements</code>的值，反之执行并返回<code>False_statements</code><br>允许使用多条语句，如果用逗号分割，每条都会执行，返回多条语句返回值组成的元组；如果用分号分割，每条购会执行，只返回第一条的返回值<br>支持嵌套</p>
 <p><code>in</code>运算符判断是否位于序列，也有<code>not in</code></p>
 <p>符号优先级表我就不写了…打括号就vans了</p>
-<h2 id="列表、元组和字典"><a href="#列表、元组和字典" class="headerlink" title="列表、元组和字典"></a>列表、元组和字典</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h2 id="列表、元组和字典"><a href="#列表、元组和字典" class="headerlink" title="列表、元组和字典"></a>列表、元组和字典</h2><h3 id="序列简介"><a href="#序列简介" class="headerlink" title="序列简介"></a>序列简介</h3><p>字符串、列表、元组<br>列表是可变的，元组是不可变的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建列表</span></span><br><span class="line">[ele1, ele2, ...]</span><br><span class="line"><span class="comment"># 创建元组</span></span><br><span class="line">(ele1, ele2, ...)</span><br></pre></td></tr></table></figure></p>
+<p>通过索引可以访问元素</p>
+<p>slice语法，左闭右开<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[start: end: step]</span><br></pre></td></tr></table></figure></p>
+<p>加法<br>元组和列表不能相加，但是元组和元组、列表和列表可以相加</p>
+<p>乘法<br>与整数相乘，将包含的元素重复$N$次<br>为了表示只有一个元素的元组，必须在唯一的元组元素之后添加英文逗号</p>
+<p><code>in</code>运算符<br><code>len(),max(),min()</code>，比较大小必须相同类型且可比较大小</p>
+<p>序列封包和序列解包<br>程序把多个值赋给同一个变量时，会自动将多个值封装成元组，叫做序列封包<br>程序允许将序列直接赋值给多个变量，各元素会依次赋值给每个变量（个数必须相等），称为序列解包<br>如果在变量之前添加<code>*</code>那么这个变量就代表一个列表</p>
+<h3 id="使用列表"><a href="#使用列表" class="headerlink" title="使用列表"></a>使用列表</h3><p><code>list()</code>可以将元组或<code>range</code>对象转换成列表</p>
+<p>类似的，用<code>tuple()</code>可以转换成元组</p>
+<p>增加列表元素<br><code>append()</code>将参数追加到列表最后，可以是元组或列表形成嵌套<br><code>extend()</code>可以将参数依次追加到列表后面而不是当做一个整体<br><code>insert(index, ele)</code>从中间插入</p>
+<p>删除列表元素<br><code>del</code>语句，Eg.<code>del a[2]</code><br>不仅可以删除列表还可以删除变量<br>列表的方法，<code>remove()</code>删除第一个找到的元素，<code>clear()</code>清空</p>
+<p>修改列表元素<br>直接赋值，也可以用slice语法对部分赋值，不要求数量相等，也就是可以增加元素<br>如果用slice语法用字符串对列表赋值，那么会把字符当成一个元素，如果slice语法指定了step，那么个数必须相等</p>
+<p>其他常用方法<br><code>dir(list)</code>可以查看所有方法<br><code>count()</code>： 统计某元素出现次数<br><code>index()</code>： 判断某元素出现位置<br><code>pop()</code>： 当成栈来使用，出栈<br><code>reverse()</code>： 将元素翻转<br><code>sort()</code>： 对元素排序，可以传入<code>key</code>和<code>reverse</code>两个参数，<code>key</code>是比较大小的键，<code>reverse</code>默认为<code>False</code>从小到大排序如果是<code>True</code>则从大到小排序</p>
+<h3 id="使用字典"><a href="#使用字典" class="headerlink" title="使用字典"></a>使用字典</h3><p><code>key</code>和<code>value</code>的映射，需要通过<code>key</code>访问<code>value</code>，所以<code>key</code>不允许重复</p>
+<p>创建字典<br>列表不能作为<code>key</code>,必须是不可变类型，元组可以<br>用<code>dict</code>创建列表时，列表中的每个元组被当成一个<code>key-value</code>，所以必须是两个元素<br>指定关键字参数创建字典，这是<code>key</code>不允许使用表达式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;key1: value1, key2: value2, ...&#125;</span><br><span class="line">dict(list)</span><br><span class="line">dict(chinese=1, jp=2)</span><br></pre></td></tr></table></figure></p>
+<p>添加只需赋值即可，删除用<code>del</code>语句，<code>in</code>判断是否有指定<code>key</code></p>
+<p>常见方法<code>dir(dict)</code><br><code>clear()</code>： 清空所有<code>key-value</code>对<br><code>get()</code>： 通过<code>key</code>获得<code>value</code>，访问不存在的不会引发<code>KeyError</code>错误，而是返回<code>None</code><br><code>update()</code>： 用一个字典更新另一个字典，可以添加和覆盖<br><code>items()</code>： 获得所有的<code>key-value</code>对<br><code>keys()</code>： 获得所有的<code>key</code><br><code>values()</code>： 获得所有的<code>value</code><br><code>pop()</code>： 获得<code>key</code>所对应的<code>value</code>并删除<br><code>popitem()</code>： 删除最后一个储存的<br><code>setdefault()</code>： 获得指定<code>key</code>的<code>value</code>，如果不存在则返回第二个参数也就是设置的默认值</p>
+<p>使用字典格式化字符串<br>多参数时适用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">'name: %(name)s, age: %(age)d, weight: %(weight).2f'</span></span><br><span class="line">d=&#123;<span class="string">'name'</span>: <span class="string">'beiyu'</span>, <span class="string">'age'</span>: <span class="number">19</span>, <span class="string">'weight'</span>: <span class="number">49.4</span>&#125;</span><br><span class="line">print(s % d) <span class="comment"># name: beiyu, age: 19, weight: 49.40</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li>《疯狂Python讲义》，李刚.—北京：电子工业出版社，2019.1</li>
 <li><a href="https://github.com/jackfrued/Python-100-Days/" target="_blank" rel="noopener">https://github.com/jackfrued/Python-100-Days/</a></li>
 </ul>
@@ -552,8 +570,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/16/install-anaconda/" rel="next" title="anaconda安装 & 人脸识别">
-                <i class="fa fa-chevron-left"></i> anaconda安装 & 人脸识别
+              <a href="/2019/07/10/note-machinelearning/" rel="next" title="机器学习笔记">
+                <i class="fa fa-chevron-left"></i> 机器学习笔记
               </a>
             
           </div>
@@ -562,8 +580,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/16/note-dataanalysisandmining/" rel="prev" title="数据分析与挖掘笔记">
-                数据分析与挖掘笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/13/note-pwn/" rel="prev" title="pwn学习笔记">
+                pwn学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -759,7 +777,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prev"><span class="nav-number">1.</span> <span class="nav-text">Prev</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python语言概述和开发环境"><span class="nav-number">2.</span> <span class="nav-text">Python语言概述和开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime3-Python3配置"><span class="nav-number">2.2.</span> <span class="nav-text">Sublime3 Python3配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和简单类型"><span class="nav-number">3.</span> <span class="nav-text">变量和简单类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行注释-amp-多行注释"><span class="nav-number">3.1.</span> <span class="nav-text">单行注释 &amp; 多行注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">3.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">3.3.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整型"><span class="nav-number">3.3.1.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点型"><span class="nav-number">3.3.2.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复数"><span class="nav-number">3.3.3.</span> <span class="nav-text">复数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深入使用字符串"><span class="nav-number">3.5.</span> <span class="nav-text">深入使用字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">3.6.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表、元组和字典"><span class="nav-number">4.</span> <span class="nav-text">列表、元组和字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prev"><span class="nav-number">1.</span> <span class="nav-text">Prev</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python语言概述和开发环境"><span class="nav-number">2.</span> <span class="nav-text">Python语言概述和开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime3-Python3配置"><span class="nav-number">2.2.</span> <span class="nav-text">Sublime3 Python3配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和简单类型"><span class="nav-number">3.</span> <span class="nav-text">变量和简单类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行注释-amp-多行注释"><span class="nav-number">3.1.</span> <span class="nav-text">单行注释 &amp; 多行注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">3.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">3.3.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整型"><span class="nav-number">3.3.1.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点型"><span class="nav-number">3.3.2.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复数"><span class="nav-number">3.3.3.</span> <span class="nav-text">复数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深入使用字符串"><span class="nav-number">3.5.</span> <span class="nav-text">深入使用字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">3.6.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表、元组和字典"><span class="nav-number">4.</span> <span class="nav-text">列表、元组和字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列简介"><span class="nav-number">4.1.</span> <span class="nav-text">序列简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用列表"><span class="nav-number">4.2.</span> <span class="nav-text">使用列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用字典"><span class="nav-number">4.3.</span> <span class="nav-text">使用字典</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">5.</span> <span class="nav-text">流程控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
