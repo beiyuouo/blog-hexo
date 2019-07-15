@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="本文主要使用Python3.7 dir()列出指定类或模块中全部内容help()查看某个函数或方法的帮助文档 Prevrange生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12def f(x):	return">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-07-15T10:20:07.589Z">
+<meta property="og:updated_time" content="2019-07-15T16:23:13.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python笔记">
 <meta name="twitter:description" content="本文主要使用Python3.7 dir()列出指定类或模块中全部内容help()查看某个函数或方法的帮助文档 Prevrange生成序列  range(101)可以产生一个0到100的整数序列。 range(1, 100)可以产生一个1到99的整数序列。 range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。  函数12def f(x):	return">
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-15T18:20:07+08:00">
-                2019-07-15
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-16T00:23:13+08:00">
+                2019-07-16
               </time>
             
           </span>
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.6k
+                  3k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  9
+                  11
                 </span>
               
             </div>
@@ -546,9 +546,21 @@
 <p><code>zip()</code>可以将多个列表压缩成一个<code>zip()</code>对象，长度不等取短的</p>
 <h3 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h3><p><code>break,continue,return</code></p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function_name</span><span class="params">(var1, var2, ...)</span> :</span></span><br><span class="line">    statements</span><br><span class="line">    <span class="keyword">return</span> [var]</span><br></pre></td></tr></table></figure>
+<p>当函数体只有一行时，可以与函数头放在同一行</p>
 <p>为函数添加文档<br>将一段注释内容放在声明后函数体前，就可以通过<code>help()</code>和函数的<code>__doc__</code>获得文档</p>
-<p>传参<br>按位置，按关键字，可以设置参数默认值</p>
-<p>个数可变参数<br>前面加<code>*</code>号，当做元组个数可变<br>前面加<code>**</code>，当做字典，关键字参数收集的参数</p>
+<p>传参<br>按位置，按关键字，可以设置参数默认值，带默认值的参数定义在形参后面</p>
+<p>参数收集 个数可变参数<br>前面加<code>*</code>号，当做元组个数可变<br>前面加<code>**</code>，当做字典，关键字参数收集的参数</p>
+<p>逆向参数收集<br>将已有列表、元组、字典拆开传给函数参数<br>在传入列表元组的参数之前加<code>*</code>，字典参数添加<code>**</code></p>
+<p>参数传递机制<br>跟其他语言一样，传的是形参，列表元组字典传的是实参，可以修改</p>
+<p>变量作用域<br><code>globals()</code>： 全局范围内所有变量组成的字典<br><code>locals()</code>： 当前局部范围<br><code>vars(object)</code>： 在指定对象范围内，若不传入<code>object</code>则跟<code>locals()</code>一样</p>
+<p>在函数中声明全局变量，就是在变量名前加<code>global</code></p>
+<h3 id="局部函数"><a href="#局部函数" class="headerlink" title="局部函数"></a>局部函数</h3><p>在函数体内定义函数，对外部是隐藏的，称为局部函数，只能在封闭函数中使用<br>封闭函数可以返回局部函数供其他作用域中使用，如果封闭函数将局部函数返回，且程序使用变量保存了封闭函数的返回值，那么这些局部函数的作用域就会被扩大</p>
+<p>可以使用<code>nonlocal</code>生命访问赋值语句只是访问该函数所在函数内的局部变量</p>
+<h3 id="函数高级内容"><a href="#函数高级内容" class="headerlink" title="函数高级内容"></a>函数高级内容</h3><p>函数变量，相当于起别名，也可以当做返回值、形参</p>
+<h3 id="局部函数与lambda表达式"><a href="#局部函数与lambda表达式" class="headerlink" title="局部函数与lambda表达式"></a>局部函数与lambda表达式</h3><p>lambda表达式只能是单行表达式<br>语法<br><code>lambda [parameter_list]: 表达式</code></p>
+<p><code>map()</code>函数<br>第一个参数是需要传入的函数，第二个参数是数据</p>
+<p>到这里，基本的语法已经看完了，剩下就是类还有些比较高级的东西了，抽空看</p>
+<hr>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li>《疯狂Python讲义》，李刚.—北京：电子工业出版社，2019.1</li>
 <li><a href="https://github.com/jackfrued/Python-100-Days/" target="_blank" rel="noopener">https://github.com/jackfrued/Python-100-Days/</a></li>
@@ -792,7 +804,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prev"><span class="nav-number">1.</span> <span class="nav-text">Prev</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python语言概述和开发环境"><span class="nav-number">2.</span> <span class="nav-text">Python语言概述和开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime3-Python3配置"><span class="nav-number">2.2.</span> <span class="nav-text">Sublime3 Python3配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和简单类型"><span class="nav-number">3.</span> <span class="nav-text">变量和简单类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行注释-amp-多行注释"><span class="nav-number">3.1.</span> <span class="nav-text">单行注释 &amp; 多行注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">3.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">3.3.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整型"><span class="nav-number">3.3.1.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点型"><span class="nav-number">3.3.2.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复数"><span class="nav-number">3.3.3.</span> <span class="nav-text">复数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深入使用字符串"><span class="nav-number">3.5.</span> <span class="nav-text">深入使用字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">3.6.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表、元组和字典"><span class="nav-number">4.</span> <span class="nav-text">列表、元组和字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列简介"><span class="nav-number">4.1.</span> <span class="nav-text">序列简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用列表"><span class="nav-number">4.2.</span> <span class="nav-text">使用列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用字典"><span class="nav-number">4.3.</span> <span class="nav-text">使用字典</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">5.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-number">5.1.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assert"><span class="nav-number">5.2.</span> <span class="nav-text">assert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loop"><span class="nav-number">5.3.</span> <span class="nav-text">loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环控制"><span class="nav-number">5.4.</span> <span class="nav-text">循环控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数-1"><span class="nav-number">6.1.</span> <span class="nav-text">函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prev"><span class="nav-number">1.</span> <span class="nav-text">Prev</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python语言概述和开发环境"><span class="nav-number">2.</span> <span class="nav-text">Python语言概述和开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime3-Python3配置"><span class="nav-number">2.2.</span> <span class="nav-text">Sublime3 Python3配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和简单类型"><span class="nav-number">3.</span> <span class="nav-text">变量和简单类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行注释-amp-多行注释"><span class="nav-number">3.1.</span> <span class="nav-text">单行注释 &amp; 多行注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">3.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">3.3.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整型"><span class="nav-number">3.3.1.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点型"><span class="nav-number">3.3.2.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复数"><span class="nav-number">3.3.3.</span> <span class="nav-text">复数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深入使用字符串"><span class="nav-number">3.5.</span> <span class="nav-text">深入使用字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">3.6.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表、元组和字典"><span class="nav-number">4.</span> <span class="nav-text">列表、元组和字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列简介"><span class="nav-number">4.1.</span> <span class="nav-text">序列简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用列表"><span class="nav-number">4.2.</span> <span class="nav-text">使用列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用字典"><span class="nav-number">4.3.</span> <span class="nav-text">使用字典</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">5.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-number">5.1.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assert"><span class="nav-number">5.2.</span> <span class="nav-text">assert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loop"><span class="nav-number">5.3.</span> <span class="nav-text">loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环控制"><span class="nav-number">5.4.</span> <span class="nav-text">循环控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数-1"><span class="nav-number">6.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部函数"><span class="nav-number">6.2.</span> <span class="nav-text">局部函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数高级内容"><span class="nav-number">6.3.</span> <span class="nav-text">函数高级内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部函数与lambda表达式"><span class="nav-number">6.4.</span> <span class="nav-text">局部函数与lambda表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
