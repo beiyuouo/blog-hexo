@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="note,regex,">
+  <meta name="keywords" content="machinelearning,problem,python,">
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="转义字符     字符 描述     \cx 匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符   \f 匹配一个换页符。等价于 \x0c 和 \cL   \n 匹配一个换行符。等价于 \x0a 和 \cJ   \r 匹配一个回车符。等价于 \x0d 和 \cM   \s 匹配任何空">
-<meta name="keywords" content="note,regex">
+<meta name="description" content="本来想着放在笔记后面，后来发现好像问题有点多…决定新开一篇文章来写 hw1https://www.kaggle.com/c/ml2019spring-hw1/overview作业说明 我一开始做了一个非常naive的model，反正分开处理，Python用的也不是很熟练，就当练代码了一开始没用AdaGrad，发现Learning Rate真的很难设置如果数据量小，那么Learning Rate应该">
+<meta name="keywords" content="machinelearning,problem,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式笔记">
-<meta property="og:url" content="beiyuouo.github.io/2018/12/05/note-zzbds/index.html">
+<meta property="og:title" content="机器学习练习">
+<meta property="og:url" content="beiyuouo.github.io/2019/07/17/ml-practice/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="转义字符     字符 描述     \cx 匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符   \f 匹配一个换页符。等价于 \x0c 和 \cL   \n 匹配一个换行符。等价于 \x0a 和 \cJ   \r 匹配一个回车符。等价于 \x0d 和 \cM   \s 匹配任何空">
+<meta property="og:description" content="本来想着放在笔记后面，后来发现好像问题有点多…决定新开一篇文章来写 hw1https://www.kaggle.com/c/ml2019spring-hw1/overview作业说明 我一开始做了一个非常naive的model，反正分开处理，Python用的也不是很熟练，就当练代码了一开始没用AdaGrad，发现Learning Rate真的很难设置如果数据量小，那么Learning Rate应该">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-26T07:21:53.711Z">
+<meta property="og:updated_time" content="2019-07-17T15:53:45.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式笔记">
-<meta name="twitter:description" content="转义字符     字符 描述     \cx 匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符   \f 匹配一个换页符。等价于 \x0c 和 \cL   \n 匹配一个换行符。等价于 \x0a 和 \cJ   \r 匹配一个回车符。等价于 \x0d 和 \cM   \s 匹配任何空">
+<meta name="twitter:title" content="机器学习练习">
+<meta name="twitter:description" content="本来想着放在笔记后面，后来发现好像问题有点多…决定新开一篇文章来写 hw1https://www.kaggle.com/c/ml2019spring-hw1/overview作业说明 我一开始做了一个非常naive的model，反正分开处理，Python用的也不是很熟练，就当练代码了一开始没用AdaGrad，发现Learning Rate真的很难设置如果数据量小，那么Learning Rate应该">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/2018/12/05/note-zzbds/">
+  <link rel="canonical" href="beiyuouo.github.io/2019/07/17/ml-practice/">
 
 
 
 
 
-  <title>正则表达式笔记 | 北屿</title>
+  <title>机器学习练习 | 北屿</title>
   
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2018/12/05/note-zzbds/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/07/17/ml-practice/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="北屿">
@@ -352,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">正则表达式笔记</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习练习</h1>
         
 
         <div class="post-meta">
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T15:33:50+08:00">
-                2018-12-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-17T22:20:33+08:00">
+                2019-07-17
               </time>
             
 
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-12-26T15:21:53+08:00">
-                2018-12-26
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-17T23:53:45+08:00">
+                2019-07-17
               </time>
             
           </span>
@@ -399,8 +399,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
+                  <a href="/categories/problem/" itemprop="url" rel="index">
+                    <span itemprop="name">problem</span>
                   </a>
                 </span>
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  870
+                  816
                 </span>
               
 
@@ -472,145 +472,12 @@
       
 
       
-        <p>转义字符</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字符</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>\cx</code></td>
-<td style="text-align:center">匹配由x指明的控制字符。例如， <code>\cM</code> 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\f</code></td>
-<td style="text-align:center">匹配一个换页符。等价于 <code>\x0c</code> 和 <code>\cL</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\n</code></td>
-<td style="text-align:center">匹配一个换行符。等价于 <code>\x0a</code> 和 <code>\cJ</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\r</code></td>
-<td style="text-align:center">匹配一个回车符。等价于 <code>\x0d</code> 和 <code>\cM</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\s</code></td>
-<td style="text-align:center">匹配任何空白字符，包括空格、制表符、换页符等等。等价于 <code>[ \f\n\r\t\v]</code>。注意 Unicode 正则表达式会匹配全角空格符</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\S</code></td>
-<td style="text-align:center">匹配任何非空白字符。等价于 <code>[^ \f\n\r\t\v]</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\t</code></td>
-<td style="text-align:center">匹配一个制表符。等价于 <code>\x09</code> 和 <code>\cI</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\v</code></td>
-<td style="text-align:center">匹配一个垂直制表符。等价于 <code>\x0b</code> 和 <code>\cK</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>特殊字符</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字符</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">$</td>
-<td style="text-align:center">匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 <code>&#39;\n&#39;</code> 或 <code>&#39;\r&#39;</code>。要匹配 <code>$</code> 字符本身，请使用 <code>\</code>$</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>( )</code></td>
-<td style="text-align:center">标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 <code>\(</code> 和 <code>\)</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>*</code></td>
-<td style="text-align:center">匹配前面的子表达式零次或多次。要匹配 <code>*</code> 字符，请使用 <code>\*</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>+</code></td>
-<td style="text-align:center">匹配前面的子表达式一次或多次。要匹配 <code>+</code> 字符，请使用 <code>\+</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>.</code></td>
-<td style="text-align:center">匹配除换行符 <code>\n</code>之外的任何单字符。要匹配 <code>.</code> ，请使用 <code>\.</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>[</code></td>
-<td style="text-align:center">标记一个中括号表达式的开始。要匹配 <code>[</code>，请使用 <code>\[</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>?</code></td>
-<td style="text-align:center">匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 <code>?</code> 字符，请使用 <code>\?</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\</code></td>
-<td style="text-align:center">将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。<code>&#39;\n&#39;</code> 匹配换行符。序列 <code>&#39;\\&#39;</code> 匹配 <code>&quot;\&quot;</code>，而 <code>&#39;\(&#39;</code> 则匹配 <code>&quot;(&quot;</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>^</code></td>
-<td style="text-align:center">匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字符集合。要匹配 <code>^</code> 字符本身，请使用 <code>\^</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>{</code></td>
-<td style="text-align:center">标记限定符表达式的开始。要匹配 <code>{</code>，请使用 <code>\{</code></td>
-</tr>
-<tr>
-<td style="text-align:center">&#124;</td>
-<td style="text-align:center">指明两项之间的一个选择。要匹配 &#124;，请使用 <code>\</code>&#124;</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>限制符</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字符</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>*</code></td>
-<td style="text-align:center">匹配前面的子表达式零次或多次。例如，<code>zo*</code> 能匹配 <code>&quot;z&quot;</code> 以及 <code>&quot;zoo&quot;</code>。<code>*</code> 等价于<code>{0,}</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>+</code></td>
-<td style="text-align:center">匹配前面的子表达式一次或多次。例如，<code>&#39;zo+&#39;</code> 能匹配 <code>&quot;zo&quot;</code> 以及 <code>&quot;zoo&quot;</code>，但不能匹配 <code>&quot;z&quot;</code>。+ 等价于 <code>{1,}</code>。</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>?</code></td>
-<td style="text-align:center">匹配前面的子表达式零次或一次。例如，<code>&quot;do(es)?&quot;</code> 可以匹配 <code>&quot;do&quot;</code> 、 <code>&quot;does&quot;</code> 中的 <code>&quot;does&quot;</code> 、 <code>&quot;doxy&quot;</code> 中的 <code>&quot;do&quot;</code> 。<code>?</code> 等价于 <code>{0,1}</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>{n}</code></td>
-<td style="text-align:center"><code>n</code> 是一个非负整数。匹配确定的 n 次。例如，<code>&#39;o{2}&#39;</code> 不能匹配 <code>&quot;Bob&quot;</code> 中的 <code>&#39;o&#39;</code>，但是能匹配 <code>&quot;food&quot;</code> 中的两个 o</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>{n,}</code></td>
-<td style="text-align:center"><code>n</code> 是一个非负整数。至少匹配 n 次。例如，<code>&#39;o{2,}&#39;</code> 不能匹配 <code>&quot;Bob&quot;</code> 中的 <code>&#39;o&#39;</code>，但能匹配 <code>&quot;foooood&quot;</code> 中的所有 o。<code>&#39;o{1,}&#39;</code> 等价于 <code>&#39;o+&#39;</code>。<code>&#39;o{0,}&#39;</code> 则等价于 <code>&#39;o*&#39;</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>{n,m}</code></td>
-<td style="text-align:center">m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，<code>&quot;o{1,3}&quot;</code> 将匹配 <code>&quot;fooooood&quot;</code> 中的前三个 o。<code>&#39;o{0,1}&#39;</code> 等价于 <code>&#39;o?&#39;</code>。请注意在逗号和两个数之间不能有空格</td>
-</tr>
-</tbody>
-</table>
-</div>
+        <p>本来想着放在笔记后面，后来发现好像问题有点多…决定新开一篇文章来写</p>
+<h2 id="hw1"><a href="#hw1" class="headerlink" title="hw1"></a>hw1</h2><p><a href="https://www.kaggle.com/c/ml2019spring-hw1/overview" target="_blank" rel="noopener">https://www.kaggle.com/c/ml2019spring-hw1/overview</a><br><a href="https://ntumlta2019.github.io/ml-web-hw1/" target="_blank" rel="noopener">作业说明</a></p>
+<p>我一开始做了一个非常naive的model，反正分开处理，Python用的也不是很熟练，就当练代码了<br>一开始没用AdaGrad，发现Learning Rate真的很难设置<br>如果数据量小，那么Learning Rate应该大一些，如果数据量大，那就得小一些了，这个都是相对的<br>如果数据本身小，那么初始值就没那么重要，如果本身大的话，那初始值就需要自己手动设置一下了<br>举个第一个的栗子，如果一开始初始值都设成0,12960条数据，一开始得到的Loss就有51361098.87099994，Learning Rate我设成了1e-8，得到的结果还越来越大…<br>当我把数据量调小一点，比如20条这个样子，还是有点用的…Learning Rate = 1e-6，迭代50次大概能得到一个不错的结果…<br>实测<code>1e-9,1e-12</code>时有点用了…<br>我忽然有个大胆的想法…如果前面变化大点后面变化小点是不是很科学，可以飞快接近结果<br>p.s. Python的输出调试真的不好用…不如c++的<code>#define debug(x) cout&lt;&lt;#x&lt;&lt;&quot;=&quot;&lt;&lt;x&lt;&lt;endl</code>，可能我还没get到该技能<br>cao，原来只需要预测PM2.5就行了，那我直接写全得了<br>一开始Loss=4231600.00，最后313187.27500353276</p>
+<p>现在我不是很清楚要什么时候结束…所以先直接计次循环了<br>先在这保存一下代码…之后改成AdaGrad<br>果然这个naive的程序得到了8.18926的高分，我觉得以后应该把训练的模块和输出模块分开来写，不然必须训练一次才能输出233<br>第一次训练出来的w和b</p>
+<p>其实我觉得浮点数精度带来的误差还是很大的…<br>今天跑不完了，明早起来再跑吧233<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = [<span class="number">0.02560433358938389</span>, <span class="number">0.012801930896077247</span>, <span class="number">0.004710981594648449</span>, <span class="number">0.005885507375027003</span>, <span class="number">0.009942499746330985</span>, <span class="number">0.026670961533262413</span>, <span class="number">-0.0010603121145215564</span>, <span class="number">0.25976948883940576</span>, <span class="number">0.6202885065990642</span>]</span><br><span class="line">b = <span class="number">0.01483973260431497</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># read data</span></span><br><span class="line"></span><br><span class="line">ff = open(<span class="string">'train.csv'</span>, <span class="string">'r'</span>, <span class="keyword">True</span>, <span class="string">'big5hkscs'</span>);</span><br><span class="line">data_init = ff.readlines()</span><br><span class="line">total_line = len(data_init)<span class="number">-1</span></span><br><span class="line"><span class="comment"># total_line = 19</span></span><br><span class="line">total_type = <span class="number">8</span></span><br><span class="line"></span><br><span class="line">data = [[] <span class="keyword">for</span> i <span class="keyword">in</span> range(total_type)]</span><br><span class="line"><span class="comment"># print(data)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, total_line+<span class="number">1</span>): </span><br><span class="line">    <span class="comment"># print(i, data_init[i], end=' ')</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> data_init[i].split(<span class="string">','</span>)[<span class="number">3</span>:]: </span><br><span class="line">        <span class="comment"># print(j, end=' ')</span></span><br><span class="line">        <span class="keyword">if</span>(j.startswith(<span class="string">"NR"</span>)):</span><br><span class="line">            data[(i<span class="number">-1</span>)%total_type].append(<span class="number">0.0</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            data[(i<span class="number">-1</span>)%total_type].append(float(j))</span><br><span class="line">    <span class="comment"># print()</span></span><br><span class="line"><span class="comment"># print(data)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for i in data:</span></span><br><span class="line"><span class="comment">#     print(len(i))</span></span><br><span class="line"></span><br><span class="line">ff.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># init model without adagrad</span></span><br><span class="line"><span class="comment"># just consider one type</span></span><br><span class="line">learningrate = <span class="number">1e-11</span></span><br><span class="line">w = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)]</span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">par = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># data[0]=data[0][:20]</span></span><br><span class="line"><span class="comment"># print(data[0])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a)</span>:</span> <span class="comment"># calc y</span></span><br><span class="line">    y = b</span><br><span class="line">    <span class="comment"># print(len(a))</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(a)):</span><br><span class="line">        y += w[i]*a[i]</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LF</span><span class="params">()</span>:</span> <span class="comment"># loss function</span></span><br><span class="line">    tot1, tot2 = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>, len(data[<span class="number">0</span>])<span class="number">-1</span>):</span><br><span class="line">        tot1 += data[<span class="number">0</span>][i]-f(data[<span class="number">0</span>][i<span class="number">-9</span>: i])</span><br><span class="line">        tot2 += (data[<span class="number">0</span>][i]-f(data[<span class="number">0</span>][i<span class="number">-9</span>: i]))**<span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> tot1, tot2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getpart</span><span class="params">()</span>:</span> <span class="comment"># get partial w_i,b</span></span><br><span class="line">    <span class="keyword">global</span> w,b,learningrate</span><br><span class="line">    parw = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)]</span><br><span class="line">    parb = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>, len(data[<span class="number">0</span>])<span class="number">-1</span>):</span><br><span class="line">        a = data[<span class="number">0</span>][i<span class="number">-9</span>: i]</span><br><span class="line">        tmp = data[<span class="number">0</span>][i]-f(a)</span><br><span class="line">        <span class="comment"># print('a = ', a, ' tmp = ', tmp, 'f(a) = ', f(a))</span></span><br><span class="line">        parb += <span class="number">-2</span>*(tmp)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(parw)):</span><br><span class="line">            parw[j] += <span class="number">-2</span>*tmp*a[j]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># print(parw, parb)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>):</span><br><span class="line">        w[i]=w[i]-learningrate*parw[i]</span><br><span class="line">    b = b-learningrate*parb</span><br><span class="line"></span><br><span class="line"><span class="comment"># main loop</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">500</span>):</span><br><span class="line">    loss1, loss2 = LF()</span><br><span class="line">    print(loss2)</span><br><span class="line">    getpart()</span><br><span class="line">    <span class="comment"># print(w, b, learningrate, end=' -&gt; ')</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -628,9 +495,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+            <a href="/tags/machinelearning/" rel="tag"><i class="fa fa-tag"></i> machinelearning</a>
           
-            <a href="/tags/regex/" rel="tag"><i class="fa fa-tag"></i> regex</a>
+            <a href="/tags/problem/" rel="tag"><i class="fa fa-tag"></i> problem</a>
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
           
         </div>
       
@@ -643,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/02/js-imagemagnifier/" rel="next" title="imagemagnifier">
-                <i class="fa fa-chevron-left"></i> imagemagnifier
+              <a href="/2019/07/13/note-pwn/" rel="next" title="pwn学习笔记">
+                <i class="fa fa-chevron-left"></i> pwn学习笔记
               </a>
             
           </div>
@@ -653,8 +522,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/26/note-shell/" rel="prev" title="Shell笔记">
-                Shell笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/09/01/misc-daxueguidang/" rel="prev" title="【置顶】大学学习归档">
+                【置顶】大学学习归档 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -711,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
           <p class="site-author-name" itemprop="name">北屿</p>
@@ -831,6 +709,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hw1"><span class="nav-number">1.</span> <span class="nav-text">hw1</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
