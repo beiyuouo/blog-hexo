@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="环境搭建我用的系统是Ubuntu 18.04.2 LTS，感觉最好还是用个LTS的吧 https://github.com/giantbranch/pwn-env-init 安装工具1234567sudo pip install pwntoolsgit clone https://github.com/pwndbg/pwndbgcd pwndbgsudo ./setup.shsudo apt in">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-07-25T05:05:57.789Z">
+<meta property="og:updated_time" content="2019-07-25T05:50:50.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pwn学习笔记">
 <meta name="twitter:description" content="环境搭建我用的系统是Ubuntu 18.04.2 LTS，感觉最好还是用个LTS的吧 https://github.com/giantbranch/pwn-env-init 安装工具1234567sudo pip install pwntoolsgit clone https://github.com/pwndbg/pwndbgcd pwndbgsudo ./setup.shsudo apt in">
@@ -380,7 +380,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-25T13:05:57+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-25T13:50:50+08:00">
                 2019-07-25
               </time>
             
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  71
+                  182
                 </span>
               
 
@@ -475,8 +475,22 @@
         <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>我用的系统是Ubuntu 18.04.2 LTS，感觉最好还是用个LTS的吧</p>
 <p><a href="https://github.com/giantbranch/pwn-env-init" target="_blank" rel="noopener">https://github.com/giantbranch/pwn-env-init</a></p>
 <p>安装工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install pwntools</span><br><span class="line"></span><br><span class="line">git clone https://github.com/pwndbg/pwndbg</span><br><span class="line">cd pwndbg</span><br><span class="line">sudo ./setup.sh</span><br><span class="line"></span><br><span class="line">sudo apt install gcc-multilib</span><br></pre></td></tr></table></figure></p>
+<p>这个因为用的是<code>pip</code>安装的，只安装到Python2中了…然鹅我装了anaconda是在虚拟环境中默认Python3，所以只能python2来打开咯</p>
 <h2 id="file"><a href="#file" class="headerlink" title="file"></a>file</h2><p><code>file</code>命令可以查看文件的类型之类的</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
+<h2 id="ida"><a href="#ida" class="headerlink" title="ida"></a>ida</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>免费版的…<br><a href="https://www.hex-rays.com/products/ida/support/download_freeware.shtml" target="_blank" rel="noopener">https://www.hex-rays.com/products/ida/support/download_freeware.shtml</a><br>爱盘里也有<br><a href="https://down.52pojie.cn/" target="_blank" rel="noopener">https://down.52pojie.cn/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod +x idafree70_linux.run</span><br><span class="line">./idafree70_linux.run</span><br><span class="line">./ida64</span><br></pre></td></tr></table></figure>
+<h3 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h3><ol>
+<li>F5 defs.h</li>
+<li>Shift+F12 字符串</li>
+<li>n 重命名</li>
+<li>x 引用</li>
+</ol>
+<h2 id="pwntools"><a href="#pwntools" class="headerlink" title="pwntools"></a>pwntools</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install pwntools</span><br></pre></td></tr></table></figure>
+<h3 id="常用功能-1"><a href="#常用功能-1" class="headerlink" title="常用功能"></a>常用功能</h3><ol>
+<li>process remote</li>
+<li>p64 u64</li>
+</ol>
+<h2 id="汇编命令"><a href="#汇编命令" class="headerlink" title="汇编命令"></a>汇编命令</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
       
     </div>
     
@@ -717,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file"><span class="nav-number">2.</span> <span class="nav-text">file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file"><span class="nav-number">2.</span> <span class="nav-text">file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ida"><span class="nav-number">3.</span> <span class="nav-text">ida</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用功能"><span class="nav-number">3.2.</span> <span class="nav-text">常用功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pwntools"><span class="nav-number">4.</span> <span class="nav-text">pwntools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用功能-1"><span class="nav-number">4.2.</span> <span class="nav-text">常用功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汇编命令"><span class="nav-number">5.</span> <span class="nav-text">汇编命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
