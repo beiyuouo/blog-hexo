@@ -173,9 +173,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -211,9 +211,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -310,8 +310,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>arduino</tag>
         <tag>note</tag>
+        <tag>arduino</tag>
       </tags>
   </entry>
   <entry>
