@@ -20,6 +20,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[20190808]]></title>
+    <url>%2F2019%2F08%2F08%2F20190808%2F</url>
+    <content type="text"><![CDATA[明天就要去韩国van了嗷，大噶勿念，虽然也没什么人看我这小破blog.. 所有的流量基本全是buuctf的你敢信…当时闲着没事做了一下buuctf的misc和编码部分…居然会有这么多流量… 今天搜论文，忽然看到了Deep Reinforcement Learning for 2048，当时AlphaGo还是雏形的时候我就想着用Machine Learning玩2048，可惜可惜~naive ai(其实就是AStar)~]]></content>
+      <categories>
+        <category>daily</category>
+      </categories>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[20190730]]></title>
     <url>%2F2019%2F07%2F30%2F20190730%2F</url>
     <content type="text"><![CDATA[今天下午看视频的时候，突然接到一个北京的电话，还以为是快递的，结果是CSDN的电话…问我为什么不用他们博客了…我就说了什么主题太少不好看，个性化不够，限制太多之类的..感觉很神奇… 还有最近的觉是真的多…吹空调开被子睡觉好爽x 啊…今天想出去多走点路，就走去拿快递了，然后去之前就感觉在阿水会遇到熟人，然后去阿水买了杯毒药果然遇到了熟人233前任和她的现任…他们今天一周年233拿快递又遇到一个熟人..happy好久没看见放风筝的了，想放。]]></content>
@@ -39,8 +50,8 @@
       </categories>
       <tags>
         <tag>note</tag>
-        <tag>matplotlib</tag>
         <tag>python</tag>
+        <tag>matplotlib</tag>
       </tags>
   </entry>
   <entry>
@@ -75,9 +86,9 @@
         <category>problem</category>
       </categories>
       <tags>
-        <tag>machinelearning</tag>
         <tag>python</tag>
         <tag>problem</tag>
+        <tag>machinelearning</tag>
       </tags>
   </entry>
   <entry>
@@ -88,8 +99,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>ctf</tag>
         <tag>note</tag>
+        <tag>ctf</tag>
         <tag>pwn</tag>
       </tags>
   </entry>
@@ -173,9 +184,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -211,9 +222,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -723,8 +734,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2F2018%2F11%2F13%2Ftest-HelloWorld%2F</url>
-    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
+    <url>%2F2018%2F11%2F13%2Ftest-hello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>daily</category>
       </categories>
@@ -734,8 +745,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2F2018%2F11%2F13%2Ftest-hello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2F2018%2F11%2F13%2Ftest-HelloWorld%2F</url>
+    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
       <categories>
         <category>daily</category>
       </categories>
