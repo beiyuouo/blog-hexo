@@ -50,8 +50,8 @@
       </categories>
       <tags>
         <tag>note</tag>
-        <tag>python</tag>
         <tag>matplotlib</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -94,13 +94,13 @@
   <entry>
     <title><![CDATA[pwn学习笔记]]></title>
     <url>%2F2019%2F07%2F13%2Fnote-pwn%2F</url>
-    <content type="text"><![CDATA[环境搭建我用的系统是Ubuntu 18.04.2 LTS，感觉最好还是用个LTS的吧 https://github.com/giantbranch/pwn-env-init 安装工具1234567sudo pip install pwntoolsgit clone https://github.com/pwndbg/pwndbgcd pwndbgsudo ./setup.shsudo apt install gcc-multilib 这个因为用的是pip安装的，只安装到Python2中了…然鹅我装了anaconda是在虚拟环境中默认Python3，所以只能python2来打开咯 filefile命令可以查看文件的类型之类的 ida安装免费版的…https://www.hex-rays.com/products/ida/support/download_freeware.shtml爱盘里也有https://down.52pojie.cn/ 123chmod +x idafree70_linux.run./idafree70_linux.run./ida64 常用功能 F5 defs.h Shift+F12 字符串 n 重命名 x 引用 pwntools安装1sudo pip install pwntools 常用功能 process remote p64 u64 汇编命令参考]]></content>
+    <content type="text"><![CDATA[最后的最后我还是咕咕了。 环境搭建我用的系统是Ubuntu 18.04.2 LTS，感觉最好还是用个LTS的吧 https://github.com/giantbranch/pwn-env-init 安装工具1234567sudo pip install pwntoolsgit clone https://github.com/pwndbg/pwndbgcd pwndbgsudo ./setup.shsudo apt install gcc-multilib 这个因为用的是pip安装的，只安装到Python2中了…然鹅我装了anaconda是在虚拟环境中默认Python3，所以只能python2来打开咯 filefile命令可以查看文件的类型之类的 ida安装免费版的…https://www.hex-rays.com/products/ida/support/download_freeware.shtml爱盘里也有https://down.52pojie.cn/ 123chmod +x idafree70_linux.run./idafree70_linux.run./ida64 常用功能 F5 defs.h Shift+F12 字符串 n 重命名 x 引用 pwntools安装1sudo pip install pwntools 常用功能 process remote p64 u64 汇编命令参考]]></content>
       <categories>
         <category>note</category>
       </categories>
       <tags>
-        <tag>note</tag>
         <tag>ctf</tag>
+        <tag>note</tag>
         <tag>pwn</tag>
       </tags>
   </entry>
@@ -184,9 +184,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -222,9 +222,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -321,8 +321,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>note</tag>
         <tag>arduino</tag>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
