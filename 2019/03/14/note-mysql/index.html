@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh_Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -181,7 +181,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
 
   
   
@@ -191,7 +191,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -283,6 +283,26 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-baidusitemap">
+          <a href="/baidusitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            BaiduSitemap
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -343,20 +363,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/03/14/note-mysql/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="北屿">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="北屿">
     </span>
 
@@ -411,7 +431,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/note/" itemprop="url" rel="index">
                     <span itemprop="name">note</span>
                   </a>
@@ -780,7 +800,7 @@
 <h4 id="Aggregate-Functions"><a href="#Aggregate-Functions" class="headerlink" title="Aggregate Functions"></a>Aggregate Functions</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">avg</span><br><span class="line">sum</span><br><span class="line">min</span><br><span class="line">max</span><br><span class="line">count</span><br></pre></td></tr></table></figure>
 <h3 id="Sorting-and-Grouping-Data"><a href="#Sorting-and-Grouping-Data" class="headerlink" title="Sorting and Grouping Data"></a>Sorting and Grouping Data</h3><h4 id="Sorting-Data"><a href="#Sorting-Data" class="headerlink" title="Sorting Data"></a>Sorting Data</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	[ALL | <span class="keyword">DISTINCT</span>]</span><br><span class="line">	select_expr [, select_expr ...]</span><br><span class="line">	[<span class="keyword">FROM</span> table_reference]</span><br><span class="line">	[<span class="keyword">WHERE</span> where_condition]</span><br><span class="line">	[<span class="keyword">ORDER</span> <span class="keyword">BY</span> column_name]</span><br><span class="line">	[<span class="keyword">ASC</span> | <span class="keyword">DESC</span>]</span><br></pre></td></tr></table></figure>
 <h4 id="Grouping-Data"><a href="#Grouping-Data" class="headerlink" title="Grouping Data"></a>Grouping Data</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	[ALL | <span class="keyword">DISTINCT</span>]</span><br><span class="line">	select_expr [, select_expr ...]</span><br><span class="line">	[<span class="keyword">FROM</span> table_reference]</span><br><span class="line">	[<span class="keyword">WHERE</span> where_condition]</span><br><span class="line">	[<span class="keyword">GROUP</span> <span class="keyword">BY</span> &#123;column_name | expr&#125;]</span><br><span class="line">	[<span class="keyword">HAVING</span> where_condition]</span><br></pre></td></tr></table></figure>
-<h2 id="Join和Subqueries"><a href="#Join和Subqueries" class="headerlink" title="Join和Subqueries"></a>Join和Subqueries</h2><h3 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h3><p>一张图片搞定<br><img src="/img/note-mysql/joinimg.jpg" alt=""></p>
+<h2 id="Join和Subqueries"><a href="#Join和Subqueries" class="headerlink" title="Join和Subqueries"></a>Join和Subqueries</h2><h3 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h3><p>一张图片搞定<br><img src="/img/note-mysql/joinimg.jpg" alt></p>
 <h4 id="Inner-Join"><a href="#Inner-Join" class="headerlink" title="Inner Join"></a>Inner Join</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, column_name, [, column_name]</span><br><span class="line"><span class="keyword">FROM</span> table1_name <span class="keyword">JOIN</span> table2_name</span><br><span class="line"><span class="keyword">ON</span> table1_name.ref_column_name join_operator </span><br><span class="line">table2_name.ref_column_name | <span class="keyword">USING</span> (ref_column_name)</span><br><span class="line">[<span class="keyword">WHERE</span> search_condition]</span><br></pre></td></tr></table></figure>
 <p>ON 和 USING 二选一，USING可以合并相同的列</p>
 <h4 id="Outer-Join"><a href="#Outer-Join" class="headerlink" title="Outer Join"></a>Outer Join</h4><p>LEFT OUTER JOIN<br>RIGHT OUTER JOIN<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, column_name, [, column_name]</span><br><span class="line"><span class="keyword">FROM</span> table1_name [<span class="keyword">LEFT</span> | <span class="keyword">RIGHT</span>] <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2_name</span><br><span class="line"><span class="keyword">ON</span> table1_name.ref_column_name join_operator </span><br><span class="line">table2_name.ref_column_name | <span class="keyword">USING</span> (ref_column_name)</span><br><span class="line">[<span class="keyword">WHERE</span> search_condition]</span><br></pre></td></tr></table></figure></p>
@@ -1115,7 +1135,7 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
           <p class="site-author-name" itemprop="name">北屿</p>
            
@@ -1127,7 +1147,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">66</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1149,7 +1169,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

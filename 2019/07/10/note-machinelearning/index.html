@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh_Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -203,7 +203,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
 
   
   
@@ -213,7 +213,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -305,6 +305,26 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-baidusitemap">
+          <a href="/baidusitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            BaiduSitemap
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -365,20 +385,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/07/10/note-machinelearning/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="北屿">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="北屿">
     </span>
 
@@ -433,7 +453,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/note/" itemprop="url" rel="index">
                     <span itemprop="name">note</span>
                   </a>
@@ -652,7 +672,7 @@
 <h3 id="Three-Step-of-Deep-Learning"><a href="#Three-Step-of-Deep-Learning" class="headerlink" title="Three Step of Deep Learning"></a>Three Step of Deep Learning</h3><p>跟Machine Learning的三步一样，第一步也就是一个Neural Network</p>
 <p>Neural Network: Different connection leads to different network structures.<br>Network parameter $\theta$ :all the weights and biases in the “neurons”.</p>
 <h3 id="Fully-Connect-Feedforward-Network"><a href="#Fully-Connect-Feedforward-Network" class="headerlink" title="Fully Connect Feedforward Network"></a>Fully Connect Feedforward Network</h3><p>如果我们知道所有的weights和bisaes，那么这其实就是一个function<br>如果只知道structure不知道这些，那么就是一个function set</p>
-<p>一共分成三层<br>input layer - hidden layers - output layer<br><img src="/img/note-ml/20190717120028.png" alt=""></p>
+<p>一共分成三层<br>input layer - hidden layers - output layer<br><img src="/img/note-ml/20190717120028.png" alt></p>
 <p>Deep = Many hidden layers</p>
 <p>Matrix Operation: 其实就是input vector 来进行matrix operation （每一层集合所有的weights 和 biases，每一层最后有一个activation function），最后得到output vector<br>矩阵运算可以GPU加速</p>
 <p>feature extractor replacing feature engineering</p>
@@ -697,7 +717,7 @@ a=0, && z<0
 <h4 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h4><p>Movement: movement of last step minus gradient at present</p>
 <p>Step:<br>Start at point $\theta^{0}$<br>Movement $v^{0}=0$<br>Compute gradient at $\theta^{0}$<br>Movement $v^{1}=\lambda v^{0}-\eta \triangledown L(\theta^{0})$<br>Move to $\theta^{1}=\theta^{0}+v^{1}$<br>Compute gradient at $\theta^{1}$<br>Movement $v^{2}=\lambda v^{1}-\eta \triangledown L(\theta^{1})$<br>Move to $\theta^{2}=\theta^{1}+v^{2}$</p>
 <p>Movement not just based on gradient, but previous movement.<br>$v^{i}$ is actually the weighted sum of all the previous gradient: $\triangledown L(\theta^{0}),\triangledown L(\theta^{1}),…,\triangledown L(\theta^{i-1})$</p>
-<h4 id="Adam-RMSProp-Momentum"><a href="#Adam-RMSProp-Momentum" class="headerlink" title="Adam: RMSProp + Momentum"></a>Adam: RMSProp + Momentum</h4><p>这里字太多了…我就截图了<br>算法：<br><img src="/img/note-ml/20190722113854.png" alt=""></p>
+<h4 id="Adam-RMSProp-Momentum"><a href="#Adam-RMSProp-Momentum" class="headerlink" title="Adam: RMSProp + Momentum"></a>Adam: RMSProp + Momentum</h4><p>这里字太多了…我就截图了<br>算法：<br><img src="/img/note-ml/20190722113854.png" alt></p>
 <h3 id="Bad-Results-on-Testing-Data"><a href="#Bad-Results-on-Testing-Data" class="headerlink" title="Bad Results on Testing Data"></a>Bad Results on Testing Data</h3><h4 id="Early-Stopping"><a href="#Early-Stopping" class="headerlink" title="Early Stopping"></a>Early Stopping</h4><p>用Validation set模拟Testing set选一个Validation set上loss较小的点停下来，而不是一直Train下去</p>
 <h4 id="Regularization-1"><a href="#Regularization-1" class="headerlink" title="Regularization"></a>Regularization</h4><p>New loss function to be minimized</p>
 <ul>
@@ -916,7 +936,7 @@ a=0, && z<0
 <h3 id="Laplacian-Eigenmaps"><a href="#Laplacian-Eigenmaps" class="headerlink" title="Laplacian Eigenmaps"></a>Laplacian Eigenmaps</h3><p>Graph-based approach<br>Distance defined by graph approximate the distance on manifold<br>Construct the data points as a graph<br>Dimension Reduction: If $x^1$ and $x^2$ are close in a high density region, $z^1$ and $z^2$ are close to each other.<br>smoothness: $S=\frac{1}{2}\sum_{i,j}w_{i,j}(z^i-z^j)^2$, constraints to $z$: If the dim of $z$ is $M$,$Span\{z^1, z^2, … z^N\} = R^M$，找的是Laplacian Matrix 的eignenvector<br>这里在Semi-supervised Learning讲过<br>然后再去做cluster，Spectral clustering: clustering on z</p>
 <h3 id="T-distributed-Stochastic-Neighbor-Embedding-t-SNE"><a href="#T-distributed-Stochastic-Neighbor-Embedding-t-SNE" class="headerlink" title="T-distributed Stochastic Neighbor Embedding(t-SNE)"></a>T-distributed Stochastic Neighbor Embedding(t-SNE)</h3><p>T-distributed Stochastic Neighbor Embedding(t-SNE) t-分布领域嵌入算法<br>Problem of the previous approaches</p>
 <ul>
-<li>Similar data are close, but different data may collapse<br>只保证了相似的会很接近，但没保证不相似要远一些<br><img src="/img/note-ml/20190731160618.png" alt=""><br>KL divergence<br>Similarity Measure<br>$S(x^i,x^j)=\exp (-||x^i-x^j||_ {2})$.<br>SNE: $S’(z^i,z^j$=\exp(-||z^i-z^j||_ 2)$.<br>t-SNE: $S’(z^i,z^j)=1/1+||z^i-z^j||_ 2$.</li>
+<li>Similar data are close, but different data may collapse<br>只保证了相似的会很接近，但没保证不相似要远一些<br><img src="/img/note-ml/20190731160618.png" alt><br>KL divergence<br>Similarity Measure<br>$S(x^i,x^j)=\exp (-||x^i-x^j||_ {2})$.<br>SNE: $S’(z^i,z^j$=\exp(-||z^i-z^j||_ 2)$.<br>t-SNE: $S’(z^i,z^j)=1/1+||z^i-z^j||_ 2$.</li>
 </ul>
 <h2 id="Unsupervised-Learning-Deep-Auto-encoder"><a href="#Unsupervised-Learning-Deep-Auto-encoder" class="headerlink" title="Unsupervised Learning: Deep Auto-encoder"></a>Unsupervised Learning: Deep Auto-encoder</h2><h3 id="Auto-encoder"><a href="#Auto-encoder" class="headerlink" title="Auto-encoder"></a>Auto-encoder</h3><p>找一个NN encoder和NNdecoder，将input转成一个code再转回成input，就可以两个连起来一起train<br>中间的是Bottleneck later<br>the auto-encoder can be deep</p>
 <p>应用<br>文字处理<br>图片搜索<br>Pre-training DNN</p>
@@ -925,10 +945,10 @@ a=0, && z<0
 <p>CNN - Deconvolution<br>Actually, deconvolution is convolution</p>
 <h2 id="Unsupervised-Learning-Deep-Generative-Model"><a href="#Unsupervised-Learning-Deep-Generative-Model" class="headerlink" title="Unsupervised Learning - Deep Generative Model"></a>Unsupervised Learning - Deep Generative Model</h2><h3 id="Creation"><a href="#Creation" class="headerlink" title="Creation"></a>Creation</h3><p><a href="https://openai.com/blog/generative-models" target="_blank" rel="noopener">generative model</a></p>
 <h3 id="PixelRNN"><a href="#PixelRNN" class="headerlink" title="PixelRNN"></a>PixelRNN</h3><p>To Create an image, generating a pixel each time<br>It difficult to evaluate generation.</p>
-<h3 id="Variational-Autoencoder-VAE"><a href="#Variational-Autoencoder-VAE" class="headerlink" title="Variational Autoencoder (VAE)"></a>Variational Autoencoder (VAE)</h3><p><img src="/img/note-ml/20190802104618.png" alt=""></p>
+<h3 id="Variational-Autoencoder-VAE"><a href="#Variational-Autoencoder-VAE" class="headerlink" title="Variational Autoencoder (VAE)"></a>Variational Autoencoder (VAE)</h3><p><img src="/img/note-ml/20190802104618.png" alt></p>
 <p>$m$是原来的encoder orginal code<br>$c$是noise<br>$\sigma$是The variance of noise is automatically learned<br>$e$是从normal distribution sample出来的值<br>注意要minimize的东西，如果不加前面的可能$\sigma$就是0了，让$\sigma$接近0，variance接近1</p>
 <p>Why VAE？<br>Estimate the probability distribution.<br>用的方法就是Gasussian Mixture Model<br>$P(x)=\sum_{m} P(m)P(x|m)$.<br>$m\sim P(m)\text{(multinomial), m is a integer}$.<br>$x|m\sim N(\mu^m,\Sigma^m)$.<br>Each x you generate is from a mixture.<br>Distributed representation is better than cluster.<br>$z\sim N(0,I)$. $z$ is a vector from normal distribution.<br>$x|z\sim N(\mu(z),\sigma(z))$. Each dimension of $z$ represents an attribute. $\mu(z),\sigma(z)$ is going to be estimated, 可以用Neural Network来找这个function<br>$P(x)=\int_{z}P(z)P(x|z)\text{d}z$.<br>$L=\sum_{z}\log P(x)$. Maximizing the likelihood of the observed $x$.<br>Tuning the parameters to maximize likelihood $L$.<br>Another distribution $q(z|x)$，$z|x=N(\mu’(x),\sigma’(x))$. 这是一个相反的Network，这是VAE的encoder，上面的是decoder</p>
-<p>Maximizing Likelihood<br>$P(x)=\int_{z}P(z)P(x|z)\text{d}z$.<br>$L=\sum_{z}\log P(x)$<br>$\log P(x)=\int_{z}q(z|x)\log P(x)\text{d}z=\int_{z}q(z|x)\log\left (\frac{P(z,x)}{P(z|x)}\right )\text{d}z$. $q(z|x)$ can be any distribution<br>$=\int_{z}q(z|x)\log\left( \frac{P(z,x)}{q(z|x)}\frac{q(z|x)}{P(z|x)} \right )\text{d}z$.<br>$=\int_{z}q(z|x)\log\left ( \frac{P(z,x)}{q(z|x)}\right )\text{d}z+\int_{z}q(z|x)\log\left ( \frac{q(z|x)}{P(z|x)}\right )\text{d}z$. 最后一项，是KL divergence, $KL(q(z|x)|| P(z|x)) \geqslant 0$<br>$\geqslant \int_{z}q(z|x)\log \left( \frac{P(x|z)P(z)}{q(z|x)}\right )$. lower bound $L_b$，就是上一行的第一项<br>所以<br>$\log P(x)=L_b+KL(q(z|x)||P(z|x))$.<br>$L_b=\int_{z}q(z|x)\log \left (\frac{P(x|z)P(z)}{q(z|x)} \right )\text{d}z$. Find $P(x|z)$ and $q(z|x)$ maximizing $L_b$.<br>$q(z|x)$ will be an approximation of $P(z|x)$ in the end.<br>$L_b=\int_{z}q(z|x)\log \left (\frac{P(x|z)P(z)}{q(z|x)} \right )\text{d}z$.<br>$=\int_{z}q(z|x)\log P(x|z)\text{d}z+\int_{z}q(z|x)\log \left ( \frac{P(z)}{q(z|x)}\right )\text{d}z$. $KL(q(z|x) || P(z))$.<br>Minimizing $KL(q(z|x)||P(z))$, $q(z|x)$是在一个Neural Network里面的，这个相当于VAE中Minimize $\sum{i=1}^{3}(\exp (\sigma_i)-(1+\sigma_i)+(m_i)^2)$.<br>Maximizing $\int_{z}q(z|x)\log P(x|z)\text{d}z=E_{q(z|x)}[\log P(x|z)]$<br><img src="/img/note-ml/20190806085543.png" alt=""><br>这是Auto-encoder做的事情，让输入和输出越接近越好.</p>
+<p>Maximizing Likelihood<br>$P(x)=\int_{z}P(z)P(x|z)\text{d}z$.<br>$L=\sum_{z}\log P(x)$<br>$\log P(x)=\int_{z}q(z|x)\log P(x)\text{d}z=\int_{z}q(z|x)\log\left (\frac{P(z,x)}{P(z|x)}\right )\text{d}z$. $q(z|x)$ can be any distribution<br>$=\int_{z}q(z|x)\log\left( \frac{P(z,x)}{q(z|x)}\frac{q(z|x)}{P(z|x)} \right )\text{d}z$.<br>$=\int_{z}q(z|x)\log\left ( \frac{P(z,x)}{q(z|x)}\right )\text{d}z+\int_{z}q(z|x)\log\left ( \frac{q(z|x)}{P(z|x)}\right )\text{d}z$. 最后一项，是KL divergence, $KL(q(z|x)|| P(z|x)) \geqslant 0$<br>$\geqslant \int_{z}q(z|x)\log \left( \frac{P(x|z)P(z)}{q(z|x)}\right )$. lower bound $L_b$，就是上一行的第一项<br>所以<br>$\log P(x)=L_b+KL(q(z|x)||P(z|x))$.<br>$L_b=\int_{z}q(z|x)\log \left (\frac{P(x|z)P(z)}{q(z|x)} \right )\text{d}z$. Find $P(x|z)$ and $q(z|x)$ maximizing $L_b$.<br>$q(z|x)$ will be an approximation of $P(z|x)$ in the end.<br>$L_b=\int_{z}q(z|x)\log \left (\frac{P(x|z)P(z)}{q(z|x)} \right )\text{d}z$.<br>$=\int_{z}q(z|x)\log P(x|z)\text{d}z+\int_{z}q(z|x)\log \left ( \frac{P(z)}{q(z|x)}\right )\text{d}z$. $KL(q(z|x) || P(z))$.<br>Minimizing $KL(q(z|x)||P(z))$, $q(z|x)$是在一个Neural Network里面的，这个相当于VAE中Minimize $\sum{i=1}^{3}(\exp (\sigma_i)-(1+\sigma_i)+(m_i)^2)$.<br>Maximizing $\int_{z}q(z|x)\log P(x|z)\text{d}z=E_{q(z|x)}[\log P(x|z)]$<br><img src="/img/note-ml/20190806085543.png" alt><br>这是Auto-encoder做的事情，让输入和输出越接近越好.</p>
 <p>Conditional VAE<br>抽出特征生成风格的图片</p>
 <p>Problem of VAE<br>It does not really try to simulate real images.<br>VAE may just memorize the existing images, instead of generating new images.</p>
 <h3 id="Generative-Adversarial-Network-GAN"><a href="#Generative-Adversarial-Network-GAN" class="headerlink" title="Generative Adversarial Network (GAN)"></a>Generative Adversarial Network (GAN)</h3><p>最早论文 Ian J. Good fellow,Jean Pouget-Abadie,Mehdi Mirza,Bing Xu,David Warde-Farley,Sherjil Ozair,Aaron Courville,Yoshua Bengio, Generative Adversarial Networks, arXivpreprint 2014</p>
@@ -936,7 +956,7 @@ a=0, && z<0
 <p>目前存在的问题就是，可以骗过Discriminator的图片，不一定是真的图片，可能是一些奇怪的东西<br>还有就是Generator可能太弱，却依然可以骗过Discriminator</p>
 <h2 id="Transfer-Learning"><a href="#Transfer-Learning" class="headerlink" title="Transfer Learning"></a>Transfer Learning</h2><p>Transfer Learning 迁移学习<br>Data not directly related to the task considered.</p>
 <p>Why? 一般原因都是数据难收集比较少之类的</p>
-<p><img src="/img/note-ml/20190806110040.png" alt=""><br>Target Data是我们真正要的Data，Source Data是没有直接关系的Data<br>根据有无label分为4种情况，分别用对应的方法</p>
+<p><img src="/img/note-ml/20190806110040.png" alt><br>Target Data是我们真正要的Data，Source Data是没有直接关系的Data<br>根据有无label分为4种情况，分别用对应的方法</p>
 <h3 id="Model-Fine-tuning"><a href="#Model-Fine-tuning" class="headerlink" title="Model Fine-tuning"></a>Model Fine-tuning</h3><ul>
 <li>Task description<ul>
 <li>Target data: $(x^t, y^t)$. Very little</li>
@@ -951,8 +971,8 @@ a=0, && z<0
 <li>Idea: training a model by source data, then fine-tune the model by target data</li>
 <li>Challenge: only limited target data, so be careful about overfitting</li>
 </ul>
-<p>Conservative Training<br><img src="/img/note-ml/20190806111041.png" alt=""><br>让两个Model的output相近</p>
-<p>Layer Transfer<br><img src="/img/note-ml/20190806111243.png" alt=""><br>把几个Layer直接copy，光去train没有被copy的Layer，考虑的参数比较少<br>Which layer can be transferred (copied)?</p>
+<p>Conservative Training<br><img src="/img/note-ml/20190806111041.png" alt><br>让两个Model的output相近</p>
+<p>Layer Transfer<br><img src="/img/note-ml/20190806111243.png" alt><br>把几个Layer直接copy，光去train没有被copy的Layer，考虑的参数比较少<br>Which layer can be transferred (copied)?</p>
 <ul>
 <li>Speech: usually copy the last few layers</li>
 <li>Image: usually copy the first few layers</li>
@@ -965,7 +985,7 @@ a=0, && z<0
 <li>Source data: $(x^s, y^s)$. Training Data.</li>
 <li>Target data: $(x^t)$. Testing Data. They are mismatched.</li>
 </ul>
-<p>Similar to GAN. 需要通过一个Domain classifier.<br><img src="/img/note-ml/20190806115242.png" alt=""><br>训练过程<br><img src="/img/note-ml/20190806115830.png" alt=""></p>
+<p>Similar to GAN. 需要通过一个Domain classifier.<br><img src="/img/note-ml/20190806115242.png" alt><br>训练过程<br><img src="/img/note-ml/20190806115830.png" alt></p>
 <h3 id="Zero-shot-Learning"><a href="#Zero-shot-Learning" class="headerlink" title="Zero-shot Learning"></a>Zero-shot Learning</h3><p>Task description</p>
 <ul>
 <li>Source data: $(x^s, y^s)$. Training Data.</li>
@@ -978,15 +998,15 @@ a=0, && z<0
 <p>Convex Combination of Semantic Embedding</p>
 <p>Example 就是语言的翻译，可以翻译一个从未见过的翻译方向，但翻译的两个语言都有其他语言翻译过</p>
 <h2 id="Support-Vector-Machine-SVM"><a href="#Support-Vector-Machine-SVM" class="headerlink" title="Support Vector Machine(SVM)"></a>Support Vector Machine(SVM)</h2><p>Hinge Loss + Kernel Method = Support Vector Machine(SVM) 支持向量机</p>
-<h3 id="Hinge-Loss"><a href="#Hinge-Loss" class="headerlink" title="Hinge Loss"></a>Hinge Loss</h3><p><img src="/img/note-ml/20190807094809.png" alt=""><br>Hinge Loss就是最上面的那个Loss Function $l(f(x^n), \hat{y}^n)=\max (0, 1-\hat{y}^nf(x^n))$</p>
+<h3 id="Hinge-Loss"><a href="#Hinge-Loss" class="headerlink" title="Hinge Loss"></a>Hinge Loss</h3><p><img src="/img/note-ml/20190807094809.png" alt><br>Hinge Loss就是最上面的那个Loss Function $l(f(x^n), \hat{y}^n)=\max (0, 1-\hat{y}^nf(x^n))$</p>
 <h3 id="Linear-SVM"><a href="#Linear-SVM" class="headerlink" title="Linear SVM"></a>Linear SVM</h3><p>Step1: Function(Model)<br>$f(x)=\sum_{i}w_ix_i+b=\begin{bmatrix}w\\ b\end{bmatrix}\cdot \begin{bmatrix}x\\ 1\end{bmatrix}=w^{T}x$.<br>这里把第一个向量看成新的$w$，第二个向量看成是$x$.</p>
 <p>Step2: Loss Function<br>$L(f)=\sum_{n}l(f(x^n), \hat{y}^n)+\lambda \begin{Vmatrix}w\end{Vmatrix}_ 2$.<br>$l(f(x^n), \hat{y}^n)=\max (0, 1-\hat{y}^nf(x^n))$.<br>是一个convex function</p>
-<p>Step3: Gradient Descent<br>$\frac{\partial l(f(x^n), \hat{y}^n)}{\partial w_i}=\frac{\partial l(f(x^n), \hat{y}^n)}{\partial f(x^n)}\frac{\partial f(x^n)}{\partial w_i}$.<br>因为$f(x^n)=w^{T}\cdot x^n$.后面那项的值自然就是$x^n_i$.<br>而前面那项<br>$\frac{\partial \max(0, 1-\hat{y}^nf(x^n))}{\partial f(x^n)}=\left\{\begin{matrix}-\hat{y}^n, &amp; \hat{y}^nf(x^n)<1 \text{or}1-\hat{y}^nf(x^n)="">0\\ 0, &amp; \text{otherwise}\end{matrix}\right.$.<br>$\frac{\partial L(f)}{\partial w_i}=\sum_{n}-\delta(\hat{y}^nf(x^n)&lt;1)\hat{y}^nx^n_i$.</1></p>
+<p>Step3: Gradient Descent<br>$\frac{\partial l(f(x^n), \hat{y}^n)}{\partial w_i}=\frac{\partial l(f(x^n), \hat{y}^n)}{\partial f(x^n)}\frac{\partial f(x^n)}{\partial w_i}$.<br>因为$f(x^n)=w^{T}\cdot x^n$.后面那项的值自然就是$x^n_i$.<br>而前面那项<br>$\frac{\partial \max(0, 1-\hat{y}^nf(x^n))}{\partial f(x^n)}=\left\{\begin{matrix}-\hat{y}^n, &amp; \hat{y}^nf(x^n)<1 \text{or}1-\hat{y}^nf(x^n)>0\\ 0, &amp; \text{otherwise}\end{matrix}\right.$.<br>$\frac{\partial L(f)}{\partial w_i}=\sum_{n}-\delta(\hat{y}^nf(x^n)&lt;1)\hat{y}^nx^n_i$.</1></p>
 <p>Another formulation<br>$L(f)=\sum_{n}\varepsilon ^n+\lambda \begin{Vmatrix}w\end{Vmatrix}_ 2,\varepsilon^n=\max(0,1-\hat{y}^nf(x))$.<br>$\varepsilon ^n\geqslant 0, \varepsilon ^n\geqslant 1-\hat{y}^nf(x)\rightarrow \hat{y}^nf(x)\geqslant 1-\varepsilon^n$.<br>因为要minimize Loss，所以下面这个$\varepsilon^n$的表示形式和上面的是相同的.<br>$\varepsilon ^n$: slack variable. Quadratic Programming(QP) Problem.</p>
 <h3 id="Dual-Representation"><a href="#Dual-Representation" class="headerlink" title="Dual Representation"></a>Dual Representation</h3><p>Kernel Method<br>Step1:<br>$w^{\ast}=\sum_{n}a^{\ast}_ n x^n$. Linear combination of data points.<br>Hinge Loss的时候，$\alpha$是sparse的，有很多为0<br>所以写成向量形式$w=\sum_{n}a_n x^n=X\alpha$.<br>$f(x)=w^{T}x=\alpha^{T}X^{T}x$. 最后得到的就是一个scalar<br>$f(x)=\sum_{n}\alpha_n(x^n\cdot x)=\sum_{n}\alpha_{n}K(x^n,x)$. $K(x^n,x)$就是Kernel Function,是$x^n$和$x$的inner product.<br>Step2,3: Find $\{\alpha_1^{\ast},\alpha_2^{\ast},\cdots, \alpha_N^{\ast}\}$.<br>We don’t really need to know vector $x$.<br>We only need to know the inner project between a pair of vectors $x$ and $z$. $K(x,z)$. Kernel Trick</p>
 <p>Directly computing $K(x,z)$ can be faster than “feature transformation + inner product” sometimes.<br>就是直接计算$K(x,z)$，可能要比eature transformation + inner product计算快上许多<br>比如$K(x,z)=\phi(x)\cdot \phi(z)=(x\cdot z)^2$.</p>
 <p>Radial Basic Function Kernel<br>$K(x,z)=\exp \left ( -\frac{1}{2}\begin{Vmatrix}x-z\end{Vmatrix}_ 2\right )=\phi (x)\cdot \phi (z)$. $\phi (\ast)$ has inf dim.<br>$=\exp \left ( -\frac{1}{2}\begin{Vmatrix}x\end{Vmatrix}_ 2-\frac{1}{2}\begin{Vmatrix}z\end{Vmatrix}_ 2+x\cdot z\right )$.<br>$=\exp \left(-\frac{1}{2}\begin{Vmatrix}x\end{Vmatrix}_ 2 \right )\exp \left(-\frac{1}{2}\begin{Vmatrix}z\end{Vmatrix}_ 2 \right )\exp(x\cdot z)=C_xC_z\exp (x\cdot z)=C_xC_z\sum_{i=0}^{\infty}\frac{(x\cdot z)^i}{i!}$. Tayor展开</p>
-<p>Sigmoid Kernel<br>$K(x,z)=\tanh (x\cdot z)$.<br>When using sigmoid kernel, we have a 1 hidden layer network.<br><img src="/img/note-ml/20190807141148.png" alt=""></p>
+<p>Sigmoid Kernel<br>$K(x,z)=\tanh (x\cdot z)$.<br>When using sigmoid kernel, we have a 1 hidden layer network.<br><img src="/img/note-ml/20190807141148.png" alt></p>
 <p>You can directly design $K(x,z)$ instead of considering $\phi (x), \phi (z)$.<br>When $x$ is structured object like sequence, hard to design $\phi(x)$.<br>$K(x,z)$ is something like similarity. (Mercer’s theory can check)</p>
 <h2 id="Recurrent-Neural-Network"><a href="#Recurrent-Neural-Network" class="headerlink" title="Recurrent Neural Network"></a>Recurrent Neural Network</h2><p>一种有记忆的NN，可以根据上下文判断的NN</p>
 <p>The output of hidden layer are stored in the memory.<br>Memory can be considered as  another input.</p>
@@ -994,7 +1014,7 @@ a=0, && z<0
 <p>Changing the sequence order will change the output.</p>
 <p>Elman Network. 就是每层的output当成这层的input<br>Jordan Network. 最后的output当成input</p>
 <h3 id="Bidirectional-RNN"><a href="#Bidirectional-RNN" class="headerlink" title="Bidirectional RNN"></a>Bidirectional RNN</h3><p>双向的RNN，扩大看到的范围，不仅可以从上文还可以从下文看</p>
-<h3 id="Long-Short-term-Memory-LSTM"><a href="#Long-Short-term-Memory-LSTM" class="headerlink" title="Long Short-term Memory(LSTM)"></a>Long Short-term Memory(LSTM)</h3><p><img src="/img/note-ml/20190808094431.png" alt=""><br><img src="/img/note-ml/20190808095212.png" alt=""><br>这三个参数，是根据输入的vector的transpose得到的</p>
+<h3 id="Long-Short-term-Memory-LSTM"><a href="#Long-Short-term-Memory-LSTM" class="headerlink" title="Long Short-term Memory(LSTM)"></a>Long Short-term Memory(LSTM)</h3><p><img src="/img/note-ml/20190808094431.png" alt><br><img src="/img/note-ml/20190808095212.png" alt><br>这三个参数，是根据输入的vector的transpose得到的</p>
 <h3 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h3><p>用的也是Gradient Descent，但是是一种Backpropagation through time(BPTT)</p>
 <p>RNN也是比较难Train的<br>The error surface is rough.<br>RNN的Total Loss是非常陡峭的，Error Surface有些地方非常平坦，有些地方非常陡峭<br>有个方法就是Clipping，当Gradient超过某一个值的时候，就等于这个值，也就是设置个上限，不至于参数飞出去</p>
 <h3 id="Helpful-Techniques"><a href="#Helpful-Techniques" class="headerlink" title="Helpful Techniques"></a>Helpful Techniques</h3><p>Long Short-term Memory(LSTM)</p>
@@ -1028,16 +1048,16 @@ a=0, && z<0
 <h3 id="Framework-of-Ensemble"><a href="#Framework-of-Ensemble" class="headerlink" title="Framework of Ensemble"></a>Framework of Ensemble</h3><p>Get a set of classifiers. They should be diverse.<br>Aggregate the classifiers(properly).</p>
 <p>就是多个model一起搞的感觉</p>
 <h3 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h3><p>将几个model的结果平均，这样如果你的model非常复杂，很容易overfit那么这是很有效的，因为bias比较小，variance比较大。</p>
-<p>Decision Tree 就比较容易overfit，需要做bagging<br>这个就简单讲了一下<br><img src="/img/note-ml/20190820213252.png" alt=""></p>
+<p>Decision Tree 就比较容易overfit，需要做bagging<br>这个就简单讲了一下<br><img src="/img/note-ml/20190820213252.png" alt></p>
 <p>Random Forest</p>
 <p>Descision Tree is easy to achieve 0% error rate on training data, if each training example has its own leaf..<br>Random forest: Bagging of decision tree</p>
 <ul>
 <li>Resampling trainging data is not sufficient.</li>
 <li>Randomly restrict the features/questions used in each split.<br>Out-of-bag validation for bagging</li>
 </ul>
-<h3 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h3><p>Improving Weak Classifiers<br><img src="/img/note-ml/20190820214805.png" alt=""><br><img src="/img/note-ml/20190820215542.png" alt=""></p>
-<p>其中最经典的一个做法<br><img src="/img/note-ml/20190820215551.png" alt=""></p>
-<p>Math Warning，说实话这段没打听懂<br><img src="/img/note-ml/20190820220738.png" alt=""><br><img src="/img/note-ml/20190820220746.png" alt=""><br><img src="/img/note-ml/20190820220755.png" alt=""><br><img src="/img/note-ml/20190820220805.png" alt=""><br>这张图片里的空白在下张图片中出现了<br><img src="/img/note-ml/20190820220833.png" alt=""></p>
+<h3 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h3><p>Improving Weak Classifiers<br><img src="/img/note-ml/20190820214805.png" alt><br><img src="/img/note-ml/20190820215542.png" alt></p>
+<p>其中最经典的一个做法<br><img src="/img/note-ml/20190820215551.png" alt></p>
+<p>Math Warning，说实话这段没打听懂<br><img src="/img/note-ml/20190820220738.png" alt><br><img src="/img/note-ml/20190820220746.png" alt><br><img src="/img/note-ml/20190820220755.png" alt><br><img src="/img/note-ml/20190820220805.png" alt><br>这张图片里的空白在下张图片中出现了<br><img src="/img/note-ml/20190820220833.png" alt></p>
 <p>证明地方真的晕了，改天看8…</p>
 <h3 id="Stacking"><a href="#Stacking" class="headerlink" title="Stacking"></a>Stacking</h3><p>Majority Vote</p>
 <h2 id="Deep-Reinforcement-Learning"><a href="#Deep-Reinforcement-Learning" class="headerlink" title="Deep Reinforcement Learning"></a>Deep Reinforcement Learning</h2><p>这里就略讲了一下<br>主要是几个部分<br>Environment-&gt;observation/state &amp; reward -&gt; Agent -&gt; action -&gt; Environment<br>要做的就是maximize reward</p>
@@ -1165,7 +1185,7 @@ a=0, && z<0
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
           <p class="site-author-name" itemprop="name">北屿</p>
            
@@ -1177,7 +1197,7 @@ a=0, && z<0
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">66</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1199,7 +1219,7 @@ a=0, && z<0
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

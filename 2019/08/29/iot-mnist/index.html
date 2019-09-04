@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh_Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -212,7 +212,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
 
   
   
@@ -222,7 +222,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -314,6 +314,26 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-baidusitemap">
+          <a href="/baidusitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            BaiduSitemap
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -374,20 +394,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/2019/08/29/iot-mnist/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="北屿">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="北屿">
     </span>
 
@@ -442,7 +462,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/iot/" itemprop="url" rel="index">
                     <span itemprop="name">iot</span>
                   </a>
@@ -622,7 +642,7 @@
 <hr>
 <p>…果然大力出奇迹，用力捅到底…<br>语音播放就用mpv好了<br><code>sudo apt-get install mpv</code> 然后 <code>mpv audio.mp3</code>就能听到了</p>
 <h2 id="整合"><a href="#整合" class="headerlink" title="整合"></a>整合</h2><p>把上面零零散散的代码整合在一起就好了，可以完成一个很基本的识别<br>但是有个问题，就是对图片的要求比较高，因为我控制树莓派拍照实在是太难了…图像处理那一部分也有些问题</p>
-<p><img src="/img/iot-mnist/test1.jpg" alt=""><br><img src="/img/iot-mnist/test2.jpg" alt=""></p>
+<p><img src="/img/iot-mnist/test1.jpg" alt><br><img src="/img/iot-mnist/test2.jpg" alt></p>
 <p>就这种清晰度的照片，也识别不出来..<br>后续再调整吧<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> load_model</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> aip <span class="keyword">import</span> AipSpeech</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(w)</span>:</span></span><br><span class="line">    x_test = []</span><br><span class="line">    img = Image.open(str(w)+<span class="string">'.jpg'</span>)</span><br><span class="line">    reImg = img.resize((<span class="number">28</span>, <span class="number">28</span>), Image.ANTIALIAS)</span><br><span class="line">    img_arr = np.array(reImg.convert(<span class="string">'L'</span>))</span><br><span class="line">    threshold = <span class="number">110</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">28</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">28</span>):</span><br><span class="line">            img_arr[i][j] = <span class="number">255</span>-img_arr[i][j]</span><br><span class="line">            <span class="keyword">if</span>(img_arr[i][j] &lt; threshold):</span><br><span class="line">                img_arr[i][j] = <span class="number">0</span></span><br><span class="line">                print(<span class="string">'1'</span>, end=<span class="string">''</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                img_arr[i][j] = <span class="number">255</span></span><br><span class="line">                print(<span class="string">'0'</span>, end=<span class="string">''</span>)</span><br><span class="line">        print(<span class="string">''</span>)</span><br><span class="line">    print(<span class="string">''</span>)</span><br><span class="line">    x_test.append(img_arr)</span><br><span class="line">    x_test = np.array(x_test)</span><br><span class="line">    x_test = x_test.reshape(x_test.shape[<span class="number">0</span>], <span class="number">28</span>, <span class="number">28</span>, <span class="number">1</span>)</span><br><span class="line">    model = load_model(<span class="string">'my_model.h5'</span>)</span><br><span class="line">    y_test = model.predict(x_test)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(y_test)):</span><br><span class="line">        print(i, np.argmax(y_test[i]), sep=<span class="string">','</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(y_test)):</span><br><span class="line">        print(i, y_test[i])</span><br><span class="line">    result = np.argmax(y_test[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">baiduSpeech</span><span class="params">(num, counter)</span>:</span></span><br><span class="line">    APP_ID = <span class="string">'17149919'</span></span><br><span class="line">    API_KEY = <span class="string">'A39mzugX82CZx0hBTnHXdIUz'</span></span><br><span class="line">    SECRET_KEY = <span class="string">'wUrct0zvVeZ9y3ZaeGhz0YfYdsL6Fl47'</span></span><br><span class="line">    </span><br><span class="line">    client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)</span><br><span class="line">    </span><br><span class="line">    result  = client.synthesis(str(num), <span class="string">'zh'</span>, <span class="number">1</span>, &#123;</span><br><span class="line">        <span class="string">'vol'</span>: <span class="number">12</span>,</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> isinstance(result, dict):</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">'audio'</span>+str(counter)+<span class="string">'.mp3'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(result)</span><br><span class="line">    os.system(<span class="string">'mpv audio'</span> + str(counter) + <span class="string">'.mp3'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    s=str(input())</span><br><span class="line">    counter = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> s!=<span class="string">"s"</span>:</span><br><span class="line">        os.system(<span class="string">'raspistill -o '</span>+str(counter) + <span class="string">'.jpg'</span>)</span><br><span class="line">        res = test(counter)</span><br><span class="line">        baiduSpeech(res, counter)</span><br><span class="line">        counter += <span class="number">1</span></span><br><span class="line">        s=str(input())</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li>树莓派实验室（实名感谢该社区233）</li>
@@ -740,7 +760,7 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
           <p class="site-author-name" itemprop="name">北屿</p>
            
@@ -752,7 +772,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">66</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -774,7 +794,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

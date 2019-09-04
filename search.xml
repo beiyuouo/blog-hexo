@@ -20,6 +20,55 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Hadoop笔记]]></title>
+    <url>%2F2019%2F09%2F03%2Fnote-hadoop%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>hadoop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[概率统计笔记]]></title>
+    <url>%2F2019%2F09%2F03%2Fnote-probability%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>probability</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据结构笔记]]></title>
+    <url>%2F2019%2F09%2F03%2Fnote-data-structure%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>datastructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Servlet&JSP笔记]]></title>
+    <url>%2F2019%2F09%2F03%2Fnote-servlet-and-jsp%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>servlet</tag>
+        <tag>jsp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[20190902]]></title>
     <url>%2F2019%2F09%2F02%2F20190902%2F</url>
     <content type="text"><![CDATA[最近感冒了…真的难受啊wc…今天上第三节课前还接到了百度智能云的电话？？？话说现在这个服务都开始这样调研了吗…说看我最近使用了百度智能云，问我使用的什么功能我当然使用的是语音合成咯，然后又问我遇到什么困难…我说都有文档，挺简单的…问我是个人还是企业什么的…我人晕了 然后下午又打来了电话wdnmd，问我要不要服务器？？？？？？？敢情用户调查来人工精准投放广告来了？？？？]]></content>
@@ -728,9 +777,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
@@ -770,8 +819,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2F2018%2F11%2F13%2Ftest-HelloWorld%2F</url>
-    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
+    <url>%2F2018%2F11%2F13%2Ftest-hello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>daily</category>
       </categories>
@@ -781,8 +830,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2F2018%2F11%2F13%2Ftest-hello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2F2018%2F11%2F13%2Ftest-HelloWorld%2F</url>
+    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
       <categories>
         <category>daily</category>
       </categories>
