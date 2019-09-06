@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>beiyuouo.github.io/2019/09/03/note-data-structure/</loc>
-    <lastmod>2019-09-05</lastmod>
+    <lastmod>2019-09-06</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/2019/06/04/note-niit/</loc>
+    <lastmod>2019-09-06</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/2019/09/03/note-hadoop/</loc>
     <lastmod>2019-09-03</lastmod>
@@ -59,9 +62,6 @@
     <lastmod>2019-06-24</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/2022/09/01/TODOLIST/</loc>
-    <lastmod>2019-06-23</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/2019/06/04/note-niit/</loc>
     <lastmod>2019-06-23</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/2019/05/29/algorithm-exgcd/</loc>
