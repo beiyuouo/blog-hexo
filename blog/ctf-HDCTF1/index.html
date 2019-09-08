@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="ctf,writeup,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="http://ctf-hainu.com/ 蒟蒻看大佬秒题现场忽然得知周六白天有事情，只好周日参加了233 然鹅周六去划水反而做了题，周日一天反而什么都没做233 听说CTF的解题报告叫WriteUP… 第一次打CTF只做了3道Web 1道Misc 2道Crypto 做的时候没保存数据…只好等网站重新开了哈哈哈哈 update 20190521 18:50  MISCT1 Welcome 10De">
+<meta name="keywords" content="ctf,writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDCTF WriteUP">
+<meta property="og:url" content="beiyuouo.github.io/blog/ctf-HDCTF1/index.html">
+<meta property="og:site_name" content="北屿">
+<meta property="og:description" content="http://ctf-hainu.com/ 蒟蒻看大佬秒题现场忽然得知周六白天有事情，只好周日参加了233 然鹅周六去划水反而做了题，周日一天反而什么都没做233 听说CTF的解题报告叫WriteUP… 第一次打CTF只做了3道Web 1道Misc 2道Crypto 做的时候没保存数据…只好等网站重新开了哈哈哈哈 update 20190521 18:50  MISCT1 Welcome 10De">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="/img/ctf-HDCTF1/20190523155416.png">
+<meta property="og:updated_time" content="2019-06-13T02:19:25.745Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HDCTF WriteUP">
+<meta name="twitter:description" content="http://ctf-hainu.com/ 蒟蒻看大佬秒题现场忽然得知周六白天有事情，只好周日参加了233 然鹅周六去划水反而做了题，周日一天反而什么都没做233 听说CTF的解题报告叫WriteUP… 第一次打CTF只做了3道Web 1道Misc 2道Crypto 做的时候没保存数据…只好等网站重新开了哈哈哈哈 update 20190521 18:50  MISCT1 Welcome 10De">
+<meta name="twitter:image" content="/img/ctf-HDCTF1/20190523155416.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/blog/ctf-HDCTF1/">
+
+
+
+
+
+
+
+  <title>HDCTF WriteUP | 北屿</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-145083103-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">北屿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/game/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gamepad"></i> <br>
+            
+            Game
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/ctf-HDCTF1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="北屿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北屿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HDCTF WriteUP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T18:50:57+08:00">
+                2019-05-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-06-13T10:19:25+08:00">
+                2019-06-13
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ctf/" itemprop="url" rel="index">
+                    <span itemprop="name">ctf</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://ctf-hainu.com/" target="_blank" rel="noopener">http://ctf-hainu.com/</a></p>
+<p>蒟蒻看大佬秒题现场<br>忽然得知周六白天有事情，只好周日参加了233</p>
+<p>然鹅周六去划水反而做了题，周日一天反而什么都没做233</p>
+<p>听说CTF的解题报告叫WriteUP…</p>
+<p>第一次打CTF只做了<br>3道Web 1道Misc 2道Crypto</p>
+<p>做的时候没保存数据…只好等网站重新开了哈哈哈哈</p>
+<p>update 20190521 18:50</p>
+<hr>
+<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="T1-Welcome-10"><a href="#T1-Welcome-10" class="headerlink" title="T1 Welcome 10"></a>T1 Welcome 10</h3><p>Description<br>加❤裙+看🚺Flag<br>Solution<br>一个加群的二维码…flag在这里…<br><img src="/img/ctf-HDCTF1/20190523155416.png" alt="20190523155416.png"></p>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h3 id="T1-欢迎来到HDCTF-50"><a href="#T1-欢迎来到HDCTF-50" class="headerlink" title="T1 欢迎来到HDCTF 50"></a>T1 欢迎来到HDCTF 50</h3><p><a href="http://149.28.22.177:10000/0.html" target="_blank" rel="noopener">http://149.28.22.177:10000/0.html</a><br>打开以后，有一段话<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">欢迎进入HDCTF！</span><br><span class="line">只需改变一个数字</span><br><span class="line">你将进入另一个世界</span><br></pre></td></tr></table></figure></p>
+<p>进入-&gt;<a href="http://149.28.22.177:10000/1.html" target="_blank" rel="noopener">http://149.28.22.177:10000/1.html</a><br>又有一段话<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">你已经踏上了成为</span><br><span class="line">黑客 的道路</span><br><span class="line">希望你有足够的耐心</span><br><span class="line">拿到这道题的flag</span><br><span class="line">你将成为真正的HD黑客</span><br><span class="line">A system without security</span><br></pre></td></tr></table></figure></p>
+<p>右键查看源代码，flag就在里面<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">lang</span>=<span class="string">"en-us"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">"Comic Sans MS"</span> <span class="attr">size</span>=<span class="string">"6"</span>&gt;</span>A system without security<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="comment">&lt;!--flag&#123;welcome_t0_HDctf&#125;--&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>表示这对于一个nazo通关的人来说…<br>so easy…<br>所以我一直觉得CTF其实和Nazo真的有些像的</p>
+<h3 id="T2-测试你与flag的缘分-100"><a href="#T2-测试你与flag的缘分-100" class="headerlink" title="T2 测试你与flag的缘分 100"></a>T2 测试你与flag的缘分 100</h3><p>常规编码啦 链接：<a href="http://149.28.22.177:10001/" target="_blank" rel="noopener">http://149.28.22.177:10001/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">常规编码啦~</span><br><span class="line">flag.txt这个就是文档了，对不对我可不敢保证，你看你能不能解出来吧。</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://149.28.22.177:10001/flag.txt" target="_blank" rel="noopener">flag.txt</a>提供了一个超链接来下载<br>nazo有道题跟这个挺像的，一看就是Js代码，丢进console里运行，得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3D45353D39333D38383D45353D39333D38383D45353D39333D38383D45353D39333D38382C3D45343D42443D41303D45383D41323D41423D45393D41413D39373D45343D42413D38362C3D0A3D45343D42383D38443D45363D39383D41463D45383D42463D39393D45343D42383D41412C3D45353D42303D42313D45393D39373D41453D45343D42443D41303D45383D41373D41333D0A3D45343D42413D38363D45353D38443D38413D45353D41343D41393D45363D42303D39343D45343D42383D38443D45363D42303D3934</span><br></pre></td></tr></table></figure></p>
+<p>这个编码只有数字和ABCD那应该是16进制的，转成ASCII码，网站<a href="http://www.ab126.com/goju/1711.html" target="_blank" rel="noopener">http://www.ab126.com/goju/1711.html</a><br>得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=E5=93=88=E5=93=88=E5=93=88=E5=93=88,=E4=BD=A0=E8=A2=AB=E9=AA=97=E4=BA=86,=</span><br><span class="line">=E4=B8=8D=E6=98=AF=E8=BF=99=E4=B8=AA,=E5=B0=B1=E9=97=AE=E4=BD=A0=E8=A7=A3=</span><br><span class="line">=E4=BA=86=E5=8D=8A=E5=A4=A9=E6=B0=94=E4=B8=8D=E6=B0=94</span><br></pre></td></tr></table></figure></p>
+<p>这个编码有很多等号，后面跟两位16进制的数，是Quoted-printable编码，网站<a href="http://web.chacuo.net/charsetquotedprintable" target="_blank" rel="noopener">http://web.chacuo.net/charsetquotedprintable</a><br>得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">哈哈哈哈,你被骗了,不是这个,就问你解了半天气不气</span><br></pre></td></tr></table></figure></p>
+<p>wdnmd…<br>重新看了一遍题目，好像出题人确实暗示了….对不对我可不敢保证…<br>右键查看源代码，发现一个隐藏的div<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span>能看到这个，证明你没有被利益迷住了眼睛<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span>5530565352465a46576a6454626b35745a46644f636c6836526e70594d6e64335a47315763325654526a6b3d<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span>emmmm，如果你是解过jsfuck才看到的这个，不要打出题人。。。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这一看以为还是16进制转ASCII，结果解出来是乱码..<br>经过一番搜索，发现Hex编码也是这样子的，网站<a href="https://www.107000.com/T-Hex/" target="_blank" rel="noopener">https://www.107000.com/T-Hex/</a><br>解码后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U0VSRFZFWjdTbk5tZFdOclh6RnpYMnd3ZG1Wc2VTRjk=</span><br></pre></td></tr></table></figure></p>
+<p>最后…base64解码一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SERDVEZ7SnNmdWNrXzFzX2wwdmVseSF9</span><br></pre></td></tr></table></figure></p>
+<p>再解码一次<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HDCTF&#123;Jsfuck_1s_l0vely!&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="T3-简单的代码审计-200"><a href="#T3-简单的代码审计-200" class="headerlink" title="T3 简单的代码审计 200"></a>T3 简单的代码审计 200</h3><p><a href="http://149.28.22.177:10003/" target="_blank" rel="noopener">http://149.28.22.177:10003/</a><br>右键查看源代码，有一行注释<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--hint:file=once.php--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>打开 <a href="http://149.28.22.177:10003/once.php" target="_blank" rel="noopener">http://149.28.22.177:10003/once.php</a><br>让你输入密码 有一个提示 “You password must be alphanumeric”<br>php代码审计里，好像可以跳过正则的检查，有两种方式<br>一种是%0空字符终止检查，一种是传入数组<br>第一种方式是不行滴<br>第二种打开<br><a href="http://149.28.22.177:10003/once.php?password[]=" target="_blank" rel="noopener">http://149.28.22.177:10003/once.php?password[]=</a><br>得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Flag: HDCTF&#123;Is_V3ry_1nteresting!&#125;</span><br></pre></td></tr></table></figure></p>
+<p>第四道题sql注入可能我姿势太辣鸡，试了好多都成功不了，就放弃了…</p>
+<h2 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO"></a>CRYPTO</h2><h3 id="T1-basic-rsa-50"><a href="#T1-basic-rsa-50" class="headerlink" title="T1 basic rsa 50"></a>T1 basic rsa 50</h3><p>这可能是最最最最简单的 rsa 了<br>密文：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">27565231154623519221597938803435789010285480123476977081867877272451638645710</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://ctf-wiki.github.io/ctf-wiki/crypto/asymmetric/rsa/rsa_theory/" target="_blank" rel="noopener">关于rsa</a></p>
+<p>总之记住几个重要的式子</p>
+<script type="math/tex; mode=display">p,q是大质数</script><script type="math/tex; mode=display">N=p\times q</script><script type="math/tex; mode=display">\varphi(N)=\varphi(p)\varphi(q)=(p-1)(q-1)</script><script type="math/tex; mode=display">e和\varphi(N)互质,ed\equiv 1\pmod{\varphi(N)}</script><p>加密</p>
+<script type="math/tex; mode=display">m^e\equiv c\pmod N</script><p>解密</p>
+<script type="math/tex; mode=display">c^d\equiv m\pmod N</script><p>因为当时在海师大的机房做的，Windows下，Python3，代码是Python2还有库，修改了一下<br>encode.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#import gmpy2</span></span><br><span class="line"><span class="comment">#from Crypto.Util.number import *</span></span><br><span class="line"><span class="keyword">from</span> binascii <span class="keyword">import</span> a2b_hex,b2a_hex</span><br><span class="line"></span><br><span class="line">flag = <span class="string">"*****************"</span></span><br><span class="line"></span><br><span class="line">p = <span class="number">262248800182277040650192055439906580479</span></span><br><span class="line">q = <span class="number">262854994239322828547925595487519915551</span></span><br><span class="line"></span><br><span class="line">e = <span class="number">65533</span></span><br><span class="line">n = p*q</span><br><span class="line"></span><br><span class="line">print(b2a_hex(flag))</span><br><span class="line">c = pow(int(b2a_hex(flag),<span class="number">16</span>),e,n)</span><br><span class="line"></span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure></p>
+<p>看一下encode代码，其实几乎所有参数都告诉了，我们要做的就是算一下d就完事了<br>因为没导入库什么的，我直接手写的扩展欧几里得<br>最后得到一串数字以后还要再搞一下…先转成hex，然后去掉前面的0x，再输出就行了<br>decode.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> gcd</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">from</span> binascii <span class="keyword">import</span> a2b_hex,b2a_hex</span><br><span class="line"></span><br><span class="line">p = <span class="number">262248800182277040650192055439906580479</span></span><br><span class="line">q = <span class="number">262854994239322828547925595487519915551</span></span><br><span class="line"></span><br><span class="line">e = <span class="number">65533</span></span><br><span class="line">n = p*q</span><br><span class="line">c = <span class="number">27565231154623519221597938803435789010285480123476977081867877272451638645710</span></span><br><span class="line">phi = (p<span class="number">-1</span>)*(q<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ex_gcd</span><span class="params">(dividend, divisor)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span> == divisor:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>, <span class="number">0</span>, dividend</span><br><span class="line">    x2, y2, remainder = ex_gcd(divisor, dividend % divisor)</span><br><span class="line">    x1 = y2</span><br><span class="line">    y1 = x2 - (dividend // divisor) * y2</span><br><span class="line">    <span class="keyword">return</span> x1, y1, remainder</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(gcd(e,phi))</span></span><br><span class="line"><span class="comment"># print(ex_gcd(20,17))</span></span><br><span class="line"><span class="comment"># print(ex_gcd(e,phi))</span></span><br><span class="line">x1, y1, rr = ex_gcd(e,phi)</span><br><span class="line"><span class="comment"># print((x1*e+y1*phi)%phi)</span></span><br><span class="line">d = x1+phi</span><br><span class="line"><span class="comment"># print(d*e%phi)</span></span><br><span class="line">m = pow(c,d,n)</span><br><span class="line">print(hex(m))</span><br><span class="line">print(str(hex(m)))</span><br><span class="line">print(str(hex(m))[<span class="number">2</span>::<span class="number">1</span>])</span><br><span class="line">print(a2b_hex(str(hex(m))[<span class="number">2</span>::<span class="number">1</span>]))</span><br></pre></td></tr></table></figure></p>
+<p>得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b&apos;flag&#123;B4by_Rs4&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+<h3 id="T2-bbbbbbrsa-100"><a href="#T2-bbbbbbrsa-100" class="headerlink" title="T2 bbbbbbrsa 100"></a>T2 bbbbbbrsa 100</h3><p>babyrsa，还是一道 RSA 的题目~</p>
+<p>同样<br>encode.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> b64encode <span class="keyword">as</span> b32encode</span><br><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> invert,gcd,iroot</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> binascii <span class="keyword">import</span> a2b_hex,b2a_hex</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">flag = <span class="string">"******************************"</span></span><br><span class="line"></span><br><span class="line">nbit = <span class="number">128</span></span><br><span class="line"></span><br><span class="line">p = getPrime(nbit)</span><br><span class="line">q = getPrime(nbit)</span><br><span class="line">n = p*q</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> p</span><br><span class="line"><span class="keyword">print</span> n</span><br><span class="line"></span><br><span class="line">phi = (p<span class="number">-1</span>)*(q<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">e = random.randint(<span class="number">50000</span>,<span class="number">70000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">	<span class="keyword">if</span> gcd(e,phi) == <span class="number">1</span>:</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		e -= <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">c = pow(int(b2a_hex(flag),<span class="number">16</span>),e,n)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> b32encode(str(c))[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure></p>
+<p>enc<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = 177077389675257695042507998165006460849</span><br><span class="line">n = 37421829509887796274897162249367329400988647145613325367337968063341372726061</span><br><span class="line">c = ==gMzYDNzIjMxUTNyIzNzIjMyYTM4MDM0gTMwEjNzgTM2UTN4cjNwIjN2QzM5ADMwIDNyMTO4UzM2cTM5kDN2MTOyUTO5YDM0czM3MjM</span><br></pre></td></tr></table></figure></p>
+<p>这次给了$p,n,c$，$e$是$[50000,70000)$之内随机一个合法的，反正就2w枚举$e$就行了<br>注意代码最后一个很鸡贼的地方，倒着输出了，其实也能看出来$c$的base64等号在后面<br>还有一个地方就是import的时候，<code>from base64 import b64encode as b32encode</code><br>233333<br>看似base32其实就是base64<br>$c$解码后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2373740699529364991763589324200093466206785561836101840381622237225512234632</span><br></pre></td></tr></table></figure></p>
+<p>把所有的合法的全部输出<br>decode.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> binascii <span class="keyword">import</span> a2b_hex,b2a_hex</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> gcd</span><br><span class="line"></span><br><span class="line">n = <span class="number">37421829509887796274897162249367329400988647145613325367337968063341372726061</span></span><br><span class="line">p = <span class="number">177077389675257695042507998165006460849</span></span><br><span class="line">q = n//p</span><br><span class="line">phi = (p<span class="number">-1</span>)*(q<span class="number">-1</span>)</span><br><span class="line">c = <span class="number">2373740699529364991763589324200093466206785561836101840381622237225512234632</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ex_gcd</span><span class="params">(dividend, divisor)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span> == divisor:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>, <span class="number">0</span>, dividend</span><br><span class="line">    x2, y2, remainder = ex_gcd(divisor, dividend % divisor)</span><br><span class="line">    x1 = y2</span><br><span class="line">    y1 = x2 - (dividend // divisor) * y2</span><br><span class="line">    <span class="keyword">return</span> x1, y1, remainder</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> range(<span class="number">50000</span>,<span class="number">70001</span>):</span><br><span class="line">    <span class="keyword">if</span> gcd(e, phi) == <span class="number">1</span>:</span><br><span class="line">        d=ex_gcd(e, phi)[<span class="number">0</span>]</span><br><span class="line">        d=(d+phi)%phi</span><br><span class="line">        m=pow(c,d,n)</span><br><span class="line">        ss=str(hex(m))[<span class="number">2</span>::<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span>(len(ss)%<span class="number">2</span>==<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        print(a2b_hex(ss))</span><br></pre></td></tr></table></figure></p>
+<p>然后输出到文件，查找flag，得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b&apos;flag&#123;rs4_1s_s1mpl3!#&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>第一次打CTF，Capture The Flag， 感觉还是蛮有意思的，知识面比较广，面向的都是安全问题<br>这是第一届HDCTF，学长办的，总是非常感谢学长将CTF竞赛搬来让我们了解吧<br>这次题貌似不难，甚至比较简单，（虽然我也不会<br>剩下的题解有空就补<br>Thx for H4lo!</p>
+<p>update 20190523 16:30</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ctf/" rel="tag"><i class="fa fa-tag"></i> ctf</a>
+          
+            <a href="/tags/writeup/" rel="tag"><i class="fa fa-tag"></i> writeup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/hack-wiresharktplink/" rel="next" title="用wireshark hark一次tplink的管理员登录">
+                <i class="fa fa-chevron-left"></i> 用wireshark hark一次tplink的管理员登录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/esp-wifikiller/" rel="prev" title="ESP8266做WiFi杀手">
+                ESP8266做WiFi杀手 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="gitalk-container"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
+          <p class="site-author-name" itemprop="name">北屿</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">70</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://baidu.com/" title="欢迎友链qwq" target="_blank">欢迎友链qwq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://borber.cn/" title="BORBER" target="_blank">BORBER</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mon-soon.github.io/" title="mon-soon" target="_blank">mon-soon</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MISC"><span class="nav-number">1.</span> <span class="nav-text">MISC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1-Welcome-10"><span class="nav-number">1.1.</span> <span class="nav-text">T1 Welcome 10</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB"><span class="nav-number">2.</span> <span class="nav-text">WEB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1-欢迎来到HDCTF-50"><span class="nav-number">2.1.</span> <span class="nav-text">T1 欢迎来到HDCTF 50</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2-测试你与flag的缘分-100"><span class="nav-number">2.2.</span> <span class="nav-text">T2 测试你与flag的缘分 100</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T3-简单的代码审计-200"><span class="nav-number">2.3.</span> <span class="nav-text">T3 简单的代码审计 200</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CRYPTO"><span class="nav-number">3.</span> <span class="nav-text">CRYPTO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1-basic-rsa-50"><span class="nav-number">3.1.</span> <span class="nav-text">T1 basic rsa 50</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2-bbbbbbrsa-100"><span class="nav-number">3.2.</span> <span class="nav-text">T2 bbbbbbrsa 100</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">4.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">北屿</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '3bd523d04a7fcd807bd1',
+          clientSecret: '3c4d80f8fd534840b0571ebf194825129668c1fe',
+          repo: 'gitalk',
+          owner: 'beiyuouo',
+          admin: ['beiyuouo'],
+          id: md5(location.pathname),
+          abels: 'gitalk'.split(',').filter(l => l),
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="note,machinelearning,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译  Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structure">
+<meta name="keywords" content="note,machinelearning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习笔记">
+<meta property="og:url" content="beiyuouo.github.io/blog/note-machinelearning/index.html">
+<meta property="og:site_name" content="北屿">
+<meta property="og:description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译  Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structure">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="/img/note-ml/20190717120028.png">
+<meta property="og:image" content="/img/note-ml/20190722113854.png">
+<meta property="og:image" content="/img/note-ml/20190731160618.png">
+<meta property="og:image" content="/img/note-ml/20190802104618.png">
+<meta property="og:image" content="/img/note-ml/20190806085543.png">
+<meta property="og:image" content="/img/note-ml/20190806110040.png">
+<meta property="og:image" content="/img/note-ml/20190806111041.png">
+<meta property="og:image" content="/img/note-ml/20190806111243.png">
+<meta property="og:image" content="/img/note-ml/20190806115242.png">
+<meta property="og:image" content="/img/note-ml/20190806115830.png">
+<meta property="og:image" content="/img/note-ml/20190807094809.png">
+<meta property="og:image" content="/img/note-ml/20190807141148.png">
+<meta property="og:image" content="/img/note-ml/20190808094431.png">
+<meta property="og:image" content="/img/note-ml/20190808095212.png">
+<meta property="og:image" content="/img/note-ml/20190820213252.png">
+<meta property="og:image" content="/img/note-ml/20190820214805.png">
+<meta property="og:image" content="/img/note-ml/20190820215542.png">
+<meta property="og:image" content="/img/note-ml/20190820215551.png">
+<meta property="og:image" content="/img/note-ml/20190820220738.png">
+<meta property="og:image" content="/img/note-ml/20190820220746.png">
+<meta property="og:image" content="/img/note-ml/20190820220755.png">
+<meta property="og:image" content="/img/note-ml/20190820220805.png">
+<meta property="og:image" content="/img/note-ml/20190820220833.png">
+<meta property="og:updated_time" content="2019-08-21T01:10:17.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习笔记">
+<meta name="twitter:description" content="暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译  Overview &amp;amp; Learning Mapsupervised learning  regression classification linear model non-linear model deep learning SVM, decision tree, K-NN…     structure">
+<meta name="twitter:image" content="/img/note-ml/20190717120028.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/blog/note-machinelearning/">
+
+
+
+
+
+
+
+  <title>机器学习笔记 | 北屿</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-145083103-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">北屿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/game/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gamepad"></i> <br>
+            
+            Game
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/note-machinelearning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="北屿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北屿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-10T16:15:49+08:00">
+                2019-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-21T09:10:17+08:00">
+                2019-08-21
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  4.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  20
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>暑假不定时更新ing…<br>写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译</p>
+<hr>
+<h2 id="Overview-amp-Learning-Map"><a href="#Overview-amp-Learning-Map" class="headerlink" title="Overview &amp; Learning Map"></a>Overview &amp; Learning Map</h2><p>supervised learning</p>
+<ul>
+<li>regression</li>
+<li>classification<ul>
+<li>linear model</li>
+<li>non-linear model<ul>
+<li>deep learning</li>
+<li>SVM, decision tree, K-NN…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>structured learning</li>
+</ul>
+<p>semi-supervised learning<br>transfer learning<br>unsupervised learning<br>reinforcement learning<br>这些根据scenario的不同选择的</p>
+<h2 id="The-Next-Step-for-Machine-Learning"><a href="#The-Next-Step-for-Machine-Learning" class="headerlink" title="The Next Step for Machine Learning"></a>The Next Step for Machine Learning</h2><ul>
+<li>Anomaly Detection (让机器知道”我不知道“)</li>
+<li>Explainable AI (为什么知道)</li>
+<li>防止 Adversarial Attack</li>
+<li>Life-long Learning</li>
+<li>Meta-learning / Learn to learn</li>
+<li>Few-shot / Zero-shot Learning</li>
+<li>增强式学习</li>
+<li>Network Compression</li>
+<li>如果训练资料和测试资料很不一样</li>
+</ul>
+<h2 id="Regression"><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h2><h3 id="Step1-Model-模型"><a href="#Step1-Model-模型" class="headerlink" title="Step1: Model 模型"></a>Step1: Model 模型</h3><p>首先要有一个Model，也就是一个Function Set，存各种各样的函数。<br>像$y=b+\sum w_ix_i$这种模型，就是一个Linear Model 线性模型<br>$x_i$表示attribute of input x，也就是$x$的各种属性feature 特征<br>$w_i$表示weight权重<br>$b$表示bias偏差</p>
+<h3 id="Step2-Goodness-of-Function"><a href="#Step2-Goodness-of-Function" class="headerlink" title="Step2: Goodness of Function"></a>Step2: Goodness of Function</h3><p>接下来就是训练模型，选出一个较好的Function<br>首先要有Training Data，用hat表示正确的数据也就是$\hat{y}$<br>然后有另一个Function，也就是Loss Function，$L$来评价来估价，例如用平方差估价<br>$L(f)=L(w,b)=\sum_{n}(\hat{y}^n-(b+w\cdot x^n_{cp}))^2$，得到Estimation Error 估测误差，以下便用这个函数估价</p>
+<h3 id="Step3-Best-Function"><a href="#Step3-Best-Function" class="headerlink" title="Step3: Best Function"></a>Step3: Best Function</h3><p>Pick the “Best” Function, $f^{\ast}=arg \min L(f) $ 或 $w^{\ast},b^{\ast}=arg \min L(w,b) $<br>在这个问题求解的地方<br>用到了Gradient Descent 梯度下降的方法</p>
+<h3 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h3><p>首先必须是一个可微分的方程，先假设只有一个参数$L(w)$，那我们要求的就是$w^{\ast}=arg\min_{w}L(w)$，步骤如下：<br>随机选取或稍微优化选取一个初始解$w^{0}$<br>然后计算$\left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{0}}$<br>显然$\left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{0}}$为负，那么右边高损失大，左边低损失小<br>那么就让$w^{n}=w^{n-1}-\eta \left . \frac{\text{d}L}{\text{d}w} \right |_ {w=w^{n-1}}$<br>这里$\eta$表示Learning rate，$\eta$越大学习效率越高<br>然后多次迭代，最后显然是会得到一个Local optimal 局部最优解，也就是导数为零的时候，但不一定是Global optimal 全局最优解。</p>
+<p>如果有两个参数$w^{\ast},b^{\ast}=arg \min L(w,b) $，步骤也差不多，求偏微分就是了<br>$w^{n}=w^{n-1}-\eta \left . \frac{\partial L}{\partial w}\right |_ {w=w^{n-1},b=b^{n-1}},b^{n}=b^{n-1}-\eta \left . \frac{\partial L}{\partial b}\right |_ {w=w^{n-1},b=b^{n-1}}$<br>那么Gradient就是$\triangledown L=\begin{bmatrix}\frac{\partial L}{\partial w}\\ \frac{\partial L}{\partial b}\end{bmatrix}_ {gradient}$<br>刚学过偏微分的我还是知道$(-\eta \frac{\partial L}{\partial w},-\eta \frac{\partial L}{\partial b})$的方向，对$L$的微分最大，也是空间的法线方向</p>
+<p>在这里没有局部最优解，因为我们定义的函数是convex 凸的，只有全局最优解</p>
+<h3 id="Generalization"><a href="#Generalization" class="headerlink" title="Generalization"></a>Generalization</h3><p>我们这样可以得到$w,b$，而我们关心的不是训练数据里的损失值，而是Testing Data 测试数据中的数据。</p>
+<h3 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h3><p>我们想要得到更准确的数据呢，就需要复杂的Model，比如增加三次方，四次方，五次方之类的<br>A more complex model does not always lead to better performance on testing data. This is Overfitting.<br>但是复杂的Model在Training Data上的结果很好，但是在Testing Data上的结果较差，这就是Overfitting 过拟合。</p>
+<h3 id="Redesign-the-Model"><a href="#Redesign-the-Model" class="headerlink" title="Redesign the Model"></a>Redesign the Model</h3><p>这时候还会有一个情况，那就是其他隐藏的参数，那就需要重新设计Model<br>如果是Pokemon的物种，那么就需要if来判断，用$\delta(x_s=x_0)$这个函数来将原函数改写成线性模型，函数值就是里面的等式成立是1不成立就是0</p>
+<h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><p>就是修改Loss Function<br>$L=\sum_{n}(\hat{y}^n-(b+\sum w_ix_i))^2+\lambda (w_i)^2$，这里也就是我们希望参数越小越好，这里也是不需要$b$也就是bias的。<br>如果输入加上一点点变化，我们希望输出不那么参数小也就是输出对输入不那么敏感 sensitive，也就是比较smooth 平滑的。<br>If some noises corrupt input $x_i$ when testing. A smoother function has less influence.<br>Training error: larger $\lambda$, considering the training error less.<br>We prefer smooth function, but don’t be too smooth. </p>
+<h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p>最后有一个Demo，就是实际操作的时候可能不太好选取Learning Rate也就是$\eta$，用了一个AdaGrad，并对$w,b$分别设置了Learning rate。</p>
+<h2 id="Bias-and-Variance"><a href="#Bias-and-Variance" class="headerlink" title="Bias and Variance"></a>Bias and Variance</h2><h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><p>Error due to “bias” and “variance”.</p>
+<h3 id="Estimator"><a href="#Estimator" class="headerlink" title="Estimator"></a>Estimator</h3><p>举个栗子，如果要估测$x$的mean 平均值<br>assume the mean of $x$ is $\mu$<br>assume the variance of $x$ is $\sigma^2$</p>
+<p>那么我们估测平均值$\mu$就随机取$N$个点来计算<br>$m=\frac{1}{N}\sum_{n}x^n\neq \mu$<br>$E[m]=E[\frac{1}{N}\sum_{n}x^n]=\frac{1}{N}\sum_{n}E[x^n]=\mu$，$m$的期望就是$\mu$，这个是unbiased的<br>$Var[m]=\frac{\sigma^2}{N}$，这个Variance depends on the number of samples，如果数量较多那么就会比较集中，如果较少那么就会比较分散了</p>
+<p>如果估测variance $\sigma^2$<br>$m=\frac{1}{N}\sum_{n}x^n\neq \mu,s^2=\frac{1}{N}\sum_{n}(x^n-m)^2$<br>这里这个$s^2$是biased的，$E[s^2]=\frac{N-1}{N}\sigma^2$</p>
+<h3 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h3><p>如果$E[f^{\ast}]=\bar{f}$，那么这个$\bar{f}$和中心店偏移的距离就是bias，而其他$f$和$\bar{f}$分散的距离就是variance<br>Model 比较简单那么可能获得一个Small Variance的情况，而比较复杂的Model 可能得到一个Large Variance<br>因为比较简单的Model受数据的影响较小</p>
+<h3 id="Bias"><a href="#Bias" class="headerlink" title="Bias"></a>Bias</h3><p>$E[f^{\ast}]=\bar{f}$<br>Bias: If we average all the $f^{\ast}$, is it close to $\hat{f}$<br>然而一个简单的Model会有比较大的Bias，而比较复杂的Model便有一个小的Bias。</p>
+<p>当你的function set的space比较小Model简单，那么它可能不包含target；Model复杂时，function set 的space也变大，就有可能包含target。</p>
+<p>我们所得到的Error就是这两个造成的Error的和<br>如果Error在Bias较小Variance较大的地方就是Overfitting，如果Error在Bias较大Variance较小的地方就是Underfitting 欠拟合</p>
+<h3 id="Large-Bias"><a href="#Large-Bias" class="headerlink" title="Large Bias"></a>Large Bias</h3><p>Diagnosis：</p>
+<ul>
+<li>If your model cannot even fit the training examples, then you have large bias.</li>
+<li>If you can fit the training data, but large error on testing data, then you probably have large variance</li>
+</ul>
+<p>For bias, redesign your model:</p>
+<ul>
+<li>Add more features as input.</li>
+<li>A more complex model.</li>
+</ul>
+<h3 id="Large-variance"><a href="#Large-variance" class="headerlink" title="Large variance"></a>Large variance</h3><ul>
+<li><p>More data<br>这个可以自己生成许多训练数据</p>
+</li>
+<li><p>Regularization<br>这时调整了function space，可能会影响到bias，需要调整weight来取得平衡</p>
+</li>
+</ul>
+<h3 id="Model-Selection-1"><a href="#Model-Selection-1" class="headerlink" title="Model Selection"></a>Model Selection</h3><ul>
+<li>There is usually a trade-off between bias and variance.</li>
+<li><p>Select a model that balances two kinds of error to minimize total</p>
+</li>
+<li><p>Cross Validation<br>将Training Set分成Training Set和Validation Set，然后用Validation Set来选择Model</p>
+</li>
+</ul>
+<p>如果你把Public Testing Set考虑进去来修改那么就考虑进去了Public Testing Set的bias…</p>
+<ul>
+<li>N-fold Cross Validation<br>分成多份，将其中一份当成Validation Set</li>
+</ul>
+<h2 id="Gradient-Descent-1"><a href="#Gradient-Descent-1" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>可以把参数写成向量的形式<br>那么${\theta}^{\ast}=arg\min_{\theta}L(\theta)$<br>Gradient:$\triangledown L=\begin{bmatrix}\frac{\partial L(\theta_1)}{\partial \theta_1}\\ \frac{\partial L(\theta_2)}{\partial \theta_2}\end{bmatrix}$<br>$\theta^{n}=\theta^{n-1}-\eta \triangledown L(\theta^{n-1})$</p>
+<h3 id="Tip-1-Tuning-your-learning-rate"><a href="#Tip-1-Tuning-your-learning-rate" class="headerlink" title="Tip 1: Tuning your learning rate"></a>Tip 1: Tuning your learning rate</h3><p>Adaptive Learning Rates</p>
+<ul>
+<li>Popular &amp; Simple Idea: Reduce the learning rate by some factor every few epochs.<br>就是说经过几次计算后越来越接近最优解，就要调小Learning Rate，比如$\eta^t=\eta/\sqrt{t+1}$这个压子</li>
+<li>Learning rate cannot be one-size-fits-all<br>Give different parameters different learning rates.</li>
+</ul>
+<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><ul>
+<li>Divide the learning rate of each parameter by the root mean square the its previous derivatives.<br>Adagrad: $w^{t+1}=w^{t}-\frac{\eta^{t}}{\sigma^{t}}g^{t},\sigma^{t}=\sqrt{\frac{1}{t+1}\sum_{i=0}^{t}(g^{i})^2},\eta^t=\eta/\sqrt{t+1}$<br>$\sigma^{t}$：root mean square of the previous derivatives of parameter w，就是前面所有的微分的平方的平均值再开根号<br>约分一下得到$w^{t+1}=w^{t}-\frac{\eta}{\sqrt{\sum_{i=0}^{t}(g^{i})^2}}g^{t}$</li>
+</ul>
+<p>Adagrad呢，上面$g^{t}$越大，变化越大，而下面的$\sqrt{\sum_{i=0}^{t}(g^{i})^2}$，会导致$g^{t}$越大，变化越小<br>Adagrad就是强调一个反差，how suprise it is，下面的考虑的是估计一下二次微分</p>
+<p>考虑多个参数时，$g^t$越大，Gradient Descent不一定越大</p>
+<h3 id="Tip-2-Stochastic-Gradient-Descent"><a href="#Tip-2-Stochastic-Gradient-Descent" class="headerlink" title="Tip 2: Stochastic Gradient Descent"></a>Tip 2: Stochastic Gradient Descent</h3><p>Loss函数$L=\sum_{n}\left (\hat{y}^n-(b+\sum w_ix_i^n) \right )^2$<br>这里要做的就是随机一个$x^n$，$L=\left (\hat{y}^n-(b+\sum w_ix_i^n) \right )^2,\theta^i=\theta^{i-1}-\eta \triangledown L^n(\theta^{i-1})$<br>有一个Sample就更新一下参数这个样子</p>
+<h3 id="Tip-3-Feature-Scaling"><a href="#Tip-3-Feature-Scaling" class="headerlink" title="Tip 3: Feature Scaling"></a>Tip 3: Feature Scaling</h3><p>Make different features have the same scaling.<br>常见做法：<br>$R$个向量组$x^i$，For each dimension $i$，都算mean: $m_i$,standard deviation: $\sigma_i$<br>对第$r$个向量组$x^r$，$x_i^r=\frac{x_i^r-m_i}{\sigma_i}$，这样做完之后呢，所有的mean 会变成0，standard deviation 会变成1</p>
+<h3 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h3><p>Taylor Series<br>理论主要是泰勒展开这个样子，大于等于二次项全部略去，然后相当于在一个圆圈中找一个向量与一次导数组成的向量内积最小，也就是一次导数组成的向量的反方向，再乘上一个常数指到圆圈边界，就得到了Gradient Descent的形式<br>这也就可以解释Learning Rate设置不对的时候偏差较大的问题</p>
+<p>More Limitation of Gradient Descent<br>会Stuck at Local minimum or saddle point<br>Very slow at the plateau</p>
+<h2 id="Classification-Probabilistic-Generative-Model"><a href="#Classification-Probabilistic-Generative-Model" class="headerlink" title="Classification: Probabilistic Generative Model"></a>Classification: Probabilistic Generative Model</h2><h3 id="Ideal-Alternatives"><a href="#Ideal-Alternatives" class="headerlink" title="Ideal Alternatives"></a>Ideal Alternatives</h3><p>Function(Model): x-&gt;f(x):g(x)&gt;0?class=1:class2<br>Loss function: $L(f)=\sum_{n}\delta (f(x^n)\neq \hat{y}^n)$, The number of times f get incorrect results on training data<br>Find the best function: Perceptron, SVN</p>
+<h3 id="Generative-model"><a href="#Generative-model" class="headerlink" title="Generative model"></a>Generative model</h3><p>$P(C_1|x)=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1)+P(x|C_2)P(C_2)}$<br>$P(x)=P(x|C_1)P(C_1)+P(x|C_2)P(C_2)$</p>
+<h3 id="Prior"><a href="#Prior" class="headerlink" title="Prior"></a>Prior</h3><p>Assume the points are sampled from a Gaussian distribution.<br>Find the Gaussion distribution behind them</p>
+<ul>
+<li>Gaussian Distribution:<br>$f_{\mu,\Sigma}(x)=\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\exp\{-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\}$<br>Input: vector x, output: probability of sampling x<br>The shape of the function determines by mean $\mu$ and convariance matrix $\Sigma$<br>这部分有空可以再详细看下</li>
+</ul>
+<p>How to find $\mu$ and $\Sigma$ ?</p>
+<ul>
+<li>Maximum Likelihood<br>我们假设这些向量由一个高斯分布generate，要找一个Gussian$(\mu^{\ast},\Sigma^{\ast})$ with maximum likelihood.<br>$L(\mu,\Sigma)=f_{\mu,\Sigma}(x^1)f_{\mu,\Sigma}(x^2)…f_{\mu,\Sigma}(x^n)$.<br>$\mu^{\ast},\Sigma^{\ast}=arg\max_{\mu,\Sigma}L(\mu,\Sigma)$.<br>$\mu^{\ast}=\frac{1}{n}\sum {x^i}(average x),\Sigma^{\ast}=\frac{1}{n}\sum (x^i-\mu^{\ast})(x^i-\mu^{\ast})^{T}$</li>
+</ul>
+<h3 id="Modifying-Model"><a href="#Modifying-Model" class="headerlink" title="Modifying Model"></a>Modifying Model</h3><p>公用同一个$\Sigma$，$\Sigma=P(C_1)\Sigma^1+P(C_2)\Sigma^2$，加权平均</p>
+<p>Bernoulli distributions</p>
+<p>Naive Bayes Classifier</p>
+<h3 id="Posterior-Probability"><a href="#Posterior-Probability" class="headerlink" title="Posterior Probability"></a>Posterior Probability</h3><p>$P(C_1|x)=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1)+P(x|C_2)P(C_2)}=\frac{1}{1+\frac{P(x|C_2)P(C_2)}{P(x|C_1)P(C_1)}}$<br>Let $z=\ln \frac{P(x|C_1)P(C_1)}{P(x|C_2)P(C_2)}$<br>$=\frac{1}{1+\exp(-z)}=\sigma(z)$ Sigmoid function</p>
+<p>这里$z$是可以化简的<br>$P(x|C_1)=\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\exp\{-\frac{1}{2}(x-\mu^1)^{T}\Sigma^{-1}(x-\mu^1)\}$.<br>$P(x|C_2)=\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\exp\{-\frac{1}{2}(x-\mu^2)^{T}\Sigma^{-1}(x-\mu^2)\}$.<br>$P(C_1)=\frac{N_1}{N_1+N_2},P(C_2)=\frac{N_2}{N_1+N_2}$.</p>
+<script type="math/tex; mode=display">z=\ln \frac{P(x|C_1)}{P(x|C_2)}+ \ln \frac{P(C_1)}{P(C_2)}=\ln \frac{N_1}{N_2}-\frac{1}{2}[(x-\mu^1)^{T}\Sigma^{-1}(x-\mu^1)-(x-\mu^2)^{T}\Sigma^{-1}(x-\mu^2)]</script><p>把后面的展开$(x-\mu^1)^{T}\Sigma^{-1}(x-\mu^1)=x^{T}\Sigma^{-1}x-x^{T}\Sigma^{-1}\mu^1-(\mu^1)^{T}\Sigma^{-1}x+(\mu^1)^{T}\Sigma^{-1}\mu^1$<br>中间两项其实是一样的，可以合并，因为右乘一个矩阵和左乘转置矩阵是一样的。<br>又因为$\Sigma$相同，所以最后可以化成</p>
+<script type="math/tex; mode=display">z=(\mu^1-\mu^2)^{T}\Sigma^{-1}x-\frac{1}{2}(\mu^1)^{T}\Sigma^{-1}\mu^1+\frac{1}{2}(\mu^2)^{T}\Sigma^{-1}\mu^2+\ln \frac{N_1}{N_2}</script><p>只有第一项包含$x$，后面就是常数，所以可以写成$z=w^{T}\cdot x+b$的形式，要算的就是$\mu^1,\mu^2,\Sigma^{-1}$</p>
+<h2 id="Classification-Logistic-Regression"><a href="#Classification-Logistic-Regression" class="headerlink" title="Classification: Logistic Regression"></a>Classification: Logistic Regression</h2><p>我们想要找到一个函数$P(C_1|x)=\sigma(z),z=w\cdot x+b$<br>当$P(C_1|x)\geqslant 0.5$时输出Class1，反之输出Class2这样子<br>$f_{w,b}(x)=\sigma(\sum_{i}w_ix_i+b)$ output是0到1之间的数<br>如果$x^1,x^2$属于Class1，$x^3$属于Class2，$L(w,b)=f_{w,b}(x^1)f_{w,b}(x^2)(1-f_{w,b}(x^3))…$<br>我们要找$w^{\ast},b^{\ast}=arg\max_{w,b}L(w,b)\Leftrightarrow arg \min_{w,b}-\ln L(w,b)$<br>为了统一函数，我们给每个设置$\hat{y}$，如果属于Class1，$\hat{y}=1$，否则$\hat{y}=0$<br>这样对于每一个$-\ln f_{w,b}(x^1)=-[\hat{y}^1\ln f(x^1)+(1-\hat{y}^1)\ln (1-f(x^1))]$<br>最后我们要minimize的$-\ln L(w,b)=\sum_{n}-[\hat{y}^n\ln f(x^n)+(1-\hat{y}^n)\ln (1-f(x^n))]$<br>后面这个好像叫做Cross entropy between two Bernoulli distribution，用于评价两个函数有多接近？</p>
+<p>最后一步用Gradient Descent来求$w^{\ast},b^{\ast}$就行了<br>$w_{i+1}=w_{i}-\eta \sum_{n} -(\hat{y}-f_{w,b}(x^n))x_i^n$和Linear regression的式子一样的</p>
+<h3 id="Logistic-Regression-Square-Error"><a href="#Logistic-Regression-Square-Error" class="headerlink" title="Logistic Regression + Square Error ?"></a>Logistic Regression + Square Error ?</h3><p>主要是求微分以后，离Target最近和最远，微分全都是0</p>
+<h3 id="Discriminative-v-s-Generative"><a href="#Discriminative-v-s-Generative" class="headerlink" title="Discriminative v.s. Generative"></a>Discriminative v.s. Generative</h3><p>因为我们假设的不一样，所以Logistics Regression 也就是 Discriminative Model 和 Generative Model找出来的$w$和$b$是不同的<br>一般来说，Discriminative Model performance会比 Generative Model更好</p>
+<p>Benefit of generative model</p>
+<ul>
+<li>With the assumption of probability distribution, less training data is needed.</li>
+<li>With the assumption of probability distribution, more robust to the noise.</li>
+<li>Priors and class-dependent probabilities can be estimated from different sources.</li>
+</ul>
+<p>Generative model因为有假设，所以可能会无视一些数据，受数据影响较小，所以可能数据量小时表现会比较好，数据量大的时候就比Discriminative Model 表现较差了</p>
+<h3 id="Multi-class-Classification"><a href="#Multi-class-Classification" class="headerlink" title="Multi-class Classification"></a>Multi-class Classification</h3><p>对于每一个Class，都有$w^i,b_i,z_i=w^i\cdot x +b_i$<br>然后做Softmax，就是强化最大和最小值的差距，然后把概率控制下<br>$y_i=e^{z_i}/\sum_{n}e^{z_n}$<br>然后算$y_i$和$\hat{y}_ i$的Cross Entropy $-\sum_{i}\hat{y}_ i\ln y_i$<br>$\hat{y}$几类就设置成几维，然后自己属于哪一维，那一维就为1，其他为0</p>
+<h3 id="Limitation-of-Logistic-Regression"><a href="#Limitation-of-Logistic-Regression" class="headerlink" title="Limitation of Logistic Regression"></a>Limitation of Logistic Regression</h3><p>最简单的，比如$(0,0),(1,1)$一类，$(0,1),(1,0)$一类，Logistic Regression就爆炸了</p>
+<ul>
+<li>Feature Transformation<br>就把Logistics Regression接起来用，用几次以后当成转换后的值，在做Logistic Regression。<br>我们把每一个Logistic Regression叫做一个Neuron，串起来就是Neuron Network 类神经网络，就到了 Deep Learning</li>
+</ul>
+<p>先看到这里，我再学一下Python，做一下下作业，不然光看也没啥用…</p>
+<hr>
+<h2 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h2><h3 id="Ups-and-downs-of-Deep-Learning"><a href="#Ups-and-downs-of-Deep-Learning" class="headerlink" title="Ups and downs of Deep Learning"></a>Ups and downs of Deep Learning</h3><ul>
+<li>1958: Perceptron (linear model)</li>
+<li>1969: Perceptron has limitation</li>
+<li>1980s: Multi-layer perceptron<ul>
+<li>Do not have significant difference from DNN today</li>
+</ul>
+</li>
+<li>1986: Backpropagation<ul>
+<li>Usually more than 3 hidden layers is not helpful</li>
+</ul>
+</li>
+<li>1989: 1 hidden layer is “good enough”, why deep?</li>
+<li>2006: RBM initialization (breakthrough)</li>
+<li>2009: GPU</li>
+<li>2011: Start to be popular in speech recognition</li>
+<li>2012: win ILSVRC image competition </li>
+</ul>
+<p>真的是感觉有些不太完善…</p>
+<h3 id="Three-Step-of-Deep-Learning"><a href="#Three-Step-of-Deep-Learning" class="headerlink" title="Three Step of Deep Learning"></a>Three Step of Deep Learning</h3><p>跟Machine Learning的三步一样，第一步也就是一个Neural Network</p>
+<p>Neural Network: Different connection leads to different network structures.<br>Network parameter $\theta$ :all the weights and biases in the “neurons”.</p>
+<h3 id="Fully-Connect-Feedforward-Network"><a href="#Fully-Connect-Feedforward-Network" class="headerlink" title="Fully Connect Feedforward Network"></a>Fully Connect Feedforward Network</h3><p>如果我们知道所有的weights和bisaes，那么这其实就是一个function<br>如果只知道structure不知道这些，那么就是一个function set</p>
+<p>一共分成三层<br>input layer - hidden layers - output layer<br><img src="/img/note-ml/20190717120028.png" alt></p>
+<p>Deep = Many hidden layers</p>
+<p>Matrix Operation: 其实就是input vector 来进行matrix operation （每一层集合所有的weights 和 biases，每一层最后有一个activation function），最后得到output vector<br>矩阵运算可以GPU加速</p>
+<p>feature extractor replacing feature engineering</p>
+<h2 id="Backpropagation"><a href="#Backpropagation" class="headerlink" title="Backpropagation"></a>Backpropagation</h2><p>在Neutral Network里面做Gradient Descent有很多参数，那么怎么求Gradient呢<br>就是用Backpropagation</p>
+<h3 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h3><p>就是链式求导法则<br>要求$\frac{\partial L}{\partial w}$, $L=\sum C^n$，$C^n$就是评价$y$和$\hat{y}$之间距离的函数<br>那么$\frac{\partial L}{\partial w}=\sum \frac{\partial C^n}{\partial w}$<br>而$\frac{\partial C}{\partial w}=\frac{\partial z}{\partial w}\frac{\partial C}{\partial z}$</p>
+<p>Forward pass: Compute $\frac{\partial z}{\partial w}$ for all parameters.<br>Backward pass: Compute $\frac{\partial C}{\partial z}$ for all activation function inputs z, Compute $\frac{\partial C}{\partial z}$ from the output layer.<br>有一些细节，就是从后往前算，需要乘上weight然后经过op-amp乘上一个常数得到<br>其实就是建一个反向Neural Network来计算，output变成input</p>
+<h3 id="Keras"><a href="#Keras" class="headerlink" title="Keras"></a>Keras</h3><p>Interface of TensorFlow or Theano<br>Easy to learn and use(still have some flexibility)</p>
+<p>安装 &amp; 使用：<a href="https://keras.io/" target="_blank" rel="noopener">https://keras.io/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install tensorflow</span><br><span class="line">sudo pip install keras</span><br></pre></td></tr></table></figure>
+<p>但是遇到了一个问题…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    Complete output from command python setup.py egg_info:</span><br><span class="line">    Traceback (most recent call last):</span><br><span class="line">      File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">      File &quot;/tmp/pip-build-aAiWd2/scipy/setup.py&quot;, line 31, in &lt;module&gt;</span><br><span class="line">        raise RuntimeError(&quot;Python version &gt;= 3.5 required.&quot;)</span><br><span class="line">    RuntimeError: Python version &gt;= 3.5 required.</span><br><span class="line">    </span><br><span class="line">    ----------------------------------------</span><br><span class="line">Command &quot;python setup.py egg_info&quot; failed with error code 1 in /tmp/pip-build-aAiWd2/scipy/</span><br></pre></td></tr></table></figure></p>
+<p>我Python明明是3.7，为啥就不行了呢，后来我想起来我装了Anaconda以后都是在虚拟环境中，所以，不加sudo就能安装了</p>
+<h3 id="Mini-batch"><a href="#Mini-batch" class="headerlink" title="Mini-batch"></a>Mini-batch</h3><p>one epoch</p>
+<ul>
+<li>Randomly initialize network parameters</li>
+<li>Pick the 1st batch, Update parameters once</li>
+<li>Pick the 2nd batch, Update parameters once</li>
+<li>Until all mini-batches have been picked</li>
+</ul>
+<p>Repeat the above process</p>
+<p>设置这个可以利用GPU加速</p>
+<h2 id="Tip-for-Deep-Learning"><a href="#Tip-for-Deep-Learning" class="headerlink" title="Tip for Deep Learning"></a>Tip for Deep Learning</h2><h3 id="Recipe-of-Deep-Learning"><a href="#Recipe-of-Deep-Learning" class="headerlink" title="Recipe of Deep Learning"></a>Recipe of Deep Learning</h3><p>两个问题：一个是在Training Data上performance不好，一个是在Testing Data上performance不好</p>
+<h3 id="Bad-Results-on-Training-Data"><a href="#Bad-Results-on-Training-Data" class="headerlink" title="Bad Results on Training Data"></a>Bad Results on Training Data</h3><p>两种方法</p>
+<ul>
+<li>New activation function</li>
+<li>Adaptive Learning Rate</li>
+</ul>
+<p>有一种情况，靠近input layer的地方微分值很小，Learn very slow，Almost random；靠近ouput layer的地方微分值较大，Learn very fast，Almost converge。这件事发生的原因是使用sigmoid function，一个很大的$\Delta$经过sigmoid function以后是会变小的，而且影响也会越来越小。<br>解决的方法呢</p>
+<h4 id="Rectified-Linear-Unit-ReLU"><a href="#Rectified-Linear-Unit-ReLU" class="headerlink" title="Rectified Linear Unit(ReLU)"></a>Rectified Linear Unit(ReLU)</h4><script type="math/tex; mode=display">\sigma(z)=\left\{\begin{matrix}
+a=z, && z\geqslant 0\\ 
+a=0, && z<0
+\end{matrix}\right.</script><p>Reason:</p>
+<ol>
+<li>Fast to compute</li>
+<li>Biological reason</li>
+<li>Infinite sigmoid with different biases</li>
+<li>can handle vanishing gradient<br>当它去掉output为0的点以后，得到一个Thinner linear network，不再有smaller gradients，不会递减了<br>ReLU variant<br>Leaky ReLU:$\sigma(z)=\left\{\begin{matrix}a=z, &amp;&amp; z\geqslant 0\\ a=0.01z, &amp;&amp; z&lt;0\end{matrix}\right.$<br>Parametric ReLU: $\sigma(z)=\left\{\begin{matrix}a=z, &amp;&amp; z\geqslant 0\\ a=\alpha z, &amp;&amp; z&lt;0\end{matrix}\right., \alpha also learned by gradient descent$</li>
+</ol>
+<h4 id="Maxout"><a href="#Maxout" class="headerlink" title="Maxout"></a>Maxout</h4><p>ReLU is a special class of Maxout<br>Learnable activation function.<br>就是把几个neurons划到同一个组，选一个最大的当做output作为下一层的input<br>Activation function in maxout network can be any piecewise linear convex function<br>How many pieces depending on how many elements in a group.</p>
+<p>Maxout - Training<br>就是train一个thin and linear network，差不多就是把选中的部分提出来train<br>Different thin and linear network for different examples.</p>
+<p>下面都是第二种方法</p>
+<h4 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h4><p>Adagrad是Use first derivative to estimate second derivative<br>RMSProp是这样计算的 Root Mean Square of the gradients with previous gradients being decayed<br>$w^{1}\leftarrow w^{0}-\frac{\eta}{\sigma^{0}}g^{0}, \sigma^{0}=g^{0}$<br>$w^{2}\leftarrow w^{1}-\frac{\eta}{\sigma^{1}}g^{1}, \sigma^{1}=\sqrt{\alpha (\sigma^{0})^2+(1-\alpha)(g^{1})^{2}}$<br>$w^{n+1}\leftarrow w^{n}-\frac{\eta}{\sigma^{n}}g^{n}, \sigma^{n}=\sqrt{\alpha (\sigma^{n-1})^2+(1-\alpha)(g^{n})^{2}}$</p>
+<h4 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h4><p>Movement: movement of last step minus gradient at present</p>
+<p>Step:<br>Start at point $\theta^{0}$<br>Movement $v^{0}=0$<br>Compute gradient at $\theta^{0}$<br>Movement $v^{1}=\lambda v^{0}-\eta \triangledown L(\theta^{0})$<br>Move to $\theta^{1}=\theta^{0}+v^{1}$<br>Compute gradient at $\theta^{1}$<br>Movement $v^{2}=\lambda v^{1}-\eta \triangledown L(\theta^{1})$<br>Move to $\theta^{2}=\theta^{1}+v^{2}$</p>
+<p>Movement not just based on gradient, but previous movement.<br>$v^{i}$ is actually the weighted sum of all the previous gradient: $\triangledown L(\theta^{0}),\triangledown L(\theta^{1}),…,\triangledown L(\theta^{i-1})$</p>
+<h4 id="Adam-RMSProp-Momentum"><a href="#Adam-RMSProp-Momentum" class="headerlink" title="Adam: RMSProp + Momentum"></a>Adam: RMSProp + Momentum</h4><p>这里字太多了…我就截图了<br>算法：<br><img src="/img/note-ml/20190722113854.png" alt></p>
+<h3 id="Bad-Results-on-Testing-Data"><a href="#Bad-Results-on-Testing-Data" class="headerlink" title="Bad Results on Testing Data"></a>Bad Results on Testing Data</h3><h4 id="Early-Stopping"><a href="#Early-Stopping" class="headerlink" title="Early Stopping"></a>Early Stopping</h4><p>用Validation set模拟Testing set选一个Validation set上loss较小的点停下来，而不是一直Train下去</p>
+<h4 id="Regularization-1"><a href="#Regularization-1" class="headerlink" title="Regularization"></a>Regularization</h4><p>New loss function to be minimized</p>
+<ul>
+<li>Find a set of weight not only minimizing original cost but also close to zero<br>$L’(\theta)=L(\theta)+\lambda \frac {1}{2} \begin{Vmatrix}\theta\end{Vmatrix}_ {2},\theta=\{w_1,w_2,…\},\begin{Vmatrix}\theta\end{Vmatrix}_ {2}=(w_1)^2+(w_2)^2+…$.<br>就是找一个尽量平滑的函数嘛，后面那个Regularization term就是使函数平滑<br>这里是$\theta$的L2 norm，也叫作L2 regularization<br>做Regularization一般不会考虑biases，因为只是平滑函数而已</li>
+</ul>
+<p>微分一下$Gradient:\frac{\partial L’}{\partial w}=\frac{\partial L}{\partial w}+\lambda w$.<br>$Update: w^{t+1}=w^{t}-\eta \frac{\partial L’}{\partial w}=(1-\eta \lambda)w^{t}-\eta \frac{\partial L}{\partial w}$.<br>会让参数越来越大接近0，每次都让weight小一点，叫做Weight Decay</p>
+<p>同样的L1 Regularization<br>$L’(\theta)=L(\theta)+\lambda \frac {1}{2} \begin{Vmatrix}\theta\end{Vmatrix}_ {1},\theta=\{w_1,w_2,…\},\begin{Vmatrix}\theta\end{Vmatrix}_ {1}=|w_1|+|w_2|+…$.<br>$Gradient:\frac{\partial L’}{\partial w}=\frac{\partial L}{\partial w}+\lambda sgn(w)$.<br>$Update: w^{t+1}=w^{t}-\eta \frac{\partial L’}{\partial w}=w^{t}-\eta \frac{\partial L}{\partial w}-\eta \lambda sgn(w^{t})$.<br>L1每次都减去一个固定的值</p>
+<h4 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h4><p>Each time before updating the parameters.<br>Each neuron has $p\%$ to dropout, the structure of the network is changed.<br>Using the new network for training.<br>For each mini-batch, we resample the dropout neurons.</p>
+<p>Testing<br>No dropout<br>If the dropout rate at training is $p\%$, all the weights times $1-p\%$.<br>Assume that the dropout rate is $50\%$.<br>If a weight $w=1$ by training, set $w=0.5$ for testing.</p>
+<p>Dropout is a kind of ensemble.<br>Using one mini-batch to train one network.<br>Some parameters in the network are shared.</p>
+<p>最后这个操作呢，差不多就是假如有$m$个neuron，然后我们train的是$2^m$个Network，然后最后把他们平均起来，如果activation function是线性的话，与平均值是相等的，但如果不是Linear的，两个值呢也是约等的这个样子…<br>所以Dropout在Linear的activation function上performance是比较好的，比如ReLU和Maxout</p>
+<p>这节课好长啊…今天明天再看看Demo做一下hw2好了</p>
+<h3 id="Demo-1"><a href="#Demo-1" class="headerlink" title="Demo"></a>Demo</h3><p>这是Demo1和Demo2的合集，不同情况下修改不同的函数和结构之类的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers.core <span class="keyword">import</span> Dense, Dropout, Activation</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Conv2D, MaxPooling2D, Flatten</span><br><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> SGD, Adam</span><br><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> np_utils</span><br><span class="line"><span class="keyword">from</span> keras.datasets <span class="keyword">import</span> mnist</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">()</span>:</span></span><br><span class="line">    (x_train, y_train), (x_test, y_test) = mnist.load_data()</span><br><span class="line">    number = <span class="number">10000</span></span><br><span class="line">    x_train = x_train[<span class="number">0</span>:number]</span><br><span class="line">    y_train = y_train[<span class="number">0</span>:number]</span><br><span class="line">    x_train = x_train.reshape(number, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line">    x_test = x_test.reshape(x_test.shape[<span class="number">0</span>], <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line">    x_train = x_train.astype(<span class="string">'float32'</span>)</span><br><span class="line">    x_test = x_test.astype(<span class="string">'float32'</span>)</span><br><span class="line">    </span><br><span class="line">    y_train = np_utils.to_categorical(y_train, <span class="number">10</span>)</span><br><span class="line">    y_test = np_utils.to_categorical(y_test, <span class="number">10</span>)</span><br><span class="line">    x_train = x_train</span><br><span class="line">    x_test = x_test</span><br><span class="line">    x_train = x_train / <span class="number">255</span></span><br><span class="line">    x_test = x_test / <span class="number">255</span></span><br><span class="line">    x_test = np.random.normal(x_test)</span><br><span class="line">    <span class="keyword">return</span> (x_train, y_train), (x_test, y_test)</span><br><span class="line"></span><br><span class="line">(x_train, y_train), (x_test, y_test) = load_data()</span><br><span class="line"></span><br><span class="line">model = Sequential()</span><br><span class="line"><span class="comment">#model.add(Dense(input_dim=28*28, units=666, activation='sigmoid'))</span></span><br><span class="line">model.add(Dense(input_dim=<span class="number">28</span>*<span class="number">28</span>, units=<span class="number">666</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">model.add(Dropout(<span class="number">0.7</span>))</span><br><span class="line"><span class="comment">#model.add(Dense(units=666, activation='sigmoid'))</span></span><br><span class="line"><span class="comment">#model.add(Dense(units=667, activation='sigmoid'))</span></span><br><span class="line">model.add(Dense(units=<span class="number">666</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">model.add(Dropout(<span class="number">0.7</span>))</span><br><span class="line">model.add(Dense(units=<span class="number">667</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">model.add(Dropout(<span class="number">0.7</span>))</span><br><span class="line"><span class="comment">#for i in range(10):</span></span><br><span class="line"><span class="comment">#    model.add(Dense(units=666, activation='relu'))</span></span><br><span class="line">model.add(Dense(units=<span class="number">10</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#model.compile(loss='mse', optimizer=SGD(lr=0.1), metrics=['accuracy'])</span></span><br><span class="line"><span class="comment">#model.compile(loss='categorical_crossentropy', optimizer=SGD(lr=0.1), metrics=['accuracy'])</span></span><br><span class="line">model.compile(loss=<span class="string">'categorical_crossentropy'</span>, optimizer=<span class="string">'adam'</span>, metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line">model.fit(x_train, y_train, batch_size=<span class="number">100</span>, epochs=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = model.evaluate(x_train, y_train, batch_size=<span class="number">10000</span>)</span><br><span class="line">print(<span class="string">'\nTrain Acc:'</span>, result[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">result = model.evaluate(x_test, y_test, batch_size=<span class="number">10000</span>)</span><br><span class="line">print(<span class="string">'\nTest Acc:'</span>, result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure></p>
+<h2 id="Convolutional-Neural-Network"><a href="#Convolutional-Neural-Network" class="headerlink" title="Convolutional Neural Network"></a>Convolutional Neural Network</h2><h3 id="Why-CNN-for-image"><a href="#Why-CNN-for-image" class="headerlink" title="Why CNN for image"></a>Why CNN for image</h3><p>Some patterns are much smaller that the whole image<br>A neuron does not have to see the whole image to discover the pattern, Connecting to small region with less parameters.<br>就是一个Nerual不需要看到整个图，只需要连接某一部分就可以了，这样可以减去很多参数,fully connected network需要的参数就太多了</p>
+<p>The same patterns appear in different regions</p>
+<p>Subsampling the pixels will not change the object.</p>
+<h3 id="The-whole-CNN"><a href="#The-whole-CNN" class="headerlink" title="The whole CNN"></a>The whole CNN</h3><p>repeat : convolution - max pooling<br>then flatten - fully connected feedforward network</p>
+<p>之前已经观察到的Property</p>
+<ul>
+<li>Some patterns are much smaller that the whole image.(Convolution)</li>
+<li>The same patterns appear in different regions.(Convolution)</li>
+<li>Subsampling the pixels will not change the object.(Max Pooling)</li>
+</ul>
+<h3 id="CNN-Convolution"><a href="#CNN-Convolution" class="headerlink" title="CNN - Convolution"></a>CNN - Convolution</h3><p>每次移动距离stride，每次和filter做内积<br>Do the same process for every filter<br>最后得到Feature Map</p>
+<h3 id="CNN-Colorful-image"><a href="#CNN-Colorful-image" class="headerlink" title="CNN - Colorful image"></a>CNN - Colorful image</h3><p>Filter 增加一个RGB维度</p>
+<h3 id="CNN-v-s-Fully-connected-network"><a href="#CNN-v-s-Fully-connected-network" class="headerlink" title="CNN v.s. Fully connected network"></a>CNN v.s. Fully connected network</h3><p>Less parameters，减去一些连接的weights<br>Even less parameters，shared weights</p>
+<h3 id="CNN-Max-Pooling"><a href="#CNN-Max-Pooling" class="headerlink" title="CNN - Max Pooling"></a>CNN - Max Pooling</h3><p>把filter后得到的分组，选最大或选mean都可以，这就把图片缩小了<br>经过一次Convolution和Max Pooling得到一个新的image，Smaller than the original image,New image but smaller.</p>
+<p>Each filter is a channel.<br>The number of the channel is the number of filters.</p>
+<h3 id="Flatten"><a href="#Flatten" class="headerlink" title="Flatten"></a>Flatten</h3><p>把Feature Map拉直，然后丢到Fully Connected Network就ok了</p>
+<h3 id="CNN-in-Keras"><a href="#CNN-in-Keras" class="headerlink" title="CNN in Keras"></a>CNN in Keras</h3><p>Only modified the network structure and input format(vector -&gt; 3-D tensor)</p>
+<p>Convolution Layer<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.add(Convolution2D(<span class="number">25</span>, <span class="number">3</span>, <span class="number">3</span>, input_shape=(<span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>))) <span class="comment"># 25个3*3的filter input是1维黑白28*28的图片</span></span><br></pre></td></tr></table></figure></p>
+<p>MaxPooling<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.add(MaxPooling2D((<span class="number">2</span>, <span class="number">2</span>))) <span class="comment"># 2*2的featuremap选最大的</span></span><br></pre></td></tr></table></figure></p>
+<p>Flatten + Fully connected layer<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model.add(Flatten())</span><br><span class="line"></span><br><span class="line">model.add(Dense(output_dim = <span class="number">100</span>))</span><br><span class="line">model.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(output_dim = <span class="number">10</span>))</span><br><span class="line">model.add(Activation(<span class="string">'softmax'</span>))</span><br></pre></td></tr></table></figure></p>
+<h3 id="What-does-CNN-learn"><a href="#What-does-CNN-learn" class="headerlink" title="What does CNN learn?"></a>What does CNN learn?</h3><p>Degree of the activation of the k-th filter: $a^k=\sum_{i} \sum_{j} a^{k}_ {ij}$<br>找一个input$x^{\ast}$,$x^{\ast}=arg \max_x a^k$(gradient ascent)</p>
+<p>Find an image maximizing the output of neuron :$x^{\ast}=arg \max_{x} a^{j}$<br>Each figure corresponds to a neuron</p>
+<p>$x^{\ast}=arg \max_{x} y^{i}$<br>如果是做数字辨识会发现找到最Activation的$x^{\ast}$其实并不是数字<br>有一个视频<a href="https://www.youtube.com/watch?v=M2IebCN9Ht4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=M2IebCN9Ht4</a></p>
+<p>做一个限制 L1 regularization<br>$x^{\ast} = arg \max_{x} (y^{i}-\sum_{i,j}|x_{ij}|)$</p>
+<p>Deep Dream<br>CNN exaggerates what it sees</p>
+<p>Deep Style<br>Given a photo, make its style like famous painting</p>
+<p>output 也就是 content像原相片，style也就是filter之间的correlation像风格相片</p>
+<p>有很多关于CNN的应用，只需要满足图片的特征就可以了，也就是前面提到的3个property</p>
+<h3 id="Demo-2"><a href="#Demo-2" class="headerlink" title="Demo"></a>Demo</h3><p>这里应该有Demo的…然而视频中莫有</p>
+<h2 id="Why-Deep-Learning"><a href="#Why-Deep-Learning" class="headerlink" title="Why Deep Learning ?"></a>Why Deep Learning ?</h2><p>相同参数下，越Deep其实performance会变好</p>
+<h3 id="Modularization"><a href="#Modularization" class="headerlink" title="Modularization"></a>Modularization</h3><p>不同的function可以调用共同的subfunction</p>
+<p>Each basic classifier can have sufficient training example<br>如果要分4类，长发男，长发女，短发男，短发女，但是长发男的数据很少<br>这样的情况下，不如用两个basic classifer，分长发短发，男女，这样每类的数据都是足够的<br>Sharing by the following classifiers as module<br>然后再用4个classifier来分出来，只需要比较少的data就可以了</p>
+<p>所以Network的结构<br>The most basic classifiers<br>Use 1st layer as module to build classifiers<br>Use 2nd layer as module…</p>
+<p>The modularization is automatically learned from data.<br>所以Deep Learning需要比较少的Training data？</p>
+<h3 id="Universality-Theorem"><a href="#Universality-Theorem" class="headerlink" title="Universality Theorem"></a>Universality Theorem</h3><p>Any continuous function f<br>can be realized by a network with one hidden layer(given enough hidden neurons)<br>Yes, shallow network can represent any function.<br>However, using deep structure is more effective.</p>
+<h3 id="End-to-end-Learning"><a href="#End-to-end-Learning" class="headerlink" title="End-to-end Learning"></a>End-to-end Learning</h3><p>只知道input 和 output<br>What each function should do is learned automatically</p>
+<p>所以 最后的结论<br>Do deep nets really need to be deep ? Yes !</p>
+<h2 id="Semi-supervised-Learning"><a href="#Semi-supervised-Learning" class="headerlink" title="Semi-supervised Learning"></a>Semi-supervised Learning</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Supervised learning:$\{(x^r,\hat{y}^r)\}^{R}_ {r=1}$</p>
+<ul>
+<li>E.g. $x^r$:image, $\hat{y}^{r}$:class labels</li>
+</ul>
+<p>Semi-supervised leaning: $\{(x^r,\hat{y}^r)^{R}_ {r=1}\}, \{x^u\}^{R+U}_ {u=R}$</p>
+<ul>
+<li>A set of unlabeled data, usually $U&gt;&gt;R$</li>
+<li>Transductive learning: unlabeled data is the testing data</li>
+<li>Inductive learning: unlabeled data is not the testing data</li>
+</ul>
+<p>Why semi-supervised learning</p>
+<ul>
+<li>Collecting data is easy, but collecting “labelled” data is expensive</li>
+<li>We do semi-supervised learning in our lives</li>
+</ul>
+<p>Why semi-supervised learning helps?</p>
+<ul>
+<li>The distribution of the unlabeled data tell us something.<br>就是这些input的分布会影响结果的判断</li>
+<li>Usually with some assumptions 通常伴随着一些假设</li>
+</ul>
+<h3 id="Semi-supervised-Learning-for-Generative-Model"><a href="#Semi-supervised-Learning-for-Generative-Model" class="headerlink" title="Semi-supervised Learning for Generative Model"></a>Semi-supervised Learning for Generative Model</h3><p>Supervised Generative Model<br>Given labelled training examples $x^r\in C_1,C_2$</p>
+<ul>
+<li>looking for most likely prior probability $P(C_i)$ and class-dependent probability $P(x|C_i)$</li>
+<li>$P(x|C_i)$ is a Gaussian parameterized by $\mu^i$ and $\Sigma$</li>
+</ul>
+<p>Semi-supervised Generative Model</p>
+<ul>
+<li>Initialization:$\theta = \{P(C_1),P(C_2),\mu^{1},\mu^{2},\Sigma\}$</li>
+<li>Step1(E): compute the posterior probability of unlabeled data $P_{\theta}(C_1|x^{u})$, Depending on model $\theta$</li>
+<li>Step2(M): update model<br>$P(C_1)=\frac{N_1+\Sigma_{x^u}P(C_1|x^u)}{N}$.<br>$N$: total number of examples<br>$N_1$: number of examples belonging to $C_1$<br>$\mu^{1}=\frac{1}{N_1}\sum_{x^r\in C_1}x^r+\frac{1}{\sum_{x^u}P(C_1|x^u)}\sum_{x^u}P(C_1|x^u)x^u$</li>
+<li>Back to step1</li>
+</ul>
+<p>The algorithm converges eventually, but the initialization influences the results.</p>
+<p>Why?</p>
+<ul>
+<li>Maximum likelihood with labelled data(Closed-form solution)<br>$\log L(\theta)=\sum_{x^r}\log P_{\theta}(x^r,\hat{y}^r), P_{\theta}(x^r,\hat{y}^r)=P_{\theta}(x^r|\hat{y}^r)P(\hat{y}^r)$.</li>
+<li>Maximum likelihood with labelled + unlabeled data(Solved iteratively)<br>$\log L(\theta)=\sum_{x^r}\log P_{\theta}(x^r,\hat{y}^r)+\sum_{x^u}\log P(\theta)(x^u), P_{\theta}(x^u)=P_{\theta}(x^u|C_1)P(C_1)+P_{\theta}(x^u|C_2)P(C_2)$, $x^u$ can come from either $C_1,C_2$.</li>
+</ul>
+<h3 id="Semi-supervised-Learning-Low-density-Separation"><a href="#Semi-supervised-Learning-Low-density-Separation" class="headerlink" title="Semi-supervised Learning - Low-density Separation"></a>Semi-supervised Learning - Low-density Separation</h3><h4 id="Self-training"><a href="#Self-training" class="headerlink" title="Self-training"></a>Self-training</h4><p>Given: labelled data set = $\{(x^r,\hat{y}^r)\}^{R}_ {r=1}$, unlabeled data set = $\{x^u\}^{R+U}_ {u=l}$<br>Repeat:</p>
+<ul>
+<li>Train model $f^{\ast}$ from labelled data set.(Independent to the model)</li>
+<li>Apply $f^{\ast}$ to the unlabeled data set<ul>
+<li>Obtain $\{x^u,y^u\}^{R+U}_ {u=l}$(Pseudo-label)</li>
+</ul>
+</li>
+<li>Remove a set of data from unlabeled data set, and add them into the labeled data set<br>How to choose the data set remains open<br>You can also provide a weight to each data.</li>
+</ul>
+<p>Similar to semi-supervised learning for generative model<br>Hard label v.s. Soft lable<br>neural network的时候一定是用Hard label</p>
+<h4 id="Entropy-based-Regularization"><a href="#Entropy-based-Regularization" class="headerlink" title="Entropy-based Regularization"></a>Entropy-based Regularization</h4><p>Entropy of $y^u$: Evaluate how concentrate the distribution $y^u$ is $E(y^u)=-\sum_{m}y^{u}_ {m}\ln (y^{u}_ {m})$, $m$: number of class. As small as possible.<br>$L=\sum_{x^r}C(y^r,y^r)+\lambda \sum_{x^u}E(y^u)$ 可微分，用Gradient Descent minimize，后面的可以让他不Overfitted</p>
+<h3 id="Semi-supervosed-Learning-Smoothness-Assumption"><a href="#Semi-supervosed-Learning-Smoothness-Assumption" class="headerlink" title="Semi-supervosed Learning Smoothness Assumption"></a>Semi-supervosed Learning Smoothness Assumption</h3><p>近朱者赤，近墨者黑“You are knownby the companyyoukeep”</p>
+<ul>
+<li>Assumption: “similar” $x$ has the same $\hat{y}$</li>
+<li>More precisely:<ul>
+<li>x is not uniform.</li>
+<li>If $x^1$ and $x^2$ are close in a high density region,$\hat{y}^1$ and $\hat{y}^2$ are the same.<br>connected by a high density path</li>
+</ul>
+</li>
+</ul>
+<p>Cluster and then label<br>Using all the data to learn a classifier as usual</p>
+<p>Graph-based Approach<br>Represented the data points as a graph<br>Graph representation is nature sometimes.</p>
+<p>定性使用<br>Graph-based Approach - Graph Construction</p>
+<ul>
+<li>Define the similarity $s(x^i,x^j)$ between $x^i$ and $x^j$</li>
+<li>Add edge:<ul>
+<li>K Nearest Neighbor</li>
+<li>e-Neighborhood</li>
+</ul>
+</li>
+<li>Edge weight is proportional to $s(x^i,x^j)$</li>
+</ul>
+<p>Gaussion Radial Basis Function<br>$s(x^i,x^j)=\exp (-\gamma || x^i-x^i ||^2)$</p>
+<p>存在的问题<br>The labelled data influence their neighbors.<br>Propagate through the graph</p>
+<p>定量使用</p>
+<ul>
+<li>Define the smoothness of the labels on the graph<br>$S=\frac{1}{2}\sum_{i,j}w_{i,j}(y^i-y^j)^2$ For all data(no matter labelled or not)<br>$\mathbf{y}$: (R+U)-dim vector.<br>$\mathbf{y}=[\cdots y^i \cdots y^j \cdots]^{T}$.<br>$L$:(R+U) x (R+U) matrix (Graph Laplacian).<br>$L = D - W$, $W$就是边权建出的图，$D$就是$W$每行的值求和放在$(i,i)$的位置<br>Then $S=\mathbf{y}^{T}L\mathbf{y}$,$y$ depenting on network parameters<br>原来Loss Function $L=\sum_{x^r}C(y^r,\hat{y}^r)+\lambda S$, As a regularization term</li>
+</ul>
+<h3 id="Semi-supervised-Learning-Better-Representation"><a href="#Semi-supervised-Learning-Better-Representation" class="headerlink" title="Semi-supervised Learning - Better Representation"></a>Semi-supervised Learning - Better Representation</h3><p>去蕪存菁，化繁為簡</p>
+<ul>
+<li>Find the latent factors behind the obvservation.</li>
+<li>The latent factors (usually simpler) are better representations.</li>
+</ul>
+<h2 id="Unsupervised-Learning-Linear-Methods"><a href="#Unsupervised-Learning-Linear-Methods" class="headerlink" title="Unsupervised Learning - Linear Methods"></a>Unsupervised Learning - Linear Methods</h2><h3 id="Unsupercised-Learning"><a href="#Unsupercised-Learning" class="headerlink" title="Unsupercised Learning"></a>Unsupercised Learning</h3><p>两类</p>
+<ul>
+<li>Clustering &amp; Dimension Reduction(化繁为简)<br>only having function input.</li>
+<li>Generation(无中生有)<br>only having function output.</li>
+</ul>
+<p>这节课主要是Linear 的 Dimension Reduction</p>
+<h3 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h3><p>K-means</p>
+<ul>
+<li>Clustering $X=\{x^1, \cdots, x^n, \cdots, x^{N}\}$ into K clusters</li>
+<li>Initalize cluster center $c^i, i=1,2,\cdots, K$(K random $x^n$ from X)</li>
+<li>Repeat<br>For all $x^n$ in X: $b^n_i=\left\{\begin{matrix}1 &amp;x^n\text{ is most “close” to }c^i \\ 0 &amp;Otherwise \end{matrix}\right.$<br>Updating all $c^i$: $c^i=\sum_{x^n}b^n_ix^n/\sum_{x^n}b^n_i$</li>
+</ul>
+<p>Hierarchical Agglomerative Clustering(HAC)</p>
+<ul>
+<li>Step1: build a tree<br>建树过程是这样的，$n$个data，选两个最像的做平均连起来变成1个data，这样就有$n-1$个data，继续做下去就可以建一棵树</li>
+<li>Step2: pick a threshold<br>在树上切一刀可以决定分成多少个Cluster</li>
+</ul>
+<h3 id="Distributed-Representation"><a href="#Distributed-Representation" class="headerlink" title="Distributed Representation"></a>Distributed Representation</h3><p>Clustering: an object must belong to one cluster<br>Distributed representation: 用一个vector每一维表示一个attribute<br>这个将一个object用Distribution representation表示，从高维空间变到低维空间，就是Dimension Reduction.</p>
+<h3 id="Dimension-Reduction"><a href="#Dimension-Reduction" class="headerlink" title="Dimension Reduction"></a>Dimension Reduction</h3><p>找一个Function，输入一个高维的vector得到一个低微的vector</p>
+<p>Feature selection： 把没用的Dimension去掉<br>Principle component analysis(PCA): $z=Wx$</p>
+<h3 id="Principle-component-analysis-PCA"><a href="#Principle-component-analysis-PCA" class="headerlink" title="Principle component analysis(PCA)"></a>Principle component analysis(PCA)</h3><p>Principle component analysis(PCA)主成分分析<br>$z=Wx$<br>对于$z$每一维，都是$z_i=w^i \cdot x$<br>$var(z_i)=\sum_{z_i}(z_i-\bar{z_i})^2, ||w^i||_ 2=1$<br>$z_i$的variance越大越好<br>然后$w^i$要两两垂直<br>$W=\begin{bmatrix}(w^1)^{T} \\ (w^2)^{T} \\ \vdots \end{bmatrix}$.<br>$W$就是个 Orthogonal matrix 正交矩阵</p>
+<p>Lagrange multiplier<br>$z_1=w^1\cdot x$<br>$\bar{z_1}=\sum z_1=\sum w^1\cdot x = w^1\sum x=w^1 \cdot x$.<br>$var(z_1)=\sum_{z_1}(z_1-\bar{z_1})^2=\sum_{x}(w^1\cdot x-w^1\cdot \bar{x})^2=\sum (w^1\cdot (x-\bar{x}))^2$.<br>$\because (a\cdot b)^2=(a^{T}b)^2=a^{T}ba^{T}b=a^{T}b(a^{T}b)^{T}=a^{T}bb^{T}a$.<br>$\therefore var(z_1)=\sum (w^1)^{T}(x-\bar{x})(x-\bar{x})^{T}w^1=(w^1)^{T}\sum (x-\bar{x})(x-\bar{x})^{T} w^1=(w^1)^{T}Cov(x)w^1$.<br>$Cov(x)$是$x$的covariance matrix<br>Let $S=Cov(x)$, Symmetric, positive-semidefinite,(non-negative eigenvalues)<br>Find $w^1$ maximizing $(w^1)^{T}Sw^1$.<br>Constraint: $||w^1||_ 2=(w^1)^{T}w^1=1$<br>Using Largrange multiplier<br>$g(w^1)=(w^1)^{T}Sw^1-\alpha ((w^1)^{T}w^1-1)$.<br>让$\partial g(w^1)/\partial w^1_1 =0,\partial g(w^1)/\partial w^1_2 =0,…$.<br>然后就得到解$Sw^1-\alpha w^1=0$，即$Sw^1=\alpha w^1$，$w^1$就是$S$的eigenvector 特征向量<br>$(w^1)^{T}Sw^1=\alpha (w^1)^{T}w^1=\alpha$ Choose the maximum one.</p>
+<p>结论：$w^1$ is the eigenvector of the convariance matrix $S$, Corresponding to the largest eigenvalue $\lambda$ </p>
+<p>Find $w^2$ maximizing $(w^2)^{T}Sw^2$, $(w^2)^{T}w^2=1,(w^2)^{T}w^1=0$.<br>$g(w^2)=(w^2)^{T}Sw^2-\alpha ((w^2)^{T}w^2-1)-\beta((w^2)^{T}w^1-0)$.<br>让$\partial g(w^2)/\partial w^2_1 =0,\partial g(w^2)/\partial w^2_2 =0,…$.<br>$Sw^2-\alpha w^2 - \beta w^1=0$<br>$(w^2)^{T}Sw^2-\alpha ((w^2)^{T}w^2-1)-\beta((w^2)^{T}w^1-0)=0$.<br>$((w^1)^{T}Sw^2)^{T}=(w^2)^{T}S^{T}w^1=(w^2)^{T}Sw^1=\lambda_1(w^2)^{T}w^1=0$.<br>所以$\beta=0: Sw^2-\alpha w^2=0, Sw^2=\alpha w^2$</p>
+<p>结论：$w^2$ is the eigenvector of the convariance matrix $S$. Corresponding to the 2nd largest eigenvalue $\lambda_2$.</p>
+<p>PCA - decorrelation<br>$z=Wx,Cov(z)=D$ $Cov(z)$是一个Diagonal matrix<br>$Cov(z)=\sum(z-\bar{z})(z-\bar{z})^{T}=WSW^{T}, S=Cov(x)$<br>$=WS[w^1 \cdots w^K]=W[Sw^1 \cdots Sw^K]=W[\lambda_1w^1 \cdots \lambda_Kw^K]=[\lambda_1Ww^2 \cdots \lambda_KWw^zk]=[\lambda_1e_1 \cdots \lambda_Ke_K]$, $e_K$是第$K$维是1其他是0</p>
+<h3 id="PCA-Another-Point-of-View"><a href="#PCA-Another-Point-of-View" class="headerlink" title="PCA - Another Point of View"></a>PCA - Another Point of View</h3><p>Basic Component: 就是一些基本的组成，每一个都是一个vector, $u^K$<br>$x\approx c_1u^1+c_2u^2+\cdots + c_Ku^K+\bar{x}$<br>所以可以用$\begin{bmatrix}c_1\\ c_2\\ \vdots\\ c_K\end{bmatrix}$ represent a image $x$.</p>
+<p>$x-\bar{x}\approx c_1u^1+c_2u^2+\cdots + c_Ku^K=\hat{x}$.<br>Reconstruction error: $||(x-\bar{x})-\hat{x}||_ 2$.<br>Find $\{u^1,\cdots, u^K\}$ minimizing the error.</p>
+<script type="math/tex; mode=display">L=\min _ {\{u^1,\cdots ,u^K\}}\sum \left \| (x-\bar{x})-(\sum_{k=1}^{K}c_ku^k) \right \| _ 2</script><p>PCA求得$w^1,\cdots, w^K$其实就是$u^1,\cdots, u^K$，证明好像是线代相关SVD…感觉我们学的线代内容好基础…看不太懂233</p>
+<p>PCA looks like a neural network with one hidden layer(linear activation function). Autoencoder<br>$\hat{x}=\sum_{k=1}^{K}c_kw^k=x-\bar{x}$.<br>To minimize reconstruction error: $c_k=(x-\bar{x})\cdot w^k$.<br>可以用一个neural network表示<br>It can be deep. Deep autoencoder.</p>
+<h3 id="Weakness-of-PCA"><a href="#Weakness-of-PCA" class="headerlink" title="Weakness of PCA"></a>Weakness of PCA</h3><ul>
+<li>Unsupervised</li>
+<li>Linear</li>
+</ul>
+<p>LDA = linear discriminant analysis， 是supervised</p>
+<h3 id="What-happens-to-PCA"><a href="#What-happens-to-PCA" class="headerlink" title="What happens to PCA?"></a>What happens to PCA?</h3><p>PCA involves adding up and subtracting some components(images)</p>
+<ul>
+<li>Then the components may not be “parts of digits”<br>Non-negative matrix factiorization(NMF)</li>
+<li>Forcing $a_1,a_2,…$ be non-negative<ul>
+<li>adaitive combination</li>
+</ul>
+</li>
+<li>Forcing $w^1,w^2,…$ be non-negative<ul>
+<li>More like “parts of digits”</li>
+</ul>
+</li>
+</ul>
+<h3 id="Matrix-Factorization"><a href="#Matrix-Factorization" class="headerlink" title="Matrix Factorization"></a>Matrix Factorization</h3><p>Minimizing $L=\sum(r^i\cdot r^j-n_{ij})^2$<br>Find $r^i,r^j$ by Gradient Descent.</p>
+<p>More about Mareix Factorization</p>
+<p>Considering the induvial characteristics<br>$r^A\cdot r^1\approx 5\rightarrow r^A\cdot b_A+b_1\approx 5$.<br>$b_A$: otakus A likes to by figures.<br>$b_1$: how popular character 1 is.<br>加了另外两个特征<br>Minimizing $L=\sum_{(i,j)}(r^i\cdot r^j + b_i + b_j -n_{ij})^2$.<br>Find $r^i,r^j,b_i,b_j$ by gradient descent(can add regularization)</p>
+<ul>
+<li>Ref: Matrix Factorization Techniques for Recommender Systems.</li>
+</ul>
+<p>Matrix Factorization for Topic analysis<br>在这方面的应用的方法叫做 Latent semantic analysis(LSA)</p>
+<h2 id="Unsupervised-Learning-Word-Embedding"><a href="#Unsupervised-Learning-Word-Embedding" class="headerlink" title="Unsupervised Learning: Word Embedding"></a>Unsupervised Learning: Word Embedding</h2><h3 id="Word-Embedding"><a href="#Word-Embedding" class="headerlink" title="Word Embedding"></a>Word Embedding</h3><p>Machine learn the meaning of words from reading a lot of documents without supervision.<br>Genarating Word Vector is unsupervised.</p>
+<p>A word can be understood by its context, You shall know a word by the company it keeps.</p>
+<h3 id="How-to-exploit-the-context"><a href="#How-to-exploit-the-context" class="headerlink" title="How to exploit the context"></a>How to exploit the context</h3><p>Count based</p>
+<ul>
+<li>If two words $w_i$ and $w_j$ frequently co-occur, $V(w_i)$ and $V(w_j)$ would be close to each other</li>
+<li>E.g. <a href="http://nlp.stanford.edu/project/glove" target="_blank" rel="noopener">Glove Vector</a></li>
+<li>$V(w_i)\cdot V(w_j)$inner product和$N_{i,j}$ Number of times $w_i$ and $w_j$ in the same document越接近越好</li>
+</ul>
+<h4 id="Prediction-based"><a href="#Prediction-based" class="headerlink" title="Prediction based"></a>Prediction based</h4><ul>
+<li>1-of-N encoding of the word $w_{i-1}$</li>
+<li>Take out the input of the neurons in the first layer</li>
+<li>Use it to represent a word $w$</li>
+<li>Word vector, word embedding feature: $V(w)$</li>
+<li>output: The probability for each word as the next word $w_i$</li>
+</ul>
+<p>Sharing Parameters<br>The weights with the $w_i,w_j$ should be the same.<br>Or, one word would have two word vectors. 我觉得应该是因为出现的位置不同嘛<br>这样做也不会让参数随着context的增长而过多<br>也就是<br>The length of $x_{i-1}$ and $x_{i-2}$ are both $|V|$, The length of $z$ is $|Z|$.<br>$z=W_1x_{i-2}+W_2x_{i-1}$, the weight matrix $W_1$ and $W_2$ are both $|Z|\times |V|$ matrices.<br>Let $W_1=W_2=W$, $z=W(x_{i-2}+x_{i-1})$</p>
+<p>How to make $w_i$ equal to $w_j$<br>Given $w_i$ and $w_j$ the same initialization<br>$w_i\leftarrow w_i-\eta \frac{\partial C}{\partial w_i}-\eta \frac{\partial C}{\partial w_j},w_j\leftarrow w_j-\eta \frac{\partial C}{\partial w_j}-\eta \frac{\partial C}{\partial w_i}$</p>
+<p>Prediction-based Training<br>就minimize和后面词汇的cross entropy</p>
+<p>Prediction-based - Various Architectures</p>
+<ul>
+<li>Continuous bag of word(CBOW) model<br>用前后的匹配中间的 predicting the word given its context.</li>
+<li>Skip-gram<br>predicting the context given a word</li>
+</ul>
+<p>Beyond Bag of Word</p>
+<ul>
+<li>To understand the meaning of a word sequence, the order of the words can not be ignored.</li>
+</ul>
+<h2 id="Unsupervised-Learning-Neighbor-Embedding"><a href="#Unsupervised-Learning-Neighbor-Embedding" class="headerlink" title="Unsupervised Learning: Neighbor Embedding"></a>Unsupervised Learning: Neighbor Embedding</h2><h3 id="Manifold-Learning"><a href="#Manifold-Learning" class="headerlink" title="Manifold Learning"></a>Manifold Learning</h3><p>Manifold Learning 流形学习<br>非线性的降维</p>
+<p>Locally Linear Embedding (LLE)<br>$w_{ij}$ respesents the relation between $x^i$ and $x^j$<br>Find a set of $w_{ij}$ minimizing $\sum_{i} || x^i-\sum_{j}w_{ij}x^j||_ 2$<br>Then find the dimension reduction results $z^i$ and $z^j$ based on $w_{ij}$.<br>Keep $w_{ij}$ unchanged, find a set of $z^i$ minimizing $\sum_{i} || z^i-\sum_{j}w_{ij}z^j||_ 2$</p>
+<p>老师用“在天愿为比翼鸟，在地愿为连理枝”比喻可太厉害了hhhhhhhh</p>
+<h3 id="Laplacian-Eigenmaps"><a href="#Laplacian-Eigenmaps" class="headerlink" title="Laplacian Eigenmaps"></a>Laplacian Eigenmaps</h3><p>Graph-based approach<br>Distance defined by graph approximate the distance on manifold<br>Construct the data points as a graph<br>Dimension Reduction: If $x^1$ and $x^2$ are close in a high density region, $z^1$ and $z^2$ are close to each other.<br>smoothness: $S=\frac{1}{2}\sum_{i,j}w_{i,j}(z^i-z^j)^2$, constraints to $z$: If the dim of $z$ is $M$,$Span\{z^1, z^2, … z^N\} = R^M$，找的是Laplacian Matrix 的eignenvector<br>这里在Semi-supervised Learning讲过<br>然后再去做cluster，Spectral clustering: clustering on z</p>
+<h3 id="T-distributed-Stochastic-Neighbor-Embedding-t-SNE"><a href="#T-distributed-Stochastic-Neighbor-Embedding-t-SNE" class="headerlink" title="T-distributed Stochastic Neighbor Embedding(t-SNE)"></a>T-distributed Stochastic Neighbor Embedding(t-SNE)</h3><p>T-distributed Stochastic Neighbor Embedding(t-SNE) t-分布领域嵌入算法<br>Problem of the previous approaches</p>
+<ul>
+<li>Similar data are close, but different data may collapse<br>只保证了相似的会很接近，但没保证不相似要远一些<br><img src="/img/note-ml/20190731160618.png" alt><br>KL divergence<br>Similarity Measure<br>$S(x^i,x^j)=\exp (-||x^i-x^j||_ {2})$.<br>SNE: $S’(z^i,z^j$=\exp(-||z^i-z^j||_ 2)$.<br>t-SNE: $S’(z^i,z^j)=1/1+||z^i-z^j||_ 2$.</li>
+</ul>
+<h2 id="Unsupervised-Learning-Deep-Auto-encoder"><a href="#Unsupervised-Learning-Deep-Auto-encoder" class="headerlink" title="Unsupervised Learning: Deep Auto-encoder"></a>Unsupervised Learning: Deep Auto-encoder</h2><h3 id="Auto-encoder"><a href="#Auto-encoder" class="headerlink" title="Auto-encoder"></a>Auto-encoder</h3><p>找一个NN encoder和NNdecoder，将input转成一个code再转回成input，就可以两个连起来一起train<br>中间的是Bottleneck later<br>the auto-encoder can be deep</p>
+<p>应用<br>文字处理<br>图片搜索<br>Pre-training DNN</p>
+<p>变种<br>de-noising auto-encoder<br>contractive auto-endoer</p>
+<p>Auto-endoer for CNN<br>CNN - unpooling<br>记录一下maxmap其他位置全补零，或全填最大值</p>
+<p>CNN - Deconvolution<br>Actually, deconvolution is convolution</p>
+<h2 id="Unsupervised-Learning-Deep-Generative-Model"><a href="#Unsupervised-Learning-Deep-Generative-Model" class="headerlink" title="Unsupervised Learning - Deep Generative Model"></a>Unsupervised Learning - Deep Generative Model</h2><h3 id="Creation"><a href="#Creation" class="headerlink" title="Creation"></a>Creation</h3><p><a href="https://openai.com/blog/generative-models" target="_blank" rel="noopener">generative model</a></p>
+<h3 id="PixelRNN"><a href="#PixelRNN" class="headerlink" title="PixelRNN"></a>PixelRNN</h3><p>To Create an image, generating a pixel each time<br>It difficult to evaluate generation.</p>
+<h3 id="Variational-Autoencoder-VAE"><a href="#Variational-Autoencoder-VAE" class="headerlink" title="Variational Autoencoder (VAE)"></a>Variational Autoencoder (VAE)</h3><p><img src="/img/note-ml/20190802104618.png" alt></p>
+<p>$m$是原来的encoder orginal code<br>$c$是noise<br>$\sigma$是The variance of noise is automatically learned<br>$e$是从normal distribution sample出来的值<br>注意要minimize的东西，如果不加前面的可能$\sigma$就是0了，让$\sigma$接近0，variance接近1</p>
+<p>Why VAE？<br>Estimate the probability distribution.<br>用的方法就是Gasussian Mixture Model<br>$P(x)=\sum_{m} P(m)P(x|m)$.<br>$m\sim P(m)\text{(multinomial), m is a integer}$.<br>$x|m\sim N(\mu^m,\Sigma^m)$.<br>Each x you generate is from a mixture.<br>Distributed representation is better than cluster.<br>$z\sim N(0,I)$. $z$ is a vector from normal distribution.<br>$x|z\sim N(\mu(z),\sigma(z))$. Each dimension of $z$ represents an attribute. $\mu(z),\sigma(z)$ is going to be estimated, 可以用Neural Network来找这个function<br>$P(x)=\int_{z}P(z)P(x|z)\text{d}z$.<br>$L=\sum_{z}\log P(x)$. Maximizing the likelihood of the observed $x$.<br>Tuning the parameters to maximize likelihood $L$.<br>Another distribution $q(z|x)$，$z|x=N(\mu’(x),\sigma’(x))$. 这是一个相反的Network，这是VAE的encoder，上面的是decoder</p>
+<p>Maximizing Likelihood<br>$P(x)=\int_{z}P(z)P(x|z)\text{d}z$.<br>$L=\sum_{z}\log P(x)$<br>$\log P(x)=\int_{z}q(z|x)\log P(x)\text{d}z=\int_{z}q(z|x)\log\left (\frac{P(z,x)}{P(z|x)}\right )\text{d}z$. $q(z|x)$ can be any distribution<br>$=\int_{z}q(z|x)\log\left( \frac{P(z,x)}{q(z|x)}\frac{q(z|x)}{P(z|x)} \right )\text{d}z$.<br>$=\int_{z}q(z|x)\log\left ( \frac{P(z,x)}{q(z|x)}\right )\text{d}z+\int_{z}q(z|x)\log\left ( \frac{q(z|x)}{P(z|x)}\right )\text{d}z$. 最后一项，是KL divergence, $KL(q(z|x)|| P(z|x)) \geqslant 0$<br>$\geqslant \int_{z}q(z|x)\log \left( \frac{P(x|z)P(z)}{q(z|x)}\right )$. lower bound $L_b$，就是上一行的第一项<br>所以<br>$\log P(x)=L_b+KL(q(z|x)||P(z|x))$.<br>$L_b=\int_{z}q(z|x)\log \left (\frac{P(x|z)P(z)}{q(z|x)} \right )\text{d}z$. Find $P(x|z)$ and $q(z|x)$ maximizing $L_b$.<br>$q(z|x)$ will be an approximation of $P(z|x)$ in the end.<br>$L_b=\int_{z}q(z|x)\log \left (\frac{P(x|z)P(z)}{q(z|x)} \right )\text{d}z$.<br>$=\int_{z}q(z|x)\log P(x|z)\text{d}z+\int_{z}q(z|x)\log \left ( \frac{P(z)}{q(z|x)}\right )\text{d}z$. $KL(q(z|x) || P(z))$.<br>Minimizing $KL(q(z|x)||P(z))$, $q(z|x)$是在一个Neural Network里面的，这个相当于VAE中Minimize $\sum{i=1}^{3}(\exp (\sigma_i)-(1+\sigma_i)+(m_i)^2)$.<br>Maximizing $\int_{z}q(z|x)\log P(x|z)\text{d}z=E_{q(z|x)}[\log P(x|z)]$<br><img src="/img/note-ml/20190806085543.png" alt><br>这是Auto-encoder做的事情，让输入和输出越接近越好.</p>
+<p>Conditional VAE<br>抽出特征生成风格的图片</p>
+<p>Problem of VAE<br>It does not really try to simulate real images.<br>VAE may just memorize the existing images, instead of generating new images.</p>
+<h3 id="Generative-Adversarial-Network-GAN"><a href="#Generative-Adversarial-Network-GAN" class="headerlink" title="Generative Adversarial Network (GAN)"></a>Generative Adversarial Network (GAN)</h3><p>最早论文 Ian J. Good fellow,Jean Pouget-Abadie,Mehdi Mirza,Bing Xu,David Warde-Farley,Sherjil Ozair,Aaron Courville,Yoshua Bengio, Generative Adversarial Networks, arXivpreprint 2014</p>
+<p>GAN 分为两个部分，Generator 和 Discriminator.<br>Generator从未看过real data，来生成一组图片<br>Discriminator看过，它来做一个二元分类的问题，来判断Generator生成的data是否是real data(real or fake)<br>这时候再来train generator， “Tuning” the parameters of generator， 希望让 The output be classified as “real” (as close to 1 as possible)，这时候也要让Discriminator的参数fix保持不变，以此往复。</p>
+<p>目前存在的问题就是，可以骗过Discriminator的图片，不一定是真的图片，可能是一些奇怪的东西<br>还有就是Generator可能太弱，却依然可以骗过Discriminator</p>
+<h2 id="Transfer-Learning"><a href="#Transfer-Learning" class="headerlink" title="Transfer Learning"></a>Transfer Learning</h2><p>Transfer Learning 迁移学习<br>Data not directly related to the task considered.</p>
+<p>Why? 一般原因都是数据难收集比较少之类的</p>
+<p><img src="/img/note-ml/20190806110040.png" alt><br>Target Data是我们真正要的Data，Source Data是没有直接关系的Data<br>根据有无label分为4种情况，分别用对应的方法</p>
+<h3 id="Model-Fine-tuning"><a href="#Model-Fine-tuning" class="headerlink" title="Model Fine-tuning"></a>Model Fine-tuning</h3><ul>
+<li>Task description<ul>
+<li>Target data: $(x^t, y^t)$. Very little</li>
+<li>Source data: $(x^s, y^s)$. A large amount<br>One-shot learning: only a few examples in target domain</li>
+</ul>
+</li>
+<li>Example: (supervised) speaker adaption<ul>
+<li>Target data: audio data and its transcriptions of specific user</li>
+<li>Source data: audio data and transcriptions from many speakers</li>
+</ul>
+</li>
+<li>Idea: training a model by source data, then fine-tune the model by target data</li>
+<li>Challenge: only limited target data, so be careful about overfitting</li>
+</ul>
+<p>Conservative Training<br><img src="/img/note-ml/20190806111041.png" alt><br>让两个Model的output相近</p>
+<p>Layer Transfer<br><img src="/img/note-ml/20190806111243.png" alt><br>把几个Layer直接copy，光去train没有被copy的Layer，考虑的参数比较少<br>Which layer can be transferred (copied)?</p>
+<ul>
+<li>Speech: usually copy the last few layers</li>
+<li>Image: usually copy the first few layers</li>
+</ul>
+<h3 id="Multitask-Learning"><a href="#Multitask-Learning" class="headerlink" title="Multitask Learning"></a>Multitask Learning</h3><p>The multi-layer structure makes NN suitable for multitake learning.<br>不同的task有几个相同的Layer共用</p>
+<p>常用的方向就是多语言辨识</p>
+<p>Progressive Neural Networks</p>
+<h3 id="Domain-adversarial-training"><a href="#Domain-adversarial-training" class="headerlink" title="Domain-adversarial training"></a>Domain-adversarial training</h3><p>Task description</p>
+<ul>
+<li>Source data: $(x^s, y^s)$. Training Data.</li>
+<li>Target data: $(x^t)$. Testing Data. They are mismatched.</li>
+</ul>
+<p>Similar to GAN. 需要通过一个Domain classifier.<br><img src="/img/note-ml/20190806115242.png" alt><br>训练过程<br><img src="/img/note-ml/20190806115830.png" alt></p>
+<h3 id="Zero-shot-Learning"><a href="#Zero-shot-Learning" class="headerlink" title="Zero-shot Learning"></a>Zero-shot Learning</h3><p>Task description</p>
+<ul>
+<li>Source data: $(x^s, y^s)$. Training Data.</li>
+<li>Target data: $(x^t)$. Testing Data. They are different tasks.</li>
+</ul>
+<p>具体就是把Attribute embedding，然后在查database，让一个物品的图和他这类物品的attribute接近，两个function投影到embedding space上，也就是两个NN投影后的结果越接近越好。</p>
+<p>Training Target: $f(x^n)$ and $g(y^n)$ as close as possible.</p>
+<p>What if we don’t have database ? 换Attribute成Word vector.</p>
+<p>$f^{\ast}, g^{\ast}=\arg \min_ {f,g}\sum_{n} || f(x^n)-g(y^n) ||_ {2}$. 这样是不行的，需要修改成下面的样子<br>$f^{\ast}, g^{\ast}=\arg \min_ {f,g}\sum_{n} \max (0, k-f(x^n)\cdot g(y^n) + \max_ {m\neq n} f(x^n)\cdot g(y^m)), k\text{ Margin you define}$.<br>Zero Loss: $k-f(x^n)\cdot g(y^n) + \max_ {m\neq n} f(x^n)\cdot g(y^m) &lt; 0$.<br>$f(x^n)\cdot g(y^n) - \max_ {m\neq n} f(x^n)\cdot g(y^m)&gt;k$. 把相对应的接近，不相对应的拆散</p>
+<p>Convex Combination of Semantic Embedding</p>
+<p>Example 就是语言的翻译，可以翻译一个从未见过的翻译方向，但翻译的两个语言都有其他语言翻译过</p>
+<h2 id="Support-Vector-Machine-SVM"><a href="#Support-Vector-Machine-SVM" class="headerlink" title="Support Vector Machine(SVM)"></a>Support Vector Machine(SVM)</h2><p>Hinge Loss + Kernel Method = Support Vector Machine(SVM) 支持向量机</p>
+<h3 id="Hinge-Loss"><a href="#Hinge-Loss" class="headerlink" title="Hinge Loss"></a>Hinge Loss</h3><p><img src="/img/note-ml/20190807094809.png" alt><br>Hinge Loss就是最上面的那个Loss Function $l(f(x^n), \hat{y}^n)=\max (0, 1-\hat{y}^nf(x^n))$</p>
+<h3 id="Linear-SVM"><a href="#Linear-SVM" class="headerlink" title="Linear SVM"></a>Linear SVM</h3><p>Step1: Function(Model)<br>$f(x)=\sum_{i}w_ix_i+b=\begin{bmatrix}w\\ b\end{bmatrix}\cdot \begin{bmatrix}x\\ 1\end{bmatrix}=w^{T}x$.<br>这里把第一个向量看成新的$w$，第二个向量看成是$x$.</p>
+<p>Step2: Loss Function<br>$L(f)=\sum_{n}l(f(x^n), \hat{y}^n)+\lambda \begin{Vmatrix}w\end{Vmatrix}_ 2$.<br>$l(f(x^n), \hat{y}^n)=\max (0, 1-\hat{y}^nf(x^n))$.<br>是一个convex function</p>
+<p>Step3: Gradient Descent<br>$\frac{\partial l(f(x^n), \hat{y}^n)}{\partial w_i}=\frac{\partial l(f(x^n), \hat{y}^n)}{\partial f(x^n)}\frac{\partial f(x^n)}{\partial w_i}$.<br>因为$f(x^n)=w^{T}\cdot x^n$.后面那项的值自然就是$x^n_i$.<br>而前面那项<br>$\frac{\partial \max(0, 1-\hat{y}^nf(x^n))}{\partial f(x^n)}=\left\{\begin{matrix}-\hat{y}^n, &amp; \hat{y}^nf(x^n)<1 \text{or}1-\hat{y}^nf(x^n)>0\\ 0, &amp; \text{otherwise}\end{matrix}\right.$.<br>$\frac{\partial L(f)}{\partial w_i}=\sum_{n}-\delta(\hat{y}^nf(x^n)&lt;1)\hat{y}^nx^n_i$.</1></p>
+<p>Another formulation<br>$L(f)=\sum_{n}\varepsilon ^n+\lambda \begin{Vmatrix}w\end{Vmatrix}_ 2,\varepsilon^n=\max(0,1-\hat{y}^nf(x))$.<br>$\varepsilon ^n\geqslant 0, \varepsilon ^n\geqslant 1-\hat{y}^nf(x)\rightarrow \hat{y}^nf(x)\geqslant 1-\varepsilon^n$.<br>因为要minimize Loss，所以下面这个$\varepsilon^n$的表示形式和上面的是相同的.<br>$\varepsilon ^n$: slack variable. Quadratic Programming(QP) Problem.</p>
+<h3 id="Dual-Representation"><a href="#Dual-Representation" class="headerlink" title="Dual Representation"></a>Dual Representation</h3><p>Kernel Method<br>Step1:<br>$w^{\ast}=\sum_{n}a^{\ast}_ n x^n$. Linear combination of data points.<br>Hinge Loss的时候，$\alpha$是sparse的，有很多为0<br>所以写成向量形式$w=\sum_{n}a_n x^n=X\alpha$.<br>$f(x)=w^{T}x=\alpha^{T}X^{T}x$. 最后得到的就是一个scalar<br>$f(x)=\sum_{n}\alpha_n(x^n\cdot x)=\sum_{n}\alpha_{n}K(x^n,x)$. $K(x^n,x)$就是Kernel Function,是$x^n$和$x$的inner product.<br>Step2,3: Find $\{\alpha_1^{\ast},\alpha_2^{\ast},\cdots, \alpha_N^{\ast}\}$.<br>We don’t really need to know vector $x$.<br>We only need to know the inner project between a pair of vectors $x$ and $z$. $K(x,z)$. Kernel Trick</p>
+<p>Directly computing $K(x,z)$ can be faster than “feature transformation + inner product” sometimes.<br>就是直接计算$K(x,z)$，可能要比eature transformation + inner product计算快上许多<br>比如$K(x,z)=\phi(x)\cdot \phi(z)=(x\cdot z)^2$.</p>
+<p>Radial Basic Function Kernel<br>$K(x,z)=\exp \left ( -\frac{1}{2}\begin{Vmatrix}x-z\end{Vmatrix}_ 2\right )=\phi (x)\cdot \phi (z)$. $\phi (\ast)$ has inf dim.<br>$=\exp \left ( -\frac{1}{2}\begin{Vmatrix}x\end{Vmatrix}_ 2-\frac{1}{2}\begin{Vmatrix}z\end{Vmatrix}_ 2+x\cdot z\right )$.<br>$=\exp \left(-\frac{1}{2}\begin{Vmatrix}x\end{Vmatrix}_ 2 \right )\exp \left(-\frac{1}{2}\begin{Vmatrix}z\end{Vmatrix}_ 2 \right )\exp(x\cdot z)=C_xC_z\exp (x\cdot z)=C_xC_z\sum_{i=0}^{\infty}\frac{(x\cdot z)^i}{i!}$. Tayor展开</p>
+<p>Sigmoid Kernel<br>$K(x,z)=\tanh (x\cdot z)$.<br>When using sigmoid kernel, we have a 1 hidden layer network.<br><img src="/img/note-ml/20190807141148.png" alt></p>
+<p>You can directly design $K(x,z)$ instead of considering $\phi (x), \phi (z)$.<br>When $x$ is structured object like sequence, hard to design $\phi(x)$.<br>$K(x,z)$ is something like similarity. (Mercer’s theory can check)</p>
+<h2 id="Recurrent-Neural-Network"><a href="#Recurrent-Neural-Network" class="headerlink" title="Recurrent Neural Network"></a>Recurrent Neural Network</h2><p>一种有记忆的NN，可以根据上下文判断的NN</p>
+<p>The output of hidden layer are stored in the memory.<br>Memory can be considered as  another input.</p>
+<p>All the weights are “1”, no bias.<br>All activation functions are linear</p>
+<p>Changing the sequence order will change the output.</p>
+<p>Elman Network. 就是每层的output当成这层的input<br>Jordan Network. 最后的output当成input</p>
+<h3 id="Bidirectional-RNN"><a href="#Bidirectional-RNN" class="headerlink" title="Bidirectional RNN"></a>Bidirectional RNN</h3><p>双向的RNN，扩大看到的范围，不仅可以从上文还可以从下文看</p>
+<h3 id="Long-Short-term-Memory-LSTM"><a href="#Long-Short-term-Memory-LSTM" class="headerlink" title="Long Short-term Memory(LSTM)"></a>Long Short-term Memory(LSTM)</h3><p><img src="/img/note-ml/20190808094431.png" alt><br><img src="/img/note-ml/20190808095212.png" alt><br>这三个参数，是根据输入的vector的transpose得到的</p>
+<h3 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h3><p>用的也是Gradient Descent，但是是一种Backpropagation through time(BPTT)</p>
+<p>RNN也是比较难Train的<br>The error surface is rough.<br>RNN的Total Loss是非常陡峭的，Error Surface有些地方非常平坦，有些地方非常陡峭<br>有个方法就是Clipping，当Gradient超过某一个值的时候，就等于这个值，也就是设置个上限，不至于参数飞出去</p>
+<h3 id="Helpful-Techniques"><a href="#Helpful-Techniques" class="headerlink" title="Helpful Techniques"></a>Helpful Techniques</h3><p>Long Short-term Memory(LSTM)</p>
+<ul>
+<li>Can deal with gradient vanishing(not gradient explode).</li>
+<li>Memory and input are added.</li>
+<li>The influence never disappears unless forget gate is closed.</li>
+</ul>
+<p>Gated Recurrent Unit(GRU)</p>
+<p>Clockwise RNN<br>Structurally Constrained Trcurrent Network(SCRN)<br>Vanilla RNN Initialized with Identity matrix + ReLU activation function.</p>
+<h3 id="More-Application"><a href="#More-Application" class="headerlink" title="More Application"></a>More Application</h3><p>Many to One : Input is a vector sequence, but output is only one vector</p>
+<ul>
+<li>Sentiment Analysis</li>
+<li>Key Term Extraction</li>
+</ul>
+<p>Many to Many : Both input and output are both sequences, but the output is shorter.</p>
+<ul>
+<li>Speech Recognition<br>但是这个，在每一小段时间中识别，最后去除重复的不能识别叠字</li>
+<li>Connectionist Temporal Classification(CTC)<br>在之间可以添加符号null，可以解决叠字问题</li>
+<li>Sequence to sequence learning<br>Both input and output are both sequences with different lengths.<br>比如做Machine Translation</li>
+<li>Beyond Sequence<br>Syntactic parsing</li>
+<li>Sequence-to-sequence Auto-encoder - Text<br>To understand the meaning of a word sequence, the order of the words can not be ignored.</li>
+<li>Sequence-to-sequence Auto-encoder - Speech<br>Dimension reduction for a sequence with variable length audio segments(word-level) -&gt; fixed-length vector</li>
+</ul>
+<h3 id="Attention-based-Model"><a href="#Attention-based-Model" class="headerlink" title="Attention-based Model"></a>Attention-based Model</h3><p>Reading Head Controller<br>Writing Head Controller</p>
+<p>Neural Turing Machine</p>
+<p>常用在Reading Comprehension</p>
+<h3 id="Integrated-Together"><a href="#Integrated-Together" class="headerlink" title="Integrated Together"></a>Integrated Together</h3><p>deep learning和structured learning结合起来。input features 先通过RNN/LSTM，然后RNN/LSTM的output再做为HMM/svm的input。用RNN/LSTM的output来定义HMM/structured SVM的evaluation function，如此就可以同时享有deep learning的好处，也可以有structure learning的好处。</p>
+<p>下面讨论了一下structure Learning是否practical的问题</p>
+<h2 id="Ensemble"><a href="#Ensemble" class="headerlink" title="Ensemble"></a>Ensemble</h2><p>集成学习</p>
+<h3 id="Framework-of-Ensemble"><a href="#Framework-of-Ensemble" class="headerlink" title="Framework of Ensemble"></a>Framework of Ensemble</h3><p>Get a set of classifiers. They should be diverse.<br>Aggregate the classifiers(properly).</p>
+<p>就是多个model一起搞的感觉</p>
+<h3 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h3><p>将几个model的结果平均，这样如果你的model非常复杂，很容易overfit那么这是很有效的，因为bias比较小，variance比较大。</p>
+<p>Decision Tree 就比较容易overfit，需要做bagging<br>这个就简单讲了一下<br><img src="/img/note-ml/20190820213252.png" alt></p>
+<p>Random Forest</p>
+<p>Descision Tree is easy to achieve 0% error rate on training data, if each training example has its own leaf..<br>Random forest: Bagging of decision tree</p>
+<ul>
+<li>Resampling trainging data is not sufficient.</li>
+<li>Randomly restrict the features/questions used in each split.<br>Out-of-bag validation for bagging</li>
+</ul>
+<h3 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h3><p>Improving Weak Classifiers<br><img src="/img/note-ml/20190820214805.png" alt><br><img src="/img/note-ml/20190820215542.png" alt></p>
+<p>其中最经典的一个做法<br><img src="/img/note-ml/20190820215551.png" alt></p>
+<p>Math Warning，说实话这段没打听懂<br><img src="/img/note-ml/20190820220738.png" alt><br><img src="/img/note-ml/20190820220746.png" alt><br><img src="/img/note-ml/20190820220755.png" alt><br><img src="/img/note-ml/20190820220805.png" alt><br>这张图片里的空白在下张图片中出现了<br><img src="/img/note-ml/20190820220833.png" alt></p>
+<p>证明地方真的晕了，改天看8…</p>
+<h3 id="Stacking"><a href="#Stacking" class="headerlink" title="Stacking"></a>Stacking</h3><p>Majority Vote</p>
+<h2 id="Deep-Reinforcement-Learning"><a href="#Deep-Reinforcement-Learning" class="headerlink" title="Deep Reinforcement Learning"></a>Deep Reinforcement Learning</h2><p>这里就略讲了一下<br>主要是几个部分<br>Environment-&gt;observation/state &amp; reward -&gt; Agent -&gt; action -&gt; Environment<br>要做的就是maximize reward</p>
+<p>难点<br>Reward delay<br>Agent’s actions affect the subsequent data it receives</p>
+<p>方法<br>就是Policy-based 和Value-based<br>先有Valued-based的方法，再有Policy-based的方法。在Policy-based的方法里面，会learn一个负责做事的Actor，在Valued-based的方法会learn一个不做事的Critic，专门批评不做事的人。我们要把Actor和Critic加起来叫做Actor+Critic的方法。<br>Asynchronous Advantage Actor-Critic(A3C)这个方法比较强</p>
+<p>reference</p>
+<ul>
+<li>Textbook: Reinforcement Learning: An Introduction <a href="https://webdocs.cs.ualberta.ca/~sutton/book/the-book.html" target="_blank" rel="noopener">https://webdocs.cs.ualberta.ca/~sutton/book/the-book.html</a></li>
+<li>Lectures of David Silver <a href="http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html" target="_blank" rel="noopener">http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html</a> (10 lectures, 1:30 each) <a href="http://videolectures.net/rldm2015_silver_reinforcement_learning/" target="_blank" rel="noopener">http://videolectures.net/rldm2015_silver_reinforcement_learning/</a> (Deep Reinforcement Learning )</li>
+<li>Lectures of John Schulman <a href="https://youtu.be/aUrX-rP_ss4" target="_blank" rel="noopener">https://youtu.be/aUrX-rP_ss4</a></li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>李宏毅，机器学习2017 fall，<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html" target="_blank" rel="noopener">http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML17_2.html</a>，台湾大学</li>
+<li><a href="https://datawhalechina.github.io/leeml-notes/#/" target="_blank" rel="noopener">https://datawhalechina.github.io/leeml-notes/#/</a></li>
+</ul>
+<h2 id="Feeling"><a href="#Feeling" class="headerlink" title="Feeling"></a>Feeling</h2><p>感觉台湾腔好可爱啊哈哈哈哈哈哈哈哈哈哈</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+          
+            <a href="/tags/machinelearning/" rel="tag"><i class="fa fa-tag"></i> machinelearning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/esp-wifi/" rel="next" title="ESP8266WiFi模块">
+                <i class="fa fa-chevron-left"></i> ESP8266WiFi模块
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/note-python/" rel="prev" title="Python笔记">
+                Python笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="gitalk-container"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
+          <p class="site-author-name" itemprop="name">北屿</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">70</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://baidu.com/" title="欢迎友链qwq" target="_blank">欢迎友链qwq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://borber.cn/" title="BORBER" target="_blank">BORBER</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mon-soon.github.io/" title="mon-soon" target="_blank">mon-soon</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-amp-Learning-Map"><span class="nav-number">1.</span> <span class="nav-text">Overview &amp; Learning Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Next-Step-for-Machine-Learning"><span class="nav-number">2.</span> <span class="nav-text">The Next Step for Machine Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression"><span class="nav-number">3.</span> <span class="nav-text">Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-Model-模型"><span class="nav-number">3.1.</span> <span class="nav-text">Step1: Model 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Goodness-of-Function"><span class="nav-number">3.2.</span> <span class="nav-text">Step2: Goodness of Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Best-Function"><span class="nav-number">3.3.</span> <span class="nav-text">Step3: Best Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient-Descent"><span class="nav-number">3.4.</span> <span class="nav-text">Gradient Descent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generalization"><span class="nav-number">3.5.</span> <span class="nav-text">Generalization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Selection"><span class="nav-number">3.6.</span> <span class="nav-text">Model Selection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redesign-the-Model"><span class="nav-number">3.7.</span> <span class="nav-text">Redesign the Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regularization"><span class="nav-number">3.8.</span> <span class="nav-text">Regularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo"><span class="nav-number">3.9.</span> <span class="nav-text">Demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bias-and-Variance"><span class="nav-number">4.</span> <span class="nav-text">Bias and Variance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review"><span class="nav-number">4.1.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Estimator"><span class="nav-number">4.2.</span> <span class="nav-text">Estimator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variance"><span class="nav-number">4.3.</span> <span class="nav-text">Variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bias"><span class="nav-number">4.4.</span> <span class="nav-text">Bias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-Bias"><span class="nav-number">4.5.</span> <span class="nav-text">Large Bias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-variance"><span class="nav-number">4.6.</span> <span class="nav-text">Large variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Selection-1"><span class="nav-number">4.7.</span> <span class="nav-text">Model Selection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Descent-1"><span class="nav-number">5.</span> <span class="nav-text">Gradient Descent</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip-1-Tuning-your-learning-rate"><span class="nav-number">5.1.</span> <span class="nav-text">Tip 1: Tuning your learning rate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adagrad"><span class="nav-number">5.2.</span> <span class="nav-text">Adagrad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip-2-Stochastic-Gradient-Descent"><span class="nav-number">5.3.</span> <span class="nav-text">Tip 2: Stochastic Gradient Descent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip-3-Feature-Scaling"><span class="nav-number">5.4.</span> <span class="nav-text">Tip 3: Feature Scaling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Theory"><span class="nav-number">5.5.</span> <span class="nav-text">Theory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification-Probabilistic-Generative-Model"><span class="nav-number">6.</span> <span class="nav-text">Classification: Probabilistic Generative Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ideal-Alternatives"><span class="nav-number">6.1.</span> <span class="nav-text">Ideal Alternatives</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generative-model"><span class="nav-number">6.2.</span> <span class="nav-text">Generative model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prior"><span class="nav-number">6.3.</span> <span class="nav-text">Prior</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modifying-Model"><span class="nav-number">6.4.</span> <span class="nav-text">Modifying Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Posterior-Probability"><span class="nav-number">6.5.</span> <span class="nav-text">Posterior Probability</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification-Logistic-Regression"><span class="nav-number">7.</span> <span class="nav-text">Classification: Logistic Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logistic-Regression-Square-Error"><span class="nav-number">7.1.</span> <span class="nav-text">Logistic Regression + Square Error ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Discriminative-v-s-Generative"><span class="nav-number">7.2.</span> <span class="nav-text">Discriminative v.s. Generative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-class-Classification"><span class="nav-number">7.3.</span> <span class="nav-text">Multi-class Classification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Limitation-of-Logistic-Regression"><span class="nav-number">7.4.</span> <span class="nav-text">Limitation of Logistic Regression</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Learning"><span class="nav-number">8.</span> <span class="nav-text">Deep Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ups-and-downs-of-Deep-Learning"><span class="nav-number">8.1.</span> <span class="nav-text">Ups and downs of Deep Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-Step-of-Deep-Learning"><span class="nav-number">8.2.</span> <span class="nav-text">Three Step of Deep Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fully-Connect-Feedforward-Network"><span class="nav-number">8.3.</span> <span class="nav-text">Fully Connect Feedforward Network</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpropagation"><span class="nav-number">9.</span> <span class="nav-text">Backpropagation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Chain-Rule"><span class="nav-number">9.1.</span> <span class="nav-text">Chain Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keras"><span class="nav-number">9.2.</span> <span class="nav-text">Keras</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mini-batch"><span class="nav-number">9.3.</span> <span class="nav-text">Mini-batch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tip-for-Deep-Learning"><span class="nav-number">10.</span> <span class="nav-text">Tip for Deep Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recipe-of-Deep-Learning"><span class="nav-number">10.1.</span> <span class="nav-text">Recipe of Deep Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bad-Results-on-Training-Data"><span class="nav-number">10.2.</span> <span class="nav-text">Bad Results on Training Data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Rectified-Linear-Unit-ReLU"><span class="nav-number">10.2.1.</span> <span class="nav-text">Rectified Linear Unit(ReLU)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maxout"><span class="nav-number">10.2.2.</span> <span class="nav-text">Maxout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RMSProp"><span class="nav-number">10.2.3.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Momentum"><span class="nav-number">10.2.4.</span> <span class="nav-text">Momentum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adam-RMSProp-Momentum"><span class="nav-number">10.2.5.</span> <span class="nav-text">Adam: RMSProp + Momentum</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bad-Results-on-Testing-Data"><span class="nav-number">10.3.</span> <span class="nav-text">Bad Results on Testing Data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Early-Stopping"><span class="nav-number">10.3.1.</span> <span class="nav-text">Early Stopping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Regularization-1"><span class="nav-number">10.3.2.</span> <span class="nav-text">Regularization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dropout"><span class="nav-number">10.3.3.</span> <span class="nav-text">Dropout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo-1"><span class="nav-number">10.4.</span> <span class="nav-text">Demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convolutional-Neural-Network"><span class="nav-number">11.</span> <span class="nav-text">Convolutional Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-CNN-for-image"><span class="nav-number">11.1.</span> <span class="nav-text">Why CNN for image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-whole-CNN"><span class="nav-number">11.2.</span> <span class="nav-text">The whole CNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN-Convolution"><span class="nav-number">11.3.</span> <span class="nav-text">CNN - Convolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN-Colorful-image"><span class="nav-number">11.4.</span> <span class="nav-text">CNN - Colorful image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN-v-s-Fully-connected-network"><span class="nav-number">11.5.</span> <span class="nav-text">CNN v.s. Fully connected network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN-Max-Pooling"><span class="nav-number">11.6.</span> <span class="nav-text">CNN - Max Pooling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flatten"><span class="nav-number">11.7.</span> <span class="nav-text">Flatten</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN-in-Keras"><span class="nav-number">11.8.</span> <span class="nav-text">CNN in Keras</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-does-CNN-learn"><span class="nav-number">11.9.</span> <span class="nav-text">What does CNN learn?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo-2"><span class="nav-number">11.10.</span> <span class="nav-text">Demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-Deep-Learning"><span class="nav-number">12.</span> <span class="nav-text">Why Deep Learning ?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Modularization"><span class="nav-number">12.1.</span> <span class="nav-text">Modularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Universality-Theorem"><span class="nav-number">12.2.</span> <span class="nav-text">Universality Theorem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End-to-end-Learning"><span class="nav-number">12.3.</span> <span class="nav-text">End-to-end Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Semi-supervised-Learning"><span class="nav-number">13.</span> <span class="nav-text">Semi-supervised Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">13.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semi-supervised-Learning-for-Generative-Model"><span class="nav-number">13.2.</span> <span class="nav-text">Semi-supervised Learning for Generative Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semi-supervised-Learning-Low-density-Separation"><span class="nav-number">13.3.</span> <span class="nav-text">Semi-supervised Learning - Low-density Separation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Self-training"><span class="nav-number">13.3.1.</span> <span class="nav-text">Self-training</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Entropy-based-Regularization"><span class="nav-number">13.3.2.</span> <span class="nav-text">Entropy-based Regularization</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semi-supervosed-Learning-Smoothness-Assumption"><span class="nav-number">13.4.</span> <span class="nav-text">Semi-supervosed Learning Smoothness Assumption</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semi-supervised-Learning-Better-Representation"><span class="nav-number">13.5.</span> <span class="nav-text">Semi-supervised Learning - Better Representation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Learning-Linear-Methods"><span class="nav-number">14.</span> <span class="nav-text">Unsupervised Learning - Linear Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unsupercised-Learning"><span class="nav-number">14.1.</span> <span class="nav-text">Unsupercised Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clustering"><span class="nav-number">14.2.</span> <span class="nav-text">Clustering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distributed-Representation"><span class="nav-number">14.3.</span> <span class="nav-text">Distributed Representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dimension-Reduction"><span class="nav-number">14.4.</span> <span class="nav-text">Dimension Reduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-component-analysis-PCA"><span class="nav-number">14.5.</span> <span class="nav-text">Principle component analysis(PCA)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PCA-Another-Point-of-View"><span class="nav-number">14.6.</span> <span class="nav-text">PCA - Another Point of View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weakness-of-PCA"><span class="nav-number">14.7.</span> <span class="nav-text">Weakness of PCA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-happens-to-PCA"><span class="nav-number">14.8.</span> <span class="nav-text">What happens to PCA?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Matrix-Factorization"><span class="nav-number">14.9.</span> <span class="nav-text">Matrix Factorization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Learning-Word-Embedding"><span class="nav-number">15.</span> <span class="nav-text">Unsupervised Learning: Word Embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Word-Embedding"><span class="nav-number">15.1.</span> <span class="nav-text">Word Embedding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-exploit-the-context"><span class="nav-number">15.2.</span> <span class="nav-text">How to exploit the context</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Prediction-based"><span class="nav-number">15.2.1.</span> <span class="nav-text">Prediction based</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Learning-Neighbor-Embedding"><span class="nav-number">16.</span> <span class="nav-text">Unsupervised Learning: Neighbor Embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Manifold-Learning"><span class="nav-number">16.1.</span> <span class="nav-text">Manifold Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Laplacian-Eigenmaps"><span class="nav-number">16.2.</span> <span class="nav-text">Laplacian Eigenmaps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T-distributed-Stochastic-Neighbor-Embedding-t-SNE"><span class="nav-number">16.3.</span> <span class="nav-text">T-distributed Stochastic Neighbor Embedding(t-SNE)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Learning-Deep-Auto-encoder"><span class="nav-number">17.</span> <span class="nav-text">Unsupervised Learning: Deep Auto-encoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Auto-encoder"><span class="nav-number">17.1.</span> <span class="nav-text">Auto-encoder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Learning-Deep-Generative-Model"><span class="nav-number">18.</span> <span class="nav-text">Unsupervised Learning - Deep Generative Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creation"><span class="nav-number">18.1.</span> <span class="nav-text">Creation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PixelRNN"><span class="nav-number">18.2.</span> <span class="nav-text">PixelRNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variational-Autoencoder-VAE"><span class="nav-number">18.3.</span> <span class="nav-text">Variational Autoencoder (VAE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generative-Adversarial-Network-GAN"><span class="nav-number">18.4.</span> <span class="nav-text">Generative Adversarial Network (GAN)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transfer-Learning"><span class="nav-number">19.</span> <span class="nav-text">Transfer Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Fine-tuning"><span class="nav-number">19.1.</span> <span class="nav-text">Model Fine-tuning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multitask-Learning"><span class="nav-number">19.2.</span> <span class="nav-text">Multitask Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Domain-adversarial-training"><span class="nav-number">19.3.</span> <span class="nav-text">Domain-adversarial training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zero-shot-Learning"><span class="nav-number">19.4.</span> <span class="nav-text">Zero-shot Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Support-Vector-Machine-SVM"><span class="nav-number">20.</span> <span class="nav-text">Support Vector Machine(SVM)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hinge-Loss"><span class="nav-number">20.1.</span> <span class="nav-text">Hinge Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-SVM"><span class="nav-number">20.2.</span> <span class="nav-text">Linear SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dual-Representation"><span class="nav-number">20.3.</span> <span class="nav-text">Dual Representation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recurrent-Neural-Network"><span class="nav-number">21.</span> <span class="nav-text">Recurrent Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bidirectional-RNN"><span class="nav-number">21.1.</span> <span class="nav-text">Bidirectional RNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Long-Short-term-Memory-LSTM"><span class="nav-number">21.2.</span> <span class="nav-text">Long Short-term Memory(LSTM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Learning"><span class="nav-number">21.3.</span> <span class="nav-text">Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Helpful-Techniques"><span class="nav-number">21.4.</span> <span class="nav-text">Helpful Techniques</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-Application"><span class="nav-number">21.5.</span> <span class="nav-text">More Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention-based-Model"><span class="nav-number">21.6.</span> <span class="nav-text">Attention-based Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integrated-Together"><span class="nav-number">21.7.</span> <span class="nav-text">Integrated Together</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensemble"><span class="nav-number">22.</span> <span class="nav-text">Ensemble</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Framework-of-Ensemble"><span class="nav-number">22.1.</span> <span class="nav-text">Framework of Ensemble</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bagging"><span class="nav-number">22.2.</span> <span class="nav-text">Bagging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boosting"><span class="nav-number">22.3.</span> <span class="nav-text">Boosting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stacking"><span class="nav-number">22.4.</span> <span class="nav-text">Stacking</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Reinforcement-Learning"><span class="nav-number">23.</span> <span class="nav-text">Deep Reinforcement Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">24.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feeling"><span class="nav-number">25.</span> <span class="nav-text">Feeling</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">北屿</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '3bd523d04a7fcd807bd1',
+          clientSecret: '3c4d80f8fd534840b0571ebf194825129668c1fe',
+          repo: 'gitalk',
+          owner: 'beiyuouo',
+          admin: ['beiyuouo'],
+          id: md5(location.pathname),
+          abels: 'gitalk'.split(',').filter(l => l),
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

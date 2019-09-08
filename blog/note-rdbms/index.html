@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="note,database,rdbms,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="关系型数据库管理系统（Relational Database Management System，RDBMS） 亲，双语对照 名词解释 候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键 主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。 外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。 主属性 ：一个属性只要在">
+<meta name="keywords" content="note,database,rdbms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关系数据库管理系统(RDBMS)笔记">
+<meta property="og:url" content="beiyuouo.github.io/blog/note-rdbms/index.html">
+<meta property="og:site_name" content="北屿">
+<meta property="og:description" content="关系型数据库管理系统（Relational Database Management System，RDBMS） 亲，双语对照 名词解释 候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键 主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。 外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。 主属性 ：一个属性只要在">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2019-06-09T13:56:16.719Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关系数据库管理系统(RDBMS)笔记">
+<meta name="twitter:description" content="关系型数据库管理系统（Relational Database Management System，RDBMS） 亲，双语对照 名词解释 候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键 主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。 外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。 主属性 ：一个属性只要在">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/blog/note-rdbms/">
+
+
+
+
+
+
+
+  <title>关系数据库管理系统(RDBMS)笔记 | 北屿</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-145083103-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">北屿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/game/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gamepad"></i> <br>
+            
+            Game
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/note-rdbms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="北屿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北屿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关系数据库管理系统(RDBMS)笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-02T04:48:52+08:00">
+                2019-06-02
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-06-09T21:56:16+08:00">
+                2019-06-09
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关系型数据库管理系统（Relational Database Management System，RDBMS）</p>
+<p>亲，双语对照</p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><ul>
+<li>候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键</li>
+<li>主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。</li>
+<li>外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。</li>
+<li>主属性 ：一个属性只要在任何一个候选键中出现过，这个属性就是主属性。</li>
+<li>非主属性 ：与上面相反，没有在任何候选键中出现过，这个属性就是非主属性。</li>
+</ul>
+<h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><p>A data model is a description of the data in a database. In addition, the data model describes the relationship among data, and any constraints that have to be defined on the data. Data models can broadly be classified into the following categories.</p>
+<ul>
+<li>Object-based logical model: Focuses on desctibing the data, the relationship among the data, and any constraints defined.</li>
+<li>Record-based logical model: Focuses on specifying the logical structuring of the database.</li>
+</ul>
+<h3 id="ER模型-ER-Model"><a href="#ER模型-ER-Model" class="headerlink" title="ER模型(ER Model)"></a>ER模型(ER Model)</h3><p>ER模型是基于对象的逻辑模型(Object-Based Logical Model)<br>“实体”-“关系”模型，是描述数据及其联系的数据模型<br>The ER model views the real world as a collection of objects or entities and the relationship among them.</p>
+<h4 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h4><p>实体：客观存在并可以相互区分的事物<br>Entities:a thing, whick can be easily identitfied.</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>属性：实体所具有的若干特征<br>Attributes: an attribute is a property of given entity.</p>
+<h4 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h4><p>关系：实体之间的联系<br>Relationships: an association among entities.<br>A relationship type is an association of entity types. A relationship instance is an association of entity instances.<br>A relationship can associate an entity with itself.<br>关系类型： </p>
+<ul>
+<li>One-to-One</li>
+<li>One-to-Many(or Many-to-One)</li>
+<li>Many-to-Many</li>
+</ul>
+<h4 id="子类型和超类型"><a href="#子类型和超类型" class="headerlink" title="子类型和超类型"></a>子类型和超类型</h4><p>子类型是另一个实体的子集<br>A subtype is a subset of another entity.<br>超类型就是那个完整的集合咯<br>A subentity or subtype is always dependent on the supertype for its existence.The attributes of a supertype apply to all of its subtypes. The converse is not true.<br>The supertype is connected to the relationship with a line containing a crossbar, as indicated in the preceding diagram. The attributes, which describe supertype will also belong to all subtypes. The subtype is described by the attributes that are unique to it.</p>
+<h3 id="基于记录的逻辑模型-Record-Based-Logical-Model"><a href="#基于记录的逻辑模型-Record-Based-Logical-Model" class="headerlink" title="基于记录的逻辑模型(Record-Based Logical Model)"></a>基于记录的逻辑模型(Record-Based Logical Model)</h3><p>层次模型：树形结构<br>网状模型：不加任何条件限制的无向图<br>关系模型：采用二维表来表示，满足一定条件的二维表称为关系；二维表中凡能唯一标识元祖的最小属性集称为该表的键或码。</p>
+<h4 id="Hierarchical-Model-层次模型"><a href="#Hierarchical-Model-层次模型" class="headerlink" title="Hierarchical Model(层次模型)"></a>Hierarchical Model(层次模型)</h4><p>In this model, data is represented in the form of a tree, and relationships between the data are represented by links.</p>
+<h4 id="Network-Model-网状模型"><a href="#Network-Model-网状模型" class="headerlink" title=" Network Model(网状模型)"></a> Network Model(网状模型)</h4><p>In this model, the data and relationships among them are represented in the form of records and links. It is similar to a hierarchical model. However, records in a databse are represented by graphically.</p>
+<h4 id="Relational-Model-关系模型"><a href="#Relational-Model-关系模型" class="headerlink" title=" Relational Model(关系模型)"></a> Relational Model(关系模型)</h4><p>In this model, the table in a database has a fixed length record with fixed number of attributes or fields. Of these three models, the relational model is the most popular.</p>
+<h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>关系数据结构</p>
+<p>An RDBMS can be defined as a database management system where all the data visible to the user is organized strictly as tables of data values, and all the database operations work on these tables.</p>
+<p>The basic principle in a relational database is a tabular arrangement of data values. Each table in a databse has a unique table name that identifies its contents.</p>
+<p>The row(or record) in the table is called a tuple, and the column(or field) is called an attribute. Every column in a table must have a unique name. The number of tuples is called the cardinality of the table, and the number of attributes is called the degree of the table.<br>One important property of a relation is that its rows are unordered. Every table must have some column or conbination of columns that uniquely identifies each row in the table.<br>No two rows of table contain the same values in that column or column conbination. This column is called the primary key.<br>A table where every row is different from all other rows is called relation.<br>Each attribute of a table has an associated domain(域). A domain is a collection of values from which one or more attribute(columns) draw their actual values. The domain lists the possible values for an attribute. (域就是所有取值可能)</p>
+<h3 id="ER图-ER-Diagram"><a href="#ER图-ER-Diagram" class="headerlink" title="ER图(ER Diagram)"></a>ER图(ER Diagram)</h3><p>矩形框：表示实体，在框中记入实体名。<br>菱形框：表示联系，在框中记入联系名。<br>椭圆形框：表示实体或联系的属性，将属性名记入框中。对于主属性名，则在其名称下划一下划线。<br>连线：实体与属性之间；实体与联系之间；联系与属性之间用直线相连，并在直线上标注联系的类型。（对于一对一联系，要在两个实体连线方向各写1； 对于一对多联系，要在一的一方写1，多的一方写N；对于多对多关系，则要在两个实体连线方向各写N,M。)</p>
+<h3 id="关系运算-Relational-Operators"><a href="#关系运算-Relational-Operators" class="headerlink" title="关系运算(Relational Operators)"></a>关系运算(Relational Operators)</h3><h4 id="Restrict-约束限制"><a href="#Restrict-约束限制" class="headerlink" title="Restrict 约束限制"></a>Restrict 约束限制</h4><p>The restrict operator extracts specified tuple or rowss from a given relation besed on a condition.<br>约束：根据条件提取几个元组</p>
+<h4 id="Project-投影"><a href="#Project-投影" class="headerlink" title="Project 投影"></a>Project 投影</h4><p>The project operator extracts specified attributes or columns from a given relation.<br>提取几列成为新的表</p>
+<h4 id="Produce-乘"><a href="#Produce-乘" class="headerlink" title="Produce 乘"></a>Produce 乘</h4><p>The product operator joins two relations such that every tuple of the first relation is matched with every tuple of second relation. To be product compatible, the two tables must have common attributes.</p>
+<h4 id="Union-并"><a href="#Union-并" class="headerlink" title="Union 并"></a>Union 并</h4><p>The union operator builds a relation from tuples appearing in erither or both of the specified relations where as intersect operator builds a relation consisting of tuples that appear in both the relations.</p>
+<h4 id="Intersect-交"><a href="#Intersect-交" class="headerlink" title="Intersect 交"></a>Intersect 交</h4><p>The intersect operator builds a relation consisting of tuples that appear in both the relaiton.</p>
+<h4 id="Difference-差"><a href="#Difference-差" class="headerlink" title="Difference 差"></a>Difference 差</h4><p>The difference operator builds a relation of tuples appearing in the first but not in the second of the two specified relation.</p>
+<h4 id="Join-连接"><a href="#Join-连接" class="headerlink" title="Join 连接"></a>Join 连接</h4><p>The join operator builds a relation from two specified relations. This relation consists of all the possible combinations of tuples, one from each relation that satisfies the specified condition. The join operation requires a common attribute.</p>
+<h4 id="Divide-除"><a href="#Divide-除" class="headerlink" title="Divide 除"></a>Divide 除</h4><p>The divide operator takes two relations and builds another relation consisting of values of an attribute of one relation that match all the values in the other relation. The divide operation is the opposite of the product operation.</p>
+<h2 id="数据库设计-Database-design"><a href="#数据库设计-Database-design" class="headerlink" title="数据库设计(Database design)"></a>数据库设计(Database design)</h2><h3 id="将图标映射到表格"><a href="#将图标映射到表格" class="headerlink" title="将图标映射到表格"></a>将图标映射到表格</h3><p>ER图中几个重要的组成</p>
+<ul>
+<li>Regular entities</li>
+<li>Attributes</li>
+<li>Relationships</li>
+<li>Weak entities</li>
+<li>Subtypes and supertypes</li>
+</ul>
+<h4 id="Weak-entities"><a href="#Weak-entities" class="headerlink" title="Weak entities"></a>Weak entities</h4><p>A weak entities is an entity whose existence depends on some other entity. The weak entities have the composite key, part of which consists of the primary key of the entity they depend on.</p>
+<h3 id="基于逻辑的数据库设计"><a href="#基于逻辑的数据库设计" class="headerlink" title="基于逻辑的数据库设计"></a>基于逻辑的数据库设计</h3><h4 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h4><ul>
+<li>It identifies its owner entity.</li>
+<li>It refers to another entity.</li>
+<li>It simplifies the description of an entity.</li>
+</ul>
+<h4 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h4><ul>
+<li>Primary</li>
+<li>Foreign</li>
+<li>Candidate</li>
+<li>Alternate</li>
+<li>Composite</li>
+</ul>
+<p>Any attribute(or set of attributes) that uniquely identifies a row in  table is a candidate for the primary key(主键). Such an attribute is called a candidate key(候选键). One of the candidate keys is chosen to be the primary key, based on the familiarity and greater usage. Any attribute that is a candidate for the primary key but is not the primary key is called the alternate key(替代键). When the key that uniquely identifies the row of the table is made up of more than one attribute, it is called a composite key(组合键).</p>
+<h4 id="Entities"><a href="#Entities" class="headerlink" title="Entities"></a>Entities</h4><p>Some attributes may acquire further attributes to qualify themselves during databses design and become entities.</p>
+<h4 id="Subentities"><a href="#Subentities" class="headerlink" title="Subentities"></a>Subentities</h4><p>Specialization(特化) is the result of taking a subset of a higher-level entity set to form a lower-level  entity set.<br>Generalization(概化) is the result of taking the union of two or more lower-level entity set to produce a higher-level entity set. It is the opposite of specialization.</p>
+<h2 id="规范化定义-范式"><a href="#规范化定义-范式" class="headerlink" title="规范化定义(范式)"></a>规范化定义(范式)</h2><p>Normalization is a method of breaking down complex table structures into simple table structures by using certaion rules. Using this mathod, you can reduce redundancy in a table, and eliminate the problems of inconsistency and disk space usage. You can also ensure that there is no loss of information.</p>
+<p>Normalization has the following benefits</p>
+<ul>
+<li>It helps in maintaining data integrity(完整).</li>
+<li>It helps in simplifying the structure of tables, therefore, making a database more compact(简洁).</li>
+<li>It helps in reducing the null values, which reduces the complexity of data operation.</li>
+</ul>
+<p>Achieve a good database design</p>
+<ul>
+<li>Each table should have an identifier</li>
+<li>Each table should store data for a single type of entity.</li>
+<li>Columns that accept NULLs should be avoided.</li>
+<li>The reprtition of values or columns should be avoided.</li>
+</ul>
+<h3 id="第一范式-1NF"><a href="#第一范式-1NF" class="headerlink" title="第一范式(1NF)"></a>第一范式(1NF)</h3><p>A table is said to be 1NF when each cell of the table contains precisely one value.<br>定义：符合1NF的关系中的每个属性都不可再分解, 并且在一条记录里一个属性只能对应一个值</p>
+<p>Guidelines</p>
+<ul>
+<li>Place the related data values in a table. Further, define similar data values with the column name.</li>
+<li>There should be no repeating group in the table.</li>
+<li>Every table must have a unique primary key.</li>
+</ul>
+<p>Functional dependency(函数依赖)<br>如果属性A依赖B，那么B就叫决定因素determinant</p>
+<p>函数依赖就是对于每个x都有唯一的y与之对应，记作x-&gt;y<br>部分依赖(partial dependency) 不完全依赖于键，如有组合键时只依赖于组合键中的某一个键<br>依赖传递(transitive dependency) x-&gt;y-&gt;z</p>
+<h3 id="第二范式-2NF"><a href="#第二范式-2NF" class="headerlink" title="第二范式(2NF)"></a>第二范式(2NF)</h3><p>A table is said to be in 2NF when:</p>
+<ul>
+<li>It is in 1NF, and</li>
+<li>No partial dependency exists between non-key attributes and key attributes.</li>
+<li>定义： 符合1NF的前提下, 当表存在组合主键的时候, 每一个非键属性都必须完全依赖于组合主键中的所有主键, 而不能只依赖部分主键</li>
+</ul>
+<p>Guidelines</p>
+<ul>
+<li>Find and remove attributes that are functionally dependent on only a part of the key and not on the whole key. Place them in a different table.</li>
+<li>Group the remaining attributes.</li>
+</ul>
+<h3 id="第三范式-3NF"><a href="#第三范式-3NF" class="headerlink" title="第三范式(3NF)"></a>第三范式(3NF)</h3><p>A relation is said to be in 3NF if and only if:</p>
+<ul>
+<li>It is in 2NF, and</li>
+<li>No transitive(indirect) dependency exists between non-key attributes and key attributes.</li>
+</ul>
+<p>定义：符合2NF的前提下, 每一个非主键属性和主键之间不能有依赖传递(间接依赖)</p>
+<p>Guidelines</p>
+<ul>
+<li>Find and remove non-key attributes that are functionally dependent on attributes that are not the primary key. Place them in a different table.</li>
+<li>Group the remaining attributes.</li>
+</ul>
+<h3 id="BCNF-鲍依斯-科得范式"><a href="#BCNF-鲍依斯-科得范式" class="headerlink" title="BCNF(鲍依斯-科得范式)"></a>BCNF(鲍依斯-科得范式)</h3><p>The original definition of 3NF was not sufficient in some situations.<br>不满足的情况</p>
+<ul>
+<li>That had multiple candidate keys.</li>
+<li>Where the multiple candidate keys were composite.</li>
+<li>Where the multiple candidate keys overlapped(had at least one attribute in common).<br>A relation is in BCNF if and only if every determinant is candidate key.</li>
+</ul>
+<p>定义：符合3NF的前提下, 同时主属性内部没有部分依赖或者依赖传递关系</p>
+<p>Guidelines </p>
+<ul>
+<li>Find and remove the overlapping candidate keys. Place the part of the candidate key an th attribute it is functionally dependent on, in a different table.</li>
+<li>Group the remaining items into a table.</li>
+</ul>
+<h3 id="逆范式"><a href="#逆范式" class="headerlink" title="逆范式"></a>逆范式</h3><p>The intentional introduction of redundancy in a table in order to improve performance is called denormalization.<br>逆范式化指的是根据项目情况故意通过增加冗余或重复的数据来提高数据库的查询性能(从而避免频繁使用性能较差的连接语句或子查询语句)</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+          
+            <a href="/tags/database/" rel="tag"><i class="fa fa-tag"></i> database</a>
+          
+            <a href="/tags/rdbms/" rel="tag"><i class="fa fa-tag"></i> rdbms</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/esp-digital-light/" rel="next" title="ESP8266的LED灯">
+                <i class="fa fa-chevron-left"></i> ESP8266的LED灯
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/note-niit/" rel="prev" title="专业课笔记">
+                专业课笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="gitalk-container"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
+          <p class="site-author-name" itemprop="name">北屿</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">70</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://baidu.com/" title="欢迎友链qwq" target="_blank">欢迎友链qwq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://borber.cn/" title="BORBER" target="_blank">BORBER</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mon-soon.github.io/" title="mon-soon" target="_blank">mon-soon</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名词解释"><span class="nav-number">1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型"><span class="nav-number">2.</span> <span class="nav-text">数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ER模型-ER-Model"><span class="nav-number">2.1.</span> <span class="nav-text">ER模型(ER Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实体"><span class="nav-number">2.1.1.</span> <span class="nav-text">实体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">2.1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">2.1.3.</span> <span class="nav-text">关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子类型和超类型"><span class="nav-number">2.1.4.</span> <span class="nav-text">子类型和超类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于记录的逻辑模型-Record-Based-Logical-Model"><span class="nav-number">2.2.</span> <span class="nav-text">基于记录的逻辑模型(Record-Based Logical Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hierarchical-Model-层次模型"><span class="nav-number">2.2.1.</span> <span class="nav-text">Hierarchical Model(层次模型)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Network-Model-网状模型"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Network Model(网状模型)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Relational-Model-关系模型"><span class="nav-number">2.2.3.</span> <span class="nav-text"> Relational Model(关系模型)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系模型"><span class="nav-number">2.2.4.</span> <span class="nav-text">关系模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ER图-ER-Diagram"><span class="nav-number">2.3.</span> <span class="nav-text">ER图(ER Diagram)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系运算-Relational-Operators"><span class="nav-number">2.4.</span> <span class="nav-text">关系运算(Relational Operators)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Restrict-约束限制"><span class="nav-number">2.4.1.</span> <span class="nav-text">Restrict 约束限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project-投影"><span class="nav-number">2.4.2.</span> <span class="nav-text">Project 投影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Produce-乘"><span class="nav-number">2.4.3.</span> <span class="nav-text">Produce 乘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Union-并"><span class="nav-number">2.4.4.</span> <span class="nav-text">Union 并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Intersect-交"><span class="nav-number">2.4.5.</span> <span class="nav-text">Intersect 交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Difference-差"><span class="nav-number">2.4.6.</span> <span class="nav-text">Difference 差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Join-连接"><span class="nav-number">2.4.7.</span> <span class="nav-text">Join 连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Divide-除"><span class="nav-number">2.4.8.</span> <span class="nav-text">Divide 除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库设计-Database-design"><span class="nav-number">3.</span> <span class="nav-text">数据库设计(Database design)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将图标映射到表格"><span class="nav-number">3.1.</span> <span class="nav-text">将图标映射到表格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Weak-entities"><span class="nav-number">3.1.1.</span> <span class="nav-text">Weak entities</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于逻辑的数据库设计"><span class="nav-number">3.2.</span> <span class="nav-text">基于逻辑的数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Attributes"><span class="nav-number">3.2.1.</span> <span class="nav-text">Attributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Keys"><span class="nav-number">3.2.2.</span> <span class="nav-text">Keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Entities"><span class="nav-number">3.2.3.</span> <span class="nav-text">Entities</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subentities"><span class="nav-number">3.2.4.</span> <span class="nav-text">Subentities</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规范化定义-范式"><span class="nav-number">4.</span> <span class="nav-text">规范化定义(范式)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一范式-1NF"><span class="nav-number">4.1.</span> <span class="nav-text">第一范式(1NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二范式-2NF"><span class="nav-number">4.2.</span> <span class="nav-text">第二范式(2NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三范式-3NF"><span class="nav-number">4.3.</span> <span class="nav-text">第三范式(3NF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BCNF-鲍依斯-科得范式"><span class="nav-number">4.4.</span> <span class="nav-text">BCNF(鲍依斯-科得范式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逆范式"><span class="nav-number">4.5.</span> <span class="nav-text">逆范式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">北屿</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '3bd523d04a7fcd807bd1',
+          clientSecret: '3c4d80f8fd534840b0571ebf194825129668c1fe',
+          repo: 'gitalk',
+          owner: 'beiyuouo',
+          admin: ['beiyuouo'],
+          id: md5(location.pathname),
+          abels: 'gitalk'.split(',').filter(l => l),
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="math,note,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="Update 2019-07-01 …写不下去了 再这样写下去可能药丸先做题了…  第三章第二节   Update 2019-07-02 11:00 差不多施工完成了..下午就考线代.. ball ball 让我全会  第一章 行列式第一节 二阶与三阶行列式第二节 $n$阶行列式的定义逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列。 在排列中，将任意两个元素对调，其余元素保持不动，这种">
+<meta name="keywords" content="math,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数笔记">
+<meta property="og:url" content="beiyuouo.github.io/blog/note-algebra/index.html">
+<meta property="og:site_name" content="北屿">
+<meta property="og:description" content="Update 2019-07-01 …写不下去了 再这样写下去可能药丸先做题了…  第三章第二节   Update 2019-07-02 11:00 差不多施工完成了..下午就考线代.. ball ball 让我全会  第一章 行列式第一节 二阶与三阶行列式第二节 $n$阶行列式的定义逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列。 在排列中，将任意两个元素对调，其余元素保持不动，这种">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2019-07-02T04:43:37.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="线性代数笔记">
+<meta name="twitter:description" content="Update 2019-07-01 …写不下去了 再这样写下去可能药丸先做题了…  第三章第二节   Update 2019-07-02 11:00 差不多施工完成了..下午就考线代.. ball ball 让我全会  第一章 行列式第一节 二阶与三阶行列式第二节 $n$阶行列式的定义逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列。 在排列中，将任意两个元素对调，其余元素保持不动，这种">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/blog/note-algebra/">
+
+
+
+
+
+
+
+  <title>线性代数笔记 | 北屿</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-145083103-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">北屿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/game/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gamepad"></i> <br>
+            
+            Game
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/note-algebra/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="北屿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北屿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">线性代数笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T15:46:50+08:00">
+                2019-04-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-02T12:43:37+08:00">
+                2019-07-02
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  9.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  40
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Update 2019-07-01</p>
+<p>…写不下去了 再这样写下去可能药丸<br>先做题了…</p>
+<ul>
+<li>第三章第二节</li>
+</ul>
+<hr>
+<p>Update 2019-07-02 11:00</p>
+<p>差不多施工完成了..下午就考线代.. ball ball 让我全会</p>
+<hr>
+<h2 id="第一章-行列式"><a href="#第一章-行列式" class="headerlink" title="第一章 行列式"></a>第一章 行列式</h2><h3 id="第一节-二阶与三阶行列式"><a href="#第一节-二阶与三阶行列式" class="headerlink" title="第一节 二阶与三阶行列式"></a>第一节 二阶与三阶行列式</h3><h3 id="第二节-n-阶行列式的定义"><a href="#第二节-n-阶行列式的定义" class="headerlink" title="第二节 $n$阶行列式的定义"></a>第二节 $n$阶行列式的定义</h3><p>逆序数为奇数的排列叫做<strong>奇排列</strong>，逆序数为偶数的排列叫做<strong>偶排列</strong>。</p>
+<p>在排列中，将任意两个元素对调，其余元素保持不动，这种作出新排列的方法叫做<strong>对换</strong>，将相邻两个元素对换，叫做<strong>相邻对换</strong></p>
+<ul>
+<li>定理1.1 一个排列中任意两个元素对换，排列改变奇偶性</li>
+</ul>
+<script type="math/tex; mode=display">\left | \begin{matrix}a_{11} & \cdots & a_{1n}\\\vdots & \ddots & \vdots\\a_{n1} & \cdots & a_{nn}\end{matrix}\right | = \sum (-1)^{\tau p_1p_2...p_n}a_{1p_1}a_{2p_2}...a_{np_n}</script><p>其中$\tau$为排列中逆序数</p>
+<p>上三角行列式和下三角行列式叫做<strong>对角行列式</strong></p>
+<script type="math/tex; mode=display">\left | \begin{matrix}a_{11} & & & \\ & a_{22} & &\\& & \ddots & \\ & & & a_{nn}\end{matrix}\right | = a_{11}a_{22}...a_{nn}</script><h3 id="第三节-行列式的性质"><a href="#第三节-行列式的性质" class="headerlink" title="第三节 行列式的性质"></a>第三节 行列式的性质</h3><p>$D$的转置行列式记作$D^{T}$或$D’$</p>
+<ul>
+<li>性质1 $D=D^{T}$</li>
+<li>性质2 交换行列式的两行或两列，行列式改变符号</li>
+<li>推论1 如果行列式有两行或两列完全相同，则此行列式等于零</li>
+<li>性质3 行列式中某一行或列的各元素有公因子，则可将公因子提到行列式符号的外面</li>
+<li>推论2 行列式的某一行或列所有元素都乘以同一个数$k$，等于用数$k$乘此行列式</li>
+<li>推论3 行列式的某一行或列的元素全为零食，行列式的值等于零</li>
+<li>性质4 若行列式中有两行或列的元素对应成比例，则此行列式的值等于零</li>
+<li>性质5 若行列式的某一行或列的元素都是两数之和，那么可以将他们分成两个行列式<script type="math/tex; mode=display">D=\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1i}+a_{1i}' & \cdots & a_{1n}\\ 
+a_{21} & a_{22} & \cdots & a_{2i}+a_{2i}' & \cdots & a_{2n}\\ 
+\vdots & \vdots &  & \vdots &  & \vdots \\ 
+a_{n1} & a_{n2} & \cdots & a_{ni}+a_{ni}' & \cdots & a_{nn}
+\end{vmatrix}=\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1i} & \cdots & a_{1n}\\ 
+a_{21} & a_{22} & \cdots & a_{2i} & \cdots & a_{2n}\\ 
+\vdots & \vdots &  & \vdots &  & \vdots \\ 
+a_{n1} & a_{n2} & \cdots & a_{ni} & \cdots & a_{nn}
+\end{vmatrix}+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1i}' & \cdots & a_{1n}\\ 
+a_{21} & a_{22} & \cdots & a_{2i}' & \cdots & a_{2n}\\ 
+\vdots & \vdots &  & \vdots &  & \vdots \\ 
+a_{n1} & a_{n2} & \cdots & a_{ni}' & \cdots & a_{nn}
+\end{vmatrix}</script></li>
+<li>性质6 把行列式的某一行或列各元素乘以同一数$k$后加到另一行或列对应的元素上去，行列式的值不变</li>
+</ul>
+<h3 id="第四节-行列式按一行或列展开"><a href="#第四节-行列式按一行或列展开" class="headerlink" title="第四节 行列式按一行或列展开"></a>第四节 行列式按一行或列展开</h3><p>在$n$阶行列式中，划去元素$a_{ij}$所在的行和列，余下的$n-1$阶行列式，称为元素$a_{ij}$的<strong>余子式</strong>，记为$M_{ij}$，余子式前面冠以符号$(-1)^{i+j}$，称为元素$a_{ij}$的<strong>代数余子式</strong>，记为$A_{ij}=(-1)^{i+j}M_{ij}$</p>
+<ul>
+<li>引理1 一个$n$阶行列式$D$，如果第$i$行所有元素除$a_{ij}$外全为零，则行列式$D=a_{ij}A_{ij}$</li>
+<li>定理1.4 行列式等于它的任一行或列的各元素与其对应的代数余子式的乘积之和，即<script type="math/tex; mode=display">D=a_{1j}A_{1j}+a_{2j}A_{2j}+...+a_{nj}A_{nj}</script>或<script type="math/tex; mode=display">D=a_{i1}A_{i1}+a_{i2}A_{i2}+...+a_{in}A_{in}</script></li>
+</ul>
+<p>这个定理称为<strong>行列式按行（列）展开法则</strong></p>
+<p>范德蒙德（Vandermonde）行列式</p>
+<script type="math/tex; mode=display">D_n=\begin{vmatrix}
+1&1&1&\ldots&1\\
+x_1&x_2&x_3&\ldots&x_{n}\\
+x_1^2&x_2^2&x_3^2&\ldots&x_{n}^2\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+x_1^{n-1}&x_2^{n-1}&x_3^{n-1}&\ldots&x_{n}^{n-1}\\
+\end{vmatrix}=\Pi_{n\geqslant i > j \geqslant 1}(x_i-x_j)</script><ul>
+<li><p>推论1 行列式任一行或列的元素与另一行或列的对应元素代数余子式乘积之和等于零，即</p>
+<script type="math/tex; mode=display">a_{i1}A_{j1}+a_{i2}A_{j2}+...+a_{in}A{jn}=0(i\neq j)</script><p>或</p>
+<script type="math/tex; mode=display">a_{1i}A_{1j}+a_{2i}A_{2j}+...+a_{ni}A{nj}=0(i\neq j)</script></li>
+<li><p>定义1.3 在一个$n$阶行列式$D$中，任意取定$k$行$k$列$(k\leqslant n)$，位于这些行与列的交点处的$k^2$个元素，按原来的顺序构成的$k$阶行列式$M$，称为行列式$D$的一个$k$阶子式；而在$D$中划去这$k$行$k$列后余下的元素，按原来的顺序构成的$n-k$阶行列式$N$，称为$k$阶子式$M$的余子式，$(-1)^{(i_1+i_2+…+i_n)+(j_1+j_2+…+j_n)}$称为$k$阶子式$M$的代数余子式</p>
+</li>
+<li><p>定理1.5 设在行列式$D$中任意选定$k(1\leqslant k\leqslant n-1)$行或列，则行列式$D$等于由这$k$行或列元素组成的一切$k$阶子式与它们对应的代数余子式的乘积之和。</p>
+</li>
+</ul>
+<h3 id="第五节-克莱默法则"><a href="#第五节-克莱默法则" class="headerlink" title="第五节 克莱默法则"></a>第五节 克莱默法则</h3><ul>
+<li>定理1.6（克莱默法则） 若方程组<script type="math/tex; mode=display">\left\{\begin{matrix}
+a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=b_1\\ 
+a_{21}x_1+a_{22}x_2+...+a_{2n}x_n=b_2\\ 
+\cdots \cdots\\ 
+a_{n1}x_1+a_{n2}x_2+...+a_{nn}x_n=b_n
+\end{matrix}\right.</script>的系数行列式<script type="math/tex; mode=display">D=\left | \begin{matrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2m}\\
+\vdots & \vdots & & \vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{matrix} \right |\neq 0</script>则方程组有唯一解，且可表示为<script type="math/tex; mode=display">x_1=\frac{D_1}{D},x_2=\frac{D_2}{D},...,x_n=\frac{D_n}{D}</script>其中$D_j$是将$D$中的第$j$列换成常数项所得的行列式，即<script type="math/tex; mode=display">D_j=\left | \begin{matrix}
+a_{11} & \cdots & a_{1,j-1} & b_1 & a_{1,j+1} & \cdots & a_{1n} \\
+a_{21} & \cdots & a_{2,j-1} & b_1 & a_{2,j+1} & \cdots & a_{2n} \\
+\vdots & & \vdots & \vdots & \vdots & & \vdots \\
+a_{n1} & \cdots & a_{n,j-1} & b_n & a_{n,j+1} & \cdots & a_{nn} \\
+\end{matrix} \right |</script></li>
+</ul>
+<p>使用克莱默法则必须注意<br>（1）未知量的个数与方程的个数要相等<br>（2）系数行列式不为零<br>常数项全为零的线性方程组叫做<strong>齐次线性方程组</strong>；不全为零，就是<strong>非齐次线性方程组</strong>。<br>$x_1=x_2=…=x_n=0$，称为零解，除零解外还有不全为零的解，称为非零解。</p>
+<ul>
+<li>定理1.7 如果齐次线性方程组的系数行列式$D\neq 0$，则齐次线性方程组只有零解。</li>
+<li>定理1.7’ 如果齐次线性方程组有非零解，则它的系数行列式必为零。</li>
+</ul>
+<h2 id="第二章-矩阵"><a href="#第二章-矩阵" class="headerlink" title="第二章 矩阵"></a>第二章 矩阵</h2><h3 id="第一节-矩阵的概念"><a href="#第一节-矩阵的概念" class="headerlink" title="第一节 矩阵的概念"></a>第一节 矩阵的概念</h3><p>定义2.1 由$m\times n$个数$a_{ij}$排成$m$行$n$列的数表，称为$m$行$n$列的<strong>矩阵</strong>，简称<strong>$m\times n$矩阵</strong>，并加一个括号（中括号或小括号），并用大写黑体字母表示，记作$A=\left [ \begin{matrix}a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\\vdots &amp; \vdots &amp; &amp; \vdots\\a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}\end{matrix} \right ]$，其中$a_{ij}$表示矩阵第$i$行第$j$列的元素，矩阵可简记为$A=(a_{ij})_ {m\times n}$或$A=(a_{ij})$，$m\times n$矩阵也简记为$A_{m\times n}$<br>元素是实数的矩阵称为<strong>实矩阵</strong>，是复数的称为<strong>复矩阵</strong>；$m=n$时$A$称为$n$阶<strong>方阵</strong>；只有一行的矩阵称为<strong>行矩阵</strong>；只有一列的矩阵称为<strong>列矩阵</strong>。<br>如果行数和列数相等，则称他们是<strong>同型的</strong>；如果同型并且对应元素相等，则称他们是<strong>相等的</strong>，记作$A=B$。<br>元素全为零的矩阵称为<strong>零矩阵</strong>，记作$O$。<br>恒等变换的系数矩阵$E=\left [ \begin{matrix}1 &amp; 0 &amp; \cdots &amp; 0\\0 &amp; 1 &amp; \cdots &amp; 0\\\vdots &amp; \vdots &amp; &amp; \vdots\\0 &amp; 0 &amp; \cdots &amp; 1<br>\end{matrix} \right ]$，称为<strong>$n$阶单位矩阵</strong>，简称<strong>单位阵</strong>。$E=(\delta_{ij}),\delta_{ij}=\left\{\begin{matrix}1, &amp; i=j\\ 0, &amp; i\neq j \end{matrix}\right.$</p>
+<p>$y_i=\lambda_ix_i$的线性变换的系数矩阵$A=\left [ \begin{matrix}\lambda_1 &amp; 0 &amp; \cdots &amp; 0\\0 &amp; \lambda_2 &amp; \cdots &amp; 0\\\vdots &amp; \vdots &amp; &amp; \vdots\\0 &amp; 0 &amp; \cdots &amp; \lambda_n \end{matrix} \right ]$，称为<strong>对角阵</strong>，特点是不在主对角线的元素都为零，特别的当$\lambda_1=\lambda_2=…=\lambda_n$时称为<strong>数量矩阵</strong>。</p>
+<p>还有上三角矩阵和下三角矩阵，见名知意我就不写了..</p>
+<h3 id="第二节-矩阵的运算"><a href="#第二节-矩阵的运算" class="headerlink" title="第二节 矩阵的运算"></a>第二节 矩阵的运算</h3><ul>
+<li>矩阵的加法，对应元素相加。</li>
+<li>数与矩阵的乘法，对应相乘。</li>
+<li>矩阵与矩阵的相乘，$c_{ij}$等于$A$的第$i$行与$B$的第$j$列的对应元素乘积之和，不满足交换律，分为左乘和右乘。<br>若$AB=BA$，则称$A$与$B$是可交换的。<br>类似定义矩阵的幂<br>$(AB)^k=A^kB^k$<br>$A^2=A$，幂等矩阵</li>
+<li>矩阵的转置：将矩阵行和列一次互换位置，称为$A$的转置，记作$A^{T}$或$A’$<br>满足以下规律：$(A^{T})^{T}=A,(A+B)^{T}=A^{T}+B^{T},(\lambda A)^{T}=\lambda A^{T},(AB)^{T}=B^{T}A^{T}$</li>
+</ul>
+<p>定义2.6 若$A^{T}=A$，那么称$A$为<strong>对称阵</strong>，各元素以主对角线为对称轴对应相等<br>定义2.7 若$A^{T}=-A$，称为<strong>反对称阵</strong>，主对角线的元素全为零</p>
+<h4 id="方阵的行列式"><a href="#方阵的行列式" class="headerlink" title="方阵的行列式"></a>方阵的行列式</h4><p>方阵各元素构成的行列式称为方阵$A$的行列式，记为$|A|$。<br>具有以下性质<br>$|A^{T}|=|A|,|\lambda A|=\lambda ^n|A|,|AB|=|A||B|$<br>$|AB|=|BA|=|A||B|$</p>
+<h3 id="第三节-逆矩阵"><a href="#第三节-逆矩阵" class="headerlink" title="第三节 逆矩阵"></a>第三节 逆矩阵</h3><p>逆变换</p>
+<p>定义2.9 设$A$为$n$阶方阵，若存在$n$阶方阵$B$，使得$AB=BA=E$，则称方阵$A$是可逆的，称$B$是$A$的<strong>逆矩阵</strong>或<strong>逆阵</strong>。</p>
+<p>由定义可知：互为逆矩阵，逆变换的矩阵必为逆矩阵，逆矩阵唯一。</p>
+<blockquote>
+<p>定理2.1 $n$阶方阵$A$可逆的充分必要条件是：$|A|\neq 0$，且当$A$可逆时有</p>
+<script type="math/tex; mode=display">A^{-1}=\frac{1}{|A|}A^{* }</script><p>其中$A^{* }=\left [ \begin{matrix}A_{11} &amp; A_{21} &amp; \cdots &amp; A_{n1} \\A_{12} &amp; A_{22} &amp; \cdots &amp; A_{n2} \\\vdots &amp; \vdots &amp; &amp; \vdots \\A_{1n} &amp; A_{2n} &amp; \cdots &amp; A_{nn} \\\end{matrix} \right ]$，称为$A$的伴随矩阵，$A_{ij}$是$|A|$的元素$a_{ij}$是代数余子式。<br>注意排列顺序是关于主对角线对称的，注意代数余子式，有个$(-1)^{i+j}$。</p>
+</blockquote>
+<p>另外 $AA^{* }=|A|E$；</p>
+<p>$A^{* }A=|A|E$</p>
+<ul>
+<li>推论1 若$A,B$都是$n$阶方阵，且$AB=E$，则$BA=E$</li>
+</ul>
+<p>定义2.10 设$A$为方阵，若$|A|\neq 0$，则称$A$为<strong>非奇异方阵</strong>；若$|A|=0$，则称$A$为<strong>奇异方阵</strong>。<br>可逆方阵即为非奇异方阵，方阵的逆具有以下性质（假设都可逆）</p>
+<ul>
+<li>$(A^{-1})^{-1}=A$</li>
+<li>$\lambda \neq 0,(\lambda A)^{-1}=\frac{1}{\lambda}A^{-1}$</li>
+<li>$(AB)^{-1}=B^{-1}A^{-1}$</li>
+<li>$A^{T}$可逆，$(A^{T})^{-1}=(A^{-1})^{T}$</li>
+<li>$|A^{-1}|=\frac{1}{|A|}=|A|^{-1}$</li>
+</ul>
+<p>几个结论：</p>
+<ul>
+<li><p>设对角阵$\Lambda =\begin{bmatrix}\lambda_1 &amp;  &amp;  &amp; \\  &amp; \lambda_2 &amp;  &amp; \\  &amp;  &amp; \ddots  &amp; \\  &amp;  &amp;  &amp; \lambda_n\end{bmatrix}$，则$\Lambda ^k=\begin{bmatrix}\lambda_1^k &amp;  &amp;  &amp; \\  &amp; \lambda_2^k &amp;  &amp; \\  &amp;  &amp; \ddots  &amp; \\  &amp;  &amp;  &amp; \lambda_n^k\end{bmatrix}$</p>
+</li>
+<li><p>$|A|\neq 0$，$A^0=E,A^{-k}=(A^{-1})^k,A^{\lambda}A^{\mu}=A^{\lambda + \mu},(A^{\lambda})^{\mu}=A^{\lambda \mu}$</p>
+</li>
+</ul>
+<h3 id="第四节-分块矩阵"><a href="#第四节-分块矩阵" class="headerlink" title="第四节 分块矩阵"></a>第四节 分块矩阵</h3><p>定义2.11 用若干条纵线和横线把$A$分成若干个小块，每一个小块构成的小矩阵称为$A$的<strong>子块</strong>，以子块伪元素的矩阵称为$A$的<strong>分块矩阵</strong>。</p>
+<p>若分块方法相同，矩阵相加等于子块对应相加<br>若$A$列分法与$B$行分法相同，得到的子块为对应子块乘积之和，与矩阵乘法相同。<br>$A^{T}=\begin{bmatrix}A_{11}^{T} &amp; \cdots &amp; A_{s1}^{T}\\  \vdots &amp;  &amp; \vdots \\ A_{1r}^{n} &amp;  &amp; A_{sr}^{T}\end{bmatrix}$<br>只有在对角线上有非零子块，且对角线上的子块都是方阵，$A=\begin{bmatrix}A_1 &amp;  &amp;  &amp; \\  &amp; A_2 &amp;  &amp; \\  &amp;  &amp; \ddots  &amp; \\  &amp;  &amp;  &amp; A_s\end{bmatrix}$，此时称$A$为<strong>分块对角矩阵</strong>，则有<br>$|A|=|A_1||A_2|…|A_s|$<br>当$|A_i|\neq 0$时，$A^{-1}=\begin{bmatrix}A_1^{-1} &amp;  &amp;  &amp; \\  &amp; A_2^{-1} &amp;  &amp; \\  &amp;  &amp; \ddots  &amp; \\  &amp;  &amp;  &amp; A_s^{-1}\end{bmatrix}$<br>$A_i,B_i$是同阶方阵$AB=\begin{bmatrix}A_1B_1 &amp;  &amp;  &amp; \\  &amp; A_2B_2 &amp;  &amp; \\  &amp;  &amp; \ddots  &amp; \\  &amp;  &amp;  &amp; A_sB_s\end{bmatrix}$</p>
+<h3 id="第五节-矩阵的秩与矩阵的初等变换"><a href="#第五节-矩阵的秩与矩阵的初等变换" class="headerlink" title="第五节 矩阵的秩与矩阵的初等变换"></a>第五节 矩阵的秩与矩阵的初等变换</h3><p>定义2.12 $m\times n$的矩阵$A$中，任取$k$行$k$列，在行列交叉的$k^2$个元素按原来的次序所构成的$k$阶行列式，称为$A$的$k$阶子式。</p>
+<p>定义2.13 矩阵$A$中不为零的子式的最高阶数称为矩阵$A$的<strong>秩</strong>，记为$rank(A)$，简记为$r(A)$。<br>非奇异方阵的秩等于它的阶数，故非奇异方阵称为<strong>满秩矩阵</strong>，而奇异方阵称为<strong>降秩矩阵</strong>。</p>
+<blockquote>
+<p>定理2.2 若矩阵$A$中至少有一个$k$阶子式不为零，而有所$k+1$阶子式全为零，则$r(A)=k$</p>
+</blockquote>
+<p>矩阵秩的性质</p>
+<ul>
+<li>$r(A_{m\times n}\leqslant \min\{m,n\}$</li>
+<li>$r(A^{T})=r(A),r(\lambda A)=r(A)(\lambda neq 0)$</li>
+<li>$A\sim B,r(A)=r(B)$</li>
+<li>$RQ$可逆，$r(A)=r(PA)=r(AQ)=r(PAQ)$</li>
+<li>$\max \{r(A),r(B)\}\leqslant r(A,B)\leqslant r(A)+r(B)$</li>
+<li>$r(A+B)\leqslant r(A)+r(B)$</li>
+<li>$r(AB)\leqslant \min \{r(A),r(B)\}$</li>
+<li>若$A_{m\times n}\cdot B_{n\times l}=O$，则$r(A)+r(B)\leqslant n$</li>
+<li>若$AB=O$，$A\neq O \nRightarrow B=O$；$|A|\neq 0 \Rightarrow B=O$；$A$列满秩$\Rightarrow B=O$；$B$行满秩$\Rightarrow A=O$</li>
+</ul>
+<p>行阶梯矩阵，行最简形阶梯矩阵（行最简形），标准形$I$（左上角有一个单位矩阵，其他元素都为零）<br>定义2.15 若矩阵$A$经过有限次初等变换后，化为矩阵$B$，则称$A$与$B$等价，记为$A\sim B$</p>
+<ul>
+<li>$A\sim A$</li>
+<li>$A\sim B,B\sim A$</li>
+<li>$A\sim B, B\sim C$则$A\sim C$</li>
+<li>$A\sim B,r(A)=r(B)$</li>
+</ul>
+<p>定义2.16 由单位阵$E$经过一次初等变换得到的方阵称为<strong>初等矩阵</strong></p>
+<blockquote>
+<p>定理2.4 设$A$是一个$m\times n$矩阵，则对$A$施行一次初等行变换，相当于用相应的$m$阶初等矩阵左乘$A$；对$A$施行一次初等列变换，相当于用相应的$n$阶初等矩阵右乘$A$。<br>定理2.5 设$A$为可逆阵，则存在有限个初等矩阵$P_1,P_2,…,P_l$使$A=P_1P_2…P_l$</p>
+<ul>
+<li>推论1 $m\times n$矩阵$A\sim B$的充分必要条件是：存在$m$阶可逆方阵$P$及$n$阶可逆方阵$Q$，使$PAQ=B$。</li>
+</ul>
+</blockquote>
+<p>初等变换求逆矩阵$(A,E)\sim (E,A^{-1})$，$AX=E,(A,B)\sim (E,X)/(E,A^{-1}B)$</p>
+<h2 id="第三章-向量组的线性相关性"><a href="#第三章-向量组的线性相关性" class="headerlink" title="第三章 向量组的线性相关性"></a>第三章 向量组的线性相关性</h2><h3 id="第一节-n-维向量"><a href="#第一节-n-维向量" class="headerlink" title="第一节 $n$维向量"></a>第一节 $n$维向量</h3><p>定义3.1 $n$个有顺序的数$a_1,a_2,…,a_n$所组成的数组$\alpha=(a_1,a_2,…,a_n)$称为$n$维向量，数$a_j$称为向量$\alpha$的第$j$个分量（或坐标）<br>实向量，复向量，行向量，列向量都略了…</p>
+<p>具体相关向量空间、线性组合、线性表示第七章写过了</p>
+<p>平凡子空间（空间本身和零向量）、非平凡子空间</p>
+<h3 id="第二节-向量组的线性相关性"><a href="#第二节-向量组的线性相关性" class="headerlink" title="第二节 向量组的线性相关性"></a>第二节 向量组的线性相关性</h3><p>由若干个同维数的向量所组成的集合称为<strong>向量组</strong>。</p>
+<p>定义3.3 设有$n$为向量组$\alpha_1,\alpha_2,…,\alpha_m$，若存在不全为零的数$c_1,c_2,…,c_m$，使得，$c_1\alpha_1+c_2\alpha_2+…+c_n\alpha_n=0$，则称向量组线性相关；否则称线性无关。当向量组线性无关时，称这个向量组为线性无关（向量）组</p>
+<p>几条结论 </p>
+<ul>
+<li>零向量是线性相关的</li>
+<li>任一非零向量线性无关</li>
+<li>包含零向量的向量组是线性相关的</li>
+<li>两个向量线性相关的充要条件是：它们的对应分量称比例</li>
+</ul>
+<blockquote>
+<p>定理3.1 向量组$\alpha_1,\alpha_2,…,\alpha_m$线性相关的充分必要条件是：这个向量组中至少有一个向量可由其余$m-1$个向量线性表示<br>定理3.2 若$n$维向量组$\alpha_1,\alpha_2,…,\alpha_m$有一个部分组线性相关，则该向量组也线性相关<br>定理3.3 设$\alpha_1,\alpha_2,…,\alpha_m$线性无关，而$\alpha_1,\alpha_2,…,\alpha_m,\beta$线性相关，则$\beta$能由$\alpha_1,\alpha_2,…,\alpha_m$表示，且表示法唯一</p>
+</blockquote>
+<p>定义3.9 若向量组$A$中每一个元素都能由$B$中的元素线性表示，则称向量组$A$能由向量组$B$线性表示，若$B$也能由$A$线性表示，则称向量组$A,B$等价<br>满足 自反性、对称性、传递性</p>
+<h4 id="向量组线性相关性的矩阵判别法"><a href="#向量组线性相关性的矩阵判别法" class="headerlink" title="向量组线性相关性的矩阵判别法"></a>向量组线性相关性的矩阵判别法</h4><blockquote>
+<p>定理3.4 将向量组的两个分量对调，不改变向量组的线性相关性。<br>定理3.5 两个向量组，一个向量组是由另一个向量组添加一个分量所得，若前者线性无关，则后者也线性无关</p>
+<ul>
+<li>推论1 设$r$维向量组的每个向量在相应位置上天上$n-r$个分量成为$n$维向量组，若$r$为向量组线性无关，则$n$维向量组也线性无关，反之$n$维向量组线性相关，则$r$维向量组也线性相关。<br>定理3.6 设$n$维向量组，$r$个向量$(r\leqslant n)$，向量组线性无关的充分必要条件是：矩阵$A$中存在一个不等于零的$r$阶子式</li>
+<li>推论2 $n$个$n$维向量线性无关的充要条件是：它们所构成的方阵行列式不等于零</li>
+<li>推论3 含$n$个方程的$n$元齐次线性方程组$Ax=0$有非零解的充要条件是：系数行列式$|A|=0$</li>
+<li>推论4 $m&gt;n$时，$m$个$n$维向量组必定线性相关</li>
+</ul>
+<p>定理3.6’ 设$r$个$n$维行向量构成矩阵$A$，那么这$r$个向量线性相关的充分必要条件是：$A$中存在不等于零的$r$阶子式。反之，这$r$个向量线性相关的充分必要条件是：没有不等于零的$r$阶子式</p>
+<ul>
+<li>推论5 如果在$m\times n$矩阵$A$中有一个$r$阶子式$D\neq 0$，则含有$D$的相应元素的$r$个行向量及$r$个列向量都线性无关；如果$A$中所有的$r$阶子式全为0，则$A$的任意$r$个行向量及任意$r$个列向量都线性相关。</li>
+</ul>
+</blockquote>
+<p>最大线性无关组的个数就是向量组的秩</p>
+<ul>
+<li>性质1 向量组线性无关的充要条件是：它所含向量的个数等于它的秩。</li>
+<li>性质2 设矩阵$A$的某个$r$阶子式$D$是$A$的最高阶非零子式，则$D$所在的$r$个行向量及$r$个列向量分别是矩阵$A$的行向量组和列向量组的一个最大无关组</li>
+<li>性质3 矩阵$A$的秩等于$A$的行向量组的秩，也等于$A$的列向量组的秩</li>
+<li>性质4 设向量组$A$是向量组$T$的一个最大线性无关组，则向量组$A$与向量组$T$等价</li>
+</ul>
+<blockquote>
+<p>定理3.7 如果向量组$A$有$r$个元素，向量组$B$有$s$个元素，如果$A$能由$B$组线性表示，且$A$组线性无关，则$r\leqslant s$.</p>
+<ul>
+<li>推论6 等价的线性无关向量组所含向量的个数相等。</li>
+<li>推论7 设向量组$A$的秩为$r_1$，向量组$B$的秩为$r_2$，如果$A$组能由$B$组线性表示，则$r_1\leqslant r_2$</li>
+<li>推论8 等价向量组有相同的秩</li>
+<li>推论10 设矩阵$A$中有一个$r$阶子式$D\neq 0$，而包含$D$的相应元素的所有$r+1$阶子式全为零，则$A$中所有$r+1$阶子式全为零，从而$r(A)=r$</li>
+</ul>
+<p>引理1 如果矩阵$A$经初等行（列）变换后变成$B$，则$A$的行（列）向量组和$B$的行（列）向量组等价<br>引理2 设$A,B$都是$m\times n$矩阵，若$A,B$的行向量组等价，则齐次线性方程组$Ax=0$与$Bx=0$同解<br>引理3 若矩阵$A$经过有限次初等行（列）变换后变成$B$，则$A$在任意$k$列（行）详列与$B$中对应的$k$个列（行）向量有相同的线性关系</p>
+</blockquote>
+<h3 id="第三节-向量空间的基、维数与坐标"><a href="#第三节-向量空间的基、维数与坐标" class="headerlink" title="第三节 向量空间的基、维数与坐标"></a>第三节 向量空间的基、维数与坐标</h3><p>详见第七章</p>
+<h2 id="第四章-线性方程组"><a href="#第四章-线性方程组" class="headerlink" title="第四章 线性方程组"></a>第四章 线性方程组</h2><h3 id="第一节-高斯消元法"><a href="#第一节-高斯消元法" class="headerlink" title="第一节 高斯消元法"></a>第一节 高斯消元法</h3><h3 id="第二节-齐次线性方程组"><a href="#第二节-齐次线性方程组" class="headerlink" title="第二节 齐次线性方程组"></a>第二节 齐次线性方程组</h3><blockquote>
+<p>定理4.1 $n$元齐次线性方程组$Ax=0$，存在非零解的充要条件是系数矩阵$A$的秩$r(A)&lt;n$，也即$Ax=0$只有零解的充要条件是$r(A)=n$<br>定理4.2 若$x=\xi_1,x=\xi_2$为齐次线性方程组的两个解，则$x=\xi_1+\xi_2$也是齐次方程组的解，即齐次方程组的任意两个解之和还是它的解。<br>定理4.3 若$x=\xi$是齐次线性方程组的一个解，$k$为任意常数，则$x=k\xi$也是齐次线性方程组的解，即齐次线性方程组的解的任意常数倍也是它的解</p>
+</blockquote>
+<p>定义4.1 设$\xi_1,\xi_2,…,\xi_r$是$Ax=0$的解向量，如果$\xi_1,\xi_2,…,\xi_r$线性无关，$Ax=0$的任一解向量均可由$\xi_1,\xi_2,…,\xi_r$线性表示，则称其为$Ax=0$的<strong>基础解系</strong>。</p>
+<blockquote>
+<p>定理4.4 对于$n$元齐次线性方程组$Ax=0$，如果$r(A)=r&lt;n$，则方程组的基础解系存在，且含$n-r$个解向量，即解空间的维数为$n-r$</p>
+</blockquote>
+<h3 id="第三节-非齐次线性方程组"><a href="#第三节-非齐次线性方程组" class="headerlink" title="第三节 非齐次线性方程组"></a>第三节 非齐次线性方程组</h3><p>若非齐次线性方程组有解，则称方程组是<strong>相容的</strong>，否则称是<strong>不相容的</strong>，矩阵表示$Ax=b$</p>
+<blockquote>
+<p>定理4.5 对于非齐次线性方程组，下面条件等价<br>(1)$Ax=b$有解<br>(2)$b$可由$A$的列向量组线性表示<br>(3)增广矩阵$\widetilde{A}$的秩等于系数矩阵$A$的秩<br>定理4.6 设$\eta_1,\eta_2$是非齐次线性方程组$Ax=b$的阶，则$\eta_1-\eta_2$是对应的齐次线性方程组（也称导出组）$Ax=0$的解<br>定理4.7 如果非齐次线性方程组$Ax=b$有解，则其通解为$\eta=\xi+\eta^{* }$，其中$\xi$是对应$Ax=0$的通解，另一个是$Ax=b$的特解</p>
+</blockquote>
+<p>非齐次线性方程组有解的充分必要条件是：$r(A)=r(\widetilde{A})=r$，且$r=n$时只有唯一解，$r&lt; n$时有无穷多解</p>
+<p>已知基础解系求满足的方程，将基础解系转置，经过初等行变换即可得</p>
+<h2 id="第五章-矩阵的对角化"><a href="#第五章-矩阵的对角化" class="headerlink" title="第五章 矩阵的对角化"></a>第五章 矩阵的对角化</h2><h3 id="第一节-特征值与特征向量"><a href="#第一节-特征值与特征向量" class="headerlink" title="第一节 特征值与特征向量"></a>第一节 特征值与特征向量</h3><p>设$A=a_{ij}$是一个$n$阶方阵，如果存在一个数$\lambda $和一个非零列向量$x=(x_1,x_2,…,x_n)^T$，使得关系式$Ax=\lambda x$成立，则称数$\lambda $为方阵$A$的一个<strong>特征值</strong>，非零向量$x$称为$A$的对应于（或属于）特征值$\lambda $的<strong>特征向量</strong>。</p>
+<ul>
+<li>特征值问题只对方阵而言</li>
+<li>特征向量必须是非零向量</li>
+<li>方阵$A$的每个特征值均对应于无穷多个特征向量，属于同一特征值的特征向量的任意非零线性组合也是属于该特征值的特征向量，$A(kx)=k(Ax)=k(\lambda x)=\lambda (kx),k\neq 0$，$A(x_1+x_2)=Ax_1+Ax_2=\lambda x_1+\lambda x_2=\lambda (x_1+x_2), x_1+x_2\neq 0$</li>
+</ul>
+<p>求法</p>
+<script type="math/tex; mode=display">(A-\lambda E)x=0 , (\lambda E-A)x=0</script><p>有解的充要条件是：系数行列式$|A-\lambda E|=0$，此方程称为方阵$A$的<strong>特征方程</strong>，左端$|A-\lambda E|$是$\lambda $的$n$次多项式，称为方阵$A$的<strong>特征多项式</strong>，记为$f(\lambda )$</p>
+<p>特征值与特征向量的性质</p>
+<ul>
+<li>一个特征向量只能属于一个特征值（相同的看成一个）</li>
+<li>若$\lambda $是方阵$A$的特征值，$x$是其属于$\lambda $的特征向量，则<br>(1) $\mu\lambda$是$\mu A$的特征值，$x$是其属于$\mu \lambda$的特征向量<br>(2) $\lambda ^m$是$A^m$的特征值，$x$是其属于$\lambda ^m$的特征向量<br>(3) 当$|A|\neq 0$时，$\lambda ^{-1}$是$A^{-1}$的特征值，$\lambda ^{-1}|A|$为$A^{*}$的特征值，且$x$为其对应的特征向量。</li>
+<li>$A$与$A^{T}$有相同的特征值</li>
+<li>设$n$阶矩阵$A=(a_{ij})$的$n$个特征值为$\lambda_1,\lambda_2,…, \lambda_n$，则<br>(1) $\sum_{i=1}^n \lambda_i=\sum_{i=1}^na_{ii}=trA$<br>(2) $\lambda 1\lambda 2…\lambda n=|A|$<br>其中$tr A$称为$A$的<strong>迹</strong>，为$A$的主对角线元素之和<br>$A$可逆当且仅当$A$的特征值不为零</li>
+<li>设$\lambda_1,\lambda_2,…\lambda_m$是方阵$A$的$m$个特征值，$p_1,p_2,…,p_m$是依次与之对应的特征向量，如果$\lambda_1,\lambda_2,…\lambda_m$互不相等，则$p_1,p_2,…,p_m$线性无关。</li>
+</ul>
+<h3 id="第二节-相似矩阵"><a href="#第二节-相似矩阵" class="headerlink" title="第二节 相似矩阵"></a>第二节 相似矩阵</h3><h4 id="向量的内积"><a href="#向量的内积" class="headerlink" title="向量的内积"></a>向量的内积</h4><p>向量内积$(x,y)=x_1y_1+x_2y_2+…+x_ny_n$</p>
+<ul>
+<li>$(x,y)=(y,x)$</li>
+<li>$(\lambda x,y)=\lambda(x,y)$</li>
+<li>$(x+y,z)=(x,z)+(y,z)$</li>
+<li>$(x,x) \geqslant 0$</li>
+</ul>
+<p>定义5.3 $||A||=\sqrt{(x,x)}$为$n$维向量$x$的长度（或范数）</p>
+<ul>
+<li>$||x||\geqslant 0$，等号成立当且仅当$x=0$</li>
+<li>$||x||=|\lambda | ||x||$</li>
+<li>$||x+y||\leqslant ||x|| +||y||$<br>单位向量$||x||=1$，单位化$\frac{x}{||x||}$<br>柯西-施瓦茨不等式$(x,y)^2\leqslant (x,x)(y,y)$或$|(x,y)|\leqslant ||x||\cdot ||y||$</li>
+</ul>
+<p>夹角$\theta =\arccos \frac{(x,y)}{||x||\cdot ||y||}$<br>$(x,y)=0$时称两向量正交，零向量与任何向量都正交<br>一组两两正交的非零向量，称为正交向量组</p>
+<blockquote>
+<p>定理5.1 正交向量组必定是线性无关组</p>
+</blockquote>
+<p>用正交向量组作向量空间的基，称为向量空间的正交基，若每个正交向量组的向量都是单位向量，则称为向量空间的正交规范基或标准正交基。</p>
+<p>施密特正交化过程</p>
+<script type="math/tex; mode=display">\begin{matrix}
+\beta_1= &\alpha_1\\ 
+\beta_2= &\alpha_2-\frac{(\alpha_2,\beta_1)}{(\beta_1,\beta_1)}\beta_1\\ 
+\beta_3= &\alpha_3-\frac{(\alpha_3,\beta_1)}{(\beta_1,\beta_1)}\beta_1-\frac{(\alpha_3,\beta_2)}{(\beta_2,\beta_2)}\beta_2\\ 
+\cdots \cdots\\ 
+\beta_r= & \alpha_r-\frac{(\alpha_r,\beta_1)}{(\beta_1,\beta_1)}\beta_1-\frac{(\alpha_r,\beta_2)}{(\beta_2,\beta_2)}\beta_2-\cdots-\frac{(\alpha_r,\beta_{r-1})}{(\beta_{r-1},\beta_{r-1})}\beta_{r-1}
+\end{matrix}</script><p>定义5.5 如果$n$阶方阵$A$满足，$A^{T}A=E(A^{-1}=A^{T})$，那么称$A$为<strong>正交矩阵</strong></p>
+<blockquote>
+<p>定理5.2 设$A,B$都是$n$阶正交矩阵，则<br>(1)$|A|=\pm 1$<br>(2)$A$的列（行）向量组是两两正交的单位向量<br>(3)$A^{T}(A^{-1})$也是正交矩阵<br>(4)$AB$也是正交矩阵<br>注： $A$为正交矩阵，当且仅当$A$的列（行）向量组为正交规范向量组<br>由此可见，正交矩阵$A$的$n$歌列（行）向量构成的向量空间$R^n$的一个正交规范基</p>
+</blockquote>
+<h4 id="相似矩阵"><a href="#相似矩阵" class="headerlink" title="相似矩阵"></a>相似矩阵</h4><p>定义5.6 设$A,B$都是$n$阶方阵，如果存在一个可逆矩阵$P$，使得$P^{-1}AP=B$，则称$A$与$B$是相似的，$P^{-1}AP$陈给对$A$做相似变换，可逆矩阵$P$称为把$A$变成$B$的相似变换矩阵</p>
+<ul>
+<li>$E^{-1}AE=A$</li>
+<li>$P^{-1}AP=B,(P^{-1})^{-1}BP^{-1}=A$</li>
+<li>$P^{-1}AP=B,Q^{-1}BQ=C,(PQ)^{-1}A(PQ)=C$<br>相似矩阵性质</li>
+<li>性质1 相思举着扭矩有相同的秩及相同的行列式</li>
+<li>性质2 相似矩阵若可逆，则其逆矩阵也相似</li>
+<li>若$A$与$B$相似，则$A^k$与$B^k$也相似</li>
+</ul>
+<blockquote>
+<p>定理5.3 相似矩阵有相同的特征多项式及相同的特征值（你明天不成立）</p>
+</blockquote>
+<h4 id="方阵对角化"><a href="#方阵对角化" class="headerlink" title="方阵对角化"></a>方阵对角化</h4><blockquote>
+<p>定理5.4 $n$阶方阵$A$与对角阵相似的充分必要条件是：$A$有$n$个线性无关的特征向量<br>方阵$A$如果能够对角化，则对角矩阵$\Lambda$在不计入$\lambda_k$的排列顺序时是惟一的，称为$A$的相似标准形<br>$P^{-1}AP=\Lambda$，其中$P$是由特征向量的列向量组成的。</p>
+</blockquote>
+<ul>
+<li>推论1 $n$阶方阵$A$若有$n$个不同的特征值，则$A$可对角化</li>
+<li>推论2 如果对$n$阶方阵$A$的任一$k$重特征值$\lambda$，都有$r(A-\lambda E)=n-k$，则$A$可对角化</li>
+</ul>
+<h4 id="实对称矩阵的对角化"><a href="#实对称矩阵的对角化" class="headerlink" title="实对称矩阵的对角化"></a>实对称矩阵的对角化</h4><blockquote>
+<p>定理5.5 实对称矩阵的特征值为实属<br>定理5.6 实对称矩阵对应于不同特征值的特征向量必正交<br>定理5.7 设$A$为$n$阶实对称矩阵，$\lambda$是$A$的$r$重特征值，则$r(A-\lambda E)=n-r$，从而矩阵$A$对应特征值$\lambda$恰有$r$个线性无关的特征向量<br>定理5.8 设$A$为$n$阶实对称矩阵，则必存在正交矩阵$P$，使得$P^{-1}AP=P^{T}AP=\Lambda$，其中$\Lambda$是以$A$的$n$个特征值为对角线元素的对角矩阵</p>
+</blockquote>
+<p>将每个对应于$r_j$重特征值$\lambda_j$的$r_j$个线性无关的特征向量正交化并单位化，即可得到$r_j$个单位正交特征向量，以所有特征值的正交化并单位化后特征向量为列向量构成正交矩阵$P$</p>
+<h2 id="第六章-二次型"><a href="#第六章-二次型" class="headerlink" title="第六章 二次型"></a>第六章 二次型</h2><h3 id="第一节-二次型及其矩阵表示"><a href="#第一节-二次型及其矩阵表示" class="headerlink" title="第一节 二次型及其矩阵表示"></a>第一节 二次型及其矩阵表示</h3><h4 id="二次型基本概念"><a href="#二次型基本概念" class="headerlink" title="二次型基本概念"></a>二次型基本概念</h4><blockquote>
+<p>定义6.1 含有$n$个变量$x_1,x_2,…,x_n$的二次齐次函数$f(x_1,x_2,…,x_n)=a_{11}x_1^2+a_{22}x_2^2+…+a_{nn}x_n^2+2a_{12}x_1x_2+2a_{13}x_1x_3+…+2a_{n-1,n}x_{n-1}x_n$ 称为<strong>二次型</strong></p>
+</blockquote>
+<p>当$a_{ij}$为复数时，$f$称为<strong>复二次型</strong>，为实数时称为<strong>实二次型</strong>。<br>将系数$a_{ij}$提出来形成一个矩阵$A$，对称阵$A$称为<strong>二次型$f$的矩阵</strong>，也称二次型$f$为<strong>对称阵$A$的二次型</strong>，矩阵$A$的秩叫作<strong>二次型$f$的秩</strong>。</p>
+<h4 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h4><blockquote>
+<p>定义6.2 矩阵表示$x=Cy$，$C$为线性变换的矩阵，当$|C|\neq 0$时，称线性变换为<strong>可逆的线性变换</strong>或<strong>非退化的线性变换</strong>；当$C$为正交矩阵时，称线性变换为<strong>正交线性变换</strong>，简称<strong>正交变换</strong>。</p>
+</blockquote>
+<h4 id="矩阵的合同"><a href="#矩阵的合同" class="headerlink" title="矩阵的合同"></a>矩阵的合同</h4><p>设$A,B$为$n$阶方阵，如果存在$n$阶可逆方阵$C$，使得$C^{T}AC=B$，则称$A$与$B$<strong>合同</strong>。<br>满足自反性、对称性、传递性、经过线性变换后对应矩阵依然合同。</p>
+<h3 id="第二节-二次型的标准形"><a href="#第二节-二次型的标准形" class="headerlink" title="第二节 二次型的标准形"></a>第二节 二次型的标准形</h3><blockquote>
+<p>定义6.4 若二次型经可逆线性变换后变成只含平方项的二次型，则称变换后的二次型为原二次型的<strong>标准形</strong>。</p>
+</blockquote>
+<h4 id="正交变换法"><a href="#正交变换法" class="headerlink" title="正交变换法"></a>正交变换法</h4><blockquote>
+<p>定理6.1（主轴定理） 对任意一个$n$元实二次型$f=x^{T}Ax$，一定存在正交变换$x=Py$，使$f$化为标准形</p>
+<script type="math/tex; mode=display">\lambda_1y_1^2+\lambda_2y_2^2+...+\lambda_ny_n^2</script><p>其中$\lambda_1,\lambda_2,…,\lambda_n$是$f$的矩阵$A$的$n$个特征值，正交矩阵$P$的$n$个列向量为$A$的对应于特征值的单位正交特征向量。</p>
+</blockquote>
+<h4 id="配方法"><a href="#配方法" class="headerlink" title="配方法"></a>配方法</h4><blockquote>
+<p>定理6.2 任何一个二次型都可通过非退化的线性变换化为标准形。<br>若存在$a_{ii}\neq 0$，那么将其依次配方，例如$f=a_{11}[x_1+\frac{1}{a_{11}}(a_{12}x_2+…+a_{1n}x_n)]^2-\frac{1}{a_{11}}(a_{12}x_2+…+a_{1n}x_n)^2+a_{22}x_2^2+2a_{23}x_2x_3+…+a_{nn}x_n^2$，即可将前面的平方项对应$y_1$的线性变换，后面是对应的$n-1$元二次型。<br>若不存在$a_{ii}=0$，那么就令$x_1=y_1-y_2,x_2=y_1+y_2,x_3=y_3…,x_n=y_n$，即可得一个包含平方项的二次型。</p>
+</blockquote>
+<h4 id="初等变换法"><a href="#初等变换法" class="headerlink" title="初等变换法"></a>初等变换法</h4><p>由于$C^{T}AC=\Lambda$，转换成一系列初等矩阵$C=P_1P_2…P_s$，$C^{T}AC=P_s^{T}…P_2^{T}P_1^{T}AP_1P_2…P_s=\Lambda$，注意到$EP_1P_2…P_s=C$。<br>对$2n\times n$的矩阵$\begin{bmatrix}A\\E\end{bmatrix}$通过右乘$P_1P_2..P_s$的初等列变换，左乘$P_1^{T}P_2^{T}…P_n^{T}$的初等行变换。<br>变换后，$A$变成了$\Lambda$，$E$变成了$C$。</p>
+<p>不花里胡哨的说（说人话），把第一行除第一个元素外，用列变换消成$0$；再把第一列除第一个元素外，用行变换消成$0$；依次做第二行、第二列…，最后消成一个对角矩阵。</p>
+<h3 id="第三节-正定二次型"><a href="#第三节-正定二次型" class="headerlink" title="第三节 正定二次型"></a>第三节 正定二次型</h3><h4 id="惯性定理与规范形"><a href="#惯性定理与规范形" class="headerlink" title="惯性定理与规范形"></a>惯性定理与规范形</h4><blockquote>
+<p>定理6.3（惯性定理） 在实二次型$f=x^{T}Ax$的标准形中，正系数的个数及负系数的个数是唯一确定的，与可逆线性变换无关。</p>
+</blockquote>
+<p>定义6.5 在实二次型$f$的标准形中，正系数个数$p$称为二次型$f$的<strong>正惯性系数</strong>，负系数个数$q$称为二次型$f$的<strong>负惯性系数</strong>。</p>
+<p>将二次型变成如下形式$f=z_1^2+…+z_p^2-z_{p+1}^2-…z_r^2$，称为二次型的<strong>规范形</strong>。（大概是系数为$\pm 1$？）<br>由惯性定理知，任一实二次型的规范形唯一。</p>
+<h4 id="二次型的有定型"><a href="#二次型的有定型" class="headerlink" title="二次型的有定型"></a>二次型的有定型</h4><p>定义6.6 设有实二次型$f=x^{T}Ax$，如果对任取的$x$<br>（1）$f\geqslant 0$，当且仅当$x=0$时，$f=0$，则称二次型$f$是<strong>正定二次型</strong>，而称对称矩阵$A$为<strong>正定矩阵</strong>；<br>（2）$f\leqslant 0$，当且仅当$x=0$时，$f=0$，则称二次型$f$是<strong>负定二次型</strong>，而称对阵矩阵$A$为<strong>负定矩阵</strong>；<br>（3）$f\geqslant 0$（或$f\leqslant 0$），则称二次型$f$是<strong>半正定</strong>（或<strong>半负定</strong>）<strong>二次型</strong>，同时称矩阵$A$是<strong>半正定矩阵</strong>（或<strong>半负定矩阵</strong>）。<br>（4）$f$的值有正有负，则称二次型$f$是<strong>不定的</strong></p>
+<blockquote>
+<p>定理6.4 $n$元二次型$f=x^{T}Ax$正（负）定的充分必要条件是：它的正（负）惯性指数为$n$。</p>
+</blockquote>
+<ul>
+<li>推论1 对称矩阵$A$为正（负）定矩阵的充分必要条件是：$A$的特征值全为正（负）。</li>
+<li>推论2 实二次型$f=x^{T}Ax$半正（负）定的充分必要条件是：它的正（负）惯性指数等于二次型的秩。</li>
+<li>推论3 二次型经非退化线性变换后不改变它的有定性。</li>
+<li>推论4 实对称矩阵$A$为正定矩阵的充分必要条件是：$A$与单位矩阵合同。</li>
+</ul>
+<blockquote>
+<p>定理6.5 实对称矩阵$A$正定的充分必要条件是：存在可逆矩阵$C$，使得$A=C^{T}C$<br>定理6.6 设$A$为正定矩阵，则<br>（1）$A$的主对角线元$a_{ii}&gt;0$<br>（2）$|A|&gt;0$</p>
+</blockquote>
+<ul>
+<li>推论5 设$A$为负定矩阵，则<br>（1）$A$的主对角元$a_{ii}<0$ （2）$|-a|="(-1)^n|A|">0$</0$></li>
+</ul>
+<p>定义6.7 设$A=(a_{ij})_ {n\times n}$，称</p>
+<script type="math/tex; mode=display">|A_k|=\left | \begin{matrix}
+a_{11} & a_{12} & \cdots & a_{1k}\\
+a_{21} & a_{22} & \cdots & a_{2k}\\
+\vdots & \vdots & & \vdots\\
+a_{k1} & a_{k2} & \cdots & a_{kk}
+\end{matrix} \right |</script><p>为$A$的$k$阶<strong>顺序主子式</strong>。</p>
+<blockquote>
+<p>定理6.7 $n$阶实对称矩阵$A$正定的充分必要条件是：$A$的所有顺序主子式（$n$个）全大于零，称为<strong>赫尔维茨定理</strong>。</p>
+</blockquote>
+<ul>
+<li>推论6 实对称矩阵$A$负定的充分必要条件是：奇数阶顺序主子式为负，偶数阶顺序主子式为正。</li>
+</ul>
+<h2 id="第七章-线性空间与线性变换简介"><a href="#第七章-线性空间与线性变换简介" class="headerlink" title="第七章 线性空间与线性变换简介"></a>第七章 线性空间与线性变换简介</h2><h3 id="第一节-线性空间的基本概念"><a href="#第一节-线性空间的基本概念" class="headerlink" title="第一节 线性空间的基本概念"></a>第一节 线性空间的基本概念</h3><h4 id="线性空间的定义与性质"><a href="#线性空间的定义与性质" class="headerlink" title="线性空间的定义与性质"></a>线性空间的定义与性质</h4><p>定义7.1 设$V$是一非空集合，$P$是一数域，如果在$V$中定义了以下两种运算：</p>
+<ol>
+<li>$\alpha +\beta=\beta + \alpha$</li>
+<li>$(\alpha +\beta )+\gamma = \alpha + (\beta + \gamma)$</li>
+<li>$\alpha + 0 = \alpha$</li>
+<li>存在负元素$\beta=-\alpha$，$\alpha + \beta = 0$</li>
+<li>$1\alpha = \alpha$</li>
+<li>$\lambda(\mu \alpha)=(\lambda \mu)\alpha$</li>
+<li>$(\lambda + \mu)\alpha=\lambda \alpha + \mu \lambda$</li>
+<li>$\lambda(\alpha + \beta)=\lambda \alpha + \lambda \beta$<br>那么称$V$是数域$P$上的<strong>线性空间</strong>（或<strong>向量空间</strong>），简称<strong>线性空间</strong>，$V$中元素也称为<strong>向量</strong>。</li>
+</ol>
+<p>线性空间的加法和数量乘法称为<strong>线性运算</strong>。</p>
+<ul>
+<li>性质1 零元素是唯一的</li>
+<li>性质2 每个元素的负元素是唯一的</li>
+<li>性质3 $0\cdot \alpha=0,\lambda\cdot 0 = 0,(-1)\alpha=-\alpha$</li>
+<li>性质4 若$\lambda \alpha =0$，则$\lambda=0$或$\alpha =0$</li>
+</ul>
+<p>定义7.2 设$L$是线性空间$V$的一个非空子集，若$L$对于$V$中所定义的加法和数乘运算也构成一个线性空间，则称$L$为$V$的一个<strong>线性子空间</strong>（简称<strong>子空间</strong>）。</p>
+<blockquote>
+<p>定理7.1 线性空间$V$的非空子集$L$构成子空间的充分必要条件是：$L$对$V$的加法与数乘运算封闭。</p>
+</blockquote>
+<p>定义7.3 线性空间$V$中，如果存在$n$个元素$\alpha_1,\alpha_2,…,\alpha_n$，满足这$n$个元素线性无关，并且$V$中的任意元素总能由这$n$个元素线性表示，就称这$n$个元素为线性空间$V$的一个<strong>基</strong>，$n$称为线性空间$V$的<strong>维数</strong>，记作$\text{dim}V=n$。维数为$n$的线性空间也称为<strong>$n$维线性空间</strong>。</p>
+<p>定义7.4 设$\alpha_1,\alpha_2,…,\alpha_n$是线性空间$V$的一个基，对任一元素$\alpha \in V$，有唯一表达式$\alpha=x_1\alpha_1+x_2\alpha_2+…+x_n\alpha_n$，称有序数组$(x_1,x_2,…,x_n)$为元素$\alpha$在基$\alpha_1,\alpha_2,…,\alpha_n$下的<strong>坐标</strong>，并记作$\alpha=(x_1,x_2,…,x_n)$</p>
+<h4 id="基坐标与坐标变换"><a href="#基坐标与坐标变换" class="headerlink" title="基坐标与坐标变换"></a>基坐标与坐标变换</h4><blockquote>
+<p>定理7.2 设$n$维线性空间有两个不同的基$e_1,e_2,…,e_n$和$e_1’,e_2’,…,e_n’$且有$(e_1’,e_2’,…,e_n’)=(e_1,e_2,…,e_n)A$，其中$A$的第$j$列为$e_j’$在$e_1,e_2,…,e_n$下的坐标，这个公式叫做<strong>基变换公式</strong>，矩阵$A$称为<strong>过渡矩阵</strong>。<br>$\begin{pmatrix}x_1\\ x_2\\ \vdots\\ x_n\end{pmatrix}=A\begin{pmatrix}x_1’\\ x_2’\\ \vdots\\ x_n’\end{pmatrix}$或$\begin{pmatrix}x_1’\\ x_2’\\ \vdots\\ x_n’\end{pmatrix}=A^{-1}\begin{pmatrix}x_1\\ x_2\\ \vdots\\ x_n\end{pmatrix}$这个称为坐标变换公式。</p>
+</blockquote>
+<h3 id="第二节-线性变换"><a href="#第二节-线性变换" class="headerlink" title="第二节 线性变换"></a>第二节 线性变换</h3><p>设$V$为线性空间，把$V$到$V$的映射称为$V$的<strong>变换</strong>。</p>
+<h4 id="线性变换的定义与性质"><a href="#线性变换的定义与性质" class="headerlink" title="线性变换的定义与性质"></a>线性变换的定义与性质</h4><p>定义7.5 数域$P$上的线性空间$V$的一个变换$T$称为<strong>线性变换</strong>，如果对于任意$x,y\in V,\lambda \in P$，都有$T(x+y)=T(x)+T(y),T(\lambda x)=\lambda T(x)$</p>
+<h4 id="线性变换的矩阵表示"><a href="#线性变换的矩阵表示" class="headerlink" title="线性变换的矩阵表示"></a>线性变换的矩阵表示</h4><p>就是把每个元素都变换一下，竖着排列，系数形成一个矩阵。</p>
+<blockquote>
+<p>定理7.3 设$V$为$n$维线性空间，线性变换$T$在基$e_1,e_2,…,e_n$下的矩阵为$A$，则向量$x$与$T(x)$在基$e_1,e_2,…,e_n$下的坐标有关系式$T(x)=Ax,x=(x_1,x_2,…,x_n)^{T}$<br>定理7.4 两个基，基（I)到基（II）的过渡矩阵为$C$，$T$是$V$的线性变换，他在基(I),(II)下的矩阵分别为$A$和$B$，则$B=C^{-1}AC$</p>
+</blockquote>
+<h4 id="线性变换的运算"><a href="#线性变换的运算" class="headerlink" title="线性变换的运算"></a>线性变换的运算</h4><p>3种运算<br>和：$T(x)=T_1(x)+T_2(x)$，记作$T=T_1+T_2$<br>数量乘积：$T(x)=\lambda(T_1(x))$，记作$T=\lambda T_1$<br>乘积：$T(x)=T_1(T_2(x))$，记作$T=T_1T_2$</p>
+<p>定义7.6 设$I$是线性空间$V$的单位线性变换，$T$为$V$的线性变换，如果存在$V$的一个变换$S$，使得$TS=ST=I$，则称线性变换$T$是可逆的，而$S$称为$T$的逆变换，记作$T^{-1}$</p>
+<blockquote>
+<p>定理7.5 设线性空间$V$的线性变换$T_1,T_2$在$V$的某个基下的矩阵分别为$A$和$B$，则在这个基下，有<br>(1)$T_1+T_2$的矩阵为$A+B$<br>(2)$\lambda T_1$的矩阵为$\lambda A$<br>(3)$T_1T_2$的矩阵为$AB$<br>(4)若$T_1$可逆，则$A$可逆，且逆变换$T^{-1}$的矩阵为$A^{-1}$</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+          
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/note-math/" rel="next" title="高等数学笔记">
+                <i class="fa fa-chevron-left"></i> 高等数学笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/pro-TopCoderSRM755/" rel="prev" title="TopCoderSRM755Div1">
+                TopCoderSRM755Div1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="gitalk-container"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
+          <p class="site-author-name" itemprop="name">北屿</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">70</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://baidu.com/" title="欢迎友链qwq" target="_blank">欢迎友链qwq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://borber.cn/" title="BORBER" target="_blank">BORBER</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mon-soon.github.io/" title="mon-soon" target="_blank">mon-soon</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-行列式"><span class="nav-number">1.</span> <span class="nav-text">第一章 行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-二阶与三阶行列式"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 二阶与三阶行列式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-n-阶行列式的定义"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 $n$阶行列式的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-行列式的性质"><span class="nav-number">1.3.</span> <span class="nav-text">第三节 行列式的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四节-行列式按一行或列展开"><span class="nav-number">1.4.</span> <span class="nav-text">第四节 行列式按一行或列展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五节-克莱默法则"><span class="nav-number">1.5.</span> <span class="nav-text">第五节 克莱默法则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-矩阵"><span class="nav-number">2.</span> <span class="nav-text">第二章 矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-矩阵的概念"><span class="nav-number">2.1.</span> <span class="nav-text">第一节 矩阵的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-矩阵的运算"><span class="nav-number">2.2.</span> <span class="nav-text">第二节 矩阵的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方阵的行列式"><span class="nav-number">2.2.1.</span> <span class="nav-text">方阵的行列式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-逆矩阵"><span class="nav-number">2.3.</span> <span class="nav-text">第三节 逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四节-分块矩阵"><span class="nav-number">2.4.</span> <span class="nav-text">第四节 分块矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五节-矩阵的秩与矩阵的初等变换"><span class="nav-number">2.5.</span> <span class="nav-text">第五节 矩阵的秩与矩阵的初等变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-向量组的线性相关性"><span class="nav-number">3.</span> <span class="nav-text">第三章 向量组的线性相关性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-n-维向量"><span class="nav-number">3.1.</span> <span class="nav-text">第一节 $n$维向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-向量组的线性相关性"><span class="nav-number">3.2.</span> <span class="nav-text">第二节 向量组的线性相关性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#向量组线性相关性的矩阵判别法"><span class="nav-number">3.2.1.</span> <span class="nav-text">向量组线性相关性的矩阵判别法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-向量空间的基、维数与坐标"><span class="nav-number">3.3.</span> <span class="nav-text">第三节 向量空间的基、维数与坐标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-线性方程组"><span class="nav-number">4.</span> <span class="nav-text">第四章 线性方程组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-高斯消元法"><span class="nav-number">4.1.</span> <span class="nav-text">第一节 高斯消元法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-齐次线性方程组"><span class="nav-number">4.2.</span> <span class="nav-text">第二节 齐次线性方程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-非齐次线性方程组"><span class="nav-number">4.3.</span> <span class="nav-text">第三节 非齐次线性方程组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-矩阵的对角化"><span class="nav-number">5.</span> <span class="nav-text">第五章 矩阵的对角化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-特征值与特征向量"><span class="nav-number">5.1.</span> <span class="nav-text">第一节 特征值与特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-相似矩阵"><span class="nav-number">5.2.</span> <span class="nav-text">第二节 相似矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#向量的内积"><span class="nav-number">5.2.1.</span> <span class="nav-text">向量的内积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相似矩阵"><span class="nav-number">5.2.2.</span> <span class="nav-text">相似矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方阵对角化"><span class="nav-number">5.2.3.</span> <span class="nav-text">方阵对角化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实对称矩阵的对角化"><span class="nav-number">5.2.4.</span> <span class="nav-text">实对称矩阵的对角化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-二次型"><span class="nav-number">6.</span> <span class="nav-text">第六章 二次型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-二次型及其矩阵表示"><span class="nav-number">6.1.</span> <span class="nav-text">第一节 二次型及其矩阵表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二次型基本概念"><span class="nav-number">6.1.1.</span> <span class="nav-text">二次型基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换"><span class="nav-number">6.1.2.</span> <span class="nav-text">线性变换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矩阵的合同"><span class="nav-number">6.1.3.</span> <span class="nav-text">矩阵的合同</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-二次型的标准形"><span class="nav-number">6.2.</span> <span class="nav-text">第二节 二次型的标准形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正交变换法"><span class="nav-number">6.2.1.</span> <span class="nav-text">正交变换法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配方法"><span class="nav-number">6.2.2.</span> <span class="nav-text">配方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初等变换法"><span class="nav-number">6.2.3.</span> <span class="nav-text">初等变换法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-正定二次型"><span class="nav-number">6.3.</span> <span class="nav-text">第三节 正定二次型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#惯性定理与规范形"><span class="nav-number">6.3.1.</span> <span class="nav-text">惯性定理与规范形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二次型的有定型"><span class="nav-number">6.3.2.</span> <span class="nav-text">二次型的有定型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七章-线性空间与线性变换简介"><span class="nav-number">7.</span> <span class="nav-text">第七章 线性空间与线性变换简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-线性空间的基本概念"><span class="nav-number">7.1.</span> <span class="nav-text">第一节 线性空间的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性空间的定义与性质"><span class="nav-number">7.1.1.</span> <span class="nav-text">线性空间的定义与性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基坐标与坐标变换"><span class="nav-number">7.1.2.</span> <span class="nav-text">基坐标与坐标变换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-线性变换"><span class="nav-number">7.2.</span> <span class="nav-text">第二节 线性变换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换的定义与性质"><span class="nav-number">7.2.1.</span> <span class="nav-text">线性变换的定义与性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换的矩阵表示"><span class="nav-number">7.2.2.</span> <span class="nav-text">线性变换的矩阵表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性变换的运算"><span class="nav-number">7.2.3.</span> <span class="nav-text">线性变换的运算</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">北屿</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '3bd523d04a7fcd807bd1',
+          clientSecret: '3c4d80f8fd534840b0571ebf194825129668c1fe',
+          repo: 'gitalk',
+          owner: 'beiyuouo',
+          admin: ['beiyuouo'],
+          id: md5(location.pathname),
+          abels: 'gitalk'.split(',').filter(l => l),
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
