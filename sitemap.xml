@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
+    
+    <lastmod>2019-09-09T15:15:58.262Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/note-discrete-mathematics/</loc>
     
-    <lastmod>2019-09-08T15:13:56.093Z</lastmod>
+    <lastmod>2019-09-09T13:39:28.341Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-probability/</loc>
+    
+    <lastmod>2019-09-09T13:38:24.348Z</lastmod>
     
   </url>
   
@@ -44,23 +58,9 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
-    
-    <lastmod>2019-09-03T13:26:46.356Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
     
     <lastmod>2019-09-03T13:26:22.139Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-probability/</loc>
-    
-    <lastmod>2019-09-03T13:25:27.291Z</lastmod>
     
   </url>
   

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
+    <lastmod>2019-09-09</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-discrete-mathematics/</loc>
-    <lastmod>2019-09-08</lastmod>
+    <lastmod>2019-09-09</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-probability/</loc>
+    <lastmod>2019-09-09</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/iot-mnist/</loc>
     <lastmod>2019-09-08</lastmod>
@@ -19,13 +25,7 @@
     <loc>beiyuouo.github.io/blog/note-niit/</loc>
     <lastmod>2019-09-06</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
-    <lastmod>2019-09-03</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
-    <lastmod>2019-09-03</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-probability/</loc>
     <lastmod>2019-09-03</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/20190902/</loc>
