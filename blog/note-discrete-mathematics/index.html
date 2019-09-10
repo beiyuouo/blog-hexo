@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="写在前面离散数学好像只学第1,2,5部分 第1部分 数理逻辑第1章 命题逻辑的基本概念1.1 命题与连接词命题是判断结果唯一的陈述句判断结果称为命题的真值，真值只取两个值：真或假真值为真的命题称作真命题，真值为假的命题称作假命题 不能被分解成更简单的命题称作简单命题或原子命题由简单命题通过联结词联结而成的命题称作复合命题 由真能推出假、又由假能推出真，从而既不为真也不能为假的陈述句称作悖论，悖论不">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-09-09T13:39:28.341Z">
+<meta property="og:updated_time" content="2019-09-10T13:40:16.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="离散数学笔记">
 <meta name="twitter:description" content="写在前面离散数学好像只学第1,2,5部分 第1部分 数理逻辑第1章 命题逻辑的基本概念1.1 命题与连接词命题是判断结果唯一的陈述句判断结果称为命题的真值，真值只取两个值：真或假真值为真的命题称作真命题，真值为假的命题称作假命题 不能被分解成更简单的命题称作简单命题或原子命题由简单命题通过联结词联结而成的命题称作复合命题 由真能推出假、又由假能推出真，从而既不为真也不能为假的陈述句称作悖论，悖论不">
@@ -401,8 +401,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-09-09T21:39:28+08:00">
-                2019-09-09
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-10T21:40:16+08:00">
+                2019-09-10
               </time>
             
           </span>
@@ -456,7 +456,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  5.3k
+                  5.9k
                 </span>
               
 
@@ -472,7 +472,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  21
+                  23
                 </span>
               
             </div>
@@ -627,7 +627,25 @@
 <li>若$A$中含自由出现的个体变项符号$x$就将它替换成$\sigma (x)$<br>把这样所得到的公式记作$A’$. 称$A’$为$A$在$I$和$\sigma$下的解释，或$A$在$I$和$\sigma$下被解释成$A’$<br>定义4.8 设$A$为一公式，若$A$在任何解释和该解释下的任何赋值下均为真，则称$A$为<strong>永真式</strong>(或称作<strong>逻辑有效式</strong>). 若$A$在任何解释和该解释下的任何赋值均为假，则称$A$为<strong>矛盾式</strong>(或<strong>永假式</strong>). 若$A$在任何解释和该解释下的一个赋值使$A$为真，则称$A$是<strong>可满足式</strong><br>定义4.9 设$A_0$是含命题变项$p_1,p_2,\cdots,p_n$的命题公式，$A_1,A_2,\cdots,A_n$是$n$个谓词公式，用$A_i(1\leqslant i\leqslant n)$处处代替$A_0$中的$p_i$，所得的公式$A$称为$A_0$的<strong>代换实例</strong>.<br>定理4.1 重言式的代换实例都是永真式，矛盾式的代换实例都是矛盾式</li>
 </ol>
 </blockquote>
-<h3 id="第5章-一阶逻辑等值演算和推理"><a href="#第5章-一阶逻辑等值演算和推理" class="headerlink" title="第5章 一阶逻辑等值演算和推理"></a>第5章 一阶逻辑等值演算和推理</h3><h2 id="第2部分"><a href="#第2部分" class="headerlink" title="第2部分"></a>第2部分</h2><h2 id="第5部分"><a href="#第5部分" class="headerlink" title="第5部分"></a>第5部分</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h3 id="第5章-一阶逻辑等值演算和推理"><a href="#第5章-一阶逻辑等值演算和推理" class="headerlink" title="第5章 一阶逻辑等值演算和推理"></a>第5章 一阶逻辑等值演算和推理</h3><h4 id="5-1-一阶逻辑等值式与置换规则"><a href="#5-1-一阶逻辑等值式与置换规则" class="headerlink" title="5.1 一阶逻辑等值式与置换规则"></a>5.1 一阶逻辑等值式与置换规则</h4><blockquote>
+<p>定义5.1 设$A,B$是一阶逻辑中任意两个公式，若$A\leftrightarrow B$是永真式，则称$A$与$B$等值，记作$A\Leftrightarrow B$. 称$A\Leftrightarrow B$是<strong>等值式</strong>.</p>
+</blockquote>
+<ol>
+<li>量词否定等值式<br>(1) $\neg \forall xA(x)\Leftrightarrow \exists x\neg A(x)$<br>(2) $\neg \exists xA(x)\Leftrightarrow \forall x\neg A(x)$</li>
+<li>量词辖域收缩与扩张等值式<br>(1) $\forall x(A(x)\lor B) \Leftrightarrow \forall xA(x)\lor B$.<br> $\forall x(A(x)\land B)\Leftrightarrow \forall xA(x)\land B$.<br> $\forall x(A(x)\to B)\Leftrightarrow \exists xA(x)\to B$.<br> $\forall x(B\to A(x))\Leftrightarrow B\to \forall xA(x)$.<br>(2) $\exists x(A(x)\lor B)\Leftrightarrow \exists xA(x)\lor B$.<br> $\exists x(A(x)\land B)\Leftrightarrow \exists xA(x)\land B$.<br> $\exists x(A(x)\to B)\Leftrightarrow \forall xA(x)\to B$.<br> $\exists (B\to A(x))\Leftrightarrow B\to \exists xA(x)$.</li>
+<li>量词分配等值式<br>(1) $\forall x(A(x)\land B(x))\Leftrightarrow \forall xA(x)\land \forall xB(x)$.<br>(2) $\exists x(A(x)\lor B(x))\Leftrightarrow \exists xA(x)\lor \exists xB(x)$.</li>
+</ol>
+<p>规则</p>
+<ol>
+<li>置换规则 设$\Phi (A)$是含公式$A$的公式，$\Phi (B)$是用公式$B$取代$\Phi (A)$中所有的$A$之后所得到的公式. 那么，若$A\Leftrightarrow B$，则$\Phi (A)\Leftrightarrow \Phi (B)$.</li>
+<li>换名规则 设$A$为一公式，将$A$中某量词辖域中的一个约束变项的所有出现及相应的指导变元全部改成该量词辖域中未曾出现过的某个个体变项符号，公式中其余部分不变，将所得公式记作$A’$，则$A’\Leftrightarrow A$.</li>
+</ol>
+<h4 id="5-2-一阶逻辑前束范式"><a href="#5-2-一阶逻辑前束范式" class="headerlink" title="5.2 一阶逻辑前束范式"></a>5.2 一阶逻辑前束范式</h4><blockquote>
+<p>定义5.2 具有如下形式$Q_1x_1Q_2x_2\cdots Q_kx_kB$的一阶逻辑公式称作<strong>前束范式</strong>，其中$Q_i(1\leqslant i\leqslant k)$为$\forall $或$\exists $，$B$为不含量词的公式.<br>定理5.1(前束范式存在定理) 一阶逻辑中的任何公式都存在等值的前束范式.</p>
+</blockquote>
+<h4 id="5-3-一阶逻辑的推理理论"><a href="#5-3-一阶逻辑的推理理论" class="headerlink" title="5.3 一阶逻辑的推理理论"></a>5.3 一阶逻辑的推理理论</h4><p>在一阶逻辑中，从前提$A_1,A_2,\cdots,A_k$出发推出结论$B$的推理的形式结构，依然采用如下的蕴含式形式$A_1\land A_2\land \cdots \land A_k\to B$. 若为永真式，则称推理正确，否则称推理不正确.<br>在一阶逻辑中称永真式的蕴含式为推理定律. 若一个推理的形式结构是推理定律，则这个推理是正确的.</p>
+<p>后面关于自然推理系统的定义就不写了</p>
+<h2 id="第2部分"><a href="#第2部分" class="headerlink" title="第2部分"></a>第2部分</h2><h2 id="第5部分"><a href="#第5部分" class="headerlink" title="第5部分"></a>第5部分</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li>《离散数学（第2版）》，屈婉玲、耿素云、张立昂，高等教育出版社</li>
 </ul>
 
@@ -877,7 +895,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第1部分-数理逻辑"><span class="nav-number">2.</span> <span class="nav-text">第1部分 数理逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1章-命题逻辑的基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">第1章 命题逻辑的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-命题与连接词"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.1 命题与连接词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-命题公式及其赋值"><span class="nav-number">2.1.2.</span> <span class="nav-text">1.2 命题公式及其赋值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2章-命题逻辑等值演算"><span class="nav-number">2.2.</span> <span class="nav-text">第2章 命题逻辑等值演算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-等值式"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1 等值式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-析取范式与合取范式"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 析取范式与合取范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-联结词的完备集"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 联结词的完备集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3章-命题逻辑的推理理论"><span class="nav-number">2.3.</span> <span class="nav-text">第3章 命题逻辑的推理理论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-推理的形式结构"><span class="nav-number">2.3.1.</span> <span class="nav-text">3.1 推理的形式结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-自然推理系统-P"><span class="nav-number">2.3.2.</span> <span class="nav-text">3.2 自然推理系统$P$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-消解证明法"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.3 消解证明法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第4章-一阶逻辑基本概念"><span class="nav-number">2.4.</span> <span class="nav-text">第4章 一阶逻辑基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-一阶逻辑命题符号化"><span class="nav-number">2.4.1.</span> <span class="nav-text">4.1 一阶逻辑命题符号化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-一阶逻辑公式及其解释"><span class="nav-number">2.4.2.</span> <span class="nav-text">4.2 一阶逻辑公式及其解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第5章-一阶逻辑等值演算和推理"><span class="nav-number">2.5.</span> <span class="nav-text">第5章 一阶逻辑等值演算和推理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2部分"><span class="nav-number">3.</span> <span class="nav-text">第2部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5部分"><span class="nav-number">4.</span> <span class="nav-text">第5部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第1部分-数理逻辑"><span class="nav-number">2.</span> <span class="nav-text">第1部分 数理逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1章-命题逻辑的基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">第1章 命题逻辑的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-命题与连接词"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.1 命题与连接词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-命题公式及其赋值"><span class="nav-number">2.1.2.</span> <span class="nav-text">1.2 命题公式及其赋值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2章-命题逻辑等值演算"><span class="nav-number">2.2.</span> <span class="nav-text">第2章 命题逻辑等值演算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-等值式"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1 等值式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-析取范式与合取范式"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 析取范式与合取范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-联结词的完备集"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 联结词的完备集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3章-命题逻辑的推理理论"><span class="nav-number">2.3.</span> <span class="nav-text">第3章 命题逻辑的推理理论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-推理的形式结构"><span class="nav-number">2.3.1.</span> <span class="nav-text">3.1 推理的形式结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-自然推理系统-P"><span class="nav-number">2.3.2.</span> <span class="nav-text">3.2 自然推理系统$P$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-消解证明法"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.3 消解证明法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第4章-一阶逻辑基本概念"><span class="nav-number">2.4.</span> <span class="nav-text">第4章 一阶逻辑基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-一阶逻辑命题符号化"><span class="nav-number">2.4.1.</span> <span class="nav-text">4.1 一阶逻辑命题符号化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-一阶逻辑公式及其解释"><span class="nav-number">2.4.2.</span> <span class="nav-text">4.2 一阶逻辑公式及其解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第5章-一阶逻辑等值演算和推理"><span class="nav-number">2.5.</span> <span class="nav-text">第5章 一阶逻辑等值演算和推理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-一阶逻辑等值式与置换规则"><span class="nav-number">2.5.1.</span> <span class="nav-text">5.1 一阶逻辑等值式与置换规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-一阶逻辑前束范式"><span class="nav-number">2.5.2.</span> <span class="nav-text">5.2 一阶逻辑前束范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-一阶逻辑的推理理论"><span class="nav-number">2.5.3.</span> <span class="nav-text">5.3 一阶逻辑的推理理论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2部分"><span class="nav-number">3.</span> <span class="nav-text">第2部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5部分"><span class="nav-number">4.</span> <span class="nav-text">第5部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
