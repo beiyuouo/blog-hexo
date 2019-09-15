@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>beiyuouo.github.io/blog/note-discrete-mathematics/</loc>
-    <lastmod>2019-09-10</lastmod>
+    <loc>beiyuouo.github.io/blog/note-probability/</loc>
+    <lastmod>2019-09-14</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/iot-raspberry-hardware/</loc>
+    <lastmod>2019-09-14</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-data-structure/</loc>
+    <lastmod>2019-09-14</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-ros/</loc>
+    <lastmod>2019-09-12</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
+    <lastmod>2019-09-11</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-discrete-mathematics/</loc>
     <lastmod>2019-09-10</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
     <lastmod>2019-09-10</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-probability/</loc>
-    <lastmod>2019-09-09</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/iot-mnist/</loc>
-    <lastmod>2019-09-08</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/iot-smart-speaker/</loc>
     <lastmod>2019-09-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/TODOLIST/</loc>
@@ -24,9 +30,6 @@
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-niit/</loc>
     <lastmod>2019-09-06</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
-    <lastmod>2019-09-03</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/20190902/</loc>
     <lastmod>2019-09-02</lastmod>

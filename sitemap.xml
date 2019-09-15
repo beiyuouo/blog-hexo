@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-discrete-mathematics/</loc>
+    <loc>beiyuouo.github.io/blog/note-probability/</loc>
     
-    <lastmod>2019-09-10T13:40:16.383Z</lastmod>
+    <lastmod>2019-09-14T13:24:46.332Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/iot-raspberry-hardware/</loc>
+    
+    <lastmod>2019-09-14T13:14:45.685Z</lastmod>
     
   </url>
   
   <url>
     <loc>beiyuouo.github.io/blog/note-data-structure/</loc>
     
-    <lastmod>2019-09-10T11:12:41.482Z</lastmod>
+    <lastmod>2019-09-14T08:08:21.124Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-ros/</loc>
+    
+    <lastmod>2019-09-12T15:00:06.384Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
+    
+    <lastmod>2019-09-11T12:18:30.754Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-discrete-mathematics/</loc>
+    
+    <lastmod>2019-09-10T13:40:16.383Z</lastmod>
     
   </url>
   
@@ -23,23 +51,9 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-probability/</loc>
-    
-    <lastmod>2019-09-09T13:38:24.348Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/iot-mnist/</loc>
     
     <lastmod>2019-09-08T08:05:52.914Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/iot-smart-speaker/</loc>
-    
-    <lastmod>2019-09-08T08:05:34.778Z</lastmod>
     
   </url>
   
@@ -54,13 +68,6 @@
     <loc>beiyuouo.github.io/blog/note-niit/</loc>
     
     <lastmod>2019-09-06T04:54:52.994Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
-    
-    <lastmod>2019-09-03T13:26:22.139Z</lastmod>
     
   </url>
   
