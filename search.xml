@@ -79,7 +79,7 @@
       <link href="/blog/iot-raspberry-hardware/"/>
       <url>/blog/iot-raspberry-hardware/</url>
       
-        <content type="html"><![CDATA[<h2 id="硬件基础"><a href="#硬件基础" class="headerlink" title="硬件基础"></a>硬件基础</h2><p>因为我的是树莓派Model 3B+，所以GPIO引脚一共有40个<br>布局是这个样子的<br><img src="/img/iot-raspberry-hardware/20190914161430.png" alt></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《树莓派开发实战(第2版)》</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="硬件基础"><a href="#硬件基础" class="headerlink" title="硬件基础"></a>硬件基础</h2><p>因为我的是树莓派Model 3B+，所以GPIO引脚一共有40个<br>布局是这个样子的<br><img src="/img/iot-raspberry-hardware/20190914161430.png" alt></p><h2 id="GPIO"><a href="#GPIO" class="headerlink" title="GPIO"></a>GPIO</h2><p>发现了一个特别好用的，入门级GPIO库，之前看RPi.GPIO给我整蒙了，这个是真的简单<br><a href="https://gpiozero.readthedocs.io/en/stable/#" target="_blank" rel="noopener">gpiozero</a></p><p>随便练了一下</p><h3 id="RGB"><a href="#RGB" class="headerlink" title="RGB"></a>RGB</h3><p>一开始也是不太会接线的说，但是这个库比较简单就随便接了<br>R - pin17<br>G - pin27<br>B - pin 18<br>GND - GND<br><img src="/img/iot-hardware/20190924201636.jpg" alt></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gpiozero <span class="keyword">import</span> LED</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line">ledr = LED(<span class="number">17</span>)</span><br><span class="line">ledg = LED(<span class="number">27</span>)</span><br><span class="line">ledb = LED(<span class="number">18</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    ledr.on()</span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line">    ledg.on()</span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line">    ledb.on()</span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line">    ledr.off()</span><br><span class="line">    ledg.off()</span><br><span class="line">    ledb.off()</span><br><span class="line">    sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure><h3 id="Button-RGB"><a href="#Button-RGB" class="headerlink" title="Button + RGB"></a>Button + RGB</h3><p>一开始是青色，按按钮变紫色，松开又是青色<br>一开始把按钮的中间的线差错位置了，中间是正极连+5V，负极连GND，另一个边上的随便连个pin，我连的17<br>RGB灯就是换了一下pin，其他跟上面一样</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gpiozero <span class="keyword">import</span> Button, LED</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line">ledr = LED(<span class="number">18</span>)</span><br><span class="line">ledg = LED(<span class="number">27</span>)</span><br><span class="line">ledb = LED(<span class="number">22</span>)</span><br><span class="line">btn = Button(<span class="number">17</span>)</span><br><span class="line"></span><br><span class="line">ledb.on()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="keyword">if</span> btn.is_pressed:</span><br><span class="line">        ledr.on()</span><br><span class="line">        ledg.off()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        ledg.on()</span><br><span class="line">        ledr.off()</span><br></pre></td></tr></table></figure><h3 id="Button-RGB-laster"><a href="#Button-RGB-laster" class="headerlink" title="Button + RGB + laster"></a>Button + RGB + laster</h3><p>加了个激光玩，it’s so easy<br>接下来就要加些传感器了<br><img src="/img/iot-hardware/20190924215604.jpg" alt><br><img src="/img/iot-hardware/20190924215622.jpg" alt><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gpiozero <span class="keyword">import</span> Button, LED</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line">ledr = LED(<span class="number">18</span>)</span><br><span class="line">ledg = LED(<span class="number">27</span>)</span><br><span class="line">ledb = LED(<span class="number">22</span>)</span><br><span class="line">btn = Button(<span class="number">17</span>)</span><br><span class="line"></span><br><span class="line">laster = LED(<span class="number">23</span>)</span><br><span class="line"></span><br><span class="line">ledb.on()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="keyword">if</span> btn.is_pressed:</span><br><span class="line">        ledr.on()</span><br><span class="line">        ledg.off()</span><br><span class="line">        laster.on()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        ledg.on()</span><br><span class="line">        ledr.off()</span><br><span class="line">        laster.off()</span><br></pre></td></tr></table></figure></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《树莓派开发实战(第2版)》</li></ul>]]></content>
       
       
       <categories>
@@ -108,7 +108,7 @@
       <link href="/blog/note-hadoop/"/>
       <url>/blog/note-hadoop/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h2><p>What is Big Data<br>Data - The most valuable Resource<br>Big Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and specified time frame by commonly used software tools.</p><p>Characteristics of Big Data Technology</p><ul><li>Volume</li><li>Variety</li><li>Velocity</li><li>Veracity</li><li>Valence</li><li>Value</li></ul>]]></content>
       
       
       <categories>
@@ -668,11 +668,11 @@
             
             <tag> algorithm </tag>
             
+            <tag> chinese-remainder-theorem </tag>
+            
             <tag> gcd </tag>
             
             <tag> math </tag>
-            
-            <tag> chinese-remainder-theorem </tag>
             
         </tags>
       
@@ -724,9 +724,9 @@
       
         <tags>
             
-            <tag> note </tag>
-            
             <tag> iot </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -753,11 +753,11 @@
             
             <tag> algorithm </tag>
             
-            <tag> exgcd </tag>
-            
             <tag> gcd </tag>
             
             <tag> math </tag>
+            
+            <tag> exgcd </tag>
             
         </tags>
       
@@ -975,9 +975,9 @@
       
         <tags>
             
-            <tag> arduino </tag>
-            
             <tag> note </tag>
+            
+            <tag> arduino </tag>
             
         </tags>
       
