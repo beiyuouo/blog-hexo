@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/20191003/</loc>
+    
+    <lastmod>2019-10-03T02:08:39.300Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/iot-raspberry-hardware/</loc>
     
-    <lastmod>2019-09-24T16:44:46.231Z</lastmod>
+    <lastmod>2019-10-03T01:49:59.488Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/iot-raspberry-install-opencv/</loc>
+    
+    <lastmod>2019-10-02T05:40:27.095Z</lastmod>
     
   </url>
   

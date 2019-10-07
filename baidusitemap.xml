@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/20191003/</loc>
+    <lastmod>2019-10-03</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/iot-raspberry-hardware/</loc>
-    <lastmod>2019-09-24</lastmod>
+    <lastmod>2019-10-03</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/iot-raspberry-install-opencv/</loc>
+    <lastmod>2019-10-02</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
     <lastmod>2019-09-24</lastmod>
