@@ -92,7 +92,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="bigdata,hadoop,install,">
+  <meta name="keywords" content="hadoop,install,bigdata,">
 
 
 
@@ -109,14 +109,14 @@
 
 
 <meta name="description" content="踩坑实验主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题还有就是Xshell用不了，要更新最新版本..还好我有PuTTY 安利一波刘老师的视频XDhttps://www.bilibili.com/video/av69670644?from=search&amp;seid=14704125778684531769 主机名 hadoop0用户名 hadoop  modtify the ho">
-<meta name="keywords" content="bigdata,hadoop,install">
+<meta name="keywords" content="hadoop,install,bigdata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚拟机CentOS7安装Hadoop">
 <meta property="og:url" content="beiyuouo.github.io/blog/bigdata-hadoop-install/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="踩坑实验主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题还有就是Xshell用不了，要更新最新版本..还好我有PuTTY 安利一波刘老师的视频XDhttps://www.bilibili.com/video/av69670644?from=search&amp;seid=14704125778684531769 主机名 hadoop0用户名 hadoop  modtify the ho">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-10-11T07:13:49.654Z">
+<meta property="og:updated_time" content="2019-10-11T15:07:23.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="虚拟机CentOS7安装Hadoop">
 <meta name="twitter:description" content="踩坑实验主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题还有就是Xshell用不了，要更新最新版本..还好我有PuTTY 安利一波刘老师的视频XDhttps://www.bilibili.com/video/av69670644?from=search&amp;seid=14704125778684531769 主机名 hadoop0用户名 hadoop  modtify the ho">
@@ -415,7 +415,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-11T15:13:49+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-10-11T23:07:23+08:00">
                 2019-10-11
               </time>
             
@@ -470,7 +470,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  524
+                  560
                 </span>
               
 
@@ -486,7 +486,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  3
                 </span>
               
             </div>
@@ -515,8 +515,9 @@
 </li>
 <li><p>change the permission<br><code>vi /etc/sudoers</code>.<br><code>hadoop ALL=(root) NOPASSWD:ALL</code>.</p>
 </li>
-<li><p>config network<br>VMware Edit - Virtual Network-VMnet8 - NAT config<br>vmnet8<br>192.168.96.0<br>255.255.255.0<br>192.168.96.2</p>
-</li>
+</ul>
+<ul>
+<li>config network<br>建议第一次先不要动这步看看能不能联网，用dhcp自动获取地址康康先，然后再改静态<br>VMware Edit - Virtual Network-VMnet8 - NAT config<br>vmnet8<br>192.168.96.0<br>255.255.255.0<br>192.168.96.2</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br><span class="line">00:0C:29:67:3D:DB</span><br><span class="line">BOOTPROTU=<span class="string">"static"</span></span><br><span class="line">IPADDR=192.168.96.128</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.96.2</span><br><span class="line">DNS1=8.8.8.8</span><br><span class="line">DNS2=192.168.86.2</span><br><span class="line"></span><br><span class="line">ping baidu.com</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
 <ul>
@@ -548,11 +549,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/bigdata/" rel="tag"><i class="fa fa-tag"></i> bigdata</a>
-          
             <a href="/tags/hadoop/" rel="tag"><i class="fa fa-tag"></i> hadoop</a>
           
             <a href="/tags/install/" rel="tag"><i class="fa fa-tag"></i> install</a>
+          
+            <a href="/tags/bigdata/" rel="tag"><i class="fa fa-tag"></i> bigdata</a>
           
         </div>
       

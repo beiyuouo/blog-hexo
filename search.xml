@@ -34,14 +34,14 @@
   <entry>
     <title><![CDATA[虚拟机CentOS7安装Hadoop]]></title>
     <url>%2Fblog%2Fbigdata-hadoop-install%2F</url>
-    <content type="text"><![CDATA[踩坑实验主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题还有就是Xshell用不了，要更新最新版本..还好我有PuTTY 安利一波刘老师的视频XDhttps://www.bilibili.com/video/av69670644?from=search&seid=14704125778684531769 主机名 hadoop0用户名 hadoop modtify the hostnamehostnamectl --static set-hostname hadoop change the permissionvi /etc/sudoers.hadoop ALL=(root) NOPASSWD:ALL. config networkVMware Edit - Virtual Network-VMnet8 - NAT configvmnet8192.168.96.0255.255.255.0192.168.96.2 1234567891011vi /etc/sysconfig/network-scripts/ifcfg-ens3300:0C:29:67:3D:DBBOOTPROTU="static"IPADDR=192.168.96.128NETMASK=255.255.255.0GATEWAY=192.168.96.2DNS1=8.8.8.8DNS2=192.168.86.2ping baidu.comservice network restart install software 12sudo yum install vimsudo yum install net-tools 123456789sudo vim /etc/hosts192.168.96.128ssh-keygen -t rsacd ~/.sshcat id_rsa.hub &gt; athorized_keyssudo systemctl stop firewalld.servicesudo systemctl disable firewalld.servicesudo systemctl status firewalld.service xshellxftp12345tar -zxvf jdk+tab -C ~/apptar -zxvf hadoop+tab -C ~/appcd ~/app/jdksudo vim ~/.bash_profile 1234567# JAVA ENVexport JAVA_HOME=/home/hadoop/app/jdk1.8.0_211/PATH=$JAVA_HOME/bin:$PATH# HADOOP ENVexport HADOOP_HOME=/home/hadoop/app/hadoop-2.7.3PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH 123456source ~/.bash_profilecd ~/app/hadoop-2.7.4/etc/hadoopvim hadoop-env.shvim core-site.xmlmkdir ~/app/tmp （*）yarn-site.xml12345678910&lt;configuration&gt;&lt;property&gt;&lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;&lt;value&gt;hadoop00&lt;/value&gt;&lt;/property&gt;&lt;property&gt;&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;&lt;value&gt;mapreduce_shuffle&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; （*）mapred-site.xml这个文件一开始没有, 但是官方提供了模板, 拷贝即可cp mapred-site.xml.template mapred-site.xml.123456&lt;configuration&gt;&lt;property&gt;&lt;name&gt;mapreduce.framework.name&lt;/name&gt;&lt;value&gt;yarn&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; （*）core-site.xml 参考本机设置修改主机名, 并设置临时文件夹路径(没有要手动建立)12345678910&lt;configuration&gt;&lt;property&gt;&lt;name&gt;fs.defaultFS&lt;/name&gt;&lt;value&gt;hdfs://hadoop0:9000&lt;/value&gt;&lt;/property&gt; &lt;property&gt;&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;&lt;value&gt;/home/hadoop/app/tmp&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; （*）hdfs-site.xml12345678910&lt;configuration&gt;&lt;property&gt;&lt;name&gt;dfs.replication&lt;/name&gt;&lt;value&gt;1&lt;/value&gt;&lt;/property&gt;&lt;property&gt;&lt;name&gt;dfs.permissions&lt;/name&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; 12345678hdfs namenode -formatcd ~/app/hadoop-2.7.4/sbinstart-all.shjpssudo chmod 600 ~/.ssh/authorized_keysstop-all.sh]]></content>
+    <content type="text"><![CDATA[踩坑实验主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题还有就是Xshell用不了，要更新最新版本..还好我有PuTTY 安利一波刘老师的视频XDhttps://www.bilibili.com/video/av69670644?from=search&seid=14704125778684531769 主机名 hadoop0用户名 hadoop modtify the hostnamehostnamectl --static set-hostname hadoop change the permissionvi /etc/sudoers.hadoop ALL=(root) NOPASSWD:ALL. config network建议第一次先不要动这步看看能不能联网，用dhcp自动获取地址康康先，然后再改静态VMware Edit - Virtual Network-VMnet8 - NAT configvmnet8192.168.96.0255.255.255.0192.168.96.2 1234567891011vi /etc/sysconfig/network-scripts/ifcfg-ens3300:0C:29:67:3D:DBBOOTPROTU="static"IPADDR=192.168.96.128NETMASK=255.255.255.0GATEWAY=192.168.96.2DNS1=8.8.8.8DNS2=192.168.86.2ping baidu.comservice network restart install software 12sudo yum install vimsudo yum install net-tools 123456789sudo vim /etc/hosts192.168.96.128ssh-keygen -t rsacd ~/.sshcat id_rsa.hub &gt; athorized_keyssudo systemctl stop firewalld.servicesudo systemctl disable firewalld.servicesudo systemctl status firewalld.service xshellxftp12345tar -zxvf jdk+tab -C ~/apptar -zxvf hadoop+tab -C ~/appcd ~/app/jdksudo vim ~/.bash_profile 1234567# JAVA ENVexport JAVA_HOME=/home/hadoop/app/jdk1.8.0_211/PATH=$JAVA_HOME/bin:$PATH# HADOOP ENVexport HADOOP_HOME=/home/hadoop/app/hadoop-2.7.3PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH 123456source ~/.bash_profilecd ~/app/hadoop-2.7.4/etc/hadoopvim hadoop-env.shvim core-site.xmlmkdir ~/app/tmp （*）yarn-site.xml12345678910&lt;configuration&gt;&lt;property&gt;&lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;&lt;value&gt;hadoop00&lt;/value&gt;&lt;/property&gt;&lt;property&gt;&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;&lt;value&gt;mapreduce_shuffle&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; （*）mapred-site.xml这个文件一开始没有, 但是官方提供了模板, 拷贝即可cp mapred-site.xml.template mapred-site.xml.123456&lt;configuration&gt;&lt;property&gt;&lt;name&gt;mapreduce.framework.name&lt;/name&gt;&lt;value&gt;yarn&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; （*）core-site.xml 参考本机设置修改主机名, 并设置临时文件夹路径(没有要手动建立)12345678910&lt;configuration&gt;&lt;property&gt;&lt;name&gt;fs.defaultFS&lt;/name&gt;&lt;value&gt;hdfs://hadoop0:9000&lt;/value&gt;&lt;/property&gt; &lt;property&gt;&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;&lt;value&gt;/home/hadoop/app/tmp&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; （*）hdfs-site.xml12345678910&lt;configuration&gt;&lt;property&gt;&lt;name&gt;dfs.replication&lt;/name&gt;&lt;value&gt;1&lt;/value&gt;&lt;/property&gt;&lt;property&gt;&lt;name&gt;dfs.permissions&lt;/name&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; 12345678hdfs namenode -formatcd ~/app/hadoop-2.7.4/sbinstart-all.shjpssudo chmod 600 ~/.ssh/authorized_keysstop-all.sh]]></content>
       <categories>
         <category>bigdata</category>
       </categories>
       <tags>
-        <tag>bigdata</tag>
         <tag>hadoop</tag>
         <tag>install</tag>
+        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
@@ -747,8 +747,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
         <tag>breakout</tag>
       </tags>
   </entry>
@@ -761,8 +761,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
       </tags>
   </entry>
   <entry>
@@ -853,8 +853,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
         <tag>jquery</tag>
       </tags>
   </entry>
