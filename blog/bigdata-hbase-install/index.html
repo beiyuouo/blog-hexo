@@ -111,14 +111,14 @@
 <meta name="description" content="https://www.bilibili.com/video/av70796937 https://archive.apache.org/dist/hbase/1.2.21234tar -zxvf habase+tab -C ~/appcp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/cp ~/app/hadoop+">
 <meta name="keywords" content="bigdata,hbase">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟机CenOS7安装HBase">
+<meta property="og:title" content="虚拟机CentOS7安装HBase">
 <meta property="og:url" content="beiyuouo.github.io/blog/bigdata-hbase-install/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="https://www.bilibili.com/video/av70796937 https://archive.apache.org/dist/hbase/1.2.21234tar -zxvf habase+tab -C ~/appcp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/cp ~/app/hadoop+">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-10-11T04:56:28.180Z">
+<meta property="og:updated_time" content="2019-10-11T07:13:19.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="虚拟机CenOS7安装HBase">
+<meta name="twitter:title" content="虚拟机CentOS7安装HBase">
 <meta name="twitter:description" content="https://www.bilibili.com/video/av70796937 https://archive.apache.org/dist/hbase/1.2.21234tar -zxvf habase+tab -C ~/appcp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/cp ~/app/hadoop+">
 
 
@@ -156,7 +156,7 @@
 
 
 
-  <title>虚拟机CenOS7安装HBase | 北屿</title>
+  <title>虚拟机CentOS7安装HBase | 北屿</title>
   
 
 
@@ -387,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">虚拟机CenOS7安装HBase</h1>
+          <h1 class="post-title" itemprop="name headline">虚拟机CentOS7安装HBase</h1>
         
 
         <div class="post-meta">
@@ -415,7 +415,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-11T12:56:28+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-10-11T15:13:19+08:00">
                 2019-10-11
               </time>
             
@@ -508,13 +508,13 @@
 
       
         <p><a href="https://www.bilibili.com/video/av70796937" target="_blank" rel="noopener">https://www.bilibili.com/video/av70796937</a></p>
-<p><a href="https://archive.apache.org/dist/hbase/1.2.2" target="_blank" rel="noopener">https://archive.apache.org/dist/hbase/1.2.2</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf habase+tab -C ~/app</span><br><span class="line"></span><br><span class="line">cp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/</span><br><span class="line">cp ~/app/hadoop+tab/etc/hadoop/core-site.xml ~/app/hbase+tab/conf/</span><br></pre></td></tr></table></figure></p>
-<p>hbase-env.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/home/hadoop/app/jdk</span><br><span class="line">Annotated Configure PermSize</span><br></pre></td></tr></table></figure></p>
-<p>hbase-site.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">&lt;name&gt;hbase.rootdir&lt;/name&gt;</span><br><span class="line">&lt;value&gt;hdfs://hadoop0:9000/hbase&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">&lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;</span><br><span class="line">&lt;value&gt;/home/hadoop/app/tmp/zookeeper&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">&lt;name&gt;hbase.cluster.distributed&lt;/name&gt;</span><br><span class="line">&lt;value&gt;true&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>vim ~/.bash_profile</code>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># HBASE ENV</span><br><span class="line">export HBASE_HOME=/home/hadoop/app/hbase-1.2.2/</span><br><span class="line">PATH=$HBASE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://archive.apache.org/dist/hbase/1.2.2" target="_blank" rel="noopener">https://archive.apache.org/dist/hbase/1.2.2</a><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf habase+tab -C ~/app</span><br><span class="line"></span><br><span class="line">cp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/</span><br><span class="line">cp ~/app/hadoop+tab/etc/hadoop/core-site.xml ~/app/hbase+tab/conf/</span><br></pre></td></tr></table></figure></p>
+<p>hbase-env.sh<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk</span><br><span class="line">Annotated Configure PermSize</span><br></pre></td></tr></table></figure></p>
+<p>hbase-site.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://hadoop0:9000/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.property.dataDir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/home/hadoop/app/tmp/zookeeper<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>vim ~/.bash_profile</code>.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># HBASE ENV</span></span><br><span class="line"><span class="built_in">export</span> HBASE_HOME=/home/hadoop/app/hbase-1.2.2/</span><br><span class="line">PATH=<span class="variable">$HBASE_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p>
 <p><code>source ~/.base_profile</code>.</p>
 <p><code>hbase version</code>.<br><code>vim /etc/hosts</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span><br><span class="line">jps</span><br><span class="line">start-hbase.sh</span><br><span class="line">hbase shell</span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">cd ~/app/hbase/lib</span><br><span class="line">mv slf4j-log4j12-1.7.5.jar slf4j-log4j12-1.7.5.jar.backup</span><br><span class="line">status</span><br><span class="line">list</span><br><span class="line">exit</span><br><span class="line">hadoop fs -ls /</span><br><span class="line">hadoop fs -ls /hbase</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span><br><span class="line">jps</span><br><span class="line">start-hbase.sh</span><br><span class="line">hbase shell</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~/app/hbase/lib</span><br><span class="line">mv slf4j-log4j12-1.7.5.jar slf4j-log4j12-1.7.5.jar.backup</span><br><span class="line">status</span><br><span class="line">list</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">hadoop fs -ls /</span><br><span class="line">hadoop fs -ls /hbase</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -546,8 +546,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/bigdata-hadoop-install/" rel="next" title="虚拟机CenOS7安装Hadoop">
-                <i class="fa fa-chevron-left"></i> 虚拟机CenOS7安装Hadoop
+              <a href="/blog/bigdata-hadoop-install/" rel="next" title="虚拟机CentOS7安装Hadoop">
+                <i class="fa fa-chevron-left"></i> 虚拟机CentOS7安装Hadoop
               </a>
             
           </div>

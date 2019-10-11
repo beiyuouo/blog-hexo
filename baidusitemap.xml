@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>beiyuouo.github.io/blog/bigdata-hbase-install/</loc>
-    <lastmod>2019-10-11</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/bigdata-hadoop-install/</loc>
     <lastmod>2019-10-11</lastmod>
   </url>  <url>
+    <loc>beiyuouo.github.io/blog/bigdata-hbase-install/</loc>
+    <lastmod>2019-10-11</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-data-structure/</loc>
-    <lastmod>2019-10-09</lastmod>
+    <lastmod>2019-10-11</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/iot-raspberry-install-opencv/</loc>
     <lastmod>2019-10-09</lastmod>
