@@ -508,8 +508,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>arduino</tag>
         <tag>note</tag>
+        <tag>arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -879,9 +879,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
