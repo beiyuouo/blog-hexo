@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/answer.html</loc>
+    
+    <lastmod>2019-10-22T05:46:49.416Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
+    
+    <lastmod>2019-10-21T14:39:13.962Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-the-next-step-for-ml/</loc>
+    
+    <lastmod>2019-10-21T14:38:10.681Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-data-structure/</loc>
+    
+    <lastmod>2019-10-21T14:12:41.730Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-hbase/</loc>
+    
+    <lastmod>2019-10-17T08:14:50.386Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/bigdata-hadoop-install/</loc>
     
     <lastmod>2019-10-11T15:07:23.370Z</lastmod>
@@ -12,13 +47,6 @@
     <loc>beiyuouo.github.io/blog/bigdata-hbase-install/</loc>
     
     <lastmod>2019-10-11T07:13:19.414Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-data-structure/</loc>
-    
-    <lastmod>2019-10-11T07:01:52.763Z</lastmod>
     
   </url>
   
@@ -40,13 +68,6 @@
     <loc>beiyuouo.github.io/blog/iot-raspberry-hardware/</loc>
     
     <lastmod>2019-10-03T01:49:59.488Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
-    
-    <lastmod>2019-09-24T04:12:40.612Z</lastmod>
     
   </url>
   
