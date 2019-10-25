@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="HBase Basic conceptsTable spaceIn relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the follow">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-10-17T08:14:50.386Z">
+<meta property="og:updated_time" content="2019-10-24T14:37:16.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hbase笔记">
 <meta name="twitter:description" content="HBase Basic conceptsTable spaceIn relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the follow">
@@ -415,8 +415,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-17T16:14:50+08:00">
-                2019-10-17
+              <time title="Post modified" itemprop="dateModified" datetime="2019-10-24T22:37:16+08:00">
+                2019-10-24
               </time>
             
           </span>
@@ -470,7 +470,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  150
+                  215
                 </span>
               
 
@@ -513,7 +513,7 @@
 <li>Namespace Security Management: Provides another level of multi-tenant security management.</li>
 <li>Region server group: A namespace or table that can be fixed to a set of region servers to ensure data isolation.</li>
 </ul>
-<h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">whoami - give the imformation of currently logged <span class="keyword">in</span> user</span><br><span class="line">status - status of hbase with 3 arguements simple, detailed, summary(deault mode)</span><br><span class="line">version - version of hbase </span><br><span class="line"></span><br><span class="line">create_namespace <span class="string">'namespace_name'</span></span><br><span class="line">drop_namespace <span class="string">'namespace_name'</span></span><br><span class="line">list_namespace </span><br><span class="line">change_namespace</span><br><span class="line"><span class="string">'namespace_name'</span> - goto the namespace </span><br><span class="line"></span><br><span class="line">create <span class="string">'table_name'</span> </span><br><span class="line">list</span><br><span class="line">drop <span class="string">'table_name'</span></span><br><span class="line"><span class="built_in">disable</span> <span class="string">'table_name'</span></span><br><span class="line"><span class="built_in">enable</span> <span class="string">'table_name'</span></span><br><span class="line">descibe <span class="string">'table_name'</span></span><br><span class="line">scan <span class="string">'table_name'</span></span><br><span class="line"></span><br><span class="line">put &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;, &lt;value&gt;, &lt;timestamp&gt;</span><br><span class="line">get  &lt;table&gt;, &lt;rowkey&gt;, [&lt;family: column&gt;,...]</span><br></pre></td></tr></table></figure>
+<h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">whoami - give the imformation of currently logged <span class="keyword">in</span> user</span><br><span class="line">status - status of hbase with 3 arguements simple, detailed, summary(deault mode)</span><br><span class="line">version - version of hbase </span><br><span class="line"></span><br><span class="line">create_namespace <span class="string">'namespace_name'</span></span><br><span class="line">drop_namespace <span class="string">'namespace_name'</span></span><br><span class="line">list_namespace </span><br><span class="line">change_namespace</span><br><span class="line"><span class="string">'namespace_name'</span> - goto the namespace </span><br><span class="line"></span><br><span class="line">create &lt;namespace&gt;: <span class="string">'table_name'</span>, &#123; NAME =&gt; &lt;family&gt;, VERSIONS =&gt; &lt;VERSIONS&gt;&#125;</span><br><span class="line">list</span><br><span class="line">drop <span class="string">'table_name'</span></span><br><span class="line"><span class="built_in">disable</span> <span class="string">'table_name'</span></span><br><span class="line"><span class="built_in">enable</span> <span class="string">'table_name'</span></span><br><span class="line">is_disabled <span class="string">'table_name'</span></span><br><span class="line">is_enabled <span class="string">'table_name'</span></span><br><span class="line">exists <span class="string">'table_name'</span></span><br><span class="line">descibe <span class="string">'table_name'</span></span><br><span class="line">scan <span class="string">'table_name'</span></span><br><span class="line">alter <span class="string">'table_name'</span>, &#123; NAME =&gt; &lt;family&gt;, VERSIONS =&gt; &lt;VERSIONS&gt;&#125;</span><br><span class="line"></span><br><span class="line">put &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;, &lt;value&gt;, &lt;timestamp&gt;</span><br><span class="line">get  &lt;table&gt;, &lt;rowkey&gt;, [&lt;family: column&gt;,...]</span><br><span class="line">count &lt;table&gt;</span><br><span class="line">delete &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;</span><br><span class="line">deleteall &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;</span><br><span class="line">truncate &lt;table&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -641,7 +641,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">78</span>
+                <span class="site-state-item-count">79</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

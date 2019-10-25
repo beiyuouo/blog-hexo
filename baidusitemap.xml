@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/note-hbase/</loc>
+    <lastmod>2019-10-24</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/20191022/</loc>
+    <lastmod>2019-10-22</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
     <lastmod>2019-10-21</lastmod>
   </url>  <url>
@@ -9,9 +15,6 @@
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-data-structure/</loc>
     <lastmod>2019-10-21</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-hbase/</loc>
-    <lastmod>2019-10-17</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/bigdata-hadoop-install/</loc>
     <lastmod>2019-10-11</lastmod>

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-hbase/</loc>
+    
+    <lastmod>2019-10-24T14:37:16.821Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/20191022/</loc>
+    
+    <lastmod>2019-10-22T12:03:53.854Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/answer.html</loc>
     
     <lastmod>2019-10-22T08:38:26.802Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>beiyuouo.github.io/blog/note-data-structure/</loc>
     
     <lastmod>2019-10-21T14:12:41.730Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-hbase/</loc>
-    
-    <lastmod>2019-10-17T08:14:50.386Z</lastmod>
     
   </url>
   

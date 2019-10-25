@@ -20,6 +20,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[20191022]]></title>
+    <url>%2Fblog%2F20191022%2F</url>
+    <content type="text"><![CDATA[第一次觉得Minecraft如此优秀，因为Minecraft知道了Java，知道了TeamViewer..今天去帮一个同学搞服务器转发到公网，但是服务器用的是校园网+虚拟机..我咋转发啊..最后用TeamViewer VPN然后做一下本机的端口映射就可了…]]></content>
+      <categories>
+        <category>daily</category>
+      </categories>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[机器学习的下一步]]></title>
     <url>%2Fblog%2Fnote-the-next-step-for-ml%2F</url>
     <content type="text"></content>
@@ -34,7 +45,7 @@
   <entry>
     <title><![CDATA[Hbase笔记]]></title>
     <url>%2Fblog%2Fnote-hbase%2F</url>
-    <content type="text"><![CDATA[HBase Basic conceptsTable spaceIn relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the following use: Quota Management: Limit the resources available to namespace, including region and table. Namespace Security Management: Provides another level of multi-tenant security management. Region server group: A namespace or table that can be fixed to a set of region servers to ensure data isolation. Command1234567891011121314151617181920whoami - give the imformation of currently logged in userstatus - status of hbase with 3 arguements simple, detailed, summary(deault mode)version - version of hbase create_namespace 'namespace_name'drop_namespace 'namespace_name'list_namespace change_namespace'namespace_name' - goto the namespace create 'table_name' listdrop 'table_name'disable 'table_name'enable 'table_name'descibe 'table_name'scan 'table_name'put &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;, &lt;value&gt;, &lt;timestamp&gt;get &lt;table&gt;, &lt;rowkey&gt;, [&lt;family: column&gt;,...]]]></content>
+    <content type="text"><![CDATA[HBase Basic conceptsTable spaceIn relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the following use: Quota Management: Limit the resources available to namespace, including region and table. Namespace Security Management: Provides another level of multi-tenant security management. Region server group: A namespace or table that can be fixed to a set of region servers to ensure data isolation. Command12345678910111213141516171819202122232425262728whoami - give the imformation of currently logged in userstatus - status of hbase with 3 arguements simple, detailed, summary(deault mode)version - version of hbase create_namespace 'namespace_name'drop_namespace 'namespace_name'list_namespace change_namespace'namespace_name' - goto the namespace create &lt;namespace&gt;: 'table_name', &#123; NAME =&gt; &lt;family&gt;, VERSIONS =&gt; &lt;VERSIONS&gt;&#125;listdrop 'table_name'disable 'table_name'enable 'table_name'is_disabled 'table_name'is_enabled 'table_name'exists 'table_name'descibe 'table_name'scan 'table_name'alter 'table_name', &#123; NAME =&gt; &lt;family&gt;, VERSIONS =&gt; &lt;VERSIONS&gt;&#125;put &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;, &lt;value&gt;, &lt;timestamp&gt;get &lt;table&gt;, &lt;rowkey&gt;, [&lt;family: column&gt;,...]count &lt;table&gt;delete &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;deleteall &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;truncate &lt;table&gt;]]></content>
       <categories>
         <category>note</category>
       </categories>
@@ -921,8 +932,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-hello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
+    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
       <categories>
         <category>daily</category>
       </categories>
@@ -932,8 +943,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
-    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
+    <url>%2Fblog%2Ftest-hello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>daily</category>
       </categories>
