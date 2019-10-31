@@ -20,6 +20,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[20191031]]></title>
+    <url>%2Fblog%2F20191031%2F</url>
+    <content type="text"><![CDATA[啊…这个月真的是没一个安心的周末…招新、全体大会、出活动…发现我事一多拖延症就犯了…blog笔记也有很久没更了8 有一说一，真的很不理解为什么大学老师会布置这么多作业？？？我确定我上的是大学不是高中？？？离散数学作业、概率统计作业、Hadoop作业、Hbase作业、JSP作业、数据结构作业…我人傻了 在开学的时候我的Todolist只有不到10条，现在要滑好久才能滑到底…周常、日常任务也是蛮多的…难顶 之前和一个同学交流，说我一定可以把时间安排好…sry，最近过得真的很乱… 不过，目前青协工作差不多告一段落了，不需要我再去出活动了之后的话呢，笔记并不打算及时整理了，应该会在复习阶段集中整理一下 一个学期过了一半多了，也要规划一下了呢 抓住万圣节的小辫子，Happy Halloween！ 北屿2019.10.30]]></content>
+      <categories>
+        <category>daily</category>
+      </categories>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[20191022]]></title>
     <url>%2Fblog%2F20191022%2F</url>
     <content type="text"><![CDATA[第一次觉得Minecraft如此优秀，因为Minecraft知道了Java，知道了TeamViewer..今天去帮一个同学搞服务器转发到公网，但是服务器用的是校园网+虚拟机..我咋转发啊..最后用TeamViewer VPN然后做一下本机的端口映射就可了…]]></content>
@@ -50,10 +61,10 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>bigdata</tag>
         <tag>hbase</tag>
         <tag>note</tag>
+        <tag>hadoop</tag>
       </tags>
   </entry>
   <entry>
@@ -76,9 +87,9 @@
         <category>bigdata</category>
       </categories>
       <tags>
+        <tag>bigdata</tag>
         <tag>hadoop</tag>
         <tag>install</tag>
-        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
@@ -138,8 +149,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>note</tag>
+        <tag>hadoop</tag>
       </tags>
   </entry>
   <entry>
@@ -932,8 +943,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
-    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
+    <url>%2Fblog%2Ftest-hello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>daily</category>
       </categories>
@@ -943,8 +954,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-hello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
+    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
       <categories>
         <category>daily</category>
       </categories>
