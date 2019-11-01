@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/note-ros/</loc>
+    <lastmod>2019-11-01</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/20191031/</loc>
     <lastmod>2019-10-31</lastmod>
   </url>  <url>
@@ -36,9 +39,6 @@
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-probability/</loc>
     <lastmod>2019-09-14</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-ros/</loc>
-    <lastmod>2019-09-12</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
     <lastmod>2019-09-11</lastmod>

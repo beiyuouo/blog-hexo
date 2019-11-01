@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统">
+<meta name="description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS安装版本 ROS Melodic Morenia安装步骤wiki 1234567891011121314151617181920# add sourcesudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ub">
 <meta name="keywords" content="note,ros">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ROS笔记">
 <meta property="og:url" content="beiyuouo.github.io/blog/note-ros/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统">
+<meta property="og:description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS安装版本 ROS Melodic Morenia安装步骤wiki 1234567891011121314151617181920# add sourcesudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ub">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-09-12T15:00:06.384Z">
+<meta property="og:updated_time" content="2019-11-01T15:15:26.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ROS笔记">
-<meta name="twitter:description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统">
+<meta name="twitter:description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS安装版本 ROS Melodic Morenia安装步骤wiki 1234567891011121314151617181920# add sourcesudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ub">
 
 
 
@@ -305,6 +305,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-cv">
+          <a href="/cv/cv.pdf" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br>
+            
+            CV
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -415,8 +425,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-09-12T23:00:06+08:00">
-                2019-09-12
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-01T23:15:26+08:00">
+                2019-11-01
               </time>
             
           </span>
@@ -470,7 +480,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  30
+                  147
                 </span>
               
 
@@ -508,6 +518,13 @@
 
       
         <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>ROS(Robot Operating System) 机器人操作系统<br>ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统</p>
+<h2 id="ROS安装"><a href="#ROS安装" class="headerlink" title="ROS安装"></a>ROS安装</h2><p>版本 ROS Melodic Morenia<br>安装步骤<a href="http://wiki.ros.org/melodic/Installation/Ubuntu" target="_blank" rel="noopener">wiki</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add source</span></span><br><span class="line">sudo sh -c <span class="string">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main"&gt;/etc/apt/sources.list.d/ros-latest.list'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># add key</span></span><br><span class="line">sudo apt-key adv --ketserver <span class="string">'hkp://keyserver.ubuntu.com:80'</span> --resc-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</span><br><span class="line"></span><br><span class="line"><span class="comment"># install ros</span></span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install ros-melodic-desktop-full</span><br><span class="line"></span><br><span class="line"><span class="comment"># init rosdep</span></span><br><span class="line">sudo resdep init</span><br><span class="line">rosdep update</span><br><span class="line"></span><br><span class="line"><span class="comment"># env</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"source /opt/ros/melodic/setup.bash"</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># install rosinstall</span></span><br><span class="line">sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential</span><br></pre></td></tr></table></figure>
+<p>安装目录在<code>/opt/ros</code>. run <code>roscore</code><br>例程<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br><span class="line">rosrun turtlesim turtlesim_node</span><br><span class="line">rosrun turtlesim turtle_teleop_key</span><br></pre></td></tr></table></figure></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://www.gyh.ai" target="_blank" rel="noopener">古月 · ROS入门21讲</a></li>
+<li><a href="https://github.com/huchunxu/ros_21_tutorials" target="_blank" rel="noopener">https://github.com/huchunxu/ros_21_tutorials</a></li>
+</ul>
 
       
     </div>
@@ -755,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS安装"><span class="nav-number">2.</span> <span class="nav-text">ROS安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
