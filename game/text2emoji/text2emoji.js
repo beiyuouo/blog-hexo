@@ -1,7 +1,7 @@
 var frm = document.getElementById("frm");
 var res = document.getElementById("res");
 var btn = document.getElementById("btn");
-
+var viw = document.getElementById("viw");
 
 // console.log('haha');
 // console.log(frm.value)
@@ -9,12 +9,9 @@ var btn = document.getElementById("btn");
 function string2unicode(str) {
 	var ret = "";
 	var ustr = "";
-
 	for (var i = 0; i < str.length; i++) {
-
 		var code = str.charCodeAt(i);
 		var code16 = code.toString(16);
-
 		if (code < 0xf) {
 			ustr = "\\u" + "000" + code16;
 		} else if (code < 0xff) {
@@ -58,7 +55,8 @@ btn.addEventListener("click", function() {
 	// console.log(html);
 	// html = unicode2string(html)
 	console.log(html)
-	res.innerHTML = jEmoji.unifiedToHTML(html);
+	res.innerHTML = html
+	viw.innerHTML = jEmoji.unifiedToHTML(html);
 });
 
 
@@ -116,3 +114,6 @@ mp['强'] = '💪';
 mp['锁'] = '🔒';
 mp['对'] = '✔';
 mp['爷'] = '👴';
+mp['钱'] = '💰';
+
+btn.click()
