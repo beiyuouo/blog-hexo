@@ -72,9 +72,9 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>bigdata</tag>
         <tag>hbase</tag>
+        <tag>hadoop</tag>
         <tag>note</tag>
       </tags>
   </entry>
@@ -98,9 +98,9 @@
         <category>bigdata</category>
       </categories>
       <tags>
+        <tag>bigdata</tag>
         <tag>hadoop</tag>
         <tag>install</tag>
-        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
@@ -404,9 +404,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -442,9 +442,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
