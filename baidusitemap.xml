@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/misc-daxueguidang/</loc>
+    <lastmod>2019-11-13</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/20191106/</loc>
     <lastmod>2019-11-06</lastmod>
   </url>  <url>
@@ -96,9 +99,6 @@
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-algebra/</loc>
     <lastmod>2019-07-02</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/misc-daxueguidang/</loc>
-    <lastmod>2019-06-24</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/algorithm-exgcd/</loc>
     <lastmod>2019-06-22</lastmod>
