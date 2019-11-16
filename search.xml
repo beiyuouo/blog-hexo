@@ -29,6 +29,25 @@
     
     
     <entry>
+      <title>记一次TCP会话劫持实验</title>
+      <link href="/blog/hack-tcp-session-hijack/"/>
+      <url>/blog/hack-tcp-session-hijack/</url>
+      
+        <content type="html"><![CDATA[<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>System: Windows7 x64<br>Software:</p><ul><li>wireshack</li><li>telnet</li><li>netwox/netwag</li><li><a href="https://www.activestate.com/products/tcl/downloads/" target="_blank" rel="noopener">ActiveTcl</a></li><li><a href="https://www.winpcap.org/install/default.htm" target="_blank" rel="noopener">winpcap</a></li></ul><p>Wireshack 配置<br>编辑 -&gt; 首选项 -&gt; Protocols -&gt; TCP -&gt; uncheck Relative sequence numbers.</p><p>一开始没装winpcap，怎么都发不出去，更别说收到反映了</p><p>System: Linux<br>Software:</p><ul><li>telnetd<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install telnetd</span><br><span class="line">sudo apt-get install xinetd</span><br><span class="line">sudo service xinetd status</span><br></pre></td></tr></table></figure></li></ul><h2 id="从0了解TCP"><a href="#从0了解TCP" class="headerlink" title="从0了解TCP"></a>从0了解TCP</h2><p>其实详细的也没太看，主要就几点<br>首先会话劫持就是伪造一个客户端发向服务端的包，TCP验证就看sequence number和acknowledge number<br>只要抓到了包，知道了这些参数就可以伪造发包了</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a href="https://www.cnblogs.com/dggsec/p/10136818.html" target="_blank" rel="noopener">TCP回话劫持原理和利用</a></li><li><a href="https://blog.csdn.net/xxx_qz/article/details/70945769" target="_blank" rel="noopener">Attacks on TCP/IP Protocols (Task5) TCP Session Hijacking</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>20191106</title>
       <link href="/blog/20191106/"/>
       <url>/blog/20191106/</url>
@@ -151,9 +170,9 @@
             
             <tag> bigdata </tag>
             
-            <tag> note </tag>
-            
             <tag> hbase </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -1218,9 +1237,9 @@
       
         <tags>
             
-            <tag> arduino </tag>
-            
             <tag> note </tag>
+            
+            <tag> arduino </tag>
             
         </tags>
       
