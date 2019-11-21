@@ -92,7 +92,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="hack,">
+  <meta name="keywords" content="hack,TCP,session hijack,wireshack,">
 
 
 
@@ -109,14 +109,14 @@
 
 
 <meta name="description" content="环境配置System: Windows7 x64Software:  wireshack telnet netwox/netwag ActiveTcl winpcap  Wireshack 配置编辑 -&amp;gt; 首选项 -&amp;gt; Protocols -&amp;gt; TCP -&amp;gt; uncheck Relative sequence numbers. 一开始没装winpcap，怎么都发不出去，更别">
-<meta name="keywords" content="hack">
+<meta name="keywords" content="hack,TCP,session hijack,wireshack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次TCP会话劫持实验">
 <meta property="og:url" content="beiyuouo.github.io/blog/hack-tcp-session-hijack/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="环境配置System: Windows7 x64Software:  wireshack telnet netwox/netwag ActiveTcl winpcap  Wireshack 配置编辑 -&amp;gt; 首选项 -&amp;gt; Protocols -&amp;gt; TCP -&amp;gt; uncheck Relative sequence numbers. 一开始没装winpcap，怎么都发不出去，更别">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-11-16T01:57:18.676Z">
+<meta property="og:updated_time" content="2019-11-16T02:06:28.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次TCP会话劫持实验">
 <meta name="twitter:description" content="环境配置System: Windows7 x64Software:  wireshack telnet netwox/netwag ActiveTcl winpcap  Wireshack 配置编辑 -&amp;gt; 首选项 -&amp;gt; Protocols -&amp;gt; TCP -&amp;gt; uncheck Relative sequence numbers. 一开始没装winpcap，怎么都发不出去，更别">
@@ -409,8 +409,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-15T14:53:22+08:00">
-                2019-11-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-16T09:57:00+08:00">
+                2019-11-16
               </time>
             
 
@@ -425,12 +425,34 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-11-16T09:57:18+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-16T10:06:28+08:00">
                 2019-11-16
               </time>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hack/" itemprop="url" rel="index">
+                    <span itemprop="name">hack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -534,6 +556,12 @@
           
             <a href="/tags/hack/" rel="tag"><i class="fa fa-tag"></i> hack</a>
           
+            <a href="/tags/TCP/" rel="tag"><i class="fa fa-tag"></i> TCP</a>
+          
+            <a href="/tags/session-hijack/" rel="tag"><i class="fa fa-tag"></i> session hijack</a>
+          
+            <a href="/tags/wireshack/" rel="tag"><i class="fa fa-tag"></i> wireshack</a>
+          
         </div>
       
 
@@ -555,8 +583,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/TODOLIST/" rel="prev" title="【置顶】TODOLIST">
-                【置顶】TODOLIST <i class="fa fa-chevron-right"></i>
+              <a href="/blog/20191121/" rel="prev" title="20191121">
+                20191121 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -636,7 +664,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">83</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -658,7 +686,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1310,6 +1338,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
