@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[记一次TCP会话劫持实验]]></title>
     <url>%2Fblog%2Fhack-tcp-session-hijack%2F</url>
-    <content type="text"><![CDATA[环境配置System: Windows7 x64Software: wireshack telnet netwox/netwag ActiveTcl winpcap Wireshack 配置编辑 -&gt; 首选项 -&gt; Protocols -&gt; TCP -&gt; uncheck Relative sequence numbers. 一开始没装winpcap，怎么都发不出去，更别说收到反映了 System: LinuxSoftware: telnetd123sudo apt-get install telnetdsudo apt-get install xinetdsudo service xinetd status 从0了解TCP其实详细的也没太看，主要就几点首先会话劫持就是伪造一个客户端发向服务端的包，TCP验证就看sequence number和acknowledge number只要抓到了包，知道了这些参数就可以伪造发包了 Reference TCP回话劫持原理和利用 Attacks on TCP/IP Protocols (Task5) TCP Session Hijacking]]></content>
+    <content type="text"><![CDATA[环境配置System: Windows7 x64Software: wireshack telnet netwox/netwag ActiveTcl winpcap Python.socket Wireshack 配置编辑 -&gt; 首选项 -&gt; Protocols -&gt; TCP -&gt; uncheck Relative sequence numbers. 一开始没装winpcap，怎么都发不出去，更别说收到反映了 System: LinuxSoftware: telnetd123sudo apt-get install telnetdsudo apt-get install xinetdsudo service xinetd status 从0了解TCP其实详细的也没太看，主要就几点首先会话劫持就是伪造一个客户端发向服务端的包，TCP验证就看sequence number和acknowledge number只要抓到了包，知道了这些参数就可以伪造发包了 其实并没有用到上面那么多工具，最后我还是只用wireshack和netwox(netwxg)，还有用Python.Socket里面的TCP协议通信，从PC(client)到树莓派(server)之间建立连接，然后发包。至于在实际环境中，想要捕获数据包就需要ARP欺骗，让数据包从攻击机过就可以了 client.py - 客户端绑定端口，方便实验123456789101112131415import socketimport times = socket.socket()host = '192.168.0.104'port = 59999s.bind((host, port))s.connect(('192.168.0.105', 49999))while True: print(s.recv(1024).decode()) s.send(str("client calling...").encode()) time.sleep(300)s.close() server.py1234567891011121314151617import socketimport times = socket.socket()host = '192.168.0.104'port = 49999s.bind((host, port))s.listen(5)c, addr = s.accept()while True: time.sleep(3) print("Connect Address", addr) c.send("Welcome".encode()) print(c.recv(1024).decode())c.close() 用wireshark抓包，然后看包里的数据用的是netwox的40 Spoof Ip4Tcp packet命令用netwag构造发包比较方便的，注意最后发送数据telnet是分开发的，每次发几个字符，最后合起来其实也可以一起发的，发送的数据就是要转成二进制形式，在netwag里面只需要加单引号就可以了窗口号是随便写的，注意唯一需要换的就是如果分析的包是从服务器到客户端的，那么acknum和seqnum要换一下，如果分析的就是客户端到服务器的就不需要换了，直接用nextseqnum就可以了140 --ip4-ttl 128 --ip4-protocol 6 --ip4-src 192.168.0.104 --ip4-dst 192.168.0.105 --tcp-src 59999 --tcp-dst 49999 --tcp-seqnum 2775375568 --tcp-acknum 2356415172 --tcp-ack --tcp-psh --tcp-window 128 --tcp-data "'sudo passwd root'" 这个样子服务器就可以收到伪造的客户端的包然后执行相应操作 结语socket用raw形式的包，可以直接构造，甚至可以修改协议 Reference TCP回话劫持原理和利用 Attacks on TCP/IP Protocols (Task5) TCP Session Hijacking]]></content>
       <categories>
         <category>hack</category>
       </categories>
@@ -89,9 +89,9 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>bigdata</tag>
         <tag>hbase</tag>
+        <tag>hadoop</tag>
         <tag>note</tag>
       </tags>
   </entry>
@@ -115,9 +115,9 @@
         <category>bigdata</category>
       </categories>
       <tags>
+        <tag>bigdata</tag>
         <tag>hadoop</tag>
         <tag>install</tag>
-        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
