@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-hbase/</loc>
+    
+    <lastmod>2019-11-28T04:16:22.539Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
+    
+    <lastmod>2019-11-28T04:16:14.839Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
+    
+    <lastmod>2019-11-28T04:15:00.472Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-niit/</loc>
+    
+    <lastmod>2019-11-27T14:04:51.567Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-linux-commend/</loc>
+    
+    <lastmod>2019-11-27T13:47:33.333Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/iot-fire-dection-based-on-raspberry-pi/</loc>
+    
+    <lastmod>2019-11-27T12:57:39.663Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/hack-tcp-session-hijack/</loc>
     
     <lastmod>2019-11-21T09:54:22.599Z</lastmod>
@@ -114,7 +156,7 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/misc-daxueguidang/</loc>
+    <loc>beiyuouo.github.io/blog/misc-da-xue-gui-dang/</loc>
     
     <lastmod>2019-11-13T11:16:47.872Z</lastmod>
     
@@ -135,23 +177,9 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-hbase/</loc>
-    
-    <lastmod>2019-10-24T14:37:16.821Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/answer.html</loc>
     
     <lastmod>2019-10-22T08:38:26.802Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-hadoop/</loc>
-    
-    <lastmod>2019-10-21T14:39:13.962Z</lastmod>
     
   </url>
   
@@ -205,13 +233,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
-    
-    <lastmod>2019-09-11T12:18:30.754Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/note-discrete-mathematics/</loc>
     
     <lastmod>2019-09-10T13:40:16.383Z</lastmod>
@@ -226,13 +247,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-niit/</loc>
-    
-    <lastmod>2019-09-06T04:54:52.994Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/ml-practice/</loc>
     
     <lastmod>2019-08-28T16:28:58.708Z</lastmod>
@@ -240,7 +254,7 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-machinelearning/</loc>
+    <loc>beiyuouo.github.io/blog/note-machine-learning/</loc>
     
     <lastmod>2019-08-21T01:10:17.474Z</lastmod>
     
@@ -401,7 +415,7 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-dataanalysisandmining/</loc>
+    <loc>beiyuouo.github.io/blog/note-data-analysis-and-mining/</loc>
     
     <lastmod>2019-05-16T12:16:02.039Z</lastmod>
     
@@ -429,14 +443,14 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/pro-CodeJamQualificationRound/</loc>
+    <loc>beiyuouo.github.io/blog/pro-CodeJam-Qualification-Round/</loc>
     
     <lastmod>2019-04-07T02:08:56.594Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-softwareproject/</loc>
+    <loc>beiyuouo.github.io/blog/note-software-project/</loc>
     
     <lastmod>2019-03-31T08:55:18.455Z</lastmod>
     
@@ -495,13 +509,6 @@
     <loc>beiyuouo.github.io/blog/test-gitmenttest/</loc>
     
     <lastmod>2019-01-18T09:19:27.962Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-linuxcommend/</loc>
-    
-    <lastmod>2019-01-09T07:50:17.011Z</lastmod>
     
   </url>
   

@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="HBase Basic conceptsTable spaceIn relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the follow">
+<meta name="description" content="HBase Brief IntroductionWhat is HBaseHBase is an open source KV-type(key-value pair) database of apache, build on top of hdfs, providing a high reliability, high performance, column storage, scalable,">
 <meta name="keywords" content="bigdata,hbase,hadoop,note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hbase笔记">
+<meta property="og:title" content="HBase笔记">
 <meta property="og:url" content="beiyuouo.github.io/blog/note-hbase/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="HBase Basic conceptsTable spaceIn relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the follow">
+<meta property="og:description" content="HBase Brief IntroductionWhat is HBaseHBase is an open source KV-type(key-value pair) database of apache, build on top of hdfs, providing a high reliability, high performance, column storage, scalable,">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-10-24T14:37:16.821Z">
+<meta property="og:updated_time" content="2019-11-28T04:16:22.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hbase笔记">
-<meta name="twitter:description" content="HBase Basic conceptsTable spaceIn relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the follow">
+<meta name="twitter:title" content="HBase笔记">
+<meta name="twitter:description" content="HBase Brief IntroductionWhat is HBaseHBase is an open source KV-type(key-value pair) database of apache, build on top of hdfs, providing a high reliability, high performance, column storage, scalable,">
 
 
 
@@ -156,7 +156,7 @@
 
 
 
-  <title>Hbase笔记 | 北屿</title>
+  <title>HBase笔记 | 北屿</title>
   
 
 
@@ -397,7 +397,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hbase笔记</h1>
+          <h1 class="post-title" itemprop="name headline">HBase笔记</h1>
         
 
         <div class="post-meta">
@@ -425,8 +425,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-24T22:37:16+08:00">
-                2019-10-24
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-28T12:16:22+08:00">
+                2019-11-28
               </time>
             
           </span>
@@ -480,7 +480,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  215
+                  471
                 </span>
               
 
@@ -496,7 +496,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -517,13 +517,22 @@
       
 
       
-        <h3 id="HBase-Basic-concepts"><a href="#HBase-Basic-concepts" class="headerlink" title="HBase Basic concepts"></a>HBase Basic concepts</h3><h4 id="Table-space"><a href="#Table-space" class="headerlink" title="Table space"></a>Table space</h4><p>In relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the following use:</p>
+        <h1 id="HBase-Brief-Introduction"><a href="#HBase-Brief-Introduction" class="headerlink" title="HBase Brief Introduction"></a>HBase Brief Introduction</h1><h2 id="What-is-HBase"><a href="#What-is-HBase" class="headerlink" title="What is HBase"></a>What is HBase</h2><p>HBase is an open source KV-type(key-value pair) database of apache, build on top of hdfs, providing a high reliability, high performance, column storage, scalable, real-time read and write database system. It is somewhere between nosql and RDBMS, and can only retrieve data through the primary key(row key) and range of primary key, and only supports single-row transaction(complex operations such as multi-table join can be achieved through hive support). Primarily used to store unstructured and semi-structured loose data.<br>Like hadoop, HBase’s goal is to rely primary on scale-out, increasing computing and storage capabilities by increasing the number of inexpensive commercial servers.<br>HBase, as a typical NOSQL database(NOSQL database = Not only SQL or Non Relational database), can quickly retrieve data through Rowkey, supporting only single-line transaction. The throughput of the cluster can be increased by increasing the availability of inexpensive hardware equipment, relying on HDFS to provide data storage, which guarantees the reliability of the data. Here are some of the technical features of HBase:</p>
+<ul>
+<li>Large capacity: A single table can have ten billion rows, million columns.</li>
+<li>Column-oriented: HBase is column-oriented storage and permission control that dynamically increases columns.</li>
+<li>Sparseness: Empty columns(NULL) do not take up storage space.</li>
+<li>Extensibility: HBase can dynamically increase regionserver.</li>
+<li>High performance: HBase’s unique LSM data structure, very fast through rowkey query.</li>
+</ul>
+<h2 id="Chapter4"><a href="#Chapter4" class="headerlink" title="Chapter4"></a>Chapter4</h2><h3 id="Bloom-filter"><a href="#Bloom-filter" class="headerlink" title="Bloom filter"></a>Bloom filter</h3><p>Key features<br>HBase uses Bloomfilter to improve the performance of Random Reads(Get), which is not useful for Sequential Reading(Scan)</p>
+<h2 id="HBase-Basic-concepts"><a href="#HBase-Basic-concepts" class="headerlink" title="HBase Basic concepts"></a>HBase Basic concepts</h2><h3 id="Table-space"><a href="#Table-space" class="headerlink" title="Table space"></a>Table space</h3><p>In relational database systems, namespace refers to a logical grouping of tables, with similar uses for tables in the same group. The concept of namespace has the following use:</p>
 <ul>
 <li>Quota Management: Limit the resources available to namespace, including region and table.</li>
 <li>Namespace Security Management: Provides another level of multi-tenant security management.</li>
 <li>Region server group: A namespace or table that can be fixed to a set of region servers to ensure data isolation.</li>
 </ul>
-<h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">whoami - give the imformation of currently logged <span class="keyword">in</span> user</span><br><span class="line">status - status of hbase with 3 arguements simple, detailed, summary(deault mode)</span><br><span class="line">version - version of hbase </span><br><span class="line"></span><br><span class="line">create_namespace <span class="string">'namespace_name'</span></span><br><span class="line">drop_namespace <span class="string">'namespace_name'</span></span><br><span class="line">list_namespace </span><br><span class="line">change_namespace</span><br><span class="line"><span class="string">'namespace_name'</span> - goto the namespace </span><br><span class="line"></span><br><span class="line">create &lt;namespace&gt;: <span class="string">'table_name'</span>, &#123; NAME =&gt; &lt;family&gt;, VERSIONS =&gt; &lt;VERSIONS&gt;&#125;</span><br><span class="line">list</span><br><span class="line">drop <span class="string">'table_name'</span></span><br><span class="line"><span class="built_in">disable</span> <span class="string">'table_name'</span></span><br><span class="line"><span class="built_in">enable</span> <span class="string">'table_name'</span></span><br><span class="line">is_disabled <span class="string">'table_name'</span></span><br><span class="line">is_enabled <span class="string">'table_name'</span></span><br><span class="line">exists <span class="string">'table_name'</span></span><br><span class="line">descibe <span class="string">'table_name'</span></span><br><span class="line">scan <span class="string">'table_name'</span></span><br><span class="line">alter <span class="string">'table_name'</span>, &#123; NAME =&gt; &lt;family&gt;, VERSIONS =&gt; &lt;VERSIONS&gt;&#125;</span><br><span class="line"></span><br><span class="line">put &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;, &lt;value&gt;, &lt;timestamp&gt;</span><br><span class="line">get  &lt;table&gt;, &lt;rowkey&gt;, [&lt;family: column&gt;,...]</span><br><span class="line">count &lt;table&gt;</span><br><span class="line">delete &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;</span><br><span class="line">deleteall &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;</span><br><span class="line">truncate &lt;table&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">whoami - give the imformation of currently logged <span class="keyword">in</span> user</span><br><span class="line">status - status of hbase with 3 arguements simple, detailed, summary(deault mode)</span><br><span class="line">version - version of hbase </span><br><span class="line"></span><br><span class="line">create_namespace <span class="string">'namespace_name'</span></span><br><span class="line">drop_namespace <span class="string">'namespace_name'</span></span><br><span class="line">list_namespace </span><br><span class="line">change_namespace</span><br><span class="line"><span class="string">'namespace_name'</span> - goto the namespace </span><br><span class="line"></span><br><span class="line">create &lt;namespace&gt;: <span class="string">'table_name'</span>, &#123; NAME =&gt; &lt;family&gt;, VERSIONS =&gt; &lt;VERSIONS&gt;&#125;</span><br><span class="line">list</span><br><span class="line">drop <span class="string">'table_name'</span></span><br><span class="line"><span class="built_in">disable</span> <span class="string">'table_name'</span></span><br><span class="line"><span class="built_in">enable</span> <span class="string">'table_name'</span></span><br><span class="line">is_disabled <span class="string">'table_name'</span></span><br><span class="line">is_enabled <span class="string">'table_name'</span></span><br><span class="line">exists <span class="string">'table_name'</span></span><br><span class="line">descibe <span class="string">'table_name'</span></span><br><span class="line">scan <span class="string">'table_name'</span></span><br><span class="line">alter <span class="string">'table_name'</span>, &#123; NAME =&gt; &lt;family&gt;, VERSIONS =&gt; &lt;VERSIONS&gt;&#125;</span><br><span class="line"></span><br><span class="line">put &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;, &lt;value&gt;, &lt;timestamp&gt;</span><br><span class="line">get  &lt;table&gt;, &lt;rowkey&gt;, [&lt;family: column&gt;,...]</span><br><span class="line">count &lt;table&gt;</span><br><span class="line">delete &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;</span><br><span class="line">deleteall &lt;table&gt;, &lt;rowkey&gt;, &lt;family: column&gt;</span><br><span class="line">truncate &lt;table&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -651,7 +660,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-count">84</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -673,7 +682,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -779,7 +788,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase-Basic-concepts"><span class="nav-number">1.</span> <span class="nav-text">HBase Basic concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Table-space"><span class="nav-number">1.1.</span> <span class="nav-text">Table space</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command"><span class="nav-number">2.</span> <span class="nav-text">Command</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HBase-Brief-Introduction"><span class="nav-number">1.</span> <span class="nav-text">HBase Brief Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-HBase"><span class="nav-number">1.1.</span> <span class="nav-text">What is HBase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter4"><span class="nav-number">1.2.</span> <span class="nav-text">Chapter4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bloom-filter"><span class="nav-number">1.2.1.</span> <span class="nav-text">Bloom filter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase-Basic-concepts"><span class="nav-number">1.3.</span> <span class="nav-text">HBase Basic concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Table-space"><span class="nav-number">1.3.1.</span> <span class="nav-text">Table space</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Command"><span class="nav-number">1.4.</span> <span class="nav-text">Command</span></a></li></ol></li></ol></div>
             
 
           </div>

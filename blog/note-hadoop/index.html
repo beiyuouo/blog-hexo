@@ -108,18 +108,18 @@
 
 
 
-<meta name="description" content="Chapter 1Big DataWhat is Big DataData - The most valuable ResourceBig Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and specified time f">
+<meta name="description" content="Chapter1 Big Data ConceptBig DataWhat is Big DataData - The most valuable ResourceBig Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and">
 <meta name="keywords" content="hadoop,note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop笔记">
 <meta property="og:url" content="beiyuouo.github.io/blog/note-hadoop/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="Chapter 1Big DataWhat is Big DataData - The most valuable ResourceBig Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and specified time f">
+<meta property="og:description" content="Chapter1 Big Data ConceptBig DataWhat is Big DataData - The most valuable ResourceBig Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-10-21T14:39:13.962Z">
+<meta property="og:updated_time" content="2019-11-28T04:16:14.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop笔记">
-<meta name="twitter:description" content="Chapter 1Big DataWhat is Big DataData - The most valuable ResourceBig Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and specified time f">
+<meta name="twitter:description" content="Chapter1 Big Data ConceptBig DataWhat is Big DataData - The most valuable ResourceBig Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and">
 
 
 
@@ -425,8 +425,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-21T22:39:13+08:00">
-                2019-10-21
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-28T12:16:14+08:00">
+                2019-11-28
               </time>
             
           </span>
@@ -480,7 +480,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  55
+                  664
                 </span>
               
 
@@ -496,7 +496,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  4
                 </span>
               
             </div>
@@ -517,17 +517,53 @@
       
 
       
-        <h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><h3 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h3><p>What is Big Data<br>Data - The most valuable Resource<br>Big Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and specified time frame by commonly used software tools.</p>
+        <h1 id="Chapter1-Big-Data-Concept"><a href="#Chapter1-Big-Data-Concept" class="headerlink" title="Chapter1 Big Data Concept"></a>Chapter1 Big Data Concept</h1><h2 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h2><h3 id="What-is-Big-Data"><a href="#What-is-Big-Data" class="headerlink" title="What is Big Data"></a>What is Big Data</h3><p>Data - The most valuable Resource<br>Big Data is a term applied to data sets that cannot be capured, managed, and processed within a tolerable elapsed and specified time frame by commonly used software tools.</p>
 <p>Characteristics of Big Data Technology</p>
 <ul>
 <li>Volume</li>
 <li>Variety</li>
+<li>Value density</li>
 <li>Velocity</li>
-<li>Veracity</li>
-<li>Valence</li>
-<li>Value</li>
 </ul>
-<h2 id="Chapter-4-Hadoop-Components"><a href="#Chapter-4-Hadoop-Components" class="headerlink" title="Chapter 4 Hadoop Components"></a>Chapter 4 Hadoop Components</h2><h3 id="YARN-Model-Overview"><a href="#YARN-Model-Overview" class="headerlink" title="YARN Model Overview"></a>YARN Model Overview</h3>
+<h3 id="The-Birth-of-Big-Data"><a href="#The-Birth-of-Big-Data" class="headerlink" title="The Birth of Big Data"></a>The Birth of Big Data</h3><p>The 21st century is an era of great development of data and information.</p>
+<h3 id="Cumulative-amount-of-data-generated"><a href="#Cumulative-amount-of-data-generated" class="headerlink" title="Cumulative amount of data generated"></a>Cumulative amount of data generated</h3><h3 id="Transition-from-IT-to-DT"><a href="#Transition-from-IT-to-DT" class="headerlink" title="Transition from IT to DT"></a>Transition from IT to DT</h3><p>DT = Data Technology.<br>Usage of Big Data</p>
+<ul>
+<li>Precision advertisement delivery</li>
+<li>Medical and health systems</li>
+<li>Personalized education</li>
+<li>Personal Credit Reporting</li>
+</ul>
+<h3 id="Big-Data-Ecosphere-Tools-mainly-include"><a href="#Big-Data-Ecosphere-Tools-mainly-include" class="headerlink" title="Big Data Ecosphere Tools mainly include"></a>Big Data Ecosphere Tools mainly include</h3><ul>
+<li><p>Hadoop<br>Hadoop is a distributed system infrastructure developed by Apache Foundation. Doug Cutting is inspired by Map/Reduce and Google File System(GFS) developed by Google Lab. The core architecture of Hadoop is MapReduce programming model and HDFS distributed file system.<br>MapReduce framework can decompose an application into many parallel computing instructions, running very large data sets across a large number of computing nodes. Map is used to segment large data, and Reduce is used to merge the results of Map calculation.<br>HDFS(Hadoop Distributed File System) distributed file system provides storage services for massive data and large files. The files greater than 64/127MB is divided into blocks and stored in multiple nodes. It has high throughput and fault tolerance.</p>
+</li>
+<li><p>HBase<br>HBase is an open source KV database of apache. It is based on HDFS and provides a database system with high reliability, high performance, column storage, scalability and real-time reading and writing. It is between NoSQL and RDBMS. It can retrieve data only through row key and range of primary key. It only supports single-line transactions(multi-table join and other complex operation can be realized through hive support). It is mainly used to store unstructured and semi-structured loose data.<br>Sparse. For null columns, there is no storage space, so tables can be designed to be very sparse.</p>
+</li>
+<li>Storm<br>Apache Storm is a free and open source distributed real-time computing system, which simplifies the reliable processing of stream data.<br>Storm Features: Easy to expand; The processing of each piece of information can be guaranteed; Storm cluster management is simple; Storm’s Fault Tolerance Function(A node hangs up and can’t affect my application); Low latency </li>
+<li>Zookeeper<br>Zookeeper is a high performance, distributed, open source distributed application coordination service.<br>Zookeeper Characteristics: Sequentical consistency; Atomicity; Uniformity; Reliability; Timeliness<br>Zookeeper Use Cases: Data Publishing and Subscription; Name Space Service; Distributed notification/coordination; Distributed Lock; Cluster Management</li>
+<li>Sqoop<br>Sqoop is Apache’s top-level project, which allows users to extract data from relational databases into Hadoop for further processing.</li>
+<li><p>Mahout<br>Mahout is a powerful data mining tool and a set of distributed machine learning algorithms, including the implementation, classification and clustering of distributed collaborative filtering. It greatly improves the data volume and processing performance of the algorithm.</p>
+</li>
+<li><p>Hive</p>
+</li>
+</ul>
+<h3 id="Hadoop-Introduction-of-Application-Status"><a href="#Hadoop-Introduction-of-Application-Status" class="headerlink" title="Hadoop Introduction of Application Status"></a>Hadoop Introduction of Application Status</h3><ul>
+<li>Alibaba</li>
+<li>Baidu</li>
+<li>Tencent</li>
+<li>Qihu 360</li>
+<li>China Mobile</li>
+<li>Yahoo</li>
+<li>Facebook</li>
+</ul>
+<h3 id="Hadoop-Introduction-to-Version-Development"><a href="#Hadoop-Introduction-to-Version-Development" class="headerlink" title="Hadoop Introduction to Version Development"></a>Hadoop Introduction to Version Development</h3><ul>
+<li>2004, The original version of HDFS and MapReduce was implemented by Doug Cutting and Mike Cafarella.</li>
+</ul>
+<h1 id="Chapter2-Hadoop-Installation"><a href="#Chapter2-Hadoop-Installation" class="headerlink" title="Chapter2 Hadoop Installation"></a>Chapter2 Hadoop Installation</h1><h1 id="Chapter3-Linux-Basics"><a href="#Chapter3-Linux-Basics" class="headerlink" title="Chapter3 Linux Basics"></a>Chapter3 Linux Basics</h1>
+<h1 id="Chapter4-Hadoop-Components"><a href="#Chapter4-Hadoop-Components" class="headerlink" title="Chapter4 Hadoop Components"></a>Chapter4 Hadoop Components</h1><h2 id="YARN-Model-Overview"><a href="#YARN-Model-Overview" class="headerlink" title="YARN Model Overview"></a>YARN Model Overview</h2><p>The YARN model controls the entire cluster and manages the allocation fo applications to the underlying computing resouces. ResourceManager assigns various resource parts(computing, memory, bandwidth, etc.) to the underlying NodeManage(each node agent of YARN). ResourceManager also allocates resources with Application Master to start and monitor their underlying applications with NodeManager.</p>
+<h1 id="Chapter8"><a href="#Chapter8" class="headerlink" title="Chapter8"></a>Chapter8</h1><p>MapReduce is a parallel programming model that implements basic parallel computing tasks using Map and Reduce functions.</p>
+<p>Two main phases of map reduce: Mapper and Reduce<br>Mapper: Maps are the idividucal tasks that transform input records into intermediate records.<br>Shuffling &amp; Sorting: The process of exchanging the intermediate outputs from the map tasks to where they are required by reducers. Sorting is done</p>
+<p>Reducer: Reduces a set of intermediate values which share a key to a smaller set of values. All of the values with the same key are persented to a single reducer together. </p>
+
       
     </div>
     
@@ -650,7 +686,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-count">84</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -672,7 +708,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -778,7 +814,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-1"><span class="nav-number">1.</span> <span class="nav-text">Chapter 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Big-Data"><span class="nav-number">1.1.</span> <span class="nav-text">Big Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-4-Hadoop-Components"><span class="nav-number">2.</span> <span class="nav-text">Chapter 4 Hadoop Components</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#YARN-Model-Overview"><span class="nav-number">2.1.</span> <span class="nav-text">YARN Model Overview</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-Big-Data-Concept"><span class="nav-number">1.</span> <span class="nav-text">Chapter1 Big Data Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Big-Data"><span class="nav-number">1.1.</span> <span class="nav-text">Big Data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Big-Data"><span class="nav-number">1.1.1.</span> <span class="nav-text">What is Big Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Birth-of-Big-Data"><span class="nav-number">1.1.2.</span> <span class="nav-text">The Birth of Big Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cumulative-amount-of-data-generated"><span class="nav-number">1.1.3.</span> <span class="nav-text">Cumulative amount of data generated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transition-from-IT-to-DT"><span class="nav-number">1.1.4.</span> <span class="nav-text">Transition from IT to DT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Big-Data-Ecosphere-Tools-mainly-include"><span class="nav-number">1.1.5.</span> <span class="nav-text">Big Data Ecosphere Tools mainly include</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop-Introduction-of-Application-Status"><span class="nav-number">1.1.6.</span> <span class="nav-text">Hadoop Introduction of Application Status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop-Introduction-to-Version-Development"><span class="nav-number">1.1.7.</span> <span class="nav-text">Hadoop Introduction to Version Development</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter2-Hadoop-Installation"><span class="nav-number">2.</span> <span class="nav-text">Chapter2 Hadoop Installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter3-Linux-Basics"><span class="nav-number">3.</span> <span class="nav-text">Chapter3 Linux Basics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter4-Hadoop-Components"><span class="nav-number">4.</span> <span class="nav-text">Chapter4 Hadoop Components</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#YARN-Model-Overview"><span class="nav-number">4.1.</span> <span class="nav-text">YARN Model Overview</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter8"><span class="nav-number">5.</span> <span class="nav-text">Chapter8</span></a></li></ol></div>
             
 
           </div>
