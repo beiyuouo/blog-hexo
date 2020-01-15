@@ -12,6 +12,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[note-federated-learning]]></title>
+    <url>%2Fblog%2Fnote-federated-learning%2F</url>
+    <content type="text"><![CDATA[独立同分布independent and identically distributed (i.i.d.)非独立同分布non-IID]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>mathine-learning</tag>
+        <tag>federated-learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[20191201]]></title>
     <url>%2Fblog%2F20191201%2F</url>
     <content type="text"><![CDATA[如何1s中损失200rmb？你只需要把你的树莓派短接1s，它就没啦！记录一下悲惨的时刻…创马提供的Micarduino Sensor Hub并不是和树莓派配套的扩展板，我天真以为是和树莓派配套的hhh然后没有Arduino Core也就控制不了，然后尝试用杜邦线直接连…就在这过程中，我把I2C的线当成的GND！我先接了VCC(因为好接)！然后！SSH就断开了！再然后！他开始嗡嗡叫了！再然后！他只有红灯亮！打不开了！然后我把SD卡放我3B+上了，可以打开系统基本可以确定他gg了…R.I.P. 谨此文警示众人，不要先接电源！！！看好线再接！！！第一次因为接错线短路烧了一个板子..强烈希望树莓派加一个控制GPIO电源的开关..哪怕是命令也好…(也可能有，但是我不知道hhh)]]></content>
@@ -30,9 +43,9 @@
         <category>iot</category>
       </categories>
       <tags>
+        <tag>machinelearning</tag>
         <tag>iot</tag>
         <tag>raspberry</tag>
-        <tag>machinelearning</tag>
         <tag>python</tag>
         <tag>sensorhub</tag>
       </tags>
@@ -115,9 +128,9 @@
         <category>note</category>
       </categories>
       <tags>
+        <tag>hadoop</tag>
         <tag>bigdata</tag>
         <tag>hbase</tag>
-        <tag>hadoop</tag>
         <tag>note</tag>
       </tags>
   </entry>
@@ -141,9 +154,9 @@
         <category>bigdata</category>
       </categories>
       <tags>
-        <tag>bigdata</tag>
         <tag>hadoop</tag>
         <tag>install</tag>
+        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
@@ -263,9 +276,9 @@
         <category>iot</category>
       </categories>
       <tags>
+        <tag>machinelearning</tag>
         <tag>iot</tag>
         <tag>raspberry</tag>
-        <tag>machinelearning</tag>
         <tag>python</tag>
         <tag>mnist</tag>
       </tags>
@@ -592,8 +605,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>arduino</tag>
         <tag>note</tag>
+        <tag>arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -856,8 +869,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>canvas</tag>
         <tag>game</tag>
+        <tag>canvas</tag>
         <tag>breakout</tag>
       </tags>
   </entry>
@@ -870,8 +883,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>canvas</tag>
         <tag>game</tag>
+        <tag>canvas</tag>
       </tags>
   </entry>
   <entry>
@@ -962,8 +975,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>canvas</tag>
         <tag>game</tag>
+        <tag>canvas</tag>
         <tag>jquery</tag>
       </tags>
   </entry>
@@ -1004,8 +1017,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-hello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
+    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
       <categories>
         <category>daily</category>
       </categories>
@@ -1015,8 +1028,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
-    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
+    <url>%2Fblog%2Ftest-hello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>daily</category>
       </categories>
