@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-pytorch/</loc>
+    
+    <lastmod>2020-01-17T12:07:39.285Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/note-federated-learning/</loc>
     
     <lastmod>2020-01-03T03:52:28.063Z</lastmod>
