@@ -108,18 +108,20 @@
 
 
 
-<meta name="description" content="独立同分布independent and identically distributed (i.i.d.)非独立同分布non-IID">
+<meta name="description" content="独立同分布independent and identically distributed (i.i.d.)非独立同分布non-IID 有一篇我自己写的小部分翻译，懒得编辑了，直接cv了 论文英文题目：Communication-Efficient Learning of Deep Networks from Decentralized Data论文中译题目：一种面向分布式数据的深度网络有效通信的学">
 <meta name="keywords" content="note,mathine-learning,federated-learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="note-federated-learning">
+<meta property="og:title" content="Federated Learning笔记">
 <meta property="og:url" content="beiyuouo.github.io/blog/note-federated-learning/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="独立同分布independent and identically distributed (i.i.d.)非独立同分布non-IID">
+<meta property="og:description" content="独立同分布independent and identically distributed (i.i.d.)非独立同分布non-IID 有一篇我自己写的小部分翻译，懒得编辑了，直接cv了 论文英文题目：Communication-Efficient Learning of Deep Networks from Decentralized Data论文中译题目：一种面向分布式数据的深度网络有效通信的学">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-01-03T03:52:28.063Z">
+<meta property="og:image" content="/img/note-federated-learning/algro.png">
+<meta property="og:updated_time" content="2020-01-25T05:43:53.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="note-federated-learning">
-<meta name="twitter:description" content="独立同分布independent and identically distributed (i.i.d.)非独立同分布non-IID">
+<meta name="twitter:title" content="Federated Learning笔记">
+<meta name="twitter:description" content="独立同分布independent and identically distributed (i.i.d.)非独立同分布non-IID 有一篇我自己写的小部分翻译，懒得编辑了，直接cv了 论文英文题目：Communication-Efficient Learning of Deep Networks from Decentralized Data论文中译题目：一种面向分布式数据的深度网络有效通信的学">
+<meta name="twitter:image" content="/img/note-federated-learning/algro.png">
 
 
 
@@ -156,7 +158,7 @@
 
 
 
-  <title>note-federated-learning | 北屿</title>
+  <title>Federated Learning笔记 | 北屿</title>
   
 
 
@@ -397,7 +399,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">note-federated-learning</h1>
+          <h1 class="post-title" itemprop="name headline">Federated Learning笔记</h1>
         
 
         <div class="post-meta">
@@ -425,8 +427,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-01-03T11:52:28+08:00">
-                2020-01-03
+              <time title="Post modified" itemprop="dateModified" datetime="2020-01-25T13:43:53+08:00">
+                2020-01-25
               </time>
             
           </span>
@@ -480,7 +482,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  20
+                  1.5k
                 </span>
               
 
@@ -496,7 +498,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  6
                 </span>
               
             </div>
@@ -518,6 +520,13 @@
 
       
         <p>独立同分布independent and identically distributed (i.i.d.)<br>非独立同分布non-IID</p>
+<p>有一篇我自己写的小部分翻译，懒得编辑了，直接cv了</p>
+<p>论文英文题目：Communication-Efficient Learning of Deep Networks from Decentralized Data<br>论文中译题目：一种面向分布式数据的深度网络有效通信的学习方法</p>
+<p>英文摘要：<br>Modern mobile devices have access to a wealth of data suitable for learning models, which in turn<br>can greatly improve the user experience on the device. For example, language models can improve speech recognition and text entry, and image models can automatically select good photos. However, this rich data is often privacy sensitive, large in quantity, or both, which may preclude<br>logging to the data center and training there using conventional approaches. We advocate an alternative that leaves the training data distributed on the mobile devices, and learns a shared model by aggregating locally-computed updates. We term this decentralized approach Federated Learning. We present a practical method for the federated learning of deep networks based on iterative model averaging, and conduct an extensive empirical evaluation, considering five different model architectures and four datasets. These experiments demonstrate the approach is robust to the unbalanced and non-IID data distributions that are a defining characteristic of this setting. Communication costs are the principal constraint, and we show a reduction in required communication rounds by 10–100× as compared to synchronized stochastic gradient descent.<br>中文摘要：<br>现代移动设备可以得到适合于模型学习的大量数据，因此可以用来改善用户的使用体验。例如，语言模型可以改善语音识别和文本输入，图像模型可以自动选择优质照片。但是，这些丰富的隐私数据通常比较敏感，或者数量庞大，这可能不可以记录到数据中心并使用传统的方法在那里进行训练。我们提出另一种替代的方法，该方法将训练数据保留在移动设备上，并通过汇总本地计算的结果来更新共享模型。我们将这种分布式去中心化的方法称为联邦学习。我们提出了一种基于迭代模型平均的深度网络联邦学习的方法，并考虑了五个不同的模型架构和四个数据集，进行了广泛的经验评估。这些实验证明，该方法对于不平衡和非独立同分布的数据是稳定的，该分布是此设置的定义特征。通信成本是该方法的主要限制因素，与同步随机梯度下降相比，我们显示出所需的通信回合减少了10–100倍。</p>
+<p>核心内容：<br>Federated Learning<br>Ideal problems for federated learning have the following properties: 1) Training on real-world data from mobile devices provides a distinct advantage over training on proxy data that is generally available in the data center. 2) This data is privacy sensitive or large in size (compared to the size of the model), so it is preferable not to log it to the data center purely for the purpose of model training (in service of the focused collection principle). 3) For supervised tasks, labels on the data can be inferred naturally from user interaction. Many models that power intelligent behavior on mobile devices fit the above criteria. As two examples, we consider image classification, for example predicting which photos are most likely to be viewed multiple times in the future, or shared; and language models, which can be used to improve voice recognition and text entry on touch-screen keyboards by improving decoding, next-word-prediction, and even predicting whole replies.<br>理想的联邦学习的问题具有以下特性：1）对来自移动设备的现实世界数据进行的训练比对数据中心中通常可用的替代数据的培训具有明显的优势。 2）此数据是隐私敏感的或较大的（与模型的大小相比），因此最好不要仅出于训练模型的目的将其记录到数据中心（以集中收集为原则）。 3）对于监督学习，可以从用户交互中自然推断出数据上的标签。支持移动设备上智能服务的许多模型都符合上述条件。举两个例子，我们考虑图像分类，例如预测哪些照片将来最有可能被多次查看或共享；语言模型，可以通过改善解码，下一单词预测甚至预测整个回复来改善触摸屏键盘上的语音识别和文本输入。</p>
+<p>The FederatedAveraging Algorithm<br>We term this approach FederatedAveraging(or FedAvg). The amount of computation is controlled<br>by three key parameters: C, the fraction of clients that perform computation on each round; E, then number of training passes each client makes over its local dataset on each round; and B, the local minibatch size used for the client updates. We write B = ∞ to indicate that the full local dataset is treated as a single minibatch. Thus, at one endpoint of this algorithm family, we can take B = ∞ and E = 1 which corresponds exactly to FedSGD. For a client with n_k local examples, the number of local updates per round is given by u_k = E<em> n_k/B; Complete pseudo-code is given in Algorithm 1.<br>我们称这种方法为FederatedAveraging（或FedAvg）。 计算量受控于三个关键参数：C，每一轮执行计算的客户比例； E，然后每个客户在每个回合中对其本地数据集进行的训练次数； 和B，用于客户端更新的本地最小数据量大小。 我们写B =∞表示整个本地数据集被视为单个数据量。 因此，在该算法族的一个端点，我们可以取B =∞和E = 1，这恰好对应于FedSGD。 对于具有n_k个本地示例的客户端，每轮本地更新次数由u_k = E </em> n_k / B给出； 算法1中给出了完整的伪代码。<br><img src="/img/note-federated-learning/algro.png" alt><br>算法流程主要是初始化服务端模型，随机选取m个客户端，对于选中的客户端用其参数对服务器模型进行更新，同时传输给客户端。对于客户端，利用本地数据更新模型，将参数传给服务端。</p>
+<p>FedSGD算法和FedAvg算法在CIFAR-10图片分类上的对比实验结果，可以看到FedAvg效果要明显优于FedSGD算法的效果</p>
+<p>简单的来说，联邦学习可以减少数据通信的传输量同时保护用户隐私，做到数据隔离，且能达到较好的训练结果。</p>
 
       
     </div>
@@ -634,7 +643,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">87</span>
+                <span class="site-state-item-count">88</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
