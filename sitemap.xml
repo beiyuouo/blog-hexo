@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-computer-organization/</loc>
+    
+    <lastmod>2020-03-02T14:22:50.201Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/paper-note/202002/index.html</loc>
+    
+    <lastmod>2020-03-02T13:32:41.667Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/paper-note/202003/index.html</loc>
+    
+    <lastmod>2020-03-02T13:32:37.553Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/paper-note/index.html</loc>
+    
+    <lastmod>2020-03-02T13:32:23.338Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-matplotlib/</loc>
+    
+    <lastmod>2020-03-02T13:31:59.131Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/note-federated-learning/</loc>
     
     <lastmod>2020-01-25T05:48:05.964Z</lastmod>
@@ -299,13 +334,6 @@
     <loc>beiyuouo.github.io/blog/note-numpy/</loc>
     
     <lastmod>2019-07-28T13:28:57.198Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-matplotlib/</loc>
-    
-    <lastmod>2019-07-28T13:26:40.807Z</lastmod>
     
   </url>
   

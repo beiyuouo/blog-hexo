@@ -12,6 +12,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[计算机组成原理笔记]]></title>
+    <url>%2Fblog%2Fnote-computer-organization%2F</url>
+    <content type="text"><![CDATA[苦b考研党要看的教材qwq然鹅这个**专业居然不学计组，那学nmd计算机呢?只好自学了，放假前找考研的学姐买了这本书233没花多少q计算机组成原理(第5版) 白中英——20200302 第1章 计算机系统概论1.1 计算机的分类电子计算机总体上分为两大类：电子模拟计算机和电子数字计算机电子数字计算机再进一步分为专用计算机和通用计算机通用计算机可以分为超级计算机、大型机、服务器、PC机、单片机和多核机。他们区别在于体积、简易性、功率损耗、性能指标、数据存储容量、指令系统规模和机器价格。 1.2 计算机发展简史1.2.1 计算机的五代变化1946年世界第一台电子数字计算机在没过宾夕法尼亚大学制成。第一代1946~1957，电子管计算机，计算速度?k/s~?w/s，数字处理机开始得到应用第二代1958~1964，晶体管计算机，计算速度?w/s~??w/s，工业控制机开始得到应用第三代1965~1971，中小型集成电路计算机，计算速度??w/s~???w/s，小型计算机开始出现第四代1972~1990，大规模和超大规模集成电路计算机，计算速度????w/s~1e8/s，微型计算机开始出现第五代1991年开始的巨大规模集成电路计算机，计算速度1e9/s，单片计算机开始出现 1965年摩尔观察到芯片上的晶体管数量每年翻一番，1970年这种态势减缓成每18个月翻一番，这就是摩尔定律。]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>computer-organization</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[20200125]]></title>
     <url>%2Fblog%2F20200125%2F</url>
     <content type="text"><![CDATA[最近真的太颓了…我都快受不了自己了没由头的，不想做任何事，就疯狂玩游戏麻痹自己 今天，新年第一天，也是2020年我博客的第一篇daily分类的博文不奢求什么一夜暴富之类的，只希望事事顺利就好了 最近的肺炎，越来越严重，自己时不时就会去翻翻实时情况，也确实很担心东营一直没有报存在病例，反而让我更加担心，怀疑是不是宣传不到位，很多老人得了都不说，以为是感冒就过去了，到时候越传越多也忽然很理解那些从武汉出来的人，他们担心交叉感染，担心得不到及时的救治，于是到外省去寻求医疗救治，甚至去国外结果却是，他们把病毒传播的到处都是，这也是武汉政府的失职吧离开学的日子也越来越近，希望能在开学前得到控制，正常开学，因为真的很想她 总之，新的一年，希望一切就好吧！不再做颓狗！]]></content>
@@ -152,9 +164,9 @@
         <category>note</category>
       </categories>
       <tags>
+        <tag>hadoop</tag>
         <tag>bigdata</tag>
         <tag>hbase</tag>
-        <tag>hadoop</tag>
         <tag>note</tag>
       </tags>
   </entry>
@@ -178,9 +190,9 @@
         <category>bigdata</category>
       </categories>
       <tags>
-        <tag>bigdata</tag>
         <tag>hadoop</tag>
         <tag>install</tag>
+        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
@@ -344,7 +356,7 @@
   <entry>
     <title><![CDATA[Matplotlib笔记]]></title>
     <url>%2Fblog%2Fnote-matplotlib%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[翻出陈旧的笔记，终于要开始写了呢。——20200229 可能最后还是咕咕了？——20200302 正文]]></content>
       <categories>
         <category>note</category>
       </categories>
@@ -1041,8 +1053,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
-    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
+    <url>%2Fblog%2Ftest-hello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>daily</category>
       </categories>
@@ -1052,8 +1064,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-hello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
+    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
       <categories>
         <category>daily</category>
       </categories>
