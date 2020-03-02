@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
+    <lastmod>2020-03-02</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/20200125/</loc>
+    <lastmod>2020-03-02</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-computer-organization/</loc>
     <lastmod>2020-03-02</lastmod>
   </url>  <url>
@@ -8,9 +14,6 @@
     <lastmod>2020-03-02</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-federated-learning/</loc>
-    <lastmod>2020-01-25</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/20200125/</loc>
     <lastmod>2020-01-25</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-pytorch/</loc>

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
+    
+    <lastmod>2020-03-02T14:36:18.638Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/20200125/</loc>
+    
+    <lastmod>2020-03-02T14:31:39.705Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/note-computer-organization/</loc>
     
     <lastmod>2020-03-02T14:22:50.201Z</lastmod>
@@ -40,13 +54,6 @@
     <loc>beiyuouo.github.io/blog/note-federated-learning/</loc>
     
     <lastmod>2020-01-25T05:48:05.964Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/20200125/</loc>
-    
-    <lastmod>2020-01-25T05:46:01.843Z</lastmod>
     
   </url>
   
