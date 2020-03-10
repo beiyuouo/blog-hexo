@@ -109,18 +109,18 @@
 
 
 
-<meta name="description" content="Incentive Mechanism for Reliable Federated Learning: A Joint Optimization Approach to Combining Reputation and Contract TheoryDOI 10.1109/JIOT.2019.2940820">
+<meta name="description" content="Measure Contribution of Participants in Federated Learning传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on featu">
 <meta name="keywords" content="北屿 BeiYu">
 <meta property="og:type" content="website">
-<meta property="og:title" content="202002">
+<meta property="og:title" content="202003">
 <meta property="og:url" content="beiyuouo.github.io/paper-note/202003/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="Incentive Mechanism for Reliable Federated Learning: A Joint Optimization Approach to Combining Reputation and Contract TheoryDOI 10.1109/JIOT.2019.2940820">
+<meta property="og:description" content="Measure Contribution of Participants in Federated Learning传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on featu">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-03-02T13:32:37.553Z">
+<meta property="og:updated_time" content="2020-03-05T09:59:33.522Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="202002">
-<meta name="twitter:description" content="Incentive Mechanism for Reliable Federated Learning: A Joint Optimization Approach to Combining Reputation and Contract TheoryDOI 10.1109/JIOT.2019.2940820">
+<meta name="twitter:title" content="202003">
+<meta name="twitter:description" content="Measure Contribution of Participants in Federated Learning传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on featu">
 
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <title>202002 | 北屿</title>
+  <title>202003 | 北屿</title>
   
 
 
@@ -384,7 +384,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">202002</h1>
+	<h1 class="post-title" itemprop="name headline">202003</h1>
 
 
 
@@ -396,9 +396,25 @@
       <div class="post-body">
         
         
-          <ul>
-<li>Incentive Mechanism for Reliable Federated Learning: A Joint Optimization Approach to Combining Reputation and Contract Theory<br>DOI 10.1109/JIOT.2019.2940820</li>
-</ul>
+          <h3 id="Measure-Contribution-of-Participants-in-Federated-Learning"><a href="#Measure-Contribution-of-Participants-in-Federated-Learning" class="headerlink" title="Measure Contribution of Participants in Federated Learning"></a>Measure Contribution of Participants in Federated Learning</h3><p><a href="https://arxiv.org/abs/1909.08525" target="_blank" rel="noopener">传送门</a><br>这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法</p>
+<blockquote>
+<p><em>Horizontal Federated Learning</em> applies to circumstances where we have a lot of overlap on features but only a few on instances.<br><em>Vertical Federated Learning</em> refers to where we have many overlapped instances but few overlapped features.<br><em>Federated Transfer Learning</em> uses Transfer Learning to improve model performance when we have neither much overlap on features nor on instances.</p>
+</blockquote>
+<p><strong>DELETION METHOD FOR HORIZONTAL FML</strong><br>Effect of the $i$th instance on the model predictions:</p>
+<script type="math/tex; mode=display">Influence^{-i}=\frac{1}{n}\sum_{j=1}^{n} |\hat{y_{j}}-\hat{y_{j}}^{-i}|</script><p>where $n$ is the size of dataset, $\hat{y_{j}}$ is the prediction on $j$th instance made by the model trained on all data, and $\hat{y_{j}}^{-i}$ is the prediction on $j$th instance made by model trained with the $i$th instance omitted.<br>类似地，子集的influence自然就是</p>
+<script type="math/tex; mode=display">Influence^{-D}=\sum_{i \in D}Influence^{-i}</script><p>接下来就是计算方法了<br>就把每个子集删掉，然后重新训练评价…这是个什么样的复杂度…</p>
+<p><strong>SHAPLEY VALUES FOR VERTICAL FML</strong><br>定义一个对模型影响的线性函数</p>
+<script type="math/tex; mode=display">f(x)=\beta_0+\sum_{i=1}^{n}\beta_ix_i</script><p>where $\beta_i$ is the model coefficient and $x_i$ is the feature value, we can measure the influence of $X_i=x_i$ according to the situational importance</p>
+<script type="math/tex; mode=display">\varphi_i(x)=\beta_ix_i-\beta_i\mathbb{E}[X_i]</script><blockquote>
+<p>The Shapley value, which is originated from coalitional game theory with proven theoretical properties, provides an effective approach to distribute contributions among features in a fair way by assigning to each feature a number which denotes its influence.</p>
+</blockquote>
+<p>没怎么看Spapley value，简单来说-，- 还是个博弈问题，具有公认理论性质的联合博弈理论，然后能给每个特征分配一个数值。<br>The Shapley value is defined as:</p>
+<script type="math/tex; mode=display">\phi_i(x)=\sum_{Q\subseteq S\backslash \{i\}}\frac{|Q|!(|S|-|Q|-1)!}{|S|!}(\Delta_{Q\cup\{i\}}(x)-\Delta_{Q}(x))</script><p>where $S$ is s feature index set, $Q\subseteq S=\{1,2,\cdots, n\}$ is a subset of features, $x$ is the vector of feature values of the instance in consideration and $|\cdot|$ is the size of a feature set. $\Delta_{Q}(x)$ denotes the influence of a subset of feature values, which generalizes $\varphi_{i}(x)$, in the following form</p>
+<script type="math/tex; mode=display">\Delta_{Q}(x)=\mathbb{E}[f|X_i=x_i,\forall i \in Q]-\mathbb{E}[f]</script><p>然鹅这个很难算，复杂度是指数级的，用了一个近似算法</p>
+<script type="math/tex; mode=display">\phi_{i}(x)=\frac{1}{M}\sum_{m=1}^{M}(f(x_{+i}^{m})-f(x_{-i}^{m}))</script><p>where $M$ is the number of iterations. $f(x_{+i}^{m})$ is the prediction for instance $x$, with a random number of feature value replaced by feature values from a randomly selected instance $z$, except for the respective value of feature $i$.</p>
+<p>最后就是计算个体的Spapley value，一组的差不多就是求和了-，- 定义太多了…</p>
+<p>实验是用这个数据集做的 the Cervical cancer (Risk Factors) Data Set，SVM model<br>为每个特征找一个Shapley value，再来估算个体，最后估算一组的贡献</p>
+<h3 id="Incentive-Mechanism-for-Reliable-Federated-Learning-A-Joint-Optimization-Approach-to-Combining-Reputation-and-Contract-Theory"><a href="#Incentive-Mechanism-for-Reliable-Federated-Learning-A-Joint-Optimization-Approach-to-Combining-Reputation-and-Contract-Theory" class="headerlink" title="Incentive Mechanism for Reliable Federated Learning: A Joint Optimization Approach to Combining Reputation and Contract Theory"></a>Incentive Mechanism for Reliable Federated Learning: A Joint Optimization Approach to Combining Reputation and Contract Theory</h3><p>DOI 10.1109/JIOT.2019.2940820</p>
 
         
       </div>
@@ -445,8 +461,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="北屿">
           <p class="site-author-name" itemprop="name">北屿</p>
@@ -459,7 +484,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-count">92</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -481,7 +506,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">84</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -577,6 +602,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Measure-Contribution-of-Participants-in-Federated-Learning"><span class="nav-number">1.</span> <span class="nav-text">Measure Contribution of Participants in Federated Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Incentive-Mechanism-for-Reliable-Federated-Learning-A-Joint-Optimization-Approach-to-Combining-Reputation-and-Contract-Theory"><span class="nav-number">2.</span> <span class="nav-text">Incentive Mechanism for Reliable Federated Learning: A Joint Optimization Approach to Combining Reputation and Contract Theory</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
