@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>beiyuouo.github.io/blog/pro-pta/</loc>
-    <lastmod>2020-03-09</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-03-15</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-speech-recognition/</loc>
+    <lastmod>2020-03-14</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
-    <lastmod>2020-03-02</lastmod>
+    <lastmod>2020-03-13</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-algorithm/</loc>
+    <lastmod>2020-03-13</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-hive/</loc>
+    <lastmod>2020-03-12</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/pro-pta/</loc>
+    <lastmod>2020-03-10</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/20200125/</loc>
     <lastmod>2020-03-02</lastmod>

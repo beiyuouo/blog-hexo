@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beiyuouo.github.io/blog/pro-pta/</loc>
+    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
     
-    <lastmod>2020-03-09T16:14:36.059Z</lastmod>
+    <lastmod>2020-03-15T16:12:01.601Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
+    <loc>beiyuouo.github.io/blog/note-speech-recognition/</loc>
     
-    <lastmod>2020-03-09T00:06:32.656Z</lastmod>
+    <lastmod>2020-03-14T06:09:05.329Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
+    
+    <lastmod>2020-03-13T01:20:31.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-algorithm/</loc>
+    
+    <lastmod>2020-03-13T00:06:34.084Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-hive/</loc>
+    
+    <lastmod>2020-03-12T13:07:03.249Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/pro-pta/</loc>
+    
+    <lastmod>2020-03-10T01:53:44.630Z</lastmod>
     
   </url>
   
@@ -26,13 +54,6 @@
     <loc>beiyuouo.github.io/paper-note/202002/index.html</loc>
     
     <lastmod>2020-03-03T15:59:21.196Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
-    
-    <lastmod>2020-03-02T14:36:18.638Z</lastmod>
     
   </url>
   
