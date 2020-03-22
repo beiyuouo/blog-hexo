@@ -120,7 +120,7 @@
 <meta property="og:image" content="/img/note-hive/20200311100017.png">
 <meta property="og:image" content="/img/note-hive/20200311102124.png">
 <meta property="og:image" content="/img/note-hive/202003121535.png">
-<meta property="og:updated_time" content="2020-03-12T13:07:03.249Z">
+<meta property="og:updated_time" content="2020-03-21T04:07:38.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hive笔记">
 <meta name="twitter:description" content="Introduction to HiveDifference between SQL and NoSQL  SQLRelational, Analytical(OLAP) NoSQLDocument, Key-Value, Column-Family, Graph  What is Hive It is an open-source data warehouse system for queryi">
@@ -440,8 +440,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-12T21:07:03+08:00">
-                2020-03-12
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-21T12:07:38+08:00">
+                2020-03-21
               </time>
             
           </span>
@@ -495,7 +495,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.2k
+                  5.1k
                 </span>
               
 
@@ -511,7 +511,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  15
+                  27
                 </span>
               
             </div>
@@ -678,7 +678,7 @@
 <p>Stores exhibit consistency at some later point (e.g., lazily at read time).<br>BASE properties are much looser than ACID guarantees, but there isn’t a direct one-for-one mapping between the two consistency models (a point that probably can’t be overstated).</p>
 <p>A BASE data store values availability (since that’s important for scale), but it doesn’t offer guaranteed consistency of replicated data at write time. Overall, the BASE consistency model provides a less strict assurance than ACID: data will be consistent in the future, either at read time (e.g., Riak) or it will always be consistent, but only for certain processed past snapshots (e.g., Datomic).</p>
 <p>The BASE consistency model is primarily used by aggregate stores, including column family, key-value and document stores.</p>
-<h2 id="Hive-Installation"><a href="#Hive-Installation" class="headerlink" title="Hive Installation"></a>Hive Installation</h2><ol>
+<h3 id="Hive-Installation"><a href="#Hive-Installation" class="headerlink" title="Hive Installation"></a>Hive Installation</h3><h4 id="基于Derby"><a href="#基于Derby" class="headerlink" title="基于Derby"></a>基于Derby</h4><ol>
 <li>下载<br><a href="https://mirrors.tuna.tsinghua.edu.cn/apache/hive/hive-1.2.2/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/apache/hive/hive-1.2.2/</a></li>
 <li>将文件传到Linux <code>/home/hadoop/Download</code></li>
 <li>解压<br>到<code>~/Download</code>目录下找到文件，<code>tar -zvxf apache-hive-1.2.2-bin.tar.gz -C ~/app/</code></li>
@@ -692,13 +692,13 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir -p /user/hive/warehouse</span><br><span class="line">hdfs dfs -mkdir  /user/hive/tmp</span><br><span class="line">hdfs dfs -mkdir  /user/hive/<span class="built_in">log</span></span><br><span class="line">hdfs dfs -chmod g+w /user/hive/warehouse</span><br><span class="line">hdfs dfs -chmod g+w /user/hive/tmp</span><br><span class="line">hdfs dfs -chmod g+w /user/hive/<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后去<code>/home/hadoop/app/apache-hive-1.2.2-bin/conf</code>copy一下模板修改<code>hive-site.xml</code>和<code>hive-env.sh</code></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp hive-env.sh.template hive-env.sh</span><br><span class="line">cp hive-default.xml.template hive-site.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp hive-env.sh.template hive-env.sh</span><br><span class="line">cp hive-default.xml.template hive-default.xml</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>在<code>hive-env.sh</code>中添加<code>vi hive-env.sh</code><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HADOOP_HOME=/home/hadoop/app/hadoop-2.7.3</span><br><span class="line"><span class="built_in">export</span> HIVE_CONF_DIR=/home/hadoop/app/apache-hive-1.2.2-bin/conf</span><br><span class="line"><span class="built_in">export</span> HIVE_AUX_JARS_PATH=/home/hadoop/app/apache-hive-1.2.2-bin/lib</span><br></pre></td></tr></table></figure></p>
-<p>在<code>hive-site.xml</code>中添加<code>vi hive-site.xml</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.metastore.warehouse.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/warehouse<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.exec.scratdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.querylog.location<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/log<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionURL<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:derby:;databaseName=/home/hadoop/app/apache-hive-1.2.2-bin/metastore_db;create=true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionDriverName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>org.apache.derby.jdbc.EmbeddedDriver<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.PersistenceManagerFactoryClass<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>org.datanucleus.api.jdo.JDOPersistenceManagerFactory<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>system:java.io.tmpdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>新建<code>hive-site.xml</code>添加<code>vi hive-site.xml</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.metastore.warehouse.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/warehouse<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.exec.scratdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.querylog.location<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/log<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionURL<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:derby:;databaseName=/home/hadoop/app/apache-hive-1.2.2-bin/metastore_db;create=true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionDriverName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>org.apache.derby.jdbc.EmbeddedDriver<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.PersistenceManagerFactoryClass<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>org.datanucleus.api.jdo.JDOPersistenceManagerFactory<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>system:java.io.tmpdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <ol>
-<li><p>开启<code>Derby</code><br><code>~/app/apache-hive-1.2.2-bin/bin/schematool -initSchema -dbType derby</code></p>
+<li><p>初始化数据库<br><code>schematool -initSchema -dbType derby</code></p>
 </li>
 <li><p>加权限</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chgrp -R hadoop /user/hive/</span><br><span class="line">sudo chown -R hadoop /user/hive/</span><br></pre></td></tr></table></figure>
@@ -706,7 +706,253 @@
 <li><p>开启hive <code>hive</code></p>
 </li>
 </ol>
-<p>mpsql - JDBC <a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/connector/j/</a></p>
+<h4 id="基于Mysql"><a href="#基于Mysql" class="headerlink" title="基于Mysql"></a>基于Mysql</h4><ol>
+<li><p>jar包<br>mpsql - JDBC <a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/connector/j/</a><br>这个jar包放在<code>${HIVE_HOME}/lib</code>中，</p>
+</li>
+<li><p><code>hive-site.xml</code>配置文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionURL<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:mysql://192.168.0.104:3306/hive?useSSL=false<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 这里填自己的地址，URL里添加创建数据库好像我的不行 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionDriverName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionUserName<span class="tag">&lt;/<span class="name">name</span>&gt;</span> <span class="comment">&lt;!-- 用户名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hive<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionPassword<span class="tag">&lt;/<span class="name">name</span>&gt;</span> <span class="comment">&lt;!-- 密码 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hive1234<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>system:java.io.tmpdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.metastore.warehouse.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/warehouse<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.exec.scratdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.querylog.location<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/log<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mysql添加用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> hive;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'hive'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'hive1234'</span>;</span><br><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'hive'</span>@<span class="string">'%'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化数据库<br><code>schematool -initSchema -dbType mysql</code></p>
+</li>
+<li><p>启动hive <code>hive</code></p>
+</li>
+</ol>
+<h3 id="CLI-Options"><a href="#CLI-Options" class="headerlink" title="CLI Options"></a>CLI Options</h3><p>The Hive command line interface (CLI) is used to interact with Hive. Users can use CLI commands to create, manage, and query tables.<br>Hive命令行接口(CLI)用于与Hive交互。用户可以使用CLI命令来创建、管理和查询表。<br>You can view the related instructions of Hive through the help command of Hive.<br>你可以通过Hive的help命令查看Hive的相关指令。 <code>hive --help --service cli</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Usage</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>-d,--define &lt;key=value&gt;</code></td>
+<td style="text-align:center">Variable subsitution to apply to hive commands. e.g. <code>hive -d A=B</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>--database &lt;databasename&gt;</code></td>
+<td style="text-align:center">Specify the database to use</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-e &lt;quoted-query-string&gt;</code></td>
+<td style="text-align:center">SQL from command line</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-f &lt;filename&gt;</code></td>
+<td style="text-align:center">SQL from file</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-H, --help</code></td>
+<td style="text-align:center">Print help information</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>--hiveconf &lt;property=value&gt;</code></td>
+<td style="text-align:center">Use value for give property</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>--hivevar &lt;key=value&gt;</code></td>
+<td style="text-align:center">Varibale subsitution to apply to hive commands.</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-i &lt;filename&gt;</code></td>
+<td style="text-align:center">Initialization SQL file</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-S, --silent</code></td>
+<td style="text-align:center">Silent mode in interactive shell</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-v,--verbose</code></td>
+<td style="text-align:center">Verbose mode (echo executed SQL to the console)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Variable-setting"><a href="#Variable-setting" class="headerlink" title="Variable setting"></a>Variable setting</h3><p>Hive variables are preceded by a namespace, including 4 hiveconf, system, env, and hivevar.<br>Hive变量前有一个名称空间，包括这4个:  hiveconf、system、env和hivevar。</p>
+<ul>
+<li>hiveconf: refers to the value of configuration variables under hive-site.xml.<br>hiveconf: 指的是hive-site.xml下的配置变量的值。</li>
+<li>system: is a system variable, including the running environment of the JVM.<br>system: 是一个系统变量，包括JVM的运行环境。</li>
+<li>env: refers to environment variables, including variable information in the Shell environment, such as HADOOP_HOME.<br>env: 指的是环境变量，包括Shell环境中的变量信息，如HADOOP_HOME。</li>
+<li><p>hivevar: user-defined variable.<br>hivevar: 用户定义的变量。</p>
+</li>
+<li><p>Ordinary variables can be declared with <code>--define key = value</code> or <code>--hivevar key = value</code>, which all represent variables that are hivevar.<br>普通变量可以用<code>-- define key = value</code> 或 <code>-- hivevar key = value</code> 声明，它们都表示变量是hivevar。</p>
+</li>
+<li><code>hive --hiveconf mapreduce.job.queuename=queue1</code><br>This setting is valid for the session started this time and needs to be reconfigured for the next startup.<br>此设置对这次启动的会话有效，下一次启动需要重新配置。</li>
+<li>Set or display variables through set in hive.<br>通过在Hive中设置或显示变量。<code>set &lt;varname&gt;</code></li>
+</ul>
+<h3 id="Hive-Command-line"><a href="#Hive-Command-line" class="headerlink" title="Hive Command line"></a>Hive Command line</h3><ul>
+<li>One-time query 一次性查询<br><code>$HIVE_HOME/bin/hive -e &#39;select a.col from tab1 a&#39;</code><br>The progress of mapreduce will be displayed on the terminal. Mapreduce的进度将显示在终端上。<br>The query results are finally output to the terminal, and hive process exits 查询结果最终输出到终端，Hive进程退出</li>
+<li>Quiet mode query 安静模式查询<br><code>$HIVE_HOME/bin/hive  -S -e &#39;select a.ueserid from tab1 log&#39;</code><br>Adding  <code>-S</code>, will only output the query results to the terminal. 添加 <code>–S</code>，仅将查询结果输出到终端。<br>This silent mode is called by a third-party program, the third-party program obtains the result set through the standard output of hive. 这种静音模式是由第三方程序调用的，第三方程序通过Hive的标准输出获取结果集。</li>
+<li>Execute script 执行脚本<br><code>$HIVE_HOME/bin/hive -f /home/my/hive-script.sql</code><br><code>hive-script.sql</code> is a script file written using hive sql syntax. The execution process is similar to <code>-e</code>, except that sql is loaded from a file.<br><code>hive-script.sql</code>是一个使用Hive SQL语法编写的脚本文件。执行过程类似于<code>-e</code>，只是SQL是从一个文件加载的。</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Command</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>quit/exit</code></td>
+<td style="text-align:center">Exit the interactive shell</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Reset</code></td>
+<td style="text-align:center">Reset configuration to default</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>set &lt;key&gt;=&lt;value&gt;</code></td>
+<td style="text-align:center">Modify the value of a specific variableNote: If the variable name is misspelled, no error will be reported</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Set</code></td>
+<td style="text-align:center">Output user-overwritten hive configuration variables</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>set -v</code></td>
+<td style="text-align:center">Output all Hadoop and Hive configuration variables</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>add FILE[S] &lt;filepath&gt; &lt;filepath&gt;*</code> <br> <code>add JAR[S] &lt;filepath&gt; &lt;filepath&gt;*</code> <br> <code>add ARCHIVE[S] &lt;filepath&gt; &lt;filepath&gt;*</code></td>
+<td style="text-align:center">Add one or more files, jars, archives to the distributed cache</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>list FILE[S]</code> <br> <code>list JAR[S]</code> <br> <code>list ARCHIVE[S]</code></td>
+<td style="text-align:center">Outputs resources that have been added to the distributed cache.</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>list FILE[S] &lt;filepath&gt;*</code> <br> <code>list JAR[S] &lt;filepath&gt;*</code> <br> <code>list ARCHIVE[S] &lt;filepath&gt;*</code></td>
+<td style="text-align:center">Check if given resource is added to distributed cache</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>delete FILE[S] &lt;filepath&gt;*</code> <br> <code>delete JAR[S] &lt;filepath&gt;*</code> <br> <code>delete ARCHIVE[S] &lt;filepath&gt;*</code></td>
+<td style="text-align:center">Deletes the specified resource from the distributed cache</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>! &lt;command&gt;</code></td>
+<td style="text-align:center">Execute a shell command from the Hive shell</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>dfs &lt;dfs command&gt;</code></td>
+<td style="text-align:center">Execute a dfs command from the Hive shell</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;query string&gt;</code></td>
+<td style="text-align:center">Execute a Hive query and output the results to standard output</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>source FILE &lt;filepath&gt;</code></td>
+<td style="text-align:center">Execute a hive script file in the CLI</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="HIVE-Data-Type"><a href="#HIVE-Data-Type" class="headerlink" title="HIVE Data Type"></a>HIVE Data Type</h3><p>Primary data types<br>TINYINT, SMALLINT, INT, BIGINT, FLOAT, DOUBLE, BOOLEAN, STRING<br>Complex Data Types</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ARRAY</td>
+<td style="text-align:center">A set of ordered fields. Field must be of same type.</td>
+<td style="text-align:center"><code>Array(1, 2)</code></td>
+</tr>
+<tr>
+<td style="text-align:center">MAP</td>
+<td style="text-align:center">An unordered set of key/value pairs. The key type must be atomic, the value can be any type. The key type of the same mapping must be the same, and the value type must be the same.</td>
+<td style="text-align:center"><code>Map(&#39;a&#39;, 1, &#39;b&#39;, 2)</code></td>
+</tr>
+<tr>
+<td style="text-align:center">STRUCT</td>
+<td style="text-align:center">A set of named fields. The field type can be different.</td>
+<td style="text-align:center"><code>Struct(&#39;a&#39;,1,1,0)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h2><h3 id="Database-Operations"><a href="#Database-Operations" class="headerlink" title="Database Operations"></a>Database Operations</h3><ul>
+<li>SHOW DATABASE: <code>show databases;</code></li>
+<li><p>CREATE DATABASE: </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> [<span class="keyword">EXTERNAL</span>] <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] table_name </span><br><span class="line">[(col_name data_type [<span class="keyword">COMMENT</span> col_comment], ...)] </span><br><span class="line">[<span class="keyword">COMMENT</span> table_comment] </span><br><span class="line">[PARTITIONED <span class="keyword">BY</span> (col_name data_type [<span class="keyword">COMMENT</span> col_comment], ...)] </span><br><span class="line">[CLUSTERED <span class="keyword">BY</span> (col_name, col_name, ...) </span><br><span class="line">[SORTED <span class="keyword">BY</span> (col_name [<span class="keyword">ASC</span>|<span class="keyword">DESC</span>], ...)] <span class="keyword">INTO</span> num_buckets BUCKETS] </span><br><span class="line">[<span class="keyword">ROW</span> <span class="keyword">FORMAT</span> <span class="keyword">DELIMITED</span> row_format] </span><br><span class="line">[<span class="keyword">STORED</span> <span class="keyword">AS</span> file_format] </span><br><span class="line">[LOCATION hdfs_path]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>USE DATABASE: <code>use database;</code></p>
+</li>
+<li>DELETE DATABASE: <code>DROP DATABASE [IF EXISTS] &lt;database name&gt;</code></li>
+</ul>
+<h3 id="Table-Operations"><a href="#Table-Operations" class="headerlink" title="Table Operations"></a>Table Operations</h3><ul>
+<li><p>CREATE TABLE  :<br>Creates a table with the specified name.<br>If a table with the same name already exists, an exception is thrown;<br>The user can use the IF NOT EXIST option to ignore this exception. </p>
+</li>
+<li><p>EXTERNAL :<br>External  keyword allows users to create an external table, and specify a path to the actual data (LOCATION).<br>When you delete external table only deletes the metadata, not the data.</p>
+</li>
+<li><p>ROW FORMAT DELIMITED] :<br>[ROW FORMAT DELIMITED]keyword is used to set the column separators supported by the created table when loading data.</p>
+</li>
+<li>[STORED AS file_format] :<br>specifies the file storage format. The default is TEXTFILE. If the file data is plain text, [STORED AS TEXTFILE] is used and then copied directly to HDFS from the local.</li>
+<li>Partitioned tables can be created using the PARTITIONED BY statement. A table can have one or more partitions, and each partition exists in a separate directory. </li>
+<li>Both tables and partitions can perform a CLUSTERED BY operation on a certain column and put several columns into a bucket. You can also use SORT BY to sort the data. This can improve performance for specific applications.</li>
+</ul>
+<h4 id="File-formats"><a href="#File-formats" class="headerlink" title="File formats"></a>File formats</h4><ul>
+<li><p>TEXTFILE:<br>The TEXTFILE is default format. Data is not compressed. It has a large disk overhead and a large data parsing overhead.</p>
+</li>
+<li><p>SEQUENCEFILE:<br>SEQUENCEFILE a binary file support provided by the Hadoop API, which is easy to use, splittable and compressible.</p>
+</li>
+<li><p>RCFILE:<br>RCFILE is a combination of row and column storage.</p>
+</li>
+<li><p>Custom format: </p>
+<ul>
+<li>When the user’s data file format cannot be recognized by the current Hive, you can customize the file format.</li>
+<li>Users can customize input and output formats by implementing inputformat and outputformat.</li>
+</ul>
+</li>
+</ul>
+<h4 id="CREATE-TABLE"><a href="#CREATE-TABLE" class="headerlink" title="CREATE TABLE"></a>CREATE TABLE</h4><ul>
+<li>Create a normal table：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Emp_table (<span class="keyword">id</span> <span class="built_in">int</span>,<span class="keyword">name</span> <span class="keyword">string</span>,<span class="keyword">no</span> <span class="built_in">int</span>) </span><br><span class="line"><span class="keyword">row</span> <span class="keyword">format</span> <span class="keyword">delimited</span> <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">',’ stored as textfile;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Note : A field separator is specified. HIVE only supports a single character separator. The default delimiter for hive is \ 001.</p>
+<ul>
+<li>Create a partitioned table<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Emp_partition (<span class="keyword">id</span> <span class="built_in">int</span>,<span class="keyword">name</span> <span class="keyword">string</span>,<span class="keyword">no</span> <span class="built_in">int</span>) partitioned <span class="keyword">by</span> (dt <span class="keyword">string</span>) </span><br><span class="line"><span class="keyword">row</span> <span class="keyword">format</span> <span class="keyword">delimited</span> <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">',’  stored as textfile ;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>load data local inpath <code>&#39;/opt/niit/hive/test_hive.txt&#39;</code> overwrite into table test_partition partition (dt=’2015-06-15’);</p>
+<ul>
+<li><p>Create a bucket table</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Emp_bucket (<span class="keyword">id</span> <span class="built_in">int</span>,<span class="keyword">name</span> <span class="keyword">string</span>,<span class="keyword">no</span> <span class="built_in">int</span>) partitioned <span class="keyword">by</span> (dt <span class="keyword">string</span>) </span><br><span class="line">clustered <span class="keyword">by</span> (<span class="keyword">id</span>) sorted <span class="keyword">by</span>(<span class="keyword">name</span>) <span class="keyword">into</span> <span class="number">3</span> buckets </span><br><span class="line"><span class="keyword">row</span> <span class="keyword">format</span> <span class="keyword">delimited</span> <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">','</span></span><br><span class="line"><span class="keyword">stored</span> <span class="keyword">as</span> textfile;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Create an external table</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">external</span> <span class="keyword">table</span> Emp_external (<span class="keyword">id</span> <span class="built_in">int</span>,<span class="keyword">name</span> <span class="keyword">string</span>,<span class="keyword">no</span> <span class="built_in">int</span>)</span><br><span class="line"><span class="keyword">row</span> <span class="keyword">format</span> <span class="keyword">delimited</span> <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">',’ ;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Copy table structure</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Emp_like_table <span class="keyword">like</span> Emp_bucket;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>The above command copies table structure only, not content</p>
+<h3 id="Modify-Table-Operations"><a href="#Modify-Table-Operations" class="headerlink" title="Modify Table Operations"></a>Modify Table Operations</h3><ul>
+<li><p>Increase partition<br>Syntax：<code>ALTER TABLE table_name ADD partition_spec [ LOCATION &#39;location1&#39;] partition_spec [ LOCATION &#39;location2&#39; ]</code><br>Example：<code>alter table Emp_partition add partition (dt=&#39;2015-06-15&#39;)</code></p>
+</li>
+<li><p>Delete partition<br>Syntax：<code>ALTER TABLE table_name DROP partition_spec</code><br>Example：<code>alter table Emp_partition drop partition (dt=&#39;2015-06-15&#39;)</code><br>Description：After the partition is deleted, the metadata and data of the partition will be deleted together.</p>
+</li>
+</ul>
+<h3 id="Table-Operations-1"><a href="#Table-Operations-1" class="headerlink" title="Table Operations"></a>Table Operations</h3><ul>
+<li><p>Table rename<br>Syntax：<code>ALTER TABLE table_name RENAME TO new_table_name</code><br>Example：<code>alter table Emp_partition rename to new_Emp_partition;</code><br>Description：The location of the data and the partition name do not change.</p>
+</li>
+<li><p>Modify table column type<br>Syntax：<code>ALTER TABLE table_name CHANGE [COLUMN] col_old_name col_new_name column_type [COMMENT col_comment] [FIRST|AFTER column_name]</code><br>Example：<code>alter table New_Emp_partition change name name1 String;</code></p>
+</li>
+<li><p>Add column<br>Syntax：<code>ALTER TABLE table_name ADD|REPLACE COLUMNS (col_name data_type [COMMENT col_comment], ...)</code><br>Example：<code>alter table New_Emp_partition  add columns (age int);</code></p>
+</li>
+</ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li>NIIT</li>
 </ul>
@@ -742,7 +988,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/pro-pta/" rel="next" title="PTA部分题解">
+              <a href="/blog/problem-pta/" rel="next" title="PTA部分题解">
                 <i class="fa fa-chevron-left"></i> PTA部分题解
               </a>
             
@@ -833,7 +1079,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-count">97</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -855,7 +1101,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">87</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -936,7 +1182,7 @@
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://mon-soon.github.io/" title="mon-soon's blog" target="_blank">mon-soon's blog</a>
+                  <a href="http://47.101.152.169/" title="mon-soon's blog" target="_blank">mon-soon's blog</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
@@ -961,7 +1207,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-to-Hive"><span class="nav-number">1.</span> <span class="nav-text">Introduction to Hive</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-SQL-and-NoSQL"><span class="nav-number">1.1.</span> <span class="nav-text">Difference between SQL and NoSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hive"><span class="nav-number">1.2.</span> <span class="nav-text">What is Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Who-developed-Hive"><span class="nav-number">1.3.</span> <span class="nav-text">Who developed Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Hive-was-developed"><span class="nav-number">1.4.</span> <span class="nav-text">Why Hive was developed?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-and-when-it-can-be-used"><span class="nav-number">1.5.</span> <span class="nav-text">How and when it can be used?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#When-Hive-cannot-be-used"><span class="nav-number">1.6.</span> <span class="nav-text">When Hive cannot be used?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Features-of-Hive"><span class="nav-number">1.7.</span> <span class="nav-text">Features of Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-Hive-amp-RDBMS"><span class="nav-number">1.8.</span> <span class="nav-text">Difference between Hive &amp; RDBMS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hive-Chapter-1"><span class="nav-number">2.</span> <span class="nav-text">Hive Chapter 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hive-1"><span class="nav-number">2.1.</span> <span class="nav-text">What is Hive?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-analyze-and-manage-data-如何分析和管理数据"><span class="nav-number">2.2.</span> <span class="nav-text">How to analyze and manage data? 如何分析和管理数据?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Storage-Model-HIVE数据存储模型"><span class="nav-number">2.3.</span> <span class="nav-text">HIVE Data Storage Model.  HIVE数据存储模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Storage-Hive数据存储"><span class="nav-number">2.4.</span> <span class="nav-text">HIVE Data Storage. Hive数据存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Table-Hive-数据模型-Table"><span class="nav-number">2.5.</span> <span class="nav-text">Hive Data Models-Table. Hive 数据模型-Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-External-Table-Hive-数据模型"><span class="nav-number">2.6.</span> <span class="nav-text">Hive Data Models-External Table. Hive 数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Partition-Hive-数据模型-Partition"><span class="nav-number">2.7.</span> <span class="nav-text">Hive Data Models-Partition. Hive 数据模型-Partition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Bucket-Hive-数据模型-Bucket"><span class="nav-number">2.8.</span> <span class="nav-text">Hive Data Models-Bucket. Hive 数据模型-Bucket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-MetaData"><span class="nav-number">2.9.</span> <span class="nav-text">Hive MetaData</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Storage-model"><span class="nav-number">2.10.</span> <span class="nav-text">Hive Storage model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Model"><span class="nav-number">2.11.</span> <span class="nav-text">Database Model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hive-Installation"><span class="nav-number">3.</span> <span class="nav-text">Hive Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-to-Hive"><span class="nav-number">1.</span> <span class="nav-text">Introduction to Hive</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-SQL-and-NoSQL"><span class="nav-number">1.1.</span> <span class="nav-text">Difference between SQL and NoSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hive"><span class="nav-number">1.2.</span> <span class="nav-text">What is Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Who-developed-Hive"><span class="nav-number">1.3.</span> <span class="nav-text">Who developed Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Hive-was-developed"><span class="nav-number">1.4.</span> <span class="nav-text">Why Hive was developed?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-and-when-it-can-be-used"><span class="nav-number">1.5.</span> <span class="nav-text">How and when it can be used?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#When-Hive-cannot-be-used"><span class="nav-number">1.6.</span> <span class="nav-text">When Hive cannot be used?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Features-of-Hive"><span class="nav-number">1.7.</span> <span class="nav-text">Features of Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-Hive-amp-RDBMS"><span class="nav-number">1.8.</span> <span class="nav-text">Difference between Hive &amp; RDBMS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hive-Chapter-1"><span class="nav-number">2.</span> <span class="nav-text">Hive Chapter 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hive-1"><span class="nav-number">2.1.</span> <span class="nav-text">What is Hive?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-analyze-and-manage-data-如何分析和管理数据"><span class="nav-number">2.2.</span> <span class="nav-text">How to analyze and manage data? 如何分析和管理数据?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Storage-Model-HIVE数据存储模型"><span class="nav-number">2.3.</span> <span class="nav-text">HIVE Data Storage Model.  HIVE数据存储模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Storage-Hive数据存储"><span class="nav-number">2.4.</span> <span class="nav-text">HIVE Data Storage. Hive数据存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Table-Hive-数据模型-Table"><span class="nav-number">2.5.</span> <span class="nav-text">Hive Data Models-Table. Hive 数据模型-Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-External-Table-Hive-数据模型"><span class="nav-number">2.6.</span> <span class="nav-text">Hive Data Models-External Table. Hive 数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Partition-Hive-数据模型-Partition"><span class="nav-number">2.7.</span> <span class="nav-text">Hive Data Models-Partition. Hive 数据模型-Partition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Bucket-Hive-数据模型-Bucket"><span class="nav-number">2.8.</span> <span class="nav-text">Hive Data Models-Bucket. Hive 数据模型-Bucket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-MetaData"><span class="nav-number">2.9.</span> <span class="nav-text">Hive MetaData</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Storage-model"><span class="nav-number">2.10.</span> <span class="nav-text">Hive Storage model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Model"><span class="nav-number">2.11.</span> <span class="nav-text">Database Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Installation"><span class="nav-number">2.12.</span> <span class="nav-text">Hive Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Derby"><span class="nav-number">2.12.1.</span> <span class="nav-text">基于Derby</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Mysql"><span class="nav-number">2.12.2.</span> <span class="nav-text">基于Mysql</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLI-Options"><span class="nav-number">2.13.</span> <span class="nav-text">CLI Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variable-setting"><span class="nav-number">2.14.</span> <span class="nav-text">Variable setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Command-line"><span class="nav-number">2.15.</span> <span class="nav-text">Hive Command line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Type"><span class="nav-number">2.16.</span> <span class="nav-text">HIVE Data Type</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-2"><span class="nav-number">3.</span> <span class="nav-text">Chapter 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Operations"><span class="nav-number">3.1.</span> <span class="nav-text">Database Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Table-Operations"><span class="nav-number">3.2.</span> <span class="nav-text">Table Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#File-formats"><span class="nav-number">3.2.1.</span> <span class="nav-text">File formats</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">3.2.2.</span> <span class="nav-text">CREATE TABLE</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modify-Table-Operations"><span class="nav-number">3.3.</span> <span class="nav-text">Modify Table Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Table-Operations-1"><span class="nav-number">3.4.</span> <span class="nav-text">Table Operations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

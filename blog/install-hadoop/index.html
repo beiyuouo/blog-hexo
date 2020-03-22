@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="bigdata,hbase,">
+  <meta name="keywords" content="install,bigdata,hadoop,">
 
 
 
@@ -109,18 +109,18 @@
 
 
 
-<meta name="description" content="https://www.bilibili.com/video/av70796937 https://archive.apache.org/dist/hbase/1.2.21234tar -zxvf habase+tab -C ~/appcp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/cp ~/app/hadoop+">
-<meta name="keywords" content="bigdata,hbase">
+<meta name="description" content="踩坑实验主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题还有就是Xshell用不了，要更新最新版本..还好我有PuTTY 安利一波刘老师的视频XDhttps://www.bilibili.com/video/av69670644?from=search&amp;seid=14704125778684531769 主机名 hadoop0用户名 hadoop  modtify the ho">
+<meta name="keywords" content="install,bigdata,hadoop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟机CentOS7安装HBase">
-<meta property="og:url" content="beiyuouo.github.io/blog/bigdata-hbase-install/index.html">
+<meta property="og:title" content="虚拟机CentOS7安装Hadoop">
+<meta property="og:url" content="beiyuouo.github.io/blog/install-hadoop/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="https://www.bilibili.com/video/av70796937 https://archive.apache.org/dist/hbase/1.2.21234tar -zxvf habase+tab -C ~/appcp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/cp ~/app/hadoop+">
+<meta property="og:description" content="踩坑实验主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题还有就是Xshell用不了，要更新最新版本..还好我有PuTTY 安利一波刘老师的视频XDhttps://www.bilibili.com/video/av69670644?from=search&amp;seid=14704125778684531769 主机名 hadoop0用户名 hadoop  modtify the ho">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-10-11T07:13:19.414Z">
+<meta property="og:updated_time" content="2020-03-22T06:48:05.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="虚拟机CentOS7安装HBase">
-<meta name="twitter:description" content="https://www.bilibili.com/video/av70796937 https://archive.apache.org/dist/hbase/1.2.21234tar -zxvf habase+tab -C ~/appcp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/cp ~/app/hadoop+">
+<meta name="twitter:title" content="虚拟机CentOS7安装Hadoop">
+<meta name="twitter:description" content="踩坑实验主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题还有就是Xshell用不了，要更新最新版本..还好我有PuTTY 安利一波刘老师的视频XDhttps://www.bilibili.com/video/av69670644?from=search&amp;seid=14704125778684531769 主机名 hadoop0用户名 hadoop  modtify the ho">
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/blog/bigdata-hbase-install/">
+  <link rel="canonical" href="beiyuouo.github.io/blog/install-hadoop/">
 
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <title>虚拟机CentOS7安装HBase | 北屿</title>
+  <title>虚拟机CentOS7安装Hadoop | 北屿</title>
   
 
 
@@ -391,7 +391,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/bigdata-hbase-install/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/install-hadoop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="北屿">
@@ -408,7 +408,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">虚拟机CentOS7安装HBase</h1>
+          <h1 class="post-title" itemprop="name headline">虚拟机CentOS7安装Hadoop</h1>
         
 
         <div class="post-meta">
@@ -420,8 +420,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-11T12:54:17+08:00">
-                2019-10-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-09T13:32:54+08:00">
+                2019-10-09
               </time>
             
 
@@ -436,8 +436,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-11T15:13:19+08:00">
-                2019-10-11
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-22T14:48:05+08:00">
+                2020-03-22
               </time>
             
           </span>
@@ -455,8 +455,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/bigdata/" itemprop="url" rel="index">
-                    <span itemprop="name">bigdata</span>
+                  <a href="/categories/install/" itemprop="url" rel="index">
+                    <span itemprop="name">install</span>
                   </a>
                 </span>
 
@@ -491,7 +491,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  189
+                  560
                 </span>
               
 
@@ -507,7 +507,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  3
                 </span>
               
             </div>
@@ -528,14 +528,32 @@
       
 
       
-        <p><a href="https://www.bilibili.com/video/av70796937" target="_blank" rel="noopener">https://www.bilibili.com/video/av70796937</a></p>
-<p><a href="https://archive.apache.org/dist/hbase/1.2.2" target="_blank" rel="noopener">https://archive.apache.org/dist/hbase/1.2.2</a><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf habase+tab -C ~/app</span><br><span class="line"></span><br><span class="line">cp ~/app/hadoop+tab/etc/hadoop/hdfs-site.xml ~/app/hbase+tab/conf/</span><br><span class="line">cp ~/app/hadoop+tab/etc/hadoop/core-site.xml ~/app/hbase+tab/conf/</span><br></pre></td></tr></table></figure></p>
-<p>hbase-env.sh<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk</span><br><span class="line">Annotated Configure PermSize</span><br></pre></td></tr></table></figure></p>
-<p>hbase-site.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://hadoop0:9000/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.property.dataDir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/home/hadoop/app/tmp/zookeeper<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><code>vim ~/.bash_profile</code>.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># HBASE ENV</span></span><br><span class="line"><span class="built_in">export</span> HBASE_HOME=/home/hadoop/app/hbase-1.2.2/</span><br><span class="line">PATH=<span class="variable">$HBASE_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p>
-<p><code>source ~/.base_profile</code>.</p>
-<p><code>hbase version</code>.<br><code>vim /etc/hosts</code>.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span><br><span class="line">jps</span><br><span class="line">start-hbase.sh</span><br><span class="line">hbase shell</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~/app/hbase/lib</span><br><span class="line">mv slf4j-log4j12-1.7.5.jar slf4j-log4j12-1.7.5.jar.backup</span><br><span class="line">status</span><br><span class="line">list</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">hadoop fs -ls /</span><br><span class="line">hadoop fs -ls /hbase</span><br></pre></td></tr></table></figure>
+        <p>踩坑实验<br>主要浪费的都在网络配置，建议重置一下虚拟机网络再配置，不然容易出问题<br>还有就是Xshell用不了，要更新最新版本..还好我有PuTTY</p>
+<p>安利一波刘老师的视频XD<br><a href="https://www.bilibili.com/video/av69670644?from=search&amp;seid=14704125778684531769" target="_blank" rel="noopener">https://www.bilibili.com/video/av69670644?from=search&seid=14704125778684531769</a></p>
+<p>主机名 hadoop0<br>用户名 hadoop</p>
+<ul>
+<li><p>modtify the hostname<br><code>hostnamectl --static set-hostname hadoop</code></p>
+</li>
+<li><p>change the permission<br><code>vi /etc/sudoers</code>.<br><code>hadoop ALL=(root) NOPASSWD:ALL</code>.</p>
+</li>
+</ul>
+<ul>
+<li>config network<br>建议第一次先不要动这步看看能不能联网，用dhcp自动获取地址康康先，然后再改静态<br>VMware Edit - Virtual Network-VMnet8 - NAT config<br>vmnet8<br>192.168.96.0<br>255.255.255.0<br>192.168.96.2</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br><span class="line">00:0C:29:67:3D:DB</span><br><span class="line">BOOTPROTU=<span class="string">"static"</span></span><br><span class="line">IPADDR=192.168.96.128</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.96.2</span><br><span class="line">DNS1=8.8.8.8</span><br><span class="line">DNS2=192.168.86.2</span><br><span class="line"></span><br><span class="line">ping baidu.com</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
+<ul>
+<li>install software</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install vim</span><br><span class="line">sudo yum install net-tools</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span><br><span class="line">192.168.96.128</span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">cat id_rsa.hub &gt; athorized_keys</span><br><span class="line"></span><br><span class="line">sudo systemctl stop firewalld.service</span><br><span class="line">sudo systemctl <span class="built_in">disable</span> firewalld.service</span><br><span class="line">sudo systemctl status firewalld.service</span><br></pre></td></tr></table></figure>
+<p>xshell<br>xftp<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk+tab -C ~/app</span><br><span class="line">tar -zxvf hadoop+tab -C ~/app</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~/app/jdk</span><br><span class="line">sudo vim ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># JAVA ENV</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk1.8.0_211/</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># HADOOP ENV</span></span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/app/hadoop-2.7.3</span><br><span class="line">PATH=<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/sbin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"><span class="built_in">cd</span> ~/app/hadoop-2.7.4/etc/hadoop</span><br><span class="line">vim hadoop-env.sh</span><br><span class="line">vim core-site.xml</span><br><span class="line"></span><br><span class="line">mkdir ~/app/tmp</span><br></pre></td></tr></table></figure>
+<p>（*）yarn-site.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>hadoop00<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>（*）mapred-site.xml<br>这个文件一开始没有, 但是官方提供了模板, 拷贝即可<br><code>cp mapred-site.xml.template mapred-site.xml</code>.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>（*）core-site.xml 参考本机设置修改主机名, 并设置临时文件夹路径(没有要手动建立)<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://hadoop0:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/home/hadoop/app/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>（*）hdfs-site.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.permissions<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hdfs namenode -format</span><br><span class="line"><span class="built_in">cd</span> ~/app/hadoop-2.7.4/sbin</span><br><span class="line">start-all.sh</span><br><span class="line">jps</span><br><span class="line"></span><br><span class="line">sudo chmod 600 ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line">stop-all.sh</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -552,9 +570,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/install/" rel="tag"><i class="fa fa-tag"></i> install</a>
+          
             <a href="/tags/bigdata/" rel="tag"><i class="fa fa-tag"></i> bigdata</a>
           
-            <a href="/tags/hbase/" rel="tag"><i class="fa fa-tag"></i> hbase</a>
+            <a href="/tags/hadoop/" rel="tag"><i class="fa fa-tag"></i> hadoop</a>
           
         </div>
       
@@ -567,8 +587,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/bigdata-hadoop-install/" rel="next" title="虚拟机CentOS7安装Hadoop">
-                <i class="fa fa-chevron-left"></i> 虚拟机CentOS7安装Hadoop
+              <a href="/blog/20191003/" rel="next" title="20191003">
+                <i class="fa fa-chevron-left"></i> 20191003
               </a>
             
           </div>
@@ -577,8 +597,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/note-hbase/" rel="prev" title="HBase笔记">
-                HBase笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/install-hbase/" rel="prev" title="虚拟机CentOS7安装HBase">
+                虚拟机CentOS7安装HBase <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -649,7 +669,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-count">97</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -671,7 +691,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">87</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -752,7 +772,7 @@
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://mon-soon.github.io/" title="mon-soon's blog" target="_blank">mon-soon's blog</a>
+                  <a href="http://47.101.152.169/" title="mon-soon's blog" target="_blank">mon-soon's blog</a>
                 </li>
               
                 <li class="links-of-blogroll-item">

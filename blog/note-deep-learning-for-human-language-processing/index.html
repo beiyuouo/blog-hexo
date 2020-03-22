@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="note,machine-learnning,speech-recognition,">
+  <meta name="keywords" content="note,machine-learnning,NLP,speech-recognition,">
 
 
 
@@ -109,18 +109,18 @@
 
 
 
-<meta name="description" content="Speech RecognitionToken Phoneme: a unit of sound. Grapheme: smallest unit of a writing system. Word: For some languages, V can be too large! Morpheme: the smallest meaningful unit.(&amp;lt; word, &amp;gt; gra">
-<meta name="keywords" content="note,machine-learnning,speech-recognition">
+<meta name="description" content="IntroductionSpeech RecognitionToken Phoneme: a unit of sound. Grapheme: smallest unit of a writing system. Word: For some languages, V can be too large! Morpheme: the smallest meaningful unit.(&amp;lt; wo">
+<meta name="keywords" content="note,machine-learnning,NLP,speech-recognition">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Speech Recognition笔记">
-<meta property="og:url" content="beiyuouo.github.io/blog/note-speech-recognition/index.html">
+<meta property="og:title" content="深度学习自然语言处理笔记">
+<meta property="og:url" content="beiyuouo.github.io/blog/note-deep-learning-for-human-language-processing/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="Speech RecognitionToken Phoneme: a unit of sound. Grapheme: smallest unit of a writing system. Word: For some languages, V can be too large! Morpheme: the smallest meaningful unit.(&amp;lt; word, &amp;gt; gra">
+<meta property="og:description" content="IntroductionSpeech RecognitionToken Phoneme: a unit of sound. Grapheme: smallest unit of a writing system. Word: For some languages, V can be too large! Morpheme: the smallest meaningful unit.(&amp;lt; wo">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-03-14T06:09:05.329Z">
+<meta property="og:updated_time" content="2020-03-22T06:55:02.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Speech Recognition笔记">
-<meta name="twitter:description" content="Speech RecognitionToken Phoneme: a unit of sound. Grapheme: smallest unit of a writing system. Word: For some languages, V can be too large! Morpheme: the smallest meaningful unit.(&amp;lt; word, &amp;gt; gra">
+<meta name="twitter:title" content="深度学习自然语言处理笔记">
+<meta name="twitter:description" content="IntroductionSpeech RecognitionToken Phoneme: a unit of sound. Grapheme: smallest unit of a writing system. Word: For some languages, V can be too large! Morpheme: the smallest meaningful unit.(&amp;lt; wo">
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <link rel="canonical" href="beiyuouo.github.io/blog/note-speech-recognition/">
+  <link rel="canonical" href="beiyuouo.github.io/blog/note-deep-learning-for-human-language-processing/">
 
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <title>Speech Recognition笔记 | 北屿</title>
+  <title>深度学习自然语言处理笔记 | 北屿</title>
   
 
 
@@ -391,7 +391,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/note-speech-recognition/">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/note-deep-learning-for-human-language-processing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="北屿">
@@ -408,7 +408,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Speech Recognition笔记</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习自然语言处理笔记</h1>
         
 
         <div class="post-meta">
@@ -436,8 +436,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-14T14:09:05+08:00">
-                2020-03-14
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-22T14:55:02+08:00">
+                2020-03-22
               </time>
             
           </span>
@@ -491,7 +491,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  49
+                  86
                 </span>
               
 
@@ -528,14 +528,18 @@
       
 
       
-        <h2 id="Speech-Recognition"><a href="#Speech-Recognition" class="headerlink" title="Speech Recognition"></a>Speech Recognition</h2><h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h3><ul>
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h2 id="Speech-Recognition"><a href="#Speech-Recognition" class="headerlink" title="Speech Recognition"></a>Speech Recognition</h2><h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h3><ul>
 <li>Phoneme: a unit of sound.</li>
 <li>Grapheme: smallest unit of a writing system.</li>
 <li>Word: For some languages, V can be too large!</li>
 <li>Morpheme: the smallest meaningful unit.(&lt; word, &gt; grapheme) Eg. unbreakable-&gt;un, break, able<br>linguistic or statistic</li>
 <li>Bytes: The system can be language independent!</li>
 </ul>
-<h3 id="Acoustic-Feature"><a href="#Acoustic-Feature" class="headerlink" title="Acoustic Feature"></a>Acoustic Feature</h3>
+<h3 id="Acoustic-Feature"><a href="#Acoustic-Feature" class="headerlink" title="Acoustic Feature"></a>Acoustic Feature</h3><h3 id="LAS-Model"><a href="#LAS-Model" class="headerlink" title="LAS Model"></a>LAS Model</h3><p>LAS = Listen, Attend, and Spell</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>《深度学习人类语言处理(Deep Learning for Human Language Processing (2020,Spring))》，李宏毅，2020，<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_DLHLP20.html" target="_blank" rel="noopener">http://speech.ee.ntu.edu.tw/~tlkagk/courses_DLHLP20.html</a></li>
+</ul>
+
       
     </div>
     
@@ -555,6 +559,8 @@
             <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
           
             <a href="/tags/machine-learnning/" rel="tag"><i class="fa fa-tag"></i> machine-learnning</a>
+          
+            <a href="/tags/NLP/" rel="tag"><i class="fa fa-tag"></i> NLP</a>
           
             <a href="/tags/speech-recognition/" rel="tag"><i class="fa fa-tag"></i> speech-recognition</a>
           
@@ -579,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/TODOLIST/" rel="prev" title="【置顶】TODOLIST">
-                【置顶】TODOLIST <i class="fa fa-chevron-right"></i>
+              <a href="/blog/note-crack/" rel="prev" title="脱壳破解笔记">
+                脱壳破解笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -660,7 +666,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-count">97</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -682,7 +688,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">87</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -763,7 +769,7 @@
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://mon-soon.github.io/" title="mon-soon's blog" target="_blank">mon-soon's blog</a>
+                  <a href="http://47.101.152.169/" title="mon-soon's blog" target="_blank">mon-soon's blog</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
@@ -788,7 +794,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Speech-Recognition"><span class="nav-number">1.</span> <span class="nav-text">Speech Recognition</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Token"><span class="nav-number">1.1.</span> <span class="nav-text">Token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Acoustic-Feature"><span class="nav-number">1.2.</span> <span class="nav-text">Acoustic Feature</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Speech-Recognition"><span class="nav-number">2.</span> <span class="nav-text">Speech Recognition</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Token"><span class="nav-number">2.1.</span> <span class="nav-text">Token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Acoustic-Feature"><span class="nav-number">2.2.</span> <span class="nav-text">Acoustic Feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAS-Model"><span class="nav-number">2.3.</span> <span class="nav-text">LAS Model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

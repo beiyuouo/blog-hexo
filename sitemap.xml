@@ -2,42 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
+    <loc>beiyuouo.github.io/blog/note-deep-learning-for-human-language-processing/</loc>
     
-    <lastmod>2020-03-15T16:12:01.601Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-speech-recognition/</loc>
-    
-    <lastmod>2020-03-14T06:09:05.329Z</lastmod>
+    <lastmod>2020-03-22T06:55:02.998Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
+    <loc>beiyuouo.github.io/paper-note/index.html</loc>
     
-    <lastmod>2020-03-13T01:20:31.690Z</lastmod>
+    <lastmod>2020-03-22T06:51:37.216Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/iot-raspberry-install-opencv/</loc>
+    
+    <lastmod>2020-03-22T06:48:40.498Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/install-hbase/</loc>
+    
+    <lastmod>2020-03-22T06:48:27.223Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/install-hadoop/</loc>
+    
+    <lastmod>2020-03-22T06:48:05.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/install-arduino/</loc>
+    
+    <lastmod>2020-03-22T06:47:32.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/install-kali/</loc>
+    
+    <lastmod>2020-03-22T06:47:21.047Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/install-anaconda/</loc>
+    
+    <lastmod>2020-03-22T06:47:18.223Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/problem-kickstart-2020-round-A/</loc>
+    
+    <lastmod>2020-03-22T06:42:28.248Z</lastmod>
     
   </url>
   
   <url>
     <loc>beiyuouo.github.io/blog/note-algorithm/</loc>
     
-    <lastmod>2020-03-13T00:06:34.084Z</lastmod>
+    <lastmod>2020-03-22T03:02:22.379Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-crack/</loc>
+    
+    <lastmod>2020-03-21T16:08:44.077Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
+    
+    <lastmod>2020-03-21T16:05:03.399Z</lastmod>
     
   </url>
   
   <url>
     <loc>beiyuouo.github.io/blog/note-hive/</loc>
     
-    <lastmod>2020-03-12T13:07:03.249Z</lastmod>
+    <lastmod>2020-03-21T04:07:38.559Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/pro-pta/</loc>
+    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
+    
+    <lastmod>2020-03-16T02:36:28.271Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/problem-pta/</loc>
     
     <lastmod>2020-03-10T01:53:44.630Z</lastmod>
     
@@ -68,13 +131,6 @@
     <loc>beiyuouo.github.io/blog/note-computer-organization/</loc>
     
     <lastmod>2020-03-02T14:22:50.201Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/paper-note/index.html</loc>
-    
-    <lastmod>2020-03-02T13:32:23.338Z</lastmod>
     
   </url>
   
@@ -303,27 +359,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/bigdata-hadoop-install/</loc>
-    
-    <lastmod>2019-10-11T15:07:23.370Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/bigdata-hbase-install/</loc>
-    
-    <lastmod>2019-10-11T07:13:19.414Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/iot-raspberry-install-opencv/</loc>
-    
-    <lastmod>2019-10-09T05:33:09.143Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/iot-raspberry-hardware/</loc>
     
     <lastmod>2019-10-03T01:49:59.488Z</lastmod>
@@ -499,13 +534,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/install-kali/</loc>
-    
-    <lastmod>2019-05-25T20:03:18.485Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/hack-wiresharktplink/</loc>
     
     <lastmod>2019-05-23T09:18:16.115Z</lastmod>
@@ -520,28 +548,14 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/install-anaconda/</loc>
-    
-    <lastmod>2019-05-16T02:10:33.572Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/install-arduino/</loc>
-    
-    <lastmod>2019-05-14T16:28:33.809Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/pro-TopCoderSRM755/</loc>
+    <loc>beiyuouo.github.io/blog/problem-TopCoderSRM755/</loc>
     
     <lastmod>2019-04-18T12:12:42.313Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/pro-CodeJam-Qualification-Round/</loc>
+    <loc>beiyuouo.github.io/blog/problem-CodeJam-Qualification-Round/</loc>
     
     <lastmod>2019-04-07T02:08:56.594Z</lastmod>
     
@@ -569,7 +583,7 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/pro-ctxl1/</loc>
+    <loc>beiyuouo.github.io/blog/problem-ctxl1/</loc>
     
     <lastmod>2019-03-10T11:04:46.631Z</lastmod>
     
@@ -583,7 +597,7 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/pro-NK207F/</loc>
+    <loc>beiyuouo.github.io/blog/problem-NK207F/</loc>
     
     <lastmod>2019-01-18T10:35:12.113Z</lastmod>
     
