@@ -180,8 +180,8 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>iot</tag>
         <tag>machinelearning</tag>
+        <tag>iot</tag>
         <tag>raspberry</tag>
         <tag>python</tag>
         <tag>sensorhub</tag>
@@ -265,9 +265,9 @@
         <category>note</category>
       </categories>
       <tags>
+        <tag>hadoop</tag>
         <tag>bigdata</tag>
         <tag>hbase</tag>
-        <tag>hadoop</tag>
         <tag>note</tag>
       </tags>
   </entry>
@@ -293,8 +293,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>bigdata</tag>
         <tag>hadoop</tag>
+        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
@@ -415,11 +415,11 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>iot</tag>
         <tag>machinelearning</tag>
-        <tag>mnist</tag>
+        <tag>iot</tag>
         <tag>raspberry</tag>
         <tag>python</tag>
+        <tag>mnist</tag>
       </tags>
   </entry>
   <entry>
@@ -1008,8 +1008,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
         <tag>breakout</tag>
       </tags>
   </entry>
@@ -1022,8 +1022,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
       </tags>
   </entry>
   <entry>
@@ -1114,9 +1114,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>jquery</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
