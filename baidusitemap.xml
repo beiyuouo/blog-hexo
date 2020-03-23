@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
+    <lastmod>2020-03-23</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-deep-learning-for-human-language-processing/</loc>
     <lastmod>2020-03-22</lastmod>
   </url>  <url>
@@ -36,9 +39,6 @@
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-hive/</loc>
     <lastmod>2020-03-21</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
-    <lastmod>2020-03-16</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/problem-pta/</loc>
     <lastmod>2020-03-10</lastmod>
