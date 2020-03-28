@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/note-hive/</loc>
+    <lastmod>2020-03-26</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-mathematical-modeling/</loc>
+    <lastmod>2020-03-24</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-algorithm-bp/</loc>
+    <lastmod>2020-03-24</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
+    <lastmod>2020-03-24</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-computer-organization/</loc>
+    <lastmod>2020-03-24</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-algorithm/</loc>
+    <lastmod>2020-03-24</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-computer-network-bp/</loc>
+    <lastmod>2020-03-24</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
+    <lastmod>2020-03-23</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/problem-kickstart-2020-round-A/</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-deep-learning-for-human-language-processing/</loc>
@@ -25,28 +49,13 @@
     <loc>beiyuouo.github.io/blog/install-anaconda/</loc>
     <lastmod>2020-03-22</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/problem-kickstart-2020-round-A/</loc>
-    <lastmod>2020-03-22</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-algorithm/</loc>
-    <lastmod>2020-03-22</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-crack/</loc>
-    <lastmod>2020-03-21</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
-    <lastmod>2020-03-21</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-hive/</loc>
     <lastmod>2020-03-21</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/problem-pta/</loc>
     <lastmod>2020-03-10</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/20200125/</loc>
-    <lastmod>2020-03-02</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-computer-organization/</loc>
     <lastmod>2020-03-02</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-matplotlib/</loc>

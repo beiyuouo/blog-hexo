@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="Introduction to ZooKeeperIntroduction to Distributed SystemMany independent programs running on set of different computers. Introduction to Coordination ServiceCo-ordination service is service which">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-03-23T01:23:41.020Z">
+<meta property="og:updated_time" content="2020-03-23T02:57:24.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZooKeeper笔记">
 <meta name="twitter:description" content="Introduction to ZooKeeperIntroduction to Distributed SystemMany independent programs running on set of different computers. Introduction to Coordination ServiceCo-ordination service is service which">
@@ -436,7 +436,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-23T09:23:41+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-23T10:57:24+08:00">
                 2020-03-23
               </time>
             
@@ -643,11 +643,15 @@
 </li>
 <li><p>znodes are organized hierarchically as a standard file system.<br>znodes被分层组织为标准文件系统。</p>
 </li>
-<li><p>The root node has one child znode called /zoo.<br>根节点具有一个称为/ zoo的子znode。</p>
+<li><p>The root node has one child znode called <code>/zoo</code>.<br>根节点具有一个称为<code>/zoo</code>的子znode。</p>
 </li>
 <li><p>Every znode in the ZooKeeper tree is identified by a path.<br>ZooKeeper树中的每个znode均由路径标识。</p>
 </li>
-<li><p>The path elements are separated by /.<br>路径元素由/分隔。</p>
+<li><p>The path elements are separated by <code>/</code>.<br>路径元素由<code>/</code>分隔。</p>
+</li>
+<li><p>znodes are called data registers as they can store data.<br>znode被称为数据寄存器，因为它们可以存储数据。</p>
+</li>
+<li><p>The znode can have children as well as data associated with it.<br>znode可以具有子节点以及与其关联的数据。</p>
 </li>
 </ul>
 
@@ -684,8 +688,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/note-computer-network/" rel="next" title="计算机网络笔记">
-                <i class="fa fa-chevron-left"></i> 计算机网络笔记
+              <a href="/blog/note-computer-network-bp/" rel="next" title="计算机网络笔记bp">
+                <i class="fa fa-chevron-left"></i> 计算机网络笔记bp
               </a>
             
           </div>
@@ -775,7 +779,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">100</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -797,7 +801,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-count">92</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

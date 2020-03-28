@@ -120,7 +120,7 @@
 <meta property="og:image" content="/img/note-hive/20200311100017.png">
 <meta property="og:image" content="/img/note-hive/20200311102124.png">
 <meta property="og:image" content="/img/note-hive/202003121535.png">
-<meta property="og:updated_time" content="2020-03-21T04:07:38.559Z">
+<meta property="og:updated_time" content="2020-03-26T12:27:13.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hive笔记">
 <meta name="twitter:description" content="Introduction to HiveDifference between SQL and NoSQL  SQLRelational, Analytical(OLAP) NoSQLDocument, Key-Value, Column-Family, Graph  What is Hive It is an open-source data warehouse system for queryi">
@@ -440,8 +440,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-21T12:07:38+08:00">
-                2020-03-21
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-26T20:27:13+08:00">
+                2020-03-26
               </time>
             
           </span>
@@ -495,7 +495,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  5.1k
+                  6.6k
                 </span>
               
 
@@ -511,7 +511,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  27
+                  34
                 </span>
               
             </div>
@@ -953,6 +953,67 @@
 <li><p>Add column<br>Syntax：<code>ALTER TABLE table_name ADD|REPLACE COLUMNS (col_name data_type [COMMENT col_comment], ...)</code><br>Example：<code>alter table New_Emp_partition  add columns (age int);</code></p>
 </li>
 </ul>
+<h3 id="Data-loading"><a href="#Data-loading" class="headerlink" title="Data loading"></a>Data loading</h3><ul>
+<li>Hive does not support insert operations using insert statements one by one. It also  does not  support update operations.<br>Hive不支持使用一个接一个的插入语句进行插入操作。它也不支持更新操作。</li>
+<li>The data is loaded into the established table in the manner of load.<br>数据以加载的方式加载到已建立的表中。</li>
+<li>Once the data is imported, it cannot be modified.  We can either drop the entire table or create a new table and import the required data.<br>一旦数据被导入，它就不能被修改。 我们可以删除整个表，也可以创建一个新表并导入所需的数据。</li>
+</ul>
+<p>Syntax：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> [<span class="keyword">LOCAL</span>] INPATH <span class="string">'filepath'</span> [OVERWRITE] <span class="keyword">INTO</span> <span class="keyword">TABLE</span> tablename [<span class="keyword">PARTITION</span> (partcol1=val1, partcol2=val2 ...)]</span><br></pre></td></tr></table></figure></p>
+<h3 id="Ways-to-Import-data-in-batches"><a href="#Ways-to-Import-data-in-batches" class="headerlink" title="Ways to Import data in batches"></a>Ways to Import data in batches</h3><ul>
+<li>Load data and import to the specified table    加载数据并导入到指定的表<br>Import the local file system /home/data/aa.txt file into tab1,<br>syntax : <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">load</span> <span class="keyword">data</span> <span class="keyword">local</span> inpath <span class="string">'/home/data/aa.txt'</span> <span class="keyword">into</span> <span class="keyword">table</span> tab1;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Import the file directly to the partition of the specified table. If the partition directory does not exist, hive will automatically create a partition directory, and then copy the data to the directory.<br>将文件直接导入指定表的分区。如果分区目录不存在，HIVE将自动创建一个分区目录，然后将数据复制到该目录。</p>
+<ul>
+<li>Load to the partition of the specified table    加载到指定表的分区<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LOAD DATA LOCAL INPATH &apos;/home/admin/test/test.txt’</span><br><span class="line">OVERWRITE INTO TABLE test_1 PARTITION（pt=’xxxx’）</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>The keyword [OVERWRITE] means to overwrite the data in the original table. If it is not written, it will not be overwritten.<br>关键字[OVERWRITE]表示覆盖原始表中的数据。如果不写，就不会被覆盖。<br>The keyword [LOCAL] means that the source of the file you are loading is a local file. If you do not write, the file is hdfs.<br>关键字[LOCAL]表示正在加载的文件的源是一个本地文件。如果不写，文件是HDFS。</p>
+<ul>
+<li>Import data using insert + select<br>By querying the table, the query results are imported into the specified table.    通过查询表，查询结果被导入到指定的表中。<br>Syntax ：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> tablename1 [<span class="keyword">PARTITION</span> (partcol1=val1, partcol2=val2 ...)] select_statement1 <span class="keyword">FROM</span> from_statement</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">into</span> tab2 <span class="keyword">select</span> * <span class="keyword">from</span> tab1；</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Import data using create+select<br>Create a new table and copy the data into this table.<br>创建一个新表并将数据复制到这个表中。<br>Syntax：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tablename1 <span class="keyword">AS</span>  select_statement1 <span class="keyword">FROM</span> from_statement  </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">table</span> tab2 <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> tab1;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Management-tables"><a href="#Management-tables" class="headerlink" title="Management tables"></a>Management tables</h3><ul>
+<li>The management table is also called an internal table.<br>管理表也称为内部表。</li>
+<li>Hive controls the life cycle of the table and the data in the table.<br>Hive控制表的生命周期和表中的数据。</li>
+<li>The data is stored in the directory set by the parameter hive.metastore.warehouse.dir in hive-site.xml.<br>数据存储在参数设置的目录中：</li>
+<li>When Hive creates the internal tables, it moves the data to the path pointed to by the data warehouse.<br>当Hive创建内部表时，它将数据移动到数据仓库指向的路径。</li>
+<li>When a management table is deleted, the corresponding data in the table is also deleted at the same time.<br>删除管理表时，同时也删除表中相应的数据。</li>
+<li>We can create a management table by using the <code>create table</code> command.<br>我们可以使用create table命令来创建一个管理表。</li>
+</ul>
+<h3 id="External-tables"><a href="#External-tables" class="headerlink" title="External tables"></a>External tables</h3><ul>
+<li>The data of the external table is not managed by hive, hive just establishes a reference.<br>外部表的数据不是由hive管理的，hive只是建立一个引用。</li>
+<li>When deleting an external table, only the metadata of the table is deleted, not the data.<br>删除外部表时，只删除表的元数据，而不删除数据。</li>
+<li>The external table is relatively more secure, and the data organization is more flexible, which facilitates the sharing of source data.<br>外部表相对更安全，数据组织也更灵活，这有助于共享源数据。</li>
+<li>Create table Use “create EXTERNAL table” to create external tables.<br>创建表使用创建外部表来创建外部表。</li>
+</ul>
+<h3 id="Partition-Table"><a href="#Partition-Table" class="headerlink" title="Partition Table"></a>Partition Table</h3><ul>
+<li>Hive Select query scan  the entire table  which  is time consuming.<br>在HIVE选择查询扫描整个表，这是耗时的。</li>
+<li>Sometimes only a part of the data in the table needs to be scanned, so the partition concept was introduced when the table was created.<br>有时只需要扫描表中的一部分数据，因此在创建表时引入了分区概念。</li>
+<li>A partitioned table refers to the partition space of the partition specified when the table was created.<br>分区表是指在创建表时指定的分区的分区空间。</li>
+<li>To create a partitioned table, you need to use  the optional parameter partitioned by.<br>要创建分区表，需要使用可选的分区参数。</li>
+<li>A table can have one or more partitions, and each partition exists in the directory of the table folder in the form of a folder.<br>一个表可以有一个或多个分区，每个分区都以文件夹的形式存在于表文件夹的目录中。</li>
+<li>Table and column names are not case sensitive.<br>表名和列名不区分大小写。</li>
+<li>Partitions exist in the table structure in the form of fields.<br>分区以字段的形式存在于表结构中。</li>
+<li>You can see that the fields  through the <code>describe table</code> command, but this field does not store the actual data , they are only the representation of the partition.<br>你可以通过<code>describe table</code>命令看到这些字段，但是这个字段并不存储实际的数据，它们只是分区的表示。</li>
+</ul>
+<p>Types of partition table creation   分区表创建的类型</p>
+<ul>
+<li>Single partition: Which means that there is only one level folder directory under the table folder directory.<br>单分区: 这意味着在表文件夹目录下只有一个级别的文件夹目录。Statement: create table day_table (id int, content string) partitioned by (dt string);</li>
+<li>Multi-partitioning: A multi-folder nesting mode appears under the table folder.<br>多分区: 在表文件夹下出现多文件夹嵌套模式。<br>Statement: <code>create table day_hour_table (id int, content string) partitioned by (dt string, hour string);</code></li>
+<li>Dual partition table, partitioned by day and hour, added dt and hour two columns in the table structure.<br>双分区表，按日和时进行分区，在表结构中增加了dt和时两列。</li>
+<li>Partition table contains Static partition and Dynamic partition<br>分区表包含静态分区和动态分区</li>
+</ul>
+<p>Static Partition Table</p>
+<ul>
+<li>It is recommended to create a partitioned column before importing data.<br>建议在导入数据之前创建分区列。</li>
+<li>If you do not create the partition first, the partition is created automatically.<br>如果你没有首先创建分区，那么将会自动创建分区。</li>
+</ul>
+<p>Dynamic Partition Table</p>
+<ul>
+<li>Dynamic partitioning can be automatically matched to the corresponding partition according to the data obtained by the query.<br>动态分区可以根据查询得到的数据自动匹配到相应的分区。</li>
+</ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li>NIIT</li>
 </ul>
@@ -998,8 +1059,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/note-algorithm/" rel="prev" title="算法设计与分析笔记">
-                算法设计与分析笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/note-algorithm-bp/" rel="prev" title="算法设计与分析笔记bp">
+                算法设计与分析笔记bp <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1079,7 +1140,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">100</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1101,7 +1162,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-count">92</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1207,7 +1268,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-to-Hive"><span class="nav-number">1.</span> <span class="nav-text">Introduction to Hive</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-SQL-and-NoSQL"><span class="nav-number">1.1.</span> <span class="nav-text">Difference between SQL and NoSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hive"><span class="nav-number">1.2.</span> <span class="nav-text">What is Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Who-developed-Hive"><span class="nav-number">1.3.</span> <span class="nav-text">Who developed Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Hive-was-developed"><span class="nav-number">1.4.</span> <span class="nav-text">Why Hive was developed?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-and-when-it-can-be-used"><span class="nav-number">1.5.</span> <span class="nav-text">How and when it can be used?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#When-Hive-cannot-be-used"><span class="nav-number">1.6.</span> <span class="nav-text">When Hive cannot be used?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Features-of-Hive"><span class="nav-number">1.7.</span> <span class="nav-text">Features of Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-Hive-amp-RDBMS"><span class="nav-number">1.8.</span> <span class="nav-text">Difference between Hive &amp; RDBMS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hive-Chapter-1"><span class="nav-number">2.</span> <span class="nav-text">Hive Chapter 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hive-1"><span class="nav-number">2.1.</span> <span class="nav-text">What is Hive?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-analyze-and-manage-data-如何分析和管理数据"><span class="nav-number">2.2.</span> <span class="nav-text">How to analyze and manage data? 如何分析和管理数据?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Storage-Model-HIVE数据存储模型"><span class="nav-number">2.3.</span> <span class="nav-text">HIVE Data Storage Model.  HIVE数据存储模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Storage-Hive数据存储"><span class="nav-number">2.4.</span> <span class="nav-text">HIVE Data Storage. Hive数据存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Table-Hive-数据模型-Table"><span class="nav-number">2.5.</span> <span class="nav-text">Hive Data Models-Table. Hive 数据模型-Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-External-Table-Hive-数据模型"><span class="nav-number">2.6.</span> <span class="nav-text">Hive Data Models-External Table. Hive 数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Partition-Hive-数据模型-Partition"><span class="nav-number">2.7.</span> <span class="nav-text">Hive Data Models-Partition. Hive 数据模型-Partition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Bucket-Hive-数据模型-Bucket"><span class="nav-number">2.8.</span> <span class="nav-text">Hive Data Models-Bucket. Hive 数据模型-Bucket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-MetaData"><span class="nav-number">2.9.</span> <span class="nav-text">Hive MetaData</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Storage-model"><span class="nav-number">2.10.</span> <span class="nav-text">Hive Storage model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Model"><span class="nav-number">2.11.</span> <span class="nav-text">Database Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Installation"><span class="nav-number">2.12.</span> <span class="nav-text">Hive Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Derby"><span class="nav-number">2.12.1.</span> <span class="nav-text">基于Derby</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Mysql"><span class="nav-number">2.12.2.</span> <span class="nav-text">基于Mysql</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLI-Options"><span class="nav-number">2.13.</span> <span class="nav-text">CLI Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variable-setting"><span class="nav-number">2.14.</span> <span class="nav-text">Variable setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Command-line"><span class="nav-number">2.15.</span> <span class="nav-text">Hive Command line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Type"><span class="nav-number">2.16.</span> <span class="nav-text">HIVE Data Type</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-2"><span class="nav-number">3.</span> <span class="nav-text">Chapter 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Operations"><span class="nav-number">3.1.</span> <span class="nav-text">Database Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Table-Operations"><span class="nav-number">3.2.</span> <span class="nav-text">Table Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#File-formats"><span class="nav-number">3.2.1.</span> <span class="nav-text">File formats</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">3.2.2.</span> <span class="nav-text">CREATE TABLE</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modify-Table-Operations"><span class="nav-number">3.3.</span> <span class="nav-text">Modify Table Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Table-Operations-1"><span class="nav-number">3.4.</span> <span class="nav-text">Table Operations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-to-Hive"><span class="nav-number">1.</span> <span class="nav-text">Introduction to Hive</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-SQL-and-NoSQL"><span class="nav-number">1.1.</span> <span class="nav-text">Difference between SQL and NoSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hive"><span class="nav-number">1.2.</span> <span class="nav-text">What is Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Who-developed-Hive"><span class="nav-number">1.3.</span> <span class="nav-text">Who developed Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Hive-was-developed"><span class="nav-number">1.4.</span> <span class="nav-text">Why Hive was developed?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-and-when-it-can-be-used"><span class="nav-number">1.5.</span> <span class="nav-text">How and when it can be used?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#When-Hive-cannot-be-used"><span class="nav-number">1.6.</span> <span class="nav-text">When Hive cannot be used?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Features-of-Hive"><span class="nav-number">1.7.</span> <span class="nav-text">Features of Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-Hive-amp-RDBMS"><span class="nav-number">1.8.</span> <span class="nav-text">Difference between Hive &amp; RDBMS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hive-Chapter-1"><span class="nav-number">2.</span> <span class="nav-text">Hive Chapter 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hive-1"><span class="nav-number">2.1.</span> <span class="nav-text">What is Hive?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-analyze-and-manage-data-如何分析和管理数据"><span class="nav-number">2.2.</span> <span class="nav-text">How to analyze and manage data? 如何分析和管理数据?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Storage-Model-HIVE数据存储模型"><span class="nav-number">2.3.</span> <span class="nav-text">HIVE Data Storage Model.  HIVE数据存储模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Storage-Hive数据存储"><span class="nav-number">2.4.</span> <span class="nav-text">HIVE Data Storage. Hive数据存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Table-Hive-数据模型-Table"><span class="nav-number">2.5.</span> <span class="nav-text">Hive Data Models-Table. Hive 数据模型-Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-External-Table-Hive-数据模型"><span class="nav-number">2.6.</span> <span class="nav-text">Hive Data Models-External Table. Hive 数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Partition-Hive-数据模型-Partition"><span class="nav-number">2.7.</span> <span class="nav-text">Hive Data Models-Partition. Hive 数据模型-Partition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Data-Models-Bucket-Hive-数据模型-Bucket"><span class="nav-number">2.8.</span> <span class="nav-text">Hive Data Models-Bucket. Hive 数据模型-Bucket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-MetaData"><span class="nav-number">2.9.</span> <span class="nav-text">Hive MetaData</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Storage-model"><span class="nav-number">2.10.</span> <span class="nav-text">Hive Storage model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Model"><span class="nav-number">2.11.</span> <span class="nav-text">Database Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Installation"><span class="nav-number">2.12.</span> <span class="nav-text">Hive Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Derby"><span class="nav-number">2.12.1.</span> <span class="nav-text">基于Derby</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Mysql"><span class="nav-number">2.12.2.</span> <span class="nav-text">基于Mysql</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLI-Options"><span class="nav-number">2.13.</span> <span class="nav-text">CLI Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variable-setting"><span class="nav-number">2.14.</span> <span class="nav-text">Variable setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive-Command-line"><span class="nav-number">2.15.</span> <span class="nav-text">Hive Command line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HIVE-Data-Type"><span class="nav-number">2.16.</span> <span class="nav-text">HIVE Data Type</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-2"><span class="nav-number">3.</span> <span class="nav-text">Chapter 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Operations"><span class="nav-number">3.1.</span> <span class="nav-text">Database Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Table-Operations"><span class="nav-number">3.2.</span> <span class="nav-text">Table Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#File-formats"><span class="nav-number">3.2.1.</span> <span class="nav-text">File formats</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">3.2.2.</span> <span class="nav-text">CREATE TABLE</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modify-Table-Operations"><span class="nav-number">3.3.</span> <span class="nav-text">Modify Table Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Table-Operations-1"><span class="nav-number">3.4.</span> <span class="nav-text">Table Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-loading"><span class="nav-number">3.5.</span> <span class="nav-text">Data loading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ways-to-Import-data-in-batches"><span class="nav-number">3.6.</span> <span class="nav-text">Ways to Import data in batches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Management-tables"><span class="nav-number">3.7.</span> <span class="nav-text">Management tables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#External-tables"><span class="nav-number">3.8.</span> <span class="nav-text">External tables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Partition-Table"><span class="nav-number">3.9.</span> <span class="nav-text">Partition Table</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
