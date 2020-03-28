@@ -216,8 +216,8 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>iot</tag>
         <tag>machinelearning</tag>
+        <tag>iot</tag>
         <tag>raspberry</tag>
         <tag>python</tag>
         <tag>sensorhub</tag>
@@ -451,11 +451,11 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>iot</tag>
         <tag>machinelearning</tag>
-        <tag>mnist</tag>
+        <tag>iot</tag>
         <tag>raspberry</tag>
         <tag>python</tag>
+        <tag>mnist</tag>
       </tags>
   </entry>
   <entry>
