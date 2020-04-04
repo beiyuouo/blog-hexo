@@ -112,14 +112,14 @@
 <meta name="description" content="Policy GradientPolicy of ActorPolicy $\pi$ is a network with parameter $\theta$  Input: the observation of machine represented as a vector or a matrix. Output: each action corresponds to a neuron in o">
 <meta name="keywords" content="note,machine-learning,deep-reinforce-learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="note-deep-reinforce-learning">
+<meta property="og:title" content="强化学习笔记">
 <meta property="og:url" content="beiyuouo.github.io/blog/note-deep-reinforce-learning/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="Policy GradientPolicy of ActorPolicy $\pi$ is a network with parameter $\theta$  Input: the observation of machine represented as a vector or a matrix. Output: each action corresponds to a neuron in o">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-04-02T07:47:12.312Z">
+<meta property="og:updated_time" content="2020-04-04T15:04:01.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="note-deep-reinforce-learning">
+<meta name="twitter:title" content="强化学习笔记">
 <meta name="twitter:description" content="Policy GradientPolicy of ActorPolicy $\pi$ is a network with parameter $\theta$  Input: the observation of machine represented as a vector or a matrix. Output: each action corresponds to a neuron in o">
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <title>note-deep-reinforce-learning | 北屿</title>
+  <title>强化学习笔记 | 北屿</title>
   
 
 
@@ -408,7 +408,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">note-deep-reinforce-learning</h1>
+          <h1 class="post-title" itemprop="name headline">强化学习笔记</h1>
         
 
         <div class="post-meta">
@@ -436,8 +436,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-04-02T15:47:12+08:00">
-                2020-04-02
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-04T23:04:01+08:00">
+                2020-04-04
               </time>
             
           </span>
@@ -491,7 +491,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  460
+                  491
                 </span>
               
 
@@ -549,6 +549,8 @@
 <p>Importance Sampling<br>在两个分布中算E是相等的，$E_{x\sim p}[f(x)]=E_{x\sim q}[f(x)\frac{p(x)}{q(x)}]$的结果是一样的，因为都会乘上一个概率，然后就消掉了分母的$q(x)$<br>举个例子为什么成立，如果两个分布峰值分别在两侧，一侧$f(x)$为正，一侧为负，如果sample到左侧乘一个负值，会让系数肥肠的大。<br>也可能就是小概率会有一个大系数，大概率会有一个小系数，最终期望值是一样的，但是方差可能非常的大</p>
 <h2 id="PPO-TRPO"><a href="#PPO-TRPO" class="headerlink" title="PPO/TRPO"></a>PPO/TRPO</h2><p>Trust Region Policy Optimization(TRPO)<br>PPO前身，把constrain放在了里面</p>
 <p>Proximal Policy Optimization(PPO)<br>$J_{PPO}^{\theta ‘}(\theta)=J^{\theta ‘}(\theta)-\beta KL(\theta, \theta ‘)$<br>$J^{\theta ‘}(\theta)=E_{(s_t, a_t)\sim \pi_{\theta ‘}}[\frac{p_{\theta}(a_t|s_t)}{p_{\theta ‘}(a_t|s_t)}A^{\theta ‘}(s_t, a_t)]$</p>
+<p>PPO2就是限制了一下比值的范围</p>
+<h2 id="Q-Learning"><a href="#Q-Learning" class="headerlink" title="Q-Learning"></a>Q-Learning</h2><p>Critic并不直接采取action，而是评价一个action的好坏</p>
 
       
     </div>
@@ -674,7 +676,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">102</span>
+                <span class="site-state-item-count">105</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -802,7 +804,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Policy-Gradient"><span class="nav-number">1.</span> <span class="nav-text">Policy Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Policy-of-Actor"><span class="nav-number">1.1.</span> <span class="nav-text">Policy of Actor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#From-on-policy-to-off-policy"><span class="nav-number">2.</span> <span class="nav-text">From on-policy to off-policy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPO-TRPO"><span class="nav-number">3.</span> <span class="nav-text">PPO/TRPO</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Policy-Gradient"><span class="nav-number">1.</span> <span class="nav-text">Policy Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Policy-of-Actor"><span class="nav-number">1.1.</span> <span class="nav-text">Policy of Actor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#From-on-policy-to-off-policy"><span class="nav-number">2.</span> <span class="nav-text">From on-policy to off-policy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPO-TRPO"><span class="nav-number">3.</span> <span class="nav-text">PPO/TRPO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-Learning"><span class="nav-number">4.</span> <span class="nav-text">Q-Learning</span></a></li></ol></div>
             
 
           </div>
