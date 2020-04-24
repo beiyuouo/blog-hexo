@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="Policy GradientPolicy of ActorPolicy $\pi$ is a network with parameter $\theta$  Input: the observation of machine represented as a vector or a matrix. Output: each action corresponds to a neuron in o">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-04-04T15:04:01.051Z">
+<meta property="og:updated_time" content="2020-04-05T02:24:37.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="强化学习笔记">
 <meta name="twitter:description" content="Policy GradientPolicy of ActorPolicy $\pi$ is a network with parameter $\theta$  Input: the observation of machine represented as a vector or a matrix. Output: each action corresponds to a neuron in o">
@@ -436,8 +436,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-04-04T23:04:01+08:00">
-                2020-04-04
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-05T10:24:37+08:00">
+                2020-04-05
               </time>
             
           </span>
@@ -491,7 +491,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  491
+                  537
                 </span>
               
 
@@ -550,7 +550,7 @@
 <h2 id="PPO-TRPO"><a href="#PPO-TRPO" class="headerlink" title="PPO/TRPO"></a>PPO/TRPO</h2><p>Trust Region Policy Optimization(TRPO)<br>PPO前身，把constrain放在了里面</p>
 <p>Proximal Policy Optimization(PPO)<br>$J_{PPO}^{\theta ‘}(\theta)=J^{\theta ‘}(\theta)-\beta KL(\theta, \theta ‘)$<br>$J^{\theta ‘}(\theta)=E_{(s_t, a_t)\sim \pi_{\theta ‘}}[\frac{p_{\theta}(a_t|s_t)}{p_{\theta ‘}(a_t|s_t)}A^{\theta ‘}(s_t, a_t)]$</p>
 <p>PPO2就是限制了一下比值的范围</p>
-<h2 id="Q-Learning"><a href="#Q-Learning" class="headerlink" title="Q-Learning"></a>Q-Learning</h2><p>Critic并不直接采取action，而是评价一个action的好坏</p>
+<h2 id="Q-Learning"><a href="#Q-Learning" class="headerlink" title="Q-Learning"></a>Q-Learning</h2><p>Critic并不直接采取action，而是评价一个action的好坏<br>不断训练，每次获得一个更好的$V^{\pi}$，也就更新模型，而且保证每次取最大收益期望的那个一定优于之前的模型。</p>
 
       
     </div>
@@ -676,7 +676,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-count">111</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -698,7 +698,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-count">97</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

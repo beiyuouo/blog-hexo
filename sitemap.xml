@@ -2,9 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/20200424/</loc>
+    
+    <lastmod>2020-04-24T13:46:04.961Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
+    
+    <lastmod>2020-04-15T14:08:16.537Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/TODOLIST/</loc>
+    
+    <lastmod>2020-04-15T14:00:27.762Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/20200412/</loc>
+    
+    <lastmod>2020-04-12T12:13:27.508Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/20200410/</loc>
+    
+    <lastmod>2020-04-10T12:32:35.753Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/misc-minecraft-backup/</loc>
+    
+    <lastmod>2020-04-10T12:10:28.041Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-hive/</loc>
+    
+    <lastmod>2020-04-08T03:12:42.126Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/misc-fuck-pi-gai-wang/</loc>
+    
+    <lastmod>2020-04-05T03:10:04.870Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/note-deep-reinforce-learning/</loc>
     
-    <lastmod>2020-04-04T15:04:01.051Z</lastmod>
+    <lastmod>2020-04-05T02:24:37.074Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/misc-confused-probability/</loc>
+    
+    <lastmod>2020-04-05T02:23:27.789Z</lastmod>
     
   </url>
   
@@ -65,13 +128,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-hive/</loc>
-    
-    <lastmod>2020-03-26T12:27:13.487Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/note-mathematical-modeling/</loc>
     
     <lastmod>2020-03-24T12:31:34.077Z</lastmod>
@@ -103,13 +159,6 @@
     <loc>beiyuouo.github.io/blog/note-computer-network-bp/</loc>
     
     <lastmod>2020-03-24T07:06:01.950Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
-    
-    <lastmod>2020-03-23T02:57:24.784Z</lastmod>
     
   </url>
   
@@ -376,13 +425,6 @@
     <loc>beiyuouo.github.io/blog/20181113/</loc>
     
     <lastmod>2019-11-21T09:31:55.195Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/TODOLIST/</loc>
-    
-    <lastmod>2019-11-21T09:31:43.857Z</lastmod>
     
   </url>
   

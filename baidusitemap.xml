@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/20200424/</loc>
+    <lastmod>2020-04-24</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
+    <lastmod>2020-04-15</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/TODOLIST/</loc>
+    <lastmod>2020-04-15</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/20200412/</loc>
+    <lastmod>2020-04-12</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/20200410/</loc>
+    <lastmod>2020-04-10</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/misc-minecraft-backup/</loc>
+    <lastmod>2020-04-10</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-hive/</loc>
+    <lastmod>2020-04-08</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/misc-fuck-pi-gai-wang/</loc>
+    <lastmod>2020-04-05</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-deep-reinforce-learning/</loc>
-    <lastmod>2020-04-04</lastmod>
+    <lastmod>2020-04-05</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/misc-confused-probability/</loc>
+    <lastmod>2020-04-05</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/problem-codejam-2020-qualification-round/</loc>
     <lastmod>2020-04-04</lastmod>
@@ -22,9 +49,6 @@
     <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
     <lastmod>2020-03-30</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-hive/</loc>
-    <lastmod>2020-03-26</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/note-mathematical-modeling/</loc>
     <lastmod>2020-03-24</lastmod>
   </url>  <url>
@@ -39,9 +63,6 @@
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-computer-network-bp/</loc>
     <lastmod>2020-03-24</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-zookeeper/</loc>
-    <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/problem-kickstart-2020-round-A/</loc>
     <lastmod>2020-03-23</lastmod>
@@ -149,9 +170,6 @@
     <lastmod>2019-11-21</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/20181113/</loc>
-    <lastmod>2019-11-21</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/TODOLIST/</loc>
     <lastmod>2019-11-21</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/misc-da-xue-gui-dang/</loc>

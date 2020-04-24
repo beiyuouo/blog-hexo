@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="Introduction to ZooKeeperIntroduction to Distributed SystemMany independent programs running on set of different computers. Introduction to Coordination ServiceCo-ordination service is service which">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-03-23T02:57:24.784Z">
+<meta property="og:updated_time" content="2020-04-15T14:08:16.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZooKeeper笔记">
 <meta name="twitter:description" content="Introduction to ZooKeeperIntroduction to Distributed SystemMany independent programs running on set of different computers. Introduction to Coordination ServiceCo-ordination service is service which">
@@ -436,8 +436,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-23T10:57:24+08:00">
-                2020-03-23
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-15T22:08:16+08:00">
+                2020-04-15
               </time>
             
           </span>
@@ -491,7 +491,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.6k
+                  2k
                 </span>
               
 
@@ -507,7 +507,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  7
+                  9
                 </span>
               
             </div>
@@ -653,6 +653,24 @@
 </li>
 <li><p>The znode can have children as well as data associated with it.<br>znode可以具有子节点以及与其关联的数据。</p>
 </li>
+<li><p>Every znode maintains a stat structure.<br>每个znode都维护一个统计结构。</p>
+</li>
+<li><p>A stat simply provides the metadata of a znode.<br>统计信息仅提供znode的元数据。<br>It consists of</p>
+<ul>
+<li>Version number</li>
+<li>Action Control List (ACL)</li>
+<li>Data length</li>
+<li>Timestamp</li>
+</ul>
+</li>
+<li><p>Version number:<br>Every znode has a version number and it means every time the data associated with the znode changes, its version number would also increase.<br>每个znode都有一个版本号，这意味着与znode关联的数据每次更改时，其版本号也会增加。<br>The use of version number is important when multiple zookeeper clients are trying to perform operations over the same znode.<br>当多个Zookeeper客户端试图在同一znode上执行操作时，使用版本号很重要。</p>
+</li>
+<li><p>Action Control List (ACL):<br>It is authentication mechanism for accessing the znode.<br>它是用于访问znode的身份验证机制。<br>It governs all the znode read and write operations.<br>它控制着所有znode的读写操作。</p>
+</li>
+<li><p>Data length:<br>It is total amount of the data stored in a znode.<br>它是存储在znode中的数据总量。<br>You can store a maximum of 1MB of data.<br>您最多可以存储1MB的数据。</p>
+</li>
+<li><p>Timestamp:<br>It is time elapsed from znode creation &amp; modification. It is usually represented in milliseconds.<br>从znode创建和修改开始到现在为止。通常用毫秒表示。<br>ZooKeeper identifies every change to the znodes from “Transaction ID” (zxid).<br>ZooKeeper通过“交易ID”（zxid）识别对znode的所有更改。<br>Zxid is unique &amp; maintains time for each transaction so that you can easily identify the time elapsed from one request to another request.<br>Zxid是唯一的，并且为每个事务维护时间，因此您可以轻松地确定从一个请求到另一个请求所经过的时间。</p>
+</li>
 </ul>
 
       
@@ -779,7 +797,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-count">111</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -801,7 +819,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-count">97</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
