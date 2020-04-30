@@ -13,6 +13,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[f**k unipus]]></title>
+    <url>%2Fblog%2Fmisc-fuck-unipus%2F</url>
+    <content type="text"><![CDATA[Version 1.1README忽然想起百度有语音识别的api，果断就用了这次有依赖ffmpegAPIKey和SecretKey自己去百度大脑申请一个语音识别的应用就可以了http://ai.baidu.com/效果的话…还ok.百度的识别是不带标点的，也就是要自己断句咯1234don&apos;t worry madam I&apos;ll get you there in time it looks as if most people have already gone home today I hope so the plane leaves at seven I don&apos;t want to arrive in London too late or the hotel will think I&apos;m not coming and I might lose my room question where is the man taking the woman to 目前存在的不足： 过长的文件无法翻译(这个我将会在下面的版本修复^^，待我了解一下音频格式再说) ——20200430 CODE12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697from bs4 import BeautifulSoupimport re, requestsimport osimport waveimport requestsimport timeimport base64base_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=%s&amp;client_secret=%s"APIKey = "***"SecretKey = "***" HOST = base_url % (APIKey, SecretKey)def getToken(host): res = requests.post(host) return res.json()['access_token']def get_audio(file): with open(file, 'rb') as f: data = f.read() return datadef speech2text(FILEPATH, dev_pid=1737): token = getToken(HOST) speech_data = get_audio(FILEPATH) FORMAT = 'wav' RATE = '16000' CHANNEL = 1 CUID = '*******' SPEECH = base64.b64encode(speech_data).decode('utf-8') data = &#123; 'format': FORMAT, 'rate': RATE, 'channel': CHANNEL, 'cuid': CUID, 'len': len(speech_data), 'speech': SPEECH, 'token': token, 'dev_pid':dev_pid &#125; url = 'https://vop.baidu.com/server_api' headers = &#123;'Content-Type': 'application/json'&#125; # r=requests.post(url,data=json.dumps(data),headers=headers) r = requests.post(url, json=data, headers=headers) Result = r.json() if 'result' in Result: return Result['result'][0] else: return Resultdef main(): url = "index.html" url_voice2text = "https://app.xunjiepdf.com/voice2text/" url_translate = "https://translate.google.cn/" soup = BeautifulSoup(open(url, encoding='utf-8')) allres = soup.find_all(name='div',attrs=&#123;"class":"itest-hear-reslist"&#125;) # print(soup) counter = 1 for res in allres: st = res.span.text; st = str(st)[1:-1] st = st.split(',') for est in st: if(re.match(r'.*\.mp3.*', est)): if(re.match(r'.*question\.mp3+.*', est)): continue print(est[1:-1]) download_addr = est[1:-1] print('Downloading...') f=requests.get(download_addr) with open(str(counter)+".mp3","wb") as code: code.write(f.content) print('Downloaded') print('Transcoding mp3 to pcm...') os.system("ffmpeg -y -i " + str(counter) + ".mp3 -acodec pcm_s16le -f s16le -ac 1 -ar 16000 " + str(counter) + ".pcm" ) print('Transcoded mp3 to pcm') print('Recognizing...') result = speech2text(FILEPATH=str(counter)+".pcm") print('-'*48) print(result) with open(str(counter)+".txt", "w") as ff: print(result, file=ff) print('-'*48) print('Recognized') counter += 1 print('Finished') # print(i.span.text) # print(allres)if __name__ == '__main__': main() REFERENCE ffmpeg官方文档, http://ffmpeg.org/ffmpeg.html 百度语音识别api文档, https://ai.baidu.com/ai-doc/SPEECH/Vk38lxily 百度语音识别api代码示例, https://github.com/Baidu-AIP/speech-demo python做音频格式转换, https://blog.csdn.net/pj_developer/article/details/72778792 Version 1.0README我们英语老师布置的题也太j8多了，70多道题，20多道听力，我都听吐了U校园单元测试还不能查题而且U校园只能听一次听力，然后偶然按了一下F12发现了听力链接就在html里，我人晕了打开链接就能下，但是太j8多了，看得我眼花，就写了这个脚本本来想一键式直接出中文的，但是实力有限，有空再做吧…语音识别和翻译的网页就是里面的几个url因为不会模拟登陆，所以还是请把测试网页Ctrl+S保存成index.html，运行这个脚本就会出现很多听力原文以后如果有时间必会更新——20200403 CODE12345678910111213141516171819202122232425262728293031323334from bs4 import BeautifulSoupimport re, requestsdef main(): url = "index.html" url_voice2text = "https://app.xunjiepdf.com/voice2text/" url_translate = "https://translate.google.cn/" soup = BeautifulSoup(open(url, encoding='utf-8')) allres = soup.find_all(name='div',attrs=&#123;"class":"itest-hear-reslist"&#125;) # print(soup) counter = 1 for res in allres: st = res.span.text; st = str(st)[1:-1] st = st.split(',') for est in st: if(re.match(r'.*\.mp3.*', est)): if(re.match(r'.*question\.mp3+.*', est)): continue print(est[1:-1]) download_addr = est[1:-1] print('downloading...') f=requests.get(download_addr) with open(str(counter)+".mp3","wb") as code: code.write(f.content) counter += 1 print('downloaded') # print(i.span.text) # print(allres) if __name__ == '__main__': main()]]></content>
+      <categories>
+        <category>misc</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+        <tag>unipus</tag>
+        <tag>html</tag>
+        <tag>bs4</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[20200430]]></title>
     <url>%2Fblog%2F20200430%2F</url>
     <content type="text"><![CDATA[昨天海南大学也上了热搜…开学和王小妮的事撞一起了，连环发酵…反正早知道wb有多nt，还是忍不住喷几句 挖坟这种事情已经不知道出现多少次了，但是毕竟在公共社交平台占用公共资源，无论是自己现在还是过去都应该对自己的言论负责吧说不定以后这种事也会落到我头上hhh，毕竟脑热就开始瞎说 至于开学的阴谋论…估计也就只有nt能说出来了 终于暂时告别了一下被ddl赶着走的日子也不指望论文能有什么太好的成果，自己都觉得shui…能不能被accept就随缘吧…不管怎么说…自己代码能力确实提升了点…Pytorch真的好用 - -Anyway，要开学了，该还的也该还了，要补作业了，要好好学了，也要见自己女朋友了 好好做人]]></content>
@@ -125,20 +139,6 @@
       <tags>
         <tag>problem</tag>
         <tag>codejam</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[f**k unipus]]></title>
-    <url>%2Fblog%2Fmisc-fuck-unipus%2F</url>
-    <content type="text"><![CDATA[Version 1.1README忽然想起百度有语音识别的api，果断就用了这次有依赖ffmpegAPIKey和SecretKey自己去百度大脑申请一个语音识别的应用就可以了http://ai.baidu.com/效果的话…还ok.百度的识别是不带标点的，也就是要自己断句咯1234don&apos;t worry madam I&apos;ll get you there in time it looks as if most people have already gone home today I hope so the plane leaves at seven I don&apos;t want to arrive in London too late or the hotel will think I&apos;m not coming and I might lose my room question where is the man taking the woman to 目前存在的不足： 过长的文件无法翻译(这个我将会在下面的版本修复^^，待我了解一下音频格式再说) CODE12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697from bs4 import BeautifulSoupimport re, requestsimport osimport waveimport requestsimport timeimport base64base_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=%s&amp;client_secret=%s"APIKey = "***"SecretKey = "***" HOST = base_url % (APIKey, SecretKey)def getToken(host): res = requests.post(host) return res.json()['access_token']def get_audio(file): with open(file, 'rb') as f: data = f.read() return datadef speech2text(FILEPATH, dev_pid=1737): token = getToken(HOST) speech_data = get_audio(FILEPATH) FORMAT = 'wav' RATE = '16000' CHANNEL = 1 CUID = '*******' SPEECH = base64.b64encode(speech_data).decode('utf-8') data = &#123; 'format': FORMAT, 'rate': RATE, 'channel': CHANNEL, 'cuid': CUID, 'len': len(speech_data), 'speech': SPEECH, 'token': token, 'dev_pid':dev_pid &#125; url = 'https://vop.baidu.com/server_api' headers = &#123;'Content-Type': 'application/json'&#125; # r=requests.post(url,data=json.dumps(data),headers=headers) r = requests.post(url, json=data, headers=headers) Result = r.json() if 'result' in Result: return Result['result'][0] else: return Resultdef main(): url = "index.html" url_voice2text = "https://app.xunjiepdf.com/voice2text/" url_translate = "https://translate.google.cn/" soup = BeautifulSoup(open(url, encoding='utf-8')) allres = soup.find_all(name='div',attrs=&#123;"class":"itest-hear-reslist"&#125;) # print(soup) counter = 1 for res in allres: st = res.span.text; st = str(st)[1:-1] st = st.split(',') for est in st: if(re.match(r'.*\.mp3.*', est)): if(re.match(r'.*question\.mp3+.*', est)): continue print(est[1:-1]) download_addr = est[1:-1] print('Downloading...') f=requests.get(download_addr) with open(str(counter)+".mp3","wb") as code: code.write(f.content) print('Downloaded') print('Transcoding mp3 to pcm...') os.system("ffmpeg -y -i " + str(counter) + ".mp3 -acodec pcm_s16le -f s16le -ac 1 -ar 16000 " + str(counter) + ".pcm" ) print('Transcoded mp3 to pcm') print('Recognizing...') result = speech2text(FILEPATH=str(counter)+".pcm") print('-'*48) print(result) with open(str(counter)+".txt", "w") as ff: print(result, file=ff) print('-'*48) print('Recognized') counter += 1 print('Finished') # print(i.span.text) # print(allres)if __name__ == '__main__': main() REFERENCE ffmpeg官方文档, http://ffmpeg.org/ffmpeg.html 百度语音识别api文档, https://ai.baidu.com/ai-doc/SPEECH/Vk38lxily 百度语音识别api代码示例, https://github.com/Baidu-AIP/speech-demo python做音频格式转换, https://blog.csdn.net/pj_developer/article/details/72778792 Version 1.0README我们英语老师布置的题也太j8多了，70多道题，20多道听力，我都听吐了U校园单元测试还不能查题而且U校园只能听一次听力，然后偶然按了一下F12发现了听力链接就在html里，我人晕了打开链接就能下，但是太j8多了，看得我眼花，就写了这个脚本本来想一键式直接出中文的，但是实力有限，有空再做吧…语音识别和翻译的网页就是里面的几个url因为不会模拟登陆，所以还是请把测试网页Ctrl+S保存成index.html，运行这个脚本就会出现很多听力原文以后如果有时间必会更新——20200403 CODE12345678910111213141516171819202122232425262728293031323334from bs4 import BeautifulSoupimport re, requestsdef main(): url = "index.html" url_voice2text = "https://app.xunjiepdf.com/voice2text/" url_translate = "https://translate.google.cn/" soup = BeautifulSoup(open(url, encoding='utf-8')) allres = soup.find_all(name='div',attrs=&#123;"class":"itest-hear-reslist"&#125;) # print(soup) counter = 1 for res in allres: st = res.span.text; st = str(st)[1:-1] st = st.split(',') for est in st: if(re.match(r'.*\.mp3.*', est)): if(re.match(r'.*question\.mp3+.*', est)): continue print(est[1:-1]) download_addr = est[1:-1] print('downloading...') f=requests.get(download_addr) with open(str(counter)+".mp3","wb") as code: code.write(f.content) counter += 1 print('downloaded') # print(i.span.text) # print(allres) if __name__ == '__main__': main()]]></content>
-      <categories>
-        <category>misc</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-        <tag>unipus</tag>
-        <tag>html</tag>
-        <tag>bs4</tag>
       </tags>
   </entry>
   <entry>
@@ -923,8 +923,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>arduino</tag>
+        <tag>install</tag>
       </tags>
   </entry>
   <entry>
