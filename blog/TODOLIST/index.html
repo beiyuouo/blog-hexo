@@ -109,18 +109,18 @@
 
 
 
-<meta name="description" content="20200415与其说这是TODOLIST，不如说这是README。  这是一篇发自现在功在将来的TODOLIST。哈哈哈不知道该写啥  20191121我在首页加了点代码，日常啥的不会在首页显示了0.0，看起来更像技术博客了233 1234567891011&amp;#123;% block content %&amp;#125;  &amp;lt;section id=&quot;posts&quot; class=&quot;posts-ex">
+<meta name="description" content="20200430daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路 123456789101112131415161718import osimport repath = &quot;_posts/&quot;dirs = os.listdir(path)patten = &quot;20*&quot;rbt = open(&apos;robot.txt&apos;, &apos;w&apos;)print(&quot;User-agent: *&quot;, file=">
 <meta name="keywords" content="TODOLIST,README">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【置顶】README">
 <meta property="og:url" content="beiyuouo.github.io/blog/TODOLIST/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="20200415与其说这是TODOLIST，不如说这是README。  这是一篇发自现在功在将来的TODOLIST。哈哈哈不知道该写啥  20191121我在首页加了点代码，日常啥的不会在首页显示了0.0，看起来更像技术博客了233 1234567891011&amp;#123;% block content %&amp;#125;  &amp;lt;section id=&quot;posts&quot; class=&quot;posts-ex">
+<meta property="og:description" content="20200430daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路 123456789101112131415161718import osimport repath = &quot;_posts/&quot;dirs = os.listdir(path)patten = &quot;20*&quot;rbt = open(&apos;robot.txt&apos;, &apos;w&apos;)print(&quot;User-agent: *&quot;, file=">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-04-15T14:00:27.762Z">
+<meta property="og:updated_time" content="2020-04-30T02:37:03.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【置顶】README">
-<meta name="twitter:description" content="20200415与其说这是TODOLIST，不如说这是README。  这是一篇发自现在功在将来的TODOLIST。哈哈哈不知道该写啥  20191121我在首页加了点代码，日常啥的不会在首页显示了0.0，看起来更像技术博客了233 1234567891011&amp;#123;% block content %&amp;#125;  &amp;lt;section id=&quot;posts&quot; class=&quot;posts-ex">
+<meta name="twitter:description" content="20200430daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路 123456789101112131415161718import osimport repath = &quot;_posts/&quot;dirs = os.listdir(path)patten = &quot;20*&quot;rbt = open(&apos;robot.txt&apos;, &apos;w&apos;)print(&quot;User-agent: *&quot;, file=">
 
 
 
@@ -436,8 +436,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-04-15T22:00:27+08:00">
-                2020-04-15
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-30T10:37:03+08:00">
+                2020-04-30
               </time>
             
           </span>
@@ -491,7 +491,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  269
+                  345
                 </span>
               
 
@@ -529,7 +529,11 @@
 
       
         <ul>
-<li>20200415<br>与其说这是TODOLIST，不如说这是README。</li>
+<li><p>20200430<br>daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">path = <span class="string">"_posts/"</span></span><br><span class="line">dirs = os.listdir(path)</span><br><span class="line"></span><br><span class="line">patten = <span class="string">"20*"</span></span><br><span class="line"></span><br><span class="line">rbt = open(<span class="string">'robot.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"User-agent: *"</span>, file=rbt)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> dirs:</span><br><span class="line">    <span class="comment"># print(file)</span></span><br><span class="line">    <span class="keyword">if</span> re.match(patten, file):</span><br><span class="line">        print(file)</span><br><span class="line">        filename = file.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        print(filename)</span><br><span class="line">        print(<span class="string">'Disallow:/blog/&#123;&#125;/*'</span>.format(filename), file=rbt)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>20200415<br>与其说这是TODOLIST，不如说这是README。</p>
+</li>
 </ul>
 <p>这是一篇发自现在功在将来的TODOLIST。<br>哈哈哈<br>不知道该写啥</p>
 <ul>
@@ -572,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/20200424/" rel="next" title="20200424">
-                <i class="fa fa-chevron-left"></i> 20200424
+              <a href="/blog/20200430/" rel="next" title="20200430">
+                <i class="fa fa-chevron-left"></i> 20200430
               </a>
             
           </div>
@@ -650,7 +654,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">111</span>
+                <span class="site-state-item-count">112</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
