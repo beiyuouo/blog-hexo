@@ -31,6 +31,66 @@
     
     
     <entry>
+      <title>tools-for-pptx</title>
+      <link href="/blog/misc-tools-for-pptx/"/>
+      <url>/blog/misc-tools-for-pptx/</url>
+      
+        <content type="html"><![CDATA[<p>至于干啥用的…你猜吧</p><hr><h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><p><a href="https://github.com/beiyuouo/tools_for_pptx" target="_blank" rel="noopener">https://github.com/beiyuouo/tools_for_pptx</a></p><h2 id="简单的批量ppt转pptx"><a href="#简单的批量ppt转pptx" class="headerlink" title="简单的批量ppt转pptx"></a>简单的批量ppt转pptx</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> win32com</span><br><span class="line"><span class="keyword">import</span> win32com.client</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_arguments</span><span class="params">()</span>:</span></span><br><span class="line">    parser = argparse.ArgumentParser()</span><br><span class="line">    parser.add_argument(<span class="string">'--path'</span>, type=str, default=<span class="string">'none'</span>, help=<span class="string">'path to pptx'</span>)</span><br><span class="line">    args = parser.parse_args()</span><br><span class="line">    <span class="keyword">return</span> args</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    args = get_arguments()</span><br><span class="line">    <span class="keyword">if</span> args.path == <span class="string">'none'</span>:</span><br><span class="line">        exit(<span class="string">'please enter --path for path to pptx'</span>)</span><br><span class="line"></span><br><span class="line">    powerpoint = win32com.client.Dispatch(<span class="string">'PowerPoint.Application'</span>)</span><br><span class="line">    <span class="keyword">for</span> subPath <span class="keyword">in</span> os.listdir(args.path):</span><br><span class="line">        subPath = os.path.join(args.path, subPath)</span><br><span class="line">        <span class="keyword">if</span> subPath.endswith(<span class="string">'.ppt'</span>):</span><br><span class="line">            <span class="comment"># win32com.client.gencache.EnsureDispatch('PowerPoint.Application')</span></span><br><span class="line">            powerpoint.Visible = <span class="number">1</span></span><br><span class="line">            ppt = powerpoint.Presentations.Open(subPath)</span><br><span class="line">            print(subPath[:<span class="number">-4</span>]+<span class="string">'.pptx'</span>)</span><br><span class="line">            ppt.SaveAs(subPath[:<span class="number">-4</span>]+<span class="string">'.pptx'</span>)</span><br><span class="line">            ppt.Close()</span><br><span class="line">            </span><br><span class="line">            print(subPath)</span><br><span class="line">            <span class="comment"># sleep(10)</span></span><br><span class="line">    powerpoint.Quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure><h2 id="简单的ppt连接，统一黑字"><a href="#简单的ppt连接，统一黑字" class="headerlink" title="简单的ppt连接，统一黑字"></a>简单的ppt连接，统一黑字</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="keyword">import</span> six</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pptx <span class="keyword">import</span> Presentation</span><br><span class="line"><span class="keyword">from</span> pptx.dml.color <span class="keyword">import</span> ColorFormat, RGBColor</span><br><span class="line"></span><br><span class="line">blank_slide_layout = <span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_arguments</span><span class="params">()</span>:</span></span><br><span class="line">    parser = argparse.ArgumentParser()</span><br><span class="line">    parser.add_argument(<span class="string">'--path'</span>, type=str, default=<span class="string">'none'</span>, help=<span class="string">'path to pptx'</span>)</span><br><span class="line">    args = parser.parse_args()</span><br><span class="line">    <span class="keyword">return</span> args</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    args = get_arguments()</span><br><span class="line">    <span class="keyword">if</span> args.path == <span class="string">'none'</span>:</span><br><span class="line">        exit(<span class="string">'please enter --path for path to pptx'</span>)</span><br><span class="line"></span><br><span class="line">    dirs = os.listdir(args.path)</span><br><span class="line">    prs = Presentation()</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> dirs:</span><br><span class="line">        <span class="keyword">if</span> file.endswith(<span class="string">'.pptx'</span>) <span class="keyword">and</span> <span class="keyword">not</span> file.startswith(<span class="string">'~'</span>):</span><br><span class="line">            print(file)</span><br><span class="line">            temp_prs = Presentation(args.path + <span class="string">'/'</span> + file)</span><br><span class="line">            print(<span class="string">'total: &#123;&#125;'</span>.format(len(temp_prs.slides)))</span><br><span class="line">            <span class="keyword">for</span> idx <span class="keyword">in</span> range(len(temp_prs.slides)):</span><br><span class="line">                slide = temp_prs.slides[idx]</span><br><span class="line">                <span class="comment"># print(idx, slide, temp_prs.slide_layouts[4])</span></span><br><span class="line">                new_slide = prs.slides.add_slide(temp_prs.slide_layouts[<span class="number">4</span>])</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> shp <span class="keyword">in</span> slide.shapes:</span><br><span class="line">                    el = shp.element</span><br><span class="line">                    newel = copy.deepcopy(el)</span><br><span class="line">                    new_slide.shapes._spTree.insert_element_before(newel, <span class="string">'p:extLst'</span>)</span><br><span class="line">                <span class="string">'''</span></span><br><span class="line"><span class="string">                for _, value in six.iteritems(slide.part.rels):</span></span><br><span class="line"><span class="string">                    # Make sure we don't copy a notesSlide relation as that won't exist</span></span><br><span class="line"><span class="string">                    if "notesSlide" not in value.reltype:</span></span><br><span class="line"><span class="string">                        new_slide.part.rels.add_relationship(value.reltype, value._target, value.rId)</span></span><br><span class="line"><span class="string">                '''</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> slide <span class="keyword">in</span> prs.slides:</span><br><span class="line">        <span class="keyword">for</span> shape <span class="keyword">in</span> slide.shapes:</span><br><span class="line">            <span class="keyword">if</span> shape.has_text_frame:</span><br><span class="line">                <span class="keyword">for</span> paragraph <span class="keyword">in</span> shape.text_frame.paragraphs:</span><br><span class="line">                    <span class="keyword">for</span> run <span class="keyword">in</span> paragraph.runs:</span><br><span class="line">                        run.font.color.rgb = RGBColor(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    prs.save(<span class="string">'a.pptx'</span>)</span><br><span class="line">    prs.save(os.path.join(args.path, <span class="string">'concated&#123;&#125;.pptx'</span>.format(datetime.datetime.now().strftime(<span class="string">"%Y%m%d%H%M%S"</span>))))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a href="https://pypi.org/project/python-pptx/" target="_blank" rel="noopener">https://pypi.org/project/python-pptx/</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> misc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> misc </tag>
+            
+            <tag> pptx </tag>
+            
+            <tag> project </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>环境配置</title>
+      <link href="/blog/note-env/"/>
+      <url>/blog/note-env/</url>
+      
+        <content type="html"><![CDATA[<p>配置了n遍环境，记一下过程吧…省的每次都百度…</p><h1 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h1><h2 id="Download-amp-install"><a href="#Download-amp-install" class="headerlink" title="Download &amp; install"></a>Download &amp; install</h2><p>官网<a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank" rel="noopener">https://docs.conda.io/en/latest/miniconda.html</a></p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">chmod 777 Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">sh Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure><p>加入环境变量<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line">conda</span><br></pre></td></tr></table></figure></p><p>添加清华源<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes </span><br><span class="line">conda config --get channels</span><br></pre></td></tr></table></figure></p><h2 id="Create-new-conda-env"><a href="#Create-new-conda-env" class="headerlink" title="Create new conda env"></a>Create new conda env</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorch python=3.7.2</span><br><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure><h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h2 id="Download-amp-install-1"><a href="#Download-amp-install-1" class="headerlink" title="Download &amp; install"></a>Download &amp; install</h2><p>官网<a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener">https://pytorch.org/get-started/locally/</a><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=10.2 -c pytorch</span><br></pre></td></tr></table></figure></p><h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p>其他可能用得到的<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda install pandas</span><br><span class="line">conda install jupyter notebook</span><br><span class="line">conda install matplotlib</span><br><span class="line">pip install sklearn</span><br></pre></td></tr></table></figure></p><h1 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h1><p>让ssh退出依然运行命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt-get install screen</span><br><span class="line">screen -S <span class="built_in">test</span> <span class="comment"># 创建</span></span><br><span class="line"><span class="built_in">command</span>...</span><br><span class="line">screen -r <span class="built_in">test</span> <span class="comment"># 恢复</span></span><br><span class="line">screen -ls</span><br><span class="line">screen -d <span class="built_in">test</span> <span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">screen -wipe <span class="built_in">test</span> <span class="comment"># 删除</span></span><br><span class="line">screen -S <span class="built_in">test</span> -X quit <span class="comment"># kill and exit</span></span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> anaconda </tag>
+            
+            <tag> python </tag>
+            
+            <tag> note </tag>
+            
+            <tag> environment </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>20200525</title>
       <link href="/blog/20200525/"/>
       <url>/blog/20200525/</url>
@@ -413,9 +473,9 @@
       
         <tags>
             
-            <tag> codejam </tag>
-            
             <tag> problem </tag>
+            
+            <tag> codejam </tag>
             
         </tags>
       
@@ -484,7 +544,7 @@
       <link href="/blog/note-computer-network/"/>
       <url>/blog/note-computer-network/</url>
       
-        <content type="html"><![CDATA[<p>马上要上网课了-，-<br>这**专业计算机网络还是选修课，我真nmb的服了，还好我能选<br>——20200302</p><hr><p>我觉得没必要抄书了…从此这些写重点和我感兴趣的拓展内容<br>之前写的当成劣质备份了，<a href="/blog/note-computer-network-bp/" title="计算机网络笔记bp">计算机网络笔记bp</a><br>——20200324</p><hr><p>谈到了很多白噪声，下面是定义<br>白噪声：白噪声是指在较宽的频率范围内，各等带宽的频带所含的噪声能量相等的噪声。</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul><li>《计算机网络》(第七版)，谢希仁</li><li>《计算机网络》课件，张春元老师</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>马上要上网课了-，-<br>这**专业计算机网络还是选修课，我真nmb的服了，还好我能选<br>——20200302</p><hr><p>我觉得没必要抄书了…从此这些写重点和我感兴趣的拓展内容<br>之前写的当成劣质备份了，<a href="/blog/note-computer-network-bp/" title="计算机网络笔记bp">计算机网络笔记bp</a><br>——20200324</p><hr><h2 id="白噪声"><a href="#白噪声" class="headerlink" title="白噪声"></a>白噪声</h2><p>谈到了很多白噪声，下面是定义<br>白噪声：白噪声是指在较宽的频率范围内，各等带宽的频带所含的噪声能量相等的噪声。</p><hr><h2 id="曼彻斯特编码和差分曼彻斯特编码"><a href="#曼彻斯特编码和差分曼彻斯特编码" class="headerlink" title="曼彻斯特编码和差分曼彻斯特编码"></a>曼彻斯特编码和差分曼彻斯特编码</h2><p>曼彻斯特编码：如果向上跳变，表示0；如果向下跳变，表示1<br>差分曼彻斯特编码：如果和前面一个相同表示0，不同表示1；即位边界有跳变表示0，没跳变表示1</p><hr><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li>《计算机网络》(第七版)，谢希仁</li><li>《计算机网络》课件，张春元老师</li></ul>]]></content>
       
       
       <categories>
@@ -2177,9 +2237,9 @@
       
         <tags>
             
-            <tag> install </tag>
-            
             <tag> arduino </tag>
+            
+            <tag> install </tag>
             
         </tags>
       
@@ -2771,9 +2831,9 @@
             
             <tag> javascript </tag>
             
-            <tag> canvas </tag>
-            
             <tag> game </tag>
+            
+            <tag> canvas </tag>
             
             <tag> breakout </tag>
             
@@ -2802,9 +2862,9 @@
             
             <tag> javascript </tag>
             
-            <tag> canvas </tag>
-            
             <tag> game </tag>
+            
+            <tag> canvas </tag>
             
         </tags>
       
@@ -3010,9 +3070,9 @@
             
             <tag> javascript </tag>
             
-            <tag> canvas </tag>
-            
             <tag> game </tag>
+            
+            <tag> canvas </tag>
             
             <tag> jquery </tag>
             

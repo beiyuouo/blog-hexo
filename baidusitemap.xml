@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/misc-tools-for-pptx/</loc>
+    <lastmod>2020-05-30</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-env/</loc>
+    <lastmod>2020-05-29</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
+    <lastmod>2020-05-28</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/20200525/</loc>
     <lastmod>2020-05-25</lastmod>
   </url>  <url>
@@ -60,9 +69,6 @@
   </url>  <url>
     <loc>beiyuouo.github.io/blog/20200404/</loc>
     <lastmod>2020-04-04</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
-    <lastmod>2020-03-30</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/note-mathematical-modeling/</loc>
     <lastmod>2020-03-24</lastmod>
