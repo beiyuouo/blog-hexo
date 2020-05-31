@@ -31,7 +31,7 @@
     
     
     <entry>
-      <title>tools-for-pptx</title>
+      <title>Tools for PPTX</title>
       <link href="/blog/misc-tools-for-pptx/"/>
       <url>/blog/misc-tools-for-pptx/</url>
       
@@ -971,9 +971,9 @@
       
         <tags>
             
-            <tag> machinelearning </tag>
-            
             <tag> iot </tag>
+            
+            <tag> machinelearning </tag>
             
             <tag> raspberry </tag>
             
@@ -1162,11 +1162,11 @@
       
         <tags>
             
+            <tag> hadoop </tag>
+            
             <tag> bigdata </tag>
             
             <tag> hbase </tag>
-            
-            <tag> hadoop </tag>
             
             <tag> note </tag>
             
@@ -1224,9 +1224,9 @@
             
             <tag> install </tag>
             
-            <tag> bigdata </tag>
-            
             <tag> hadoop </tag>
+            
+            <tag> bigdata </tag>
             
         </tags>
       
@@ -1390,9 +1390,9 @@
       
         <tags>
             
-            <tag> note </tag>
-            
             <tag> probability </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -1498,15 +1498,15 @@
       
         <tags>
             
+            <tag> iot </tag>
+            
             <tag> machinelearning </tag>
             
-            <tag> iot </tag>
+            <tag> mnist </tag>
             
             <tag> raspberry </tag>
             
             <tag> python </tag>
-            
-            <tag> mnist </tag>
             
         </tags>
       
@@ -2237,9 +2237,9 @@
       
         <tags>
             
-            <tag> arduino </tag>
-            
             <tag> install </tag>
+            
+            <tag> arduino </tag>
             
         </tags>
       
@@ -3014,9 +3014,9 @@
       
         <tags>
             
-            <tag> note </tag>
-            
             <tag> html </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
