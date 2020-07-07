@@ -26,7 +26,7 @@
 })();
 </script>
 
-<script data-ad-client="ca-pub-7298119761242775" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script data-ad-client="ca-pub-7298119761242775" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 
 
 
@@ -109,18 +109,18 @@
 
 
 
-<meta name="description" content="配置了n遍环境，记一下过程吧…省的每次都百度… CondaDownload &amp;amp; install官网https://docs.conda.io/en/latest/miniconda.html 123wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.shchmod 777 Miniconda3">
+<meta name="description" content="配置了n遍环境，记一下过程吧…省的每次都百度… condaDownload &amp;amp; install官网https://docs.conda.io/en/latest/miniconda.html 123wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.shchmod 777 Miniconda3">
 <meta name="keywords" content="anaconda,python,note,environment">
 <meta property="og:type" content="article">
-<meta property="og:title" content="环境配置">
+<meta property="og:title" content="conda配置PyTorch环境">
 <meta property="og:url" content="beiyuouo.github.io/blog/note-env/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="配置了n遍环境，记一下过程吧…省的每次都百度… CondaDownload &amp;amp; install官网https://docs.conda.io/en/latest/miniconda.html 123wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.shchmod 777 Miniconda3">
+<meta property="og:description" content="配置了n遍环境，记一下过程吧…省的每次都百度… condaDownload &amp;amp; install官网https://docs.conda.io/en/latest/miniconda.html 123wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.shchmod 777 Miniconda3">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-05-29T00:25:49.799Z">
+<meta property="og:updated_time" content="2020-06-03T11:58:52.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="环境配置">
-<meta name="twitter:description" content="配置了n遍环境，记一下过程吧…省的每次都百度… CondaDownload &amp;amp; install官网https://docs.conda.io/en/latest/miniconda.html 123wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.shchmod 777 Miniconda3">
+<meta name="twitter:title" content="conda配置PyTorch环境">
+<meta name="twitter:description" content="配置了n遍环境，记一下过程吧…省的每次都百度… condaDownload &amp;amp; install官网https://docs.conda.io/en/latest/miniconda.html 123wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.shchmod 777 Miniconda3">
 
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <title>环境配置 | 北屿</title>
+  <title>conda配置PyTorch环境 | 北屿</title>
   
 
 
@@ -308,7 +308,7 @@
       
         
         <li class="menu-item menu-item-cv">
-          <a href="/cv/cv.pdf" rel="section">
+          <a href="/cv/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-file-pdf-o"></i> <br>
             
@@ -408,7 +408,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">环境配置</h1>
+          <h1 class="post-title" itemprop="name headline">conda配置PyTorch环境</h1>
         
 
         <div class="post-meta">
@@ -436,8 +436,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-05-29T08:25:49+08:00">
-                2020-05-29
+              <time title="Post modified" itemprop="dateModified" datetime="2020-06-03T19:58:52+08:00">
+                2020-06-03
               </time>
             
           </span>
@@ -529,7 +529,7 @@
 
       
         <p>配置了n遍环境，记一下过程吧…省的每次都百度…</p>
-<h1 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h1><h2 id="Download-amp-install"><a href="#Download-amp-install" class="headerlink" title="Download &amp; install"></a>Download &amp; install</h2><p>官网<a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank" rel="noopener">https://docs.conda.io/en/latest/miniconda.html</a></p>
+<h1 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h1><h2 id="Download-amp-install"><a href="#Download-amp-install" class="headerlink" title="Download &amp; install"></a>Download &amp; install</h2><p>官网<a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank" rel="noopener">https://docs.conda.io/en/latest/miniconda.html</a></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">chmod 777 Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">sh Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
 <p>加入环境变量<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line">conda</span><br></pre></td></tr></table></figure></p>
 <p>添加清华源<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes </span><br><span class="line">conda config --get channels</span><br></pre></td></tr></table></figure></p>
@@ -792,7 +792,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Conda"><span class="nav-number">1.</span> <span class="nav-text">Conda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-amp-install"><span class="nav-number">1.1.</span> <span class="nav-text">Download &amp; install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-new-conda-env"><span class="nav-number">1.2.</span> <span class="nav-text">Create new conda env</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch"><span class="nav-number">2.</span> <span class="nav-text">Pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-amp-install-1"><span class="nav-number">2.1.</span> <span class="nav-text">Download &amp; install</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other"><span class="nav-number">3.</span> <span class="nav-text">Other</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Screen"><span class="nav-number">4.</span> <span class="nav-text">Screen</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#conda"><span class="nav-number">1.</span> <span class="nav-text">conda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-amp-install"><span class="nav-number">1.1.</span> <span class="nav-text">Download &amp; install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-new-conda-env"><span class="nav-number">1.2.</span> <span class="nav-text">Create new conda env</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch"><span class="nav-number">2.</span> <span class="nav-text">Pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-amp-install-1"><span class="nav-number">2.1.</span> <span class="nav-text">Download &amp; install</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other"><span class="nav-number">3.</span> <span class="nav-text">Other</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Screen"><span class="nav-number">4.</span> <span class="nav-text">Screen</span></a></li></ol></div>
             
 
           </div>

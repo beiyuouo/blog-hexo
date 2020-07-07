@@ -2,16 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beiyuouo.github.io/blog/misc-tools-for-pptx/</loc>
+    <loc>beiyuouo.github.io/qb/niit-zookeeper/index.html</loc>
     
-    <lastmod>2020-05-31T02:07:44.205Z</lastmod>
+    <lastmod>2020-07-07T11:36:20.762Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/qb/niit-hive/index.html</loc>
+    
+    <lastmod>2020-07-07T03:18:47.768Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/qb/index.html</loc>
+    
+    <lastmod>2020-07-07T02:46:36.652Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/cv/index.html</loc>
+    
+    <lastmod>2020-07-04T03:43:59.970Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/about/index.html</loc>
+    
+    <lastmod>2020-07-04T03:41:49.024Z</lastmod>
     
   </url>
   
   <url>
     <loc>beiyuouo.github.io/blog/note-env/</loc>
     
-    <lastmod>2020-05-29T00:25:49.799Z</lastmod>
+    <lastmod>2020-06-03T11:58:52.521Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/misc-tools-for-pptx/</loc>
+    
+    <lastmod>2020-05-31T02:07:44.205Z</lastmod>
     
   </url>
   
@@ -593,13 +628,6 @@
     <loc>beiyuouo.github.io/blog/note-algebra/</loc>
     
     <lastmod>2019-07-02T04:43:37.658Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/about/index.html</loc>
-    
-    <lastmod>2019-06-29T09:59:39.118Z</lastmod>
     
   </url>
   

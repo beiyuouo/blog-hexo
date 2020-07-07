@@ -60,11 +60,11 @@
     
     
     <entry>
-      <title>环境配置</title>
+      <title>conda配置PyTorch环境</title>
       <link href="/blog/note-env/"/>
       <url>/blog/note-env/</url>
       
-        <content type="html"><![CDATA[<p>配置了n遍环境，记一下过程吧…省的每次都百度…</p><h1 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h1><h2 id="Download-amp-install"><a href="#Download-amp-install" class="headerlink" title="Download &amp; install"></a>Download &amp; install</h2><p>官网<a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank" rel="noopener">https://docs.conda.io/en/latest/miniconda.html</a></p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">chmod 777 Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">sh Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure><p>加入环境变量<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line">conda</span><br></pre></td></tr></table></figure></p><p>添加清华源<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes </span><br><span class="line">conda config --get channels</span><br></pre></td></tr></table></figure></p><h2 id="Create-new-conda-env"><a href="#Create-new-conda-env" class="headerlink" title="Create new conda env"></a>Create new conda env</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorch python=3.7.2</span><br><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure><h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h2 id="Download-amp-install-1"><a href="#Download-amp-install-1" class="headerlink" title="Download &amp; install"></a>Download &amp; install</h2><p>官网<a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener">https://pytorch.org/get-started/locally/</a><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=10.2 -c pytorch</span><br></pre></td></tr></table></figure></p><h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p>其他可能用得到的<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda install pandas</span><br><span class="line">conda install jupyter notebook</span><br><span class="line">conda install matplotlib</span><br><span class="line">pip install sklearn</span><br></pre></td></tr></table></figure></p><h1 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h1><p>让ssh退出依然运行命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt-get install screen</span><br><span class="line">screen -S <span class="built_in">test</span> <span class="comment"># 创建</span></span><br><span class="line"><span class="built_in">command</span>...</span><br><span class="line">screen -r <span class="built_in">test</span> <span class="comment"># 恢复</span></span><br><span class="line">screen -ls</span><br><span class="line">screen -d <span class="built_in">test</span> <span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">screen -wipe <span class="built_in">test</span> <span class="comment"># 删除</span></span><br><span class="line">screen -S <span class="built_in">test</span> -X quit <span class="comment"># kill and exit</span></span><br></pre></td></tr></table></figure></p>]]></content>
+        <content type="html"><![CDATA[<p>配置了n遍环境，记一下过程吧…省的每次都百度…</p><h1 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h1><h2 id="Download-amp-install"><a href="#Download-amp-install" class="headerlink" title="Download &amp; install"></a>Download &amp; install</h2><p>官网<a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank" rel="noopener">https://docs.conda.io/en/latest/miniconda.html</a></p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -r https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">chmod 777 Miniconda3-latest-Linux-x86_64.sh</span><br><span class="line">sh Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure><p>加入环境变量<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line">conda</span><br></pre></td></tr></table></figure></p><p>添加清华源<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes </span><br><span class="line">conda config --get channels</span><br></pre></td></tr></table></figure></p><h2 id="Create-new-conda-env"><a href="#Create-new-conda-env" class="headerlink" title="Create new conda env"></a>Create new conda env</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorch python=3.7.2</span><br><span class="line">conda activate pytorch</span><br></pre></td></tr></table></figure><h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h2 id="Download-amp-install-1"><a href="#Download-amp-install-1" class="headerlink" title="Download &amp; install"></a>Download &amp; install</h2><p>官网<a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener">https://pytorch.org/get-started/locally/</a><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=10.2 -c pytorch</span><br></pre></td></tr></table></figure></p><h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p>其他可能用得到的<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda install pandas</span><br><span class="line">conda install jupyter notebook</span><br><span class="line">conda install matplotlib</span><br><span class="line">pip install sklearn</span><br></pre></td></tr></table></figure></p><h1 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h1><p>让ssh退出依然运行命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt-get install screen</span><br><span class="line">screen -S <span class="built_in">test</span> <span class="comment"># 创建</span></span><br><span class="line"><span class="built_in">command</span>...</span><br><span class="line">screen -r <span class="built_in">test</span> <span class="comment"># 恢复</span></span><br><span class="line">screen -ls</span><br><span class="line">screen -d <span class="built_in">test</span> <span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">screen -wipe <span class="built_in">test</span> <span class="comment"># 删除</span></span><br><span class="line">screen -S <span class="built_in">test</span> -X quit <span class="comment"># kill and exit</span></span><br></pre></td></tr></table></figure></p>]]></content>
       
       
       <categories>
@@ -973,9 +973,9 @@
             
             <tag> iot </tag>
             
-            <tag> machinelearning </tag>
-            
             <tag> raspberry </tag>
+            
+            <tag> machinelearning </tag>
             
             <tag> python </tag>
             
@@ -1162,11 +1162,11 @@
       
         <tags>
             
-            <tag> hadoop </tag>
-            
             <tag> bigdata </tag>
             
             <tag> hbase </tag>
+            
+            <tag> hadoop </tag>
             
             <tag> note </tag>
             
@@ -1224,9 +1224,9 @@
             
             <tag> install </tag>
             
-            <tag> hadoop </tag>
-            
             <tag> bigdata </tag>
+            
+            <tag> hadoop </tag>
             
         </tags>
       
@@ -1500,13 +1500,13 @@
             
             <tag> iot </tag>
             
-            <tag> machinelearning </tag>
-            
-            <tag> mnist </tag>
-            
             <tag> raspberry </tag>
             
+            <tag> machinelearning </tag>
+            
             <tag> python </tag>
+            
+            <tag> mnist </tag>
             
         </tags>
       
@@ -1930,11 +1930,11 @@
             
             <tag> algorithm </tag>
             
-            <tag> chinese-remainder-theorem </tag>
-            
             <tag> gcd </tag>
             
             <tag> math </tag>
+            
+            <tag> chinese-remainder-theorem </tag>
             
         </tags>
       
@@ -2015,11 +2015,11 @@
             
             <tag> algorithm </tag>
             
+            <tag> exgcd </tag>
+            
             <tag> gcd </tag>
             
             <tag> math </tag>
-            
-            <tag> exgcd </tag>
             
         </tags>
       
