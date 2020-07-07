@@ -1,4 +1,6 @@
 User-agent: *
+Disallow:/qb/*
+Disallow:/qb_plain/*
 Disallow:/blog/20181113/*
 Disallow:/blog/20181114/*
 Disallow:/blog/20181120/*
