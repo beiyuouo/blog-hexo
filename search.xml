@@ -971,11 +971,11 @@
       
         <tags>
             
+            <tag> machinelearning </tag>
+            
             <tag> iot </tag>
             
             <tag> raspberry </tag>
-            
-            <tag> machinelearning </tag>
             
             <tag> python </tag>
             
@@ -1162,11 +1162,11 @@
       
         <tags>
             
+            <tag> hadoop </tag>
+            
             <tag> bigdata </tag>
             
             <tag> hbase </tag>
-            
-            <tag> hadoop </tag>
             
             <tag> note </tag>
             
@@ -1224,9 +1224,9 @@
             
             <tag> install </tag>
             
-            <tag> bigdata </tag>
-            
             <tag> hadoop </tag>
+            
+            <tag> bigdata </tag>
             
         </tags>
       
@@ -1498,11 +1498,11 @@
       
         <tags>
             
+            <tag> machinelearning </tag>
+            
             <tag> iot </tag>
             
             <tag> raspberry </tag>
-            
-            <tag> machinelearning </tag>
             
             <tag> python </tag>
             
@@ -1930,11 +1930,11 @@
             
             <tag> algorithm </tag>
             
+            <tag> chinese-remainder-theorem </tag>
+            
             <tag> gcd </tag>
             
             <tag> math </tag>
-            
-            <tag> chinese-remainder-theorem </tag>
             
         </tags>
       
@@ -2015,11 +2015,11 @@
             
             <tag> algorithm </tag>
             
-            <tag> exgcd </tag>
-            
             <tag> gcd </tag>
             
             <tag> math </tag>
+            
+            <tag> exgcd </tag>
             
         </tags>
       
