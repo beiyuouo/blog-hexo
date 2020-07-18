@@ -2,30 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beiyuouo.github.io/qb/niit-zookeeper/index.html</loc>
-    
-    <lastmod>2020-07-08T03:35:30.471Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/qb/niit-hive/index.html</loc>
-    
-    <lastmod>2020-07-07T03:18:47.768Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/qb/index.html</loc>
-    
-    <lastmod>2020-07-07T02:46:36.652Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/cv/index.html</loc>
     
-    <lastmod>2020-07-04T03:43:59.970Z</lastmod>
+    <lastmod>2020-07-18T06:42:12.745Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/20200715/</loc>
+    
+    <lastmod>2020-07-18T03:44:48.280Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/paper-note/202003/index.html</loc>
+    
+    <lastmod>2020-07-15T06:37:45.037Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/paper-note/202007/index.html</loc>
+    
+    <lastmod>2020-07-15T06:36:30.680Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/paper-note/index.html</loc>
+    
+    <lastmod>2020-07-15T06:35:37.869Z</lastmod>
     
   </url>
   
@@ -205,13 +212,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/paper-note/index.html</loc>
-    
-    <lastmod>2020-03-29T06:19:53.233Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/note-mathematical-modeling/</loc>
     
     <lastmod>2020-03-24T12:31:34.077Z</lastmod>
@@ -313,13 +313,6 @@
     <loc>beiyuouo.github.io/blog/problem-pta/</loc>
     
     <lastmod>2020-03-10T01:53:44.630Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/paper-note/202003/index.html</loc>
-    
-    <lastmod>2020-03-05T09:59:33.522Z</lastmod>
     
   </url>
   
