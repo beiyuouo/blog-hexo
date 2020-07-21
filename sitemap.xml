@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-slam/</loc>
+    
+    <lastmod>2020-07-21T19:55:37.111Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-ros/</loc>
+    
+    <lastmod>2020-07-20T06:12:54.201Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-autoware/</loc>
+    
+    <lastmod>2020-07-18T07:20:59.320Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/cv/index.html</loc>
     
     <lastmod>2020-07-18T06:42:12.745Z</lastmod>
@@ -509,13 +530,6 @@
     <loc>beiyuouo.github.io/blog/misc-da-xue-gui-dang/</loc>
     
     <lastmod>2019-11-13T11:16:47.872Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-ros/</loc>
-    
-    <lastmod>2019-11-05T11:27:44.130Z</lastmod>
     
   </url>
   

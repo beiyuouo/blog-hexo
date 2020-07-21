@@ -109,18 +109,18 @@
 
 
 
-<meta name="description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS安装版本 ROS Melodic Morenia安装步骤wiki 1234567891011121314151617181920# add sourcesudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ub">
+<meta name="description" content="第一章 初识ROS概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS特点ROS核心——分布式网络，使用了基于TCP/IP的通信方式，实现了模块间点对点的松耦合连接，可以执行若干种类型的通信，包括基于话题(Topic)的异步数据流通信，基于服务(Service)的同步数据流通信，还有参数服务器上的数据存储等">
 <meta name="keywords" content="note,ros">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ROS笔记">
 <meta property="og:url" content="beiyuouo.github.io/blog/note-ros/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS安装版本 ROS Melodic Morenia安装步骤wiki 1234567891011121314151617181920# add sourcesudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ub">
+<meta property="og:description" content="第一章 初识ROS概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS特点ROS核心——分布式网络，使用了基于TCP/IP的通信方式，实现了模块间点对点的松耦合连接，可以执行若干种类型的通信，包括基于话题(Topic)的异步数据流通信，基于服务(Service)的同步数据流通信，还有参数服务器上的数据存储等">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-11-05T11:27:44.130Z">
+<meta property="og:updated_time" content="2020-07-20T06:12:54.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ROS笔记">
-<meta name="twitter:description" content="概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS安装版本 ROS Melodic Morenia安装步骤wiki 1234567891011121314151617181920# add sourcesudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ub">
+<meta name="twitter:description" content="第一章 初识ROS概述ROS(Robot Operating System) 机器人操作系统ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统 ROS特点ROS核心——分布式网络，使用了基于TCP/IP的通信方式，实现了模块间点对点的松耦合连接，可以执行若干种类型的通信，包括基于话题(Topic)的异步数据流通信，基于服务(Service)的同步数据流通信，还有参数服务器上的数据存储等">
 
 
 
@@ -420,8 +420,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-12T19:30:12+08:00">
-                2019-09-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-20T19:30:12+08:00">
+                2020-07-20
               </time>
             
 
@@ -436,8 +436,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-11-05T19:27:44+08:00">
-                2019-11-05
+              <time title="Post modified" itemprop="dateModified" datetime="2020-07-20T14:12:54+08:00">
+                2020-07-20
               </time>
             
           </span>
@@ -491,7 +491,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  707
+                  975
                 </span>
               
 
@@ -507,7 +507,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  3
                 </span>
               
             </div>
@@ -528,10 +528,36 @@
       
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>ROS(Robot Operating System) 机器人操作系统<br>ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统</p>
+        <h1 id="第一章-初识ROS"><a href="#第一章-初识ROS" class="headerlink" title="第一章 初识ROS"></a>第一章 初识ROS</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>ROS(Robot Operating System) 机器人操作系统<br>ROS = 通信机制 + 开发工具 + 应用功能 + 生态系统</p>
+<h3 id="ROS特点"><a href="#ROS特点" class="headerlink" title="ROS特点"></a>ROS特点</h3><p>ROS核心——分布式网络，使用了基于TCP/IP的通信方式，实现了模块间点对点的松耦合连接，可以执行若干种类型的通信，包括基于话题(Topic)的异步数据流通信，基于服务(Service)的同步数据流通信，还有参数服务器上的数据存储等<br>主要特点：</p>
+<ul>
+<li>点对点设计</li>
+<li>多语言支持</li>
+<li>架构精简、集成度高</li>
+<li>组件化工具包丰富</li>
+<li>免费且开源</li>
+</ul>
 <h2 id="ROS安装"><a href="#ROS安装" class="headerlink" title="ROS安装"></a>ROS安装</h2><p>版本 ROS Melodic Morenia<br>安装步骤<a href="http://wiki.ros.org/melodic/Installation/Ubuntu" target="_blank" rel="noopener">wiki</a></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add source</span></span><br><span class="line">sudo sh -c <span class="string">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main"&gt;/etc/apt/sources.list.d/ros-latest.list'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># add key</span></span><br><span class="line">sudo apt-key adv --ketserver <span class="string">'hkp://keyserver.ubuntu.com:80'</span> --resc-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</span><br><span class="line"></span><br><span class="line"><span class="comment"># install ros</span></span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install ros-melodic-desktop-full</span><br><span class="line"></span><br><span class="line"><span class="comment"># init rosdep</span></span><br><span class="line">sudo resdep init</span><br><span class="line">rosdep update</span><br><span class="line"></span><br><span class="line"><span class="comment"># env</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"source /opt/ros/melodic/setup.bash"</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># install rosinstall</span></span><br><span class="line">sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential</span><br></pre></td></tr></table></figure>
 <p>安装目录在<code>/opt/ros</code>. run <code>roscore</code><br>例程<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br><span class="line">rosrun turtlesim turtlesim_node</span><br><span class="line">rosrun turtlesim turtle_teleop_key</span><br></pre></td></tr></table></figure></p>
+<h1 id="ROS架构"><a href="#ROS架构" class="headerlink" title="ROS架构"></a>ROS架构</h1><h2 id="ROS架构设计"><a href="#ROS架构设计" class="headerlink" title="ROS架构设计"></a>ROS架构设计</h2><p>ROS架构的三个层次</p>
+<ul>
+<li>基于Linux的OS层</li>
+<li>实现ROS核心通信机制以及众多机器人开发库的中间层</li>
+<li>在ROS Master的管理下保证功能节点正常运行的应用层</li>
+</ul>
+<p>从系统实现划分三个层次</p>
+<ul>
+<li>计算图</li>
+<li>文件系统</li>
+<li>开源社区</li>
+</ul>
+<p>ROS三种通信机制</p>
+<ul>
+<li>基于发布/订阅的话题通信</li>
+<li>基于客户端/服务器的服务通信</li>
+<li>基于RPC的参数服务器</li>
+</ul>
 <h2 id="ROS核心概念"><a href="#ROS核心概念" class="headerlink" title="ROS核心概念"></a>ROS核心概念</h2><h3 id="通信机制"><a href="#通信机制" class="headerlink" title="通信机制"></a>通信机制</h3><p>分耦合通讯结构</p>
 <h4 id="节点和节点管理器"><a href="#节点和节点管理器" class="headerlink" title="节点和节点管理器"></a>节点和节点管理器</h4><p>节点(Node)：执行单元</p>
 <ul>
@@ -578,8 +604,9 @@
 <li>组织多个用于同一目的的功能包</li>
 </ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="http://www.gyh.ai" target="_blank" rel="noopener">古月 · ROS入门21讲</a></li>
+<li><a href="http://www.gyh.ai" target="_blank" rel="noopener">古月居 · ROS入门21讲</a></li>
 <li><a href="https://github.com/huchunxu/ros_21_tutorials" target="_blank" rel="noopener">https://github.com/huchunxu/ros_21_tutorials</a></li>
+<li>《ROS机器人开发实践》 胡春旭</li>
 </ul>
 
       
@@ -613,8 +640,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/iot-raspberry-hardware/" rel="next" title="树莓派硬件相关">
-                <i class="fa fa-chevron-left"></i> 树莓派硬件相关
+              <a href="/blog/note-autoware/" rel="next" title="AutoWare笔记">
+                <i class="fa fa-chevron-left"></i> AutoWare笔记
               </a>
             
           </div>
@@ -623,8 +650,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/iot-raspberry-install-opencv/" rel="prev" title="树莓派安装OpenCV3">
-                树莓派安装OpenCV3 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/note-slam/" rel="prev" title="SLAM笔记">
+                SLAM笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -704,7 +731,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">119</span>
+                <span class="site-state-item-count">121</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -726,7 +753,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">100</span>
+                <span class="site-state-item-count">102</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -832,7 +859,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS安装"><span class="nav-number">2.</span> <span class="nav-text">ROS安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS核心概念"><span class="nav-number">3.</span> <span class="nav-text">ROS核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通信机制"><span class="nav-number">3.1.</span> <span class="nav-text">通信机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#节点和节点管理器"><span class="nav-number">3.1.1.</span> <span class="nav-text">节点和节点管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#话题通信"><span class="nav-number">3.1.2.</span> <span class="nav-text">话题通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务通信"><span class="nav-number">3.1.3.</span> <span class="nav-text">服务通信</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">3.2.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统"><span class="nav-number">3.3.</span> <span class="nav-text">文件系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-初识ROS"><span class="nav-number">1.</span> <span class="nav-text">第一章 初识ROS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ROS特点"><span class="nav-number">1.1.1.</span> <span class="nav-text">ROS特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS安装"><span class="nav-number">1.2.</span> <span class="nav-text">ROS安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ROS架构"><span class="nav-number">2.</span> <span class="nav-text">ROS架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS架构设计"><span class="nav-number">2.1.</span> <span class="nav-text">ROS架构设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS核心概念"><span class="nav-number">2.2.</span> <span class="nav-text">ROS核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通信机制"><span class="nav-number">2.2.1.</span> <span class="nav-text">通信机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#节点和节点管理器"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">节点和节点管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#话题通信"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">话题通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务通信"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">服务通信</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">2.2.2.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统"><span class="nav-number">2.2.3.</span> <span class="nav-text">文件系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">2.3.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
             
 
           </div>
