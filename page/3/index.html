@@ -529,7 +529,7 @@
       
         
           
-          MNIST ModelMNIST 本来keras就提供了数据集，直接建好model train就行了
+          MNIST ModelMNIST 本来keras就提供了数据集，直接建好model train就行了model是我自己随便建的一个标准CNN，相关结构123456789101112131415161718192021222324252627282930313233343536373839________________________________________________________
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -723,7 +723,9 @@
         
           
           写在前面离散数学好像只学第1,2,5部分
-第1部分 数理逻辑第1章 命题逻辑的基本概念1.1 命题与
+第1部分 数理逻辑第1章 命题逻辑的基本概念1.1 命题与连接词命题是判断结果唯一的陈述句判断结果称为命题的真值，真值只取两个值：真或假真值为真的命题称作真命题，真值为假的命题称作假命题
+不能被分解成更简单的命题称作简单命题或原子命题由简单命题通过联结词联结而成的命题称作复合命题
+由真能推出假、又由假能推出真，从而既不为真也不能为假的陈述句称作悖论，悖论不
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -923,8 +925,9 @@
           翻出陈旧的笔记，终于要开始写了呢。——20200229
 可能最后还是咕咕了？——20200302
 
+正文
 
-          ...
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/note-matplotlib/#more" rel="contents">
@@ -1117,7 +1120,10 @@
         
           
           NumPynumpy = Numerical + Python
-安装啥的我就不写了，因为我装的ana
+安装啥的我就不写了，因为我装的anaconda，这些东西直接都装好了全文默认import numpy as np
+查看版本12import numpy as npprint(np.__version__)
+数组numpy围绕ndarrays展开
+数组的创建创建一维数组创建方法就是将序列传递给NumPy的array()函数; 你可以传递
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1313,7 +1319,8 @@
         
           
           本来想着放在笔记后面，后来发现好像问题有点多…决定新开一篇文章来写
-hw1https://www.k
+hw1https://www.kaggle.com/c/ml2019spring-hw1/overview作业说明
+我一开始做了一个非常naive的model，反正分开处理，Python用的也不是很熟练，就当练代码了一开始没用AdaGrad，发现Learning Rate真的很难设置如果数据量小，那么Learning Rate应该
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1507,7 +1514,9 @@ hw1https://www.k
         
           
           最后的最后我还是咕咕了。
-环境搭建我用的系统是Ubuntu 18.04.2 LTS，感觉最好还是用个
+环境搭建我用的系统是Ubuntu 18.04.2 LTS，感觉最好还是用个LTS的吧
+https://github.com/giantbranch/pwn-env-init
+安装工具1234567sudo pip install pwntoolsgit clone https://github.com/pwndbg/pwndbgcd pwndbgsudo ./setup.
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1701,7 +1710,14 @@ hw1https://www.k
         
           
           本文主要使用Python3.7
-dir()列出指定类或模块中全部内容help()查看某个函数或方法的
+dir()列出指定类或模块中全部内容help()查看某个函数或方法的帮助文档
+Prevrange生成序列
+
+range(101)可以产生一个0到100的整数序列。
+range(1, 100)可以产生一个1到99的整数序列。
+range(1, 100, 2)可以产生一个1到99的奇数序列，其中的2是步长，即数值序列的增量。
+
+函数12def f(x):    retu
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1896,7 +1912,19 @@ dir()列出指定类或模块中全部内容help()查看某个函数或方法的
           
           暑假不定时更新ing…写好的笔记可能不会立刻同步…可能大部分放英文，小部分中文翻译
 
-Overvie
+Overview &amp; Learning Mapsupervised learning
+
+regression
+classification
+linear model
+non-linear model
+deep learning
+SVM, decision tree, K-NN…
+
+
+
+
+structure
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2069,8 +2097,8 @@ Overvie
           
           嗯…我先都删了，之后写个爬虫爬我自己文章重新整理下给爷爬， 别站在主页
 专业课合集专业课笔记
-201
-          ...
+2018-2019 第一学期2018-2019 第二学期2019-2020 第一学期2019-2020 第二学期2020-2021 第一学期2020-2021 第二学期2021-2022 第一学期2022-2023 第二学期
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/misc-da-xue-gui-dang/#more" rel="contents">
@@ -2262,7 +2290,8 @@ Overvie
       
         
           
-          一开始设置WiFi一直连不上，最后发现是模式有问题，默认是STA模式，所以begin是连不上的…然后
+          一开始设置WiFi一直连不上，最后发现是模式有问题，默认是STA模式，所以begin是连不上的…然后改成了用softAP模式启动就可以了…等着以后来补补吧…周一专业课考试嗷，考完有时间搞一下，最近也没玩CTF..
+1234567891011121314151617181920212223#include &lt;ESP8266WiFi.h&gt;void setup() &#123;  Seria
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2455,8 +2484,30 @@ Overvie
       
         
           
-          引用站内文章1&#123;% post_link 文章文件名（不要后缀） 文章标题（可选） %&#1
-          ...
+          引用站内文章1&#123;% post_link 文章文件名（不要后缀） 文章标题（可选） %&#125;
+第一学期
+PLT笔记
+
+Vim笔记
+Shell笔记
+
+
+第二学期
+关系数据库管理系统(RDBMS)笔记
+Java笔记
+MySQL笔记
+数据库笔记
+正则表达式笔记
+
+
+第三学期
+Servlet & JSP笔记
+Hadoop笔记
+HBase笔记
+
+
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/note-niit/#more" rel="contents">
@@ -2648,7 +2699,13 @@ Overvie
       
         
           
-          关系型数据库管理系统（Relational Database Management System，R
+          关系型数据库管理系统（Relational Database Management System，RDBMS）
+亲，双语对照
+名词解释
+候选键 ：表中可以唯一确定一个元组的某个属性（或者属性组）叫候选键
+主键 : 从许多候选键(可包含多个属性)中挑一个用来维护记录的完整性就叫主键。
+外键 ：一个属性（或属性组），它不是这个表的主键，但是它别的表的主键，它就是这个表的外键。
+主属性 ：一个属性只要在
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2842,7 +2899,11 @@ Overvie
         
           
           步骤让esp8266的LED灯一闪一闪的…在Arduino中配置好，根据自己的配置…
-工具-开发板-
+工具-开发板-··NodeMCU 1.0
+工具-端口-COM4(我的是COM4…)
+下面这段代码就是文件-示例-Basics-Blink
+一定要注意加上一行代码#define LED_BUILTIN 2
+1234567891011121314151617181920212223242526272829303132
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -3035,7 +3096,7 @@ Overvie
       
         
           
-          中国剩余定理$\left\{\begin{matrix}x\equiv a_1\bmod m_1\\
+          中国剩余定理$\left\{\begin{matrix}x\equiv a_1\bmod m_1\\ x\equiv a_2\bmod m_2\\ … \\x\equiv a_n\bmod m_n\end{matrix}\right.$其中$m_i$两两互质$M=\prod_{i=0}^{n}m_i, M_i=\frac{M}{m_i}$$x=\sum_{i=0}^{n}a_i M_i M_i^{
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -3229,7 +3290,8 @@ Overvie
         
           
           前言说声抱歉…可能要弃坑了呢
-Web随便注不知道为啥一开始注的时候一直成功不了，不知道有啥毛病…最后
+Web随便注不知道为啥一开始注的时候一直成功不了，不知道有啥毛病…最后&#39; or 1=1;#就成功了1234array(1) &#123;  [0]=&gt;  string(38) &quot;flag&#123;3fy145hzdo5ryeho9za94r0qnbkvha0g&#125;&quot;&#125;
+1flag&#123;3fy145hzdo5r
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -3423,7 +3485,7 @@ Web随便注不知道为啥一开始注的时候一直成功不了，不知道�
         
           
           物联网物联网(Internet of Things, IoT)
-MCU(Microprocessor
+MCU(Microprocessor Unit) 微处理器， 其实就是CPU，可运行命令、进行运算和逻辑处理MPU(Microcontroller Unit) 单片机，把微处理器(MCU)、快晒存储器和主存储器(内存)包在同一芯片里SoC(System on a Chip) 系统芯片，机器微处理器和特定功能树莓派 一种基于Linux系
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -3616,7 +3678,8 @@ MCU(Microprocessor
       
         
           
-          gcdLet $\gcd(a,b)=\left( a, b\right)=r$Then $a=pr,
+          gcdLet $\gcd(a,b)=\left( a, b\right)=r$Then $a=pr, b=qr, a \pmod b=a-kb=pr-kqr \mid r$$\Rightarrow \gcd(a,b) = \gcd(b, a\%b)$
+Then we prove that the gcd is max gcd.(Oh, my poor English.)There are two 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -3810,7 +3873,7 @@ MCU(Microprocessor
         
           
           最简单的爬虫获取标题， 并捕获异常我爬我自己
-123456789101112131415161718
+12345678910111213141516171819202122232425from urllib.request import urlopenfrom urllib.error import HTTPErrorfrom bs4 import BeautifulSoupdef getTitle(url):    try:        html 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4003,7 +4066,18 @@ MCU(Microprocessor
       
         
           
-          MATLAB简介Matrix Laboratory 是一门高级程序设计语言建立在C/C++语言基础之
+          MATLAB简介Matrix Laboratory 是一门高级程序设计语言建立在C/C++语言基础之上特点：
+
+变量可以当作矩阵
+元素可以当作复数
+解释语言
+数据可实现可视化
+数值运算、符号运算、系统仿真
+工具箱
+有C、FORTRAN、Word接口
+
+基本语法下标从1开始…都是矩阵以分号结束则不显示计算结果，不加分号显示计算结果%为注释
+数组基本定义以方括号为界限，两行之间用分号，各行匀速必须相同
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4196,7 +4270,9 @@ MCU(Microprocessor
       
         
           
-          自己在网上买了个esp9266+OLED显示屏然鹅…不会把两个东西连起来一开始用的数据线也是坏的，我
+          自己在网上买了个esp9266+OLED显示屏然鹅…不会把两个东西连起来一开始用的数据线也是坏的，我真是fo了…
+把esp连上电脑，然后直接烧录…那个标准版本里无屏幕的烧录以后不成功的说，打不开192.168.4.1虽然我没屏幕，烧录的有屏幕的也可以，然后就可以连上了嗷 注意烧录完要按一下rst
+这几个攻击模式，第一个是不让认证的，谁都连不上的那种第二个是建最多48个假WiFi第三个是自己当一个假
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4390,7 +4466,14 @@ MCU(Microprocessor
         
           
           http://ctf-hainu.com/
-蒟蒻看大佬秒题现场忽然得知周六白天有事情，只好周日参加了
+蒟蒻看大佬秒题现场忽然得知周六白天有事情，只好周日参加了233
+然鹅周六去划水反而做了题，周日一天反而什么都没做233
+听说CTF的解题报告叫WriteUP…
+第一次打CTF只做了3道Web 1道Misc 2道Crypto
+做的时候没保存数据…只好等网站重新开了哈哈哈哈
+update 20190521 18:50
+
+MISCT1 Welcome 10De
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4584,7 +4667,13 @@ MCU(Microprocessor
         
           
           听说tplink的管理员登录有蛮大漏洞的…记一次用wireshark捕获password
-首先打开w
+首先打开wireshark，选择捕获wlan0，无线网卡
+点击开始，然后打开tplogin.cn登录账户
+
+然后结束捕获，在捕获的结果中寻找http相关的流，然后追踪
+
+发现一条登录相关的流，追踪以后可以发现password
+tplogin中password加密相关的函数在class.js中，搜索encode
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4783,7 +4872,21 @@ Numpy
 Scipy
 Matplotlib
 Pandas
-S
+Scikit-Learn
+Keras
+Gensim
+
+Anaconda发行版自带了Numpy, Scipy, Matplotlib, Pandas, Scikit-Learn
+数据探索数据质量分析脏数据包括以下内容
+
+缺失值
+异常值
+不一致的值
+重复数据及含有特殊符号的数据
+
+数据特征分析
+分布分析
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4978,7 +5081,10 @@ S
           
           一个数据科学的Python库，我从这里下的Python
 安装opencv
-1pip3 install
+1pip3 install opencv-python
+安装dlib 和 face_recognition
+12pip install dlibpip install face_recognition
+face_recognition依赖dlib，如果安装dlib报了一个cmake的错误，因为没有c编译器，所以pip ins
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -5171,8 +5277,11 @@ S
       
         
           
-          我在先Windows下安装的..直接贴网址算了…https://www.arduino.cn/thr
-          ...
+          我在先Windows下安装的..直接贴网址算了…https://www.arduino.cn/thread-82298-1-1.htmlhttps://www.arduino.cn/thread-5838-1-1.html
+历时n个小时后，终于下完装完了？？这下载速度也太慢了吧…
+update 20190514 22:25
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/install-arduino/#more" rel="contents">
@@ -5365,7 +5474,9 @@ S
         
           
           找到一个kali的下载地址…http://cdimage.kali.org/
-i386    - 3
+i386    - 32位处理器amd64   - 64位处理器
+KDE - Kool Desktop Environmentxfce - Xtra fine computing environment轻量级桌面lxde - 基于GTK2的美观和国际化的桌面环境light - 轻量级系统
+我下的是kali-linux-x
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -5558,7 +5669,10 @@ i386    - 3
       
         
           
-          Google CodeJam Round1A没赶上做，刚好有场SRM，然后就打了当场只做了T1…T2
+          Google CodeJam Round1A没赶上做，刚好有场SRM，然后就打了当场只做了T1…T2没调完…果然老年人…好久没做Topcoder格式都快忘了，扒了Leanote的模板
+ps.掉rating了..
+T1Description$n$个数字，$n+1$个位置，用每次移动一步，排成正确顺序。$n\leqslant 500$
+Solution这其实就是找环就完了，随便把一个放在最后，然后一个
           ...
           <!--noindex-->
           <div class="post-button text-center">
