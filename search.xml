@@ -13,6 +13,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[20201016]]></title>
+    <url>%2Fblog%2F20201016%2F</url>
+    <content type="text"><![CDATA[好像真的好久都没有打开过我的博客写点东西了.. 今天晚上改完论文，回去的时候没带学生卡，进不去宿舍门，舍友也都睡了。只好回思源，可是自己好像睡不太着了，顺便来整理一下思绪吧。 最近的事情说多也多，说不多也不多，感觉自己失去了一部分的激情，好像很多东西都无所谓了]]></content>
+      <categories>
+        <category>daily</category>
+      </categories>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[无人驾驶笔记]]></title>
     <url>%2Fblog%2Fnote-self-drive%2F</url>
     <content type="text"><![CDATA[无人驾驶完整堆栈]]></content>
@@ -157,8 +168,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>anaconda</tag>
         <tag>python</tag>
+        <tag>anaconda</tag>
         <tag>note</tag>
         <tag>environment</tag>
       </tags>
@@ -679,9 +690,9 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>iot</tag>
         <tag>raspberry</tag>
+        <tag>install</tag>
         <tag>opencv</tag>
       </tags>
   </entry>
@@ -718,8 +729,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>probability</tag>
         <tag>note</tag>
+        <tag>probability</tag>
       </tags>
   </entry>
   <entry>
@@ -958,9 +969,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -996,9 +1007,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -1095,8 +1106,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>arduino</tag>
+        <tag>install</tag>
       </tags>
   </entry>
   <entry>
@@ -1359,8 +1370,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
         <tag>breakout</tag>
       </tags>
   </entry>
@@ -1373,8 +1384,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
       </tags>
   </entry>
   <entry>
@@ -1465,8 +1476,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>game</tag>
         <tag>canvas</tag>
+        <tag>game</tag>
         <tag>jquery</tag>
       </tags>
   </entry>
