@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-mysql/</loc>
+    
+    <lastmod>2021-01-27T04:28:05.986Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/qb/index.html</loc>
     
     <lastmod>2021-01-14T07:23:59.482Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>beiyuouo.github.io/blog/20201016/</loc>
     
     <lastmod>2020-10-15T20:07:29.257Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-self-drive/</loc>
-    
-    <lastmod>2020-09-15T02:15:02.719Z</lastmod>
     
   </url>
   
@@ -37,13 +37,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-autoware/</loc>
-    
-    <lastmod>2020-08-16T19:26:31.358Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/paper-note/202007/index.html</loc>
     
     <lastmod>2020-08-07T05:47:10.625Z</lastmod>
@@ -54,27 +47,6 @@
     <loc>beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/</loc>
     
     <lastmod>2020-08-03T01:56:09.129Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-mathematical-modeling/</loc>
-    
-    <lastmod>2020-07-29T09:14:56.676Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-computer-vision/</loc>
-    
-    <lastmod>2020-07-26T17:19:59.223Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-image-processing/</loc>
-    
-    <lastmod>2020-07-26T15:28:13.607Z</lastmod>
     
   </url>
   
@@ -138,13 +110,6 @@
     <loc>beiyuouo.github.io/blog/misc-tools-for-pptx/</loc>
     
     <lastmod>2020-05-31T02:07:44.205Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-computer-network/</loc>
-    
-    <lastmod>2020-05-28T12:38:45.158Z</lastmod>
     
   </url>
   
@@ -289,44 +254,9 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-algorithm-bp/</loc>
-    
-    <lastmod>2020-03-24T08:12:53.491Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-computer-organization/</loc>
-    
-    <lastmod>2020-03-24T07:09:23.662Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-algorithm/</loc>
-    
-    <lastmod>2020-03-24T07:08:57.423Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-computer-network-bp/</loc>
-    
-    <lastmod>2020-03-24T07:06:01.950Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/problem-kickstart-2020-round-A/</loc>
     
     <lastmod>2020-03-23T02:56:43.615Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-deep-learning-for-human-language-processing/</loc>
-    
-    <lastmod>2020-03-22T06:55:02.998Z</lastmod>
     
   </url>
   
@@ -366,20 +296,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/install-anaconda/</loc>
-    
-    <lastmod>2020-03-22T06:47:18.223Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-crack/</loc>
-    
-    <lastmod>2020-03-21T16:08:44.077Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/problem-pta/</loc>
     
     <lastmod>2020-03-10T01:53:44.630Z</lastmod>
@@ -401,23 +317,9 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-matplotlib/</loc>
-    
-    <lastmod>2020-03-02T13:31:59.131Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/note-federated-learning/</loc>
     
     <lastmod>2020-01-25T05:48:05.964Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-pytorch/</loc>
-    
-    <lastmod>2020-01-17T12:07:39.285Z</lastmod>
     
   </url>
   
@@ -439,27 +341,6 @@
     <loc>beiyuouo.github.io/blog/20191201/</loc>
     
     <lastmod>2019-12-01T10:40:02.489Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-hbase/</loc>
-    
-    <lastmod>2019-11-28T04:16:22.539Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-servlet-and-jsp/</loc>
-    
-    <lastmod>2019-11-28T04:15:00.472Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-niit/</loc>
-    
-    <lastmod>2019-11-27T14:04:51.567Z</lastmod>
     
   </url>
   
@@ -576,13 +457,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/misc-da-xue-gui-dang/</loc>
-    
-    <lastmod>2019-11-13T11:16:47.872Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/ctf-buuctf/</loc>
     
     <lastmod>2019-11-02T08:27:59.697Z</lastmod>
@@ -593,13 +467,6 @@
     <loc>beiyuouo.github.io/answer.html</loc>
     
     <lastmod>2019-10-22T08:38:26.802Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-the-next-step-for-ml/</loc>
-    
-    <lastmod>2019-10-21T14:38:10.681Z</lastmod>
     
   </url>
   
@@ -653,13 +520,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-pwn/</loc>
-    
-    <lastmod>2019-08-19T01:26:48.577Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/note-numpy/</loc>
     
     <lastmod>2019-07-28T13:28:57.198Z</lastmod>
@@ -709,20 +569,6 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-mysql/</loc>
-    
-    <lastmod>2019-06-10T04:46:12.427Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-java/</loc>
-    
-    <lastmod>2019-06-10T04:43:49.593Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/note-rdbms/</loc>
     
     <lastmod>2019-06-09T13:56:16.719Z</lastmod>
@@ -758,37 +604,9 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-iot/</loc>
-    
-    <lastmod>2019-05-30T15:21:02.500Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-python-scratch/</loc>
-    
-    <lastmod>2019-05-29T05:43:43.756Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-matlab/</loc>
-    
-    <lastmod>2019-05-26T08:31:03.731Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/hack-wiresharktplink/</loc>
     
     <lastmod>2019-05-23T09:18:16.115Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-data-analysis-and-mining/</loc>
-    
-    <lastmod>2019-05-16T12:16:02.039Z</lastmod>
     
   </url>
   
@@ -800,30 +618,9 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-software-project/</loc>
-    
-    <lastmod>2019-03-31T08:55:18.455Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-database/</loc>
-    
-    <lastmod>2019-03-31T08:46:03.622Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/java-HangLieShi/</loc>
     
     <lastmod>2019-03-18T06:59:08.542Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/problem-ctxl1/</loc>
-    
-    <lastmod>2019-03-10T11:04:46.631Z</lastmod>
     
   </url>
   
@@ -859,13 +656,6 @@
     <loc>beiyuouo.github.io/blog/test-gitmenttest/</loc>
     
     <lastmod>2019-01-18T09:19:27.962Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-PLT/</loc>
-    
-    <lastmod>2019-01-09T04:36:37.060Z</lastmod>
     
   </url>
   
