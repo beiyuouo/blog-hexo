@@ -67,9 +67,9 @@
       </categories>
       <tags>
         <tag>note</tag>
+        <tag>machine-learning</tag>
         <tag>ros</tag>
         <tag>slam</tag>
-        <tag>machine-learning</tag>
       </tags>
   </entry>
   <entry>
@@ -402,9 +402,9 @@
         <category>iot</category>
       </categories>
       <tags>
+        <tag>machinelearning</tag>
         <tag>iot</tag>
         <tag>raspberry</tag>
-        <tag>machinelearning</tag>
         <tag>python</tag>
         <tag>sensorhub</tag>
       </tags>
@@ -489,8 +489,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>bigdata</tag>
         <tag>hadoop</tag>
+        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
@@ -551,8 +551,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>note</tag>
         <tag>probability</tag>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -586,9 +586,9 @@
         <category>iot</category>
       </categories>
       <tags>
+        <tag>machinelearning</tag>
         <tag>iot</tag>
         <tag>raspberry</tag>
-        <tag>machinelearning</tag>
         <tag>python</tag>
         <tag>mnist</tag>
       </tags>
@@ -1092,8 +1092,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>note</tag>
         <tag>html</tag>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -1159,8 +1159,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-hello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
+    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
       <categories>
         <category>daily</category>
       </categories>
@@ -1170,8 +1170,8 @@
   </entry>
   <entry>
     <title><![CDATA[HelloWorld]]></title>
-    <url>%2Fblog%2Ftest-HelloWorld%2F</url>
-    <content type="text"><![CDATA[This is my first blog page.And I just for test. [toc] Markdown TestH1H2H3H4CodeTest1234567#include &lt;iostream&gt;using namespce std;int main() &#123; cout &lt;&lt; "HelloWorld" &lt;&lt;endl; return 0;&#125; 1234567891011121314&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta charset="utf8"&gt; &lt;title&gt;???&lt;/title&gt; &lt;link rel="stylesheet" type="text/css" href="2.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;qwq&lt;/div&gt; &lt;div id="div2"&gt;QAQ&lt;/div&gt; &lt;p&gt;&lt;time pubdate&gt;2018-10-15 23:23&lt;/time&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; MathJaxTest$ \sqrt {256} $ \begin{eqnarray} \nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\ \nabla\cdot\vec{B} &=& 0 \\ \nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\ \nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray}]]></content>
+    <url>%2Fblog%2Ftest-hello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>daily</category>
       </categories>
