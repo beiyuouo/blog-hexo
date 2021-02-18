@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<script data-ad-client="ca-pub-7298119761242775" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/blog/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="note,machine-learning,ros,slam,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/images/avatar.jpg?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="SLAM背景随着机器人技术的发展，服务型室内机器人与移动机器人获得广泛关注室内机器人普及存在许多亟待解决的问题，定于与导航就是去中关键问题之一解决这个问题需要把握三个重点  地图精确建模 机器人精准定位 路径实时规划  室外定位与导航可以使用GPS,但在室内这个问题就变得比较复杂  GPS定位效果差 IMU惯性传感器存在误差累积一批技术不断涌现，SLAM就在其中脱颖而出  SLAM简介SLAM =">
+<meta name="keywords" content="note,machine-learning,ros,slam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SLAM笔记">
+<meta property="og:url" content="beiyuouo.github.io/blog/note-slam/index.html">
+<meta property="og:site_name" content="北屿">
+<meta property="og:description" content="SLAM背景随着机器人技术的发展，服务型室内机器人与移动机器人获得广泛关注室内机器人普及存在许多亟待解决的问题，定于与导航就是去中关键问题之一解决这个问题需要把握三个重点  地图精确建模 机器人精准定位 路径实时规划  室外定位与导航可以使用GPS,但在室内这个问题就变得比较复杂  GPS定位效果差 IMU惯性传感器存在误差累积一批技术不断涌现，SLAM就在其中脱颖而出  SLAM简介SLAM =">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="/blog/img/note-slam/radar.jpg">
+<meta property="og:image" content="/blog/img/note-slam/cam.png">
+<meta property="og:image" content="/blog/img/note-slam/rgb-d.png">
+<meta property="og:updated_time" content="2021-02-18T03:56:16.309Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SLAM笔记">
+<meta name="twitter:description" content="SLAM背景随着机器人技术的发展，服务型室内机器人与移动机器人获得广泛关注室内机器人普及存在许多亟待解决的问题，定于与导航就是去中关键问题之一解决这个问题需要把握三个重点  地图精确建模 机器人精准定位 路径实时规划  室外定位与导航可以使用GPS,但在室内这个问题就变得比较复杂  GPS定位效果差 IMU惯性传感器存在误差累积一批技术不断涌现，SLAM就在其中脱颖而出  SLAM简介SLAM =">
+<meta name="twitter:image" content="/blog/img/note-slam/radar.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/blog/note-slam/">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+  <title>SLAM笔记 | 北屿</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-145083103-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">北屿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-paper-note">
+          <a href="/blog/paper-note/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file-text"></i> <br>
+            
+            Paper-note
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/blog/note-slam/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="北屿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北屿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SLAM笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-21T17:24:05+08:00">
+                2020-07-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2021-02-18T11:56:16+08:00">
+                2021-02-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SLAM背景"><a href="#SLAM背景" class="headerlink" title="SLAM背景"></a>SLAM背景</h1><p>随着机器人技术的发展，服务型室内机器人与移动机器人获得广泛关注<br>室内机器人普及存在许多亟待解决的问题，定于与导航就是去中关键问题之一<br>解决这个问题需要把握三个重点</p>
+<ul>
+<li>地图精确建模</li>
+<li>机器人精准定位</li>
+<li>路径实时规划</li>
+</ul>
+<p>室外定位与导航可以使用GPS,但在室内这个问题就变得比较复杂</p>
+<ul>
+<li>GPS定位效果差</li>
+<li>IMU惯性传感器存在误差累积<br>一批技术不断涌现，SLAM就在其中脱颖而出</li>
+</ul>
+<h1 id="SLAM简介"><a href="#SLAM简介" class="headerlink" title="SLAM简介"></a>SLAM简介</h1><p>SLAM = Simultaneous Localization and Mapping，即时定位与地图构建<br>SLAM问题提出在1990年由Randall Smitht, Matthew SelF和Peter Cheeseman提出</p>
+<ul>
+<li>定位？机器人感知环境</li>
+<li>无人车等级划分？L1 - L5，L4等级需要对地图进行构建</li>
+<li>地图绘制？稀疏制图？稠密制图？<br>稀疏制图表示你对周围的环境只有部分的了解，而稠密建图则表示你对周围的环境的每一个点都清楚</li>
+</ul>
+<p>SLAM可以描述为：<br>“机器人在未知环境中，从一个未知开始移动，移动过程中根据位置估计和地图进行自身定位，同时建造增量式地图，实现机器人的自主定位和导航”</p>
+<ul>
+<li>感知 - 传感器</li>
+<li>无人车等级划分？L1 - L5</li>
+<li>地图绘制？稀疏制图？稠密制图？</li>
+</ul>
+<p>传感器</p>
+<ul>
+<li>激光雷达</li>
+<li>摄像头</li>
+<li>RGB-D摄像头</li>
+</ul>
+<h2 id="激光雷达"><a href="#激光雷达" class="headerlink" title="激光雷达"></a>激光雷达</h2><p>激光雷达是研究最多、使用最成熟的深度传感器，可以提供机器人本体与环境障碍物之间的距离信息<br>优点：</p>
+<ul>
+<li>精度高</li>
+<li>响应快</li>
+<li>数据量小</li>
+<li>可以完成实时SLAM任务<br>缺点：</li>
+<li>成本高<br><img src="/blog/img/note-slam/radar.jpg" alt></li>
+</ul>
+<h2 id="摄像头"><a href="#摄像头" class="headerlink" title="摄像头"></a>摄像头</h2><p>SLAM摄像头分为单目摄像头和双目摄像头<br>优点：</p>
+<ul>
+<li>适用性强</li>
+<li>传感器简单<br>缺点：</li>
+<li>复杂度高</li>
+<li>单目摄像头在静止时无法测量距离，双目摄像头可以计算距离，但是运算量较大<br><img src="/blog/img/note-slam/cam.png" alt></li>
+</ul>
+<h2 id="RGB-D摄像头"><a href="#RGB-D摄像头" class="headerlink" title="RGB-D摄像头"></a>RGB-D摄像头</h2><p>RGB-D摄像头是近年来兴起的一种新型传感器，不仅可以获得环境的RGB图像信息，也可以通过红外结构光、Time-of-Flight等原理获取每个元素的深度信息。<br>丰富的数据可以让RBG-D摄像头不仅用于SLAM，还可以用于图像处理，物品识别等<br>同时RGB-D摄像头成本低，也是室内服务机器人主流传感器方案</p>
+<p>缺点：</p>
+<ul>
+<li>视野窄</li>
+<li>盲区大</li>
+<li>噪声大<br><img src="/blog/img/note-slam/rgb-d.png" alt></li>
+</ul>
+<h1 id="SLAM理论"><a href="#SLAM理论" class="headerlink" title="SLAM理论"></a>SLAM理论</h1><h2 id="SLAM一般过程"><a href="#SLAM一般过程" class="headerlink" title="SLAM一般过程"></a>SLAM一般过程</h2><p>当机器人运动时，其位置将会发生变化。此时，根据机器人位置传感器的观测，提取得到观测信息中的特征点，然后机器人通过EKF将目前观测到特征点的位置、机器人运动距离、机器人运动前观测到特征点的位置相互结合，对机器人当前位置和当前环境信息进行估计。<br>初始值 -&gt; 预测值 -&gt; 测量值 -&gt; 估计值</p>
+<p>地标是环境中易于观测和区分的特征。一般使用这些特征确定机器人位置。我们可以通过下面的方法想象上述工作过程，假设在一个陌生的房间内，闭上眼睛，那么此时我们如何确定自身的位置呢？通常而言，我们将在环境中不断走动，通过触摸物体或者墙壁确定自身位置。上述如被触摸的物体以及墙壁等都可以被看做用于估计自身位置的地标。下面是一些典型的地标。<br>可以看出，通常而言，对于不同的环境，一般我们选择不同的地标。<br>一般而言，地标需要满足下面的条件：</p>
+<ol>
+<li>地标应该可以从不同的位置和角度观察得到；</li>
+<li>地标应该是独一无二的，从而可以很容易的将底边从其他物体中分辨出来</li>
+<li>地标不应该过少，从而导致机器人需要花费额外的代价寻找地标；</li>
+<li>地标应该是静止的，因而，我们最好不要使用一个人作为地标</li>
+</ol>
+<p>地标特征提取 Spike方法和RANSAC方法</p>
+<p>数据关联<br>数据关联是将不同时刻位置传感器提取到的地标信息进行关联的过程，也成为重观察过程。</p>
+<p>在实际应用中进行数据关联时，我们可能遇到下面的问题：</p>
+<ol>
+<li>我们可能上一次看到了某个地标，但下一次却没有看到；</li>
+<li>我们可能这次看到了地标，但之后却再也看不到这个地标；</li>
+<li>我们可能错误的将现在看到的某个地标与之前看到的某个地标进行关联；</li>
+</ol>
+<p>根据我们选择路标时的标准，我们可以很容易的排除上面第1和第2个问题。但对于第三个问题，如果发生了，将会对我们的导航以及地图绘制造成严重的问题。<br>现在我们将讨论解决上面第三个问题的方法。假设我们现在已经到了每时每刻采集处理得到的路标的方位信息，并将其其中的特征存储在一数据库中。数据库初始阶段是空的，首先我们建立的第一条规则是，除非该特征已经出现了N次，否则我们并不将其加入数据库。当得到一副新的传感器信息后，我们进行下面的计算：</p>
+<ol>
+<li>得到一副新的传感器信息后，首先利用上面的特征提取方法提取特征；</li>
+<li>将提取到的特征与数据库中已经出现N次的并且距离最近的特征关联起来；</li>
+<li>通过验证环节验证上面的关联过程是正确的，如果验证通过，则表明我们再次看到了某个物体，因而其出现次数+1，否则表明我们看到了一个新的特征，在数据库中新建一个特征，并将其记作1.</li>
+</ol>
+<h2 id="卡尔曼滤波器"><a href="#卡尔曼滤波器" class="headerlink" title="卡尔曼滤波器"></a>卡尔曼滤波器</h2><p>《A New Approach to Linear Filtering and Prediction Problems》 卡尔曼，1960<br>卡尔曼滤波器是一个“optimal recursive data processing algorithm（最优化自回归数据处理算法）”。对于解决很大部分的问题，他是最优，效率最高甚至是最有用的。他的广泛应用已经超过30年，包括机器人导航，控制，传感器数据融合甚至在军事方面的雷达系统以及导弹追踪等等。近年来更被应用于计算机图像处理，例如人脸识别，图像分割，图像边缘检测等等。</p>
+<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><p>高斯分布<br>$\mathcal {N}(x, \mu, \sigma)=\frac{1}{\sigma \sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}$</p>
+<p>设$\mathcal {N}_ 1(x,\mu_1,\sigma_1), \mathcal {N}_ 2(x,\mu_2, \sigma_2)$</p>
+<script type="math/tex; mode=display">\begin{align*}\mathcal {N}_1\mathcal {N}_2 & =e^{\frac{-(x-\mu_1)^2}{2\sigma_1^2}}e^{\frac{-(x-\mu_2)^2}{2\sigma_2^2}}e^{C} \\
+& =e^{\frac{-\sigma_2^2(x-\mu_1)^2-\sigma_1^2(x-\mu_2)^2}{2\sigma_1^2\sigma_2^2}+C} \\
+& =e^{\frac{-[(\sigma_1^2+\sigma_2^2)x^2-2(\sigma_2^2\mu_1+\sigma_1^2\mu_2)x]}{2\sigma_1^2\sigma_2^2}+C'}\end{align*}</script><p>配方可得 $\mu=\frac{\mu_1\sigma_2^2+\mu_2\sigma_1^2}{\sigma_1^2+\sigma_2^2}, \sigma=\frac{\sigma_1^2\sigma_2^2}{\sigma_1^2+\sigma_2^2}$<br>令 $k=\frac{\sigma_1^2}{\sigma_1^2+\sigma_2^2}$,<br>则 $\mu=\mu_1+k(\mu_2-\mu_1), \sigma^2=k\sigma_2^2=(1-k)\sigma_1^2$</p>
+<p>若有多个变量，则用协方差矩阵<br>$K=\Sigma_1(\Sigma_1+\Sigma_2), \overrightarrow{\mu}=\overrightarrow{\mu_1}+K(\overrightarrow{\mu_2}-\overrightarrow{\mu_1}), \Sigma=K\Sigma_2=(I-K)\Sigma_1$</p>
+<p>矩阵的迹</p>
+<script type="math/tex; mode=display">tr(A)=\sum_{i=1}^n A_{ii}</script><p>矩阵微分方程</p>
+<script type="math/tex; mode=display">\frac{\partial tr(AB)}{\partial A}=B^{T}</script><p>若$B$是对称矩阵，则</p>
+<script type="math/tex; mode=display">\frac{\partial tr(ABA^{T})}{\partial A}=2AB</script><h3 id="核心公式"><a href="#核心公式" class="headerlink" title="核心公式"></a>核心公式</h3><p>预测过程</p>
+<script type="math/tex; mode=display">x'=Fx+u \\
+P'=FPF^{T}+Q</script><p>参数调整</p>
+<script type="math/tex; mode=display">y=z-Hx' \\ 
+S=HP'H^{T}+R \\
+K=P'H^{T}S^{-1} \\
+x=x'+Ky \\
+P=(I-KH)P'</script><p>$x$ - 机器人状态<br>$F$ - 状态转移矩阵<br>$P$ - 协方差矩阵，表示系统不确定度<br>$H$ - 测量矩阵/观测矩阵，用于运算统一维度，Jacobian矩阵<br>$K$ - 卡尔曼增量/加权矩阵，在原状态和预测状态分布之间的比值<br>$Q$ - 过程噪声协方差矩阵(上坡)(w)<br>$R$ - 测量噪声协方差矩阵(v)<br>$z$ - 实际观测值<br>$y$ - 测量值与预测值之间的差值<br>$S$ - 信息协方差</p>
+<h3 id="数学推导"><a href="#数学推导" class="headerlink" title="数学推导"></a>数学推导</h3><p>设$x_r$ 为真实值，但并不知道，$x$为估计值，$x’$为预测值</p>
+<p>真实值与预测值之间的误差</p>
+<script type="math/tex; mode=display">e'=x_r-x'</script><p>真实值与估计值之间的误差</p>
+<script type="math/tex; mode=display">\begin{align*}
+e &=x_r-x \\
+&=x_r-(x'+K(z-Hx'))\\
+&=x_r-(x'+K(Hx_r+v-Hx'))\\
+&=(I-KH)(x_r-x')-Kv, z=Hx_r+v
+\end{align*}</script><p>预测值误差的协方差</p>
+<script type="math/tex; mode=display">\begin{align*}
+P' &=E[e'e'^{T}] \\
+&=E[(x_r-x')(x_r-x')^{T}]
+\end{align*}</script><p>估计值误差的协方差</p>
+<script type="math/tex; mode=display">\begin{align*}
+P &=E[ee^{T}] \\
+&=E[[(I-KH)(x_r-x')-Kv][(I-KH)(x_r-x')-Kv]^{T}] \\
+&=(I-KH)E[(x_r-x')(x_r-x')^{T}](I-KH)^{T}+KE[vv^{T}]K^{T}
+\end{align*}</script><p>其中，$E[v]=0,E[vv^{T}]=R$<br>最后得到</p>
+<script type="math/tex; mode=display">P=(I-KH)P'(I-KH)^{T}+KRK^{T}</script><p>让方差尽量小，位置约确定，方差为$tr(P)$，自变量是权值矩阵$K$，对$K$求偏导，令其为0<br>求导之前，先让我们化简一下$tr(P)$<br>先用$P’$来表示$P$，因为这里面有$K$，可以将不相关的变量消掉</p>
+<script type="math/tex; mode=display">\begin{align*}
+P &=(I-KH)P'(I-KH)^{T}+KRK^{T} \\ 
+ &= (P'-KHP')-(P'-KHP'H^{T}K^{T})+KRK^{T}\\ 
+ &= P'-KHP'-P'H^{T}K^{T}+K(HP'H^{T}+R)K^{T}
+\end{align*}</script><p>所以</p>
+<script type="math/tex; mode=display">tr(P)=tr(P')-2tr(KHP')+tr(K(HP'H^{T}+R)K^{T})</script><p>利用基础知识中矩阵迹的微分方程，求偏导</p>
+<script type="math/tex; mode=display">\frac{\partial tr(P)}{\partial x}=0-2(HP')^{T}+2K(HP'H^{T}+R)</script><p>令其为0，可以得到</p>
+<script type="math/tex; mode=display">K=\frac{P'H^{T}}{HP'H^{T}+R}</script><p>更新$P’$，怎么做呢？我们想让我们的预测接近我们的估计值，那么这一时刻的估计误差=上一时刻的预测误差，即$x_{r,t}-x_{t}’=Fx_{r,t-1}+w-Fx_{t-1}$</p>
+<script type="math/tex; mode=display">\begin{align*}
+P' &= E[(x_r-x')(x_r-x')^{T}]\\ 
+ &=E[(Fx_r+w-Fx)(Fx_r+w-Fx)^{T}] \\ 
+ &=E[(Fe+w)(Fe+w)^{T}] \\ 
+ &=FE[ee^{T}]F+E[ww^{T}] \\ 
+ &= FPF^{T}+Q
+\end{align*}</script><p>至此，所有公式都推导完成了-，-</p>
+<h2 id="扩展卡尔曼滤波器"><a href="#扩展卡尔曼滤波器" class="headerlink" title="扩展卡尔曼滤波器"></a>扩展卡尔曼滤波器</h2><p>卡尔曼滤波器适用于高斯分布的误差，但实际误差可能并不是高斯分布，甚至不是线性的<br>扩展卡尔曼滤波器利用First Order Taylor Expansion，也就是一阶泰勒展开，将概率函数线性化，完成和卡尔曼滤波器一样的效果</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+          
+            <a href="/blog/tags/machine-learning/" rel="tag"><i class="fa fa-tag"></i> machine-learning</a>
+          
+            <a href="/blog/tags/ros/" rel="tag"><i class="fa fa-tag"></i> ros</a>
+          
+            <a href="/blog/tags/slam/" rel="tag"><i class="fa fa-tag"></i> slam</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/note-ros/" rel="next" title="ROS笔记">
+                <i class="fa fa-chevron-left"></i> ROS笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/project-dcgan-for-qq-yellow-faces/" rel="prev" title="DCGAN for QQ yellow faces">
+                DCGAN for QQ yellow faces <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="gitalk-container"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/blog/images/avatar.jpg" alt="北屿">
+          <p class="site-author-name" itemprop="name">北屿</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">98</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              Links qwq
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://baidu.com/" title="欢迎友链qwq" target="_blank">欢迎友链qwq</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SLAM背景"><span class="nav-number">1.</span> <span class="nav-text">SLAM背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SLAM简介"><span class="nav-number">2.</span> <span class="nav-text">SLAM简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#激光雷达"><span class="nav-number">2.1.</span> <span class="nav-text">激光雷达</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#摄像头"><span class="nav-number">2.2.</span> <span class="nav-text">摄像头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RGB-D摄像头"><span class="nav-number">2.3.</span> <span class="nav-text">RGB-D摄像头</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SLAM理论"><span class="nav-number">3.</span> <span class="nav-text">SLAM理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SLAM一般过程"><span class="nav-number">3.1.</span> <span class="nav-text">SLAM一般过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡尔曼滤波器"><span class="nav-number">3.2.</span> <span class="nav-text">卡尔曼滤波器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">3.2.1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心公式"><span class="nav-number">3.2.2.</span> <span class="nav-text">核心公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学推导"><span class="nav-number">3.2.3.</span> <span class="nav-text">数学推导</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展卡尔曼滤波器"><span class="nav-number">3.3.</span> <span class="nav-text">扩展卡尔曼滤波器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">北屿</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '3bd523d04a7fcd807bd1',
+          clientSecret: '3c4d80f8fd534840b0571ebf194825129668c1fe',
+          repo: 'gitalk',
+          owner: 'beiyuouo',
+          admin: ['beiyuouo'],
+          id: md5(location.pathname),
+          abels: 'gitalk'.split(',').filter(l => l),
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh_Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<script data-ad-client="ca-pub-7298119761242775" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/blog/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="note,discrete-mathematics,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/images/avatar.jpg?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="写在前面离散数学好像只学第1,2,5部分 第1部分 数理逻辑第1章 命题逻辑的基本概念1.1 命题与连接词命题是判断结果唯一的陈述句判断结果称为命题的真值，真值只取两个值：真或假真值为真的命题称作真命题，真值为假的命题称作假命题 不能被分解成更简单的命题称作简单命题或原子命题由简单命题通过联结词联结而成的命题称作复合命题 由真能推出假、又由假能推出真，从而既不为真也不能为假的陈述句称作悖论，悖论不">
+<meta name="keywords" content="note,discrete-mathematics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学笔记">
+<meta property="og:url" content="beiyuouo.github.io/blog/note-discrete-mathematics/index.html">
+<meta property="og:site_name" content="北屿">
+<meta property="og:description" content="写在前面离散数学好像只学第1,2,5部分 第1部分 数理逻辑第1章 命题逻辑的基本概念1.1 命题与连接词命题是判断结果唯一的陈述句判断结果称为命题的真值，真值只取两个值：真或假真值为真的命题称作真命题，真值为假的命题称作假命题 不能被分解成更简单的命题称作简单命题或原子命题由简单命题通过联结词联结而成的命题称作复合命题 由真能推出假、又由假能推出真，从而既不为真也不能为假的陈述句称作悖论，悖论不">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2019-09-10T13:40:16.383Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="离散数学笔记">
+<meta name="twitter:description" content="写在前面离散数学好像只学第1,2,5部分 第1部分 数理逻辑第1章 命题逻辑的基本概念1.1 命题与连接词命题是判断结果唯一的陈述句判断结果称为命题的真值，真值只取两个值：真或假真值为真的命题称作真命题，真值为假的命题称作假命题 不能被分解成更简单的命题称作简单命题或原子命题由简单命题通过联结词联结而成的命题称作复合命题 由真能推出假、又由假能推出真，从而既不为真也不能为假的陈述句称作悖论，悖论不">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="beiyuouo.github.io/blog/note-discrete-mathematics/">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+  <title>离散数学笔记 | 北屿</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-145083103-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">北屿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">北屿小智障</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-paper-note">
+          <a href="/blog/paper-note/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file-text"></i> <br>
+            
+            Paper-note
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/blog/note-discrete-mathematics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="北屿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北屿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">离散数学笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-26T13:20:54+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-10T21:40:16+08:00">
+                2019-09-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  5.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  23
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>离散数学好像只学第1,2,5部分</p>
+<h2 id="第1部分-数理逻辑"><a href="#第1部分-数理逻辑" class="headerlink" title="第1部分 数理逻辑"></a>第1部分 数理逻辑</h2><h3 id="第1章-命题逻辑的基本概念"><a href="#第1章-命题逻辑的基本概念" class="headerlink" title="第1章 命题逻辑的基本概念"></a>第1章 命题逻辑的基本概念</h3><h4 id="1-1-命题与连接词"><a href="#1-1-命题与连接词" class="headerlink" title="1.1 命题与连接词"></a>1.1 命题与连接词</h4><p><strong>命题</strong>是判断结果唯一的陈述句<br>判断结果称为命题的<strong>真值</strong>，真值只取两个值：<strong>真</strong>或<strong>假</strong><br>真值为真的命题称作<strong>真命题</strong>，真值为假的命题称作<strong>假命题</strong></p>
+<p>不能被分解成更简单的命题称作<strong>简单命题</strong>或<strong>原子命题</strong><br>由简单命题通过联结词联结而成的命题称作<strong>复合命题</strong></p>
+<p>由真能推出假、又由假能推出真，从而既不为真也不能为假的陈述句称作<strong>悖论</strong>，悖论不是命题</p>
+<blockquote>
+<p>定义1.1 设$p$为命题，复合命题“非$p$”（或$p$的否定）称作$p$的<strong>否定式</strong>，记作$\neg p$，符号$\neg$是<strong>否定联结词</strong>，$\neg p$为真当且仅当$p$为假<br>定义1.2 设$p,q$为两个命题，复合命题“$p$并且$q$”（或$p$与$q$）称为$p$与$q$的<strong>合取式</strong>，记作$p\land q$. $\land$称作<strong>合取联结词</strong>，$p\land q$为真，当且仅当$p$与$q$同时为真<br>定义1.3 设$p,q$为两个命题，符合命题$p$或$q$称作$p$与$q$的<strong>析取式</strong>，记作$p\lor q$. $\lor$称作<strong>析取联结词</strong>. 规定$p\lor q$为假当且仅当$p$与$q$同时为假</p>
+</blockquote>
+<p>相容或 $p\lor q$<br>排斥或 $(\neg p\land q)\lor (p\land \neg q)$</p>
+<blockquote>
+<p>定义1.4 设$p,q$为两个命题，复合命题“如果$p$，则$q$”称为$p$与$q$的<strong>蕴含式</strong>，记作$p\to q$，并称$p$是蕴含式的<strong>前件</strong>，$q$为蕴含式的<strong>后件</strong>. $\to$称作<strong>蕴含联结词</strong>，并规定$p\in q$为假当且仅当$p$为真$q$为假<br>$p\to q$的逻辑关系为$q$是$p$的必要条件</p>
+</blockquote>
+<p>自然语言里，$q$是$p$的必要条件的叙述方式</p>
+<ul>
+<li>只要$p$，就$q$</li>
+<li>因为$p$，所以$q$</li>
+<li>$p$仅当$q$</li>
+<li>只有$q$，才$p$</li>
+<li>除非$q$才$p$</li>
+</ul>
+<blockquote>
+<p>定义1.5 设$p,q$为两个命题，复合命题“$p$仅当$q$”称作$p$与$q$的<strong>等价式</strong>，记作$p \leftrightarrow q$，$\leftrightarrow$称作<strong>等价联结词</strong>. 规定$p\leftrightarrow q$为真，当且仅当$p$与$q$同时为真或同时为假<br>$p\leftrightarrow q$的逻辑关系为$p$与$q$互为充分必要条件</p>
+</blockquote>
+<p>优先顺序为$(),\neg,\land,\lor,\to,\leftrightarrow$</p>
+<h4 id="1-2-命题公式及其赋值"><a href="#1-2-命题公式及其赋值" class="headerlink" title="1.2 命题公式及其赋值"></a>1.2 命题公式及其赋值</h4><p>简单命题是命题逻辑中最基本的研究单位，其真值是确定的，又称作<strong>命题常项</strong>或<strong>命题常元</strong>.<br>取值1（真）或0（假）的变元称作<strong>命题变项</strong>或<strong>命题变元</strong><br>可以用命题变项表示真值可以变化的陈述句，命题变项不是命题.<br>将命题变项用联结词和圆括号按照一定的逻辑关系联结起来的符号串称作<strong>合式公式</strong></p>
+<blockquote>
+<p>定义1.6 (1) 单个命题变项是合式公式，并称为原子命题公式<br>(2) 若$A$是合式公式，则$(\neg A)$是合式公式<br>(3) 若$A,B$是合式公式，则$(A\land B),(A\lor B),(A\to B),(A\leftrightarrow B)$是合式公式<br>(4) 有限次地应用(1)-(3)形成的符号串是合式公式</p>
+</blockquote>
+<p>定义1.6采用的是归纳定义或递归定义的方式<br>其中$A,B$用它们表示任意的合式公式，称作<strong>元语言符号</strong>，而某个具体的公式称作<strong>对象语言符号</strong></p>
+<blockquote>
+<p>定义1.7 (1) 若公式$A$是单个的命题变项，则称$A$为0层公式<br>(2) 称$A$是$n+1(n\geqslant 0)$层公式是指下面情况之一<br>(a) $A=\neq B$, $B$是$n$层公式<br>(b) $A=B\land C$, 其中$B$和$C$分别为$i$和$j$层公式，且$n=\max \{i,j\}$<br>(c) $A=B\lor C$, 其中$B,C$的层级及$n$同(b)<br>(d) $A=B\to C$, 其中$B,C$的层级及$n$同(b)<br>(e) $A=B\leftrightarrow C$, 其中$B,C$的层级及$n$同(b)<br>(3) 若公式$A$的层次为$k$，则称$A$是$k$层公式</p>
+<p>定义1.8 设$p_1,p_2,\cdots, p_n$是出现在公式$A$中的全部命题变项，给$p_1,p_2,\cdots,p_n$各指定一个真值，称为对$A$的一个<strong>赋值</strong>或<strong>解释</strong>.<br>若指定的一组真值使$A$为1，则称这组值为$A$的<strong>成真赋值</strong>；若使$A$为0，则称这组值为$A$的<strong>成假赋值</strong>.</p>
+</blockquote>
+<p>赋值按下标顺序或字母顺序依次赋值</p>
+<blockquote>
+<p>定义1.9 将命题公式$A$在所有赋值下取值情况列成表，称作$A$的<strong>真值表</strong>.</p>
+<p>定义1.10 设$A$为任一命题公式<br>(1) 若$A$在它的各种赋值下取值均为真，则称$A$为<strong>重言式</strong>或<strong>永真式</strong>.<br>(2) 若$A$在它的各种赋值下取值均为假，则称$A$为<strong>矛盾式</strong>或<strong>永假式</strong>.<br>(3) 若$A$不是矛盾式，则称$A$为<strong>可满足式</strong>.<br>重言式一定为可满足式</p>
+</blockquote>
+<p>设公式$A,B$中共含有命题变项$p_1,p_2,\cdots,p_n$，而$A$或$B$不全含这些命题变项，则称$A$中不含的命题变项为$A$的<strong>哑元</strong>，即$A$的取值与哑元无关.</p>
+<h3 id="第2章-命题逻辑等值演算"><a href="#第2章-命题逻辑等值演算" class="headerlink" title="第2章 命题逻辑等值演算"></a>第2章 命题逻辑等值演算</h3><h4 id="2-1-等值式"><a href="#2-1-等值式" class="headerlink" title="2.1 等值式"></a>2.1 等值式</h4><blockquote>
+<p>定义2.1 设$A,B$是两个命题公式，若$A,B$构成的等价式$A\leftrightarrow B$为重言式，则称$A$与$B$是等值的，记作$A\Leftrightarrow B$.</p>
+</blockquote>
+<p>常用的等值式模式</p>
+<ol>
+<li>双重否定律 $A\Leftrightarrow \neg \neg A$.</li>
+<li>幂等式 $A\Leftrightarrow A\lor A, A\Leftrightarrow A\land A$.</li>
+<li>交换律 $A\lor B\Leftrightarrow B\lor A,A\land B\Leftrightarrow B\land A$.</li>
+<li>结合律 $(A\lor B)\lor C\Leftrightarrow A\lor (B\lor C), (A\land B)\land C\Leftrightarrow A\land (B\land C)$.</li>
+<li>分配律 $A\lor (B\land C)\Leftrightarrow (A\lor B)\land (A\lor C), A\land (B\lor C)\Leftrightarrow (A\land B)\lor (A\land C)$.</li>
+<li>德摩根律 $\neg (A\lor B)\Leftrightarrow \neg A\land \neg B,\neg (A\land B)\Leftrightarrow \neg A\lor \neg B$.</li>
+<li>吸收律 $A\lor (A\land B)\Leftrightarrow A, A\land (A\lor B)\Leftrightarrow A$.</li>
+<li>零律 $A\lor 1\Leftrightarrow 1,A\land 0\Leftrightarrow 0$.</li>
+<li>同一律 $A\lor 0\Leftrightarrow A, A\land 1\Leftrightarrow A$.</li>
+<li>排中律 $A\lor \neg A\Leftrightarrow 1$.</li>
+<li>矛盾律 $A\land \neg A\Leftrightarrow 0$.</li>
+<li>蕴涵等值律 $A \to B\Leftrightarrow \neg A\lor B$.</li>
+<li>等价等值律 $A\leftrightarrow B\Leftrightarrow (A\to B)\land (B\to A)$.</li>
+<li>假言易位律 $A\to B\Leftrightarrow B\to \neg A$.</li>
+<li>等价否定等值式 $A\leftrightarrow B\Leftrightarrow \neg A\leftrightarrow \neg B$.</li>
+<li>归谬论 $(A\to B)\land (A\to \neg B)\Leftrightarrow \neg A$.</li>
+</ol>
+<p>代入实例<br>由一直的等值式推演出另外一些等值式的过程称作<strong>等值演算</strong>.</p>
+<blockquote>
+<p><strong>置换规则</strong> 设$\Phi (A)$是含公式$A$的命题公式，$\Phi (B)$是用公式$B$置换$\Phi (A)$中$A$的所有出现后得到的命题公式. 若$B \Leftrightarrow A$，则$\Phi (A)\Leftrightarrow \Phi (B)$.</p>
+</blockquote>
+<h4 id="2-2-析取范式与合取范式"><a href="#2-2-析取范式与合取范式" class="headerlink" title="2.2 析取范式与合取范式"></a>2.2 析取范式与合取范式</h4><blockquote>
+<p>定义2.2 命题变项及其否定统称作<strong>文字</strong>. 仅由有限个文字构成的析取式称作<strong>简单析取式</strong>. 仅由有限个文字构成的合取式称作<strong>简单合取式</strong>.</p>
+<p>定理2.1 (1) 一个简单析取式是重言式当且仅当它同时含某个命题变项及它的否定式<br>(2) 一个简单合取式是矛盾式当且仅当它同时含某个命题变项及它的否定式</p>
+<p>定义2.3 由有限个简单合取式的析取构成的命题公式称作<strong>析取范式</strong>. 由有限个简单析取式的合取构成的命题公式称作<strong>合取范式</strong>. 析取范式与合取范式统称作<strong>范式</strong>.</p>
+<p>定理2.2 (1) 一个析取范式是矛盾式当且仅当它的每个简单合取式都是矛盾式<br>(2) 一个合取范式是重言式当且仅当它的每个简单析取范式都是重言式.</p>
+<p>定理2.3(范式存在定理) 任一命题公式都存在与之等值的析取范式与合取范式</p>
+<p>定义2.4 在含有$n$个命题变项的简单合取式(简单析取式)中，若每个命题变项和它的存在的否定式恰好出现一个且仅出现一次，而且命题变项或它的否定式按照下标从小到大或按照字典顺序排列，称这样的简单合取式(简单析取式)为<strong>极小项</strong>(<strong>极大项</strong>).</p>
+</blockquote>
+<p>每个极小项都有且仅由一个成真赋值，每个极大项只有一个成假赋值.</p>
+<blockquote>
+<p>定理2.4 设$m_i$与$M_i$是命题变项含$p_1,p_2,\cdots,p_n$的极小项和极大项，则$\neg m_i\Leftrightarrow M_i,\neg M_i\Leftrightarrow m_i$.<br>定义2.5 所有简单合取式(简单析取式)都是极小项(极大项)的析取范式(合取范式)称为<strong>主析取范式(主合取范式)</strong>.<br>定理2.5 任何命题公式都存在与之等值的主析取范式和主合取范式，并且是唯一的.</p>
+</blockquote>
+<h4 id="2-3-联结词的完备集"><a href="#2-3-联结词的完备集" class="headerlink" title="2.3 联结词的完备集"></a>2.3 联结词的完备集</h4><p>貌似这部分选修…</p>
+<h3 id="第3章-命题逻辑的推理理论"><a href="#第3章-命题逻辑的推理理论" class="headerlink" title="第3章 命题逻辑的推理理论"></a>第3章 命题逻辑的推理理论</h3><h4 id="3-1-推理的形式结构"><a href="#3-1-推理的形式结构" class="headerlink" title="3.1 推理的形式结构"></a>3.1 推理的形式结构</h4><p>数理逻辑的主要任务是用数学的方法研究推理，所谓推理是指从前提除法推出结论的思维过程，而前提是已知的命题公式集合，结论是从前提出发应用推理规则推出的命题公式</p>
+<blockquote>
+<p>定义3.1 设$A_1,A_2,\cdots,A_k$和$B$，若对于$A_1,A_2,\cdots,A_k$和$B$中出现的命题变项的任意一组赋值，或者$A_1\land A_2\land \cdots\land A_k$为假，或者当$A_1\land A_2\land \cdots\land A_k$为真时$B$也为真，则称由前提$A_1,A_2,\cdots,A_k$推出结论$B$的推理是<strong>有效的</strong>或<strong>正确的</strong>，并称$B$为<strong>有效的结论</strong>. $B$不一定是正确的.<br>由推理$\Gamma $推出$B$的推理记为$\Gamma \vdash B$. 若推理是正确的，则记为$\Gamma \vDash B$否则记$\Gamma \nvDash B$为推理形式结构.</p>
+<p>定理3.1 命题公式$A_1,A_2,\cdots,A_k$推出$B$的推理正确当且仅当$A_1\land A_2\land \cdots \land A_k\to B$为重言式.<br>判断是否为重言式的方法 1. 真值表法 2. 等值演算法 3. 主析取范式法</p>
+</blockquote>
+<p>有一些重要的重言蕴含式，称作<strong>推理定律</strong>.</p>
+<ol>
+<li>附加律 $A\Rightarrow (A\lor B)$ </li>
+<li>化简律 $(A\land B)\Rightarrow A$</li>
+<li>假言推理 $(A\to B)\land A \Rightarrow B$</li>
+<li>拒取式 $(A\to B)\land \neg B\Rightarrow \neg A$</li>
+<li>析取三段论 $(A\lor B)\land \neg B\Rightarrow A$</li>
+<li>假言三段论 $(A\to B)\land (B\to C)\Rightarrow (A\to C)$</li>
+<li>等价三段论 $(A\leftrightarrow B)\land (B\leftrightarrow C)\Rightarrow (A\leftrightarrow C)$</li>
+<li>构造性二难 $(A\to B)\land (C\to D)\land (A\lor C)\Rightarrow (B\lor D), (A\to B)\land (\neg A \to B)\Rightarrow B$</li>
+<li>破坏性二难 $(A\to B)\land (C\to D)\land (\neg B\lor \neg D)\Rightarrow (\neg A\lor \neg C)$</li>
+</ol>
+<h4 id="3-2-自然推理系统-P"><a href="#3-2-自然推理系统-P" class="headerlink" title="3.2 自然推理系统$P$"></a>3.2 自然推理系统$P$</h4><blockquote>
+<p>定义3.2 一个形式系统$I$由下面4个部分组成.<br>(1) 非空的字母表$A(I)$.<br>(2) $A(I)$中符号构成的合式公式集$E(I)$.<br>(3) $E(I)$中一些特殊的公式组成的公理集$A_X(I)$.<br>(4) 推理规则集$R(I)$.<br>将$I$记为4元组$<a(i),e(i),a_x(i),r(i)>$. 其中$<a(i),e(i)>$是$I$的<strong>形式语言系统</strong>，而$<a_x(i),r(i)>$为$I$的<strong>形式演算系统</strong>.</a_x(i),r(i)></a(i),e(i)></a(i),e(i),a_x(i),r(i)></p>
+</blockquote>
+<p>形式系统一般分为两类. 一类是<strong>自然推理系统</strong>，他的特点是从任意给定的前提出发，应用系统中的推理规则进行推理演算，最后得到的命题公式是推理的结论。另一类是<strong>公理推理系统</strong>，它只能从若干条给定的公理出发，应用系统中的推理规则进行推理演算，得到的结论是系统中的重言式，称为系统中的定理。</p>
+<blockquote>
+<p>定义3.3 自然推理系统$P$定义如下.</p>
+<ol>
+<li>字母表<br>(1) 命题变项符号: $p,q,r,\cdots, p_i,q_i,r_i,\cdots(i\geqslant 1)$.<br>(2) 联结词符号: $\neg ,\land ,\lor ,\to ,\leftrightarrow$.<br>(3) 括号与逗号: $(,),,.$</li>
+<li>合式公式 同定义1.6</li>
+<li>推理规则<br>(1) 前提引入规则: 在证明的任何步骤都可以引入前提<br>(2) 结论引入规则: 在证明的任何步骤所得到的结论都可以作为后继证明的前提<br>(3) 置换规则: 在证明的任何步骤，命题公式中的子公式都可以用等值的公式置换，得到公式序列的又一个公式<br>由9条推理定律和结论引入规则可以导出以下各条推理规则<br>(4) 假言推理规则(或分离规则): 若证明的公式序列中已出现过$A\to B$和$A$，则由假言推理定律$(A\to B)\land A \Rightarrow B$可知，$B$是$A\to B$和$A$的有效结论. 图示<script type="math/tex; mode=display">\begin{matrix} A\to B\\ A\\ \hline \therefore B \end{matrix}</script>(5) 附加规则:<script type="math/tex; mode=display">\begin{matrix} A\\\hline \therefore A\lor B \end{matrix}</script>(6) 化简规则<script type="math/tex; mode=display">\begin{matrix} A\land B\\\hline \therefore A \end{matrix}</script>(7) 拒取式规则<script type="math/tex; mode=display">\begin{matrix} A\to B\\ \neg B\\\hline \therefore \neg A \end{matrix}</script>(8) 假言三段论规则<script type="math/tex; mode=display">\begin{matrix} A\to B\\ B\to C\\ \hline \therefore A\to C \end{matrix}</script></li>
+</ol>
+</blockquote>
+<p>…就是符号表示一下，不打了，一共到12</p>
+<p>设前提$A_1,A_2,\cdots,A_k,$结论$B$和公式序列$C_1,C_2,\cdots,C_l$. 如果每一个$i(i=1,2,\cdots ,l)$,$C_i$是某个$A_j$或者可由序列中前面的公式应用推理规则得到，并且$C_l=B$，则称公式序列$C_1,C_2,\cdots,C_l$是由$A_1,A_2,\cdots,A_k$推出$B$的<strong>证明</strong>.</p>
+<p>附加前提证明法： 推理形式结构 $(A_1\land A_2\land \cdots \land A_k)\to (A\to B)$，可以改写成$(A_1\land A_2\land \cdots \land A_k\land A)\to B$.<br>拆开可得到两式等值，若能证明后式为重言式则前式为重言式，称作<strong>附加前提证明法</strong>，$A$称作<strong>附加前提</strong></p>
+<p>将结论的否定式作为前提引入并推出矛盾式的证明方法称作<strong>归谬法</strong></p>
+<h4 id="3-3-消解证明法"><a href="#3-3-消解证明法" class="headerlink" title="3.3 消解证明法"></a>3.3 消解证明法</h4><p>消解证明法是根据归谬法的思想吗，采用消解规则构造证明的方法，它的基本做法是把前提中的公式和结论的否定都化成等值的合取范式，以这些合取范式中的所有简单析取式作为前提，用消解规则构造证明。如果能得到空式，则证明推理是正确的</p>
+<h3 id="第4章-一阶逻辑基本概念"><a href="#第4章-一阶逻辑基本概念" class="headerlink" title="第4章 一阶逻辑基本概念"></a>第4章 一阶逻辑基本概念</h3><p><strong>量词</strong>用来表达出个体与总体之间的内在联系和数量关系，这就是<strong>一阶逻辑</strong>所研究的内容<br>一阶逻辑也称作一阶谓词逻辑或谓词逻辑</p>
+<h4 id="4-1-一阶逻辑命题符号化"><a href="#4-1-一阶逻辑命题符号化" class="headerlink" title="4.1 一阶逻辑命题符号化"></a>4.1 一阶逻辑命题符号化</h4><p><strong>个体词</strong>是指所研究对象中可以独立存在的具体的或抽象的客体<br>将表示具体或特定的客体个体词称作<strong>个体常项</strong>，一般用小写英文字母$a,b,c$表示<br>将表示抽象或泛指的个体词称作<strong>个体变项</strong>，常用$x,y,z$表示，并称个体变项的取值范围为<strong>个体域(或论域)</strong><br>个体域可以是有穷集合也可以是无穷集合<br>有一个特殊的个体域，它是由宇宙间一切事物组成的，称作<strong>全总个体域</strong></p>
+<p><strong>谓词</strong>是用来刻画个体词性质及个体词之间相互关系的词，常用$F,G,H$表示<br>表示具体性质或关系的谓词称作<strong>谓词常项</strong>，表示抽象或泛指的性质或关系的谓词称作<strong>谓词变项</strong></p>
+<p>一般地，含$n(n\geqslant 1)$个个体变项$x_1,x_2,\cdots, x_n$的谓词$P$称作$n$元谓词，记作$P(x_1,x_2,\cdots,x_n)$<br>$n$元谓词是以个体域为定义域，以$\{0,1\}$为值域的$n$元函数或关系<br>将不带个体变项的谓词称作$0$元谓词</p>
+<p>表示个体常项或变项之间数量关系的词称作<strong>量词</strong><br>“一切的”，“所有的”，“每一个”，“任意的”，“凡”，“都”等词统称作<strong>全称量词</strong>，用符号$\forall $表示<br>“存在”，“有一个”，“有的”，“至少有一个”等词统称作<strong>存在量词</strong>，用符号$\exists $表示</p>
+<p>特性谓词的作用是将个体变元局限止在满足该谓词代表的性质或关系的范围之内<br>若个体域为全总个体域，对个体变项的范围用医院特性谓词描述<br>特性谓词的使用规则<br>(1) 对于全称量词$\forall x$，其特性谓词作为蕴含式的前件加入<br>(2) 对于存在量词$\exists x$，其特性谓词作为合取式的合取项加入</p>
+<p>当$F$是谓词常项时，$\forall xF(x)$是一个命题. 如果把个体域中的任何一个个体$a$代入，$F(a)$都为真，则$\forall xF(x)$为真；否则$\forall xF(x)$为假. $\exists xF(x)$也是一个命题. 如果个体域中存在一个个体$a$，使得$F(a)$为真，则$\exists xF(x)$为真；否则$\exists xF(x)$为假.</p>
+<h4 id="4-2-一阶逻辑公式及其解释"><a href="#4-2-一阶逻辑公式及其解释" class="headerlink" title="4.2 一阶逻辑公式及其解释"></a>4.2 一阶逻辑公式及其解释</h4><p>一阶语言是用于一阶逻辑的形式语言，一阶逻辑是建立在一阶语言上的逻辑体系.</p>
+<p>个体常项符号、函数符号和谓词符号称作<strong>非逻辑符号</strong>，个体变项符号、量词符号、联结词符号和括号与逗号称作<strong>逻辑符号</strong></p>
+<blockquote>
+<p>定义4.2 $L$的项定义如下.<br>(1) 个体常项符号和个体变项符号是项<br>(2) 若$\varphi (x_1,x_2,\cdots,x_n)$是$n$元函数符号，$t_1,t_2,\cdots,t_n$是$n$个项，则$\varphi (t_1,t_2,\cdots,t_n)$是项<br>(3) 所有的项都是有限次使用(1),(2)得到的<br>定义4.3 设$R(x_1,x_2,\cdots,x_n)$是$L$的$n(n\geqslant 1)$元谓词符号，$t_1,t_2,\cdots,t_n$是$L$的$n$个项，称$R(t_1,t_2,\cdots,t_n)$是<strong>原子公式</strong><br>定义4.4 <strong>合式公式</strong>的定义如下<br>(1) 原子公式是合式公式<br>(2) 若$A$是合式公式，则$(\neg A)$也是合式公式<br>(3) 若$A,B$是合式公式，则$(A\land B),(A\lor B),(A\to B),(A\leftrightarrow B)$也是合式公式<br>(4) 若$A$是合式公式，则$\forall xA,\exists xA$也是合式公式<br>(5) 只有有限次的应用(1)-(4)构成的符号串才是合式公式<br>$L$的合式公式也称作<strong>谓词公式</strong>，简称为<strong>公式</strong><br>定义4.5 在公式$\forall xA$和$\exists xA$中，称$x$为<strong>指导变元</strong>，$A$为量词的<strong>辖域</strong>. $\forall x$和$\exists x$的辖域中，$x$的所有出现都称作<strong>约束出现</strong>，$A$中不是约束出现的其他变项均称作<strong>自由出现</strong><br>定义4.6 设$A$是任意的公式，若$A$中不含自由出现的个体变项，则称$A$为<strong>封闭的公式</strong>，简称作<strong>闭式</strong>. </p>
+</blockquote>
+<p>个体域及个体常项符号、函数符号、谓词符号的指定称作<strong>解释</strong>，指定自由出现的个体变项的值称作<strong>赋值</strong></p>
+<blockquote>
+<p>定义4.7 设$L$是由$L$生成的一阶语言，$L$的解释$I$由下面4部分组成<br>(a) 非空个体域$D_I$.<br>(b) 对每一个个体常项符号$a\in L$，有一个$\bar {a}\in D_I$，称$\bar {a}$为$a$在$I$中的解释.<br>(c) 对每一个$n$元函数符号$f\in L$，有一个$D_I$上的$n$元函数$\bar {f}:D^n_I\to D_I$，称$\bar {f}$为$f$在$I$中的解释.<br>(d) 对每一个$n$元谓词符号$F\in L$，有一个$D_I$上的$n$元谓词常项$\bar {F}$，称$\bar {F}$为$F$在$I$中的解释.<br>$I$下的赋值$\sigma$：对每一个个体变项符号$x$指定$D_I$中的一个值$\sigma (x)$.<br>设公式$A$，规定：在解释$I$和解释$\sigma$下</p>
+<ol>
+<li>取个体域$D_I$</li>
+<li>若$A$中含个体常项符号$a$就将它替换成$\bar {a}$.</li>
+<li>若$A$中含函数符号$f$就将它替换成$\bar {f}$.</li>
+<li>若$A$中含谓词符号$F$就将它替换成$\bar {F}$</li>
+<li>若$A$中含自由出现的个体变项符号$x$就将它替换成$\sigma (x)$<br>把这样所得到的公式记作$A’$. 称$A’$为$A$在$I$和$\sigma$下的解释，或$A$在$I$和$\sigma$下被解释成$A’$<br>定义4.8 设$A$为一公式，若$A$在任何解释和该解释下的任何赋值下均为真，则称$A$为<strong>永真式</strong>(或称作<strong>逻辑有效式</strong>). 若$A$在任何解释和该解释下的任何赋值均为假，则称$A$为<strong>矛盾式</strong>(或<strong>永假式</strong>). 若$A$在任何解释和该解释下的一个赋值使$A$为真，则称$A$是<strong>可满足式</strong><br>定义4.9 设$A_0$是含命题变项$p_1,p_2,\cdots,p_n$的命题公式，$A_1,A_2,\cdots,A_n$是$n$个谓词公式，用$A_i(1\leqslant i\leqslant n)$处处代替$A_0$中的$p_i$，所得的公式$A$称为$A_0$的<strong>代换实例</strong>.<br>定理4.1 重言式的代换实例都是永真式，矛盾式的代换实例都是矛盾式</li>
+</ol>
+</blockquote>
+<h3 id="第5章-一阶逻辑等值演算和推理"><a href="#第5章-一阶逻辑等值演算和推理" class="headerlink" title="第5章 一阶逻辑等值演算和推理"></a>第5章 一阶逻辑等值演算和推理</h3><h4 id="5-1-一阶逻辑等值式与置换规则"><a href="#5-1-一阶逻辑等值式与置换规则" class="headerlink" title="5.1 一阶逻辑等值式与置换规则"></a>5.1 一阶逻辑等值式与置换规则</h4><blockquote>
+<p>定义5.1 设$A,B$是一阶逻辑中任意两个公式，若$A\leftrightarrow B$是永真式，则称$A$与$B$等值，记作$A\Leftrightarrow B$. 称$A\Leftrightarrow B$是<strong>等值式</strong>.</p>
+</blockquote>
+<ol>
+<li>量词否定等值式<br>(1) $\neg \forall xA(x)\Leftrightarrow \exists x\neg A(x)$<br>(2) $\neg \exists xA(x)\Leftrightarrow \forall x\neg A(x)$</li>
+<li>量词辖域收缩与扩张等值式<br>(1) $\forall x(A(x)\lor B) \Leftrightarrow \forall xA(x)\lor B$.<br> $\forall x(A(x)\land B)\Leftrightarrow \forall xA(x)\land B$.<br> $\forall x(A(x)\to B)\Leftrightarrow \exists xA(x)\to B$.<br> $\forall x(B\to A(x))\Leftrightarrow B\to \forall xA(x)$.<br>(2) $\exists x(A(x)\lor B)\Leftrightarrow \exists xA(x)\lor B$.<br> $\exists x(A(x)\land B)\Leftrightarrow \exists xA(x)\land B$.<br> $\exists x(A(x)\to B)\Leftrightarrow \forall xA(x)\to B$.<br> $\exists (B\to A(x))\Leftrightarrow B\to \exists xA(x)$.</li>
+<li>量词分配等值式<br>(1) $\forall x(A(x)\land B(x))\Leftrightarrow \forall xA(x)\land \forall xB(x)$.<br>(2) $\exists x(A(x)\lor B(x))\Leftrightarrow \exists xA(x)\lor \exists xB(x)$.</li>
+</ol>
+<p>规则</p>
+<ol>
+<li>置换规则 设$\Phi (A)$是含公式$A$的公式，$\Phi (B)$是用公式$B$取代$\Phi (A)$中所有的$A$之后所得到的公式. 那么，若$A\Leftrightarrow B$，则$\Phi (A)\Leftrightarrow \Phi (B)$.</li>
+<li>换名规则 设$A$为一公式，将$A$中某量词辖域中的一个约束变项的所有出现及相应的指导变元全部改成该量词辖域中未曾出现过的某个个体变项符号，公式中其余部分不变，将所得公式记作$A’$，则$A’\Leftrightarrow A$.</li>
+</ol>
+<h4 id="5-2-一阶逻辑前束范式"><a href="#5-2-一阶逻辑前束范式" class="headerlink" title="5.2 一阶逻辑前束范式"></a>5.2 一阶逻辑前束范式</h4><blockquote>
+<p>定义5.2 具有如下形式$Q_1x_1Q_2x_2\cdots Q_kx_kB$的一阶逻辑公式称作<strong>前束范式</strong>，其中$Q_i(1\leqslant i\leqslant k)$为$\forall $或$\exists $，$B$为不含量词的公式.<br>定理5.1(前束范式存在定理) 一阶逻辑中的任何公式都存在等值的前束范式.</p>
+</blockquote>
+<h4 id="5-3-一阶逻辑的推理理论"><a href="#5-3-一阶逻辑的推理理论" class="headerlink" title="5.3 一阶逻辑的推理理论"></a>5.3 一阶逻辑的推理理论</h4><p>在一阶逻辑中，从前提$A_1,A_2,\cdots,A_k$出发推出结论$B$的推理的形式结构，依然采用如下的蕴含式形式$A_1\land A_2\land \cdots \land A_k\to B$. 若为永真式，则称推理正确，否则称推理不正确.<br>在一阶逻辑中称永真式的蕴含式为推理定律. 若一个推理的形式结构是推理定律，则这个推理是正确的.</p>
+<p>后面关于自然推理系统的定义就不写了</p>
+<h2 id="第2部分"><a href="#第2部分" class="headerlink" title="第2部分"></a>第2部分</h2><h2 id="第5部分"><a href="#第5部分" class="headerlink" title="第5部分"></a>第5部分</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《离散数学（第2版）》，屈婉玲、耿素云、张立昂，高等教育出版社</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+          
+            <a href="/blog/tags/discrete-mathematics/" rel="tag"><i class="fa fa-tag"></i> discrete-mathematics</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/20190808/" rel="next" title="20190808">
+                <i class="fa fa-chevron-left"></i> 20190808
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/iot-mnist/" rel="prev" title="用树莓派做数字识别并语音播报">
+                用树莓派做数字识别并语音播报 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="comments" id="comments">
+        <div id="gitalk-container"></div>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/blog/images/avatar.jpg" alt="北屿">
+          <p class="site-author-name" itemprop="name">北屿</p>
+           
+              <p class="site-description motion-element" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">98</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/beiyuouo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5687969852" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                    
+                      QQ
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" target="_blank" title="ZhiHu">
+                  
+                    <i class="fa fa-fw fa-unlink"></i>
+                  
+                    
+                      ZhiHu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              Links qwq
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://baidu.com/" title="欢迎友链qwq" target="_blank">欢迎友链qwq</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第1部分-数理逻辑"><span class="nav-number">2.</span> <span class="nav-text">第1部分 数理逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1章-命题逻辑的基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">第1章 命题逻辑的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-命题与连接词"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.1 命题与连接词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-命题公式及其赋值"><span class="nav-number">2.1.2.</span> <span class="nav-text">1.2 命题公式及其赋值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2章-命题逻辑等值演算"><span class="nav-number">2.2.</span> <span class="nav-text">第2章 命题逻辑等值演算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-等值式"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1 等值式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-析取范式与合取范式"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 析取范式与合取范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-联结词的完备集"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 联结词的完备集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3章-命题逻辑的推理理论"><span class="nav-number">2.3.</span> <span class="nav-text">第3章 命题逻辑的推理理论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-推理的形式结构"><span class="nav-number">2.3.1.</span> <span class="nav-text">3.1 推理的形式结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-自然推理系统-P"><span class="nav-number">2.3.2.</span> <span class="nav-text">3.2 自然推理系统$P$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-消解证明法"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.3 消解证明法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第4章-一阶逻辑基本概念"><span class="nav-number">2.4.</span> <span class="nav-text">第4章 一阶逻辑基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-一阶逻辑命题符号化"><span class="nav-number">2.4.1.</span> <span class="nav-text">4.1 一阶逻辑命题符号化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-一阶逻辑公式及其解释"><span class="nav-number">2.4.2.</span> <span class="nav-text">4.2 一阶逻辑公式及其解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第5章-一阶逻辑等值演算和推理"><span class="nav-number">2.5.</span> <span class="nav-text">第5章 一阶逻辑等值演算和推理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-一阶逻辑等值式与置换规则"><span class="nav-number">2.5.1.</span> <span class="nav-text">5.1 一阶逻辑等值式与置换规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-一阶逻辑前束范式"><span class="nav-number">2.5.2.</span> <span class="nav-text">5.2 一阶逻辑前束范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-一阶逻辑的推理理论"><span class="nav-number">2.5.3.</span> <span class="nav-text">5.3 一阶逻辑的推理理论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2部分"><span class="nav-number">3.</span> <span class="nav-text">第2部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5部分"><span class="nav-number">4.</span> <span class="nav-text">第5部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">北屿</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '3bd523d04a7fcd807bd1',
+          clientSecret: '3c4d80f8fd534840b0571ebf194825129668c1fe',
+          repo: 'gitalk',
+          owner: 'beiyuouo',
+          admin: ['beiyuouo'],
+          id: md5(location.pathname),
+          abels: 'gitalk'.split(',').filter(l => l),
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+#
+#<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+#<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
