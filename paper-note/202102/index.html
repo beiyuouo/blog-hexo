@@ -109,18 +109,20 @@
 
 
 
-<meta name="description" content="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent SpacesPaper 这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多… 另外看文章记得看作者和机构…">
+<meta name="description" content="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent SpacesPaper(arXiv, 2018) [PDF] 这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多的。另外看文章记得看作者和机构…这篇文章是一个日本某大学的学生写的，我不是很知道这个校名.. 文">
 <meta name="keywords" content="北屿 BeiYu">
 <meta property="og:type" content="website">
 <meta property="og:title" content="202102">
 <meta property="og:url" content="beiyuouo.github.io/blog/paper-note/202102/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent SpacesPaper 这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多… 另外看文章记得看作者和机构…">
+<meta property="og:description" content="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent SpacesPaper(arXiv, 2018) [PDF] 这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多的。另外看文章记得看作者和机构…这篇文章是一个日本某大学的学生写的，我不是很知道这个校名.. 文">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2021-02-18T03:23:26.237Z">
+<meta property="og:image" content="/blog/img/paper-note/202102/20210219145433.png">
+<meta property="og:updated_time" content="2021-02-20T10:57:10.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="202102">
-<meta name="twitter:description" content="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent SpacesPaper 这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多… 另外看文章记得看作者和机构…">
+<meta name="twitter:description" content="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent SpacesPaper(arXiv, 2018) [PDF] 这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多的。另外看文章记得看作者和机构…这篇文章是一个日本某大学的学生写的，我不是很知道这个校名.. 文">
+<meta name="twitter:image" content="/blog/img/paper-note/202102/20210219145433.png">
 
 
 
@@ -357,9 +359,27 @@
       <div class="post-body">
         
         
-          <h1 id="RSGAN-Face-Swapping-and-Editing-using-Face-and-Hair-Representation-in-Latent-Spaces"><a href="#RSGAN-Face-Swapping-and-Editing-using-Face-and-Hair-Representation-in-Latent-Spaces" class="headerlink" title="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent Spaces"></a>RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent Spaces</h1><p><a href="https://arxiv.org/pdf/1804.03447.pdf" target="_blank" rel="noopener">Paper</a></p>
-<p>这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多…</p>
-<p>另外看文章记得看作者和机构…</p>
+          <h2 id="RSGAN-Face-Swapping-and-Editing-using-Face-and-Hair-Representation-in-Latent-Spaces"><a href="#RSGAN-Face-Swapping-and-Editing-using-Face-and-Hair-Representation-in-Latent-Spaces" class="headerlink" title="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent Spaces"></a>RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent Spaces</h2><p>Paper(arXiv, 2018) [<a href="https://arxiv.org/pdf/1804.03447.pdf" target="_blank" rel="noopener">PDF</a>]</p>
+<p>这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多的。<br>另外看文章记得看作者和机构…<br>这篇文章是一个日本某大学的学生写的，我不是很知道这个校名..</p>
+<p>文章主要是提出了一个面部和头发交换和编辑的系统，利用的“潜在空间(latent spaces)” 的信息，说鲁棒性会比较好。主要是从现有面部交换的缺点入手，一个是几何空间和光线的不匹配，让人很容易注意到，一个是对任意面部的鲁棒性不是很好。</p>
+<p>相关工作就先不看了，让我觉得比较重要的就是3dmm用的最多，有时间去看看 - -</p>
+<p>接下来看方法论，这只用了DNN，如图<br><img src="/blog/img/paper-note/202102/20210219145433.png" alt></p>
+<p>简单来说就是先autoencoder将图片经过语义分割后得到的图片转换成一个特征向量，然后利用这个特征向量进行面部和发型的交换，但是用的不是互相交换的向量，而是一个新的visual attribute。分割使用的PSPNet，一个SOTA的DNN网络。数据集用的是CelebA。</p>
+<h2 id="First-Order-Motion-Model-for-Image-Animation"><a href="#First-Order-Motion-Model-for-Image-Animation" class="headerlink" title="First Order Motion Model for Image Animation"></a>First Order Motion Model for Image Animation</h2><p>Paper(NeurIPS, 2019) [<a href="https://papers.nips.cc/paper/8935-first-order-motion-model-for-image-animation" target="_blank" rel="noopener">PDF</a>, <a href="https://github.com/AliaksandrSiarohin/first-order-model" target="_blank" rel="noopener">Code</a>]</p>
+<p>自己录的视频 [<a href="https://www.bilibili.com/video/BV1mK4y1Q7GW/" target="_blank" rel="noopener">BV1mK4y1Q7GW</a>] and [<a href="https://www.bilibili.com/video/BV1wy4y1a7ML/" target="_blank" rel="noopener">BV1mK4y1Q7GW</a>]</p>
+<p>文字稿：</p>
+<p>大家好，今天我们一起来读一篇文章，First Order Motion Model for Image Animation。不知道为什么，看到这个论文标题我就已经开始痛了哈哈哈哈哈。大家应该都看过那个xxx的痛你们懂吗，就是那句，裤袜烈大莫哭那得撒什么什么的，原视频是一个油管上唱歌的小姐姐，用上这个模型，就可以模仿生成那一段视频。这个论文也是提供的代码在线可玩，在底下这个github链接，可以直接用提供的训练好的模型在colab生成自己想要的视频。</p>
+<p>作者是意大利特伦托大学的，有意思的是三作是一个Snap公司的hhhh，就是阅后即焚的软件，这篇论文是发表在NeurIPS2019上的，CCF-A类，也是一篇顶会的文章呀</p>
+<p>我们首先来看摘要部分，Image animation consists of generating a video sequence so that an object in source image is animated according to the motion of a driving video，这句话相当于背景吧，就是说图像动画是一段根据驱动视频和原图，也就是source image生成的视频序列。然后我们的框架来解决这个问题没有用到任何先前关于具体对象的信息，什么意思呢，我觉得应该就是，我个人理解呀，没有根据某个特殊object来设计模型结构和训练指标或者方法，假如要生成一个人的动画，因为为了得到比较好的结果很多人都会只在人的动画的训练集上进行训练，来根据这个object非常特殊的调整模型结构，那么生成的人的动画效果可能就比较好，但是在其他object上就会很差，但是这篇论文没有这么做，也就是说他的模型泛化能力应该比较好。然后如果你在一个类别上训练，那么可以应用在所有同类型的object上。为了实现这个呢，这篇文章用了自监督学习的方法，把这个外观和动作进行了分离。为了能够支持复杂的动作呢，文章用了一种表现形式是，一组关键点和对应的局部仿射变换。生成网络模型对motion的遮挡进行建模，从原图的外观和驱动视频获得的motion进行组合，并且这个达到了SOTA。</p>
+<p>这个摘要也差不多说清了文章的主要思路，就是先识别关键点，然后分离出来关键点的motion，最后利用原图进行复原。一般看完摘要可以直接去找Introduction里面的一张Overview的图片，就可以大概知道整个的工作了，这篇的Overview是Figure2。可以看到就差不多和之前说的那样，一个原图，一个驱动视频，然后是motion模块，先进行关键点检测，然后做两个放射变换，最后合并一个稠密的motion，这里可以看到他用了一个中间的表现形式R，在进行最终的仿射变换，和一个遮挡映射，这个O还没看原文所以可能不知道这个代表的是什么意思。最后放到生成模块中，得到输出。</p>
+<p>再回头来简单看一下introduction吧，前面是说将对象动画化生成视频有很多应用，更确切的说是将外观从source image中抽取，然后将motion从driving video中抽取，然后组合起来。这里举了一个栗子就是，把人的表情动画出来，之前很多方法都是通过很强的预先在特定object上训练和计算图形学技术得到的，这些方法是object-specific的方法。最近的深度生成模型，对这个图片animation非常有效，例如GAN和VAE，这些都依赖于与训练模型来抽取特定object的表示形式，例如关键点什么的。但是，这些预训练模型都是需要大量的标记数据，不能对任意类别的object，为了解决这个问题，这个人提出了MonkeyNet，用到了自监督学习。但是主要的缺点是外观变换和临近关键点估计用的是0阶的模型，这样大幅度的motion姿态变换效果就比较差，这篇论文解决这个问题用到就是局部仿射变换，所以也叫做这个first-order motion model。贡献除了这个还有一个遮挡的生成模型，然后用了equivariance loss来作为关键点训练，并且达到了SOTA，可以处理高分辨率数据集。最后release了一个高分辨率数据集。</p>
+<p>一般相关工作related work我就简单简单看一下，其实很多在前面已经提到了，这里可能提到的内容更早。首先是视频生成，前面这是还没有VAE时候的方法，然后有了VAE，有了GAN。然后是image animation，这里面有几个object-specific的方法，然后后面这一段是不指定object的方法，比如X2Face，MonkeyNet。</p>
+<p>接下来就是方法论了，首先是两个符号S和D表示source image和driving video，然后这个自监督的学习灵感来与monkeynet，为了训练找了很多同类型的视频序列。模型呢，通过组合单帧和视频中的motion来重建视频。然后观察同一个视频抽取的帧对，学习将motion编码为具体motion特定关键点和局部仿射变换的组合。测试的时候，就是将source image和驱动视频中的每一帧组成一对，然后让source object动起来。</p>
+<p>然后之前的overview已经看过了，也可以看出来这个框架分成两个模块，一个用于motion估计，一个用于图像生成。接着他们只需要一找到一个转换方程，从驱动视频转换成原图的视频，这里他们后向传播用的光流法，而不是前向传播。这里假设了存在一个抽象参考帧R，来估计两个变换R-&gt;S和R-&gt;D，注意这里都是从R到S和D。然后这个motion估计的模块分成两步，第一步用来找关键点的轨迹，用了泰勒展开表示关键点的位置和变换。在第二步，稠密的motion网络结合了局部的近似，得到了这个S-&gt;D的稠密motion的变换和遮罩，就是D中应该被source image替代和修复的地方。最后生成模块进行渲染，得到结果。</p>
+<p>然后3.1节讲的是motion近似描述的局部仿射变换，像之前一样，假设存在了一个R，我们最后要估计D-&gt;S，那么我们可以从D到R，再从R到S。如果给定帧X，那么可以得到一阶泰勒展开K个关键点，这是在R中的，我们要得到都是在X，S，D中的。注意上面这个是D-&gt;R和之前的R-&gt;D是不同的，然后K个关键点的变换就是这个表达形式。这个其实就是一个雅可比行列式的应用吧，如果在p点可微，那么F(x)就可以估计成这样的形式，这个x其实就是这个变换里面的p，等价代换一下就好，最后得到这样的公式。</p>
+<p>然后我们直接往下看，这个D-&gt;S拆成了两部，然后对这个求一下逆就是原来的R-&gt;D。注意上面这一个话，在R中姿态空间里，p是点的坐标，而在XSD中，z是点的坐标。所以就有了这个e.g.从D-&gt;R那么就是从zk到pk。然后下面这个D-&gt;S的变换的估计就是zk+Jk(z-zk)，然后用之前的式子替换一下，替换成R-&gt;D和R-&gt;S。这个R-&gt;D和R-&gt;S怎么来的呢，就是关键点预测了，用的U-Net估计K个热力图作为K个关键点，然后这个Jk=1也就是一阶的雅可比表达式。</p>
+<p>下面这一部分讲的是combine局部的motion，就是一些实现的细节，包括mask怎么搞，怎么得到完整的稠密motion预测之类的。这个这招部分就是自监督学习的部分主要是为了看一下模型是否真正的了解这个motion。再后面就是训练用到的loss，测试就是之前提到的一点。</p>
+<p>实验部分，首先是数据集和相关的处理，然后是一个评估的指标，L1，AKD平均关键点距离，MKR消失关键点率，AED平均欧几里得距离。在接下来是关于遮罩的研究。然后结果当然是达到了SOTA。一句话总结一下就是利用局部仿射变换抽取关键点和motion转换成潜在空间表示，最后复原生成图像的这么一个过程。这些都是我自己的一些理解，不免有一些错误，希望可以指出，无限进步！</p>
 
         
       </div>
@@ -545,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RSGAN-Face-Swapping-and-Editing-using-Face-and-Hair-Representation-in-Latent-Spaces"><span class="nav-number">1.</span> <span class="nav-text">RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent Spaces</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RSGAN-Face-Swapping-and-Editing-using-Face-and-Hair-Representation-in-Latent-Spaces"><span class="nav-number">1.</span> <span class="nav-text">RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent Spaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Order-Motion-Model-for-Image-Animation"><span class="nav-number">2.</span> <span class="nav-text">First Order Motion Model for Image Animation</span></a></li></ol></div>
             
 
           </div>

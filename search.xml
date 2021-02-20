@@ -67,8 +67,8 @@
       </categories>
       <tags>
         <tag>note</tag>
-        <tag>machine-learning</tag>
         <tag>ros</tag>
+        <tag>machine-learning</tag>
         <tag>slam</tag>
       </tags>
   </entry>
@@ -488,9 +488,9 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>install</tag>
         <tag>bigdata</tag>
+        <tag>hadoop</tag>
       </tags>
   </entry>
   <entry>
@@ -551,8 +551,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>probability</tag>
         <tag>note</tag>
+        <tag>probability</tag>
       </tags>
   </entry>
   <entry>
@@ -1117,9 +1117,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
+        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
-        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
