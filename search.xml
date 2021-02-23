@@ -13,6 +13,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[20210224]]></title>
+    <url>%2Fblog%2F20210224%2F</url>
+    <content type="text"><![CDATA[最近又开始划水了..明天一定！ 感觉一个好的硬件，一个好的网络环境，一个好的算力资源真的有点重要… 添加了表情包，测试一下 看看能不能行内啊，这样可以吗 这样呢？??? 好耶！可以了，用法很简单，就是&lt;img src=&quot;/blog/img/bqb/aru/5.png&quot; class=&quot;github-emoji&quot;&gt;，修改倒是有点复杂，参考link，相同的思路，但是不用安装插件，用自己本地表情包即可。 另外在theme/source/css/_custom/custom.styl中添加下面代码就可以123456789.github-emoji &#123; display: inline-block !important; position: relative; top: 10px; margin: 0 3px !important; padding: 0; width: 38px; height: 36px;&#125; 还是稍微麻烦了点，以后懂点这博客渲染再来操作一波 表情包从这来，文章瞬间变得有趣了呢！]]></content>
+      <categories>
+        <category>daily</category>
+      </categories>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[20210212]]></title>
     <url>%2Fblog%2F20210212%2F</url>
     <content type="text"><![CDATA[看到一个现充dalao的博客，年终总结，太猛了orz 他是怎么安排时间能够参加这么多比赛的orz，甚至不同领域的… 自从放假到现在，我感觉我几乎没这么出过门…出去也基本就是和奶奶家姥姥家往返的路上 在假期，让我比较感兴趣的东西也就是看看比赛、写点自己喜欢的小玩意了- -，（另外不想玩游戏的很大原因是我家网实在是不太行 离假期结束大概也就还剩下两周了（如果不提前开学的话），希望能写完一个想做的GAN，写好我的autoguichu哈哈哈哈，哦对了忽然想起还有抢票的，然后维护一下bbot，加个电竞查询接口，希望自己还能抽时间多学点英语和ml吧，多在b站发几个小视频玩嘿嘿 好久没写博客了…回想一下上一年，我感觉我从心态上变了不少，很多可能是因为自己得到了很多自己想要得到的，有点太过于安逸了..虽然比赛的时候确实挺折磨人的，但是过来了感觉…也没啥用，但是眼界高了，见识多了，但是真的挺喜欢能到处跑的（说到这个再f*ck一下COVID-19） 今年加油吧，不管是什么，不管是谁，不管在哪方面。 Keep calm and dream on.]]></content>
@@ -53,8 +64,8 @@
         <category>project</category>
       </categories>
       <tags>
-        <tag>project</tag>
         <tag>machine-learning</tag>
+        <tag>project</tag>
         <tag>gan</tag>
       </tags>
   </entry>
@@ -67,8 +78,8 @@
       </categories>
       <tags>
         <tag>note</tag>
-        <tag>ros</tag>
         <tag>machine-learning</tag>
+        <tag>ros</tag>
         <tag>slam</tag>
       </tags>
   </entry>
@@ -489,8 +500,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>bigdata</tag>
         <tag>hadoop</tag>
+        <tag>bigdata</tag>
       </tags>
   </entry>
   <entry>
@@ -551,8 +562,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>note</tag>
         <tag>probability</tag>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -732,9 +743,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -758,9 +769,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -807,8 +818,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>arduino</tag>
+        <tag>install</tag>
       </tags>
   </entry>
   <entry>
@@ -1092,8 +1103,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>note</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -1117,9 +1128,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>

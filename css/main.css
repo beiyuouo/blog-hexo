@@ -1808,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fbf4ff;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3060,4 +3060,13 @@ header.post-header {
   .post-body {
     text-align: justify;
   }
+}
+.github-emoji {
+  display: inline-block !important;
+  position: relative;
+  top: 10px;
+  margin: 0 3px !important;
+  padding: 0;
+  width: 38px;
+  height: 36px;
 }
