@@ -93,7 +93,7 @@
 <link href="/blog/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="TODOLIST,README,">
+  <meta name="keywords" content="README,">
 
 
 
@@ -109,18 +109,18 @@
 
 
 
-<meta name="description" content="20210506祝好 20200430daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路123456789101112131415161718import osimport repath = &quot;_posts/&quot;dirs = os.listdir(path)patten = &quot;20*&quot;rbt = open(&apos;robot.txt&apos;, &apos;w&apos;)print(&quot;User-agent:">
-<meta name="keywords" content="TODOLIST,README">
+<meta name="description" content="20210506祝好 1234567891011&amp;#123;% for post in page.posts %&amp;#125;  &amp;#123;% set foo = &quot;true&quot; %&amp;#125;  &amp;#123;% for category in post.categories %&amp;#125;    &amp;#123;% if category.name === &quot;thoughts&quot; %&amp;#125;">
+<meta name="keywords" content="README">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【置顶】README">
 <meta property="og:url" content="beiyuouo.github.io/blog/TODOLIST/index.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="20210506祝好 20200430daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路123456789101112131415161718import osimport repath = &quot;_posts/&quot;dirs = os.listdir(path)patten = &quot;20*&quot;rbt = open(&apos;robot.txt&apos;, &apos;w&apos;)print(&quot;User-agent:">
+<meta property="og:description" content="20210506祝好 1234567891011&amp;#123;% for post in page.posts %&amp;#125;  &amp;#123;% set foo = &quot;true&quot; %&amp;#125;  &amp;#123;% for category in post.categories %&amp;#125;    &amp;#123;% if category.name === &quot;thoughts&quot; %&amp;#125;">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2021-05-06T10:58:23.395Z">
+<meta property="og:updated_time" content="2021-05-06T18:45:36.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【置顶】README">
-<meta name="twitter:description" content="20210506祝好 20200430daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路123456789101112131415161718import osimport repath = &quot;_posts/&quot;dirs = os.listdir(path)patten = &quot;20*&quot;rbt = open(&apos;robot.txt&apos;, &apos;w&apos;)print(&quot;User-agent:">
+<meta name="twitter:description" content="20210506祝好 1234567891011&amp;#123;% for post in page.posts %&amp;#125;  &amp;#123;% set foo = &quot;true&quot; %&amp;#125;  &amp;#123;% for category in post.categories %&amp;#125;    &amp;#123;% if category.name === &quot;thoughts&quot; %&amp;#125;">
 
 
 
@@ -412,8 +412,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2021-05-06T18:58:23+08:00">
-                2021-05-06
+              <time title="Post modified" itemprop="dateModified" datetime="2021-05-07T02:45:36+08:00">
+                2021-05-07
               </time>
             
           </span>
@@ -431,8 +431,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/TODOLIST/" itemprop="url" rel="index">
-                    <span itemprop="name">TODOLIST</span>
+                  <a href="/blog/categories/README/" itemprop="url" rel="index">
+                    <span itemprop="name">README</span>
                   </a>
                 </span>
 
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  358
+                  414
                 </span>
               
 
@@ -505,6 +505,7 @@
 
       
         <h2 id="20210506"><a href="#20210506" class="headerlink" title="20210506"></a>20210506</h2><p>祝好</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">  &#123;% set foo = <span class="string">"true"</span> %&#125;</span><br><span class="line">  &#123;% <span class="keyword">for</span> category <span class="keyword">in</span> post.categories %&#125;</span><br><span class="line">    &#123;% <span class="keyword">if</span> category.name === <span class="string">"thoughts"</span> %&#125;</span><br><span class="line">      &#123;% set foo = <span class="string">"false"</span> %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">  &#123;% endfor %&#125;</span><br><span class="line">  &#123;% <span class="keyword">if</span> foo === <span class="string">"true"</span> %&#125;</span><br><span class="line">    &#123;&#123; post_template.render(post, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="20200430"><a href="#20200430" class="headerlink" title="20200430"></a>20200430</h2><p>daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">path = <span class="string">"_posts/"</span></span><br><span class="line">dirs = os.listdir(path)</span><br><span class="line"></span><br><span class="line">patten = <span class="string">"20*"</span></span><br><span class="line"></span><br><span class="line">rbt = open(<span class="string">'robot.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"User-agent: *"</span>, file=rbt)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> dirs:</span><br><span class="line">    <span class="comment"># print(file)</span></span><br><span class="line">    <span class="keyword">if</span> re.match(patten, file):</span><br><span class="line">        print(file)</span><br><span class="line">        filename = file.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        print(filename)</span><br><span class="line">        print(<span class="string">'Disallow:/blog/&#123;&#125;/*'</span>.format(filename), file=rbt)</span><br></pre></td></tr></table></figure></p>
 <h2 id="20200415"><a href="#20200415" class="headerlink" title="20200415"></a>20200415</h2><p>与其说这是TODOLIST，不如说这是README。</p>
 <p>这是一篇发自现在功在将来的TODOLIST。<br>哈哈哈<br>不知道该写啥</p>
@@ -527,8 +528,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/blog/tags/TODOLIST/" rel="tag"><i class="fa fa-tag"></i> TODOLIST</a>
           
             <a href="/blog/tags/README/" rel="tag"><i class="fa fa-tag"></i> README</a>
           
@@ -652,7 +651,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">84</span>
+                <span class="site-state-item-count">83</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
