@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/blog/test-Haha/</loc>
+    <lastmod>2021-05-06</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/test-hello-world/</loc>
+    <lastmod>2021-05-06</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/test-HelloWorld/</loc>
+    <lastmod>2021-05-06</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/test-gitmenttest/</loc>
+    <lastmod>2021-05-06</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/misc-lun-gou-sheng/</loc>
+    <lastmod>2021-05-06</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/misc-confused-probability/</loc>
+    <lastmod>2021-05-06</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/20191031/</loc>
+    <lastmod>2021-05-06</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/20210224/</loc>
     <lastmod>2021-05-06</lastmod>
   </url>  <url>
@@ -163,13 +184,7 @@
     <loc>beiyuouo.github.io/blog/blog/note-deep-reinforce-learning/</loc>
     <lastmod>2020-04-05</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/misc-confused-probability/</loc>
-    <lastmod>2020-04-05</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/problem-codejam-2020-qualification-round/</loc>
-    <lastmod>2020-04-04</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/misc-lun-gou-sheng/</loc>
     <lastmod>2020-04-04</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/problem-codejam-2019-qualification-round/</loc>
@@ -208,9 +223,6 @@
     <loc>beiyuouo.github.io/blog/blog/hack-tcp-session-hijack/</loc>
     <lastmod>2019-11-21</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/20191031/</loc>
-    <lastmod>2019-11-21</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/note-data-structure/</loc>
     <lastmod>2019-10-21</lastmod>
   </url>  <url>
@@ -247,9 +259,6 @@
     <loc>beiyuouo.github.io/blog/blog/esp-digital-light/</loc>
     <lastmod>2019-06-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/test-hello-world/</loc>
-    <lastmod>2019-06-01</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/problem-TopCoderSRM755/</loc>
     <lastmod>2019-04-18</lastmod>
   </url>  <url>
@@ -260,9 +269,6 @@
     <lastmod>2019-01-18</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/problem-NK207F/</loc>
-    <lastmod>2019-01-18</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/test-gitmenttest/</loc>
     <lastmod>2019-01-18</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/js-Breakoutv0.0.1/</loc>
@@ -295,13 +301,7 @@
     <loc>beiyuouo.github.io/blog/blog/js-addball/</loc>
     <lastmod>2018-12-01</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/test-Haha/</loc>
-    <lastmod>2018-11-29</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/js-JavaScriptPainting/</loc>
-    <lastmod>2018-11-14</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/test-HelloWorld/</loc>
     <lastmod>2018-11-14</lastmod>
   </url>
 </urlset>
