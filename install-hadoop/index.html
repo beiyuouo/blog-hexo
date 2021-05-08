@@ -20,7 +20,7 @@
     var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="keywords" content="hadoop,install,bigdata">
+  <meta name="keywords" content="install,hadoop,bigdata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚拟机CentOS7安装Hadoop">
 <meta property="og:url" content="beiyuouo.github.io/blog/install-hadoop/index.html">
@@ -265,20 +265,6 @@
             </span>
 
           
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/blog/install-hadoop/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="install-hadoop/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
             <div class="post-description"><p></p></div>
 
         </div>
@@ -321,11 +307,31 @@
     
     
     
+        <div class="reward-container">
+  <div>Have fun.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/blog/images/wechatpay.png" alt="Author WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/blog/images/alipay.png" alt="Author Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/hadoop/" rel="tag"># hadoop</a>
               <a href="/blog/tags/install/" rel="tag"># install</a>
+              <a href="/blog/tags/hadoop/" rel="tag"># hadoop</a>
               <a href="/blog/tags/bigdata/" rel="tag"># bigdata</a>
           </div>
 
@@ -554,16 +560,6 @@
 
   
 
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://beiyuouo.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
 <script>
   var disqus_config = function() {
     this.page.url = "beiyuouo.github.io/blog/install-hadoop/";

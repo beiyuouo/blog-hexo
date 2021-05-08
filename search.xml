@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[20210508]]></title>
     <url>%2Fblog%2F20210508%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[博客的又一次大重构，升级了NeXt版本，将gitcomment评论删除了，使用了Disqus，唯一的缺点就是需要fq hhhh 顺便也备份了一下blog的源文件，有一些自己修改的内容 改天把自己个人主页也修改一下]]></content>
       <categories>
         <category>thoughts</category>
       </categories>
@@ -542,8 +542,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>install</tag>
+        <tag>hadoop</tag>
         <tag>bigdata</tag>
       </tags>
   </entry>
@@ -861,8 +861,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>arduino</tag>
+        <tag>install</tag>
       </tags>
   </entry>
   <entry>
@@ -1152,8 +1152,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>note</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
