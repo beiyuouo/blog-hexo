@@ -20,13 +20,13 @@
     var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="keywords" content="install,ros,linux,ubuntu">
+  <meta name="keywords" content="install,linux,ros,ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 18.04 ROS Melodic 下载 &amp; 安装">
 <meta property="og:url" content="beiyuouo.github.io/blog/install-ros/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-05-18T05:04:03.566Z">
+<meta property="og:updated_time" content="2021-05-18T09:05:57.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 18.04 ROS Melodic 下载 &amp; 安装">
 
@@ -246,7 +246,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-18 10:21:49 / Modified: 13:04:03" itemprop="dateCreated datePublished" datetime="2021-05-18T10:21:49+08:00">2021-05-18</time>
+              <time title="Created: 2021-05-18 10:21:49 / Modified: 17:05:57" itemprop="dateCreated datePublished" datetime="2021-05-18T10:21:49+08:00">2021-05-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -288,17 +288,17 @@
 <blockquote>
 <p>安装指北 <a href="http://wiki.ros.org/melodic/Installation/Ubuntu" target="_blank" rel="noopener">http://wiki.ros.org/melodic/Installation/Ubuntu</a></p>
 </blockquote>
-<h2 id="1-添加源"><a href="#1-添加源" class="headerlink" title="1. 添加源"></a>1. 添加源</h2><p><code>sudo sh -c &#39;. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</code></p>
-<h2 id="2-添加密钥"><a href="#2-添加密钥" class="headerlink" title="2. 添加密钥"></a>2. 添加密钥</h2><p><code>sudo apt-key adv --keyserver &#39;hkp://keyserver.ubuntu.com:80&#39; --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</code></p>
-<h2 id="3-更新一下源"><a href="#3-更新一下源" class="headerlink" title="3. 更新一下源"></a>3. 更新一下源</h2><p><code>sudo apt update</code></p>
-<h2 id="4-下载ros"><a href="#4-下载ros" class="headerlink" title="4. 下载ros"></a>4. 下载ros</h2><p><code>sudo apt install ros-melodic-desktop-full</code> // 大概2g</p>
+<h2 id="1-添加源"><a href="#1-添加源" class="headerlink" title="1. 添加源"></a>1. 添加源</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">'. /etc/lsb-release &amp;&amp; echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-添加密钥"><a href="#2-添加密钥" class="headerlink" title="2. 添加密钥"></a>2. 添加密钥</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver <span class="string">'hkp://keyserver.ubuntu.com:80'</span> --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</span><br></pre></td></tr></table></figure>
+<h2 id="3-更新一下源"><a href="#3-更新一下源" class="headerlink" title="3. 更新一下源"></a>3. 更新一下源</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<h2 id="4-下载ros"><a href="#4-下载ros" class="headerlink" title="4. 下载ros"></a>4. 下载ros</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ros-melodic-desktop-full // 大概2g</span><br></pre></td></tr></table></figure>
 <h2 id="5-配置环境变量"><a href="#5-配置环境变量" class="headerlink" title="5. 配置环境变量"></a>5. 配置环境变量</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"source /opt/ros/melodic/setup.bash"</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-<h2 id="6-一些其他的依赖"><a href="#6-一些其他的依赖" class="headerlink" title="6. 一些其他的依赖"></a>6. 一些其他的依赖</h2><p><code>sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential</code></p>
-<h2 id="7-安装proto"><a href="#7-安装proto" class="headerlink" title="7. 安装proto"></a>7. 安装proto</h2><p><code>sudo apt install libprotobuf-dev protobuf-compiler</code></p>
+<h2 id="6-一些其他的依赖"><a href="#6-一些其他的依赖" class="headerlink" title="6. 一些其他的依赖"></a>6. 一些其他的依赖</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential</span><br></pre></td></tr></table></figure>
+<h2 id="7-安装proto"><a href="#7-安装proto" class="headerlink" title="7. 安装proto"></a>7. 安装proto</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libprotobuf-dev protobuf-compiler</span><br></pre></td></tr></table></figure>
 <h2 id="8-安装nng"><a href="#8-安装nng" class="headerlink" title="8. 安装nng"></a>8. 安装nng</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/nanomsg/nng.git</span><br><span class="line"><span class="built_in">cd</span> nng</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">cmake --build .</span><br></pre></td></tr></table></figure>
 <h2 id="9-更新cmake"><a href="#9-更新cmake" class="headerlink" title="9. 更新cmake"></a>9. 更新cmake</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://cmake.org/files/v3.13/cmake-3.13.5.tar.gz</span><br><span class="line">tar zxvf cmake-3.13.5.tar.gz</span><br><span class="line"><span class="built_in">cd</span> cmake-3.13.5</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 <h2 id="10-安装json"><a href="#10-安装json" class="headerlink" title="10. 安装json"></a>10. 安装json</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/nlohmann/json.git</span><br><span class="line"><span class="built_in">cd</span> json</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake .. -DJSON_buildTest=ON</span><br><span class="line">cmake --build .</span><br></pre></td></tr></table></figure>
-<h2 id="11-安装pcap"><a href="#11-安装pcap" class="headerlink" title="11. 安装pcap"></a>11. 安装pcap</h2><p><code>sudo apt install libpcap-dev</code></p>
+<h2 id="11-安装pcap"><a href="#11-安装pcap" class="headerlink" title="11. 安装pcap"></a>11. 安装pcap</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libpcap-dev</span><br></pre></td></tr></table></figure>
 <h2 id="12-安装gtsam"><a href="#12-安装gtsam" class="headerlink" title="12. 安装gtsam"></a>12. 安装gtsam</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/borglab/gtsam.git</span><br><span class="line"><span class="built_in">cd</span> gtsam</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make -j4</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 <h2 id="13-创建ROS工作空间"><a href="#13-创建ROS工作空间" class="headerlink" title="13. 创建ROS工作空间"></a>13. 创建ROS工作空间</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/catkin_ws/src</span><br><span class="line"><span class="built_in">cd</span> ~/catkin_ws/src</span><br><span class="line">catkin_init_workspace</span><br><span class="line"><span class="built_in">cd</span> ~/catkin_ws/</span><br><span class="line">catkin_make -jl</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ROS_PACKAGE_PATH</span></span><br></pre></td></tr></table></figure>
     </div>
@@ -347,8 +347,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/blog/tags/install/" rel="tag"># install</a>
-              <a href="/blog/tags/ros/" rel="tag"># ros</a>
               <a href="/blog/tags/linux/" rel="tag"># linux</a>
+              <a href="/blog/tags/ros/" rel="tag"># ros</a>
               <a href="/blog/tags/ubuntu/" rel="tag"># ubuntu</a>
           </div>
 
