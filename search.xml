@@ -8,7 +8,7 @@
       <link href="/blog/TODOLIST/"/>
       <url>/blog/TODOLIST/</url>
       
-        <content type="html"><![CDATA[<h2 id="20210506"><a href="#20210506" class="headerlink" title="20210506"></a>20210506</h2><p>祝好</p><p>稍微看了一下swig的语法，终于学会了科学屏蔽首页分类的方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">  &#123;% set foo = <span class="string">"true"</span> %&#125;</span><br><span class="line">  &#123;% <span class="keyword">for</span> category <span class="keyword">in</span> post.categories %&#125;</span><br><span class="line">    &#123;% <span class="keyword">if</span> category.name === <span class="string">"thoughts"</span> %&#125;</span><br><span class="line">      &#123;% set foo = <span class="string">"false"</span> %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">  &#123;% endfor %&#125;</span><br><span class="line">  &#123;% <span class="keyword">if</span> foo === <span class="string">"true"</span> %&#125;</span><br><span class="line">    &#123;&#123; post_template.render(post, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></p><h2 id="20200430"><a href="#20200430" class="headerlink" title="20200430"></a>20200430</h2><p>daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">path = <span class="string">"_posts/"</span></span><br><span class="line">dirs = os.listdir(path)</span><br><span class="line"></span><br><span class="line">patten = <span class="string">"20*"</span></span><br><span class="line"></span><br><span class="line">rbt = open(<span class="string">'robot.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"User-agent: *"</span>, file=rbt)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> dirs:</span><br><span class="line">    <span class="comment"># print(file)</span></span><br><span class="line">    <span class="keyword">if</span> re.match(patten, file):</span><br><span class="line">        print(file)</span><br><span class="line">        filename = file.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        print(filename)</span><br><span class="line">        print(<span class="string">'Disallow:/blog/&#123;&#125;/*'</span>.format(filename), file=rbt)</span><br></pre></td></tr></table></figure></p><h2 id="20200415"><a href="#20200415" class="headerlink" title="20200415"></a>20200415</h2><p>与其说这是TODOLIST，不如说这是README。</p><p>这是一篇发自现在功在将来的TODOLIST。<br>哈哈哈<br>不知道该写啥</p><h2 id="20200830-主页加了个奇怪的东西"><a href="#20200830-主页加了个奇怪的东西" class="headerlink" title="20200830 主页加了个奇怪的东西"></a>20200830 主页加了个奇怪的东西</h2><h2 id="20191121"><a href="#20191121" class="headerlink" title="20191121"></a>20191121</h2><p>我在首页加了点代码，日常啥的不会在首页显示了0.0，<del>看起来更像技术博客了233</del><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;section id=<span class="string">"posts"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"posts-expand"</span>&gt;</span><br><span class="line">    &#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">      &#123;% <span class="keyword">if</span> post.hide != <span class="literal">true</span> %&#125;</span><br><span class="line">        &#123;&#123; post_template.render(post, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  &lt;<span class="regexp">/section&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  &#123;% include '_partials/</span>pagination.swig<span class="string">' %&#125;</span></span><br><span class="line"><span class="string">&#123;% endblock %&#125;</span></span><br></pre></td></tr></table></figure></p><h2 id="20190907"><a href="#20190907" class="headerlink" title="20190907"></a>20190907</h2><p>我把所有文章的地址中的日期全去掉了，所以评论全木有了QAQ，之前被收录的链接应该也失效了，这次应该不会再换地址了8</p><p><del>每篇文章底下的gitment可以评论，但是我没设置自动初始化，所以…可以在这里留言…(如果你能看到这句话的话…</del><br>太麻烦了，现在gitment貌似挂了，有啥问题直接发issue或者QQ729320011<br><del>想换成gitalk也失败了…不搞了…随缘吧</del><br>gitalk好像好了qwq，大噶在文章下方评论试下吧</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="20210506"><a href="#20210506" class="headerlink" title="20210506"></a>20210506</h2><p>祝好</p><p>稍微看了一下swig的语法，终于学会了科学屏蔽首页分类的方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">  &#123;% set foo = <span class="string">"true"</span> %&#125;</span><br><span class="line">  &#123;% <span class="keyword">for</span> category <span class="keyword">in</span> post.categories %&#125;</span><br><span class="line">    &#123;% <span class="keyword">if</span> category.name === <span class="string">"thoughts"</span> %&#125;</span><br><span class="line">      &#123;% set foo = <span class="string">"false"</span> %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">  &#123;% endfor %&#125;</span><br><span class="line">  &#123;% <span class="keyword">if</span> foo === <span class="string">"true"</span> %&#125;</span><br><span class="line">    &#123;&#123; post_template.render(post, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></p><h2 id="20200430"><a href="#20200430" class="headerlink" title="20200430"></a>20200430</h2><p>daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">path = <span class="string">"_posts/"</span></span><br><span class="line">dirs = os.listdir(path)</span><br><span class="line"></span><br><span class="line">patten = <span class="string">"20*"</span></span><br><span class="line"></span><br><span class="line">rbt = open(<span class="string">'robot.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"User-agent: *"</span>, file=rbt)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> dirs:</span><br><span class="line">    <span class="comment"># print(file)</span></span><br><span class="line">    <span class="keyword">if</span> re.match(patten, file):</span><br><span class="line">        print(file)</span><br><span class="line">        filename = file.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        print(filename)</span><br><span class="line">        print(<span class="string">'Disallow:/blog/&#123;&#125;/*'</span>.format(filename), file=rbt)</span><br></pre></td></tr></table></figure></p><h2 id="20200415"><a href="#20200415" class="headerlink" title="20200415"></a>20200415</h2><p>与其说这是TODOLIST，不如说这是README。</p><p>这是一篇发自现在功在将来的TODOLIST。<br>哈哈哈<br>不知道该写啥</p><h2 id="20200830"><a href="#20200830" class="headerlink" title="20200830"></a>20200830</h2><p>主页加了个奇怪的东西</p><h2 id="20191121"><a href="#20191121" class="headerlink" title="20191121"></a>20191121</h2><p>我在首页加了点代码，日常啥的不会在首页显示了0.0，<del>看起来更像技术博客了233</del><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;section id=<span class="string">"posts"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"posts-expand"</span>&gt;</span><br><span class="line">    &#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">      &#123;% <span class="keyword">if</span> post.hide != <span class="literal">true</span> %&#125;</span><br><span class="line">        &#123;&#123; post_template.render(post, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  &lt;<span class="regexp">/section&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  &#123;% include '_partials/</span>pagination.swig<span class="string">' %&#125;</span></span><br><span class="line"><span class="string">&#123;% endblock %&#125;</span></span><br></pre></td></tr></table></figure></p><h2 id="20190907"><a href="#20190907" class="headerlink" title="20190907"></a>20190907</h2><p>我把所有文章的地址中的日期全去掉了，所以评论全木有了QAQ，之前被收录的链接应该也失效了，这次应该不会再换地址了8</p><p><del>每篇文章底下的gitment可以评论，但是我没设置自动初始化，所以…可以在这里留言…(如果你能看到这句话的话…</del><br>太麻烦了，现在gitment貌似挂了，有啥问题直接发issue或者QQ729320011<br><del>想换成gitalk也失败了…不搞了…随缘吧</del><br>gitalk好像好了qwq，大噶在文章下方评论试下吧</p>]]></content>
       
       
       <categories>
@@ -29,9 +29,9 @@
     
     
     <entry>
-      <title>LeGO_LOAM速通</title>
-      <link href="/blog/ros-legoloam/"/>
-      <url>/blog/ros-legoloam/</url>
+      <title>LeGO-LOAM速通</title>
+      <link href="/blog/ros-lego-loam/"/>
+      <url>/blog/ros-lego-loam/</url>
       
         <content type="html"><![CDATA[<p>请先参阅<a href="/blog/install-ros">此文</a>安装相关依赖</p><h2 id="1-安装LeGO-LOAM"><a href="#1-安装LeGO-LOAM" class="headerlink" title="1. 安装LeGO-LOAM"></a>1. 安装LeGO-LOAM</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/catkin_ws/src</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/RobustFieldAutonomyLab/LeGO-LOAM.git</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">catkin_make -j1</span><br></pre></td></tr></table></figure><h2 id="2-编译建图"><a href="#2-编译建图" class="headerlink" title="2. 编译建图"></a>2. 编译建图</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> mapping</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">catkin_make -j1</span><br><span class="line">roslaunch lego_loam run.launch</span><br><span class="line">rosbag play yourbag.bag --clock</span><br></pre></td></tr></table></figure><p>注：可能出现的一个错误，找不到<code>libgtsam</code>，需要从<code>/usr/local/lib</code>拷贝到<code>/usr/lib</code></p><p>还可能出现的问题是，用的激光雷达是速腾的，需要修改下<code>run.launch</code>和<code>utility.h</code></p><p>可以参考<a href="https://blog.csdn.net/weixin_42141088/article/details/115747989" target="_blank" rel="noopener">这篇文章</a></p><p>啥时候我切系统再把文件copy放上来</p><h2 id="3-点云可视化"><a href="#3-点云可视化" class="headerlink" title="3. 点云可视化"></a>3. 点云可视化</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libpcl-dev</span><br><span class="line">sudo apt-get install pcl-tools</span><br><span class="line">pcl_viewer pcd_file.pcd</span><br></pre></td></tr></table></figure>]]></content>
       
@@ -76,9 +76,9 @@
             
             <tag> install </tag>
             
-            <tag> linux </tag>
-            
             <tag> ros </tag>
+            
+            <tag> linux </tag>
             
             <tag> ubuntu </tag>
             
@@ -1285,9 +1285,9 @@
             
             <tag> install </tag>
             
-            <tag> hadoop </tag>
-            
             <tag> bigdata </tag>
+            
+            <tag> hadoop </tag>
             
         </tags>
       
@@ -1424,9 +1424,9 @@
       
         <tags>
             
-            <tag> probability </tag>
-            
             <tag> note </tag>
+            
+            <tag> probability </tag>
             
         </tags>
       
@@ -2028,9 +2028,9 @@
             
             <tag> install </tag>
             
-            <tag> kali </tag>
-            
             <tag> linux </tag>
+            
+            <tag> kali </tag>
             
         </tags>
       
@@ -2653,9 +2653,9 @@
       
         <tags>
             
-            <tag> html </tag>
-            
             <tag> note </tag>
+            
+            <tag> html </tag>
             
         </tags>
       

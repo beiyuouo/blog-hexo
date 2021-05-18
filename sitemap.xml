@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beiyuouo.github.io/blog/install-ros/</loc>
+    <loc>beiyuouo.github.io/blog/ros-lego-loam/</loc>
     
-    <lastmod>2021-05-18T09:05:57.554Z</lastmod>
+    <lastmod>2021-05-18T18:19:24.842Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/ros-legoloam/</loc>
+    <loc>beiyuouo.github.io/blog/TODOLIST/</loc>
     
-    <lastmod>2021-05-18T07:05:45.099Z</lastmod>
+    <lastmod>2021-05-18T18:17:19.436Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/install-ros/</loc>
+    
+    <lastmod>2021-05-18T09:05:57.554Z</lastmod>
     
   </url>
   
@@ -733,13 +740,6 @@
     <loc>beiyuouo.github.io/blog/problem-ptalv2/</loc>
     
     <lastmod>2021-05-08T16:27:35.379Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/TODOLIST/</loc>
-    
-    <lastmod>2021-05-08T16:22:33.853Z</lastmod>
     
   </url>
   
