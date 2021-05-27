@@ -29,6 +29,35 @@
     
     
     <entry>
+      <title>课程评价网开发实录</title>
+      <link href="/blog/project-course-rating/"/>
+      <url>/blog/project-course-rating/</url>
+      
+        <content type="html"><![CDATA[<h1 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h1><p>Springboot + Mybatis + </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> project </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> project </tag>
+            
+            <tag> java </tag>
+            
+            <tag> niit </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeGO-LOAM速通</title>
       <link href="/blog/ros-lego-loam/"/>
       <url>/blog/ros-lego-loam/</url>
@@ -76,9 +105,9 @@
             
             <tag> install </tag>
             
-            <tag> ros </tag>
-            
             <tag> linux </tag>
+            
+            <tag> ros </tag>
             
             <tag> ubuntu </tag>
             
@@ -1424,9 +1453,9 @@
       
         <tags>
             
-            <tag> note </tag>
-            
             <tag> probability </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -1831,11 +1860,11 @@
             
             <tag> algorithm </tag>
             
+            <tag> chinese-remainder-theorem </tag>
+            
             <tag> gcd </tag>
             
             <tag> math </tag>
-            
-            <tag> chinese-remainder-theorem </tag>
             
         </tags>
       
@@ -1889,11 +1918,11 @@
             
             <tag> algorithm </tag>
             
-            <tag> exgcd </tag>
-            
             <tag> gcd </tag>
             
             <tag> math </tag>
+            
+            <tag> exgcd </tag>
             
         </tags>
       
@@ -2028,9 +2057,9 @@
             
             <tag> install </tag>
             
-            <tag> linux </tag>
-            
             <tag> kali </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
@@ -2709,11 +2738,11 @@
             
             <tag> javascript </tag>
             
+            <tag> jquery </tag>
+            
             <tag> game </tag>
             
             <tag> canvas </tag>
-            
-            <tag> jquery </tag>
             
         </tags>
       
