@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[课程评价网开发实录]]></title>
     <url>%2Fblog%2Fproject-course-rating%2F</url>
-    <content type="text"><![CDATA[技术栈Springboot + Mybatis +]]></content>
+    <content type="text"><![CDATA[技术栈Springboot + Mybatis + Layui + Sqoop + Flume + Kafka + HBase + Hive + Superset 项目地址: https://github.com/fattydelivery/courses-evaluation 功能：匿名评论+点赞+评分]]></content>
       <categories>
         <category>project</category>
       </categories>
@@ -582,8 +582,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>install</tag>
+        <tag>hadoop</tag>
         <tag>bigdata</tag>
       </tags>
   </entry>
@@ -826,9 +826,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -852,9 +852,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -901,8 +901,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>arduino</tag>
+        <tag>install</tag>
       </tags>
   </entry>
   <entry>
