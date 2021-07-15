@@ -12,22 +12,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[课程评价网开发实录]]></title>
-    <url>%2Fblog%2Fproject-course-rating%2F</url>
-    <content type="text"><![CDATA[技术栈Springboot + Mybatis + Layui + Sqoop + Flume + Kafka + HBase + Hive + Superset 项目地址: https://github.com/fattydelivery/courses-evaluation 功能：匿名评论+点赞+评分]]></content>
-      <categories>
-        <category>project</category>
-      </categories>
-      <tags>
-        <tag>project</tag>
-        <tag>java</tag>
-        <tag>niit</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[LeGO-LOAM速通]]></title>
     <url>%2Fblog%2Fros-lego-loam%2F</url>
-    <content type="text"><![CDATA[请先参阅此文安装相关依赖 1. 安装LeGO-LOAM1234cd ~/catkin_ws/srcgit clone https://github.com/RobustFieldAutonomyLab/LeGO-LOAM.gitcd ..catkin_make -j1 2. 编译建图12345cd mappingsource devel/setup.bashcatkin_make -j1roslaunch lego_loam run.launchrosbag play yourbag.bag --clock 注：可能出现的一个错误，找不到libgtsam，需要从/usr/local/lib拷贝到/usr/lib 还可能出现的问题是，用的激光雷达是速腾的，需要修改下run.launch和utility.h 可以参考这篇文章 啥时候我切系统再把文件copy放上来 3. 点云可视化123sudo apt-get install libpcl-devsudo apt-get install pcl-toolspcl_viewer pcd_file.pcd]]></content>
+    <content type="text"><![CDATA[请先参阅此文安装相关依赖 1. 安装LeGO-LOAM1234cd ~/catkin_ws/srcgit clone https://github.com/RobustFieldAutonomyLab/LeGO-LOAM.gitcd ..catkin_make -j1 2. 编译建图12345cd mappingsource devel/setup.bashcatkin_make -j1roslaunch lego_loam run.launchrosbag play yourbag.bag --clock 注：可能出现的一个错误，找不到libgtsam，需要从/usr/local/lib拷贝到/usr/lib 还可能出现的问题是，用的激光雷达是速腾的，需要修改下run.launch和utility.h 可以参考这篇文章 啥时候我切系统再把文件copy放上来 run.launch 1234567891011121314151617181920212223242526272829303132333435363738394041&lt;launch&gt; &lt;!--- Sim Time --&gt; &lt;param name="/use_sim_time" value="true" /&gt; &lt;node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" /&gt; &lt;!-- Run a passthrough filter to clean NaNs --&gt; &lt;node pkg="nodelet" type="nodelet" name="passthrough" args="load pcl/PassThrough pcl_manager" output="screen"&gt; &lt;remap from="~input" to="/rslidar_points" /&gt; &lt;remap from="/passthrough/output" to="/velodyne_points" /&gt; &lt;rosparam&gt; filter_field_name: z filter_limit_negative: True &lt;/rosparam&gt; &lt;rosparam&gt; filter_field_name: x filter_limit_negative: True &lt;/rosparam&gt; &lt;rosparam&gt; filter_field_name: y filter_limit_negative: True &lt;/rosparam&gt; &lt;/node&gt; &lt;!--- Run Rviz--&gt; &lt;node pkg="rviz" type="rviz" name="rviz" args="-d $(find lego_loam)/launch/test.rviz" /&gt; &lt;!--- TF --&gt; &lt;node pkg="tf" type="static_transform_publisher" name="camera_init_to_map" args="0 0 0 1.570795 0 1.570795 /map /camera_init 10" /&gt; &lt;node pkg="tf" type="static_transform_publisher" name="base_link_to_camera" args="0 0 0 -1.570795 -1.570795 0 /camera /base_link 10" /&gt; &lt;!--- LeGO-LOAM --&gt; &lt;node pkg="lego_loam" type="imageProjection" name="imageProjection" output="screen"/&gt; &lt;node pkg="lego_loam" type="featureAssociation" name="featureAssociation" output="screen"/&gt; &lt;node pkg="lego_loam" type="mapOptmization" name="mapOptmization" output="screen"/&gt; &lt;node pkg="lego_loam" type="transformFusion" name="transformFusion" output="screen"/&gt; &lt;/launch&gt; utility.h 12extern const string pointCloudTopic = "/velodyne_points";extern const string imuTopic = "/imu/data"; 3. 点云可视化123sudo apt-get install libpcl-devsudo apt-get install pcl-toolspcl_viewer pcd_file.pcd]]></content>
       <categories>
         <category>ros</category>
       </categories>
@@ -826,9 +813,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -852,9 +839,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>

@@ -26,7 +26,7 @@
 <meta property="og:url" content="beiyuouo.github.io/blog/ros-lego-loam/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-05-18T18:19:24.842Z">
+<meta property="og:updated_time" content="2021-06-15T19:35:12.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeGO-LOAM速通">
 
@@ -150,19 +150,19 @@
     <a href="/blog/paper-note/" rel="section"><i class="fa fa-fw fa-sticky-note"></i>Paper Note</a>
 
   </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
-
-  </li>
         <li class="menu-item menu-item-thoughts">
 
     <a href="/blog/categories/thoughts" rel="section"><i class="fa fa-fw fa-quote-left"></i>Thoughts</a>
 
   </li>
-        <li class="menu-item menu-item-cv">
+        <li class="menu-item menu-item-academic-page">
 
-    <a href="/blog/cv/" rel="section"><i class="fa fa-fw fa-file-pdf-o"></i>cv</a>
+    <a href="https://beiyuouo.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-graduation-cap"></i>Academic Page</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -252,7 +252,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-19 02:19:24" itemprop="dateModified" datetime="2021-05-19T02:19:24+08:00">2021-05-19</time>
+                <time title="Modified: 2021-06-16 03:35:12" itemprop="dateModified" datetime="2021-06-16T03:35:12+08:00">2021-06-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -297,6 +297,14 @@
 <p>还可能出现的问题是，用的激光雷达是速腾的，需要修改下<code>run.launch</code>和<code>utility.h</code></p>
 <p>可以参考<a href="https://blog.csdn.net/weixin_42141088/article/details/115747989" target="_blank" rel="noopener">这篇文章</a></p>
 <p>啥时候我切系统再把文件copy放上来</p>
+<ul>
+<li><code>run.launch</code></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">launch</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--- Sim Time --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"/use_sim_time"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"nodelet"</span> <span class="attr">type</span>=<span class="string">"nodelet"</span> <span class="attr">name</span>=<span class="string">"pcl_manager"</span> <span class="attr">args</span>=<span class="string">"manager"</span> <span class="attr">output</span>=<span class="string">"screen"</span> /&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- Run a passthrough filter to clean NaNs --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"nodelet"</span> <span class="attr">type</span>=<span class="string">"nodelet"</span> <span class="attr">name</span>=<span class="string">"passthrough"</span> <span class="attr">args</span>=<span class="string">"load pcl/PassThrough pcl_manager"</span> <span class="attr">output</span>=<span class="string">"screen"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">remap</span> <span class="attr">from</span>=<span class="string">"~input"</span> <span class="attr">to</span>=<span class="string">"/rslidar_points"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">remap</span> <span class="attr">from</span>=<span class="string">"/passthrough/output"</span> <span class="attr">to</span>=<span class="string">"/velodyne_points"</span> /&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">rosparam</span>&gt;</span></span><br><span class="line">      filter_field_name: z</span><br><span class="line">      filter_limit_negative: True</span><br><span class="line">    <span class="tag">&lt;/<span class="name">rosparam</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">   <span class="tag">&lt;<span class="name">rosparam</span>&gt;</span></span><br><span class="line">      filter_field_name: x</span><br><span class="line">      filter_limit_negative: True</span><br><span class="line">    <span class="tag">&lt;/<span class="name">rosparam</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">   <span class="tag">&lt;<span class="name">rosparam</span>&gt;</span></span><br><span class="line">      filter_field_name: y</span><br><span class="line">      filter_limit_negative: True</span><br><span class="line">    <span class="tag">&lt;/<span class="name">rosparam</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">node</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!--- Run Rviz--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"rviz"</span> <span class="attr">type</span>=<span class="string">"rviz"</span> <span class="attr">name</span>=<span class="string">"rviz"</span> <span class="attr">args</span>=<span class="string">"-d $(find lego_loam)/launch/test.rviz"</span> /&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!--- TF --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"tf"</span> <span class="attr">type</span>=<span class="string">"static_transform_publisher"</span> <span class="attr">name</span>=<span class="string">"camera_init_to_map"</span>  <span class="attr">args</span>=<span class="string">"0 0 0 1.570795   0        1.570795 /map    /camera_init 10"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"tf"</span> <span class="attr">type</span>=<span class="string">"static_transform_publisher"</span> <span class="attr">name</span>=<span class="string">"base_link_to_camera"</span> <span class="attr">args</span>=<span class="string">"0 0 0 -1.570795 -1.570795 0        /camera /base_link   10"</span> /&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!--- LeGO-LOAM --&gt;</span>    </span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"lego_loam"</span> <span class="attr">type</span>=<span class="string">"imageProjection"</span>    <span class="attr">name</span>=<span class="string">"imageProjection"</span>    <span class="attr">output</span>=<span class="string">"screen"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"lego_loam"</span> <span class="attr">type</span>=<span class="string">"featureAssociation"</span> <span class="attr">name</span>=<span class="string">"featureAssociation"</span> <span class="attr">output</span>=<span class="string">"screen"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"lego_loam"</span> <span class="attr">type</span>=<span class="string">"mapOptmization"</span>     <span class="attr">name</span>=<span class="string">"mapOptmization"</span>     <span class="attr">output</span>=<span class="string">"screen"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"lego_loam"</span> <span class="attr">type</span>=<span class="string">"transformFusion"</span>    <span class="attr">name</span>=<span class="string">"transformFusion"</span>    <span class="attr">output</span>=<span class="string">"screen"</span>/&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">launch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>utility.h</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="built_in">string</span> pointCloudTopic = <span class="string">"/velodyne_points"</span>;</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="built_in">string</span> imuTopic = <span class="string">"/imu/data"</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="3-点云可视化"><a href="#3-点云可视化" class="headerlink" title="3. 点云可视化"></a>3. 点云可视化</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libpcl-dev</span><br><span class="line">sudo apt-get install pcl-tools</span><br><span class="line">pcl_viewer pcd_file.pcd</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -359,8 +367,8 @@
       <i class="fa fa-chevron-left"></i> Ubuntu 18.04 ROS Melodic 下载 & 安装
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/project-course-rating/" rel="next" title="课程评价网开发实录">
-      课程评价网开发实录 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/TODOLIST/" rel="next" title="【置顶】README">
+      【置顶】README <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -437,7 +445,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -449,7 +457,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
-        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-count">84</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
