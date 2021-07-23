@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="keywords" content="project,machine-learning,gan">
-<meta property="og:type" content="article">
-<meta property="og:title" content="DCGAN for QQ yellow faces">
-<meta property="og:url" content="beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/index.html">
+  <meta name="description" content="Paper(NeurIPS, 2019) [PDF, Code] 自己录的视频 [BV1mK4y1Q7GW] and [BV1mK4y1Q7GW] 文字稿： 大家好，今天我们一起来读一篇文章，First Order Motion Model for Image Animation。不知道为什么，看到这个论文标题我就已经开始痛了哈哈哈哈哈。大家应该都看过那个xxx的痛你们懂吗，就是那句，裤袜烈大莫哭">
+<meta name="keywords" content="北屿 BeiYu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="First Order Motion Model for Image Animation">
+<meta property="og:url" content="beiyuouo.github.io/blog/paper-note/first-order-motion-model-for-image-animation.html">
 <meta property="og:site_name" content="北屿">
+<meta property="og:description" content="Paper(NeurIPS, 2019) [PDF, Code] 自己录的视频 [BV1mK4y1Q7GW] and [BV1mK4y1Q7GW] 文字稿： 大家好，今天我们一起来读一篇文章，First Order Motion Model for Image Animation。不知道为什么，看到这个论文标题我就已经开始痛了哈哈哈哈哈。大家应该都看过那个xxx的痛你们懂吗，就是那句，裤袜烈大莫哭">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/blog/img/project-dcgan-for-qq-yellow-faces/gan_mnist_099_0600.jpg">
-<meta property="og:image" content="/blog/img/project-dcgan-for-qq-yellow-faces/out.gif">
-<meta property="og:updated_time" content="2021-05-08T16:35:01.890Z">
+<meta property="og:updated_time" content="2021-07-23T03:06:54.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DCGAN for QQ yellow faces">
-<meta name="twitter:image" content="/blog/img/project-dcgan-for-qq-yellow-faces/gan_mnist_099_0600.jpg">
+<meta name="twitter:title" content="First Order Motion Model for Image Animation">
+<meta name="twitter:description" content="Paper(NeurIPS, 2019) [PDF, Code] 自己录的视频 [BV1mK4y1Q7GW] and [BV1mK4y1Q7GW] 文字稿： 大家好，今天我们一起来读一篇文章，First Order Motion Model for Image Animation。不知道为什么，看到这个论文标题我就已经开始痛了哈哈哈哈哈。大家应该都看过那个xxx的痛你们懂吗，就是那句，裤袜烈大莫哭">
 
-<link rel="canonical" href="beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/">
+<link rel="canonical" href="beiyuouo.github.io/blog/paper-note/first-order-motion-model-for-image-animation">
 
 
 <script id="page-configurations">
@@ -41,12 +41,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'en'
   };
 </script>
 
-  <title>DCGAN for QQ yellow faces | 北屿</title>
+  <title>First Order Motion Model for Image Animation | 北屿
+</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145083103-1"></script>
     <script>
@@ -217,161 +218,58 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content post posts-expand">
+          <div class="content page posts-expand">
             
 
     
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.jpg">
-      <meta itemprop="name" content="BeiYu">
-      <meta itemprop="description" content="Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="北屿">
-    </span>
+    
+    
+    <div class="post-block" lang="en">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          DCGAN for QQ yellow faces
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+<h1 class="post-title" itemprop="name headline">First Order Motion Model for Image Animation
+</h1>
 
-              <time title="Created: 2020-08-03 09:45:25" itemprop="dateCreated datePublished" datetime="2020-08-03T09:45:25+08:00">2020-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-09 00:35:01" itemprop="dateModified" datetime="2021-05-09T00:35:01+08:00">2021-05-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/project/" itemprop="url" rel="index"><span itemprop="name">project</span></a>
-                </span>
-            </span>
-
-          
+<div class="post-meta">
   
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/blog/project-dcgan-for-qq-yellow-faces/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/blog/project-dcgan-for-qq-yellow-faces/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <div class="post-description"><p></p></div>
 
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>github repo: <a href="https://github.com/beiyuouo/DCGAN-for-QQ-yellow-faces" target="_blank" rel="noopener">DCGAN-for-QQ-yellow-faces</a></p>
-<p>干啥用的见名知意233</p>
-<p>数据集是网上搜的，感谢无私的网友233</p>
-<p><code>data_preprocessing.py</code> 将数据处理成<code>jpg</code> 的 <code>RGB</code>模式，<code>gif</code>提取出来每一帧就好了。<br>但仍然存在数据分布不均匀的情况..这没办法，懒得弄了<br>处理出来大概有6k左右了</p>
-<p><img src="/blog/img/project-dcgan-for-qq-yellow-faces/gan_mnist_099_0600.jpg" alt></p>
-<p>另外<code>gene_gif.py</code>是用来生成<code>gif</code>的</p>
-<p><img src="/blog/img/project-dcgan-for-qq-yellow-faces/out.gif" alt></p>
-
-    </div>
-
-    
-    
-    
-        <div class="reward-container">
-  <div>Have fun.</div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    Donate
-  </button>
-  <div id="qr" style="display: none;">
-      
-      <div style="display: inline-block;">
-        <img src="/blog/images/wechatpay.png" alt="BeiYu WeChat Pay">
-        <p>WeChat Pay</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/blog/images/alipay.png" alt="BeiYu Alipay">
-        <p>Alipay</p>
-      </div>
-
-  </div>
 </div>
 
-        
+</header>
 
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:  </strong>BeiYu
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link: </strong>
-    <a href="/blog/beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/" title="DCGAN for QQ yellow faces">beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
+      
+      
+      
+      <div class="post-body">
+          <p>Paper(NeurIPS, 2019) [<a href="https://papers.nips.cc/paper/8935-first-order-motion-model-for-image-animation" target="_blank" rel="noopener">PDF</a>, <a href="https://github.com/AliaksandrSiarohin/first-order-model" target="_blank" rel="noopener">Code</a>]</p>
+<p>自己录的视频 [<a href="https://www.bilibili.com/video/BV1mK4y1Q7GW/" target="_blank" rel="noopener">BV1mK4y1Q7GW</a>] and [<a href="https://www.bilibili.com/video/BV1wy4y1a7ML/" target="_blank" rel="noopener">BV1mK4y1Q7GW</a>]</p>
+<p>文字稿：</p>
+<p>大家好，今天我们一起来读一篇文章，First Order Motion Model for Image Animation。不知道为什么，看到这个论文标题我就已经开始痛了哈哈哈哈哈。大家应该都看过那个xxx的痛你们懂吗，就是那句，裤袜烈大莫哭那得撒什么什么的，原视频是一个油管上唱歌的小姐姐，用上这个模型，就可以模仿生成那一段视频。这个论文也是提供的代码在线可玩，在底下这个github链接，可以直接用提供的训练好的模型在colab生成自己想要的视频。</p>
+<p>作者是意大利特伦托大学的，有意思的是三作是一个Snap公司的hhhh，就是阅后即焚的软件，这篇论文是发表在NeurIPS2019上的，CCF-A类，也是一篇顶会的文章呀</p>
+<p>我们首先来看摘要部分，Image animation consists of generating a video sequence so that an object in source image is animated according to the motion of a driving video，这句话相当于背景吧，就是说图像动画是一段根据驱动视频和原图，也就是source image生成的视频序列。然后我们的框架来解决这个问题没有用到任何先前关于具体对象的信息，什么意思呢，我觉得应该就是，我个人理解呀，没有根据某个特殊object来设计模型结构和训练指标或者方法，假如要生成一个人的动画，因为为了得到比较好的结果很多人都会只在人的动画的训练集上进行训练，来根据这个object非常特殊的调整模型结构，那么生成的人的动画效果可能就比较好，但是在其他object上就会很差，但是这篇论文没有这么做，也就是说他的模型泛化能力应该比较好。然后如果你在一个类别上训练，那么可以应用在所有同类型的object上。为了实现这个呢，这篇文章用了自监督学习的方法，把这个外观和动作进行了分离。为了能够支持复杂的动作呢，文章用了一种表现形式是，一组关键点和对应的局部仿射变换。生成网络模型对motion的遮挡进行建模，从原图的外观和驱动视频获得的motion进行组合，并且这个达到了SOTA。</p>
+<p>这个摘要也差不多说清了文章的主要思路，就是先识别关键点，然后分离出来关键点的motion，最后利用原图进行复原。一般看完摘要可以直接去找Introduction里面的一张Overview的图片，就可以大概知道整个的工作了，这篇的Overview是Figure2。可以看到就差不多和之前说的那样，一个原图，一个驱动视频，然后是motion模块，先进行关键点检测，然后做两个放射变换，最后合并一个稠密的motion，这里可以看到他用了一个中间的表现形式R，在进行最终的仿射变换，和一个遮挡映射，这个O还没看原文所以可能不知道这个代表的是什么意思。最后放到生成模块中，得到输出。</p>
+<p>再回头来简单看一下introduction吧，前面是说将对象动画化生成视频有很多应用，更确切的说是将外观从source image中抽取，然后将motion从driving video中抽取，然后组合起来。这里举了一个栗子就是，把人的表情动画出来，之前很多方法都是通过很强的预先在特定object上训练和计算图形学技术得到的，这些方法是object-specific的方法。最近的深度生成模型，对这个图片animation非常有效，例如GAN和VAE，这些都依赖于与训练模型来抽取特定object的表示形式，例如关键点什么的。但是，这些预训练模型都是需要大量的标记数据，不能对任意类别的object，为了解决这个问题，这个人提出了MonkeyNet，用到了自监督学习。但是主要的缺点是外观变换和临近关键点估计用的是0阶的模型，这样大幅度的motion姿态变换效果就比较差，这篇论文解决这个问题用到就是局部仿射变换，所以也叫做这个first-order motion model。贡献除了这个还有一个遮挡的生成模型，然后用了equivariance loss来作为关键点训练，并且达到了SOTA，可以处理高分辨率数据集。最后release了一个高分辨率数据集。</p>
+<p>一般相关工作related work我就简单简单看一下，其实很多在前面已经提到了，这里可能提到的内容更早。首先是视频生成，前面这是还没有VAE时候的方法，然后有了VAE，有了GAN。然后是image animation，这里面有几个object-specific的方法，然后后面这一段是不指定object的方法，比如X2Face，MonkeyNet。</p>
+<p>接下来就是方法论了，首先是两个符号S和D表示source image和driving video，然后这个自监督的学习灵感来与monkeynet，为了训练找了很多同类型的视频序列。模型呢，通过组合单帧和视频中的motion来重建视频。然后观察同一个视频抽取的帧对，学习将motion编码为具体motion特定关键点和局部仿射变换的组合。测试的时候，就是将source image和驱动视频中的每一帧组成一对，然后让source object动起来。</p>
+<p>然后之前的overview已经看过了，也可以看出来这个框架分成两个模块，一个用于motion估计，一个用于图像生成。接着他们只需要一找到一个转换方程，从驱动视频转换成原图的视频，这里他们后向传播用的光流法，而不是前向传播。这里假设了存在一个抽象参考帧R，来估计两个变换R-&gt;S和R-&gt;D，注意这里都是从R到S和D。然后这个motion估计的模块分成两步，第一步用来找关键点的轨迹，用了泰勒展开表示关键点的位置和变换。在第二步，稠密的motion网络结合了局部的近似，得到了这个S-&gt;D的稠密motion的变换和遮罩，就是D中应该被source image替代和修复的地方。最后生成模块进行渲染，得到结果。</p>
+<p>然后3.1节讲的是motion近似描述的局部仿射变换，像之前一样，假设存在了一个R，我们最后要估计D-&gt;S，那么我们可以从D到R，再从R到S。如果给定帧X，那么可以得到一阶泰勒展开K个关键点，这是在R中的，我们要得到都是在X，S，D中的。注意上面这个是D-&gt;R和之前的R-&gt;D是不同的，然后K个关键点的变换就是这个表达形式。这个其实就是一个雅可比行列式的应用吧，如果在p点可微，那么F(x)就可以估计成这样的形式，这个x其实就是这个变换里面的p，等价代换一下就好，最后得到这样的公式。</p>
+<p>然后我们直接往下看，这个D-&gt;S拆成了两部，然后对这个求一下逆就是原来的R-&gt;D。注意上面这一个话，在R中姿态空间里，p是点的坐标，而在XSD中，z是点的坐标。所以就有了这个e.g.从D-&gt;R那么就是从zk到pk。然后下面这个D-&gt;S的变换的估计就是zk+Jk(z-zk)，然后用之前的式子替换一下，替换成R-&gt;D和R-&gt;S。这个R-&gt;D和R-&gt;S怎么来的呢，就是关键点预测了，用的U-Net估计K个热力图作为K个关键点，然后这个Jk=1也就是一阶的雅可比表达式。</p>
+<p>下面这一部分讲的是combine局部的motion，就是一些实现的细节，包括mask怎么搞，怎么得到完整的稠密motion预测之类的。这个这招部分就是自监督学习的部分主要是为了看一下模型是否真正的了解这个motion。再后面就是训练用到的loss，测试就是之前提到的一点。</p>
+<p>实验部分，首先是数据集和相关的处理，然后是一个评估的指标，L1，AKD平均关键点距离，MKR消失关键点率，AED平均欧几里得距离。在接下来是关于遮罩的研究。然后结果当然是达到了SOTA。一句话总结一下就是利用局部仿射变换抽取关键点和motion转换成潜在空间表示，最后复原生成图像的这么一个过程。这些都是我自己的一些理解，不免有一些错误，希望可以指出，无限进步！</p>
 
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/blog/tags/project/" rel="tag"># project</a>
-              <a href="/blog/tags/machine-learning/" rel="tag"># machine-learning</a>
-              <a href="/blog/tags/gan/" rel="tag"># gan</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/blog/note-ros/" rel="prev" title="ROS笔记">
-      <i class="fa fa-chevron-left"></i> ROS笔记
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/blog/20200825/" rel="next" title="20200825">
-      20200825 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      </div>
+      
+      
+      
     </div>
-      </footer>
     
-  </article>
-  
-  
-  
 
+    
+    
+    
 
 
           </div>

@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="keywords" content="project,machine-learning,gan">
-<meta property="og:type" content="article">
-<meta property="og:title" content="DCGAN for QQ yellow faces">
-<meta property="og:url" content="beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/index.html">
+  <meta name="description" content="传送门联邦学习">
+<meta name="keywords" content="北屿 BeiYu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Communication-Efficient Learning of Deep Networks from Decentralized Data">
+<meta property="og:url" content="beiyuouo.github.io/blog/paper-note/communication-efficient-learning-of-deep-networks-from-decentralized-data.html">
 <meta property="og:site_name" content="北屿">
+<meta property="og:description" content="传送门联邦学习">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/blog/img/project-dcgan-for-qq-yellow-faces/gan_mnist_099_0600.jpg">
-<meta property="og:image" content="/blog/img/project-dcgan-for-qq-yellow-faces/out.gif">
-<meta property="og:updated_time" content="2021-05-08T16:35:01.890Z">
+<meta property="og:updated_time" content="2021-07-23T03:05:20.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DCGAN for QQ yellow faces">
-<meta name="twitter:image" content="/blog/img/project-dcgan-for-qq-yellow-faces/gan_mnist_099_0600.jpg">
+<meta name="twitter:title" content="Communication-Efficient Learning of Deep Networks from Decentralized Data">
+<meta name="twitter:description" content="传送门联邦学习">
 
-<link rel="canonical" href="beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/">
+<link rel="canonical" href="beiyuouo.github.io/blog/paper-note/communication-efficient-learning-of-deep-networks-from-decentralized-data">
 
 
 <script id="page-configurations">
@@ -41,12 +41,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'en'
   };
 </script>
 
-  <title>DCGAN for QQ yellow faces | 北屿</title>
+  <title>Communication-Efficient Learning of Deep Networks from Decentralized Data | 北屿
+</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145083103-1"></script>
     <script>
@@ -217,161 +218,44 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content post posts-expand">
+          <div class="content page posts-expand">
             
 
     
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.jpg">
-      <meta itemprop="name" content="BeiYu">
-      <meta itemprop="description" content="Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="北屿">
-    </span>
+    
+    
+    <div class="post-block" lang="en">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          DCGAN for QQ yellow faces
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+<h1 class="post-title" itemprop="name headline">Communication-Efficient Learning of Deep Networks from Decentralized Data
+</h1>
 
-              <time title="Created: 2020-08-03 09:45:25" itemprop="dateCreated datePublished" datetime="2020-08-03T09:45:25+08:00">2020-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-09 00:35:01" itemprop="dateModified" datetime="2021-05-09T00:35:01+08:00">2021-05-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/project/" itemprop="url" rel="index"><span itemprop="name">project</span></a>
-                </span>
-            </span>
-
-          
+<div class="post-meta">
   
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/blog/project-dcgan-for-qq-yellow-faces/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/blog/project-dcgan-for-qq-yellow-faces/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <div class="post-description"><p></p></div>
 
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>github repo: <a href="https://github.com/beiyuouo/DCGAN-for-QQ-yellow-faces" target="_blank" rel="noopener">DCGAN-for-QQ-yellow-faces</a></p>
-<p>干啥用的见名知意233</p>
-<p>数据集是网上搜的，感谢无私的网友233</p>
-<p><code>data_preprocessing.py</code> 将数据处理成<code>jpg</code> 的 <code>RGB</code>模式，<code>gif</code>提取出来每一帧就好了。<br>但仍然存在数据分布不均匀的情况..这没办法，懒得弄了<br>处理出来大概有6k左右了</p>
-<p><img src="/blog/img/project-dcgan-for-qq-yellow-faces/gan_mnist_099_0600.jpg" alt></p>
-<p>另外<code>gene_gif.py</code>是用来生成<code>gif</code>的</p>
-<p><img src="/blog/img/project-dcgan-for-qq-yellow-faces/out.gif" alt></p>
-
-    </div>
-
-    
-    
-    
-        <div class="reward-container">
-  <div>Have fun.</div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    Donate
-  </button>
-  <div id="qr" style="display: none;">
-      
-      <div style="display: inline-block;">
-        <img src="/blog/images/wechatpay.png" alt="BeiYu WeChat Pay">
-        <p>WeChat Pay</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/blog/images/alipay.png" alt="BeiYu Alipay">
-        <p>Alipay</p>
-      </div>
-
-  </div>
 </div>
 
-        
+</header>
 
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:  </strong>BeiYu
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link: </strong>
-    <a href="/blog/beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/" title="DCGAN for QQ yellow faces">beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
+      
+      
+      
+      <div class="post-body">
+          <p><a href="https://arxiv.org/abs/1602.05629" target="_blank" rel="noopener">传送门</a><br><a href="/blog/note-federated-learning">联邦学习</a></p>
 
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/blog/tags/project/" rel="tag"># project</a>
-              <a href="/blog/tags/machine-learning/" rel="tag"># machine-learning</a>
-              <a href="/blog/tags/gan/" rel="tag"># gan</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/blog/note-ros/" rel="prev" title="ROS笔记">
-      <i class="fa fa-chevron-left"></i> ROS笔记
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/blog/20200825/" rel="next" title="20200825">
-      20200825 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      </div>
+      
+      
+      
     </div>
-      </footer>
     
-  </article>
-  
-  
-  
 
+    
+    
+    
 
 
           </div>

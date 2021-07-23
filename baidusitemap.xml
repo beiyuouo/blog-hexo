@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>beiyuouo.github.io/blog/blog/ros-lego-loam/</loc>
-    <lastmod>2021-06-15</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/TODOLIST/</loc>
-    <lastmod>2021-05-18</lastmod>
+    <lastmod>2021-07-21</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/robotics-lego-loam/</loc>
+    <lastmod>2021-07-21</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/note-slam/</loc>
+    <lastmod>2021-07-19</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/note-ros/</loc>
+    <lastmod>2021-07-19</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/install-ros/</loc>
     <lastmod>2021-05-18</lastmod>
@@ -13,7 +19,7 @@
     <loc>beiyuouo.github.io/blog/blog/20210508/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/js-JavaScriptPainting/</loc>
+    <loc>beiyuouo.github.io/blog/blog/js-javascript-painting/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/js-addball/</loc>
@@ -154,13 +160,7 @@
     <loc>beiyuouo.github.io/blog/blog/note-env/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/note-ros/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/project-dcgan-for-qq-yellow-faces/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/note-slam/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/note-mysql/</loc>
@@ -175,7 +175,7 @@
     <loc>beiyuouo.github.io/blog/blog/esp-wifikiller/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/ctf-HDCTF1/</loc>
+    <loc>beiyuouo.github.io/blog/blog/ctf-hdctf1/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/note-machine-learning/</loc>
@@ -301,10 +301,10 @@
     <loc>beiyuouo.github.io/blog/blog/test-gitmenttest/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/test-HelloWorld/</loc>
+    <loc>beiyuouo.github.io/blog/blog/test-helloworld/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/test-Haha/</loc>
+    <loc>beiyuouo.github.io/blog/blog/test-haha/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/20210507/</loc>

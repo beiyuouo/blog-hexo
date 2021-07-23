@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+  <meta name="description" content="传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on features but only a few on instances.Vertical Federated Learnin">
 <meta name="keywords" content="北屿 BeiYu">
 <meta property="og:type" content="website">
-<meta property="og:title" content="北屿">
-<meta property="og:url" content="beiyuouo.github.io/blog/tags/robotic/index.html">
+<meta property="og:title" content="Measure Contribution of Participants in Federated Learning">
+<meta property="og:url" content="beiyuouo.github.io/blog/paper-note/measure-contribution-of-participants-in-federated-learning.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta property="og:description" content="传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on features but only a few on instances.Vertical Federated Learnin">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-07-23T03:06:44.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="北屿">
-<meta name="twitter:description" content="Sometimes it&apos;s the very people who no one imagines angthing of who do the things that no one can imagine.">
+<meta name="twitter:title" content="Measure Contribution of Participants in Federated Learning">
+<meta name="twitter:description" content="传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on features but only a few on instances.Vertical Federated Learnin">
 
-<link rel="canonical" href="beiyuouo.github.io/blog/tags/robotic/">
+<link rel="canonical" href="beiyuouo.github.io/blog/paper-note/measure-contribution-of-participants-in-federated-learning">
 
 
 <script id="page-configurations">
@@ -45,7 +46,8 @@
   };
 </script>
 
-  <title>Tag: robotic | 北屿</title>
+  <title>Measure Contribution of Participants in Federated Learning | 北屿
+</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145083103-1"></script>
     <script>
@@ -216,58 +218,66 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content tag">
+          <div class="content page posts-expand">
             
 
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">Measure Contribution of Participants in Federated Learning
+</h1>
+
+<div class="post-meta">
   
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">robotic
-          <small>Tag</small>
-        </h2>
-      </div>
+
+</div>
+
+</header>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
+      
+      
+      <div class="post-body">
+          <p><a href="https://arxiv.org/abs/1909.08525" target="_blank" rel="noopener">传送门</a><br>这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法</p>
+<blockquote>
+<p><em>Horizontal Federated Learning</em> applies to circumstances where we have a lot of overlap on features but only a few on instances.<br><em>Vertical Federated Learning</em> refers to where we have many overlapped instances but few overlapped features.<br><em>Federated Transfer Learning</em> uses Transfer Learning to improve model performance when we have neither much overlap on features nor on instances.</p>
+</blockquote>
+<p><strong>DELETION METHOD FOR HORIZONTAL FML</strong><br>Effect of the $i$th instance on the model predictions:</p>
+<script type="math/tex; mode=display">Influence^{-i}=\frac{1}{n}\sum_{j=1}^{n} |\hat{y_{j}}-\hat{y_{j}}^{-i}|</script><p>where $n$ is the size of dataset, $\hat{y_{j}}$ is the prediction on $j$th instance made by the model trained on all data, and $\hat{y_{j}}^{-i}$ is the prediction on $j$th instance made by model trained with the $i$th instance omitted.<br>类似地，子集的influence自然就是</p>
+<script type="math/tex; mode=display">Influence^{-D}=\sum_{i \in D}Influence^{-i}</script><p>接下来就是计算方法了<br>就把每个子集删掉，然后重新训练评价…这是个什么样的复杂度…</p>
+<p><strong>SHAPLEY VALUES FOR VERTICAL FML</strong><br>定义一个对模型影响的线性函数</p>
+<script type="math/tex; mode=display">f(x)=\beta_0+\sum_{i=1}^{n}\beta_ix_i</script><p>where $\beta_i$ is the model coefficient and $x_i$ is the feature value, we can measure the influence of $X_i=x_i$ according to the situational importance</p>
+<script type="math/tex; mode=display">\varphi_i(x)=\beta_ix_i-\beta_i\mathbb{E}[X_i]</script><blockquote>
+<p>The Shapley value, which is originated from coalitional game theory with proven theoretical properties, provides an effective approach to distribute contributions among features in a fair way by assigning to each feature a number which denotes its influence.</p>
+</blockquote>
+<p>没怎么看Spapley value，简单来说-，- 还是个博弈问题，具有公认理论性质的联合博弈理论，然后能给每个特征分配一个数值。<br>The Shapley value is defined as:</p>
+<script type="math/tex; mode=display">\phi_i(x)=\sum_{Q\subseteq S\backslash \{i\}}\frac{|Q|!(|S|-|Q|-1)!}{|S|!}(\Delta_{Q\cup\{i\}}(x)-\Delta_{Q}(x))</script><p>where $S$ is s feature index set, $Q\subseteq S=\{1,2,\cdots, n\}$ is a subset of features, $x$ is the vector of feature values of the instance in consideration and $|\cdot|$ is the size of a feature set. $\Delta_{Q}(x)$ denotes the influence of a subset of feature values, which generalizes $\varphi_{i}(x)$, in the following form</p>
+<script type="math/tex; mode=display">\Delta_{Q}(x)=\mathbb{E}[f|X_i=x_i,\forall i \in Q]-\mathbb{E}[f]</script><p>然鹅这个很难算，复杂度是指数级的，用了一个近似算法</p>
+<script type="math/tex; mode=display">\phi_{i}(x)=\frac{1}{M}\sum_{m=1}^{M}(f(x_{+i}^{m})-f(x_{-i}^{m}))</script><p>where $M$ is the number of iterations. $f(x_{+i}^{m})$ is the prediction for instance $x$, with a random number of feature value replaced by feature values from a randomly selected instance $z$, except for the respective value of feature $i$.</p>
+<p>最后就是计算个体的Spapley value，一组的差不多就是求和了-，- 定义太多了…</p>
+<p>实验是用这个数据集做的 the Cervical cancer (Risk Factors) Data Set，SVM model<br>为每个特征找一个Shapley value，再来估算个体，最后估算一组的贡献</p>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-18T13:04:28+08:00"
-              content="2021-05-18">
-          05-18
-        </time>
       </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/ros-lego-loam/" itemprop="url">
-            <span itemprop="name">LeGO-LOAM速通</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+      
+      
+      
     </div>
-  </div>
-  
-  
-  
+    
 
-  
-
+    
+    
+    
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {

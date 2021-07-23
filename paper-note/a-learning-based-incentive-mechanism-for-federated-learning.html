@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Measure Contribution of Participants in Federated Learning传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on featu">
+  <meta name="description" content="DOI:10.1109/JIOT.2020.2967772这一文中提到了两点传统贡献不适用的地方  First, computing nodes do not share their decisions due to privacy concerns.首先，由于隐私问题，计算节点不会分享他们的决策。Second, it is difficult to evaluate the contributi">
 <meta name="keywords" content="北屿 BeiYu">
 <meta property="og:type" content="website">
-<meta property="og:title" content="202003">
-<meta property="og:url" content="beiyuouo.github.io/blog/paper-note/202003/index.html">
+<meta property="og:title" content="A Learning-based Incentive Mechanism for Federated Learning">
+<meta property="og:url" content="beiyuouo.github.io/blog/paper-note/a-learning-based-incentive-mechanism-for-federated-learning.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="Measure Contribution of Participants in Federated Learning传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on featu">
+<meta property="og:description" content="DOI:10.1109/JIOT.2020.2967772这一文中提到了两点传统贡献不适用的地方  First, computing nodes do not share their decisions due to privacy concerns.首先，由于隐私问题，计算节点不会分享他们的决策。Second, it is difficult to evaluate the contributi">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-02-19T08:34:14.160Z">
+<meta property="og:updated_time" content="2021-07-23T03:06:02.720Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="202003">
-<meta name="twitter:description" content="Measure Contribution of Participants in Federated Learning传送门这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法  Horizontal Federated Learning applies to circumstances where we have a lot of overlap on featu">
+<meta name="twitter:title" content="A Learning-based Incentive Mechanism for Federated Learning">
+<meta name="twitter:description" content="DOI:10.1109/JIOT.2020.2967772这一文中提到了两点传统贡献不适用的地方  First, computing nodes do not share their decisions due to privacy concerns.首先，由于隐私问题，计算节点不会分享他们的决策。Second, it is difficult to evaluate the contributi">
 
-<link rel="canonical" href="beiyuouo.github.io/blog/paper-note/202003/">
+<link rel="canonical" href="beiyuouo.github.io/blog/paper-note/a-learning-based-incentive-mechanism-for-federated-learning">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>202003 | 北屿
+  <title>A Learning-based Incentive Mechanism for Federated Learning | 北屿
 </title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145083103-1"></script>
@@ -230,17 +230,11 @@
     <div class="post-block" lang="en">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">202003
+<h1 class="post-title" itemprop="name headline">A Learning-based Incentive Mechanism for Federated Learning
 </h1>
 
 <div class="post-meta">
   
-  <ul class="breadcrumb">
-          
-            <li><a href="/blog/paper-note/">PAPER-NOTE</a></li>
-          <li>202003</li>
-        
-  </ul>
 
 </div>
 
@@ -250,24 +244,18 @@
       
       
       <div class="post-body">
-          <h2 id="Measure-Contribution-of-Participants-in-Federated-Learning"><a href="#Measure-Contribution-of-Participants-in-Federated-Learning" class="headerlink" title="Measure Contribution of Participants in Federated Learning"></a>Measure Contribution of Participants in Federated Learning</h2><p><a href="https://arxiv.org/abs/1909.08525" target="_blank" rel="noopener">传送门</a><br>这是一篇给予评价客户端贡献的文章，分别对Horizontal和Vertical提出方法</p>
+          <p><a href="https://sci-hub.shop/10.1109/JIOT.2020.2967772" target="_blank" rel="noopener">DOI:10.1109/JIOT.2020.2967772</a><br>这一文中提到了两点传统贡献不适用的地方</p>
 <blockquote>
-<p><em>Horizontal Federated Learning</em> applies to circumstances where we have a lot of overlap on features but only a few on instances.<br><em>Vertical Federated Learning</em> refers to where we have many overlapped instances but few overlapped features.<br><em>Federated Transfer Learning</em> uses Transfer Learning to improve model performance when we have neither much overlap on features nor on instances.</p>
+<p>First, computing nodes do not share their decisions due to privacy concerns.<br>首先，由于隐私问题，计算节点不会分享他们的决策。<br>Second, it is difficult to evaluate the contribution<br>of participants to the accuracy of trained models.<br>其次，很难评价参与者对已经训练的模型准确性的贡献。<br>Another challenge, in parallel with incentive mechanism design, imposed by many intelligent IoT applications is to update models using fresh data, so that they can provide services with high accuracy to adopt to the new environment.<br>许多智能IoT应用程序与激励机制设计同时面临的另一个挑战是使用新鲜数据更新模型，以便它们可以提供高精度的服务以适应新环境。</p>
 </blockquote>
-<p><strong>DELETION METHOD FOR HORIZONTAL FML</strong><br>Effect of the $i$th instance on the model predictions:</p>
-<script type="math/tex; mode=display">Influence^{-i}=\frac{1}{n}\sum_{j=1}^{n} |\hat{y_{j}}-\hat{y_{j}}^{-i}|</script><p>where $n$ is the size of dataset, $\hat{y_{j}}$ is the prediction on $j$th instance made by the model trained on all data, and $\hat{y_{j}}^{-i}$ is the prediction on $j$th instance made by model trained with the $i$th instance omitted.<br>类似地，子集的influence自然就是</p>
-<script type="math/tex; mode=display">Influence^{-D}=\sum_{i \in D}Influence^{-i}</script><p>接下来就是计算方法了<br>就把每个子集删掉，然后重新训练评价…这是个什么样的复杂度…</p>
-<p><strong>SHAPLEY VALUES FOR VERTICAL FML</strong><br>定义一个对模型影响的线性函数</p>
-<script type="math/tex; mode=display">f(x)=\beta_0+\sum_{i=1}^{n}\beta_ix_i</script><p>where $\beta_i$ is the model coefficient and $x_i$ is the feature value, we can measure the influence of $X_i=x_i$ according to the situational importance</p>
-<script type="math/tex; mode=display">\varphi_i(x)=\beta_ix_i-\beta_i\mathbb{E}[X_i]</script><blockquote>
-<p>The Shapley value, which is originated from coalitional game theory with proven theoretical properties, provides an effective approach to distribute contributions among features in a fair way by assigning to each feature a number which denotes its influence.</p>
+<p>问题描述</p>
+<blockquote>
+<p> The parameter server aims to minimize the total reward, while each edge node has its own interests of maximizing the revenue that is defined by the received reward from the parameter server minus its cost of data collection and model training. We formulate the problem as a Stackelberg game and derive the Nash Equilibrium that describes the steady state of the whole federated learning system, given the full knowledge of participants’ contributions.</p>
 </blockquote>
-<p>没怎么看Spapley value，简单来说-，- 还是个博弈问题，具有公认理论性质的联合博弈理论，然后能给每个特征分配一个数值。<br>The Shapley value is defined as:</p>
-<script type="math/tex; mode=display">\phi_i(x)=\sum_{Q\subseteq S\backslash \{i\}}\frac{|Q|!(|S|-|Q|-1)!}{|S|!}(\Delta_{Q\cup\{i\}}(x)-\Delta_{Q}(x))</script><p>where $S$ is s feature index set, $Q\subseteq S=\{1,2,\cdots, n\}$ is a subset of features, $x$ is the vector of feature values of the instance in consideration and $|\cdot|$ is the size of a feature set. $\Delta_{Q}(x)$ denotes the influence of a subset of feature values, which generalizes $\varphi_{i}(x)$, in the following form</p>
-<script type="math/tex; mode=display">\Delta_{Q}(x)=\mathbb{E}[f|X_i=x_i,\forall i \in Q]-\mathbb{E}[f]</script><p>然鹅这个很难算，复杂度是指数级的，用了一个近似算法</p>
-<script type="math/tex; mode=display">\phi_{i}(x)=\frac{1}{M}\sum_{m=1}^{M}(f(x_{+i}^{m})-f(x_{-i}^{m}))</script><p>where $M$ is the number of iterations. $f(x_{+i}^{m})$ is the prediction for instance $x$, with a random number of feature value replaced by feature values from a randomly selected instance $z$, except for the respective value of feature $i$.</p>
-<p>最后就是计算个体的Spapley value，一组的差不多就是求和了-，- 定义太多了…</p>
-<p>实验是用这个数据集做的 the Cervical cancer (Risk Factors) Data Set，SVM model<br>为每个特征找一个Shapley value，再来估算个体，最后估算一组的贡献</p>
+<p>这篇文章设计的算法基于deep reinforcement learning(DRL)解决unshared decisions and ambiguous contribution evaluation的问题<br>假设model system是a quasi-static state的，没有edge node加入或离开<br>The utility of edge node $n$ is defined by </p>
+<script type="math/tex; mode=display">u_n(x_n, x_{-n})=\frac{x_n}{\sum_{m=1}^{N}x_m}\tau -c_{n}^{com}x_{n}-c_{n}^{cmp}x_n</script><script type="math/tex; mode=display">\tau \text{ is a total payment}</script><script type="math/tex; mode=display">c_{n}^{cmp} \text{ and } c_{n}^{com} \text{denote unit computational cost and communication cost.}</script><p>The utility of the parameter server is defined as </p>
+<script type="math/tex; mode=display">u(\tau )=\lambda g(X)-\tau</script><script type="math/tex; mode=display">\lambda > 0 \text{ is a system parameter and }</script><script type="math/tex; mode=display">g(X) \text{ is a concave function with respect to the amount of training data.}</script><p><strong>Nash Equilibrium</strong><br>A set of strategies $x^{\ast}=(x_{1}^{\ast},x_{2}^{\ast},\cdots ,x_{N}^{\ast})$ is a Nash equilibrium of the second<br>stage game if for any edge node $n$</p>
+<script type="math/tex; mode=display">u_{n}(x_{n}^{\ast}, x_{-n}^{\ast})\geqslant u_{n}(x_{n}, x_{-n}^{\ast})</script><p>后面是一些我看不懂的博弈策略…Stackelberg game，在后面大概就是用DRL来解决这个问题吧-，- 实在是看不太懂</p>
 
       </div>
       
@@ -275,12 +263,6 @@
       
     </div>
     
-  <ul class="breadcrumb">
-          
-            <li><a href="/blog/paper-note/">PAPER-NOTE</a></li>
-          <li>202003</li>
-        
-  </ul>
 
     
     
@@ -336,7 +318,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Measure-Contribution-of-Participants-in-Federated-Learning"><span class="nav-number">1.</span> <span class="nav-text">Measure Contribution of Participants in Federated Learning</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

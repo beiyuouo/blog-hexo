@@ -2,23 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beiyuouo.github.io/blog/about/index.html</loc>
+    <loc>beiyuouo.github.io/blog/paper-note/index.html</loc>
     
-    <lastmod>2021-07-15T14:58:40.677Z</lastmod>
+    <lastmod>2021-07-23T03:17:12.426Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/ros-lego-loam/</loc>
+    <loc>beiyuouo.github.io/blog/paper-note/first-order-motion-model-for-image-animation.html</loc>
     
-    <lastmod>2021-06-15T19:35:12.763Z</lastmod>
+    <lastmod>2021-07-23T03:06:54.001Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/measure-contribution-of-participants-in-federated-learning.html</loc>
+    
+    <lastmod>2021-07-23T03:06:44.696Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/rsgan-face-swapping-and-editing-using-face-and-hair-representation-in-latent-spaces.html</loc>
+    
+    <lastmod>2021-07-23T03:06:43.256Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/a-learning-based-incentive-mechanism-for-federated-learning.html</loc>
+    
+    <lastmod>2021-07-23T03:06:02.720Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/communication-efficient-learning-of-deep-networks-from-decentralized-data.html</loc>
+    
+    <lastmod>2021-07-23T03:05:20.512Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/learning-private-neural-language-modeling-with-attentive-aggregation.html</loc>
+    
+    <lastmod>2021-07-23T03:05:16.137Z</lastmod>
     
   </url>
   
   <url>
     <loc>beiyuouo.github.io/blog/TODOLIST/</loc>
     
-    <lastmod>2021-05-18T18:17:19.436Z</lastmod>
+    <lastmod>2021-07-21T07:40:01.869Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/robotics-lego-loam/</loc>
+    
+    <lastmod>2021-07-21T07:25:26.614Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-slam/</loc>
+    
+    <lastmod>2021-07-19T16:01:21.206Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-ros/</loc>
+    
+    <lastmod>2021-07-19T12:42:51.487Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/about/index.html</loc>
+    
+    <lastmod>2021-07-15T14:58:40.677Z</lastmod>
     
   </url>
   
@@ -37,7 +100,7 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/js-JavaScriptPainting/</loc>
+    <loc>beiyuouo.github.io/blog/js-javascript-painting/</loc>
     
     <lastmod>2021-05-08T16:40:28.693Z</lastmod>
     
@@ -366,23 +429,9 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-ros/</loc>
-    
-    <lastmod>2021-05-08T16:35:07.099Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>beiyuouo.github.io/blog/project-dcgan-for-qq-yellow-faces/</loc>
     
     <lastmod>2021-05-08T16:35:01.890Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-slam/</loc>
-    
-    <lastmod>2021-05-08T16:34:55.556Z</lastmod>
     
   </url>
   
@@ -415,7 +464,7 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/ctf-HDCTF1/</loc>
+    <loc>beiyuouo.github.io/blog/ctf-hdctf1/</loc>
     
     <lastmod>2021-05-08T16:34:23.987Z</lastmod>
     
@@ -709,14 +758,14 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/test-HelloWorld/</loc>
+    <loc>beiyuouo.github.io/blog/test-helloworld/</loc>
     
     <lastmod>2021-05-08T16:27:57.172Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/test-Haha/</loc>
+    <loc>beiyuouo.github.io/blog/test-haha/</loc>
     
     <lastmod>2021-05-08T16:27:47.821Z</lastmod>
     
@@ -740,34 +789,6 @@
     <loc>beiyuouo.github.io/blog/thoughts/index.html</loc>
     
     <lastmod>2021-05-06T11:07:36.761Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/paper-note/202102/index.html</loc>
-    
-    <lastmod>2021-02-20T10:57:10.748Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/paper-note/202002/index.html</loc>
-    
-    <lastmod>2021-02-19T08:34:27.636Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/paper-note/202003/index.html</loc>
-    
-    <lastmod>2021-02-19T08:34:14.160Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/paper-note/index.html</loc>
-    
-    <lastmod>2021-02-18T03:25:22.347Z</lastmod>
     
   </url>
   
