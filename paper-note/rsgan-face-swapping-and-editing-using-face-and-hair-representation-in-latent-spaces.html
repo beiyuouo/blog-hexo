@@ -28,12 +28,12 @@
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="Paper(arXiv, 2018) [PDF] 这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多的。另外看文章记得看作者和机构…这篇文章是一个日本某大学的学生写的，我不是很知道这个校名.. 文章主要是提出了一个面部和头发交换和编辑的系统，利用的“潜在空间(latent spaces)” 的信息，说鲁棒性会比较好。主要是从现有面部交换的缺点入手，一个是几何空间">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/blog/paper-note/img/202102/20210219145433.png">
-<meta property="og:updated_time" content="2021-07-23T03:06:43.256Z">
+<meta property="og:image" content="/blog/paper-note/images/202102/20210219145433.png">
+<meta property="og:updated_time" content="2021-07-23T03:54:02.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSGAN: Face Swapping and Editing using Face and Hair Representation in Latent Spaces">
 <meta name="twitter:description" content="Paper(arXiv, 2018) [PDF] 这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多的。另外看文章记得看作者和机构…这篇文章是一个日本某大学的学生写的，我不是很知道这个校名.. 文章主要是提出了一个面部和头发交换和编辑的系统，利用的“潜在空间(latent spaces)” 的信息，说鲁棒性会比较好。主要是从现有面部交换的缺点入手，一个是几何空间">
-<meta name="twitter:image" content="/blog/paper-note/img/202102/20210219145433.png">
+<meta name="twitter:image" content="/blog/paper-note/images/202102/20210219145433.png">
 
 <link rel="canonical" href="beiyuouo.github.io/blog/paper-note/rsgan-face-swapping-and-editing-using-face-and-hair-representation-in-latent-spaces">
 
@@ -250,7 +250,7 @@
 <p>这篇文章好像投了CVPR2020，但是没中，最近正好做相关的看到了这篇文章，引用还挺多的。<br>另外看文章记得看作者和机构…<br>这篇文章是一个日本某大学的学生写的，我不是很知道这个校名..</p>
 <p>文章主要是提出了一个面部和头发交换和编辑的系统，利用的“潜在空间(latent spaces)” 的信息，说鲁棒性会比较好。主要是从现有面部交换的缺点入手，一个是几何空间和光线的不匹配，让人很容易注意到，一个是对任意面部的鲁棒性不是很好。</p>
 <p>相关工作就先不看了，让我觉得比较重要的就是3dmm用的最多，有时间去看看 - -</p>
-<p>接下来看方法论，这只用了DNN，如图<br><img src="/blog/paper-note/img/202102/20210219145433.png" alt></p>
+<p>接下来看方法论，这只用了DNN，如图<br><img src="/blog/paper-note/images/202102/20210219145433.png" alt></p>
 <p>简单来说就是先autoencoder将图片经过语义分割后得到的图片转换成一个特征向量，然后利用这个特征向量进行面部和发型的交换，但是用的不是互相交换的向量，而是一个新的visual attribute。分割使用的PSPNet，一个SOTA的DNN网络。数据集用的是CelebA。</p>
 
       </div>
@@ -329,7 +329,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">105</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
