@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beiyuouo.github.io/blog/thoughts-20210724/</loc>
+    <loc>beiyuouo.github.io/blog/thoughts-summary-is-important/</loc>
     
-    <lastmod>2021-07-24T10:02:54.067Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/paper-note/model-agnostic-meta-learning-for-fast-adaptation-of-deep-networks.html</loc>
-    
-    <lastmod>2021-07-23T11:02:52.253Z</lastmod>
+    <lastmod>2021-07-24T12:20:23.759Z</lastmod>
     
   </url>
   
   <url>
     <loc>beiyuouo.github.io/blog/paper-note/learning-data-manipulation-for-augmentation-and-weighting.html</loc>
     
-    <lastmod>2021-07-23T11:01:30.381Z</lastmod>
+    <lastmod>2021-07-24T12:17:48.421Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/model-agnostic-meta-learning-for-fast-adaptation-of-deep-networks.html</loc>
+    
+    <lastmod>2021-07-24T12:09:34.414Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/thoughts-20210724/</loc>
+    
+    <lastmod>2021-07-24T10:02:54.067Z</lastmod>
     
   </url>
   

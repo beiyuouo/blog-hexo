@@ -20,18 +20,21 @@
     var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务 作者是来自University of California, Berkeley, 论文发表自ICML 2017 [arXiv] [presentation]">
+  <meta name="description" content="[arXiv] [presentation] MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务这篇论文发表自ICML2017，三位作者都是California, Berkeley分校的。 首先是几个概念，Few-shot Learning, Meta-Learning, Transfer Learning，这几个都是想解决一个">
 <meta name="keywords" content="北屿 BeiYu">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks">
 <meta property="og:url" content="beiyuouo.github.io/blog/paper-note/model-agnostic-meta-learning-for-fast-adaptation-of-deep-networks.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务 作者是来自University of California, Berkeley, 论文发表自ICML 2017 [arXiv] [presentation]">
+<meta property="og:description" content="[arXiv] [presentation] MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务这篇论文发表自ICML2017，三位作者都是California, Berkeley分校的。 首先是几个概念，Few-shot Learning, Meta-Learning, Transfer Learning，这几个都是想解决一个">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-07-23T11:02:52.253Z">
+<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/maml_intro.jpg">
+<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/maml_algorithm.jpg">
+<meta property="og:updated_time" content="2021-07-24T12:09:34.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks">
-<meta name="twitter:description" content="MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务 作者是来自University of California, Berkeley, 论文发表自ICML 2017 [arXiv] [presentation]">
+<meta name="twitter:description" content="[arXiv] [presentation] MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务这篇论文发表自ICML2017，三位作者都是California, Berkeley分校的。 首先是几个概念，Few-shot Learning, Meta-Learning, Transfer Learning，这几个都是想解决一个">
+<meta name="twitter:image" content="beiyuouo.github.io/blog/paper-note/images/202106/maml_intro.jpg">
 
 <link rel="canonical" href="beiyuouo.github.io/blog/paper-note/model-agnostic-meta-learning-for-fast-adaptation-of-deep-networks">
 
@@ -244,9 +247,53 @@
       
       
       <div class="post-body">
-          <p>MAML = Model-Agnostic Meta-Learning<br>也就是与模型无关的元学习，能够快速适应新的学习任务</p>
-<p>作者是来自University of California, Berkeley, 论文发表自ICML 2017</p>
-<p><a href="https://arxiv.org/abs/1703.03400" target="_blank" rel="noopener">[arXiv]</a> <a href="attachments/maml.pdf">[presentation]</a></p>
+          <p><a href="https://arxiv.org/abs/1703.03400" target="_blank" rel="noopener">[arXiv]</a> <a href="attachments/maml.pdf">[presentation]</a></p>
+<p>MAML = Model-Agnostic Meta-Learning<br>也就是与模型无关的元学习，能够快速适应新的学习任务<br>这篇论文发表自ICML2017，三位作者都是California, Berkeley分校的。</p>
+<p>首先是几个概念，Few-shot Learning, Meta-Learning, Transfer Learning，这几个都是想解决一个问题就是小样本学习的问题，我感觉元学习的范围应该是要更大一些的，核心是learn to learn，FS Learning应该是属于Meta Learning中的一种。Transfer Learning和Meta Learning的目的和优化目标稍微有些不同，Meta Learning会更加看重学习到的参数的潜力，Transfer Learning更看重当前的表现。</p>
+<p>小样本的元学习问题的设立就是要找到一个model，能够利用较少的数据，经过较少的迭代，能够快速适应到一个新任务中</p>
+<p>MAML简述<br>MAML是一种与模型无关的元学习方法，其核心思想和目标就是要找到一个模型，能够在小样本的task中经过训练能够快速收敛并有较好的表现。</p>
+<p>几个元学习中的概念</p>
+<ul>
+<li>Support Set(Training Set, 小朋友手中的卡片)</li>
+<li>Query Set(Test Set, Target Set, 小朋友看到的事物)</li>
+<li>N-way K-shot(N classes, K samples) -&gt; 一个task</li>
+</ul>
+<p>MAML核心内容<br>首先这是一个套娃的过程，想要学一个模型希望他能在sample出来的task中表现的比较好，也就是学习到一个可以快速adopt的预训练模型？<br>首先步骤，假设现在模型参数为$\theta$，然后对每个task i训练后的参数为$\theta_i^{‘}$</p>
+<script type="math/tex; mode=display">\begin{matrix}
+{\theta_{i}}'=\theta-\alpha \nabla_{\theta} \mathcal{L}_{\mathcal{T}_{i}}(f_{\theta})\\ 
+\theta\leftarrow \theta-\beta\nabla_{\theta}\sum_{\mathcal{T}_i\sim p(\mathcal{T})}\mathcal{L}_{\mathcal{T}_i}(f_{\theta^{'}_i})
+\end{matrix}</script><p>优化目标就是</p>
+<script type="math/tex; mode=display">\min_{\theta} \sum_{\mathcal{T}_i\sim p(\mathcal{T})}\mathcal{L}_{\mathcal{T}_i}(f_{\theta^{'}_i})</script><p>更新的图示<br><img src="images/202106/maml_intro.jpg" alt></p>
+<p>那么怎么求呢？</p>
+<p>第一个式子代入到第二个式子中，因为有两个$\nabla$，也就是两层的gradient，所以就相当于复合函数求导，$f(g(x))=f’(g(x))g’(x)$，qrt=query set，spt=support set，最后得到</p>
+<script type="math/tex; mode=display">\theta \leftarrow \theta - \beta [\nabla_{\theta}\sum_{\mathcal{T}_i\sim p(\mathcal{T})}\mathcal{L}^{qrt}_{\mathcal{T}_i}(\theta-\alpha\nabla_{\theta}\mathcal{L}^{spt}_{\mathcal{T}_i}(\theta))\cdot (\mathit{I}-\alpha\nabla_{\theta}^{2}\mathcal{L}_{\mathcal{T}_i}^{spt}(\theta))]</script><p>上面出现的二阶gradient是直接用一阶近似($f(x)=g(x_0)+g’(x_0)(x-x_0)$)直接给忽略掉了二阶导数</p>
+<p>更深一层的理解是，如果将$\theta$展开，对每个元素求解可以得到类似的结果，假设$\theta$各元素为$\theta^{j}$，${\theta_{i}}’$的各元素为${\theta_{i}}’^{k}$，后面二阶导数式子产生的其实就是一个偏导的方阵$\frac{\partial {\theta_{i}}’}{\partial \theta}$<br>又有$\theta_{i}$和$\theta$的关系${\theta_{i}}’ = \theta - \alpha \nabla_{\theta} \mathcal{L}_{\mathcal{T}_{i}}(f_{\theta})$<br>很容易得到</p>
+<script type="math/tex; mode=display">\frac{\partial {\theta_{i}}'^{k}}{\partial \theta^{j}}=\left\{\begin{matrix}
+                1-\alpha\frac{\partial^{2} \mathcal{L}_{\mathcal{T}_i}}{\partial\theta^{j}\theta^{k}}\approx 1 & j=k\\ 
+                -\alpha\frac{\partial^{2} \mathcal{L}_{\mathcal{T}_i}}{\partial\theta^{j}\theta^{k}}\approx 0 & j\neq k
+            \end{matrix}\right.</script><p>在忽略二阶导数以后，外层的的偏导数$\frac{\partial\mathcal{L}_{\mathcal{T}_i}}{\partial \theta^{j}}$就变成了</p>
+<script type="math/tex; mode=display">\frac{\partial\mathcal{L}_{\mathcal{T}_i}}{\partial \theta^{j}}=\sum_{k}\frac{\partial {\mathcal{L}_{\mathcal{T}_i}}}{\partial {\theta_{i}}'^{k}}\frac{\partial {\theta_{i}}'^{k}}{\partial \theta^{j}}\approx \frac{\partial {\mathcal{L}_{\mathcal{T}_i}}}{\partial {\theta_{i}}'^{j}}</script><p>其实也就是在外层优化的时候直接对${\theta_{i}}’$求导即可，无需对起始的$\theta$进行，这样做可以大大降低计算的复杂度</p>
+<p>整个算法流程<br><img src="images/202106/maml_algorithm.jpg" alt></p>
+<p>实验部分主要在验证三个问题：</p>
+<ul>
+<li>MAML能否实现新任务的快速学习？</li>
+<li>MAML是否可以用于元学习在多个不同的领域，包括监督回归、分类和强化学习？</li>
+<li>MAML学习的模型能否在后续的梯度更新继续提升？</li>
+</ul>
+<p>结果自然就是可以得到更好的结果</p>
+<p>元学习中常用的数据集</p>
+<ul>
+<li><p>Omniglot(likes MNIST):<br>20 instances of 1623 characters from 50 different alphabets</p>
+</li>
+<li><p>Mini-imagenet:<br>Total: 100 classes, 600 samples, 84 x 84 image size<br>64 training classes, 12 validation classes, and 24 test classes</p>
+</li>
+</ul>
+<p>MAML v.s. Transfer Learning<br>MAML:</p>
+<script type="math/tex; mode=display">\begin{matrix}
+{\theta_{i}}'=\theta-\alpha \nabla_{\theta} \mathcal{L}_{\mathcal{T}_{i}}(f_{\theta})\\ 
+\theta\leftarrow \theta-\beta\nabla_{\theta}\sum_{\mathcal{T}_i\sim p(\mathcal{T})}\mathcal{L}_{\mathcal{T}_i}(f_{\theta^{'}_i})
+\end{matrix}</script><p>Transfer Learning(Pre-training):</p>
+<script type="math/tex; mode=display">\mathcal{L}(\theta)=\sum_{n=1}^{N}l(\theta)</script><p>这里可以看出，Meta-Learning更加关注这个模型的潜力，也就是模型后续的走向；而Transfer Learning更加关注与模型当前的表现</p>
 
       </div>
       
@@ -324,7 +371,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

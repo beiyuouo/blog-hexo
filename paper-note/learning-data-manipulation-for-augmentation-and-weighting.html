@@ -20,18 +20,23 @@
     var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务 作者是来自University of California, Berkeley, 论文发表自ICML 2017 arXiv">
+  <meta name="description" content="[arXiv] [presentation] 用强化学习的方法学习数据操作，进行数据增强与数据加权，这里同时也是模型和数据操作方法一起学习  这篇文章涉及到挺多强化学习和信息论中的内容，掌握不是很好，中间夹杂着一些我自己的理解，可能会有一些错误  作者来自Carnegie Mellon University, Petuum Inc Data和Reward的等效性 输入$x$，输出$y$，模型$p_">
 <meta name="keywords" content="北屿 BeiYu">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Learning Data Manipulation for Augmentation and Weighting">
 <meta property="og:url" content="beiyuouo.github.io/blog/paper-note/learning-data-manipulation-for-augmentation-and-weighting.html">
 <meta property="og:site_name" content="北屿">
-<meta property="og:description" content="MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务 作者是来自University of California, Berkeley, 论文发表自ICML 2017 arXiv">
+<meta property="og:description" content="[arXiv] [presentation] 用强化学习的方法学习数据操作，进行数据增强与数据加权，这里同时也是模型和数据操作方法一起学习  这篇文章涉及到挺多强化学习和信息论中的内容，掌握不是很好，中间夹杂着一些我自己的理解，可能会有一些错误  作者来自Carnegie Mellon University, Petuum Inc Data和Reward的等效性 输入$x$，输出$y$，模型$p_">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-07-23T11:01:30.381Z">
+<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_algorithm.jpg">
+<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_fig.jpg">
+<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_nlp.jpg">
+<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_cv.jpg">
+<meta property="og:updated_time" content="2021-07-24T12:17:48.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning Data Manipulation for Augmentation and Weighting">
-<meta name="twitter:description" content="MAML = Model-Agnostic Meta-Learning也就是与模型无关的元学习，能够快速适应新的学习任务 作者是来自University of California, Berkeley, 论文发表自ICML 2017 arXiv">
+<meta name="twitter:description" content="[arXiv] [presentation] 用强化学习的方法学习数据操作，进行数据增强与数据加权，这里同时也是模型和数据操作方法一起学习  这篇文章涉及到挺多强化学习和信息论中的内容，掌握不是很好，中间夹杂着一些我自己的理解，可能会有一些错误  作者来自Carnegie Mellon University, Petuum Inc Data和Reward的等效性 输入$x$，输出$y$，模型$p_">
+<meta name="twitter:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_algorithm.jpg">
 
 <link rel="canonical" href="beiyuouo.github.io/blog/paper-note/learning-data-manipulation-for-augmentation-and-weighting">
 
@@ -244,9 +249,80 @@
       
       
       <div class="post-body">
-          <p>MAML = Model-Agnostic Meta-Learning<br>也就是与模型无关的元学习，能够快速适应新的学习任务</p>
-<p>作者是来自University of California, Berkeley, 论文发表自ICML 2017</p>
-<p><a href="https://arxiv.org/abs/1703.03400" target="_blank" rel="noopener">arXiv</a></p>
+          <p><a href="https://arxiv.org/abs/1910.12795" target="_blank" rel="noopener">[arXiv]</a> <a href="attachments/rldm.pdf">[presentation]</a></p>
+<p>用强化学习的方法学习数据操作，进行数据增强与数据加权，这里同时也是模型和数据操作方法一起学习</p>
+<blockquote>
+<p>这篇文章涉及到挺多强化学习和信息论中的内容，掌握不是很好，中间夹杂着一些我自己的理解，可能会有一些错误</p>
+</blockquote>
+<p>作者来自Carnegie Mellon University, Petuum Inc</p>
+<p>Data和Reward的等效性</p>
+<p>输入$x$，输出$y$，模型$p_{\theta}(y|x)$可以看做是一种policy，$y$被看做是action，$x$是state，policy(model)根据state $x$ 给出action $y$</p>
+<p>$R(x,y|\mathcal{D})$作为Reward函数，$\mathcal{D}$为supervised的训练数据，$p(x)$是根据经验$\mathcal{D}$得到的一个数据分布。</p>
+<p>策略优化函数(RL-as-inference, MPO)</p>
+<script type="math/tex; mode=display">\mathcal{L}(q,\theta)=\mathbb{E}_{q(x,y)}[R(x,y|\mathcal{D})]-\alpha\textup{KL}(q(x,y)\parallel p(x)p_{\theta}(y|x))+\beta \textup{H}(q)</script><p>$\textup{KL}(\cdot \parallel\cdot)$ is the Kullback–Leibler divergence KL散度，$\textup{H}(\cdot)$是Shannon entropy;香农熵，均来自信息论</p>
+<p>$\alpha,\beta&gt;0$ 是用于平衡权重的参数</p>
+<p>KL所谓KL散度，是指当某分布q(x)被用于近似p(x)时的信息损失。也就是说，q(x)能在多大程度上表达p(x)所包含的信息，KL散度越大，表达效果越差</p>
+<script type="math/tex; mode=display">D(p\parallel q) = \sum_{x\in X}p(x)\log\frac{p(x)}{q(x)}</script><p>在这里也就是让$p(x)p_{\theta}(y|x)$与$q(x,y)$接近，$q(x,y)$是真正的对应关系，$p_{\theta}(y|x)$是policy控制的对应关系，这个部分也就是想让$p_{\theta}(y|x)$学习到真正的数据分布，也就是dataset中的分布（因为dataset中的分布通常认为是当前任务的分布）</p>
+<p>香农熵也就是信息熵</p>
+<script type="math/tex; mode=display">\textup{H} = - \sum_{i=1}^{N}p(x_i)\cdot \log p(x_i)</script><p>是一个正则项，也是一个期望，这里是一个用于平滑的正则项</p>
+<p>MPO</p>
+<script type="math/tex; mode=display">
+    \begin{matrix}
+        \log p_{\theta}(O=1) &&= \log \int p(x,y)p(O=1|x,y)\mathrm{d}(x,y) \\ 
+        && \geqslant q(x,y)[\log p(O=1|x,y)+\log \frac{p(x,y)}{q(x,y)}]\mathrm{d}(x,y)  \\
+        && =\mathbb{E}_{q(x,y)}[R(x,y|\mathcal{D})/Z]-\textup{KL}(q(x,y)\parallel p(x,y))
+    \end{matrix}</script><p>后续的求解涉及到一个拉格朗日乘子法与KKT条件优化，后面推导出E-step</p>
+<script type="math/tex; mode=display">
+    q'(x,y) \propto \exp\left \{ \frac{\alpha\log p(x)p_{\theta}(y|x)+R(x,y|\mathcal{D})}{\alpha+\beta} \right \}/Z</script><p>优化$\theta$</p>
+<p>EM优化，最大化期望(Expectation Maximization)，这个就是用来不断迭代更新$\theta$的方法</p>
+<script type="math/tex; mode=display">
+    \begin{matrix}
+        E-step: && q'(x,y)=\exp\left \{ \frac{\alpha\log p(x)p_{\theta}(y|x)+R(x,y|\mathcal{D})}{\alpha+\beta} \right \}/Z\\ 
+        M-step: && \theta'=\arg \max_{\theta}\mathbb{E}_{q'(x,y)}[\log p_{\theta}(y|x)]
+    \end{matrix}</script><p>这是一个不断迭代更新$q(x,y)$和$\theta$的过程，首先得到一个分布$q(x,y)$，然后认为数据服从该分布，$(x,y)$服从$q’(x,y)$，最大化$p_{\theta}(y|x)$对数似然估计的期望（这里选取对数似然估计就是要将每个元素的条件概率连成变成求和的形式方便计算），也就是从$q$中sample出一对数据，让这个模型预测出来的概率最大。这里$Z$是一个正则项</p>
+<p>EM优化</p>
+<p>让$\alpha\rightarrow 0, \beta=1$，然后Reward长这个形式</p>
+<script type="math/tex; mode=display">
+    R_{\delta }(x,y|\mathcal{D})=\left\{\begin{matrix}
+        1 & \text{if} (x,y)\in D\\ 
+        -\infty  & \text{otherwise}
+    \end{matrix}\right.</script><p>这样的话M-step就变成了</p>
+<script type="math/tex; mode=display">
+    \theta'=\arg\max_{\theta}\mathbb{E}_{p(x)\exp\{R_{\delta}\}/Z}[\log p_{\theta}(y|x)]</script><p>也就是只有当$x,y$在数据集$\mathcal{D}$中产生，这样就不能生成新的数据了，所有后面就要去优化Reward，让$q$产生服从分布的新数据</p>
+<p>优化Reward</p>
+<p>强化学习中基于梯度下降的求Reward的方法很多，这里比较相关的就是内部的intrinsic reward和extrinsic reward，Reward函数的参数为$\phi$，$\theta$是由$\phi$进行更新的，所以$\theta$可以看做是一个关于$\phi$的函数，然后朝着让reward最大的方向做梯度上升</p>
+<script type="math/tex; mode=display">
+    \theta'=\theta+\gamma \nabla_{\theta}\mathcal{L}^{ex+in}(\theta, \phi)</script><p>$\mathcal{L}^{ex+in}$就是内部和外部reward的和，更新$\phi$的时候</p>
+<script type="math/tex; mode=display">
+    \phi'=\phi+\gamma \nabla_{\phi}\mathcal{L}^{ex}(\theta'(\phi))</script><p>只用到了外部的reward，自己的理解：</p>
+<p>这所谓的内部 reward和外部reward其实就是在训练集上的和验证集上的，有点像元学习中的support set和query set，但是在$\theta$更新的时候是两者都用到了，而元学习是每次用一个</p>
+<p>所以在这种情况下的更新就是先找一个$p$，优化$\theta$，得到一个$\phi$，优化$\phi $</p>
+<p>流程</p>
+<p><img src="images/202106/rldm_algorithm.jpg" alt><br><img src="images/202106/rldm_fig.jpg" alt></p>
+<p>实验1</p>
+<p>作者在两个方面进行了实验，一个是数据增强，一个是数据加权</p>
+<p>在NLP领域的文本分类任务做的实验</p>
+<p><img src="images/202106/rldm_nlp.jpg" alt></p>
+<p>两种方法，数据增强与同义词替换和固定标签的两种方法进行对比，数据加权与每轮重新估计权重的一个方法进行对比</p>
+<p>实验1方法</p>
+<script type="math/tex; mode=display">
+    R_{\phi}^{aug}(x,y|\mathcal{D})=\left\{\begin{matrix}
+        1 & \text{if } x\sim_{\phi}(x|x^{*},y),(x^{*},y)\in D\\ 
+        -\infty  & \text{otherwise}
+    \end{matrix}\right.</script><p>这里$\phi$其实就是LM（Language Model）的参数，用作数据增广，只有当$y$为真实标签，且$x$是用LM中增广得到的句子时，才为1，其他情况都为$-\infty$，然后更新模型的$\theta$，再更新$\phi$</p>
+<p>实验2</p>
+<p>第二个实验是在小样本任务上的</p>
+<p><img src="images/202106/rldm_cv.jpg" alt></p>
+<p>主要解决的是类别不平衡的问题，一个是文本分类一个是图片分类任务，可以看到都达到了不错的效果</p>
+<p>实验2</p>
+<script type="math/tex; mode=display">
+    R_{\phi}^{w}(x,y|\mathcal{D})=\left\{\begin{matrix}
+        \phi_{i} & \text{if } (x,y)=(x_i^{*},y_i^{*}),(x_i^{*},y_i^{*})\in\mathcal{D}\\ 
+        -\infty  & \text{otherwise}
+    \end{matrix}\right.</script><p>这里直接让$\phi$为数据的权重，$\phi_i$就是第$i$条数据的权重</p>
+<blockquote>
+<p>因为自己之前关于相关领域的内容了解并不深刻，这篇论文并未进行复现</p>
+</blockquote>
 
       </div>
       
@@ -324,7 +400,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
