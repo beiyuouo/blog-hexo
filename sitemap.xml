@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>beiyuouo.github.io/blog/note-probability/</loc>
+    
+    <lastmod>2021-08-17T11:50:38.062Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/cv-mot-metric/</loc>
+    
+    <lastmod>2021-08-17T11:50:33.902Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/fine-tuning-convolutional-neural-networks-for-biomedical-image-analysis-actively-and-incrementally.html</loc>
+    
+    <lastmod>2021-07-29T02:33:43.427Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/index.html</loc>
+    
+    <lastmod>2021-07-29T02:32:12.691Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/paper-note/learning-active-learning-from-data.html</loc>
+    
+    <lastmod>2021-07-29T02:19:41.501Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>beiyuouo.github.io/blog/note-probability-bp/</loc>
+    
+    <lastmod>2021-07-26T14:29:42.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>beiyuouo.github.io/blog/thoughts-summary-is-important/</loc>
     
     <lastmod>2021-07-24T12:20:23.759Z</lastmod>
@@ -26,13 +68,6 @@
     <loc>beiyuouo.github.io/blog/thoughts-20210724/</loc>
     
     <lastmod>2021-07-24T10:02:54.067Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/paper-note/index.html</loc>
-    
-    <lastmod>2021-07-23T10:56:15.499Z</lastmod>
     
   </url>
   
@@ -149,7 +184,7 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-zzbds/</loc>
+    <loc>beiyuouo.github.io/blog/note-regex/</loc>
     
     <lastmod>2021-05-08T16:39:57.966Z</lastmod>
     
@@ -268,14 +303,14 @@
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-algebra/</loc>
+    <loc>beiyuouo.github.io/blog/note-linear-algebra/</loc>
     
     <lastmod>2021-05-08T16:37:31.684Z</lastmod>
     
   </url>
   
   <url>
-    <loc>beiyuouo.github.io/blog/note-math/</loc>
+    <loc>beiyuouo.github.io/blog/note-advanced-mathematics/</loc>
     
     <lastmod>2021-05-08T16:37:25.020Z</lastmod>
     
@@ -299,13 +334,6 @@
     <loc>beiyuouo.github.io/blog/note-discrete-mathematics/</loc>
     
     <lastmod>2021-05-08T16:37:09.656Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>beiyuouo.github.io/blog/note-probability/</loc>
-    
-    <lastmod>2021-05-08T16:37:04.666Z</lastmod>
     
   </url>
   

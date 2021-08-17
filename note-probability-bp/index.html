@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/avatar.jpg">
+  <link rel="mask-icon" href="/blog/images/avatar.jpg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="keywords" content="note,probability">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率统计笔记bp">
+<meta property="og:url" content="beiyuouo.github.io/blog/note-probability-bp/index.html">
+<meta property="og:site_name" content="北屿">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-07-26T14:29:42.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="概率统计笔记bp">
+
+<link rel="canonical" href="beiyuouo.github.io/blog/note-probability-bp/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>概率统计笔记bp | 北屿</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145083103-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-145083103-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d396c00ca4fe6547a19249d34cb91254";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">北屿</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">北屿小智障</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-paper-note">
+
+    <a href="/blog/paper-note/" rel="section"><i class="fa fa-fw fa-sticky-note"></i>Paper Note</a>
+
+  </li>
+        <li class="menu-item menu-item-thoughts">
+
+    <a href="/blog/categories/thoughts" rel="section"><i class="fa fa-fw fa-quote-left"></i>Thoughts</a>
+
+  </li>
+        <li class="menu-item menu-item-academic-page">
+
+    <a href="https://beiyuouo.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-graduation-cap"></i>Academic Page</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/beiyuouo" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="beiyuouo.github.io/blog/note-probability-bp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="BeiYu">
+      <meta itemprop="description" content="Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北屿">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          概率统计笔记bp
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-03 21:24:33" itemprop="dateCreated datePublished" datetime="2019-09-03T21:24:33+08:00">2019-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-26 22:29:42" itemprop="dateModified" datetime="2021-07-26T22:29:42+08:00">2021-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/blog/note-probability-bp/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/note-probability-bp/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description"><p></p></div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>可算是发书了<br>Update: 20190909</p>
+<hr>
+<h2 id="第一章-概率论的基本概念"><a href="#第一章-概率论的基本概念" class="headerlink" title="第一章 概率论的基本概念"></a>第一章 概率论的基本概念</h2><h3 id="第一节-样本空间、随机事件"><a href="#第一节-样本空间、随机事件" class="headerlink" title="第一节 样本空间、随机事件"></a>第一节 样本空间、随机事件</h3><p>随机试验<br>人们是通过试验去研究随机现象的，把对随机现象加以研究所进行的观察或实验，称为<strong>试验</strong>. 若一个试验具有下列3个特点：</p>
+<ol>
+<li>可以在相同的条件下重复地进行</li>
+<li>每次试验的可能结果不止一个，并且事先可以明确试验所有可能出现的结果</li>
+<li>进行一次试验之前不能确定哪一个结果会出现<br>则称这一试验为<strong>随机试验</strong>，记为$E$</li>
+</ol>
+<p>在一个试验中，不论可能出现的结果有多少，总可以从中找出一组基本结果，满足：</p>
+<ol>
+<li>每进行一次试验，必然出现且只能出现其中的一个基本结果</li>
+<li>任何结果，都是由其中的一些基本结果所组成<br>随机试验$E$的所有基本结果组成的集合称为<strong>样本空间</strong>，记为$\Omega $. 样本空间的元素，即$E$的每个基本结果，称为<strong>样本点</strong></li>
+</ol>
+<p>随机试验$E$的样本空间$\Omega $的子集称为$E$的<strong>随机事件</strong>，简称<strong>事件</strong>，通常用大写字母$A,B,C,\cdots$来表示，在每次试验中，当且仅当这一子集中的一个样本点出现时，称这一事件发生<br>特别地，由一个样本点组成的单点集，称为<strong>基本事件</strong>.<br>每次试验中都必然发生的事件，称为<strong>必然事件</strong>. 样本空间$\Omega $包含所有的样本点，它是$\Omega $自身的子集，每次试验中都必然发生，故它就是一个必然事件。 因而必然事件也用$\Omega $表示.<br>在每次试验中不可能发生的事件称为<strong>不可能事件</strong>，用$\varnothing $表示</p>
+<p>事件之间的关系及其运算</p>
+<ol>
+<li>如果事件$A$发生必然导致事件$B$发生，则称事件$A$包含于事件$B$(或称事件$B$包含事件$A$),记为$A\subset B$(或$B\supset A$).</li>
+<li>“事件$A$与事件$B$中至少有一个发生”的事件称为$A$与$B$的并(和),记为$A\cup B$.</li>
+<li>“事件$A$与事件$B$同时发生”的事件称为$A$与$B$的交(积),记为$A\cap B$(或$AB$).</li>
+<li>“事件$A$发生而事件$B$不发生”的事件称为$A$与$B$的差,记为$A-B$.</li>
+<li>如果两个事件$A$与$B$不可能同时发生,则称事件$A$与$B$为互不相容(互斥). 记为$A\cap B=\varnothing$.</li>
+<li>若$A\cup B=\Omega $且$A\cap B=\varnothing $,则称事件$A$与事件$B$互为逆事件(对立事件). $A$的对立事件记为$\bar {A}$,$\bar{A}$是由所有不属于$A$的样本点组成的事件,它表示”$A$不发生”这样一个事件,显然$\bar{A}=\Omega -A$</li>
+</ol>
+<p>一般事件运算满足下列关系</p>
+<ol>
+<li>交换律 $A\cup B=B\cup A, A\cap B=B\cap A$.</li>
+<li>结合律 $A\cup (B\cup C)=(A\cup B)\cup C, A\cap (B\cap C)=(A\cap B)\cap C$.</li>
+<li>分配律 $A\cup (B\cap C)=(A\cup B)\cap (A\cup C),A\cap (B\cup C)=(A\cap B)\cup (A\cap C)$.</li>
+<li>$A-B=A\bar {B}=A-AB$.</li>
+<li>对有穷个或可数无穷个事件$A_i$,恒有$\overline{\bigcup_{i=1}^{n}A_i}=\bigcap_{i=1}^n\overline{A_i},\overline{\bigcap_{i=1}^{n}A_i}=\bigcup_{i=1}^{n}\overline{A_i}$</li>
+</ol>
+<h3 id="第二节-概率、古典概型"><a href="#第二节-概率、古典概型" class="headerlink" title="第二节 概率、古典概型"></a>第二节 概率、古典概型</h3><blockquote>
+<p>定义1.1 在相同的条件下，进行了$n$次试验. 若随机事件$A$在$n$次试验中发生了$k$次，则此比值$\frac{k}{n}$称为事件$A$在这$n$次试验中发生的<strong>频率</strong>，记为$f_n(A)=\frac{k}{n}$</p>
+</blockquote>
+<p>频率具有以下性质：</p>
+<ol>
+<li>对于任一事件$A$，有$0\leqslant f_n(A)\leqslant 1$</li>
+<li>对于必然事件$\Omega$，有$f_n(\Omega)=1$</li>
+<li>若事件$A,B$互不相容，则$f_n(A\cup B)=f_n(A)+f_n(B)$.</li>
+</ol>
+<blockquote>
+<p>定义1.2 设事件$A$在$n$次重复试验中，发生的次数为$k$，当$n$很大时，频率$\frac{k}{n}$在某一数值$p$附近摆动，而随着试验次数$n$的增加，发生较大摆动的可能性越来越小，则称数$p$为事件$A$发生的<strong>概率</strong>，记为$P(A)=p$</p>
+</blockquote>
+<p>概率公理化定义</p>
+<blockquote>
+<p>定义1.3 设$\Omega$为样本空间，$A$为事件，对于每一个事件$A$赋予一个实数，记为$P(A)$，如果$P(A)$满足以下条件:</p>
+<ol>
+<li>非负性：$P(A)\geqslant 0$</li>
+<li>规范性：$P(\Omega)=1$</li>
+<li>可数可加性：对于两两互不相容的可数无穷多个事件$A_1,A_2,\cdots,A_n,\cdots$，有$P(\bigcup_{n=1}^{\infty}A_n)=\sum_{n=1}^{\infty}P(A_n)$<br>则称实数$P(A)$为事件$A$的<strong>概率</strong>.</li>
+</ol>
+</blockquote>
+<ul>
+<li>性质1 $P(\varnothing)=0$</li>
+<li>性质2(有限可加性) 若$A_1,A_2,\cdots, A_n$为两两互不相容事件，则有$P(\bigcup_{k=1}^{n}A_k)=\sum_{k=1}^{n}P(A_k)$.</li>
+<li>性质3 设$A,B$是两个事件，则有$P(B-A)=P(B)-P(AB)$.</li>
+<li>性质3’ 设$A,B$是两个事件，若$A\subset B$，则有$P(B-A)=P(B)-P(A); P(A)\leqslant P(B)$</li>
+<li>性质4 对于任一事件$A$，有$P(A)\leqslant 1$</li>
+<li>性质5 对于任一事件$A$，有$P(\bar{A})=1-P(A)$</li>
+<li>性质6(加法公式) 对于任意两个事件$A,B$，有$P(A\cup B)=P(A)+P(B)-P(AB)$.</li>
+</ul>
+<p>古典概型</p>
+<blockquote>
+<p>定义1.4 若随机试验$E$满足以下条件：</p>
+<ol>
+<li>试验的样本空间$\Omega$只有有限个样本点，即$\Omega=\{\omega_1,\omega_2,\cdots,\omega_n\}$.</li>
+<li>试验中每个基本事件的发生都是等可能的，即$P(\{\omega_n\})=P(\{\omega_2\})=\cdots=P(\{\omega_n\})$<br>则称此试验为<strong>古典概型</strong>，或称为<strong>等可能概型</strong></li>
+</ol>
+</blockquote>
+<h3 id="第三节-条件概率、全概率公式"><a href="#第三节-条件概率、全概率公式" class="headerlink" title="第三节 条件概率、全概率公式"></a>第三节 条件概率、全概率公式</h3><blockquote>
+<p>定义1.5 设$A,B$为两个事件，且$P(B)&gt;0$，则称$\frac{P(AB)}{P(B)}$为事件$B$已发生的条件下事件$A$发生的<strong>条件概率</strong>，记为$P(A|B)$，即$P(A|B)=\frac{P(AB)}{P(B)}$.</p>
+</blockquote>
+<p><strong>乘法定理</strong></p>
+<blockquote>
+<p>定理1.1 设$P(A)&gt;0$，则有$P(AB)=P(A)P(B|A)$.</p>
+</blockquote>
+<p>全概率公式和贝叶斯公式</p>
+<blockquote>
+<p>定义1.6 设$\Omega$为样本空间$A_1,A_2,\cdots,A_n$为$\Omega$的一组事件，若满足</p>
+<ol>
+<li>$A_iA_j=\varnothing, i\neq j; i,j=1,2,\cdots,n$</li>
+<li>$\bigcup_{i=1}^{n}A_i=\Omega$.</li>
+</ol>
+<p>定理1.2(全概率公式) 设$B$为样本空间$\Omega$中的任一事件，$A_1,A_2,\cdots,A_n$为$\Omega$的一个划分，且$P(A_i)&gt;0,i=1,2,\cdots,n$，则有$P(B)=\sum_{i=1}^{n}P(A_i)P(B|A_i)$称上述公式为<strong>全概率公式</strong></p>
+<p>定理1.3(贝叶斯公式) 设样本空间为$\Omega$，$B$为$\Omega$中的事件,$A_1,A_2,\cdots,A_n$为$\Omega$的一个划分，且$P(B)&gt;0,P(A_i)&gt;0$，$i=1,2,\cdots,n$，则有$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{j=1}^{n}P(B|A_j)P(A_j)},i=1,2,\cdots,n$.称上式为<strong>贝叶斯公式</strong>，也称为<strong>逆概率公式</strong></p>
+</blockquote>
+<h3 id="第四节-独立性"><a href="#第四节-独立性" class="headerlink" title="第四节 独立性"></a>第四节 独立性</h3><p>事件的独立性</p>
+<blockquote>
+<p>定义1.7 若事件$A_1,A_2$满足：$P(A_1A_2)=P(A_1)P(A_2)$，则称事件$A_1,A_2$是<strong>相互独立</strong>的</p>
+<p>定理1.4 若事件$A$与$B$相互独立，则下列各对事件也相互独立：$A$与$\bar{B}$,$\bar{A}$与$B$,$\bar{A}$与$\bar{B}$.</p>
+<p>定理1.5 若事件$A,B$相互独立，且$0&lt;P(A)&lt;1$，则$P(B|A)=P(B|\bar{A})=P(B)$</p>
+<p>定义1.8 如果$A_1,A_2,A_3$两两独立，且$P(A_1A_2A_3)=P(A_1)P(A_2)P(A_3)$则$A_1,A_2,A_3$相互独立</p>
+<p>定义1.9 对$n$个事件$A_1,A_2,\cdots,A_n$，若以下$2^n-n-1$个等式成立(公式就是每$i$个公式的组合全满足，同时发生的概率等于各自发生概率的乘积）</p>
+<p>由定义可知，1. $n$个事件相互独立，则其中任意$k(2\leqslant k\leqslant n)$个事件也相互独立</p>
+<ol>
+<li>若$n$个事件相互独立，则将他们中任意多个事件换成它们的对立事件，所得的$n$个事件仍相互独立</li>
+</ol>
+</blockquote>
+<p>伯努利试验<br>若试验$E$只有两个可能结果：$A$及$\bar{A}$，则称$E$为<strong>伯努利试验</strong>，将$E$独立地重复进行$n$次，则称这一串重复的独立试验为$n$重伯努利试验</p>
+<h2 id="第二章-随机变量"><a href="#第二章-随机变量" class="headerlink" title="第二章 随机变量"></a>第二章 随机变量</h2><h3 id="第一节-随机变量及其分布函数"><a href="#第一节-随机变量及其分布函数" class="headerlink" title="第一节 随机变量及其分布函数"></a>第一节 随机变量及其分布函数</h3><blockquote>
+<p>定义2.1 设随机试验的样本空间为$\Omega$，如果对$\Omega$中每一个元素$e$，有一个实数$X(e)$与之对应，这样就得到一个定义在$\Omega$上的实值单值函数$X=X(e)$，称之为<strong>随机变量</strong></p>
+<p>定义2.2 设$X$是随机变量，$x$为任意实数，函数$F(x)=P\{X\leqslant x\}$，称为$X$的<strong>分布函数</strong></p>
+</blockquote>
+<p>分布函数具有以下基本性质：</p>
+<ol>
+<li>$F(x)$为单调不减函数</li>
+<li>$0\leqslant F(x)\leqslant 1$，且$\lim_{x\to +\infty}F(x)=1$,常记为$F(+\infty)=1$，$\lim_{x\to -\infty}F(x)=0$,常记为$F(-\infty)=0$</li>
+<li>$F(x+0)=F(x)$，即$F(x)$为右连续</li>
+</ol>
+<h3 id="第二节-离散型随机变量及其分布"><a href="#第二节-离散型随机变量及其分布" class="headerlink" title="第二节 离散型随机变量及其分布"></a>第二节 离散型随机变量及其分布</h3><p>任一离散型随机变量的分布律$\{p_k\}$都具有下述两个基本性质</p>
+<ol>
+<li>非负性 $p_k\geqslant 0, k=1,2,\cdots$</li>
+<li>归一性 $\sum_{k=1}^{\infty}p_k=1$</li>
+</ol>
+<p>常见的离散型随机变量的概率分布</p>
+<ol>
+<li>两点分布<br>若随机变量$X$只有两个取值$x_1,x_2$，分布律为$P\{X=x_1\}=1-p,0 &lt; p &lt; 1; P\{X=x_2\}=p$，则称$X$服从参数为$p$的<strong>两点分布</strong></li>
+<li>二项分布<br>若随机变量$X$的分布律为$P\{X=k\}=C_{n}^{k}p^k(1-p)^{n-k},k=0,1,\cdots,n$，则称$X$服从参数为$n,p$的<strong>二项分布</strong>，记作$X\sim b(n,p)$</li>
+</ol>
+<blockquote>
+<p>定理2.1 泊松定理 设$np_n=\lambda (\lambda&gt;0, \lambda\text{ is a const number.})$，则对任意一固定的非负整数$k$，有$\lim_{n\to \infty}C_{p}^{k}p_{n}^{k}(1-p_n)^{n-k}=\frac {\lambda ^ke^{-\lambda}}{k!}$</p>
+</blockquote>
+<ol>
+<li>泊松分布<br>若随机变量$X$的分布律为$P\{X=k\}=\frac {\lambda ^ke^{-\lambda}}{k!},k=0,1,\cdots$，其中$\lambda &gt;0$是常数，则称$X$服从参数为$\lambda$的泊松分布，记为$X\sim P(\lambda)$</li>
+</ol>
+<h3 id="连续型随机变量及其分布"><a href="#连续型随机变量及其分布" class="headerlink" title="连续型随机变量及其分布"></a>连续型随机变量及其分布</h3><blockquote>
+<p>定义2.3 若对随机变量$X$的分布函数$F(x)$，存在非负函数$f(x)$，使对任意实数$x$，有$F(x)=\int_{-\infty}^{x}=f(t)\text{d}t$，则称$X$为<strong>连续型随机变量</strong>，其中$f(x)$称为$X$的<strong>概率密度函数</strong>，简称<strong>概率密度</strong>或<strong>密度函数</strong><br>$f(x)$具有以下性质</p>
+<ol>
+<li>$f(x)\geqslant 0$.</li>
+<li>$\int_{-\infty}^{\infty}f(x)\text{d}x=1$.</li>
+<li>$P\{x_1&lt; X\leqslant x_2\}=F(x_2)-F(x_1)=\int_{x_1}^{x_2}f(x)\text{d}x(x_1\leqslant x_2)$</li>
+<li>若$f(x)$在$x$点处连续，则有$F’(x)=f(x)$</li>
+</ol>
+</blockquote>
+<p>常见连续型随机变量</p>
+<ol>
+<li><p>均匀分布</p>
+</li>
+<li><p>指数分布</p>
+</li>
+<li><p>正态分布</p>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《概率论与数理统计》，韩旭里、谢永钦，北京大学出版社</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Have fun.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/blog/images/wechatpay.png" alt="BeiYu WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/blog/images/alipay.png" alt="BeiYu Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>BeiYu
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="/blog/beiyuouo.github.io/blog/note-probability-bp/" title="概率统计笔记bp">beiyuouo.github.io/blog/note-probability-bp/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/note/" rel="tag"># note</a>
+              <a href="/blog/tags/probability/" rel="tag"># probability</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/note-data-structure/" rel="prev" title="数据结构笔记">
+      <i class="fa fa-chevron-left"></i> 数据结构笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/note-hadoop/" rel="next" title="Hadoop笔记">
+      Hadoop笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-概率论的基本概念"><span class="nav-number">1.</span> <span class="nav-text">第一章 概率论的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-样本空间、随机事件"><span class="nav-number">1.1.</span> <span class="nav-text">第一节 样本空间、随机事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-概率、古典概型"><span class="nav-number">1.2.</span> <span class="nav-text">第二节 概率、古典概型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三节-条件概率、全概率公式"><span class="nav-number">1.3.</span> <span class="nav-text">第三节 条件概率、全概率公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四节-独立性"><span class="nav-number">1.4.</span> <span class="nav-text">第四节 独立性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-随机变量"><span class="nav-number">2.</span> <span class="nav-text">第二章 随机变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一节-随机变量及其分布函数"><span class="nav-number">2.1.</span> <span class="nav-text">第一节 随机变量及其分布函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二节-离散型随机变量及其分布"><span class="nav-number">2.2.</span> <span class="nav-text">第二节 离散型随机变量及其分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连续型随机变量及其分布"><span class="nav-number">2.3.</span> <span class="nav-text">连续型随机变量及其分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="BeiYu"
+      src="/blog/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">BeiYu</p>
+  <div class="site-description" itemprop="description">Sometimes it's the very people who no one imagines angthing of who do the things that no one can imagine.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+        <span class="site-state-item-count">86</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/beiyuouo" title="GitHub → https://github.com/beiyuouo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bj.yan.pa@qq.com" title="E-Mail → mailto:bj.yan.pa@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5687969852" title="Weibo → https://weibo.com/u/5687969852" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" title="QQ → http://wpa.qq.com/msgrd?v=3&uin=729320011&site=qq&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/bei-yu-84-25/activities" title="ZhiHu → https://www.zhihu.com/people/bei-yu-84-25/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-unlink"></i>ZhiHu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/blog/" title="/">欢迎友链qwq</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BeiYu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+<script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script>
+<script src="/blog/js/schemes/pisces.js"></script>
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'jbPOrMNQ1tKOuqaj5INbG6Xx-gzGzoHsz',
+      appKey     : '3IKT41wJqXOlVHOHgahLKltR',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

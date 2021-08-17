@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>beiyuouo.github.io/blog/blog/note-probability/</loc>
+    <lastmod>2021-08-17</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/cv-mot-metric/</loc>
+    <lastmod>2021-08-17</lastmod>
+  </url>  <url>
+    <loc>beiyuouo.github.io/blog/blog/note-probability-bp/</loc>
+    <lastmod>2021-07-26</lastmod>
+  </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/thoughts-summary-is-important/</loc>
     <lastmod>2021-07-24</lastmod>
   </url>  <url>
@@ -34,7 +43,7 @@
     <loc>beiyuouo.github.io/blog/blog/js-addball2/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/note-zzbds/</loc>
+    <loc>beiyuouo.github.io/blog/blog/note-regex/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/note-vim/</loc>
@@ -85,10 +94,10 @@
     <loc>beiyuouo.github.io/blog/blog/algorithm-exgcd/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/note-algebra/</loc>
+    <loc>beiyuouo.github.io/blog/blog/note-linear-algebra/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/note-math/</loc>
+    <loc>beiyuouo.github.io/blog/blog/note-advanced-mathematics/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/note-python/</loc>
@@ -98,9 +107,6 @@
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/note-discrete-mathematics/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>beiyuouo.github.io/blog/blog/note-probability/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>beiyuouo.github.io/blog/blog/note-data-structure/</loc>
