@@ -12,9 +12,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Metric in MOT]]></title>
+    <title><![CDATA[Metrics in MOT]]></title>
     <url>%2Fblog%2Fcv-mot-metric%2F</url>
-    <content type="text"><![CDATA[MetricClassical metricsMostly Tracked (MT) trajectories : number of ground-truth trajectories that are correctly tracked in at least 80% of the frames. Note that it is irrelevant for this measure whether the ID remains the same throughout the track. 至少80%的帧中被正确跟踪的真实轨迹数。这里需要注意的一点是：不管这条轨迹上 ID 如何的变化（比如预测的时候发生了变化），但只要还是这条轨迹占到真实轨迹的 80% 以上就可以认为是 MT。（下面这张图希望可以帮助理解） Fragments : trajectory hypotheses which cover at most 80% of a ground truth trajectory. Observe that a true trajectory can be covered by more than one fragment. 轨迹假设至多80%的真实轨迹被覆盖。一个真实轨迹可以被多个碎片覆盖。 Mostly Lost (ML) trajectories : number of ground-truth trajectories that are correctly tracked in less than 20% of the frames. 少于20%的帧中被正确跟踪的真实轨迹数。 Partially Tracked (PT) : PT 部分跟踪 除了 MT、ML ，其他的都认为是 PT False trajectories : predicted trajectories which do not correspond to a real object (i.e. to a ground truth trajectory). 不能对应到真实目标的预测轨迹的数量 ID switches : number of times when the object is correctly tracked, but the associated ID for the object is mistakenly changed. 正确跟踪对象的次数，但错误关联了ID（ID被改变）。 CLEAR MOT metrics FP : the number of false positives in the whole video; 假阳性：不能与真实边界框关联的假设。整个视频中假阳性的数量。误报数量。 关联成功的认定：IoU &gt; $\alpha$（0.5），交并比，如果在$t-1$帧，ground truth$o_i$和hypothesis$h_j$匹配，即$IoU(o_i,h_j)\geqslant 0.5$，在$t$帧，仍然有$IoU(o_i,h_j)\geqslant 0.5$，那么，即使有$IoU(o_i,h_k)\geqslant IoU(o_i,h_j)$也认为$o_i$和$h_j$匹配 FN : the number of false negatives in the whole video; 假阴性：不能与假设关联的真实边界框。整个视频中假阴性的数量。漏报数量，未命中。 Fragm : the total number of fragmentations; 每次ground truth对象跟踪被中断并随后恢复时，都被视为碎片。碎片的总数。 IDSW : the total number of ID switches. 每次被跟踪的真实对象ID在跟踪持续时间内被错误地更改时，将被视为一个ID switch。 ID switch 的总数。 \mathbf{MOTA}=1-\frac{(FN+FP+IDSW)}{GT}\in(-\infty,1]where $GT $ is the number of ground truth boxes. 缺失率$\frac{FN}{GT}$,误判率$\frac{FP}{GT}$,误匹配率$\frac{IDSW}{GT}$ MOTA越接近1越好，MOTA 主要考虑的是 tracking 中所有对象匹配错误，主要是 FP、FN、IDs、MOTA 给出的是非常直观的衡量跟踪其在检测物体和保持轨迹时的性能，与目标检测精度无关。 \mathbf{MOTP}=\frac{\sum_{t,i}d_{t,i}}{\sum_{t}c_{t}}where $c_t $ denotes the number of matches in frame $t $ and $d_{t,i} $ is the bounding box overlap between the hypothesis $i $ with its assigned ground truth object. $c_t $ 为第t帧匹配的次数，$d_{t,i}$为假设$i $与其指定的ground truth对象之间的匹配误差。值得注意的是，这个指标只考虑了很少的跟踪信息，而更关注于检测的质量。 ID scoresReferencehttps://www.yuque.com/aicv/lab/tc9yqd]]></content>
+    <content type="text"><![CDATA[Metrics in MOT定义来自： https://arxiv.org/abs/1907.12740 123456789@article&#123;ciaparrone2020deep, title=&#123;Deep learning in video multi-object tracking: A survey&#125;, author=&#123;Ciaparrone, Gioele and S&#123;\'a&#125;nchez, Francisco Luque and Tabik, Siham and Troiano, Luigi and Tagliaferri, Roberto and Herrera, Francisco&#125;, journal=&#123;Neurocomputing&#125;, volume=&#123;381&#125;, pages=&#123;61--88&#125;, year=&#123;2020&#125;, publisher=&#123;Elsevier&#125;&#125; Trajectory v.s. Tracklet Trajectory （轨迹）：一条轨迹对应这一个目标在一个时间段内的位置序列Tracklet （轨迹段）：形成Trajectory过程中的轨迹片段。完整的Trajectory是由属于同一object的Tracklets构成的。 MetricsClassical metricsMostly Tracked (MT) trajectories : number of ground-truth trajectories that are correctly tracked in at least 80% of the frames. Note that it is irrelevant for this measure whether the ID remains the same throughout the track. 至少80%的帧中被正确跟踪的ground-truth中的轨迹数。这里需要注意的一点是：不管这条轨迹上 ID 如何的变化（比如预测的时候发生了变化），但只要还是这条轨迹占到ground-truth轨迹的 80% 以上就可以认为是 MT，即得到匹配就视为正确跟踪。 Mostly Lost (ML) trajectories : number of ground-truth trajectories that are correctly tracked in less than 20% of the frames. 少于20%的帧中被正确跟踪的ground-truth轨迹数。 Partially Tracked (PT) : PT 部分跟踪 除了 MT、ML ，其他的都认为是 PT False trajectories : predicted trajectories which do not correspond to a real object (i.e. to a ground truth trajectory). 不能对应到真实目标的预测轨迹的数量 ID switches : number of times when the object is correctly tracked, but the associated ID for the object is mistakenly changed. 正确跟踪对象的次数，但错误关联了ID（ID被改变）。 Fragmentation (FM )：To that end, the number of track fragmentations(FM) counts how many times a ground truth trajectory is interrupted (untracked). In other words, a fragmentation is counted each time a trajectory changes its status from tracked to untracked and tracking of that same trajectory is resumed at a later point. FM计算的是跟踪有多少次被打断，这个与ID变换无关 CLEAR MOT metrics FP : the number of false positives in the whole video; 假阳性：整个视频不能与真实边界框关联的假设数量。误报数量。 关联成功的认定：IoU &gt; $\alpha$（0.5），交并比，如果在$t-1$帧，ground truth$o_i$和hypothesis$h_j$匹配，即$IoU(o_i,h_j)\geqslant 0.5$，在$t$帧，仍然有$IoU(o_i,h_j)\geqslant 0.5$，那么，即使有$IoU(o_i,h_k)&gt;IoU(o_i,h_j)$也认为$o_i$和$h_j$匹配 FN : the number of false negatives in the whole video; 假阴性：整个视频中不能与假设关联的真实边界框的数量。漏报数量，未命中。 Fragm : the total number of fragmentations; 每次ground truth对象跟踪被中断并随后恢复时，都被视为碎片。碎片的总数。同上，FM IDSW : the total number of ID switches. 每次被跟踪的真实对象ID在跟踪持续时间内被错误地更改时，将被视为一个ID switch。同上，ID switch \mathbf{MOTA}=1-\frac{(FN+FP+IDSW)}{GT}\in(-\infty,1]where $GT $ is the number of ground truth boxes. 缺失率$\frac{FN}{GT}$,误判率$\frac{FP}{GT}$,误匹配率$\frac{IDSW}{GT}$ MOTA越接近1越好，MOTA 主要考虑的是 tracking 中所有对象匹配错误，主要是 FP、FN、IDs、MOTA 给出的是非常直观的衡量跟踪其在检测物体和保持轨迹时的性能，与目标检测精度无关。 \mathbf{MOTP}=\frac{\sum_{t,i}d_{t,i}}{\sum_{t}c_{t}}where $c_t $ denotes the number of matches in frame $t $ and $d_{t,i} $ is the bounding box overlap between the hypothesis $i $ with its assigned ground truth object. $c_t $ 为第t帧匹配的次数，$d_{t,i}$为假设$i $与其指定的ground truth对象之间的匹配误差。值得注意的是，这个指标只考虑了很少的跟踪信息，而更关注于检测的质量。 ID scoresID相关的指标，有时候比较关注长时间的跟踪错误（如航空场景），这时比较关注ID问题。 具体计算的时候是构建了一个二分图，一边的点是$V_{T}$，是由所有存在的gt轨迹和对每个计算得到的点构建一个FN点构成，另一边的点$V_{C}$是由计算得到的点和对每个gt点建一个对应的FP点构成，最后做最小费用的匹配，边的费用在\cite{ristani2016performance}有更详细的解释。如果$V_{T}$和计算得到的点匹配，那么就是$IDTP$，如果计算得到的点与FN点匹配计入$IDFN$，如果gt的点与FP点匹配则计入$IDFP$ Identification precision (IDP) IDP=\frac{IDTP}{IDTP+IDFP}Identification recall (IDR) IDR=\frac{IDTP}{IDTP+IDFN}Identification F1 (IDF1) IDF1=\frac{1}{\frac{1}{IDP}+\frac{1}{IDR}}=\frac{2IDTP}{2IDTP+IDFP+IDFN}Referencehttps://www.yuque.com/aicv/lab/tc9yqd 计算： https://github.com/cheind/py-motmetrics 12345678@inproceedings&#123;ristani2016performance, title=&#123;Performance measures and a data set for multi-target, multi-camera tracking&#125;, author=&#123;Ristani, Ergys and Solera, Francesco and Zou, Roger and Cucchiara, Rita and Tomasi, Carlo&#125;, booktitle=&#123;European conference on computer vision&#125;, pages=&#123;17--35&#125;, year=&#123;2016&#125;, organization=&#123;Springer&#125;&#125;]]></content>
       <categories>
         <category>computer-vision</category>
       </categories>
@@ -529,8 +529,8 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>machinelearning</tag>
         <tag>iot</tag>
+        <tag>machinelearning</tag>
         <tag>raspberry</tag>
         <tag>python</tag>
         <tag>sensorhub</tag>
@@ -615,8 +615,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>hadoop</tag>
+        <tag>install</tag>
         <tag>bigdata</tag>
       </tags>
   </entry>
@@ -713,11 +713,11 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>machinelearning</tag>
         <tag>iot</tag>
+        <tag>machinelearning</tag>
+        <tag>mnist</tag>
         <tag>raspberry</tag>
         <tag>python</tag>
-        <tag>mnist</tag>
       </tags>
   </entry>
   <entry>
@@ -859,9 +859,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -885,9 +885,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -934,8 +934,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>arduino</tag>
         <tag>install</tag>
+        <tag>arduino</tag>
       </tags>
   </entry>
   <entry>

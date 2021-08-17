@@ -22,13 +22,13 @@
 
   <meta name="keywords" content="computer-vision,multi-ojbect-tracking">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Metric in MOT">
+<meta property="og:title" content="Metrics in MOT">
 <meta property="og:url" content="beiyuouo.github.io/blog/cv-mot-metric/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-08-17T11:50:33.902Z">
+<meta property="og:updated_time" content="2021-08-17T15:01:59.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Metric in MOT">
+<meta name="twitter:title" content="Metrics in MOT">
 
 <link rel="canonical" href="beiyuouo.github.io/blog/cv-mot-metric/">
 
@@ -43,7 +43,7 @@
   };
 </script>
 
-  <title>Metric in MOT | 北屿</title>
+  <title>Metrics in MOT | 北屿</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145083103-1"></script>
     <script>
@@ -235,7 +235,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Metric in MOT
+          Metrics in MOT
         </h1>
 
         <div class="post-meta">
@@ -246,7 +246,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-08-17 19:29:07 / Modified: 19:50:33" itemprop="dateCreated datePublished" datetime="2021-08-17T19:29:07+08:00">2021-08-17</time>
+              <time title="Created: 2021-08-17 19:29:07 / Modified: 23:01:59" itemprop="dateCreated datePublished" datetime="2021-08-17T19:29:07+08:00">2021-08-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,29 +284,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Metric"><a href="#Metric" class="headerlink" title="Metric"></a>Metric</h2><h3 id="Classical-metrics"><a href="#Classical-metrics" class="headerlink" title="Classical metrics"></a>Classical metrics</h3><p><strong>Mostly Tracked (MT) trajectories</strong> : number of ground-truth trajectories that are correctly tracked in at least 80% of the frames.  </p>
+        <h1 id="Metrics-in-MOT"><a href="#Metrics-in-MOT" class="headerlink" title="Metrics in MOT"></a>Metrics in MOT</h1><p>定义来自：</p>
+<p><a href="https://arxiv.org/abs/1907.12740" target="_blank" rel="noopener">https://arxiv.org/abs/1907.12740</a></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@article&#123;ciaparrone2020deep,</span><br><span class="line">  title=&#123;Deep learning in video multi-object tracking: A survey&#125;,</span><br><span class="line">  author=&#123;Ciaparrone, Gioele and S&#123;\'a&#125;nchez, Francisco Luque and Tabik, Siham and Troiano, Luigi and Tagliaferri, Roberto and Herrera, Francisco&#125;,</span><br><span class="line">  journal=&#123;Neurocomputing&#125;,</span><br><span class="line">  volume=&#123;381&#125;,</span><br><span class="line">  pages=&#123;61--88&#125;,</span><br><span class="line">  year=&#123;2020&#125;,</span><br><span class="line">  publisher=&#123;Elsevier&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Trajectory v.s. Tracklet</strong> </p>
+<p><strong>Trajectory</strong> （轨迹）：一条轨迹对应这一个目标在一个时间段内的位置序列<br><strong>Tracklet</strong> （轨迹段）：形成Trajectory过程中的轨迹片段。完整的Trajectory是由属于同一object的Tracklets构成的。</p>
+<h2 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h2><h3 id="Classical-metrics"><a href="#Classical-metrics" class="headerlink" title="Classical metrics"></a>Classical metrics</h3><p><strong>Mostly Tracked (MT) trajectories</strong> : number of ground-truth trajectories that are correctly tracked in at least 80% of the frames.  </p>
 <blockquote>
-<p>Note that it is  irrelevant  for  this  measure whether the ID remains the same throughout the track.</p>
+<p>Note that it is irrelevant for this measure whether the ID remains the same throughout the track.</p>
 </blockquote>
-<p>至少80%的帧中被正确跟踪的真实轨迹数。这里需要注意的一点是：不管这条轨迹上 ID 如何的变化（比如预测的时候发生了变化），但只要还是这条轨迹占到真实轨迹的 80% 以上就可以认为是 MT。（下面这张图希望可以帮助理解）</p>
-<p><strong>Fragments</strong> : trajectory hypotheses which cover at most 80% of a ground truth trajectory. Observe that a true trajectory can be covered by more than one fragment.  轨迹假设至多80%的真实轨迹被覆盖。一个真实轨迹可以被多个碎片覆盖。</p>
-<p><strong>Mostly Lost (ML) trajectories</strong> : number of ground-truth trajectories that are correctly tracked in less than 20% of the frames.  少于20%的帧中被正确跟踪的真实轨迹数。</p>
+<p>至少80%的帧中被正确跟踪的ground-truth中的轨迹数。这里需要注意的一点是：不管这条轨迹上 ID 如何的变化（比如预测的时候发生了变化），但只要还是这条轨迹占到ground-truth轨迹的 80% 以上就可以认为是 MT，即得到匹配就视为正确跟踪。</p>
+<p><strong>Mostly Lost (ML) trajectories</strong> : number of ground-truth trajectories that are correctly tracked in less than 20% of the frames.  少于20%的帧中被正确跟踪的ground-truth轨迹数。</p>
 <p><strong>Partially Tracked (PT)</strong> : PT 部分跟踪</p>
 <p>除了 MT、ML ，其他的都认为是 PT</p>
 <p><strong>False trajectories</strong> : predicted trajectories which do not correspond to a real object (i.e. to a ground truth trajectory).  不能对应到真实目标的预测轨迹的数量</p>
 <p><strong>ID switches</strong> : number of times when the object is correctly tracked, but the associated ID for the object is mistakenly changed. 正确跟踪对象的次数，但错误关联了ID（ID被改变）。</p>
+<p><strong>Fragmentation (FM</strong> )：To that end, the number of track fragmentations(FM) counts how many times a ground truth trajectory is interrupted (untracked). In other words, a fragmentation is counted each time a trajectory changes its status from tracked to untracked and tracking of that same trajectory is resumed at a later point. FM计算的是跟踪有多少次被打断，这个与ID变换无关</p>
 <h3 id="CLEAR-MOT-metrics"><a href="#CLEAR-MOT-metrics" class="headerlink" title="CLEAR MOT metrics"></a>CLEAR MOT metrics</h3><ul>
-<li><strong>FP</strong> : the number of false positives in the whole video;  假阳性：不能与真实边界框关联的假设。整个视频中假阳性的数量。误报数量。</li>
+<li><strong>FP</strong> : the number of false positives in the whole video;  假阳性：整个视频不能与真实边界框关联的假设数量。误报数量。</li>
 </ul>
 <blockquote>
-<p>关联成功的认定：IoU &gt; $\alpha$（0.5），交并比，如果在$t-1$帧，ground truth$o_i$和hypothesis$h_j$匹配，即$IoU(o_i,h_j)\geqslant 0.5$，在$t$帧，仍然有$IoU(o_i,h_j)\geqslant 0.5$，那么，即使有$IoU(o_i,h_k)\geqslant IoU(o_i,h_j)$也认为$o_i$和$h_j$匹配</p>
+<p>关联成功的认定：IoU &gt; $\alpha$（0.5），交并比，如果在$t-1$帧，ground truth$o_i$和hypothesis$h_j$匹配，即$IoU(o_i,h_j)\geqslant 0.5$，在$t$帧，仍然有$IoU(o_i,h_j)\geqslant 0.5$，那么，即使有$IoU(o_i,h_k)&gt;IoU(o_i,h_j)$也认为$o_i$和$h_j$匹配</p>
 </blockquote>
 <ul>
-<li><p><strong>FN</strong> : the number of false negatives in the whole video;  假阴性：不能与假设关联的真实边界框。整个视频中假阴性的数量。漏报数量，未命中。</p>
+<li><p><strong>FN</strong> : the number of false negatives in the whole video;  假阴性：整个视频中不能与假设关联的真实边界框的数量。漏报数量，未命中。</p>
 </li>
-<li><p><strong>Fragm</strong> : the total number of fragmentations;  每次ground truth对象跟踪被中断并随后恢复时，都被视为碎片。碎片的总数。</p>
+<li><p><strong>Fragm</strong> : the total number of fragmentations;  每次ground truth对象跟踪被中断并随后恢复时，都被视为碎片。碎片的总数。同上，FM</p>
 </li>
-<li><p><strong>IDSW</strong> : the total number of ID switches. 每次被跟踪的真实对象ID在跟踪持续时间内被错误地更改时，将被视为一个ID switch。 ID switch 的总数。</p>
+<li><p><strong>IDSW</strong> : the total number of ID switches. 每次被跟踪的真实对象ID在跟踪持续时间内被错误地更改时，将被视为一个ID switch。同上，ID switch </p>
 </li>
 </ul>
 <script type="math/tex; mode=display">
@@ -316,7 +321,18 @@
 <script type="math/tex; mode=display">
 \mathbf{MOTP}=\frac{\sum_{t,i}d_{t,i}}{\sum_{t}c_{t}}</script><p>where $c_t<br> $ denotes the number of matches in frame $t $ and $d_{t,i}<br> $ is the bounding box overlap between the hypothesis $i<br> $ with its assigned ground truth object.</p>
 <p>$c_t<br> $ 为第t帧匹配的次数，$d_{t,i}$为假设$i $与其指定的ground truth对象之间的匹配误差。值得注意的是，这个指标只考虑了很少的跟踪信息，而更关注于检测的质量。</p>
-<h3 id="ID-scores"><a href="#ID-scores" class="headerlink" title="ID scores"></a>ID scores</h3><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.yuque.com/aicv/lab/tc9yqd" target="_blank" rel="noopener">https://www.yuque.com/aicv/lab/tc9yqd</a></p>
+<h3 id="ID-scores"><a href="#ID-scores" class="headerlink" title="ID scores"></a>ID scores</h3><p>ID相关的指标，有时候比较关注长时间的跟踪错误（如航空场景），这时比较关注ID问题。</p>
+<p>具体计算的时候是构建了一个二分图，一边的点是$V_{T}$，是由所有存在的gt轨迹和对每个计算得到的点构建一个FN点构成，另一边的点$V_{C}$是由计算得到的点和对每个gt点建一个对应的FP点构成，最后做最小费用的匹配，边的费用在\cite{ristani2016performance}有更详细的解释。如果$V_{T}$和计算得到的点匹配，那么就是$IDTP$，如果计算得到的点与FN点匹配计入$IDFN$，如果gt的点与FP点匹配则计入$IDFP$</p>
+<p><strong>Identification precision</strong> <strong> (IDP)</strong> </p>
+<script type="math/tex; mode=display">
+IDP=\frac{IDTP}{IDTP+IDFP}</script><p><strong>Identification recall (IDR)</strong> </p>
+<script type="math/tex; mode=display">
+IDR=\frac{IDTP}{IDTP+IDFN}</script><p><strong>Identification F1 (IDF1)</strong> </p>
+<script type="math/tex; mode=display">
+IDF1=\frac{1}{\frac{1}{IDP}+\frac{1}{IDR}}=\frac{2IDTP}{2IDTP+IDFP+IDFN}</script><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.yuque.com/aicv/lab/tc9yqd" target="_blank" rel="noopener">https://www.yuque.com/aicv/lab/tc9yqd</a></p>
+<p>计算：</p>
+<p><a href="https://github.com/cheind/py-motmetrics" target="_blank" rel="noopener">https://github.com/cheind/py-motmetrics</a></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@inproceedings&#123;ristani2016performance,</span><br><span class="line">  title=&#123;Performance measures and a data set for multi-target, multi-camera tracking&#125;,</span><br><span class="line">  author=&#123;Ristani, Ergys and Solera, Francesco and Zou, Roger and Cucchiara, Rita and Tomasi, Carlo&#125;,</span><br><span class="line">  booktitle=&#123;European conference on computer vision&#125;,</span><br><span class="line">  pages=&#123;17--35&#125;,</span><br><span class="line">  year=&#123;2016&#125;,</span><br><span class="line">  organization=&#123;Springer&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -352,7 +368,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="/blog/beiyuouo.github.io/blog/cv-mot-metric/" title="Metric in MOT">beiyuouo.github.io/blog/cv-mot-metric/</a>
+    <a href="/blog/beiyuouo.github.io/blog/cv-mot-metric/" title="Metrics in MOT">beiyuouo.github.io/blog/cv-mot-metric/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -439,7 +455,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metric"><span class="nav-number">1.</span> <span class="nav-text">Metric</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Classical-metrics"><span class="nav-number">1.1.</span> <span class="nav-text">Classical metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLEAR-MOT-metrics"><span class="nav-number">1.2.</span> <span class="nav-text">CLEAR MOT metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ID-scores"><span class="nav-number">1.3.</span> <span class="nav-text">ID scores</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Metrics-in-MOT"><span class="nav-number">1.</span> <span class="nav-text">Metrics in MOT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metrics"><span class="nav-number">1.1.</span> <span class="nav-text">Metrics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Classical-metrics"><span class="nav-number">1.1.1.</span> <span class="nav-text">Classical metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLEAR-MOT-metrics"><span class="nav-number">1.1.2.</span> <span class="nav-text">CLEAR MOT metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ID-scores"><span class="nav-number">1.1.3.</span> <span class="nav-text">ID scores</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.2.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
