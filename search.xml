@@ -29,6 +29,58 @@
     
     
     <entry>
+      <title>2021数学建模</title>
+      <link href="/blog/misc-mum2021/"/>
+      <url>/blog/misc-mum2021/</url>
+      
+        <content type="html"><![CDATA[<p>来混混思路，A题一看就不太可做，物理题；B题看起来还挺简单的，但是没有细看；C题好像也不是很难</p><p>所以就主要写写C题的思路了，因为毕竟不是自己实际去做，可能会有些细节问题并未考虑完全，仅提供一种可能可行的方案</p><h1 id="C-题-生产企业原材料的订购与运输"><a href="#C-题-生产企业原材料的订购与运输" class="headerlink" title="C 题 生产企业原材料的订购与运输"></a>C 题 生产企业原材料的订购与运输</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">C 题 生产企业原材料的订购与运输</span><br><span class="line">某建筑和装饰板材的生产企业所用原材料主要是木质纤维和其他植物素纤维材料,</span><br><span class="line">总体可分为 A，B，C 三种类型。该企业每年按 48 周安排生产，需要提前制定 24 周的原</span><br><span class="line">材料订购和转运计划，即根据产能要求确定需要订购的原材料供应商（称为“供应商”）</span><br><span class="line">和相应每周的原材料订购数量（称为“订货量”），确定第三方物流公司（称为“转运</span><br><span class="line">商”）并委托其将供应商每周的原材料供货数量（称为“供货量”）转运到企业仓库。</span><br><span class="line">该企业每周的产能为 2.82 万立方米，每立方米产品需消耗 A 类原材料 0.6 立方米，</span><br><span class="line">或 B 类原材料 0.66 立方米，或 C 类原材料 0.72 立方米。由于原材料的特殊性，供应商</span><br><span class="line">不能保证严格按订货量供货，实际供货量可能多于或少于订货量。为了保证正常生产的</span><br><span class="line">需要，该企业要尽可能保持不少于满足两周生产需求的原材料库存量，为此该企业对供</span><br><span class="line">应商实际提供的原材料总是全部收购。</span><br><span class="line">在实际转运过程中，原材料会有一定的损耗（损耗量占供货量的百分比称为“损耗</span><br><span class="line">率”），转运商实际运送到企业仓库的原材料数量称为“接收量”。每家转运商的运输</span><br><span class="line">能力为 6000 立方米/周。通常情况下，一家供应商每周供应的原材料尽量由一家转运商</span><br><span class="line">运输。</span><br><span class="line">原材料的采购成本直接影响到企业的生产效益，实际中 A 类和 B 类原材料的采购单</span><br><span class="line">价分别比 C 类原材料高 20%和 10%。三类原材料运输和储存的单位费用相同。</span><br><span class="line">附件 1 给出了该企业近 5 年 402 家原材料供应商的订货量和供货量数据。附件 2 给</span><br><span class="line">出了 8 家转运商的运输损耗率数据。请你们团队结合实际情况，对相关数据进行深入分</span><br><span class="line">析，研究下列问题：</span><br><span class="line">1．根据附件 1，对 402 家供应商的供货特征进行量化分析，建立反映保障企业生产</span><br><span class="line">重要性的数学模型，在此基础上确定 50 家最重要的供应商，并在论文中列表给出结果。</span><br><span class="line">2．参考问题 1，该企业应至少选择多少家供应商供应原材料才可能满足生产的需求？</span><br><span class="line">针对这些供应商，为该企业制定未来 24 周每周最经济的原材料订购方案，并据此制定</span><br><span class="line">损耗最少的转运方案。试对订购方案和转运方案的实施效果进行分析。</span><br><span class="line">3．该企业为了压缩生产成本，现计划尽量多地采购 A 类和尽量少地采购 C 类原材</span><br><span class="line">料，以减少转运及仓储的成本，同时希望转运商的转运损耗率尽量少。请制定新的订购</span><br><span class="line">方案及转运方案，并分析方案的实施效果。</span><br><span class="line">4．该企业通过技术改造已具备了提高产能的潜力。根据现有原材料的供应商和转运</span><br><span class="line">商的实际情况，确定该企业每周的产能可以提高多少，并给出未来 24 周的订购和转运</span><br><span class="line">方案。</span><br><span class="line">注：请将问题 2、问题 3 和问题 4 订购方案的数值结果填入附件 A，转运方案的数</span><br><span class="line">值结果填入附件 B，并作为支撑材料（勿改变文件名）随论文一起提交。 </span><br><span class="line"> </span><br><span class="line">附件 1 的数据说明 </span><br><span class="line">（1）企业的订货量：第一列为供应商的名称；第二列为供应商供应原材料的类别；</span><br><span class="line">第三列及以后共 240 列为企业向各供应商每周的订货量（单位：立方米）；数值“0”表</span><br><span class="line">示相应的周（所在列）没有向供应商（所在行）订货。</span><br><span class="line">（2）供应商的供货量：第一列为供应商的名称；第二列为供应商供应原材料的类别；</span><br><span class="line">第三列及以后共 240 列为各供应商每周的供货量（单位：立方米）；数值“0”表示相应</span><br><span class="line">的周（所在列）供应商（所在行）没有供货。 </span><br><span class="line">附件 2 的数据说明 </span><br><span class="line">第一列为转运商的名称；第二列及以后共 240 列为每周各转运商的运输损耗率（%），</span><br><span class="line">即 损耗率 = (供货量 - 接收量) / (供货量) X 100%；数值“0”表示没有运送。</span><br></pre></td></tr></table></figure><h2 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h2><blockquote><p>1．根据附件 1，对 402 家供应商的供货特征进行量化分析，建立反映保障企业生产重要性的数学模型，在此基础上确定 50 家最重要的供应商，并在论文中列表给出结果。</p></blockquote><p>第一题，显然就是一个评价模型，而且这个结果应该是会在后面反复使用。首先就是确定一下评价指标，比如供货的完成率，总供货量，供货趋势，这些够可以参考，然后用一下灰度预测，或者模糊评价之类的模型设置一下各个指标的权重，要不就去查询一下有没有相关的文章做这方面的评价，最后给出一个排序的表即可。</p><h2 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h2><blockquote><p>参考问题 1，该企业应至少选择多少家供应商供应原材料才可能满足生产的需求？针对这些供应商，为该企业制定未来 24 周每周最经济的原材料订购方案，并据此制定损耗最少的转运方案。试对订购方案和转运方案的实施效果进行分析。</p></blockquote><p>题干中有一个很重要的一个条件<code>为了保证正常生产的需要，该企业要尽可能保持不少于满足两周生产需求的原材料库存量，为此该企业对供应商实际提供的原材料总是全部收购。</code>，在一开始我也没有注意到这个条件，但重新考虑这个条件的时候就有挺大变化。</p><p>在这一问中主要涉及两个问题一个是转运的问题，一个是供应问题。</p><p>先回答一个题干中的问题，这个很简单，但是在解决后续所有问题之前，需要将第一问中得到的50个供应商未来的24周供货量进行预测，方法也比较多吧，最简单的就是线性回归了。给出来这个以后，按照供货量排序，从大到小求和，直到完成2周供应量，这个可遍历，可以二分，反正数据量不太大，遍历一遍就完了。</p><p>最经济的订购方案和转运方案应该是比较独立的两个问题，但是求解有先后顺序，首先得求解转运方案，对每个转运商直接算一个平均的转运损失率感觉就差不多，或者有什么其他的指标计算一下即可，排个序，从上到下选择即可。针对订购方案，就选，完成率高，减去损失率和利用率后的成本最低，优先选那一类原材料，盲猜应该会是A。</p><h2 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h2><blockquote><p>该企业为了压缩生产成本，现计划尽量多地采购 A 类和尽量少地采购 C 类原材料，以减少转运及仓储的成本，同时希望转运商的转运损耗率尽量少。请制定新的订购方案及转运方案，并分析方案的实施效果。</p></blockquote><p>这是一个优化问题，也比较开放吧感觉，首先得给出一个总成本或者综合成本的计算公式，去用牛顿迭代/线性规划/模拟退火/爬山/蚁群这些优化方法随便搞搞应该就差不多，这个也没个标准答案，当然还是越优越好。</p><h2 id="问题4"><a href="#问题4" class="headerlink" title="问题4"></a>问题4</h2><blockquote><p>该企业通过技术改造已具备了提高产能的潜力。根据现有原材料的供应商和转运商的实际情况，确定该企业每周的产能可以提高多少，并给出未来 24 周的订购和转运方案。</p></blockquote><p>产能的提升受两个因素限制，一个是供应的限制，一个是转运的限制，对供应的限制，前几周应该是能运越多越好，为了后面的铺垫，但这个受转运的限制，每周的提升应该就是其他条件拉满，卡到限制上限即可。</p><blockquote><p>遥想上次参加数学建模的时候还是上次，转眼间物是人非了哇，去年一起参加比赛的学长没有去读研，而是去工作了，另一位同级的同学估计应该保研成功，已经拿着3个Offer了orz<br>自己也从参赛选手变成了可以自由口胡的选手（x</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> misc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> misc </tag>
+            
+            <tag> mum </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>20210909</title>
+      <link href="/blog/thoughts-20210909/"/>
+      <url>/blog/thoughts-20210909/</url>
+      
+        <content type="html"><![CDATA[<p>Hi!</p><p>今天推免答辩，和挺多同学交流了一下，忽然感觉自己大学三年还挺充实的（x</p><p>大家到这个时间多少都有些焦虑，有些我觉得申请挺稳的同学居然也想保研 - -||</p><p>PPT做完发完才想起来答辩的电脑上可能没有我的字体，寄！</p><p>感觉答辩也就是走个过场罢了，就对加分项的审核，基本没啥问题，就过了，PPT也没展开讲，估计老师也是都嫌时间长8</p><p>Hoping everything ok.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> thoughts </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> thoughts </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>20210907</title>
       <link href="/blog/thoughts-20210907/"/>
       <url>/blog/thoughts-20210907/</url>
@@ -1441,9 +1493,9 @@
       
         <tags>
             
-            <tag> install </tag>
-            
             <tag> hadoop </tag>
+            
+            <tag> install </tag>
             
             <tag> bigdata </tag>
             
@@ -2157,9 +2209,9 @@
       
         <tags>
             
-            <tag> arduino </tag>
-            
             <tag> install </tag>
+            
+            <tag> arduino </tag>
             
         </tags>
       
