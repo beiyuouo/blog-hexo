@@ -139,8 +139,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>ros</tag>
         <tag>linux</tag>
+        <tag>ros</tag>
         <tag>ubuntu</tag>
       </tags>
   </entry>
@@ -663,8 +663,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>hadoop</tag>
         <tag>bigdata</tag>
+        <tag>hadoop</tag>
       </tags>
   </entry>
   <entry>
@@ -906,9 +906,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -932,9 +932,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -994,8 +994,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>linux</tag>
         <tag>kali</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
