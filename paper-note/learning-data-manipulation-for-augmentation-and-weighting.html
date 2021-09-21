@@ -17,28 +17,28 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"beiyuouo.github.io/blog","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"bj-yan.top","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="[arXiv] [presentation] 用强化学习的方法学习数据操作，进行数据增强与数据加权，这里同时也是模型和数据操作方法一起学习  这篇文章涉及到挺多强化学习和信息论中的内容，掌握不是很好，中间夹杂着一些我自己的理解，可能会有一些错误  作者来自Carnegie Mellon University, Petuum Inc Data和Reward的等效性 输入$x$，输出$y$，模型$p_">
 <meta name="keywords" content="北屿 BeiYu">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Learning Data Manipulation for Augmentation and Weighting">
-<meta property="og:url" content="beiyuouo.github.io/blog/paper-note/learning-data-manipulation-for-augmentation-and-weighting.html">
+<meta property="og:url" content="bj-yan.top/paper-note/learning-data-manipulation-for-augmentation-and-weighting.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:description" content="[arXiv] [presentation] 用强化学习的方法学习数据操作，进行数据增强与数据加权，这里同时也是模型和数据操作方法一起学习  这篇文章涉及到挺多强化学习和信息论中的内容，掌握不是很好，中间夹杂着一些我自己的理解，可能会有一些错误  作者来自Carnegie Mellon University, Petuum Inc Data和Reward的等效性 输入$x$，输出$y$，模型$p_">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_algorithm.jpg">
-<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_fig.jpg">
-<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_nlp.jpg">
-<meta property="og:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_cv.jpg">
+<meta property="og:image" content="bj-yan.top/paper-note/images/202106/rldm_algorithm.jpg">
+<meta property="og:image" content="bj-yan.top/paper-note/images/202106/rldm_fig.jpg">
+<meta property="og:image" content="bj-yan.top/paper-note/images/202106/rldm_nlp.jpg">
+<meta property="og:image" content="bj-yan.top/paper-note/images/202106/rldm_cv.jpg">
 <meta property="og:updated_time" content="2021-07-24T12:17:48.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning Data Manipulation for Augmentation and Weighting">
 <meta name="twitter:description" content="[arXiv] [presentation] 用强化学习的方法学习数据操作，进行数据增强与数据加权，这里同时也是模型和数据操作方法一起学习  这篇文章涉及到挺多强化学习和信息论中的内容，掌握不是很好，中间夹杂着一些我自己的理解，可能会有一些错误  作者来自Carnegie Mellon University, Petuum Inc Data和Reward的等效性 输入$x$，输出$y$，模型$p_">
-<meta name="twitter:image" content="beiyuouo.github.io/blog/paper-note/images/202106/rldm_algorithm.jpg">
+<meta name="twitter:image" content="bj-yan.top/paper-note/images/202106/rldm_algorithm.jpg">
 
-<link rel="canonical" href="beiyuouo.github.io/blog/paper-note/learning-data-manipulation-for-augmentation-and-weighting">
+<link rel="canonical" href="bj-yan.top/paper-note/learning-data-manipulation-for-augmentation-and-weighting">
 
 
 <script id="page-configurations">
@@ -338,7 +338,13 @@
 
           </div>
           
-    <div class="comments" id="valine-comments"></div>
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="beiyuouo/blog-comment" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+  
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -585,40 +591,11 @@
     MathJax.texReset();
     MathJax.typeset();
   }
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
     
 
   
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : true,
-      appId      : 'jbPOrMNQ1tKOuqaj5INbG6Xx-gzGzoHsz',
-      appKey     : '3IKT41wJqXOlVHOHgahLKltR',
-      placeholder: "Just go go",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

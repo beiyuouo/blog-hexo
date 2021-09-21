@@ -576,8 +576,8 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>iot</tag>
         <tag>machinelearning</tag>
+        <tag>iot</tag>
         <tag>raspberry</tag>
         <tag>python</tag>
         <tag>sensorhub</tag>
@@ -662,8 +662,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>install</tag>
+        <tag>hadoop</tag>
         <tag>bigdata</tag>
       </tags>
   </entry>
@@ -760,11 +760,11 @@
         <category>iot</category>
       </categories>
       <tags>
-        <tag>iot</tag>
         <tag>machinelearning</tag>
-        <tag>mnist</tag>
+        <tag>iot</tag>
         <tag>raspberry</tag>
         <tag>python</tag>
+        <tag>mnist</tag>
       </tags>
   </entry>
   <entry>
@@ -981,8 +981,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>arduino</tag>
+        <tag>install</tag>
       </tags>
   </entry>
   <entry>
@@ -1297,9 +1297,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
+        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
-        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
