@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>bj-yan.top/TODOLIST/</loc>
+    
+    <lastmod>2021-09-21T18:53:19.378Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>bj-yan.top/misc-mum2021/</loc>
     
     <lastmod>2021-09-09T16:21:50.575Z</lastmod>
@@ -138,13 +145,6 @@
     <loc>bj-yan.top/paper-note/learning-private-neural-language-modeling-with-attentive-aggregation.html</loc>
     
     <lastmod>2021-07-23T03:05:16.137Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>bj-yan.top/TODOLIST/</loc>
-    
-    <lastmod>2021-07-21T07:40:01.869Z</lastmod>
     
   </url>
   

@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[【置顶】README]]></title>
     <url>%2Fblog%2FTODOLIST%2F</url>
-    <content type="text"><![CDATA[关于 我 分类和标签说明 博客根路径为/blog所有笔记类博文开头为note-所有项目及应用类博文开头为对应的子领域的分类 博客更新记录20210506祝好 稍微看了一下swig的语法，终于学会了科学屏蔽首页分类的方法。1234567891011&#123;% for post in page.posts %&#125; &#123;% set foo = "true" %&#125; &#123;% for category in post.categories %&#125; &#123;% if category.name === "thoughts" %&#125; &#123;% set foo = "false" %&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &#123;% if foo === "true" %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125;&#123;% endfor %&#125; 20200430daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路123456789101112131415161718import osimport repath = "_posts/"dirs = os.listdir(path)patten = "20*"rbt = open('robot.txt', 'w')print("User-agent: *", file=rbt)for file in dirs: # print(file) if re.match(patten, file): print(file) filename = file.split('.')[0] print(filename) print('Disallow:/blog/&#123;&#125;/*'.format(filename), file=rbt) 20200415与其说这是TODOLIST，不如说这是README。 这是一篇发自现在功在将来的TODOLIST。哈哈哈不知道该写啥 20200830主页加了个奇怪的东西 20191121我在首页加了点代码，日常啥的不会在首页显示了0.0，看起来更像技术博客了2331234567891011&#123;% block content %&#125; &lt;section id="posts" class="posts-expand"&gt; &#123;% for post in page.posts %&#125; &#123;% if post.hide != true %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &lt;/section&gt; &#123;% include '_partials/pagination.swig' %&#125;&#123;% endblock %&#125; 20190907我把所有文章的地址中的日期全去掉了，所以评论全木有了QAQ，之前被收录的链接应该也失效了，这次应该不会再换地址了8 每篇文章底下的gitment可以评论，但是我没设置自动初始化，所以…可以在这里留言…(如果你能看到这句话的话…太麻烦了，现在gitment貌似挂了，有啥问题直接发issue或者QQ729320011想换成gitalk也失败了…不搞了…随缘吧gitalk好像好了qwq，大噶在文章下方评论试下吧]]></content>
+    <content type="text"><![CDATA[关于 我 分类和标签说明 博客根路径为/blog所有笔记类博文开头为note-所有项目及应用类博文开头为对应的子领域的分类 博客更新记录20210922又一次更换了博客的评论系统，选择了utteranc 20210506祝好 稍微看了一下swig的语法，终于学会了科学屏蔽首页分类的方法。1234567891011&#123;% for post in page.posts %&#125; &#123;% set foo = "true" %&#125; &#123;% for category in post.categories %&#125; &#123;% if category.name === "thoughts" %&#125; &#123;% set foo = "false" %&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &#123;% if foo === "true" %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125;&#123;% endfor %&#125; 20200430daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路123456789101112131415161718import osimport repath = "_posts/"dirs = os.listdir(path)patten = "20*"rbt = open('robot.txt', 'w')print("User-agent: *", file=rbt)for file in dirs: # print(file) if re.match(patten, file): print(file) filename = file.split('.')[0] print(filename) print('Disallow:/blog/&#123;&#125;/*'.format(filename), file=rbt) 20200415与其说这是TODOLIST，不如说这是README。 这是一篇发自现在功在将来的TODOLIST。哈哈哈不知道该写啥 20200830主页加了个奇怪的东西 20191121我在首页加了点代码，日常啥的不会在首页显示了0.0，看起来更像技术博客了2331234567891011&#123;% block content %&#125; &lt;section id="posts" class="posts-expand"&gt; &#123;% for post in page.posts %&#125; &#123;% if post.hide != true %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &lt;/section&gt; &#123;% include '_partials/pagination.swig' %&#125;&#123;% endblock %&#125; 20190907我把所有文章的地址中的日期全去掉了，所以评论全木有了QAQ，之前被收录的链接应该也失效了，这次应该不会再换地址了8 每篇文章底下的gitment可以评论，但是我没设置自动初始化，所以…可以在这里留言…(如果你能看到这句话的话…太麻烦了，现在gitment貌似挂了，有啥问题直接发issue或者QQ729320011想换成gitalk也失败了…不搞了…随缘吧gitalk好像好了qwq，大噶在文章下方评论试下吧]]></content>
       <categories>
         <category>README</category>
       </categories>
@@ -139,8 +139,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>linux</tag>
         <tag>ros</tag>
+        <tag>linux</tag>
         <tag>ubuntu</tag>
       </tags>
   </entry>
@@ -994,8 +994,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>kali</tag>
         <tag>linux</tag>
+        <tag>kali</tag>
       </tags>
   </entry>
   <entry>
@@ -1297,9 +1297,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>

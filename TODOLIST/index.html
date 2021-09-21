@@ -26,7 +26,7 @@
 <meta property="og:url" content="bj-yan.top/TODOLIST/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-07-21T07:40:01.869Z">
+<meta property="og:updated_time" content="2021-09-21T18:53:19.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【置顶】README">
 
@@ -252,7 +252,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-21 15:40:01" itemprop="dateModified" datetime="2021-07-21T15:40:01+08:00">2021-07-21</time>
+                <time title="Modified: 2021-09-22 02:53:19" itemprop="dateModified" datetime="2021-09-22T02:53:19+08:00">2021-09-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,8 @@
 <blockquote>
 <p>博客根路径为<code>/blog</code><br>所有笔记类博文开头为<code>note-</code><br>所有项目及应用类博文开头为对应的子领域的分类</p>
 </blockquote>
-<h2 id="博客更新记录"><a href="#博客更新记录" class="headerlink" title="博客更新记录"></a>博客更新记录</h2><h3 id="20210506"><a href="#20210506" class="headerlink" title="20210506"></a>20210506</h3><p>祝好</p>
+<h2 id="博客更新记录"><a href="#博客更新记录" class="headerlink" title="博客更新记录"></a>博客更新记录</h2><h3 id="20210922"><a href="#20210922" class="headerlink" title="20210922"></a>20210922</h3><p>又一次更换了博客的评论系统，选择了<a href="https://utteranc.es/" target="_blank" rel="noopener">utteranc</a></p>
+<h3 id="20210506"><a href="#20210506" class="headerlink" title="20210506"></a>20210506</h3><p>祝好</p>
 <p>稍微看了一下swig的语法，终于学会了科学屏蔽首页分类的方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">  &#123;% set foo = <span class="string">"true"</span> %&#125;</span><br><span class="line">  &#123;% <span class="keyword">for</span> category <span class="keyword">in</span> post.categories %&#125;</span><br><span class="line">    &#123;% <span class="keyword">if</span> category.name === <span class="string">"thoughts"</span> %&#125;</span><br><span class="line">      &#123;% set foo = <span class="string">"false"</span> %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">  &#123;% endfor %&#125;</span><br><span class="line">  &#123;% <span class="keyword">if</span> foo === <span class="string">"true"</span> %&#125;</span><br><span class="line">    &#123;&#123; post_template.render(post, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="20200430"><a href="#20200430" class="headerlink" title="20200430"></a>20200430</h3><p>daily不会被爬去咯，省的我的言论留下快照hhh，不然可以直接删库跑路<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">path = <span class="string">"_posts/"</span></span><br><span class="line">dirs = os.listdir(path)</span><br><span class="line"></span><br><span class="line">patten = <span class="string">"20*"</span></span><br><span class="line"></span><br><span class="line">rbt = open(<span class="string">'robot.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"User-agent: *"</span>, file=rbt)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> dirs:</span><br><span class="line">    <span class="comment"># print(file)</span></span><br><span class="line">    <span class="keyword">if</span> re.match(patten, file):</span><br><span class="line">        print(file)</span><br><span class="line">        filename = file.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        print(filename)</span><br><span class="line">        print(<span class="string">'Disallow:/blog/&#123;&#125;/*'</span>.format(filename), file=rbt)</span><br></pre></td></tr></table></figure></p>
 <h3 id="20200415"><a href="#20200415" class="headerlink" title="20200415"></a>20200415</h3><p>与其说这是TODOLIST，不如说这是README。</p>
@@ -414,7 +415,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客更新记录"><span class="nav-number">1.</span> <span class="nav-text">博客更新记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#20210506"><span class="nav-number">1.1.</span> <span class="nav-text">20210506</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20200430"><span class="nav-number">1.2.</span> <span class="nav-text">20200430</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20200415"><span class="nav-number">1.3.</span> <span class="nav-text">20200415</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20200830"><span class="nav-number">1.4.</span> <span class="nav-text">20200830</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20191121"><span class="nav-number">1.5.</span> <span class="nav-text">20191121</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20190907"><span class="nav-number">1.6.</span> <span class="nav-text">20190907</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客更新记录"><span class="nav-number">1.</span> <span class="nav-text">博客更新记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#20210922"><span class="nav-number">1.1.</span> <span class="nav-text">20210922</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20210506"><span class="nav-number">1.2.</span> <span class="nav-text">20210506</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20200430"><span class="nav-number">1.3.</span> <span class="nav-text">20200430</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20200415"><span class="nav-number">1.4.</span> <span class="nav-text">20200415</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20200830"><span class="nav-number">1.5.</span> <span class="nav-text">20200830</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20191121"><span class="nav-number">1.6.</span> <span class="nav-text">20191121</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20190907"><span class="nav-number">1.7.</span> <span class="nav-text">20190907</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -480,6 +481,9 @@
         </li>
         <li class="links-of-blogroll-item">
           <a href="https://www.yuzhang.wang/" title="https://www.yuzhang.wang/" rel="noopener" target="_blank">YuzhangWang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.echosec.top/" title="https://blog.echosec.top/" rel="noopener" target="_blank">QIN2DIM</a>
         </li>
     </ul>
   </div>

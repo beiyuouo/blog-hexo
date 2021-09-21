@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>bj-yan.top/blog/TODOLIST/</loc>
+    <lastmod>2021-09-21</lastmod>
+  </url>  <url>
     <loc>bj-yan.top/blog/misc-mum2021/</loc>
     <lastmod>2021-09-09</lastmod>
   </url>  <url>
@@ -27,9 +30,6 @@
   </url>  <url>
     <loc>bj-yan.top/blog/thoughts-20210724/</loc>
     <lastmod>2021-07-24</lastmod>
-  </url>  <url>
-    <loc>bj-yan.top/blog/TODOLIST/</loc>
-    <lastmod>2021-07-21</lastmod>
   </url>  <url>
     <loc>bj-yan.top/blog/robotics-lego-loam/</loc>
     <lastmod>2021-07-21</lastmod>
