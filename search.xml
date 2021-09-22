@@ -315,9 +315,9 @@
             
             <tag> install </tag>
             
-            <tag> linux </tag>
-            
             <tag> ros </tag>
+            
+            <tag> linux </tag>
             
             <tag> ubuntu </tag>
             
@@ -1300,9 +1300,9 @@
       
         <tags>
             
-            <tag> iot </tag>
-            
             <tag> machinelearning </tag>
+            
+            <tag> iot </tag>
             
             <tag> raspberry </tag>
             
@@ -1713,15 +1713,15 @@
       
         <tags>
             
-            <tag> iot </tag>
-            
             <tag> machinelearning </tag>
             
-            <tag> mnist </tag>
+            <tag> iot </tag>
             
             <tag> raspberry </tag>
             
             <tag> python </tag>
+            
+            <tag> mnist </tag>
             
         </tags>
       
@@ -2238,9 +2238,9 @@
             
             <tag> install </tag>
             
-            <tag> kali </tag>
-            
             <tag> linux </tag>
+            
+            <tag> kali </tag>
             
         </tags>
       
@@ -2668,9 +2668,9 @@
             
             <tag> javascript </tag>
             
-            <tag> game </tag>
-            
             <tag> canvas </tag>
+            
+            <tag> game </tag>
             
             <tag> breakout </tag>
             
@@ -2699,9 +2699,9 @@
             
             <tag> javascript </tag>
             
-            <tag> game </tag>
-            
             <tag> canvas </tag>
+            
+            <tag> game </tag>
             
         </tags>
       
@@ -2919,9 +2919,9 @@
             
             <tag> javascript </tag>
             
-            <tag> game </tag>
-            
             <tag> canvas </tag>
+            
+            <tag> game </tag>
             
             <tag> jquery </tag>
             
