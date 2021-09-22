@@ -315,9 +315,9 @@
             
             <tag> install </tag>
             
-            <tag> ros </tag>
-            
             <tag> linux </tag>
+            
+            <tag> ros </tag>
             
             <tag> ubuntu </tag>
             
@@ -1495,9 +1495,9 @@
             
             <tag> install </tag>
             
-            <tag> hadoop </tag>
-            
             <tag> bigdata </tag>
+            
+            <tag> hadoop </tag>
             
         </tags>
       
@@ -2238,9 +2238,9 @@
             
             <tag> install </tag>
             
-            <tag> linux </tag>
-            
             <tag> kali </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
@@ -2668,9 +2668,9 @@
             
             <tag> javascript </tag>
             
-            <tag> canvas </tag>
-            
             <tag> game </tag>
+            
+            <tag> canvas </tag>
             
             <tag> breakout </tag>
             
@@ -2699,9 +2699,9 @@
             
             <tag> javascript </tag>
             
-            <tag> canvas </tag>
-            
             <tag> game </tag>
+            
+            <tag> canvas </tag>
             
         </tags>
       
@@ -2919,9 +2919,9 @@
             
             <tag> javascript </tag>
             
-            <tag> canvas </tag>
-            
             <tag> game </tag>
+            
+            <tag> canvas </tag>
             
             <tag> jquery </tag>
             

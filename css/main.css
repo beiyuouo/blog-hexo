@@ -1271,7 +1271,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff67c4;
+  background: #6afe67;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2811,4 +2811,36 @@ mjx-container + br {
 }
 .utterances {
   max-width: unset;
+}
+.github-emoji {
+  display: inline-block !important;
+  position: relative;
+  top: 10px;
+  margin: 0 3px !important;
+  padding: 0;
+  width: 38px;
+  height: 36px;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 15%;
+  box-sizing: border-box;
+}
+div.gallery:hover {
+  border: 1px solid #777;
+  box-sizing: border-box;
+}
+div.gallery img {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+}
+div.desc {
+  padding: 10px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.2;
 }
