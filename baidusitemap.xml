@@ -1,8 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.bj-yan.top/misc-man-man-qiu-xue-lu/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/problem-ptalv2/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/robotics-lego-loam/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/ctf-buuctf/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/thoughts-20210907/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/thoughts-20210724/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/thoughts-20210224/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/thoughts-20200404/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/thoughts-20190808/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/project-dcgan-for-qq-yellow-faces/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-vim/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-slam/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-shell/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-ros/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-regex/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-rdbms/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-probability/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-mysql/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-machine-learning/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-linux-commend/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-linear-algebra/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-javascript/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-hive/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/note-federated-learning/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/ml-practice/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/misc-tools-for-pptx/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/misc-fuck-pi-gai-wang/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/js-imagemagnifier/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/iot-raspberry-hardware/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/iot-mnist/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/hack-wiresharktplink/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/esp-wifikiller/</loc>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
     <loc>https://blog.bj-yan.top/TODOLIST/</loc>
-    <lastmod>2021-09-21</lastmod>
+    <lastmod>2021-10-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.bj-yan.top/ctf-hdctf1/</loc>
+    <lastmod>2021-10-01</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/misc-mum2021/</loc>
     <lastmod>2021-09-09</lastmod>
@@ -10,16 +109,7 @@
     <loc>https://blog.bj-yan.top/thoughts-20210909/</loc>
     <lastmod>2021-09-09</lastmod>
   </url>  <url>
-    <loc>https://blog.bj-yan.top/thoughts-20210907/</loc>
-    <lastmod>2021-09-07</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-vue3/</loc>
-    <lastmod>2021-08-19</lastmod>
-  </url>  <url>
     <loc>https://blog.bj-yan.top/cv-mot-metric/</loc>
-    <lastmod>2021-08-17</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-probability/</loc>
     <lastmod>2021-08-17</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/note-probability-bp/</loc>
@@ -27,18 +117,6 @@
   </url>  <url>
     <loc>https://blog.bj-yan.top/thoughts-summary-is-important/</loc>
     <lastmod>2021-07-24</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/thoughts-20210724/</loc>
-    <lastmod>2021-07-24</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/robotics-lego-loam/</loc>
-    <lastmod>2021-07-21</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-slam/</loc>
-    <lastmod>2021-07-19</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-ros/</loc>
-    <lastmod>2021-07-19</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/install-ros/</loc>
     <lastmod>2021-05-18</lastmod>
@@ -55,12 +133,6 @@
     <loc>https://blog.bj-yan.top/js-addball2/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>https://blog.bj-yan.top/note-regex/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-vim/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
     <loc>https://blog.bj-yan.top/note-html/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
@@ -73,16 +145,10 @@
     <loc>https://blog.bj-yan.top/c-Brainfuck/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>https://blog.bj-yan.top/note-shell/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
     <loc>https://blog.bj-yan.top/js-Breakoutv0.0.1/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/problem-NK207F/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-javascript/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/java-HangLieShi/</loc>
@@ -97,16 +163,10 @@
     <loc>https://blog.bj-yan.top/esp-wifi/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>https://blog.bj-yan.top/note-rdbms/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
     <loc>https://blog.bj-yan.top/algorithm-chinese-remainder-theorem/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/algorithm-exgcd/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-linear-algebra/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/note-advanced-mathematics/</loc>
@@ -125,9 +185,6 @@
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/hack-tcp-session-hijack/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-linux-commend/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/iot-fire-dection-based-on-raspberry-pi/</loc>
@@ -178,52 +235,7 @@
     <loc>https://blog.bj-yan.top/problem-leetcode-hard/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>https://blog.bj-yan.top/misc-tools-for-pptx/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
     <loc>https://blog.bj-yan.top/note-env/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/project-dcgan-for-qq-yellow-faces/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-mysql/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/js-imagemagnifier/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/hack-wiresharktplink/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/esp-wifikiller/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/ctf-hdctf1/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-machine-learning/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/ml-practice/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/iot-mnist/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/iot-raspberry-hardware/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/ctf-buuctf/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-federated-learning/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/misc-fuck-pi-gai-wang/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/note-hive/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/python-design-pattern/</loc>
@@ -250,9 +262,6 @@
     <loc>https://blog.bj-yan.top/thoughts-20190730/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>https://blog.bj-yan.top/thoughts-20190808/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
     <loc>https://blog.bj-yan.top/thoughts-20190902/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
@@ -272,9 +281,6 @@
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/thoughts-20200125/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/thoughts-20200404/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/thoughts-20200410/</loc>
@@ -310,9 +316,6 @@
     <loc>https://blog.bj-yan.top/thoughts-20210212/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
-    <loc>https://blog.bj-yan.top/thoughts-20210224/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
     <loc>https://blog.bj-yan.top/thoughts-20191031/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
@@ -332,9 +335,6 @@
     <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://blog.bj-yan.top/thoughts-20210507/</loc>
-    <lastmod>2021-05-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.bj-yan.top/problem-ptalv2/</loc>
     <lastmod>2021-05-08</lastmod>
   </url>
 </urlset>

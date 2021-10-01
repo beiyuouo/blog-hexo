@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://blog.bj-yan.top/robotics-lego-loam/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-07-21T07:25:26.614Z">
+<meta property="og:updated_time" content="2021-10-01T19:36:53.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeGO-LOAM速通">
 
@@ -262,7 +262,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-21 15:25:26" itemprop="dateModified" datetime="2021-07-21T15:25:26+08:00">2021-07-21</time>
+                <time title="Modified: 2021-10-02 03:36:53" itemprop="dateModified" datetime="2021-10-02T03:36:53+08:00">2021-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -286,7 +286,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>请先参阅<a href="/blog/install-ros">此文</a>安装相关依赖</p>
+        <p>请先参阅<a href="/install-ros">此文</a>安装相关依赖</p>
 <h2 id="1-安装LeGO-LOAM"><a href="#1-安装LeGO-LOAM" class="headerlink" title="1. 安装LeGO-LOAM"></a>1. 安装LeGO-LOAM</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/catkin_ws/src</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/RobustFieldAutonomyLab/LeGO-LOAM.git</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">catkin_make -j1</span><br></pre></td></tr></table></figure>
 <h2 id="2-编译建图"><a href="#2-编译建图" class="headerlink" title="2. 编译建图"></a>2. 编译建图</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> mapping</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">catkin_make -j1</span><br><span class="line">roslaunch lego_loam run.launch</span><br><span class="line">rosbag play yourbag.bag --clock</span><br></pre></td></tr></table></figure>
 <p>注：可能出现的一个错误，找不到<code>libgtsam</code>，需要从<code>/usr/local/lib</code>拷贝到<code>/usr/lib</code></p>
@@ -459,7 +459,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">87</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

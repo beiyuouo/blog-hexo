@@ -26,11 +26,11 @@
 <meta property="og:url" content="https://blog.bj-yan.top/note-mysql/index.html">
 <meta property="og:site_name" content="北屿">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://blog.bj-yan.top/blog/img/note-mysql/joinimg.jpg">
-<meta property="og:updated_time" content="2021-05-08T16:34:48.317Z">
+<meta property="og:image" content="https://blog.bj-yan.top/img/note-mysql/joinimg.jpg">
+<meta property="og:updated_time" content="2021-10-01T19:28:39.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL笔记">
-<meta name="twitter:image" content="https://blog.bj-yan.top/blog/img/note-mysql/joinimg.jpg">
+<meta name="twitter:image" content="https://blog.bj-yan.top/img/note-mysql/joinimg.jpg">
 
 <link rel="canonical" href="https://blog.bj-yan.top/note-mysql/">
 
@@ -264,7 +264,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-09 00:34:48" itemprop="dateModified" datetime="2021-05-09T00:34:48+08:00">2021-05-09</time>
+                <time title="Modified: 2021-10-02 03:28:39" itemprop="dateModified" datetime="2021-10-02T03:28:39+08:00">2021-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -583,7 +583,7 @@
 <h4 id="Aggregate-Functions"><a href="#Aggregate-Functions" class="headerlink" title="Aggregate Functions"></a>Aggregate Functions</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">avg</span><br><span class="line">sum</span><br><span class="line">min</span><br><span class="line">max</span><br><span class="line">count</span><br></pre></td></tr></table></figure>
 <h3 id="Sorting-and-Grouping-Data"><a href="#Sorting-and-Grouping-Data" class="headerlink" title="Sorting and Grouping Data"></a>Sorting and Grouping Data</h3><h4 id="Sorting-Data"><a href="#Sorting-Data" class="headerlink" title="Sorting Data"></a>Sorting Data</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    [ALL | <span class="keyword">DISTINCT</span>]</span><br><span class="line">    select_expr [, select_expr ...]</span><br><span class="line">    [<span class="keyword">FROM</span> table_reference]</span><br><span class="line">    [<span class="keyword">WHERE</span> where_condition]</span><br><span class="line">    [<span class="keyword">ORDER</span> <span class="keyword">BY</span> column_name]</span><br><span class="line">    [<span class="keyword">ASC</span> | <span class="keyword">DESC</span>]</span><br></pre></td></tr></table></figure>
 <h4 id="Grouping-Data"><a href="#Grouping-Data" class="headerlink" title="Grouping Data"></a>Grouping Data</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    [ALL | <span class="keyword">DISTINCT</span>]</span><br><span class="line">    select_expr [, select_expr ...]</span><br><span class="line">    [<span class="keyword">FROM</span> table_reference]</span><br><span class="line">    [<span class="keyword">WHERE</span> where_condition]</span><br><span class="line">    [<span class="keyword">GROUP</span> <span class="keyword">BY</span> &#123;column_name | expr&#125;]</span><br><span class="line">    [<span class="keyword">HAVING</span> where_condition]</span><br></pre></td></tr></table></figure>
-<h2 id="Join和Subqueries"><a href="#Join和Subqueries" class="headerlink" title="Join和Subqueries"></a>Join和Subqueries</h2><h3 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h3><p>一张图片搞定<br><img src="/blog/img/note-mysql/joinimg.jpg" alt></p>
+<h2 id="Join和Subqueries"><a href="#Join和Subqueries" class="headerlink" title="Join和Subqueries"></a>Join和Subqueries</h2><h3 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h3><p>一张图片搞定<br><img src="/img/note-mysql/joinimg.jpg" alt></p>
 <h4 id="Inner-Join"><a href="#Inner-Join" class="headerlink" title="Inner Join"></a>Inner Join</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, column_name, [, column_name]</span><br><span class="line"><span class="keyword">FROM</span> table1_name <span class="keyword">JOIN</span> table2_name</span><br><span class="line"><span class="keyword">ON</span> table1_name.ref_column_name join_operator </span><br><span class="line">table2_name.ref_column_name | <span class="keyword">USING</span> (ref_column_name)</span><br><span class="line">[<span class="keyword">WHERE</span> search_condition]</span><br></pre></td></tr></table></figure>
 <p>ON 和 USING 二选一，USING可以合并相同的列</p>
 <h4 id="Outer-Join"><a href="#Outer-Join" class="headerlink" title="Outer Join"></a>Outer Join</h4><p>LEFT OUTER JOIN<br>RIGHT OUTER JOIN<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, column_name, [, column_name]</span><br><span class="line"><span class="keyword">FROM</span> table1_name [<span class="keyword">LEFT</span> | <span class="keyword">RIGHT</span>] <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2_name</span><br><span class="line"><span class="keyword">ON</span> table1_name.ref_column_name join_operator </span><br><span class="line">table2_name.ref_column_name | <span class="keyword">USING</span> (ref_column_name)</span><br><span class="line">[<span class="keyword">WHERE</span> search_condition]</span><br></pre></td></tr></table></figure></p>
@@ -963,7 +963,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">87</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
