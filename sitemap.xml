@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.bj-yan.top/thoughts-20211006/</loc>
+    
+    <lastmod>2021-10-10T13:13:08.319Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bj-yan.top/friends/index.html</loc>
+    
+    <lastmod>2021-10-10T13:00:46.822Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.bj-yan.top/misc-man-man-qiu-xue-lu/</loc>
     
     <lastmod>2021-10-02T06:42:18.020Z</lastmod>
@@ -240,13 +254,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bj-yan.top/friends/index.html</loc>
-    
-    <lastmod>2021-09-22T15:53:32.527Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.bj-yan.top/misc-mum2021/</loc>
     
     <lastmod>2021-09-09T16:21:50.575Z</lastmod>
@@ -268,27 +275,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bj-yan.top/paper-note/fine-tuning-convolutional-neural-networks-for-biomedical-image-analysis-actively-and-incrementally.html</loc>
-    
-    <lastmod>2021-07-29T02:33:43.427Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/index.html</loc>
-    
-    <lastmod>2021-07-29T02:32:12.691Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/learning-active-learning-from-data.html</loc>
-    
-    <lastmod>2021-07-29T02:19:41.501Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.bj-yan.top/note-probability-bp/</loc>
     
     <lastmod>2021-07-26T14:29:42.790Z</lastmod>
@@ -299,62 +285,6 @@
     <loc>https://blog.bj-yan.top/thoughts-summary-is-important/</loc>
     
     <lastmod>2021-07-24T12:20:23.759Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/learning-data-manipulation-for-augmentation-and-weighting.html</loc>
-    
-    <lastmod>2021-07-24T12:17:48.421Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/model-agnostic-meta-learning-for-fast-adaptation-of-deep-networks.html</loc>
-    
-    <lastmod>2021-07-24T12:09:34.414Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/rsgan-face-swapping-and-editing-using-face-and-hair-representation-in-latent-spaces.html</loc>
-    
-    <lastmod>2021-07-23T03:54:02.189Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/first-order-motion-model-for-image-animation.html</loc>
-    
-    <lastmod>2021-07-23T03:06:54.001Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/measure-contribution-of-participants-in-federated-learning.html</loc>
-    
-    <lastmod>2021-07-23T03:06:44.696Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/a-learning-based-incentive-mechanism-for-federated-learning.html</loc>
-    
-    <lastmod>2021-07-23T03:06:02.720Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/communication-efficient-learning-of-deep-networks-from-decentralized-data.html</loc>
-    
-    <lastmod>2021-07-23T03:05:20.512Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bj-yan.top/paper-note/learning-private-neural-language-modeling-with-attentive-aggregation.html</loc>
-    
-    <lastmod>2021-07-23T03:05:16.137Z</lastmod>
     
   </url>
   
@@ -422,7 +352,7 @@
   </url>
   
   <url>
-    <loc>https://blog.bj-yan.top/c-Brainfuck/</loc>
+    <loc>https://blog.bj-yan.top/c-brainfuck/</loc>
     
     <lastmod>2021-05-08T16:38:40.868Z</lastmod>
     
