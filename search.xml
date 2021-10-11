@@ -671,8 +671,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>hadoop</tag>
+        <tag>install</tag>
         <tag>bigdata</tag>
       </tags>
   </entry>
@@ -990,8 +990,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>arduino</tag>
         <tag>install</tag>
+        <tag>arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -1306,9 +1306,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
+        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
-        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
