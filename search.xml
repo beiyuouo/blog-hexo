@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[世界的本质是数学]]></title>
+    <url>%2Fthoughts-20211013%2F</url>
+    <content type="text"><![CDATA[“圆规”自从登陆海南以后减弱了不少，外面也不是疯狂狂风大作了，应该已经度过了最猛烈的阶段了吧。 前几天去图书馆，发现图书馆果然买了许多新书，不知道是不是我建议的233（记得之前图书馆反馈的时候我好像是填过这个问题） 最近也看了一些优化一类的书，顺便重新复习了一下SGD，之前都是看书，很简单就过了，但当我手推的时候，发现还是有些不理解，原因是我没有系统的学过矩阵微分，很多情况下并不能理解推导过程，只是单纯套公式，因此最近计划看一下Matrix Cookbook!]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第一次打120 & 第一次坐救护车]]></title>
     <url>%2Fthoughts-20211006%2F</url>
     <content type="text"><![CDATA[确实是我到21岁以来第一次打120和第一次坐救护车，之前我长辈生病时都不是我做的救护车，也不是我拨打的120，可能也不是我最先知道的。 这次与众不同的是，室友出的状况，拨打了120以后先问的就是地址，然后病人情况，最后居然还问了疫情相关的情况 - -… 室友估计就是肺部受了点伤，然后呼吸不畅。结果因为紧张，越来越严重，大口张嘴呼吸以后，开始出现了麻痹，从面部到，四肢末端，在到四肢。当时他已经一身冷汗，喘不上气的感觉了，说了一句“小冰，我感觉我不行了。”，然后就开始喘。他是没有什么病史的，单纯因为体测，估计是1000米没喘上气或者有肺泡破裂之类的吧，总之一直在拖，拖到了6号，终于，不舒服了，回了宿舍，好歹宿舍里还有我这个闲人233。 等救护车来，指引了一下怎么走，到了以后其实并无大碍，就是因为张嘴的大口喘气，如果换成用鼻子深呼吸会好很多。去医院的路上正好还遇到了一起校内的小车祸，有人受了伤，顺便救治了一下，这也是我第一次坐救护车了 - -，最后收了115。 没啥大碍就好，这个事情告诉我们，有病早治，有不舒服就及时就医吧，以免拖到后面真出现问题 - -。]]></content>
@@ -122,8 +133,8 @@
       </categories>
       <tags>
         <tag>note</tag>
-        <tag>robotics</tag>
         <tag>slam</tag>
+        <tag>robotics</tag>
       </tags>
   </entry>
   <entry>
@@ -135,8 +146,8 @@
       </categories>
       <tags>
         <tag>ros</tag>
-        <tag>robotics</tag>
         <tag>slam</tag>
+        <tag>robotics</tag>
       </tags>
   </entry>
   <entry>
@@ -475,8 +486,8 @@
         <category>problem</category>
       </categories>
       <tags>
-        <tag>codejam</tag>
         <tag>problem</tag>
+        <tag>codejam</tag>
       </tags>
   </entry>
   <entry>
@@ -671,9 +682,9 @@
         <category>install</category>
       </categories>
       <tags>
+        <tag>hadoop</tag>
         <tag>install</tag>
         <tag>bigdata</tag>
-        <tag>hadoop</tag>
       </tags>
   </entry>
   <entry>
@@ -990,8 +1001,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>arduino</tag>
         <tag>install</tag>
+        <tag>arduino</tag>
       </tags>
   </entry>
   <entry>
@@ -1306,9 +1317,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
