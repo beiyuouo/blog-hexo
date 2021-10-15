@@ -12,6 +12,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[格物致知-线性代数]]></title>
+    <url>%2Fnote-linear-algerbra-ng%2F</url>
+    <content type="text"><![CDATA[Preface今天看了3b1b的线性代数本质，有了很多新的理解，也解释了很多我之前没有想明白的地方（准确的说是为了应付考试死记硬背住的公式），迫不及待的想要写下这篇文章。这里用到的都是一些几何的直观理解，并不涉及到数理证明。 Knowledge矩阵乘法先记录一下里面提到的一些观点，首先向量这个没什么好说的，用向量的变换，引出了矩阵乘法。向量的变换其实也是坐标系的变换，也就是所谓的linear transform。考虑对一个向量$\overrightarrow{v}=[x\hat{i}, y\hat{j}]^{T}$，施加一个变换$A=\begin{bmatrix}a &amp; c\\ b &amp; d\end{bmatrix}$，$\hat{i},\hat{j}$是基向量，作用在$\hat{i}$上的变换是$\begin{bmatrix}a\\b\end{bmatrix}$，作用在$\hat{j}$上的变换是$\begin{bmatrix}c\\d\end{bmatrix}$。变换后的坐标是$\begin{bmatrix}a &amp; c\\ b &amp; d\end{bmatrix}\begin{bmatrix}x\\ y\end{bmatrix}=x\begin{bmatrix}a\\ b\end{bmatrix}+y\begin{bmatrix}c\\ d\end{bmatrix}=\begin{bmatrix}ax+cy\\bx+dy\end{bmatrix}$ 我的矩阵乘法终于不用再记行列顺序了！ 这个扩展到多维也是一样的，下面考虑多个变换的情况，施加两个变换$A,B$也就是$AB\overrightarrow{v}$，这其实就相当于了一个复合函数$A(B\overrightarrow{v})$，先做一次$B$变换再做$A$变换。这个顺序为什么不能变换呢，更直观的理解就是，经过了一次$B$变换，坐标系已经发生了改变，虽然$A$对于坐标的变换没有改变，但是对已经改变过坐标的$B\overrightarrow{v}$来说，产生的影响是不用与直接作用与$\overrightarrow{v}$的，这也就解释了矩阵乘法不具有交换性。 那结合性呢？注意到无论是$(AB)C\overrightarrow{v}$还是$A(BC)\overrightarrow{v}$其实都是从右向左结合的，对于前面两个矩阵乘起来的结果其实也是按顺序结合进来的，因此结合律其实是存在的（虽然这里直观的感觉可能有些奇怪，但是确实是这么个变换顺序）。 It is my experience that proofs involving matrices can be shortened by 50% if one throws the matrices out. - Emil Artin 行列式之前先入为主的学习行列式，都是直接用来解线性方程组的，从来没有想过他的几何意义，这里行列式的几何意义其实是一个“变换”的单位面积改变的倍数，其实也就是改变后的单位面积的“面积”。 这里其实让我卡顿了一下，既然有上面这个说法，那么其实就是$[1,1]^{T}$向量表示的矩阵变换后的面积啊，如果按照这个思路$\begin{bmatrix}a &amp; c\\b &amp; d\end{bmatrix}\begin{bmatrix}1\\1\end{bmatrix}=\begin{bmatrix}a+c\\b+d\end{bmatrix}$，那么单位矩阵的面积是$(a+c)(b+d)=ab+ad+bc+cd$，但我们都知道二阶行列式的值应该是$ad-bc$，为什么不一样呢？其实就是“坐标系变了”。$ad-bc$用的坐标系是原坐标系，而$(a+c)(b+d)$用的确实变换后的。 那么行列式有负值？其实就是坐标系发生的翻转，例如平面坐标系$x$到了$y$的逆时针方向90°，或者$xyz$坐标系从右手系变成了左手系，者都会产生负值的行列式。对于多维来讲，固定其他维变换两维会让其变成负数，再变换另一维则成正数，再变换另一维成负数…一次类推，但这个似乎已经不能用几何证明了呢，毕竟人的大脑难以想象到高维空间。 如果一个变换的行列式变成了0？单位面积变成0，那其实就是被降维打击了，变换成了一个直线，也就是这个变换并不是列向量线性无关的。 同时3b1b留了一个思考题$\det(M_1M2)?=\det(M_1)\det(M_2)$，结果当然是等于，3b1b没有给出几何上的理解，我是这么理解的，这其实就是一个乘法。先看右边，按照从右向左结合的顺序，先把原单位矩阵变成$\det(M_2)$倍，再用$M_1$变换变换成$\det(M_1)$倍，得到了最后的单位面积。就是依次做了两个变换，每次变换结束后重新整理坐标，再进行下一次变换。而等式左边的，相当于把两次变换一起做了，直接变成了$\det(M_1)\det(M_2)$倍，也就有了$\det(M_1M_2)=\det(M_1)\det(M_2)$。 逆矩阵 &amp; 秩逆矩阵，也就是逆“变换”，其实说到这里，所有的矩阵都可以换成“变换”两个字，因为这里涉及到的其实都是坐标系的变换，也就是线性变换linear transform。之前忘说的一点是，linear transform带来的坐标系变换的结果都是线性的，也就是坐标系都是“直的”，且必须“平行”，同时还是“等距”的，因为如果不满足，原坐标系的一条直线，不再是直线，那么这将不再是线性变换。 作为逆变换，写作$A^{-1}$，一个变换再变换回去其实就是$A^{-1}A$（这是不是能解释为什么每次都是把$A^{-1}$写在左边？因为都是从右开始结合的）。一个方程$Ax=v$的求解，其实就是找到一个变换，将$v$变换成$x$，注意不是$x$变换成$v$，因为$x$才是未知量，这其实就是$A^{-1}Ax=A^{-1}v$，解就是$x=A^{-1}v$。 如果$\det(A)=0$，那么被降维打击的变换，永远无法恢复到变换前这就相当于你永远无法从两条平行的直线向量，找到一个面，也就不存在逆了，但是却存在无数解。 经过变换，压缩成的最小维度，也就是秩。这里是由每个列向量的变换得到的，也就是得到的列空间。 无论经过什么样的变换，$\begin{bmatrix}0\\0\end{bmatrix}$这个向量一定呆在原点不同。一个满秩的矩阵，只有$[0,0]^{T}$向量保持在原点，而非满秩的矩阵，会有一系列向量经过压缩，到了$[0,0]^{T}$向量，这些就是“零空间”（null space）或者“核”（kernal）。 非方阵考虑“列空间”，其实左乘一个非方阵其实就是做投影，如果是左乘一个$3\times 2$的方阵，那其实就是将二维的平面翻转变换投影到三维空间中。 点积本身就有几何意义，其实也可以看成上述的投影，投影到一维空间向量中去。]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>gwzz</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[世界的本质是数学]]></title>
     <url>%2Fthoughts-20211013%2F</url>
     <content type="text"><![CDATA[“圆规”自从登陆海南以后减弱了不少，外面也不是疯狂狂风大作了，应该已经度过了最猛烈的阶段了吧。 前几天去图书馆，发现图书馆果然买了许多新书，不知道是不是我建议的233（记得之前图书馆反馈的时候我好像是填过这个问题） 最近也看了一些优化一类的书，顺便重新复习了一下SGD，之前都是看书，很简单就过了，但当我手推的时候，发现还是有些不理解，原因是我没有系统的学过矩阵微分，很多情况下并不能理解推导过程，只是单纯套公式，因此最近计划看一下Matrix Cookbook!]]></content>
@@ -133,8 +145,8 @@
       </categories>
       <tags>
         <tag>note</tag>
-        <tag>slam</tag>
         <tag>robotics</tag>
+        <tag>slam</tag>
       </tags>
   </entry>
   <entry>
@@ -146,8 +158,8 @@
       </categories>
       <tags>
         <tag>ros</tag>
-        <tag>slam</tag>
         <tag>robotics</tag>
+        <tag>slam</tag>
       </tags>
   </entry>
   <entry>
@@ -159,8 +171,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>linux</tag>
         <tag>ros</tag>
+        <tag>linux</tag>
         <tag>ubuntu</tag>
       </tags>
   </entry>
@@ -682,9 +694,9 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>install</tag>
         <tag>bigdata</tag>
+        <tag>hadoop</tag>
       </tags>
   </entry>
   <entry>
@@ -926,9 +938,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
-        <tag>chinese-remainder-theorem</tag>
         <tag>gcd</tag>
         <tag>math</tag>
+        <tag>chinese-remainder-theorem</tag>
       </tags>
   </entry>
   <entry>
@@ -952,9 +964,9 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+        <tag>exgcd</tag>
         <tag>gcd</tag>
         <tag>math</tag>
-        <tag>exgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -1001,8 +1013,8 @@
         <category>install</category>
       </categories>
       <tags>
-        <tag>install</tag>
         <tag>arduino</tag>
+        <tag>install</tag>
       </tags>
   </entry>
   <entry>
@@ -1014,8 +1026,8 @@
       </categories>
       <tags>
         <tag>install</tag>
-        <tag>kali</tag>
         <tag>linux</tag>
+        <tag>kali</tag>
       </tags>
   </entry>
   <entry>
@@ -1292,8 +1304,8 @@
         <category>note</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>note</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -1317,9 +1329,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
+        <tag>jquery</tag>
         <tag>game</tag>
         <tag>canvas</tag>
-        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
